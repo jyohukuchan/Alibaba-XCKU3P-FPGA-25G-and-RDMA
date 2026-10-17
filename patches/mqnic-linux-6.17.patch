@@ -1,0 +1,146 @@
+diff --git a/modules/mqnic/mqnic.h b/modules/mqnic/mqnic.h
+index 5e78a4b..84bb5a1 100644
+--- a/modules/mqnic/mqnic.h
++++ b/modules/mqnic/mqnic.h
+@@ -21,6 +21,15 @@
+ #include <linux/ptp_clock_kernel.h>
+ #include <linux/timer.h>
+ #include <net/devlink.h>
++#include <linux/version.h>
++
++/* Kernel 6.16 renamed the timer helpers used by this driver. */
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 16, 0)
++#define from_timer(var, callback_timer, timer_fieldname) \
++	timer_container_of(var, callback_timer, timer_fieldname)
++#define del_timer_sync(t) timer_delete_sync(t)
++#define del_timer(t) timer_delete(t)
++#endif
+ 
+ #include <linux/i2c.h>
+ #include <linux/i2c-algo-bit.h>
+diff --git a/modules/mqnic/mqnic_board.c b/modules/mqnic/mqnic_board.c
+index f017438..6a2b83a 100644
+--- a/modules/mqnic/mqnic_board.c
++++ b/modules/mqnic/mqnic_board.c
+@@ -8,6 +8,7 @@
+ #include <linux/module.h>
+ #include <linux/i2c-mux.h>
+ #include <linux/version.h>
++#include <linux/hex.h>
+ 
+ static const struct property_entry i2c_mux_props[] = {
+ 	PROPERTY_ENTRY_BOOL("i2c-mux-idle-disconnect"),
+diff --git a/modules/mqnic/mqnic_dev.c b/modules/mqnic/mqnic_dev.c
+index 331772a..0b9a362 100644
+--- a/modules/mqnic/mqnic_dev.c
++++ b/modules/mqnic/mqnic_dev.c
+@@ -134,7 +134,7 @@ static long mqnic_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
+ 			info.child = 0;
+ 			info.size = mqnic->hw_regs_size;
+ 			info.offset = ((u64)info.index) << 40;
+-			strlcpy(info.name, "ctrl", sizeof(info.name));
++			strscpy(info.name, "ctrl", sizeof(info.name));
+ 			break;
+ 		case 1:
+ 			info.type = MQNIC_REGION_TYPE_APP_CTRL;
+@@ -142,7 +142,7 @@ static long mqnic_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
+ 			info.child = 0;
+ 			info.size = mqnic->app_hw_regs_size;
+ 			info.offset = ((u64)info.index) << 40;
+-			strlcpy(info.name, "app", sizeof(info.name));
++			strscpy(info.name, "app", sizeof(info.name));
+ 			break;
+ 		case 2:
+ 			info.type = MQNIC_REGION_TYPE_RAM;
+@@ -150,7 +150,7 @@ static long mqnic_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
+ 			info.child = 0;
+ 			info.size = mqnic->ram_hw_regs_size;
+ 			info.offset = ((u64)info.index) << 40;
+-			strlcpy(info.name, "ram", sizeof(info.name));
++			strscpy(info.name, "ram", sizeof(info.name));
+ 			break;
+ 		default:
+ 			return -EINVAL;
+diff --git a/modules/mqnic/mqnic_ethtool.c b/modules/mqnic/mqnic_ethtool.c
+index d5b7c26..7d9f254 100644
+--- a/modules/mqnic/mqnic_ethtool.c
++++ b/modules/mqnic/mqnic_ethtool.c
+@@ -201,6 +201,39 @@ static u32 mqnic_get_rxfh_indir_size(struct net_device *ndev)
+ 	return priv->rx_queue_map_indir_table_size;
+ }
+ 
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 8, 0)
++static int mqnic_get_rxfh(struct net_device *ndev, struct ethtool_rxfh_param *rxfh)
++{
++	struct mqnic_priv *priv = netdev_priv(ndev);
++	u32 *indir = rxfh->indir;
++	int k;
++
++	rxfh->hfunc = ETH_RSS_HASH_TOP;
++	if (indir)
++		for (k = 0; k < priv->rx_queue_map_indir_table_size; k++)
++			indir[k] = priv->rx_queue_map_indir_table[k];
++	return 0;
++}
++
++static int mqnic_set_rxfh(struct net_device *ndev, struct ethtool_rxfh_param *rxfh,
++		struct netlink_ext_ack *extack)
++{
++	struct mqnic_priv *priv = netdev_priv(ndev);
++	const u32 *indir = rxfh->indir;
++	int k;
++
++	if (rxfh->hfunc != ETH_RSS_HASH_NO_CHANGE && rxfh->hfunc != ETH_RSS_HASH_TOP)
++		return -EOPNOTSUPP;
++	if (!indir)
++		return 0;
++	for (k = 0; k < priv->rx_queue_map_indir_table_size; k++)
++		if (indir[k] >= priv->rxq_count)
++			return -EINVAL;
++	for (k = 0; k < priv->rx_queue_map_indir_table_size; k++)
++		priv->rx_queue_map_indir_table[k] = indir[k];
++	return mqnic_update_indir_table(ndev);
++}
++#else
+ static int mqnic_get_rxfh(struct net_device *ndev, u32 *indir, u8 *key,
+ 		u8 *hfunc)
+ {
+@@ -242,6 +275,8 @@ static int mqnic_set_rxfh(struct net_device *ndev, const u32 *indir,
+ 	return mqnic_update_indir_table(ndev);
+ }
+ 
++#endif
++
+ static void mqnic_get_channels(struct net_device *ndev,
+ 		struct ethtool_channels *channel)
+ {
+@@ -306,7 +341,7 @@ static int mqnic_set_channels(struct net_device *ndev,
+ }
+ 
+ static int mqnic_get_ts_info(struct net_device *ndev,
+-		struct ethtool_ts_info *info)
++		struct kernel_ethtool_ts_info *info)
+ {
+ 	struct mqnic_priv *priv = netdev_priv(ndev);
+ 	struct mqnic_dev *mdev = priv->mdev;
+diff --git a/modules/mqnic/mqnic_main.c b/modules/mqnic/mqnic_main.c
+index 5e95491..126cd46 100644
+--- a/modules/mqnic/mqnic_main.c
++++ b/modules/mqnic/mqnic_main.c
+@@ -845,7 +845,7 @@ fail:
+ 	return ret;
+ }
+ 
+-static int mqnic_platform_remove(struct platform_device *pdev)
++static void mqnic_platform_remove(struct platform_device *pdev)
+ {
+ 	struct mqnic_dev *mqnic = platform_get_drvdata(pdev);
+ 	struct devlink *devlink = priv_to_devlink(mqnic);
+@@ -856,7 +856,6 @@ static int mqnic_platform_remove(struct platform_device *pdev)
+ 
+ 	mqnic_free_id(mqnic);
+ 	mqnic_devlink_free(devlink);
+-	return 0;
+ }
+ 
+ static struct platform_driver mqnic_platform_driver = {

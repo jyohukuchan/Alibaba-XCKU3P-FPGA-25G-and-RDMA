@@ -1,0 +1,107 @@
+{
+  "date_utc": "2026-10-17",
+  "source": "Derived from original iperf3 client JSON; not a new test run",
+  "sequential_directions": true,
+  "tests": [
+    {
+      "label": "mtu1500-cx4-to-fpga",
+      "protocol": "TCP",
+      "num_streams": 4,
+      "omit_seconds": 3,
+      "requested_duration_seconds": 20,
+      "error": null,
+      "sender": {
+        "start": 0,
+        "end": 19.999661,
+        "seconds": 19.999661,
+        "bytes": 54022504448,
+        "bits_per_second": 21609368057.988583,
+        "retransmits": 1442,
+        "sender": true
+      },
+      "receiver": {
+        "start": 0,
+        "end": 19.993357,
+        "seconds": 19.993357,
+        "bytes": 54006120448,
+        "bits_per_second": 21609625816.414921,
+        "sender": true
+      }
+    },
+    {
+      "label": "mtu1500-fpga-to-cx4",
+      "protocol": "TCP",
+      "num_streams": 4,
+      "omit_seconds": 3,
+      "requested_duration_seconds": 20,
+      "error": null,
+      "sender": {
+        "start": 0,
+        "end": 19.995582,
+        "seconds": 19.995582,
+        "bytes": 32206880768,
+        "bits_per_second": 12885598735.960775,
+        "retransmits": 45,
+        "sender": false
+      },
+      "receiver": {
+        "start": 0,
+        "end": 19.999951,
+        "seconds": 19.999951,
+        "bytes": 32200851456,
+        "bits_per_second": 12880372139.311741,
+        "sender": false
+      }
+    },
+    {
+      "label": "mtu9000-cx4-to-fpga",
+      "protocol": "TCP",
+      "num_streams": 4,
+      "omit_seconds": 3,
+      "requested_duration_seconds": 20,
+      "error": null,
+      "sender": {
+        "start": 0,
+        "end": 20.000486,
+        "seconds": 20.000486,
+        "bytes": 61876731904,
+        "bits_per_second": 24750091334.380577,
+        "retransmits": 56,
+        "sender": true
+      },
+      "receiver": {
+        "start": 0,
+        "end": 20.001433,
+        "seconds": 20.001433,
+        "bytes": 61882892288,
+        "bits_per_second": 24751383478.573761,
+        "sender": true
+      }
+    },
+    {
+      "label": "mtu9000-fpga-to-cx4",
+      "protocol": "TCP",
+      "num_streams": 4,
+      "omit_seconds": 3,
+      "requested_duration_seconds": 20,
+      "error": null,
+      "sender": {
+        "start": 0,
+        "end": 20.000305,
+        "seconds": 20.000305,
+        "bytes": 61359915008,
+        "bits_per_second": 24543591713.426369,
+        "retransmits": 0,
+        "sender": false
+      },
+      "receiver": {
+        "start": 0,
+        "end": 20.00047,
+        "seconds": 20.00047,
+        "bytes": 61361094656,
+        "bits_per_second": 24543861081.664581,
+        "sender": false
+      }
+    }
+  ]
+}

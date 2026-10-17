@@ -1,0 +1,20 @@
+name: Source checks (no FPGA hardware)
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  source-checks:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          persist-credentials: false
+      - name: Install source-check dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tcl jq
+      - name: Check sources, dependency revisions, driver patch and recorded data
+        run: bash scripts/check.sh

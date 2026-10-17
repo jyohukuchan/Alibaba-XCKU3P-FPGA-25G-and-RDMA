@@ -1,0 +1,13 @@
+# Selected excerpt of the recorded 2026-10-17 report; not a fresh run.
+# Local build directory and host name redacted; original tool notices retained.
+Design Route Status
+                                               :      # nets :
+   ------------------------------------------- : ----------- :
+   # of logical nets.......................... :      156631 :
+       # of nets not needing routing.......... :       42793 :
+           # of internally routed nets........ :       40482 :
+           # of nets with no loads............ :        2311 :
+       # of routable nets..................... :      113838 :
+           # of fully routed nets............. :      113838 :
+       # of nets with routing errors.......... :           0 :
+   ------------------------------------------- : ----------- :

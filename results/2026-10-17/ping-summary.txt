@@ -1,0 +1,20 @@
+native25g-ping100-fpga-to-cx4.txt:100 packets transmitted, 100 received, 0% packet loss, time 5057ms
+native25g-ping100-fpga-to-cx4.txt:rtt min/avg/max/mdev = 0.088/0.140/0.219/0.028 ms
+native25g-ping100-cx4-to-fpga.txt:100 packets transmitted, 100 received, 0% packet loss, time 5059ms
+native25g-ping100-cx4-to-fpga.txt:rtt min/avg/max/mdev = 0.078/0.132/0.231/0.029 ms
+ping-reverse-mtu1500.txt:10 packets transmitted, 10 received, 0% packet loss, time 1867ms
+ping-reverse-mtu1500.txt:rtt min/avg/max/mdev = 0.080/0.118/0.181/0.027 ms
+ping-reverse-full-mtu9000.txt:3 packets transmitted, 3 received, 0% packet loss, time 2035ms
+ping-reverse-full-mtu9000.txt:rtt min/avg/max/mdev = 0.213/0.675/1.299/0.457 ms
+ping-reverse-mtu9000.txt:10 packets transmitted, 10 received, 0% packet loss, time 1861ms
+ping-reverse-mtu9000.txt:rtt min/avg/max/mdev = 0.122/0.245/0.904/0.221 ms
+ping-reverse-full-mtu1500.txt:3 packets transmitted, 3 received, 0% packet loss, time 2037ms
+ping-reverse-full-mtu1500.txt:rtt min/avg/max/mdev = 0.084/0.099/0.128/0.020 ms
+ping-mtu9000.txt:10 packets transmitted, 10 received, 0% packet loss, time 1865ms
+ping-mtu9000.txt:rtt min/avg/max/mdev = 0.073/0.155/0.479/0.124 ms
+ping-full-mtu9000.txt:3 packets transmitted, 3 received, 0% packet loss, time 2071ms
+ping-full-mtu9000.txt:rtt min/avg/max/mdev = 0.143/0.190/0.232/0.036 ms
+ping-full-mtu1500.txt:3 packets transmitted, 3 received, 0% packet loss, time 2049ms
+ping-full-mtu1500.txt:rtt min/avg/max/mdev = 0.059/0.119/0.171/0.046 ms
+ping-mtu1500.txt:10 packets transmitted, 10 received, 0% packet loss, time 1867ms
+ping-mtu1500.txt:rtt min/avg/max/mdev = 0.098/0.123/0.198/0.028 ms

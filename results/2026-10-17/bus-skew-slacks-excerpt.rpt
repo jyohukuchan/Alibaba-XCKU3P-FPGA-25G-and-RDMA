@@ -1,0 +1,53 @@
+# Selected excerpt of the recorded 2026-10-17 report; not a fresh run.
+# Local build directory and host name redacted; original tool notices retained.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date              : Sat Oct 17 14:30:55 2026
+| Host              : <test-host> running 64-bit Ubuntu 24.04.4 LTS
+| Command           : report_bus_skew -file <build-dir>/refine_after_reroute_final_bus_skew.rpt
+| Design            : fpga
+| Device            : xcku3p-ffvb676
+| Speed File        : -1  PRODUCTION 1.29 05-01-2022
+| Design State      : Physopt postRoute
+| Temperature Grade : E
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Slack (MET) :             1.478ns  (requirement - actual skew)
+Slack (MET) :             3.462ns  (requirement - actual skew)
+Slack (MET) :             2.009ns  (requirement - actual skew)
+Slack (MET) :             3.429ns  (requirement - actual skew)
+Slack (MET) :             3.228ns  (requirement - actual skew)
+Slack (MET) :             2.189ns  (requirement - actual skew)
+Slack (MET) :             1.982ns  (requirement - actual skew)
+Slack (MET) :             3.409ns  (requirement - actual skew)
+Slack (MET) :             2.137ns  (requirement - actual skew)
+Slack (MET) :             3.480ns  (requirement - actual skew)
+Slack (MET) :             2.917ns  (requirement - actual skew)
+Slack (MET) :             1.747ns  (requirement - actual skew)
+Slack (MET) :             3.315ns  (requirement - actual skew)
+Slack (MET) :             3.545ns  (requirement - actual skew)
+Slack (MET) :             3.370ns  (requirement - actual skew)
+Slack (MET) :             2.138ns  (requirement - actual skew)
+Slack (MET) :             3.323ns  (requirement - actual skew)
+Slack (MET) :             3.470ns  (requirement - actual skew)
+Slack (MET) :             3.391ns  (requirement - actual skew)
+Slack (MET) :             2.119ns  (requirement - actual skew)
+Slack (MET) :             3.322ns  (requirement - actual skew)
+Slack (MET) :             3.557ns  (requirement - actual skew)
+Slack (MET) :             3.468ns  (requirement - actual skew)
+Slack (MET) :             2.096ns  (requirement - actual skew)
+Slack (MET) :             3.333ns  (requirement - actual skew)
+Slack (MET) :             3.457ns  (requirement - actual skew)
+Slack (MET) :             3.320ns  (requirement - actual skew)
+Slack (MET) :             2.123ns  (requirement - actual skew)
+Slack (MET) :             3.091ns  (requirement - actual skew)
+Slack (MET) :             3.521ns  (requirement - actual skew)
+Slack (MET) :             3.494ns  (requirement - actual skew)
+Slack (MET) :             3.516ns  (requirement - actual skew)
+Slack (MET) :             3.253ns  (requirement - actual skew)
+Slack (MET) :             7.419ns  (requirement - actual skew)
+Slack (MET) :             3.461ns  (requirement - actual skew)
+Slack (MET) :             3.571ns  (requirement - actual skew)
+Slack (MET) :             3.528ns  (requirement - actual skew)
+Slack (MET) :             3.557ns  (requirement - actual skew)

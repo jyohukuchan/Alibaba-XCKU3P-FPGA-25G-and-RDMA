@@ -1,0 +1,6 @@
+[submodule "corundum"]
+	path = external/corundum
+	url = https://github.com/corundum/corundum.git
+[submodule "as02mc04-port"]
+	path = external/as02mc04-port
+	url = https://github.com/quake0day/alibaba-as02mc04-corundum.git

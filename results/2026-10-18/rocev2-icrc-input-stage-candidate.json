@@ -1,0 +1,93 @@
+{
+  "evidence_type": "isolated staged-RTL integrity and real metadata-capacity tests, not a selected board source or hardware result",
+  "success": true,
+  "tests_run": 4,
+  "compiler_source_replacements": 4,
+  "candidate": "rdma/build/icrc-stage-candidate-U3zWwBt5/rocev2_ipv4_icrc.v",
+  "candidate_sha256": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+  "source_sha256": {
+    "rdma/rtl/rocev2_ipv4_icrc.v": "2231fdad5e3ccb701e1d716f891f8f1a049819b105ccc9273541ead442a195d7",
+    "external/corundum/fpga/lib/eth/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+    "rdma/tests/test_icrc_rtl.py": "60897ce84fdcef7a980928ba84eeb3ec24cd4fd2a42b87d53e281ce4df754127",
+    "rdma/tests/test_metadata_backpressure_rtl.py": "c022edf278bb04eab89ad3d8c7db9284ce73f7d15de09a8ef861a503083026c8",
+    "rdma/scripts/test_icrc_candidate.py": "e9ea01ee8bcc8d6fc6f3810b16b9426f87b9efc1422ff3a2fcaeaad7c416d831"
+  },
+  "inputs_unchanged": true,
+  "integrity_tests": {
+    "test_cycle_capacity_above_25g": {
+      "cycles": 8636,
+      "input_beats": 8320,
+      "output_beats": 8320,
+      "good_frames": 32,
+      "bad_frames": 0,
+      "input_stall_cycles": 0,
+      "output_stall_cycles": 0,
+      "first_output": 268,
+      "last_output": 8587,
+      "pass_test": true,
+      "simulated_payload_gbit_s_at_250mhz": 31.50769230769231,
+      "routed_clock_verified": false,
+      "keep_masks_checked": 65536
+    },
+    "test_rx_whole_frame_integrity_and_stalls": {
+      "cycles": 9807,
+      "input_beats": 4307,
+      "output_beats": 2479,
+      "good_frames": 30,
+      "bad_frames": 8,
+      "input_stall_cycles": 4821,
+      "output_stall_cycles": 6055,
+      "first_output": 6002,
+      "last_output": 9758,
+      "pass_test": true,
+      "header_sum_values_checked": 2097152,
+      "keep_masks_checked": 65536
+    },
+    "test_tx_golden_stalls_and_rejection": {
+      "cycles": 9191,
+      "input_beats": 3284,
+      "output_beats": 2748,
+      "good_frames": 31,
+      "bad_frames": 7,
+      "input_stall_cycles": 4825,
+      "output_stall_cycles": 6092,
+      "first_output": 6002,
+      "last_output": 9142,
+      "pass_test": true,
+      "keep_masks_checked": 65536
+    }
+  },
+  "metadata_tests": {
+    "test_bad_final_beat_at_full_metadata_fifo_recovers": {
+      "cycles": 6702,
+      "input_beats": 424,
+      "output_beats": 420,
+      "good_frames": 38,
+      "bad_frames": 1,
+      "input_stall_cycles": 5842,
+      "output_stall_cycles": 6064,
+      "first_output": 6002,
+      "last_output": 6653,
+      "metadata_full_cycles": 5845,
+      "bad_final_while_metadata_full_cycles": 5842,
+      "checksum_entries_pushed": 38,
+      "pass_test": true,
+      "expected_good_packets": 38,
+      "rejected_packets": 1,
+      "checksum_fifo_ram_depth": 32,
+      "checksum_fifo_depth_reduced": false,
+      "dut_state_forced": false,
+      "keep_masks_checked": 65536
+    }
+  },
+  "selected_into_board_build": false,
+  "whole_hls_app_tests_run": false,
+  "physical_gate_passed": false,
+  "hardware_verified": false,
+  "unapplied_patch": "rdma/patches/rocev2-icrc-input-stage.patch",
+  "patch_sha256": "554c18ed1bfe2e26d224f2e790730ce8de133965c6af9dcad597c81ebd344689",
+  "raw_records": {
+    "rdma/logs/icrc-stage-candidate-002.log": "f73332364cb7b7f7e1b60063f2c1a53f5f8450652977a9ba40c888537ba91bab",
+    "rdma/logs/icrc-stage-candidate-002.json": "58fb41ef7608aed1edfa73fc0d6558bf4b12f8a92dda12b639300a1afbb4e497"
+  }
+}

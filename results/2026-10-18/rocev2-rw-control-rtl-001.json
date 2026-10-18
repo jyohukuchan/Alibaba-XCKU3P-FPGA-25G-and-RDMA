@@ -1,0 +1,64 @@
+{
+  "scope": "RW BAR/control RTL with modeled HLS metadata; not actual HLS or PCIe hardware",
+  "complete": true,
+  "hardware_verified": false,
+  "tests": {
+    "test_existing_write_control_and_pattern_path": {
+      "axi_reads": 48,
+      "axi_writes": 28,
+      "write_response_stalls": 84,
+      "read_response_stalls": 144,
+      "payload_stalls": 25,
+      "verified_writes": 3,
+      "verified_bytes": 195,
+      "rejected_control_writes": 5,
+      "invalid_mr_rejected": true,
+      "pass_test": true
+    },
+    "test_ram_byte_enables_bounds_and_independent_owners": {
+      "pass_test": true,
+      "cycles": 193,
+      "axi_reads": 13,
+      "axi_writes": 9,
+      "sq_handshakes": 0,
+      "pattern_bytes": 0,
+      "run_id": 0
+    },
+    "test_read_commit_gating_bar_readback_and_warm_write": {
+      "pass_test": true,
+      "cycles": 1335,
+      "axi_reads": 63,
+      "axi_writes": 74,
+      "sq_handshakes": 2,
+      "pattern_bytes": 65,
+      "run_id": 2
+    },
+    "test_start_racing_ram_read_is_rejected_without_cancellation": {
+      "pass_test": true,
+      "cycles": 207,
+      "axi_reads": 3,
+      "axi_writes": 20,
+      "sq_handshakes": 0,
+      "pattern_bytes": 0,
+      "run_id": 1
+    },
+    "test_unleased_capture_error_abort_recovery_and_epoch_exhaustion": {
+      "pass_test": true,
+      "cycles": 335,
+      "axi_reads": 9,
+      "axi_writes": 27,
+      "sq_handshakes": 0,
+      "pattern_bytes": 0,
+      "run_id": 3
+    }
+  },
+  "source_sha256": {
+    "rdma/read/rtl/rocev2_rw_control.v": "b053823980a3c169d46291363793446c0f08c99b9199dedff48ed10c9824c164",
+    "rdma/read/rtl/rocev2_read_engine.v": "cabf0b52017e5b411c0e64abb1b74c9d67fea685cf0fbd4a372e4ca58bdbb4e5",
+    "rdma/read/rtl/rocev2_read_buffer.v": "efd936002c9132a69a3c049d361495cbe145acd29b0d7906398067c0cdee6112",
+    "rdma/rtl/rocev2_write_engine.v": "0698f421ea45f316dd12f46e0b5003e3138c86b7a7ae8d5999e4e5f2aae658f7",
+    "rdma/rtl/rocev2_pattern_source.v": "95dcfd5c8f772c227a13943fac3ccfb0a10056caeb179e39b26f1c3acd7b8f9e",
+    "rdma/read/tests/test_rw_control_rtl.py": "0efe287f75b1c67b09718049b08ea0111953fc09030a12d7d5c928b193ff0180",
+    "rdma/tests/test_control_rtl.py": "bb74af70d8427596b01c286ff3b3cf3988278c92fd74247ef8b0966a6fa4193a"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "evidence_type": "sanitized HLS C-model timer test, not RTL or hardware",
+  "hardware_verified": false,
+  "generated_rtl_verified": false,
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "pass_test": true,
+  "clock_ps": 4000,
+  "max_qps": 8,
+  "first_retry_qps_checked": 8,
+  "retry_events_checked": 10,
+  "first_retry_min_clocks": 250001,
+  "first_retry_max_clocks": 250001,
+  "ack_restart_checked": true,
+  "ack_stop_checked": true,
+  "table_boundary_checked": true,
+  "clear_set_priority_checked": true,
+  "source_sha256": {
+    "test_timer.cpp": "d0f87bcc54bb40d234e61c53933afe50425068431502b4cd3e435e9232c79550",
+    "rocev2_config.hpp": "27e50e00ca93b9c27091b217d189d5aee19671efe1afddead60eb40c74dae20b",
+    "transport_timer.hpp": "ca33f76311a599afd0309053c370a1f8ec42f04b0ae91ad83303a1801985f522",
+    "fns-compat.patch": "1f7f779d3cb753c4a72b518c93c08662dca6f8a249664f4749265fbec9d9c2ec"
+  },
+  "test_sha256": "44eb04c6ed1f5c38e134244c0c85ad3f9be70ca9a7990603dac253ff8a34d45b"
+}

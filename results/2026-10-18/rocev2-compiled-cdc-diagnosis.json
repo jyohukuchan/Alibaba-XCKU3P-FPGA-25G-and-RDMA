@@ -1,0 +1,79 @@
+{
+  "scope": "read-only fully linked post-opt candidate diagnosis; fixed-name verifier remains failed, not a final physical or hardware pass",
+  "checkpoint": "fpga/builds/as02mc04-25g-rocev2-YZB6xDCr/as02mc04_25g.runs/impl_1/fpga_opt.dcp",
+  "checkpoint_sha256": "20cd9ed332cd2db9c544cd199ff0c45d442df07ddad9a233f030fa36b8766431",
+  "stage": "post-opt, unplaced",
+  "inspection_session": 93812,
+  "inspection_exit_status": 1,
+  "diagnostic_reports_complete": true,
+  "unresolved_ooc_ips": 0,
+  "additional_xdc_loaded": false,
+  "design_or_constraints_changed": false,
+  "compiled_vio_pairs_verified": 6,
+  "lfc_destination_registers_present": 8,
+  "fixed_name_lfc_assertion_passed": false,
+  "failed_expected_name": "core_inst/mac[1].eth_mac_inst/mac_ctrl.tx_lfc_req_sync_reg_1_reg",
+  "actual_port1_tx_lfc_req_source": {
+    "cell": "core_inst/core_inst/core_pcie_inst/core_inst/iface[1].interface_inst/port[0].port_inst/rx_lfc_req_sync_1_reg_reg",
+    "pin": "Q",
+    "primitive": "FDCE",
+    "clock": "gtwiz_userclk_rx_srcclk_out[0]_1",
+    "destination": "core_inst/mac[1].eth_mac_inst/mac_ctrl.tx_lfc_req_sync_reg_2_reg/D"
+  },
+  "equivalent_source_register_evidence": {
+    "mac": "eth_mac_10g.tx_lfc_req_sync_reg_1 samples rx_lfc_req on rx_clk, async rx_rst clears to 0",
+    "port": "mqnic_port.rx_lfc_req_sync_1_reg samples the external rx_lfc_req when MAC_CTRL_ENABLE=0, same rx_clk/rx_rst/INIT=0",
+    "board": "Nexus fpga_core explicitly sets MAC_CTRL_ENABLE(0) and routes the per-port eth_rx_lfc_req through the core/PCIe/interface wrappers",
+    "actual_leaf_source_is_matching_rx_clocked_fdce": true,
+    "missing_name_is_supported_as_equivalent_register_merge": true,
+    "independent_formal_post_synthesis_equivalence_proven": false
+  },
+  "cdc_report_lfc_chains": {
+    "count": 4,
+    "classification": "CDC-3 Info",
+    "depth": 2,
+    "exception": "False Path at first destination D"
+  },
+  "methodology_timing7_critical_warnings": 0,
+  "other_critical_cdc_findings": 18,
+  "other_critical_findings_unconditionally_waived": false,
+  "preplacement_port0_second_stage_slack_ns": {
+    "max": 2.087,
+    "min": -0.055
+  },
+  "final_hold_timing_verified": false,
+  "linked_post_opt_utilization": {
+    "lut_used": 80933,
+    "lut_available": 162720,
+    "lut_percent": 49.74,
+    "ff_used": 118497,
+    "ff_available": 325440,
+    "ff_percent": 36.41,
+    "final_routed_utilization": false
+  },
+  "reader": "rdma/scripts/inspect_synth_cdc.tcl",
+  "reader_sha256": "c57df48cb38d4757fa41ad50be6c223fdb4fc913a49182bf085805989f5edae6",
+  "frozen_final_verifier": "fpga/verify_mac_flow_control_cdc.tcl",
+  "frozen_final_verifier_sha256": "5730082956bd264f64a3125aa1a3d17f5bf52a77ce743ba83288b1a281a1a4d5",
+  "frozen_final_verifier_unchanged": true,
+  "live_build_input_manifest_unchanged": true,
+  "pinned_source_sha256": {
+    "external/corundum/fpga/lib/eth/rtl/eth_mac_10g.v": "a3e3e6102c747ad7d29a7e87252b2fbb9484f480dad768bcf19fda82b10f7e8d",
+    "external/corundum/fpga/common/rtl/mqnic_port.v": "08453b7781cbea80aaa4810a1a2631f3862bd34221fce0f10faef8f1b8bdb40c",
+    "external/corundum/fpga/mqnic/Nexus_K3P_S/fpga_25g/rtl/fpga_core.v": "03a8e68dd9c375e7da7d3bbec491cb3796cd26139deed8bd3b4d36b0f72c740a"
+  },
+  "raw_records": {
+    "rdma/logs/compiled-cdc-inspect-003.log": "8c3b9420965a86bc1009eb37426fbf7434b6d8318fcc7d8b67aa81cb2b0ab871",
+    "rdma/logs/compiled-cdc-inspect-003_cdc.rpt": "47dcf055cb9d5a58f5bd3151edcc777cc33ab84885289518bdabde775847fa2e",
+    "rdma/logs/compiled-cdc-inspect-003_methodology.rpt": "b60011718fa6a7bc5504412f2d7a5f07de3f523c595d6718f9effb9fb3b07a00",
+    "rdma/logs/compiled-cdc-inspect-003_timing_summary.rpt": "1ac4d85f945c0678904cd90c7236bb1539a67060311474cec6d12622b8515b00",
+    "rdma/logs/compiled-cdc-inspect-003_utilization.rpt": "142322e0cd16f3e46863cbd17d54438cfc3efe3dad60769900c719ee72edfd01"
+  },
+  "required_next_work": "Implement and test an explicit equivalent-source-aware assertion without changing frozen live inputs; retain direct connections, proper native clock pairs, first-D-only exceptions and normally timed second stages; repeat on final routed candidate before any SRAM test.",
+  "main_job_session": 61132,
+  "main_implementation_pid": 640072,
+  "final_physical_gate_passed": false,
+  "hardware_rdma_verified": false,
+  "fpga_programmed": false,
+  "flash_written": false
+}

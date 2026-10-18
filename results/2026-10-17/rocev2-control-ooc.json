@@ -1,0 +1,54 @@
+{
+  "evidence_type": "isolated control/pattern physical diagnosis, not board validation",
+  "hardware_verified": false,
+  "ooc_timing_gate_pass": false,
+  "tool": "Vivado 2025.2",
+  "part": "xcku3p-ffvb676-1-e",
+  "clock_period_ns": 4,
+  "input_output_delay_ns": 0,
+  "top_level_clock_source_modelled": false,
+  "runs": [
+    {
+      "name": "control-ooc-001",
+      "source_sha256": {
+        "rocev2_control.v": "8a4beaa6ed9c3e0e0b74112f5fadd0c759e50bb4f34bee4bfe1028b60fbefb08",
+        "rocev2_write_engine.v": "4a67a52e40c12198b7bdb87dd0787fefbfa33d9f3f689a8a91cdda05198a1a63",
+        "rocev2_pattern_source.v": "95dcfd5c8f772c227a13943fac3ccfb0a10056caeb179e39b26f1c3acd7b8f9e"
+      },
+      "wns_ns": -1.085,
+      "whs_ns": -0.077,
+      "gate_pass": false,
+      "luts": 3343,
+      "registers": 2809,
+      "dsps": 4,
+      "bram36_tiles": 0,
+      "uram": 0,
+      "routed_checkpoint_sha256": "0d3b60e5f972c2d408108d56542e69c5c83e5d6d6f4afa2b2f1fc38cb26fec94",
+      "timing_report_sha256": "ba51109783dbaccdc22be410942142a7be76191e4a617bb5cf775d50aeaa41da"
+    },
+    {
+      "name": "control-ooc-002",
+      "source_sha256": {
+        "rocev2_control.v": "8a4beaa6ed9c3e0e0b74112f5fadd0c759e50bb4f34bee4bfe1028b60fbefb08",
+        "rocev2_write_engine.v": "0698f421ea45f316dd12f46e0b5003e3138c86b7a7ae8d5999e4e5f2aae658f7",
+        "rocev2_pattern_source.v": "95dcfd5c8f772c227a13943fac3ccfb0a10056caeb179e39b26f1c3acd7b8f9e"
+      },
+      "wns_ns": 0.445,
+      "whs_ns": -0.077,
+      "internal_only_wns_ns": 0.445,
+      "internal_only_whs_ns": 0.019,
+      "hold_diagnostic_endpoint_limit": 1000,
+      "failing_hold_input_port_paths_in_sample": 1000,
+      "failing_hold_other_paths_in_sample": 0,
+      "gate_pass": false,
+      "luts": 2948,
+      "registers": 2824,
+      "dsps": 1,
+      "bram36_tiles": 0,
+      "uram": 0,
+      "routed_checkpoint_sha256": "960fa4da60a6be6764592e3dfb1d9c4c181f2906047dd27bd25f2a53c28f7f2b",
+      "timing_report_sha256": "233eadc4fc9e8449c269830c9c499c254f4cff12ee34d5d3eff9c6918e9166b6"
+    }
+  ],
+  "interpretation": "Registered validation and a bounded-width multiply remove the observed internal setup failure without narrowing supported legal transfers. Overall hold gate remains failed; the worst 1000 hold endpoints are virtual input paths. This sampled classification neither proves every endpoint nor waives integrated board timing."
+}

@@ -1,0 +1,195 @@
+{
+  "reference_only": true,
+  "fpga_rdma_implemented": false,
+  "data_plane": "host RXE <-> CX455A RNIC",
+  "link_speed_mbit_s": 25000,
+  "throughput_claim": false,
+  "pcap_sha256": "8b7bb5027429e295b9c89dacf1b87fbb80b4407543168bfa12603ca483c127bc",
+  "rocev2_packets": 568,
+  "invalid_icrc": 0,
+  "operations": {
+    "WRITE_ONLY": 192,
+    "ACK": 248,
+    "WRITE_FIRST": 64,
+    "WRITE_LAST": 64
+  },
+  "tests": [
+    {
+      "direction": "cx-to-rxe",
+      "message_bytes": 1,
+      "messages": 16,
+      "receiver_verified_bytes": 16,
+      "mismatches": 0,
+      "unique_write_packets": 16,
+      "captured_repeated_writes": 0,
+      "captured_acks": 16,
+      "pass_test": true
+    },
+    {
+      "direction": "rxe-to-cx",
+      "message_bytes": 1,
+      "messages": 16,
+      "receiver_verified_bytes": 16,
+      "mismatches": 0,
+      "unique_write_packets": 16,
+      "captured_repeated_writes": 0,
+      "captured_acks": 15,
+      "pass_test": true
+    },
+    {
+      "direction": "cx-to-rxe",
+      "message_bytes": 63,
+      "messages": 16,
+      "receiver_verified_bytes": 1008,
+      "mismatches": 0,
+      "unique_write_packets": 16,
+      "captured_repeated_writes": 0,
+      "captured_acks": 16,
+      "pass_test": true
+    },
+    {
+      "direction": "rxe-to-cx",
+      "message_bytes": 63,
+      "messages": 16,
+      "receiver_verified_bytes": 1008,
+      "mismatches": 0,
+      "unique_write_packets": 16,
+      "captured_repeated_writes": 0,
+      "captured_acks": 12,
+      "pass_test": true
+    },
+    {
+      "direction": "cx-to-rxe",
+      "message_bytes": 64,
+      "messages": 16,
+      "receiver_verified_bytes": 1024,
+      "mismatches": 0,
+      "unique_write_packets": 16,
+      "captured_repeated_writes": 0,
+      "captured_acks": 16,
+      "pass_test": true
+    },
+    {
+      "direction": "rxe-to-cx",
+      "message_bytes": 64,
+      "messages": 16,
+      "receiver_verified_bytes": 1024,
+      "mismatches": 0,
+      "unique_write_packets": 16,
+      "captured_repeated_writes": 0,
+      "captured_acks": 14,
+      "pass_test": true
+    },
+    {
+      "direction": "cx-to-rxe",
+      "message_bytes": 65,
+      "messages": 16,
+      "receiver_verified_bytes": 1040,
+      "mismatches": 0,
+      "unique_write_packets": 16,
+      "captured_repeated_writes": 0,
+      "captured_acks": 16,
+      "pass_test": true
+    },
+    {
+      "direction": "rxe-to-cx",
+      "message_bytes": 65,
+      "messages": 16,
+      "receiver_verified_bytes": 1040,
+      "mismatches": 0,
+      "unique_write_packets": 16,
+      "captured_repeated_writes": 0,
+      "captured_acks": 15,
+      "pass_test": true
+    },
+    {
+      "direction": "cx-to-rxe",
+      "message_bytes": 4095,
+      "messages": 16,
+      "receiver_verified_bytes": 65520,
+      "mismatches": 0,
+      "unique_write_packets": 16,
+      "captured_repeated_writes": 0,
+      "captured_acks": 16,
+      "pass_test": true
+    },
+    {
+      "direction": "rxe-to-cx",
+      "message_bytes": 4095,
+      "messages": 16,
+      "receiver_verified_bytes": 65520,
+      "mismatches": 0,
+      "unique_write_packets": 16,
+      "captured_repeated_writes": 0,
+      "captured_acks": 16,
+      "pass_test": true
+    },
+    {
+      "direction": "cx-to-rxe",
+      "message_bytes": 4096,
+      "messages": 16,
+      "receiver_verified_bytes": 65536,
+      "mismatches": 0,
+      "unique_write_packets": 16,
+      "captured_repeated_writes": 0,
+      "captured_acks": 16,
+      "pass_test": true
+    },
+    {
+      "direction": "rxe-to-cx",
+      "message_bytes": 4096,
+      "messages": 16,
+      "receiver_verified_bytes": 65536,
+      "mismatches": 0,
+      "unique_write_packets": 16,
+      "captured_repeated_writes": 0,
+      "captured_acks": 16,
+      "pass_test": true
+    },
+    {
+      "direction": "cx-to-rxe",
+      "message_bytes": 4097,
+      "messages": 16,
+      "receiver_verified_bytes": 65552,
+      "mismatches": 0,
+      "unique_write_packets": 32,
+      "captured_repeated_writes": 0,
+      "captured_acks": 16,
+      "pass_test": true
+    },
+    {
+      "direction": "rxe-to-cx",
+      "message_bytes": 4097,
+      "messages": 16,
+      "receiver_verified_bytes": 65552,
+      "mismatches": 0,
+      "unique_write_packets": 32,
+      "captured_repeated_writes": 0,
+      "captured_acks": 16,
+      "pass_test": true
+    },
+    {
+      "direction": "cx-to-rxe",
+      "message_bytes": 8192,
+      "messages": 16,
+      "receiver_verified_bytes": 131072,
+      "mismatches": 0,
+      "unique_write_packets": 32,
+      "captured_repeated_writes": 0,
+      "captured_acks": 16,
+      "pass_test": true
+    },
+    {
+      "direction": "rxe-to-cx",
+      "message_bytes": 8192,
+      "messages": 16,
+      "receiver_verified_bytes": 131072,
+      "mismatches": 0,
+      "unique_write_packets": 32,
+      "captured_repeated_writes": 0,
+      "captured_acks": 16,
+      "pass_test": true
+    }
+  ],
+  "total_receiver_verified_bytes": 661536
+}

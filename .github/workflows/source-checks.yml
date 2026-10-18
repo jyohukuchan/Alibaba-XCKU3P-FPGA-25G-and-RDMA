@@ -15,6 +15,10 @@ jobs:
       - name: Install source-check dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y tcl jq
+          sudo apt-get install -y tcl jq build-essential libibverbs-dev libssl-dev iverilog
       - name: Check sources, dependency revisions, driver patch and recorded data
         run: bash scripts/check.sh
+      - name: Compile RDMA peer and run offline wire/integrity/Ethernet/control RTL tests
+        run: make -C rdma check
+      - name: Compile READ peer and run offline protected READ and version2 host tests
+        run: make -C rdma/read check

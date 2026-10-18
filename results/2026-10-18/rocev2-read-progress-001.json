@@ -1,0 +1,68 @@
+{
+  "objective": "READ機能を追加して。",
+  "goal_complete": false,
+  "hardware_verified": false,
+  "scope": "Verified offline READ prototype only; not a combined board image or native READ result",
+  "staged_evidence_verified": true,
+  "generated_hls_sha256": "7bcfddc9cb856060ccc3fbe4c8599538a03bf16105176b44f737c22fb0be55ff",
+  "current_buffer_sha256": "efd936002c9132a69a3c049d361495cbe145acd29b0d7906398067c0cdee6112",
+  "read_unit_tests": 19,
+  "legacy_unit_tests": 73,
+  "protected_host_readback_sizes": [
+    65,
+    4097
+  ],
+  "standalone_full_buffer_bytes_verified": 262144,
+  "isolated_buffer_setup_wns_ns": 0.203,
+  "isolated_buffer_hold_whs_ns": 0.048,
+  "completion_requirements": [
+    {
+      "id": 1,
+      "status": "not achieved",
+      "missing": "Actual native CX455A READ and REMOTE_READ peer"
+    },
+    {
+      "id": 2,
+      "status": "offline prototype only",
+      "missing": "PCIe BAR readback, native per-run data, multi-op/wrap cases"
+    },
+    {
+      "id": 3,
+      "status": "offline protected RAM/controller tested",
+      "missing": "Combined Ethernet ingress and exclusive BAR API"
+    },
+    {
+      "id": 4,
+      "status": "new-HLS legacy WRITE RTL regression only",
+      "missing": "WRITE regression on new combined hardware image"
+    },
+    {
+      "id": 5,
+      "status": "isolated buffer OOC only",
+      "missing": "Source-bound full-board image, full physical gates and CDC review"
+    },
+    {
+      "id": 6,
+      "status": "no hardware mutation this step",
+      "missing": "Finite thermal-supervised SRAM native bringup"
+    }
+  ],
+  "next_action": "Integrate exclusive versioned READ/WRITE BAR control, protected RAM and response-only Ethernet ingress",
+  "artifact_sha256": {
+    "results/2026-10-18/rocev2-read-hls-source-001.json": "3da033c72daf85b98c6e69e26fbadd47165e622d7d16ec5ff542a4b50ec7bb27",
+    "results/2026-10-18/rocev2-read-hls-probe-001.json": "4dcc7dd1612e55dc5f4fa10db160448510180532d156e78f4c95694a80c8a566",
+    "results/2026-10-18/rocev2-read-buffer-rtl-004.json": "e8b0884ebaa7cf46dc34950aaadbb4f1f84ed4ce5e8c40f013b520e1ab2acdba",
+    "results/2026-10-18/rocev2-read-engine-rtl-002.json": "0878547202dc3f414e564e790f2e5b3ee6568cdc13eca1faaf78dc52758d2251",
+    "results/2026-10-18/rocev2-read-capture-probe-003.json": "cff27a9a965ff02f511639630965b14fa3b51c3af12827e8cefa42753b308854",
+    "results/2026-10-18/rocev2-read-control-probe-001.json": "87b6eccdb8db4b5f9ebda3c5d88573fc149d385a032cb9dedf10f6dcbd392ea3",
+    "results/2026-10-18/rocev2-read-buffer-ooc-003.json": "436d37d52d55a9b85f8b97d26635b788591089e382ed828cbfc602eeebc070d9",
+    "results/2026-10-18/rocev2-read-hls-write-regression-001.json": "97dc6afdc3e3030e97a3b6e6f0eb0e2851b2cd8c2000a82a81c958405fba473d",
+    "rdma/read/check_progress.py": "7610218dfa81b795da89dc2ab2ad671b539e812ed027c9610286963f870efe9c",
+    "rdma/read/Makefile": "113a341b68d5d9f29467034a5714255032ed6b9e4ec5522c13696abab013f5eb",
+    "rdma/read/README.md": "9aa77c6ec132e594f5781ba0331bdb16b3696904b1147c7dd1c3a52bfe9874e5",
+    "docs/ROCEV2_READ_PROGRESS.md": "f1afde2cc5d1f79006d1aa33ef241d9ceadfa0322c5b03801e42d1df7ecc85d2",
+    "rdma/logs/read-wire-buffer-engine-002.log": "c5ce4cc66f39a913ecc5d167949e25fcedbcdfd121d9f9227281dbfb87180494",
+    "rdma/logs/read-baseline-source-check-001.log": "04a14cdd56aad619de5ab84994a2e60fb0c8bf286035787a29a2ccc71b69396c",
+    "rdma/logs/read-baseline-regression-001.log": "7b7df08b220af02b163fb3f9a669f11f2f06bab6322ea4a39759d8d11e7114e0"
+  }
+}

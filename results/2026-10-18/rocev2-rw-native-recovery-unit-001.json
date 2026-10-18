@@ -1,0 +1,46 @@
+{
+  "scope": "Native READ error/CLEAR/recovery models, not FPGA verification",
+  "hardware_verified": false,
+  "complete": true,
+  "tests": {
+    "test_bad_rejection_or_clear_cannot_start_the_recovery": {
+      "pass_test": true,
+      "rejected_faults": 13
+    },
+    "test_error_clear_then_native_read_keeps_source_lease_and_all_byte_checks": {
+      "pass_test": true,
+      "model_only": true,
+      "payload_bytes_compared": 195,
+      "bar_bytes_compared": 448,
+      "commands": [
+        1,
+        2,
+        1
+      ],
+      "source_lease_released_only_after_valid_read": true
+    },
+    "test_probe_timeout_and_interrupted_start_keep_owned_abort_path": {
+      "pass_test": true,
+      "aborts": 2
+    },
+    "test_recovery_flag_is_scoped_to_read_and_thermal_success": {
+      "pass_test": true
+    },
+    "test_supervisor_requires_requested_scope_and_detailed_zero_activity_proof": {
+      "pass_test": true,
+      "rejections": 15
+    },
+    "test_two_fresh_generations_required_before_any_start": {
+      "pass_test": true,
+      "no_wrap": true,
+      "rejected": 2
+    }
+  },
+  "source_sha256": {
+    "rdma/read/tests/test_read_recovery.py": "b3649e13b4d7f46e4c59eab6a6a6e0103270df9d48aec801a9d693b3fd832ded",
+    "rdma/read/host/fpga_rw_client.py": "ddc35295d9cbc6722a9636df387cb0c2df8e75f22280eaeb85dc3cd62418441b",
+    "rdma/read/host/native_rw_test.py": "1ec6a63e695e244c8d561bad95c24935f709cc1bdb65b6a23577a916695a2266",
+    "rdma/read/tests/test_rw_client.py": "f2027dfd294143b6b60e250259503d21e99678d53e05e7137cafb6383202903b",
+    "rdma/read/tests/test_native_rw_test.py": "9f5152f90b2974a77a9a87b205c70ed42756e928545a7ab5264f3e1bf8122c73"
+  }
+}

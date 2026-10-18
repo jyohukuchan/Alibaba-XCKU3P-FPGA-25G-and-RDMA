@@ -1,0 +1,17 @@
+diff --git a/hls/ib_transport_protocol/ib_transport_protocol.cpp b/hls/ib_transport_protocol/ib_transport_protocol.cpp
+--- a/hls/ib_transport_protocol/ib_transport_protocol.cpp
++++ b/hls/ib_transport_protocol/ib_transport_protocol.cpp
+@@ -1909,7 +1909,13 @@ void generate_exh(
+ 				rdmaHeader.setLength(meta.length); //TODO Move up??
+ 				rdmaHeader.setRemoteKey(msnMeta.r_key);
+ 				ap_uint<8> remainingLength = rdmaHeader.consumeWord(sendWord.data);
+ 				sendWord.keep = ~0;
++				// A READ request has only a 16-byte RETH and no payload.
++				// Do not mark the unused lanes of a wider word as valid.
++				if (WIDTH > RETH_SIZE)
++				{
++					sendWord.keep = (ap_uint<WIDTH/8>(1) << (RETH_SIZE/8)) - 1;
++				}
+ 				sendWord.last = (remainingLength == 0);
+ 				std::cout << "[GENERATE EXH " << INSTID << "]: RDMA_READ_RWQ" << std::endl;
+ #ifdef DBG_FULL

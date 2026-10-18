@@ -139,6 +139,17 @@ dict set params APP_AXIS_DIRECT_ENABLE "1"
 dict set params APP_AXIS_SYNC_ENABLE "1"
 dict set params APP_AXIS_IF_ENABLE "1"
 dict set params APP_STAT_ENABLE "1"
+if {[info exists env(AS02_ENABLE_ROCE)] && $env(AS02_ENABLE_ROCE) eq "1"} {
+    # Explicit optional variant. Keep the existing Ethernet-only build intact.
+    dict set params APP_ID "32'h41535232"
+    dict set params APP_ENABLE "1"
+    dict set params APP_CTRL_ENABLE "1"
+    dict set params APP_DMA_ENABLE "0"
+    dict set params APP_AXIS_DIRECT_ENABLE "0"
+    dict set params APP_AXIS_SYNC_ENABLE "1"
+    dict set params APP_AXIS_IF_ENABLE "0"
+    dict set params APP_STAT_ENABLE "0"
+}
 
 # DMA interface configuration
 dict set params DMA_IMM_ENABLE "0"

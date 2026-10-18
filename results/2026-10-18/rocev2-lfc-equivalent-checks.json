@@ -1,0 +1,96 @@
+{
+  "scope": "candidate equivalent-source-aware LFC structural/constraint assertions; not a qualified bitstream release or hardware validation",
+  "complete": true,
+  "hardware_verified": false,
+  "final_physical_gate_passed": false,
+  "source_allowlist": {
+    "pure_tcl_cases_passed": 14,
+    "arbitrary_source_allowed": false,
+    "audited_additional_source": "core_inst/core_inst/core_pcie_inst/core_inst/iface[1].interface_inst/port[0].port_inst/rx_lfc_req_sync_1_reg_reg",
+    "allowed_only_for": {
+      "port": 1,
+      "signal": "tx_lfc_req"
+    },
+    "required_source_condition": "pinned Nexus MAC_CTRL_ENABLE=0; same rx_lfc_req, RX clock, async reset and INIT0"
+  },
+  "checks": {
+    "compiled": {
+      "exit_status": 0,
+      "mode": "compiled",
+      "additional_xdc_loaded_for_positive_case": false,
+      "checkpoint": "fpga/builds/as02mc04-25g-rocev2-YZB6xDCr/as02mc04_25g.runs/impl_1/fpga_opt.dcp",
+      "checkpoint_sha256": "20cd9ed332cd2db9c544cd199ff0c45d442df07ddad9a233f030fa36b8766431",
+      "positive_annotations_verified": true,
+      "audited_source_aliases": 1,
+      "negative_controls_checked": 2,
+      "missing_async_reg_rejected": true,
+      "second_stage_overcut_rejected": true
+    },
+    "original": {
+      "exit_status": 0,
+      "mode": "annotate",
+      "additional_xdc_loaded_in_disposable_copy": true,
+      "checkpoint": "fpga/builds/as02mc04-25g-rocev2-ZpxYXdHv/as02mc04_25g.runs/impl_1/fpga_routed.dcp",
+      "checkpoint_sha256": "fdfae51f4a5f9357f896cd61126237929132be218453c310aa7fa9be428ab455",
+      "positive_annotations_verified": true,
+      "audited_source_aliases": 0,
+      "negative_controls_checked": 3,
+      "missing_first_d_cut_rejected": true,
+      "missing_async_reg_rejected": true,
+      "second_stage_overcut_rejected": true
+    }
+  },
+  "positive_verification_calls_per_checkpoint": 2,
+  "negative_control_executions": 5,
+  "distinct_fault_types": 3,
+  "preserved_requirements": {
+    "chains": 4,
+    "destination_registers": 8,
+    "destination_async_reg": true,
+    "exact_native_clock_names_and_period_ns": 2.56,
+    "register_primitive": "FDCE",
+    "register_init": "1'b0",
+    "exact_audited_source_whitelist": true,
+    "direct_q_to_d_connections": true,
+    "shared_destination_resets": true,
+    "first_destination_d_only_false_path_max_and_min": true,
+    "second_stage_finite_nonexcepted_max_and_min": true,
+    "source_and_endpoint_pins_verified": true
+  },
+  "preplacement_negative_hold_slack_is_not_final_acceptance": true,
+  "clean_positive_reports_precede_deliberate_faults": true,
+  "copies_discarded_without_checkpoint_or_image_write": true,
+  "frozen_final_verifier_at_test": {
+    "path": "fpga/verify_mac_flow_control_cdc.tcl",
+    "sha256": "5730082956bd264f64a3125aa1a3d17f5bf52a77ce743ba83288b1a281a1a4d5",
+    "unchanged": true,
+    "alias_revision_installed_in_live_build": false
+  },
+  "source_sha256": {
+    "rdma/scripts/verify_lfc_equivalent.tcl": "acb5a830f734b56ac6fe4fd0c95c6742f7434d82de0e66970d443f9c50089ff3",
+    "rdma/scripts/check_lfc_equivalent.tcl": "02e40152f146b5138d4d374702beeb860e5b29c39a94838e71c4b4a2103cd38b"
+  },
+  "test_file": "tests/check_lfc_source_allowlist.tcl",
+  "test_sha256": "f6411c1cd2f3bd4826cac23b2156143f12a13b10d9d35272b426f35a74d5b287",
+  "assumption_source_sha256": {
+    "fpga/mac_flow_control_cdc.xdc": "1a2191369820a9232779e078b21afd4afdc5c6426b92f0778f393584dbda4f26",
+    "external/corundum/fpga/lib/eth/rtl/eth_mac_10g.v": "a3e3e6102c747ad7d29a7e87252b2fbb9484f480dad768bcf19fda82b10f7e8d",
+    "external/corundum/fpga/common/rtl/mqnic_port.v": "08453b7781cbea80aaa4810a1a2631f3862bd34221fce0f10faef8f1b8bdb40c",
+    "external/corundum/fpga/mqnic/Nexus_K3P_S/fpga_25g/rtl/fpga_core.v": "03a8e68dd9c375e7da7d3bbec491cb3796cd26139deed8bd3b4d36b0f72c740a"
+  },
+  "raw_records": {
+    "rdma/logs/lfc-equivalent-compiled-001.log": "a8459cb475e16c85db71d2d93f2fd4d2a5f93612166c209c022cdf97ea1b36c4",
+    "rdma/logs/lfc-equivalent-compiled-001_cdc.rpt": "0dac892d18017e1774bc159edd3692b35c5619ffcab703798b004e1218fc4cff",
+    "rdma/logs/lfc-equivalent-compiled-001_methodology.rpt": "1eccda6269685a21672eb7721f6a2f2db3924fa584680ceb586d3af016c7aaab",
+    "rdma/logs/lfc-equivalent-compiled-001_exceptions.rpt": "8ef9eb88d20e7efb0e7de9c1297db98f43258bdb7f032e1857a9bf13bbfe4ad2",
+    "rdma/logs/lfc-equivalent-original-001.log": "c503c688a914de1b6aade08e4fc391ee839bc41327467b5217c466b903d8707d",
+    "rdma/logs/lfc-equivalent-original-001_cdc.rpt": "9bcf00e433162082c43a461ca8d89430415a0b0158b542443ee1c98c8a6ea575",
+    "rdma/logs/lfc-equivalent-original-001_methodology.rpt": "fc3836dac8a035e7ce8d482bb2b88d8d826999efd3a13c08c89b886e7449bc0c",
+    "rdma/logs/lfc-equivalent-original-001_exceptions.rpt": "44ed9062c4476c43de0e0bf4253fa96e8e50ffd425970b4c9f59d87118e75eb0"
+  },
+  "independent_formal_equivalence_proven": false,
+  "remaining": "Apply/test the audited verifier revision only with truthful source provenance after the frozen run ends; repeat against final routed candidate and enforce every unchanged physical gate before SRAM testing.",
+  "fpga_programmed": false,
+  "flash_written": false,
+  "fan_or_network_settings_changed": false
+}

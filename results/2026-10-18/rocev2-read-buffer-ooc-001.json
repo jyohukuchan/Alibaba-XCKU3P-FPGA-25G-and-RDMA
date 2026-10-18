@@ -1,0 +1,20 @@
+{
+  "scope": "Isolated READ buffer OOC, not full-board timing or hardware",
+  "hardware_verified": false,
+  "full_board_verified": false,
+  "target_period_ns": 4.0,
+  "setup_wns_ns": -4.929,
+  "hold_whs_ns": -0.151,
+  "bram_primitives": 64,
+  "pass_test": false,
+  "source_sha256": "268199b48afc0a2404a1651dd2fe7f0d83a465ed717284b736e97936b33aa89c",
+  "artifacts_sha256": {
+    "/home/user/fpga-rocev2-research/read-buffer-ooc-001/rocev2_read_buffer.v": "268199b48afc0a2404a1651dd2fe7f0d83a465ed717284b736e97936b33aa89c",
+    "/home/user/fpga-rocev2-research/read-buffer-ooc-001/utilization.rpt": "231b75ef39eba1f8ba60853b2af4478f882caf89f75c9580b7b0856577b6cfe6",
+    "/home/user/fpga-rocev2-research/read-buffer-ooc-001/timing.rpt": "acf4aa55e48933c16b31e22163e486cb1576b0a68bdab9b4eb468877d4e4f880",
+    "/home/user/fpga-rocev2-research/read-buffer-ooc-001/drc.rpt": "34decfe20af3f52c5848e6181a325d9f778a3802a6e32f36e4707e82c3ed13dd",
+    "/home/user/fpga-rocev2-research/read-buffer-ooc-001/routed.dcp": "f3d7a24217b79cd0c30403381687b39e6bb66a8ae1d42edd0bf59dc2f5f19df8",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/logs/read-buffer-ooc-001.log": "78d95316208407121fb8f517532d922ada23bca9fdbba105dd7cd53970a6c5b7"
+  },
+  "collector_sha256": "0fcbc7d8151226e77580cdd3e62c21affd354810396a74aa08494f813f8ea930"
+}

@@ -14,7 +14,9 @@ if [[ -z "$vivado_bin" || ! -x "$vivado_bin" ]]; then
     exit 2
 fi
 mkdir -p "$task_dir/builds"
-build_dir="$(mktemp -d "$task_dir/builds/as02mc04-25g-XXXXXXXX")"
+build_prefix=as02mc04-25g
+if [[ "${AS02_ENABLE_ROCE:-0}" == 1 ]]; then build_prefix=as02mc04-25g-rocev2; fi
+build_dir="$(mktemp -d "$task_dir/builds/$build_prefix-XXXXXXXX")"
 echo "Build directory: $build_dir"
 "$vivado_bin" -mode batch -source "$task_dir/build_25g.tcl" \
     -log "$build_dir/vivado.log" -journal "$build_dir/vivado.jou" -tclargs "$build_dir" \

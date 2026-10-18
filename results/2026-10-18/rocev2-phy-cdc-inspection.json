@@ -1,0 +1,434 @@
+{
+  "scope": "read-only inherited PHY/DRP CDC structural and scoped-constraint inspection on the original failed routed board; not new-candidate physical acceptance",
+  "exit_status": 0,
+  "inspection_complete": true,
+  "checkpoint": "fpga/builds/as02mc04-25g-rocev2-ZpxYXdHv/as02mc04_25g.runs/impl_1/fpga_routed.dcp",
+  "checkpoint_sha256": "fdfae51f4a5f9357f896cd61126237929132be218453c310aa7fa9be428ab455",
+  "checkpoint_unchanged": true,
+  "inspector": "rdma/scripts/inspect_phy_cdc.tcl",
+  "inspector_sha256": "4e12587fda52296aa11c53895d8ee175ae1e4c912b428370f6e7fb00226524c5",
+  "gt_hard_control": {
+    "channel_locations": [
+      "GTYE4_CHANNEL_X0Y15",
+      "GTYE4_CHANNEL_X0Y14"
+    ],
+    "mode_pin": "TXPDELECIDLEMODE",
+    "verified_mode_pin_drivers": "VCC on both channels",
+    "mode": 1,
+    "affected_cdc13_endpoints": 6,
+    "interpretation": "UG578 Table 3-39 defines mode 1 as asynchronous TXELECIDLE/TXPD operation; not a fabric synchronizer proof"
+  },
+  "drp_bundle": {
+    "source_clock": "pcie_user_clk",
+    "source_clock_period_ns": 4,
+    "destination_clock": "clk_125mhz_mmcm_out",
+    "destination_clock_period_ns": 8,
+    "request_destination_stages": 2,
+    "request_async_reg_verified": true,
+    "direct_request_connections_verified": true,
+    "scoped_paths": [
+      {
+        "source": "core_inst/sfp_rb_drp_inst/rb_we_reg_reg",
+        "destination": "core_inst/sfp_rb_drp_inst/drp_we_reg_reg",
+        "requirement_ns": 8,
+        "slack_ns": 7.419,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "core_inst/sfp_rb_drp_inst/rb_flag_reg_reg",
+        "destination": "core_inst/sfp_rb_drp_inst/rb_flag_sync_reg_1_reg",
+        "requirement_ns": 8,
+        "slack_ns": 7.317,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      }
+    ],
+    "handshake_hold_behavior_source_reviewed": true,
+    "full_final_bus_skew_gate_still_required": true
+  },
+  "static_configuration": {
+    "grouped_cdc_findings": 10,
+    "bits": 22,
+    "source_clock_period_ns": 8,
+    "destination_clock_period_ns": 2.56,
+    "direct_register_connections_verified": true,
+    "source_and_destination_init_zero": true,
+    "destination_stages": 1,
+    "registers": [
+      {
+        "port": 1,
+        "signal": "gt_txinhibit",
+        "bit": 0,
+        "domain": "tx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 1,
+        "signal": "gt_txpolarity",
+        "bit": 0,
+        "domain": "tx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 1,
+        "signal": "gt_rxpolarity",
+        "bit": 0,
+        "domain": "rx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 1,
+        "signal": "gt_txprbssel",
+        "bit": 0,
+        "domain": "tx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 1,
+        "signal": "gt_txprbssel",
+        "bit": 1,
+        "domain": "tx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 1,
+        "signal": "gt_txprbssel",
+        "bit": 2,
+        "domain": "tx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 1,
+        "signal": "gt_txprbssel",
+        "bit": 3,
+        "domain": "tx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 1,
+        "signal": "gt_rxprbssel",
+        "bit": 0,
+        "domain": "rx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 1,
+        "signal": "gt_rxprbssel",
+        "bit": 1,
+        "domain": "rx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 1,
+        "signal": "gt_rxprbssel",
+        "bit": 2,
+        "domain": "rx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 1,
+        "signal": "gt_rxprbssel",
+        "bit": 3,
+        "domain": "rx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 2,
+        "signal": "gt_txinhibit",
+        "bit": 0,
+        "domain": "tx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 2,
+        "signal": "gt_txpolarity",
+        "bit": 0,
+        "domain": "tx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 2,
+        "signal": "gt_rxpolarity",
+        "bit": 0,
+        "domain": "rx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 2,
+        "signal": "gt_txprbssel",
+        "bit": 0,
+        "domain": "tx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 2,
+        "signal": "gt_txprbssel",
+        "bit": 1,
+        "domain": "tx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 2,
+        "signal": "gt_txprbssel",
+        "bit": 2,
+        "domain": "tx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 2,
+        "signal": "gt_txprbssel",
+        "bit": 3,
+        "domain": "tx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 2,
+        "signal": "gt_rxprbssel",
+        "bit": 0,
+        "domain": "rx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 2,
+        "signal": "gt_rxprbssel",
+        "bit": 1,
+        "domain": "rx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 2,
+        "signal": "gt_rxprbssel",
+        "bit": 2,
+        "domain": "rx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      },
+      {
+        "port": 2,
+        "signal": "gt_rxprbssel",
+        "bit": 3,
+        "domain": "rx",
+        "source_init": "1'b0",
+        "destination_init": "1'b0"
+      }
+    ],
+    "scoped_paths": [
+      {
+        "source": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txinhibit_drp_reg_reg",
+        "destination": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txinhibit_sync_reg_reg",
+        "requirement_ns": 8,
+        "slack_ns": 7.701,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txpolarity_drp_reg_reg",
+        "destination": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txpolarity_sync_reg_reg",
+        "requirement_ns": 8,
+        "slack_ns": 7.594,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_rxpolarity_drp_reg_reg",
+        "destination": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_rxpolarity_sync_reg_reg",
+        "requirement_ns": 8,
+        "slack_ns": 7.674,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txprbssel_drp_reg_reg[0]",
+        "destination": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txprbssel_sync_reg_reg[0]",
+        "requirement_ns": 8,
+        "slack_ns": 7.599,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txprbssel_drp_reg_reg[1]",
+        "destination": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txprbssel_sync_reg_reg[1]",
+        "requirement_ns": 8,
+        "slack_ns": 7.526,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txprbssel_drp_reg_reg[2]",
+        "destination": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txprbssel_sync_reg_reg[2]",
+        "requirement_ns": 8,
+        "slack_ns": 7.677,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txprbssel_drp_reg_reg[3]",
+        "destination": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txprbssel_sync_reg_reg[3]",
+        "requirement_ns": 8,
+        "slack_ns": 7.684,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_rxprbssel_drp_reg_reg[0]",
+        "destination": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_rxprbssel_sync_reg_reg[0]",
+        "requirement_ns": 8,
+        "slack_ns": 7.692,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_rxprbssel_drp_reg_reg[1]",
+        "destination": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_rxprbssel_sync_reg_reg[1]",
+        "requirement_ns": 8,
+        "slack_ns": 7.462,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_rxprbssel_drp_reg_reg[2]",
+        "destination": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_rxprbssel_sync_reg_reg[2]",
+        "requirement_ns": 8,
+        "slack_ns": 7.529,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_rxprbssel_drp_reg_reg[3]",
+        "destination": "sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_rxprbssel_sync_reg_reg[3]",
+        "requirement_ns": 8,
+        "slack_ns": 7.467,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txinhibit_drp_reg_reg",
+        "destination": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txinhibit_sync_reg_reg",
+        "requirement_ns": 8,
+        "slack_ns": 7.684,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txpolarity_drp_reg_reg",
+        "destination": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txpolarity_sync_reg_reg",
+        "requirement_ns": 8,
+        "slack_ns": 7.369,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_rxpolarity_drp_reg_reg",
+        "destination": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_rxpolarity_sync_reg_reg",
+        "requirement_ns": 8,
+        "slack_ns": 7.677,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txprbssel_drp_reg_reg[0]",
+        "destination": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txprbssel_sync_reg_reg[0]",
+        "requirement_ns": 8,
+        "slack_ns": 7.478,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txprbssel_drp_reg_reg[1]",
+        "destination": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txprbssel_sync_reg_reg[1]",
+        "requirement_ns": 8,
+        "slack_ns": 7.599,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txprbssel_drp_reg_reg[2]",
+        "destination": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txprbssel_sync_reg_reg[2]",
+        "requirement_ns": 8,
+        "slack_ns": 7.581,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txprbssel_drp_reg_reg[3]",
+        "destination": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txprbssel_sync_reg_reg[3]",
+        "requirement_ns": 8,
+        "slack_ns": 7.698,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_rxprbssel_drp_reg_reg[0]",
+        "destination": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_rxprbssel_sync_reg_reg[0]",
+        "requirement_ns": 8,
+        "slack_ns": 7.53,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_rxprbssel_drp_reg_reg[1]",
+        "destination": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_rxprbssel_sync_reg_reg[1]",
+        "requirement_ns": 8,
+        "slack_ns": 7.522,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_rxprbssel_drp_reg_reg[2]",
+        "destination": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_rxprbssel_sync_reg_reg[2]",
+        "requirement_ns": 8,
+        "slack_ns": 7.701,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      },
+      {
+        "source": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_rxprbssel_drp_reg_reg[3]",
+        "destination": "sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_rxprbssel_sync_reg_reg[3]",
+        "requirement_ns": 8,
+        "slack_ns": 7.677,
+        "exception": "MaxDelay Path 8.000ns -datapath_only"
+      }
+    ],
+    "runtime_stability_proven": false,
+    "operating_condition": "No PHY DRP writes, reset or clock/rate changes during communication; one-stage control paths are not unconditional metastability-safe synchronizers."
+  },
+  "reset": {
+    "destination_stages": 4,
+    "destination_clock_period_ns": 8,
+    "async_reg_verified": true,
+    "init_all_one": true,
+    "first_d_constant_driver": "GND",
+    "direct_destination_connections_verified": true,
+    "shared_async_presets_verified": true,
+    "from_source": "sfp_sync_reset_inst/sync_reg_reg[3]",
+    "preset_false_path_verified_per_stage": true,
+    "runtime_reset_absence_proven": false
+  },
+  "scoped_path_count": 24,
+  "scoped_max_delay_requirement_ns": 8,
+  "min_scoped_slack_ns": 7.317,
+  "parser_diagnostic": {
+    "first_inspection_exit_status": 1,
+    "reason": "Initially compared path EXCEPTION with report_cdc category label; actual path property is MaxDelay Path 8.000ns -datapath_only.",
+    "constraint_or_design_changed": false,
+    "corrected_inspection_exit_status": 0
+  },
+  "raw_records": {
+    "rdma/logs/phy-cdc-inspect-001.log": "ab93ec3fd6572cae8ff01313c0852783ffdb84ad83510ea8ae823e22febc8395",
+    "rdma/logs/phy-cdc-inspect-002.log": "5250749b332ce80b5b20504313527683788af86ab24e5efb8a0962fd0fe6edd6",
+    "rdma/logs/phy-cdc-inspect-002_drp_we.rpt": "f494c8ff5963423c4f3ee8e126e75628500ebd8ad21fe10491a20dd72a3ce580"
+  },
+  "pinned_source_sha256": {
+    "external/corundum/fpga/common/rtl/rb_drp.v": "fca16c7e298a6cb18ca23faeb5e40a903cd3a23633f98dc2ad6f22839a3bd1c3",
+    "external/corundum/fpga/common/syn/vivado/rb_drp.tcl": "2a698b1d9be8a9a2f8dbdd3da3da9f25cc005d0f3bbeed5f6eb547c3613bf4fa",
+    "external/corundum/fpga/common/rtl/eth_xcvr_phy_10g_gty_wrapper.v": "eb95d9fdb0bd05cf4a76d2aceb71ee43ca46a7bd28952bf772c888570d3dc70f",
+    "external/corundum/fpga/common/syn/vivado/eth_xcvr_phy_10g_gty_wrapper.tcl": "5d01d10ffaf18d07fc13c8fb3227b6bd5e57e7be1c4f725dc5542e322ba3384e",
+    "external/corundum/fpga/lib/axis/rtl/sync_reset.v": "a6701ef1a7412be2615592c2db70a7cebc07baa208ffba79e34ecaedf0289a91"
+  },
+  "new_candidate_physical_review_complete": false,
+  "all_cdc_safe_unconditionally": false,
+  "timing_or_cdc_waivers_added": false,
+  "design_or_constraints_changed": false,
+  "hardware_verified": false,
+  "fpga_programmed": false,
+  "flash_written": false,
+  "fan_or_network_settings_changed": false
+}

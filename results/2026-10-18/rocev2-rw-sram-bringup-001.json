@@ -1,0 +1,83 @@
+{
+  "event": "source_bound_rw_sram_bringup",
+  "success": true,
+  "observed_at": "2026-10-18T16:53:07.133843+00:00",
+  "bitstream": "fpga/builds/as02mc04-25g-rw-g9gbomFJ/as02mc04_25g.bit",
+  "bitstream_sha256": "226c48c7756f311d511798c42435a438f20228eb313b909553638b12c3a58e0a",
+  "program_exit_status": 0,
+  "program_session_id": 32226,
+  "program_arguments": [
+    "--write-sram",
+    "--cable",
+    "jtag-smt2-nc",
+    "--ftdi-serial",
+    "210251019420",
+    "--freq",
+    "1000000"
+  ],
+  "removed_only_device": "0000:82:00.0",
+  "rescanned_only_bridge": "0000:80:03.0",
+  "exclusive_bridge_child_prechecked": true,
+  "old_application_quiescent": true,
+  "new_application": {
+    "id": "0x524f4332",
+    "version": "0x00020000",
+    "capacity_bytes": 262144,
+    "ram_base": "0x10000",
+    "run_generation": 0,
+    "status": 56,
+    "capture_state": 6,
+    "quiescent": true
+  },
+  "network": {
+    "restored_only": "fpga10g-fpga/enp130s0np1",
+    "ip": "198.18.10.2/30",
+    "mtu": 9000,
+    "new_fpga_mac": "82:c3:a6:58:f9:e2",
+    "peer_mode_ip_mtu_unchanged": true,
+    "peer_neighbor_deletion_requested_only": "198.18.10.2 dev enp3s0np0",
+    "peer_neighbor_already_absent_after_link_cycle": true,
+    "unused_fpga_port_left_down": true,
+    "management_address_route_mac_mtu_flags_semantically_equal": true
+  },
+  "thermal": {
+    "pre_samples": 10,
+    "pre_min_c": 58.89,
+    "pre_max_c": 59.41,
+    "post_samples": 10,
+    "post_min_c": 51.25,
+    "post_max_c": 51.85,
+    "over_temperature": false,
+    "configuration_status_before_after": "0x009079fc",
+    "all_readers_terminal_exit_zero": true
+  },
+  "rollback_accepted_write003_sha256": "ce5151679a0aeb2442f164ba63f7d85a3e753218808d588cdd46a4c498a31f60",
+  "safety": {
+    "sram_only": true,
+    "flash_modified": false,
+    "global_rescan": false,
+    "bridge_reset": false,
+    "fan_or_bios_changed": false,
+    "management_network_changed": false,
+    "unrelated_devices_reset": false,
+    "native_read_yet_verified": false
+  },
+  "artifact_sha256": {
+    "results/2026-10-18/rocev2-rw-board-build-001.json": "e7a5cae49e9f23c9e3a4ef2d1667be572a3fa4163e623e98cd12f53bc364ffd8",
+    "results/2026-10-18/rocev2-rw-before-program-legacy-002.json": "51eb7f1ebe0840d2d65fe8f0099abf02bde39402ebcce03a125f6b2677d25e45",
+    "results/2026-10-18/rocev2-rw-after-program-preflight-001.json": "63c0e977e32a9a43eb7e6f4a848ea9b7b5689b9942565cd47481d19af086d6ed",
+    "rdma/logs/rw-before-program-temperature-003.log": "7b0159f5cff225892ffabba4a2cf65f66e84bee4c4df758896202caa1c5dacd8",
+    "rdma/logs/rw-after-program-temperature-001.log": "89d5c98164e3eb6f13e731fb29ec98f7e7de9f4cccbc0f9750fae6c4e6d45e26",
+    "rdma/logs/rw-sram-program-001.log": "763d4938a43a1ae38daf6816bde384180d4646a8a08cd559a1941b0c27f34e76",
+    "rdma/logs/rw-jtag-detect-before-program-001.log": "281d4e5b524e1b8c798a60dfc542ce79f885c213c1c599c7189e617b4ad9b2a7",
+    "rdma/logs/rw-pci-before-program-001.log": "3c37f841c3cc6fb8f211c638967454c85a62578f46fc765b0bf52e2f04170b5b",
+    "rdma/logs/rw-pci-after-program-001.log": "7a0ca847c7981c48695039ac34e5857cc89517004ee48f660f6ac21a621cb596",
+    "rdma/logs/rw-bridge-before-program-001.log": "4ba4af9b0f84271f32bfe86834b86d3442173be8de6088a8ac18fa6b3933ad67",
+    "rdma/logs/rw-bridge-after-program-001.log": "033ac25e750849ae655c37f816a0b895047fd740845a697b4c4f4ae0c9284cf4",
+    "rdma/logs/rw-management-before-program-001.json": "588928909f919fc0b774ac29d5d5a98e1fb09427e66855c7436e5387b8898aac",
+    "rdma/logs/rw-management-after-program-001.json": "2631cbba11d18baa6b3cf31d3a1be9288159e9800904ad352ec5223445499d73",
+    "rdma/logs/rw-management-route-before-program-001.json": "20dfa9bcc6d9df8cbc8174c6b6a02ec37f6447a556891563677218cd8ba695d2",
+    "rdma/logs/rw-management-route-after-program-001.json": "20dfa9bcc6d9df8cbc8174c6b6a02ec37f6447a556891563677218cd8ba695d2"
+  },
+  "goal_complete": false
+}

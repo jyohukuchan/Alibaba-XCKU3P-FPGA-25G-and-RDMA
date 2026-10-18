@@ -1,0 +1,37 @@
+{
+  "scope": "RW preflight predicate/hash negative controls; not CAD or hardware",
+  "hardware_verified": false,
+  "complete": true,
+  "tests": {
+    "test_changed_source_and_relaxed_native_gate_fingerprints_rejected": {
+      "pass_test": true,
+      "changed_source_rejected": true,
+      "unchanged_native25_inputs_verified": true,
+      "wrong_native_gate_identity_rejected": true
+    },
+    "test_current_combined_app_reports_accepted": {
+      "pass_test": true,
+      "accepted": 4
+    },
+    "test_read_missing_data_protection_or_checksums_rejected": {
+      "pass_test": true,
+      "rejected": 24
+    },
+    "test_warm_same_psn_stale_and_host_evidence_required": {
+      "pass_test": true,
+      "rejected": 8
+    },
+    "test_write_regression_scope_rejected_when_incomplete": {
+      "pass_test": true,
+      "rejected": 10
+    }
+  },
+  "source_sha256": {
+    "rdma/read/fpga/check_build.py": "8e66aaaba8d1cd96643ee7907be541f0d52af0435d3301577c6d6ffc4ec91606",
+    "rdma/read/tests/test_rw_build_gate.py": "693494f1f05736d63da1cf4138ea071f7be705c038b3aa33d5e420b28b768578",
+    "results/2026-10-18/rocev2-rw-write-app-001.json": "02f6d17996162f1ab8dc6d78b5bfc2a3ddad56340ab3b94a9e050bc2fe4a34af",
+    "results/2026-10-18/rocev2-rw-read-app-003.json": "08ebbc5cc8803053e299e5016ce8ac4f96c77086a5f5cac9bb1223a3de554f4e",
+    "results/2026-10-18/rocev2-rw-read-app-002.json": "78b114454861163623c021e46c43c398e765cf0614fec591b677d2c09a9c5161",
+    "results/2026-10-18/rocev2-rw-warm-app-001.json": "d8102693f888539e4e32e468c01fa00b15cad39738f3d5079dd837c4ab82897c"
+  }
+}

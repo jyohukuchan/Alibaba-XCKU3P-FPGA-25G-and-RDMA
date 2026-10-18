@@ -1,0 +1,53 @@
+{
+  "evidence_type": "full app/generated transport ACK-loss/replay RTL simulation, not RNIC hardware",
+  "hardware_verified": false,
+  "pass_test": true,
+  "cycles": 255507,
+  "wire_transmissions": 2,
+  "success_ack_events": 1,
+  "network_stall_cycles": 641,
+  "axi_reads": 15,
+  "axi_writes": 17,
+  "boundary": "app",
+  "unique_writes": 1,
+  "unique_payload_bytes": 65,
+  "wire_payload_bytes": 130,
+  "withheld_ack_count": 1,
+  "actual_transport_retransmissions": 1,
+  "pattern_reads": 2,
+  "replay_key_address_psn_payload_checked": true,
+  "wire_icrcs_valid": true,
+  "wire_ipv4_checksums_valid": true,
+  "core_clock_ps": 4000,
+  "original_timer_clock_unmodified": true,
+  "physical_mac_drain_verified": false,
+  "hls_build": "probe-ku3p-512-8qp-010",
+  "generated_rtl_sha256": "24866cb7b43234a0066c5383b543a1bb702381a83dc11dac664543a6859f3b63",
+  "source_sha256": {
+    "rocev2_control.v": "8a4beaa6ed9c3e0e0b74112f5fadd0c759e50bb4f34bee4bfe1028b60fbefb08",
+    "rocev2_endpoint.v": "1a9f57798de94954b60874462ffb8b5e65e6b79596b17e4f9d5b4548a7c69aba",
+    "rocev2_ethernet_rx.v": "f726f52ffb9fcd7c858c6576f19051933989d89fa7c482cd795e6a6a3afa0ecc",
+    "rocev2_ethernet_tx.v": "8a74d989f9ce93a9c1dca712b459de9d1fa2664791839a4fcc613581eb5ba46c",
+    "rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b",
+    "rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rocev2_pattern_source.v": "95dcfd5c8f772c227a13943fac3ccfb0a10056caeb179e39b26f1c3acd7b8f9e",
+    "rocev2_tx_guard.v": "1d00bf7018a16f4e29d611c02072db17a57261c1d1fee31e50eb7ddae9a7ec4d",
+    "rocev2_tx_padding.v": "0eb7cb8288f7bc63a62d32e439cbba3dd87f1db829437806fb1392497a87162a",
+    "rocev2_write_engine.v": "0698f421ea45f316dd12f46e0b5003e3138c86b7a7ae8d5999e4e5f2aae658f7",
+    "mqnic_app_block.v": "eb91e38273196446e6d9e092ff0d90ff0d1341a3ab7be49302d1f58346c9ba43"
+  },
+  "dependency_sha256": {
+    "test_control_transport.py": "f623c5c890a4ae2bc87ea3943b1a459f0a717972587fa5ca2f89a52dd9732809",
+    "app_boundary.py": "d39c75625f1d387ea4f5a4794a076ce2d191288540ddb38cc9fe4320eceec1d8",
+    "test_control_rtl.py": "bb74af70d8427596b01c286ff3b3cf3988278c92fd74247ef8b0966a6fa4193a"
+  },
+  "test_sha256": "639106e1e649edae63fdf82fdf047002fe344c8341ac6109d25fbfa8c33cadc1",
+  "host_wall_timeout_seconds": 900,
+  "virtual_watchdog_and_retransmit_timer_unchanged": true,
+  "simulation_log": "rdma/logs/app-stage-selected-retry-002.simulation.log",
+  "raw_records": {
+    "rdma/logs/app-stage-selected-retry-002.log": "b76e35c4cb478fe354ca2b1e06b41b643cec5e3b421e7e77503444d6897bd8e8",
+    "rdma/logs/app-stage-selected-retry-002.json": "5847532ad2cc51cd9fa574412d9cca60eaa179082ac4cf74ea857d46fda80496",
+    "rdma/logs/app-stage-selected-retry-002.simulation.log": "4241d0fc0cf479608fe9704fc32601c7c1b027507eea080e7cb4a8229bd86187"
+  }
+}

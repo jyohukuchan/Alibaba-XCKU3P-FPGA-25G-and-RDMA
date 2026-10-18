@@ -1,0 +1,91 @@
+{
+  "scope": "Native-tool protocol/MMIO models and C/Python oracle, not hardware",
+  "hardware_verified": false,
+  "complete": true,
+  "tests": {
+    "test_c_python_nonce_payload_exactly_match": {
+      "pass_test": true,
+      "all_reference_bytes_compared": 195,
+      "protocol_negative_controls": 4
+    },
+    "test_completion_does_not_replace_real_ram_commit_counters": {
+      "pass_test": true,
+      "rejections": 13
+    },
+    "test_config_bounds_and_peer_read_resource_limit": {
+      "pass_test": true,
+      "rejected_configurations": 13,
+      "peer_resource_limit_checked": true
+    },
+    "test_configuration_readback_failure_cannot_start": {
+      "pass_test": true,
+      "rejections": 2
+    },
+    "test_endpoint_malformed_or_mismatched_rejected_before_mmio_writes": {
+      "pass_test": true,
+      "rejections": 15
+    },
+    "test_full_width_read_and_all_bar_bytes_compared": {
+      "pass_test": true,
+      "cases": [
+        {
+          "size": 1,
+          "count": 3,
+          "payload_bytes": 3,
+          "bar_bytes": 256
+        },
+        {
+          "size": 65,
+          "count": 3,
+          "payload_bytes": 195,
+          "bar_bytes": 448
+        },
+        {
+          "size": 4097,
+          "count": 3,
+          "payload_bytes": 12291,
+          "bar_bytes": 12544
+        },
+        {
+          "size": 65536,
+          "count": 4,
+          "payload_bytes": 262144,
+          "bar_bytes": 262144
+        }
+      ]
+    },
+    "test_live_native_peer_requires_explicit_authorization": {
+      "pass_test": true
+    },
+    "test_memory_mapping_bounds_and_old_client_version_refusal": {
+      "pass_test": true
+    },
+    "test_peer_readiness_or_source_verdict_cannot_be_skipped": {
+      "pass_test": true
+    },
+    "test_timeout_and_interrupt_abort_before_source_release": {
+      "pass_test": true,
+      "aborts": 2
+    },
+    "test_unknown_version_or_existing_owner_refused_without_mutation": {
+      "pass_test": true,
+      "rejections": 4
+    },
+    "test_unproven_abort_never_claims_or_requests_mr_release": {
+      "pass_test": true
+    },
+    "test_unwritten_stale_tail_and_sentinel_corruption_rejected": {
+      "pass_test": true,
+      "rejections": 4,
+      "all_bar_bytes_compared_on_failure": true
+    }
+  },
+  "source_sha256": {
+    "rdma/read/tests/test_rw_client.py": "f2027dfd294143b6b60e250259503d21e99678d53e05e7137cafb6383202903b",
+    "rdma/read/host/fpga_rw_client.py": "ddc35295d9cbc6722a9636df387cb0c2df8e75f22280eaeb85dc3cd62418441b",
+    "rdma/host/fpga_write_client.py": "dc2e46d58547f1be3a30706b5e703f97facc57c6247b7b650efa1be170f7c13e",
+    "rdma/read/host/rc_read_peer.c": "9d7546f6f7102f735e999c1a503a37e16f31be0a4300b824436aaec18f3bdc1b",
+    "rdma/read/host/Makefile": "fab487a621ffb4ec0b9b349d1e3fb00f253c14649335a666349342520663025a",
+    "rdma/read/build/rc_read_peer": "606249ad74149c1470d4f26bd3685ed07638c2869ce67a92fc1a5616f7e25cf5"
+  }
+}

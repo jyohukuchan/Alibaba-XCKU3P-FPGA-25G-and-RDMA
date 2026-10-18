@@ -1,0 +1,82 @@
+{
+  "evidence_type": "transmit admission/SFD-tail RTL unit simulation, not integrated MAC or hardware",
+  "complete": true,
+  "hardware_verified": false,
+  "integrated_mac_drain_verified": false,
+  "tail_cycles": 1024,
+  "core_clock_hz": 250000000,
+  "minimum_line_rate_gbit_s": 25,
+  "maximum_ipv4_bytes": 8192,
+  "cases": [
+    {
+      "pass_test": true,
+      "scenario": 0,
+      "cycles": 2150,
+      "admitted_frames": 2,
+      "completed_frames": 2,
+      "output_words": 520,
+      "output_frames": 2,
+      "output_stalls": 16,
+      "fault": 0
+    },
+    {
+      "pass_test": true,
+      "scenario": 1,
+      "cycles": 1102,
+      "admitted_frames": 0,
+      "completed_frames": 0,
+      "output_words": 0,
+      "output_frames": 0,
+      "output_stalls": 0,
+      "fault": 1
+    },
+    {
+      "pass_test": true,
+      "scenario": 2,
+      "cycles": 2128,
+      "admitted_frames": 1,
+      "completed_frames": 1,
+      "output_words": 513,
+      "output_frames": 1,
+      "output_stalls": 0,
+      "fault": 1
+    },
+    {
+      "pass_test": true,
+      "scenario": 3,
+      "cycles": 1068,
+      "admitted_frames": 8,
+      "completed_frames": 8,
+      "output_words": 8,
+      "output_frames": 8,
+      "output_stalls": 0,
+      "fault": 0
+    },
+    {
+      "pass_test": true,
+      "scenario": 4,
+      "cycles": 2202,
+      "admitted_frames": 1,
+      "completed_frames": 0,
+      "output_words": 1,
+      "output_frames": 1,
+      "output_stalls": 0,
+      "fault": 0
+    },
+    {
+      "pass_test": true,
+      "scenario": 5,
+      "cycles": 1539,
+      "admitted_frames": 1,
+      "completed_frames": 1,
+      "output_words": 512,
+      "output_frames": 1,
+      "output_stalls": 0,
+      "fault": 0
+    }
+  ],
+  "source_sha256": {
+    "rocev2_tx_guard.v": "1d00bf7018a16f4e29d611c02072db17a57261c1d1fee31e50eb7ddae9a7ec4d"
+  },
+  "test_sha256": "e2e2efc2782e83e7e69333460c087d722fd4c406c072bda32c72a33874d8c42a"
+}

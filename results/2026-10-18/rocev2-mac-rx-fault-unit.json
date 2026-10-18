@@ -1,0 +1,27 @@
+{
+  "scope": "Offline model-only fault-control/runner tests; not hardware evidence",
+  "command": "PYTHONDONTWRITEBYTECODE=1 make -C rdma check-host",
+  "exit_status": 0,
+  "new_fault_tests": 16,
+  "total_python_host_tests": 57,
+  "failures": 0,
+  "errors": 0,
+  "hardware_accessed": false,
+  "thermal_guard_executed": false,
+  "source_sha256": {
+    "rdma/Makefile": "7043fab7f70e20ac89ab6ae0332c5bc22a16bc0cfdd1f65c9a1d049ce3450a6d",
+    "rdma/host/mac_rx_fault.py": "5c72b4cc69cc08cf7fbec9f5a61984c23ab9802dcb44f4bb82e304b203cf61ee",
+    "rdma/host/native_fault_test.py": "d4c56ea839e3d157d2a332cba6156ce7667a16650cf973d807af4452d374f666",
+    "rdma/tests/test_mac_rx_fault.py": "82be3c03d2796346780ea4c2e7e83307f9f252a42d1dbfd0905ade09c64b42dc",
+    "rdma/tests/test_native_fault_test.py": "7a72876382e623e97f2c4163d59dcdf9a05ff24bdf99e1d8cca2f936fdc0f1bf",
+    "rdma/host/fpga_write_client.py": "dc2e46d58547f1be3a30706b5e703f97facc57c6247b7b650efa1be170f7c13e",
+    "rdma/host/native_test.py": "1695787f534e8632cf7509ddf3644d112035f1720e9972014c309a323b0885d0",
+    "rdma/host/native_preflight.py": "55b06074199648e7cb0bc378d6f1db50932e2798880bbf6a9155fc703d8e2845",
+    "rdma/tests/test_fpga_write_client.py": "ad8be9d59bee9b8a2cf3b7701ee9051aafc7f299516e1329cdc899c36dda1112",
+    "rdma/tests/test_native_test.py": "d1aa5778e4477c7ed5f8e1906dfcc543dc161e6034f835a8091501d894be5759",
+    "rdma/tests/test_native_preflight.py": "4f138f1384eb9e9c2132ec7ca9fd3f1a11dff4cc45b0e12a3bc2533695228044"
+  },
+  "raw_records": {
+    "rdma/logs/native-fault-host-unit-003.log": "25b2e48405b43207909427869d6ab2f551f8fa47b2173bfa613ddf388aede311"
+  }
+}

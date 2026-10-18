@@ -1,0 +1,147 @@
+{
+  "objective": "RoCEv2・25Gb通信を最終目標としつつ、細かい目標に分けながら進めて。",
+  "audited_at": "2026-10-18T10:59:30.565143+00:00",
+  "completion_audit_passed": true,
+  "requirements": [
+    {
+      "id": "R1",
+      "requirement": "FPGA implements native25 RoCEv2 transport and interoperates with the actual CX455A hardware RNIC",
+      "proven": true,
+      "evidence": [
+        "results/2026-10-18/rocev2-board-build-003.json",
+        "results/2026-10-18/rocev2-sram-bringup-003.json",
+        "results/2026-10-18/rocev2-native-003.json"
+      ],
+      "scope": "Experimental IPv4 RC WRITE_ONLY initiator from bounded FPGA-local pattern, not a full verbs provider"
+    },
+    {
+      "id": "R2",
+      "requirement": "Actual RDMA registered-memory contents, protocol state, acknowledgement/completion and error behavior verified",
+      "proven": true,
+      "evidence": [
+        "results/2026-10-18/rocev2-native-003.json",
+        "results/2026-10-18/rocev2-native-retry-recovery-003.json"
+      ],
+      "checks": [
+        "Every byte in distinct receiver ranges; zero mismatches",
+        "65-byte tail and 24-bit PSN wrap; queued16384-WRITE case",
+        "Controlled ACK-loss retransmission and final ACK/quiescence",
+        "10ms controller ERROR2 with zero ACKs, then normal acknowledged WRITE without NIC reset or programming"
+      ]
+    },
+    {
+      "id": "R3",
+      "requirement": "Finite large-transfer payload performance on25G demonstrated; not inferred from link speed/TCP/simulation/single packet",
+      "proven": true,
+      "evidence": [
+        "results/2026-10-18/rocev2-native-003.json"
+      ],
+      "verified_bytes": 67108864,
+      "hardware_cycles": 5531559,
+      "clock_hz": 250000000,
+      "payload_gbit_s": 24.26399646103386
+    },
+    {
+      "id": "R4",
+      "requirement": "FPGA is not replaced by a software RoCE endpoint during native completion audit",
+      "proven": true,
+      "evidence": [
+        "results/2026-10-18/rocev2-native-003.json",
+        "results/2026-10-18/rocev2-native-retry-recovery-003.json",
+        "rdma/logs/native25-final-audit-preflight-003.json"
+      ],
+      "current_infiniband_devices": [
+        "hfi1_0",
+        "mlx5_0"
+      ],
+      "control_tcp_only": true
+    },
+    {
+      "id": "R5",
+      "requirement": "Source/dependency/build/programming identities and measurements distinguish tested artifacts from variants",
+      "proven": true,
+      "evidence": [
+        "results/2026-10-18/rocev2-board-build-003.json",
+        "results/2026-10-18/rocev2-sram-bringup-003.json",
+        "results/2026-10-18/rocev2-native-003.json",
+        "results/2026-10-18/rocev2-mac-rx-fault-unit.json",
+        "results/2026-10-18/rocev2-native-retry-recovery-003.json",
+        "rdma/logs/final-hls-provenance-003.json"
+      ],
+      "artifact_source_raw_bindings_revalidated": 127,
+      "unchanged_board_manifest_entries": 298,
+      "generated_hls_files": 138,
+      "pinned_dependencies": {
+        "external/corundum": "1ca0151b97af85aa5dd306d74b6bcec65904d2ce",
+        "external/as02mc04-port": "b00e73a136170604e40341b13b9b1fb9df9304fb",
+        "/home/user/fpga-rocev2-research/fpga-network-stack": "75c32bae73f5c336b5c46c9de35ae0cb9cb7cc1c"
+      }
+    },
+    {
+      "id": "R6",
+      "requirement": "Finite supervised tests preserve SRAM-only/BIOS Medium/management and unrelated-device constraints",
+      "proven": true,
+      "evidence": [
+        "results/2026-10-18/rocev2-sram-bringup-003.json",
+        "results/2026-10-18/rocev2-native-003.json",
+        "results/2026-10-18/rocev2-native-retry-recovery-003.json"
+      ],
+      "flash_modified": false,
+      "fan_settings_changed": false,
+      "management_unchanged": true,
+      "sustained_communication_load": false,
+      "conditional_cdc_review_not_unconditional_waiver": true
+    }
+  ],
+  "milestones": {
+    "M0": "complete for documented finite experimental end state",
+    "M1": "complete for documented finite experimental end state",
+    "M2": "complete for documented finite experimental end state",
+    "M3": "complete for documented finite experimental end state",
+    "M4": "complete for documented finite experimental end state",
+    "M5": "complete for documented finite experimental end state"
+  },
+  "bitstream_sha256": "ce5151679a0aeb2442f164ba63f7d85a3e753218808d588cdd46a4c498a31f60",
+  "terminal_checks": {
+    "source_checks": {
+      "session_id": 27620,
+      "exit_status": 0
+    },
+    "full_rdma_checks": {
+      "session_id": 37111,
+      "exit_status": 0,
+      "python_tests": 73,
+      "suites": 14,
+      "c_pattern_self_test": true
+    },
+    "hls_provenance_exit_status": 0
+  },
+  "final_application": {
+    "bar2_present": true,
+    "registers_read": true,
+    "id": 1380926258,
+    "version": 65536,
+    "status": 1850,
+    "supported": true,
+    "quiescent": true
+  },
+  "raw_records": {
+    "results/2026-10-18/rocev2-board-build-003.json": "fb9d62f0360b0f2663278422568fdf9bda042a1f1c20ad1ce059ebeb3214be6f",
+    "results/2026-10-18/rocev2-sram-bringup-003.json": "3f5faa0b6ab6316a25e91fa848ab054e4d4243788ea12c8a0e36514abd269729",
+    "results/2026-10-18/rocev2-native-003.json": "da58e07d5f9c45f7bb3431aeb6dcd4a72965c81d932f0f88c91028732683ea7c",
+    "results/2026-10-18/rocev2-mac-rx-fault-unit.json": "abc3af9538ce400d4cfde7981004d3d8acbbf72cd3c1d633cea9781e563a43c6",
+    "results/2026-10-18/rocev2-native-retry-recovery-003.json": "67714d5166454b12bf53383c6f4cf16fbf10e4727e31ad0dca159027a70b129a",
+    "rdma/logs/source-check-final-003.log": "008243071ba7232ba817fe142f934ca83a181a782542ced250e48a80c8dcf5a1",
+    "rdma/logs/rdma-full-check-after-m4-003.log": "37ecce17e91ec3075b1767935c0555be473f8a20522c062b9547961c4024d22b",
+    "rdma/logs/final-hls-provenance-003.json": "8a4d0fafaed6dcdf9dda0cb542e633447b6fa53138b66edda98d4a296993efe2",
+    "rdma/logs/native25-final-audit-preflight-003.json": "704c41df4d62b9179b041d12e46a3eb9154384322cd65d2fd12d62b592e093d2"
+  },
+  "limitations": [
+    "No inbound WRITE/READ, general FPGA host-memory verbs provider, or native InfiniBand",
+    "No arbitrary loss/congestion/protection-NAK/multi-QP or production reliability qualification",
+    "No sustained thermal qualification; finite64MiB performance case22.126236ms only",
+    "Conditional CDC operating restrictions retained; known18 findings unwaived",
+    "Preexisting bridge FatalErr/SDES and disabled root AER reporting remain; zero counters do not prove complete error reporting"
+  ],
+  "new_code_or_records_pushed": false
+}

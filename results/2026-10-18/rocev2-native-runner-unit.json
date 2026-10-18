@@ -1,0 +1,19 @@
+{
+  "evidence_type": "native runner record/child-process model tests, not actual RDMA or temperature monitoring",
+  "pass_test": true,
+  "tests_run": 12,
+  "failures": 0,
+  "errors": 0,
+  "hardware_verified": false,
+  "hardware_accessed": false,
+  "traffic_generated": false,
+  "registered_memory_tested": false,
+  "thermal_guard_executed": false,
+  "source_sha256": {
+    "native_test.py": "1695787f534e8632cf7509ddf3644d112035f1720e9972014c309a323b0885d0",
+    "native_preflight.py": "55b06074199648e7cb0bc378d6f1db50932e2798880bbf6a9155fc703d8e2845",
+    "fpga_write_client.py": "dc2e46d58547f1be3a30706b5e703f97facc57c6247b7b650efa1be170f7c13e"
+  },
+  "test_sha256": "d1aa5778e4477c7ed5f8e1906dfcc543dc161e6034f835a8091501d894be5759",
+  "fixture_dependency_sha256": "4f138f1384eb9e9c2132ec7ca9fd3f1a11dff4cc45b0e12a3bc2533695228044"
+}

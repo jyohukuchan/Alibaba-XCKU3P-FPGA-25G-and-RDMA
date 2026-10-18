@@ -1,0 +1,146 @@
+{
+  "scope": "functional setup-path correction and disposable old-board LFC annotation check; not new physical or hardware validation",
+  "recorded_at_utc": "2026-10-18 05:46:54 UTC",
+  "original_full_board_build": {
+    "build_directory": "fpga/builds/as02mc04-25g-rocev2-ZpxYXdHv",
+    "exit_status": 1,
+    "exit_time_utc": "2026-10-18 05:24:04 UTC",
+    "setup_wns_ns": -0.189,
+    "setup_tns_ns": -79.927,
+    "setup_failing_endpoints": 901,
+    "bitstream_generated": false,
+    "fpga_programmed": false,
+    "log": "rdma/logs/native25-board-build-001.log",
+    "log_sha256": "0f167d0ef7990611d3a04767683d9373c72b791fc970a3847f334e3083368e5f"
+  },
+  "correction": {
+    "changed_rtl": "rdma/rtl/rocev2_ipv4_icrc.v",
+    "old_sha256": "0960b22a21deeb89a1679aee3da01f0fb93e946ceadc6ebcc13443f1b19b6344",
+    "new_sha256": "2231fdad5e3ccb701e1d716f891f8f1a049819b105ccc9273541ead442a195d7",
+    "change": "replace dense-keep popcount/shift/subtract predicate with nonzero no-1-above-0 prefix predicate",
+    "original_clock_ps": 4000,
+    "clock_requirement_reduced": false,
+    "packet_validation_relaxed": false,
+    "integrity_testbench_count": 3,
+    "all_keep_masks_checked_per_testbench": 65536,
+    "checksum_sum_values_checked": 2097152,
+    "full_app_cases_passed": 5,
+    "app_wire_writes": 15,
+    "app_wire_payload_bytes": 12876,
+    "app_success_ack_events": 14,
+    "full_retry_cycles": 255506,
+    "full_retry_actual_transport_retransmissions": 1,
+    "full_retry_wire_transmissions": 2,
+    "full_retry_pattern_reads": 2,
+    "full_retry_success_ack_events": 1,
+    "original_timer_clock_unmodified": true,
+    "evidence": [
+      "results/2026-10-17/rocev2-icrc-rtl.json",
+      "results/2026-10-17/rocev2-padding-rtl.json",
+      "results/2026-10-17/rocev2-transport-rx-rtl.json",
+      "results/2026-10-17/rocev2-transport-tx-rtl.json",
+      "results/2026-10-17/rocev2-ethernet-transport-tx-rtl.json",
+      "results/2026-10-17/rocev2-control-transport-rtl.json",
+      "results/2026-10-18/rocev2-transport-retry-rtl.json"
+    ]
+  },
+  "lfc_annotation_check": {
+    "exit_status": 0,
+    "checkpoint": "fpga/builds/as02mc04-25g-rocev2-ZpxYXdHv/as02mc04_25g.runs/impl_1/fpga_routed.dcp",
+    "checkpoint_sha256": "fdfae51f4a5f9357f896cd61126237929132be218453c310aa7fa9be428ab455",
+    "disposable_in_memory_copy_only": true,
+    "checkpoint_written": false,
+    "new_placement_verified": false,
+    "chains": 4,
+    "destination_registers": 8,
+    "source_preregister_stage": 1,
+    "destination_stages": [
+      2,
+      3
+    ],
+    "native_mac_clock_period_ns": 2.56,
+    "correct_clock_pairs_verified": true,
+    "direct_stage_connections_verified": true,
+    "first_destination_d_false_paths": 4,
+    "second_stage_max_min_finitely_timed": true,
+    "second_stage_slack_ns": [
+      {
+        "port": 0,
+        "signal": "tx_lfc_req",
+        "max": 2.201,
+        "min": 0.079
+      },
+      {
+        "port": 0,
+        "signal": "rx_lfc_ack",
+        "max": 2.25,
+        "min": 0.05
+      },
+      {
+        "port": 1,
+        "signal": "tx_lfc_req",
+        "max": 2.124,
+        "min": 0.115
+      },
+      {
+        "port": 1,
+        "signal": "rx_lfc_ack",
+        "max": 2.01,
+        "min": 0.161
+      }
+    ],
+    "negative_controls_checked": 2,
+    "missing_first_d_cut_rejected": true,
+    "overbroad_second_stage_cut_rejected": true,
+    "clean_reports_written_before_deliberate_overcut": true,
+    "lfc_cdc_before": "CDC-2 Warning, missing ASYNC_REG, no exception",
+    "lfc_cdc_after": "CDC-3 Info, depth 2, ASYNC_REG, first-capture False Path",
+    "methodology_timing7_critical_warnings_before": 4,
+    "methodology_timing7_critical_warnings_after": 0,
+    "cdc_counts_after": {
+      "CDC-1": 7,
+      "CDC-3": 207,
+      "CDC-4": 4,
+      "CDC-6": 14,
+      "CDC-9": 24,
+      "CDC-10": 1,
+      "CDC-13": 6,
+      "CDC-15": 1537
+    },
+    "other_critical_cdc_findings": 18,
+    "other_critical_cdc_fresh_physical_review_complete": false,
+    "blanket_clock_exceptions_added": false
+  },
+  "source_sha256": {
+    "fpga/mac_flow_control_cdc.xdc": "1a2191369820a9232779e078b21afd4afdc5c6426b92f0778f393584dbda4f26",
+    "fpga/verify_mac_flow_control_cdc.tcl": "5730082956bd264f64a3125aa1a3d17f5bf52a77ce743ba83288b1a281a1a4d5",
+    "rdma/scripts/check_mac_flow_cdc.tcl": "baae8c7e4756e4ac694e0a3a137eff77beee6ec87c45c3c077277c1ec8b6f087",
+    "rdma/tests/test_icrc_rtl.py": "60897ce84fdcef7a980928ba84eeb3ec24cd4fd2a42b87d53e281ce4df754127"
+  },
+  "raw_records": {
+    "rdma/logs/mac-flow-cdc-check-004.log": "f9db831c250473090ccfc4ebda16f13aa450c54b40938f7eea03e179e48f88c9",
+    "rdma/logs/mac-flow-cdc-check-004_cdc.rpt": "32a7537e6632e05d3aa226447294c3903221974efa04643ed0032c16f22c20d1",
+    "rdma/logs/mac-flow-cdc-check-004_methodology.rpt": "940a449b59c7d160e2f50c47dd44c14679872c3300221b2dc3d6a6cba89bf472",
+    "rdma/logs/mac-flow-cdc-check-004_exceptions.rpt": "e7fcbf1811894e9a021186ed7ddee1d19f990cacc1019be538a1218baf36d681",
+    "rdma/logs/source-check-prefix-002.log": "001a55f2d03d2c8cf1932c92edfda8246add357c7881a9d3a14c5b500a6391ec",
+    "rdma/logs/host-check-prefix-001.log": "aa805dc9761f7c908fec6773e4ad52e4f4eccf46619c018c5d22817a8dcf67ba"
+  },
+  "new_board_build_at_recording": {
+    "state": "running; revalidate authoritative session/process before relying on this snapshot",
+    "session_id": 61132,
+    "build_directory": "fpga/builds/as02mc04-25g-rocev2-YZB6xDCr",
+    "log": "rdma/logs/native25-board-build-002.log",
+    "hls_build": "probe-ku3p-512-8qp-010",
+    "generated_hls_sha256": "24866cb7b43234a0066c5383b543a1bb702381a83dc11dac664543a6859f3b63",
+    "input_manifest_lines": 297,
+    "input_manifest_sha256": "e9a3f50ced727f0a57b6ab0ac60bad1855f1b3a4a3aeee5ece9bf26bae4ddd8f",
+    "final_physical_gate_passed": false,
+    "hardware_verified": false
+  },
+  "final_physical_gate_passed": false,
+  "hardware_verified": false,
+  "fpga_programmed": false,
+  "flash_written": false,
+  "fan_settings_changed": false,
+  "pcie_or_network_state_changed": false
+}

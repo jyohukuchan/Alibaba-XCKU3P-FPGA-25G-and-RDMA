@@ -1,0 +1,44 @@
+{
+  "scope": "five read-only JTAG SYSMON samples of the currently loaded Ethernet image while the host compiles build 003; not a new-image or RDMA-load thermal qualification",
+  "observed_at_utc": "2026-10-18 08:34:47 UTC",
+  "reader_exit_status": 0,
+  "jtag_adapter_serial": "210251019420",
+  "jtag_tap_id": "0x04a63093",
+  "jtag_clock_khz": 1000,
+  "configuration_status_before": "0x009079fc",
+  "configuration_status_after": "0x009079fc",
+  "configuration_status_unchanged": true,
+  "sysmon_flags": "0x0000",
+  "internal_reference_flag": 0,
+  "over_temperature": false,
+  "temperature_samples_celsius": [59.71, 60.30, 59.95, 59.94, 59.71],
+  "temperature_raw_samples_hex": ["0xab0a", "0xab57", "0xab29", "0xab28", "0xab0b"],
+  "minimum_sample_celsius": 59.71,
+  "maximum_sample_celsius": 60.30,
+  "recorded_max_since_sysmon_reset_celsius": 62.33,
+  "recorded_min_since_sysmon_reset_celsius": 42.23,
+  "sysmon_reset_time_known": false,
+  "reported_voltage_volts": {
+    "VCCINT": 0.8495,
+    "VCCAUX": 1.8024,
+    "VREFP": 0.0,
+    "VCCBRAM": 0.8503
+  },
+  "voltage_tolerance_qualification_performed": false,
+  "measurement_below_85c_test_start_limit": true,
+  "measurement_does_not_replace_immediate_pretest_guard": true,
+  "sustained_traffic_thermal_margin_verified": false,
+  "source_sha256": {
+    "/home/user/fpga-25gbe/diagnostics/read_temperature.cfg": "7e741c725582947f724bc689fb06d93127d3c224bd050d9623b77deed7c712ab"
+  },
+  "raw_records": {
+    "rdma/logs/temperature-before-native-build003-001.log": "d5db16c2d88a5664bb993341efbf4ce2f6d919239b27398d1cc120abac0d35bc"
+  },
+  "fpga_programmed": false,
+  "fpga_or_phy_reset_issued": false,
+  "flash_modified": false,
+  "fan_settings_changed": false,
+  "traffic_generated": false,
+  "hardware_rdma_verified": false,
+  "hardware_throughput_measured": false
+}

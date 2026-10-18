@@ -1,5 +1,15 @@
 # Native 25GbE experiment: 2026-10-17 UTC
 
+For the newer clean-RTL FPGA RoCEv2 WRITE tests (including 64 MiB fully
+verified at 24.264 Gbit/s), see [native results](../results/2026-10-18/rocev2-native-003.json).
+Separate [controlled ACK-loss/timeout/recovery results](../results/2026-10-18/rocev2-native-retry-recovery-003.json)
+are also available for that same clean image.
+The data below remain the historical TCP/ECO measurements, not RoCE results.
+The later combined version2 READ/WRITE image has separate
+[native READ/WRITE evidence](../results/2026-10-18/rocev2-rw-native-001.json)
+and a [results/use guide](ROCEV2_READ_RESULTS.md). Its finite all-byte
+functional cases are not a repeat of the historical TCP/WRITE throughput tests.
+
 These results describe the historical **ECO image**, not a fresh build from
 this publication. See [the build distinction](BUILD.md). Test times are UTC;
 the hardware audit completed at 14:43:17 UTC (23:43:17 JST).

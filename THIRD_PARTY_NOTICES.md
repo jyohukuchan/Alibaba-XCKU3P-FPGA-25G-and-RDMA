@@ -20,6 +20,15 @@ of the Nexus_K3P_S design through the AS02MC04 port below. The driver patch
 modifies Corundum's existing files and does not replace their license notices.
 The upstream license text is reproduced in `LICENSES/BSD-2-Clause-Views.txt`.
 
+The pinned Corundum tree also contains Alex Forencich's **MIT**-licensed
+verilog-axis `axis_fifo`, `axis_adapter`, `axis_arb_mux`, `arbiter` and
+`priority_encoder`, and verilog-ethernet `lfsr`, `eth_axis_rx` and `eth_axis_tx`
+modules. The RoCEv2 integrity/Ethernet wrappers instantiate those unchanged
+components at 128-bit Ethernet width. Their
+individual copyright/license headers remain in the submodule; the relevant
+MIT notice is also reproduced in `LICENSES/MIT-Alex-Forencich.txt`. The new
+integrity/framing glue does not claim authorship of those primitives.
+
 ## Existing AS02MC04 Corundum port
 
 - Project: <https://github.com/quake0day/alibaba-as02mc04-corundum>
@@ -59,6 +68,33 @@ are evidence of this experiment, not a grant of rights to vendor IP.
 - AS02MC04 community research: <https://github.com/dkozel/Alibaba-Cloud-FPGA>
 - JTAG SRAM programming: <https://github.com/trabucayre/openFPGALoader>
 - Temperature access uses AMD UG580 SYSMON status reads through OpenOCD.
+
+## RoCEv2 transport (experimental hardware READ/WRITE verified)
+
+- Selected source: <https://github.com/fpgasystems/fpga-network-stack>,
+  pinned research revision `75c32bae73f5c336b5c46c9de35ae0cb9cb7cc1c`.
+- Individual HLS files carry Systems Group, ETH Zurich 2019 BSD-3-Clause
+  notices; the root license also identifies Xilinx. The local external
+  research checkout is not a new submodule; generated HLS artifacts are
+  built locally and not redistributed in this source tree.
+- `rdma/hls/fns-compat.patch` modifies those third-party files. It does not
+  replace their notices or relicense them under this project's default.
+  Removed duplicate CRC text is preserved in patch context/history; the
+  surviving source copy retains its complete original license header.
+- `rdma/read/hls/fns-read-fixes.patch` adds the READ request byte-valid fix
+  to the same pinned source after the compatibility patch. The separate READ
+  checkout and generated HLS artifacts are not vendored or relicensed.
+- The independent offline ICRC oracle references Linux RXE protocol behavior;
+  it does not copy or incorporate kernel code. The C peer uses the installed
+  libibverbs API and does not vendor rdma-core/provider implementations.
+- `rdma/fpga/mqnic_app_block.v` derives from the BSD-2-Clause-Views Corundum
+  application template at the pinned Corundum revision above. It retains the
+  University of California copyright and SPDX notice. The other independent
+  endpoint/control/guard modules do not replace the upstream HLS licenses.
+  The combined `rdma/read/fpga/mqnic_app_block.v` retains the same template
+  notices and substitutes the protected READ/WRITE endpoint.
+- The READ test peer links the installed OpenSSL libcrypto SHAKE256 API;
+  OpenSSL code is not copied or vendored into this repository.
 
 No affiliation with or endorsement by Alibaba, AMD, NVIDIA, Dell or the
 upstream projects is implied. Future third-party RDMA code keeps its own

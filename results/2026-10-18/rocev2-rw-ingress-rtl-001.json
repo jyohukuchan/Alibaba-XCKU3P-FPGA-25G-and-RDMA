@@ -1,0 +1,45 @@
+{
+  "scope": "RW Ethernet classifier/framer RTL, not ICRC validation, HLS or hardware",
+  "hardware_verified": false,
+  "complete": true,
+  "tests": {
+    "test_old_run_response_behind_stalled_host_is_discarded": {
+      "cycles": 3558,
+      "input_beats": 222,
+      "host_beats": 204,
+      "roce_beats": 8,
+      "host_frames": 51,
+      "roce_frames": 2,
+      "dropped_frames": 0,
+      "oversize_fifo_drops": 0,
+      "input_stalls": 2879,
+      "host_stalls": 3041,
+      "roce_stalls": 183,
+      "pass_test": true,
+      "stale_frames": 1,
+      "icrc_validation": "downstream integrity block; classifier test only"
+    },
+    "test_read_opcodes_mode_snapshot_peer_guards_and_host_preservation": {
+      "cycles": 6517,
+      "input_beats": 3123,
+      "host_beats": 218,
+      "roce_beats": 608,
+      "host_frames": 52,
+      "roce_frames": 15,
+      "dropped_frames": 23,
+      "oversize_fifo_drops": 1,
+      "input_stalls": 2877,
+      "host_stalls": 3042,
+      "roce_stalls": 272,
+      "pass_test": true,
+      "stale_frames": 0,
+      "icrc_validation": "downstream integrity block; classifier test only"
+    }
+  },
+  "source_sha256": {
+    "rdma/read/rtl/rocev2_rw_ethernet_rx.v": "d80c2bf6d95389baf251657c9ace4c26944a2f1c937c0df2e681ab71bbfed687",
+    "rdma/read/tests/test_rw_ingress_rtl.py": "85dd5e336f74933f94d9ce60f5e6d14e728f36e77b8901f2b8ce0c538093fd35",
+    "rdma/tests/test_ethernet_rtl.py": "13c7940e4eb0ecf7940d83488e7279e524d4c8bfcc6bb0a5e542e620b4bd56d1",
+    "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a"
+  }
+}

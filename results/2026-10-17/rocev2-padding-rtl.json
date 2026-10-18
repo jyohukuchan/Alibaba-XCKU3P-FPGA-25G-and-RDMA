@@ -1,0 +1,55 @@
+{
+  "evidence_type": "TX padding/integrity RTL simulation, not hardware",
+  "hardware_verified": false,
+  "complete": true,
+  "tests": {
+    "test_all_padding_tail_positions": {
+      "cycles": 6994,
+      "input_beats": 710,
+      "output_beats": 718,
+      "good_frames": 38,
+      "bad_frames": 0,
+      "input_stall_cycles": 5797,
+      "output_stall_cycles": 6124,
+      "first_output": 6002,
+      "last_output": 6945,
+      "pass_test": true
+    },
+    "test_bad_input_not_healed": {
+      "cycles": 8514,
+      "input_beats": 2192,
+      "output_beats": 2136,
+      "good_frames": 15,
+      "bad_frames": 7,
+      "input_stall_cycles": 4818,
+      "output_stall_cycles": 6026,
+      "first_output": 6002,
+      "last_output": 8465,
+      "pass_test": true
+    },
+    "test_padding_path_25g_cycle_capacity": {
+      "cycles": 8637,
+      "input_beats": 8320,
+      "output_beats": 8320,
+      "good_frames": 32,
+      "bad_frames": 0,
+      "input_stall_cycles": 0,
+      "output_stall_cycles": 0,
+      "first_output": 269,
+      "last_output": 8588,
+      "pass_test": true,
+      "simulated_payload_gbit_s_at_250mhz": 31.5,
+      "routed_clock_verified": false
+    }
+  },
+  "source_sha256": {
+    "rocev2_tx_padding.v": "0eb7cb8288f7bc63a62d32e439cbba3dd87f1db829437806fb1392497a87162a",
+    "rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3"
+  },
+  "test_sha256": "cc398b6bd85395bb702509b294b617897af1179c4100aa44084bafe708a36a92",
+  "integrity_test_dependency_sha256": "669d93c43d83a9609eeff9ed659f8de1920b41f2a43ea54f73033ca68af83b02",
+  "raw_records": {
+    "rdma/logs/padding-stage-selected-001.log": "c446a33b6bc16bbdafdfded2c451518ef83c6d032133054733c0c0b5b75854d9",
+    "rdma/logs/padding-stage-selected-001.json": "9363b651f36a4955f79521e5ce6786a1f51a6ba1b48371ec80339775856dd99d"
+  }
+}

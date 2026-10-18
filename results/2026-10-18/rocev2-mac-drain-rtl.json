@@ -1,0 +1,51 @@
+{
+  "evidence_type": "real MAC/XGMII + representative whole-frame CDC simulation, not physical hardware",
+  "hardware_verified": false,
+  "exact_mqnic_port_tx_verified": false,
+  "complete": true,
+  "pass_test": true,
+  "wire_frames": 3,
+  "admitted_frames": 3,
+  "completed_frames": 3,
+  "cycles": 4347,
+  "mac_underflows": 0,
+  "core_clock_hz": 250000000,
+  "mac_clock_hz": 390625000,
+  "wire_payload_bytes": 8364,
+  "ethernet_fcs_checked": true,
+  "wire_bytes_checked": true,
+  "drain_cycles": [
+    [
+      0,
+      207,
+      207,
+      1231
+    ],
+    [
+      1,
+      1261,
+      1267,
+      2285
+    ],
+    [
+      2,
+      3323,
+      3975,
+      4347
+    ]
+  ],
+  "source_sha256": {
+    "rocev2_tx_guard.v": "1d00bf7018a16f4e29d611c02072db17a57261c1d1fee31e50eb7ddae9a7ec4d",
+    "rocev2_ethernet_tx.v": "8a74d989f9ce93a9c1dca712b459de9d1fa2664791839a4fcc613581eb5ba46c",
+    "axis_adapter.v": "4b9b6649f12e374c24d36f2d42680ecf1f38cca8ae4fda7fd68dbf722b6c8140",
+    "axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+    "axis_async_fifo.v": "faeeaeadcba90268689f9fd227b1c8088d856ec8290ef6ab10b6d25e018858d4",
+    "axis_async_fifo_adapter.v": "9dc661b88d459a318e40722df277720fe64ef4309230462e8538b1a44da1d57c",
+    "arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+    "priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+    "eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+    "axis_xgmii_tx_64.v": "097750af9f48497c3c5743c37e743eef22a314de139c2088756346c167915f7b",
+    "lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079"
+  },
+  "test_sha256": "1a647c3b725a97913e4c3f1e2f846ffbbd66411547bc00764da0fe1c42119e86"
+}

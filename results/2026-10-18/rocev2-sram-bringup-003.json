@@ -1,0 +1,61 @@
+{
+  "scope": "Actual SRAM programming of accepted clean RoCE build003 and isolated FPGA test-path restoration; no flash",
+  "static_evidence": "results/2026-10-18/rocev2-board-build-003.json",
+  "bitstream_sha256": "ce5151679a0aeb2442f164ba63f7d85a3e753218808d588cdd46a4c498a31f60",
+  "fpga_bdf": "0000:82:00.0",
+  "exclusive_bridge_bdf": "0000:80:03.0",
+  "programmer": {
+    "tool": "openFPGALoader",
+    "cable": "jtag-smt2-nc",
+    "serial": "210251019420",
+    "frequency_hz": 1000000,
+    "mode": "--write-sram",
+    "exit_status": 0
+  },
+  "fpga_programmed": true,
+  "flash_modified": false,
+  "temperature_samples_c": {
+    "before": [
+      59.36,
+      59.51,
+      59.18,
+      59.44,
+      59.37
+    ],
+    "after": [
+      55.4,
+      55.37,
+      55.35,
+      55.58,
+      55.51
+    ]
+  },
+  "over_temperature_flag_before_and_after": 0,
+  "postprogram_application": {
+    "bar2_present": true,
+    "registers_read": true,
+    "id": 1380926258,
+    "version": 65536,
+    "status": 56,
+    "supported": true,
+    "quiescent": true
+  },
+  "fpga_mac": "ea:09:19:ea:b1:ea",
+  "fpga_test_network_restored": true,
+  "management_network_unchanged": true,
+  "hfi1_or_cx_mode_modified": false,
+  "fan_settings_changed": false,
+  "fan_profile": "BIOS Medium (retained)",
+  "raw_records": {
+    "rdma/logs/native25-program-sram-003.log": "39474a9865cb51a9b929652b50eb1ea7895794be9f1fc90efa2bc097e984aabd",
+    "rdma/logs/native25-before-program-003.json": "4a4f804760be74197bbeeefbb9d9239523d74bbc1ba8a611ee18602369bb8572",
+    "rdma/logs/native25-before-program-temperature-003.log": "ceca385dd949c13e1afdd8438c8d2323841364d569d863c7816b93a7921fc860",
+    "rdma/logs/native25-after-program-temperature-003.log": "a7820b85afbaac45d52987937de33d6f4659ec56b632b23a68fb0288bfc3af29",
+    "rdma/logs/native25-after-program-preflight-003.json": "fd6a493e0df90796960b3f2b555237175c8962e5e01c256ff3ec1dc453ce6c1f",
+    "rdma/logs/native25-after-native-cases-003.json": "39a126bd05ffdac36b2734505f7cfb05bb40e59c632416c555eac5a4bc268d1b",
+    "rdma/logs/native25-management-before-program-003.json": "dd125e8641c6c3a48fe1861f0e5535070aa685e57204885a69582e1b221a62c0",
+    "rdma/logs/native25-management-route-before-program-003.json": "20dfa9bcc6d9df8cbc8174c6b6a02ec37f6447a556891563677218cd8ba695d2",
+    "rdma/logs/native25-management-after-native-cases-003.json": "1050c1fc097b5e364f905bd7902b402c2b07fa99a9dbfc64f6796b7a8a908871",
+    "rdma/logs/native25-management-route-after-native-cases-003.json": "20dfa9bcc6d9df8cbc8174c6b6a02ec37f6447a556891563677218cd8ba695d2"
+  }
+}

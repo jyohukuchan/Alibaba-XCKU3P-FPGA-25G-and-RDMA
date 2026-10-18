@@ -1,0 +1,56 @@
+{
+  "scope": "read-only fully-routed checkpoint diagnosis before final post-route build gate; not hardware validation",
+  "diagnosis_exit_status": 0,
+  "diagnosis_complete": true,
+  "physical_gate_passed": false,
+  "clock_cdc_gate_passed": false,
+  "hardware_verified": false,
+  "fpga_programmed": false,
+  "checkpoint": "fpga/builds/as02mc04-25g-rocev2-ZpxYXdHv/as02mc04_25g.runs/impl_1/fpga_routed.dcp",
+  "checkpoint_sha256": "fdfae51f4a5f9357f896cd61126237929132be218453c310aa7fa9be428ab455",
+  "setup": {
+    "slack_ns": -0.189,
+    "total_negative_slack_ns": -79.927,
+    "failing_endpoints": 901,
+    "total_endpoints": 368463,
+    "clock_group": "pcie_user_clk",
+    "requirement_ns": 4.0,
+    "data_delay_ns": 3.992,
+    "logic_delay_ns": 1.504,
+    "route_delay_ns": 2.488,
+    "logic_levels": 13,
+    "carry8_cells": 3,
+    "hierarchy_prefix": "core_inst/core_inst/core_pcie_inst/core_inst/app.app_block_inst/endpoint/transport/",
+    "source_relative": "tx_padding/m_axis_tkeep_reg[5]/C",
+    "destination_relative": "tx_width_adapter/downsize.s_axis_tdata_reg_reg[420]/R",
+    "note": "same dense-mask/bad-frame/ready feedback path family as placed diagnosis; all 901 violations not independently classified"
+  },
+  "hold": {"slack_ns": 0.0, "total_negative_slack_ns": 0.0, "failing_endpoints": 0},
+  "default_drc": {"errors": 0, "critical_warnings": 0, "warnings": 29},
+  "methodology": {
+    "TIMING-7_critical_warnings": 4,
+    "description": "RX/TX GTY clocks have no common node; four LFC synchronizer first-stage crossings remain timed without exceptions"
+  },
+  "cdc_counts": {"CDC-1": 7, "CDC-2": 4, "CDC-3": 203, "CDC-4": 4, "CDC-6": 14, "CDC-9": 24, "CDC-10": 1, "CDC-13": 6, "CDC-15": 1537},
+  "lfc_cdc": {
+    "ports": [0, 1],
+    "signals": ["tx_lfc_req", "rx_lfc_ack"],
+    "chains": 4,
+    "source_preregister_stage": 1,
+    "destination_capture_stages": [2, 3],
+    "source_clock_pair_max_paths_each": 1,
+    "classification": "CDC-2 Warning, depth 2, missing ASYNC_REG, no timing exception",
+    "other_critical_crossings_fully_reviewed": false,
+    "fix_applied": false,
+    "proposed_fix": "annotate only eight destination stages 2/3; cut only each asynchronous stage-2 D input; verify connectivity/clocks and keep stage-2-to-stage-3 timed; no blanket clock-group waiver"
+  },
+  "inspector": "rdma/scripts/inspect_board_clocks.tcl",
+  "inspector_sha256": "a8db2501d9e4bcd8304c07a4e758d7a901d7c721d26bc61e7aeb3a8be0c6b8e5",
+  "raw_records": {
+    "rdma/logs/board-routed-clocks-001.log": "e20dcb61fda72bb32bf748eee667568af467ed26783a1e59d68c56e82e0a535b",
+    "rdma/logs/board-routed-clocks-001_cdc.rpt": "b570811ad05edf97a80b1ad487942188d7165f90ae626c2278209c823529be8c",
+    "rdma/logs/board-routed-clocks-001_interaction.rpt": "53eee42e1057e930041805adb4f2e05828569dcecf034f637f70ac866cb000b1",
+    "fpga/builds/as02mc04-25g-rocev2-ZpxYXdHv/as02mc04_25g.runs/impl_1/fpga_timing_summary_routed.rpt": "1965ba9a0ed1f17495e8fa32d3eea6cf1ac0098a7be8f970047a22df2f375b38",
+    "fpga/builds/as02mc04-25g-rocev2-ZpxYXdHv/as02mc04_25g.runs/impl_1/fpga_methodology_drc_routed.rpt": "f305da8c9ea99304affb87618adc5ccc36a85eddddb316bf2d6af28746619192"
+  }
+}

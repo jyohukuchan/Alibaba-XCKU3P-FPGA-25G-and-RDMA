@@ -1,0 +1,83 @@
+{
+  "scope": "read-only annotation and inherited PHY inspection on the new fully linked, optimized but unplaced build 003 checkpoint; not final timing or hardware acceptance",
+  "checkpoint": "fpga/builds/as02mc04-25g-rocev2-XnWXCJXt/as02mc04_25g.runs/impl_1/fpga_opt.dcp",
+  "checkpoint_sha256": "8ce162cc1a93ee73b7531c07cab5ebfd230f7ad6dfe46616eeefc90fd1294ad5",
+  "source_manifest_entries": 298,
+  "source_manifest_sha256": "284e278b37a0dd56239874e399c65c4bb648fa27ba26cfdc6f31c47ea20d3648",
+  "source_manifest_verified_unchanged": true,
+  "annotation_inspection": {
+    "session_id": 42630,
+    "exit_status": 0,
+    "ended_utc": "2026-10-18 08:58:15 UTC",
+    "unresolved_ooc_ips_rejected_by_inspector": true,
+    "compiled_annotations_verified": true,
+    "assertion_failed": false,
+    "vio_two_stage_pairs": 6,
+    "lfc_chains": 4,
+    "lfc_destination_registers": 8,
+    "audited_lfc_source_aliases": 1,
+    "lfc_clock_reset_init_and_async_reg_checks_passed": true,
+    "lfc_first_d_only_false_path_verified": true,
+    "lfc_second_stage_timed_without_false_path": true,
+    "minimum_unplaced_lfc_second_stage_setup_slack_ns": 2.087,
+    "minimum_unplaced_lfc_second_stage_hold_slack_ns": -0.055,
+    "lfc_hold_is_not_yet_met": true
+  },
+  "phy_inspection": {
+    "session_id": 49314,
+    "exit_status": 0,
+    "ended_utc": "2026-10-18 08:57:17 UTC",
+    "gt_async_mode_pins_tied_high": 2,
+    "static_config_bits": 22,
+    "static_config_destination_capture_stages": 1,
+    "reset_sync_stages": 4,
+    "scoped_max_delay_datapath_paths_checked": 24,
+    "scoped_max_delay_requirement_ns": 8,
+    "minimum_unplaced_scoped_max_delay_slack_ns": 7.707,
+    "runtime_static_configuration_stability_proven": false,
+    "all_cdc_safe": false
+  },
+  "cdc_report_critical_findings_not_waived": {
+    "CDC-1": 7,
+    "CDC-4": 4,
+    "CDC-10": 1,
+    "CDC-13": 6,
+    "total": 18
+  },
+  "unplaced_estimated_timing": {
+    "setup_wns_ns": 0.028,
+    "setup_tns_ns": 0,
+    "setup_failing_endpoints": 0,
+    "hold_whs_ns": -0.661,
+    "hold_ths_ns": -11777.965,
+    "hold_failing_endpoints": 194554,
+    "timing_constraints_met": false,
+    "postroute_result": false
+  },
+  "additional_xdc_loaded": false,
+  "design_or_constraint_changes": false,
+  "checkpoint_rewritten": false,
+  "source_sha256": {
+    "rdma/scripts/inspect_synth_cdc.tcl": "c57df48cb38d4757fa41ad50be6c223fdb4fc913a49182bf085805989f5edae6",
+    "rdma/scripts/inspect_phy_cdc.tcl": "4e12587fda52296aa11c53895d8ee175ae1e4c912b428370f6e7fb00226524c5",
+    "fpga/verify_mac_flow_control_cdc.tcl": "d850262ff5194420e76e8a05f5030321114e429ff8aa5b3e67164a22d0154bbc",
+    "rdma/scripts/verify_lfc_equivalent.tcl": "acb5a830f734b56ac6fe4fd0c95c6742f7434d82de0e66970d443f9c50089ff3"
+  },
+  "raw_records": {
+    "rdma/logs/native25-postopt-003.log": "faaddae2e6fbd30b6b773f8ef5a19407e95bfe00b9761eced9f2a09f069f6b71",
+    "rdma/logs/native25-postopt-003_utilization.rpt": "710f4df70eb0bb26f74d20588403d71a1322f72b5292e8bd0bfa21ad634e6cb7",
+    "rdma/logs/native25-postopt-003_cdc.rpt": "53dd2ecb96ecb8d1ce2ee599e68bedd339ea9abb007d43ff3d85aab6ade08141",
+    "rdma/logs/native25-postopt-003_methodology.rpt": "1fe34f4d512b83dd68f7202c344574f1ecf0e7275f38cbfef9b2d22ff66e0d92",
+    "rdma/logs/native25-postopt-003_timing_summary.rpt": "2cd5fd53b43cdae7056b317cbaa1ac09cddcd9b9b7f2d7a62722bf8ba7e6a3e3",
+    "rdma/logs/native25-phy-postopt-003.log": "26cd4a260b07be2be567d322e262f364a86dcef7b432da9fdf55009976398960",
+    "rdma/logs/native25-phy-postopt-003_drp_we.rpt": "8820f78af0feae8de729d62d6a4a4b6d584ca4cc1bd042460decdf82297fd78e"
+  },
+  "implementation_still_running_at_recording": true,
+  "implementation_pid": 795454,
+  "final_physical_gate_passed": false,
+  "final_routed_cdc_review_complete": false,
+  "fpga_programmed": false,
+  "hardware_rdma_verified": false,
+  "hardware_throughput_measured": false,
+  "fan_or_network_configuration_changed": false
+}

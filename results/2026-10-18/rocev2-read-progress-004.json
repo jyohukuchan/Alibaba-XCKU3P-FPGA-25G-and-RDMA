@@ -1,0 +1,81 @@
+{
+  "objective": "READ機能を追加して。",
+  "goal_complete": false,
+  "hardware_verified": false,
+  "full_board_verified": false,
+  "classification": "progress",
+  "observed_utc": "2026-10-18 15:56:33 UTC",
+  "previous_turn_classification": "progress",
+  "new_evidence": {
+    "record": "results/2026-10-18/rocev2-rw-postopt-cdc-001.json",
+    "fully_linked_postopt_checkpoint_reviewed": true,
+    "compiled_vio_lfc_assertions_passed": true,
+    "phy_assertions_passed": true,
+    "normalized_critical_cdc_rows_match_accepted_WRITE003": true,
+    "critical_cdc_findings": 18,
+    "blanket_cdc_waiver_applied": false,
+    "conditional_runtime_phy_stability_still_required": true,
+    "preliminary_stage_only_not_final_physical_gate": true
+  },
+  "read_only_temperature": {
+    "image": "accepted WRITE003",
+    "samples": 10,
+    "minimum_c": 59.94,
+    "maximum_c": 60.46,
+    "over_temperature_flag": 0,
+    "configuration_status_unchanged": true,
+    "fan_changed": false
+  },
+  "active_build": {
+    "directory": "fpga/builds/as02mc04-25g-rw-g9gbomFJ",
+    "session_id": 9912,
+    "parent_vivado_pid": 1050775,
+    "implementation_vivado_pid": 1056655,
+    "stage_at_observation": "place_design phase2.5 physical synthesis in placer",
+    "live_processes_observed": true,
+    "terminal": false,
+    "result_unproven": true
+  },
+  "active_full_buffer_probe": {
+    "session_id": 78502,
+    "parent_python_pid": 1057378,
+    "simulator_pid": 1057384,
+    "simulator": "Icarus/vvp",
+    "message_bytes": 65536,
+    "messages": 4,
+    "read_window": 2,
+    "target_bar_payload_bytes": 262144,
+    "target_response_packets": 64,
+    "wall_timeout_seconds": 1200,
+    "report": "results/2026-10-18/rocev2-rw-read-app-004.json",
+    "raw_log": "rdma/logs/rw-read-app-004.log",
+    "live_processes_observed": true,
+    "terminal": false,
+    "result_unproven": true,
+    "restart_without_terminal_evidence": false
+  },
+  "immutable_compile_inputs_current": true,
+  "safety": {
+    "fpga_programmed": false,
+    "flash_modified": false,
+    "fan_or_network_changed": false,
+    "commit_or_push": false
+  },
+  "completion_audit": {
+    "actual_native_read": "not achieved",
+    "actual_pcie_bar_all_byte_data": "not achieved",
+    "protected_control_ingress_ram": "verified offline only",
+    "native_write_regression_on_new_image": "not achieved",
+    "final_physical_and_cdc_gate": "incomplete; only post-opt review completed",
+    "finite_thermal_sram_native_bringup": "not performed"
+  },
+  "next_action": "Revalidate existing session9912/PID1056655 and full-capture session78502/PID1057384; do not restart either because of observation timeout. Inspect actual terminal reports. Final routed gates/CDC and reviewed SRAM-only guarded native tests remain required.",
+  "artifact_sha256": {
+    "docs/ROCEV2_READ_PROGRESS.md": "22ee4bf77db12ab6d5135c6b9ddf2dad4fd47bfde82971929cc24c91d373a317",
+    "results/2026-10-18/rocev2-rw-postopt-cdc-001.json": "4f770e874e63ef0a6fd87ad0c043fec8b96b61938632f7ea091b754b5c0ce0ab",
+    "rdma/logs/rw-old-image-temperature-001.log": "98fc94e1ca68e2bc086c33f1db4a103050fcae5e2e2a7a6566b8d1ca7843171f",
+    "rdma/read/tests/probe_rw_read.py": "fc6808e0faa69ef114218044d98c617febb9455838915006f7b4970b9c4a80d7",
+    "rdma/read/tests/rw_sim.py": "a2d5f91d09bec3e4b22827acee74ed76e80a3a8814c7df9483948c87690a205a",
+    "fpga/builds/as02mc04-25g-rw-g9gbomFJ/rocev2-source-identity.txt": "d566af8042953a37dbcdb217ff5e5d18c539ac4d59346986332eb8594c5286f0"
+  }
+}

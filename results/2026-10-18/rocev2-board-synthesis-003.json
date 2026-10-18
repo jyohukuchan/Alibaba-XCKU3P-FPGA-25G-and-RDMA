@@ -1,0 +1,55 @@
+{
+  "scope": "completed top-level synthesis for the selected input-stage correction; implementation running, not physical or hardware acceptance",
+  "build_directory": "fpga/builds/as02mc04-25g-rocev2-XnWXCJXt",
+  "build_session_id": 30358,
+  "parent_pid": 790077,
+  "parent_build_terminal": false,
+  "source_manifest_entries": 298,
+  "source_manifest_sha256": "284e278b37a0dd56239874e399c65c4bb648fa27ba26cfdc6f31c47ea20d3648",
+  "source_manifest_verified_unchanged": true,
+  "synthesis": {
+    "command_completed_successfully": true,
+    "end_marker_present": true,
+    "error_marker_present": false,
+    "child_pid": 792235,
+    "child_process_terminated": true,
+    "vivado_exited_utc": "2026-10-18 08:49:32 UTC",
+    "synth_design_elapsed_seconds": 2239,
+    "errors": 0,
+    "critical_warnings": 0,
+    "optimization_stage_reported_warnings": 503,
+    "final_command_reported_warnings": 646,
+    "emitted_warning_lines": 645,
+    "checkpoint": "fpga/builds/as02mc04-25g-rocev2-XnWXCJXt/as02mc04_25g.runs/synth_1/fpga.dcp",
+    "checkpoint_sha256": "97186fb7e8a3d466ca835de0c0f5d9431f4c1c7d51703a691baa844a292c9054",
+    "checkpoint_bytes": 121081428,
+    "standalone_checkpoint_accepted_as_full_clock_or_cdc_proof": false
+  },
+  "warning_comparison": {
+    "reference_directory": "fpga/builds/as02mc04-25g-rocev2-YZB6xDCr",
+    "reference_final_command_reported_warnings": 646,
+    "reference_emitted_warning_lines": 645,
+    "sorted_emitted_warning_lines_byte_identical": true,
+    "new_warning_lines": 0,
+    "difference_report_empty": true,
+    "warning_identity_is_not_a_blanket_waiver": true
+  },
+  "implementation": {
+    "started_utc": "2026-10-18 08:49:38 UTC",
+    "child_pid": 795454,
+    "status_at_recording": "live; linking PCIe, VIO and both Ethernet GT OOC IPs and reading constraints",
+    "fully_linked_post_opt_inspection_complete": false,
+    "terminal_exit_observed": false
+  },
+  "raw_records": {
+    "fpga/builds/as02mc04-25g-rocev2-XnWXCJXt/as02mc04_25g.runs/synth_1/runme.log": "7edc282392380a275206ff4c700a81828bfe00a5d93580963d7bbbba69d7727a",
+    "fpga/builds/as02mc04-25g-rocev2-YZB6xDCr/as02mc04_25g.runs/synth_1/runme.log": "5da652cba1b5a0930dcf3a50c8ceabaa0a462dce699d05b1ace5caf26d86d266",
+    "rdma/logs/native25-synth-warning-diff-003.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "final_physical_gate_passed": false,
+  "final_routed_cdc_review_complete": false,
+  "fpga_programmed": false,
+  "hardware_rdma_verified": false,
+  "hardware_throughput_measured": false,
+  "fan_or_network_configuration_changed": false
+}

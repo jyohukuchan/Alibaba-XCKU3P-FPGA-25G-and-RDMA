@@ -1,0 +1,53 @@
+{
+  "scope": "Protected READ buffer RTL, not HLS integration or hardware",
+  "hardware_verified": false,
+  "tests": {
+    "test_bad_command_address_length_qp_and_flags": {
+      "pass_test": true,
+      "checked_bytes": 32768,
+      "cases": 10,
+      "cycles": 114760
+    },
+    "test_bad_descriptors_and_recovery": {
+      "pass_test": true,
+      "checked_bytes": 32768,
+      "cases": 8,
+      "cycles": 114743
+    },
+    "test_bad_keep_and_last_cannot_complete_or_write_bad_beat": {
+      "pass_test": true,
+      "checked_bytes": 32768,
+      "cases": 3,
+      "cycles": 114722
+    },
+    "test_fifo_capacity_wrap_and_clear_preserves_ram": {
+      "pass_test": true,
+      "checked_bytes": 32768,
+      "cases": 64,
+      "cycles": 115338
+    },
+    "test_full_256k_capacity_four_64k_reads": {
+      "pass_test": true,
+      "checked_bytes": 262144,
+      "cases": 4,
+      "cycles": 928400
+    },
+    "test_host_alignment_range_byte_enables_and_stalled_payload": {
+      "pass_test": true,
+      "checked_bytes": 32768,
+      "cases": 5,
+      "cycles": 114743
+    },
+    "test_tails_segmentation_queued_descriptors_and_sentinels": {
+      "pass_test": true,
+      "checked_bytes": 32768,
+      "cases": 11,
+      "cycles": 115656
+    }
+  },
+  "complete": true,
+  "source_sha256": {
+    "rdma/read/rtl/rocev2_read_buffer.v": "efd936002c9132a69a3c049d361495cbe145acd29b0d7906398067c0cdee6112",
+    "rdma/read/tests/test_read_buffer_rtl.py": "d97f9cd6f254c23d0176647ace2d0a28992f8c48ca66d921d35ab6ca138a6550"
+  }
+}

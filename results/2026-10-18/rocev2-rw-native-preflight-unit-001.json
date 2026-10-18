@@ -1,0 +1,31 @@
+{
+  "scope": "Version2 preflight observation models only, not hardware",
+  "hardware_verified": false,
+  "complete": true,
+  "tests": {
+    "test_collector_never_uses_legacy_v1_bar_reader": {
+      "pass_test": true
+    },
+    "test_native_role_gid_and_physical_link_guards_retained": {
+      "pass_test": true,
+      "rejections": 4
+    },
+    "test_read_only_mapping_stops_at_unknown_version": {
+      "pass_test": true
+    },
+    "test_v1_unknown_busy_bad_layout_and_exhausted_generation_refused": {
+      "pass_test": true,
+      "rejections": 10
+    },
+    "test_v2_idle_done_and_error_quiescence": {
+      "pass_test": true,
+      "states": 5
+    }
+  },
+  "source_sha256": {
+    "rdma/read/tests/test_rw_preflight.py": "2d8d45fdf4ecc8766f3f6bd82552e515a9a15213ab9680407b58b414d8b2ce69",
+    "rdma/read/host/native_rw_preflight.py": "b2e2fa60dbf3a94ed0fd94fba0d78c8704fb4851373bcb7367c470adb2cfed4f",
+    "rdma/host/native_preflight.py": "55b06074199648e7cb0bc378d6f1db50932e2798880bbf6a9155fc703d8e2845",
+    "rdma/tests/test_native_preflight.py": "4f138f1384eb9e9c2132ec7ca9fd3f1a11dff4cc45b0e12a3bc2533695228044"
+  }
+}

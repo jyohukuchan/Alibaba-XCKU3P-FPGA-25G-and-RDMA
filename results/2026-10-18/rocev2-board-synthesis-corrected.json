@@ -1,0 +1,85 @@
+{
+  "scope": "corrected native25 RoCE top-level synthesis in an OOC-IP project; not final linked utilization, physical timing or hardware validation",
+  "synthesis_completed_at": "2026-10-18T06:25:14+00:00",
+  "synthesis_run_completed": true,
+  "synthesis_run_end_marker": "fpga/builds/as02mc04-25g-rocev2-YZB6xDCr/as02mc04_25g.runs/synth_1/.vivado.end.rst",
+  "build_directory": "fpga/builds/as02mc04-25g-rocev2-YZB6xDCr",
+  "part": "xcku3p-ffvb676-1-e",
+  "synthesis_errors": 0,
+  "synthesis_critical_warnings": 0,
+  "synth_design_elapsed_seconds": 2215,
+  "synth_design_warnings": 646,
+  "previous_synth_design_warnings": 646,
+  "phase_summary_warnings": 526,
+  "previous_phase_summary_warnings": 491,
+  "sorted_printed_warning_lines_identical_to_previous": true,
+  "phase_warning_aggregate_difference_cause_verified": false,
+  "utilization_stage": "top_level_synthesis_with_unresolved_OOC_IPs_not_final_implementation",
+  "unresolved_ooc_ips": [
+    "vio_status",
+    "pcie4_uscale_plus_0",
+    "eth_xcvr_gty_full",
+    "eth_xcvr_gty_channel"
+  ],
+  "utilization_includes_linked_ooc_contents": false,
+  "lut": {
+    "used": 77897,
+    "available": 162720,
+    "percent": 47.87
+  },
+  "ff": {
+    "used": 109657,
+    "available": 325440,
+    "percent": 33.69
+  },
+  "carry8": {
+    "used": 1523,
+    "available": 27120,
+    "percent": 5.62
+  },
+  "bram_tiles": {
+    "used": 138,
+    "available": 360,
+    "percent": 38.33
+  },
+  "uram": {
+    "used": 39,
+    "available": 48,
+    "percent": 81.25
+  },
+  "dsp": {
+    "used": 1,
+    "available": 1368,
+    "percent": 0.07
+  },
+  "corrected_icrc_rtl_sha256": "2231fdad5e3ccb701e1d716f891f8f1a049819b105ccc9273541ead442a195d7",
+  "generated_hls_build": "probe-ku3p-512-8qp-010",
+  "generated_rtl_sha256": "24866cb7b43234a0066c5383b543a1bb702381a83dc11dac664543a6859f3b63",
+  "source_identity_manifest": "fpga/builds/as02mc04-25g-rocev2-YZB6xDCr/rocev2-source-identity.txt",
+  "source_identity_manifest_sha256": "e9a3f50ced727f0a57b6ab0ac60bad1855f1b3a4a3aeee5ece9bf26bae4ddd8f",
+  "compiled_cdc_inspection": {
+    "initial_standalone_synthesis_inspection_exit_status": 1,
+    "initial_log": "rdma/logs/synth-cdc-inspect-001.log",
+    "initial_log_sha256": "7692231ac065ba99e3248d68ec3ea34890d08c5e6c96c91728ae13cfe536e16a",
+    "failure": "standalone top synthesis DCP has four unresolved OOC IPs and no linked VIO/GT/PCIe clock proof",
+    "original_compiled_cdc_proof_complete": false,
+    "additional_xdc_loaded": false,
+    "next_required_artifact": "completed fully linked post-opt or later checkpoint from this candidate",
+    "reader": "rdma/scripts/inspect_synth_cdc.tcl",
+    "reader_now_refuses_unresolved_blackboxes": true,
+    "historical_reader_version_note": "first attempt predates the explicit blackbox guard; do not attribute the guarded reader hash to that raw run"
+  },
+  "raw_records": {
+    "fpga/builds/as02mc04-25g-rocev2-YZB6xDCr/as02mc04_25g.runs/synth_1/fpga.dcp": "ae0d052edcec8ff0f51363d9d5163058c70bdda60e0fa729e10f772b4ae79d57",
+    "fpga/builds/as02mc04-25g-rocev2-YZB6xDCr/as02mc04_25g.runs/synth_1/fpga_utilization_synth.rpt": "400efec927fe829d998217593f8e8c4589aa972e58ce137be7ba1b063ea2499a",
+    "fpga/builds/as02mc04-25g-rocev2-YZB6xDCr/as02mc04_25g.runs/synth_1/runme.log": "5da652cba1b5a0930dcf3a50c8ceabaa0a462dce699d05b1ace5caf26d86d266"
+  },
+  "implementation_status_at_recording": "running opt_design and debug-core generation; revalidate actual process/session",
+  "active_parent_session": 61132,
+  "implementation_pid_at_recording": 640072,
+  "final_physical_gate_passed": false,
+  "hardware_rdma_verified": false,
+  "fpga_programmed": false,
+  "flash_written": false,
+  "fan_or_network_settings_changed": false
+}

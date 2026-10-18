@@ -1,0 +1,61 @@
+{
+  "evidence_type": "Ethernet application boundary RTL simulation, not hardware",
+  "hardware_verified": false,
+  "complete": true,
+  "tests": {
+    "test_rx_peer_qp_guards_and_host_preservation": {
+      "cycles": 11295,
+      "input_beats": 7086,
+      "host_beats": 225,
+      "roce_beats": 60,
+      "host_frames": 56,
+      "roce_frames": 20,
+      "dropped_frames": 19,
+      "oversize_fifo_drops": 2,
+      "input_stalls": 3113,
+      "host_stalls": 3036,
+      "roce_stalls": 256,
+      "pass_test": true,
+      "crc_validation": "downstream integrity block, not this classifier"
+    },
+    "test_tx_25g_cycle_capacity": {
+      "cycles": 8471,
+      "host_beats": 4,
+      "roce_input_beats": 8320,
+      "roce_output_beats": 8352,
+      "roce_frames": 32,
+      "filtered_completions": 3,
+      "host_completions": 3,
+      "host_stalls": 1,
+      "roce_stalls": 97,
+      "output_stalls": 0,
+      "completion_stalls": 497,
+      "first_output": 9,
+      "last_output": 8422,
+      "pass_test": true,
+      "simulated_payload_gbit_s_at_250mhz": 31.155692892797717,
+      "actual_timing_proven": false
+    },
+    "test_tx_framing_arbitration_and_completions": {
+      "cycles": 4029,
+      "host_beats": 394,
+      "roce_input_beats": 326,
+      "roce_output_beats": 358,
+      "roce_frames": 37,
+      "filtered_completions": 3,
+      "host_completions": 3,
+      "host_stalls": 3111,
+      "roce_stalls": 3597,
+      "output_stalls": 3125,
+      "completion_stalls": 497,
+      "first_output": 3009,
+      "last_output": 3980,
+      "pass_test": true
+    }
+  },
+  "source_sha256": {
+    "rocev2_ethernet_rx.v": "f726f52ffb9fcd7c858c6576f19051933989d89fa7c482cd795e6a6a3afa0ecc",
+    "rocev2_ethernet_tx.v": "8a74d989f9ce93a9c1dca712b459de9d1fa2664791839a4fcc613581eb5ba46c"
+  },
+  "test_sha256": "13c7940e4eb0ecf7940d83488e7279e524d4c8bfcc6bb0a5e542e620b4bd56d1"
+}

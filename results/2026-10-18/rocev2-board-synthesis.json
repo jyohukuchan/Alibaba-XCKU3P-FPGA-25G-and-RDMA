@@ -1,0 +1,22 @@
+{
+  "scope": "full native25 RoCE board synthesis; implementation still running at observation",
+  "synthesis_completed_at": "2026-10-18T04:05:01+00:00",
+  "build_directory": "fpga/builds/as02mc04-25g-rocev2-ZpxYXdHv",
+  "part": "xcku3p-ffvb676-1-e",
+  "synthesis_passed": true,
+  "implementation_status_at_observation": "running",
+  "final_physical_gate_passed": false,
+  "hardware_rdma_verified": false,
+  "fpga_programmed": false,
+  "utilization_stage": "synthesis_not_final_route",
+  "lut": {"used": 77903, "available": 162720, "percent": 47.88},
+  "ff": {"used": 109590, "available": 325440, "percent": 33.67},
+  "bram_tiles": {"used": 138, "available": 360, "percent": 38.33},
+  "uram": {"used": 39, "available": 48, "percent": 81.25},
+  "dsp": {"used": 1, "available": 1368, "percent": 0.07},
+  "generated_hls_build": "/home/user/fpga-rocev2-research/probe-ku3p-512-8qp-010",
+  "generated_rtl_sha256": "24866cb7b43234a0066c5383b543a1bb702381a83dc11dac664543a6859f3b63",
+  "utilization_report_sha256": "a35c3aed95c620d059ac37aafe8c2bf342793a7741e90524c563153ca133f01f",
+  "raw_utilization_report": "fpga/builds/as02mc04-25g-rocev2-ZpxYXdHv/as02mc04_25g.runs/synth_1/fpga_utilization_synth.rpt",
+  "console_log": "rdma/logs/native25-board-build-001.log"
+}

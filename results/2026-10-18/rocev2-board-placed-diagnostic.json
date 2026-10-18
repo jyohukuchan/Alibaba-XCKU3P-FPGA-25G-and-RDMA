@@ -1,0 +1,49 @@
+{
+  "scope": "full-board fully-placed checkpoint diagnosis, not routed/final timing or hardware verification",
+  "diagnosis_completed_at": "2026-10-18T04:33:32+00:00",
+  "diagnosis_exit_status": 0,
+  "design_state": "Fully Placed",
+  "implementation_final": false,
+  "physical_gate_passed": false,
+  "hardware_verified": false,
+  "fpga_programmed": false,
+  "checkpoint": "fpga/builds/as02mc04-25g-rocev2-ZpxYXdHv/as02mc04_25g.runs/impl_1/fpga_placed.dcp",
+  "checkpoint_sha256": "a1b055e12936c14282660fd1d3d2a73d8d896242ac7b526c28e864a2888df6ef",
+  "setup": {
+    "slack_ns": -0.465,
+    "clock_group": "pcie_user_clk",
+    "requirement_ns": 4.0,
+    "data_path_delay_ns": 4.260,
+    "logic_delay_ns": 1.473,
+    "estimated_route_delay_ns": 2.787,
+    "logic_levels": 15,
+    "carry8_cells": 3,
+    "hierarchy_prefix": "core_inst/core_inst/core_pcie_inst/core_inst/app.app_block_inst/endpoint/transport/",
+    "source_relative": "tx_padding/m_axis_tkeep_reg[15]/C",
+    "destination_relative": "tx_padding/offset_reg[15]/CE",
+    "observed_path": "padding output keep -> TX-integrity dense-keep/bad-frame/final metadata gate -> ready feedback -> padding offset CE",
+    "all_timing_violations_classified": false
+  },
+  "hold": {
+    "slack_ns": -0.609,
+    "source": "core_inst/core_inst/pcie_if_inst/pcie_us_if_cc_inst/m_axis_cc_tdata_reg_reg[29]/C",
+    "destination": "pcie4_uscale_plus_inst/inst/pcie4_uscale_plus_0_pcie_4_0_pipe_inst/pcie_4_0_e4_inst/SAXISCCTDATA[29]",
+    "waived": false,
+    "note": "placed/unrouted estimate; final routing must repair hold, never count this as a pass"
+  },
+  "source_sha256": {
+    "rocev2_ipv4_icrc.v": "0960b22a21deeb89a1679aee3da01f0fb93e946ceadc6ebcc13443f1b19b6344",
+    "rocev2_tx_padding.v": "0eb7cb8288f7bc63a62d32e439cbba3dd87f1db829437806fb1392497a87162a"
+  },
+  "inspector_sha256": "9b2aa20a5e2b3001f4d361bad6c274bcdd74221975c62bea0034b13ff3d71053",
+  "raw_log": "rdma/logs/board-placed-001-inspect.log",
+  "raw_log_sha256": "fe26073e67edf4e457cffd0c0ce49d0b1686a812927c4e1cb138ac0ffe9f59df",
+  "candidate_dense_keep_predicate": {
+    "binary_masks_checked": 65536,
+    "equivalent": true,
+    "old_bad": "keep==0 or keep!=(1<<popcount(keep))-1",
+    "candidate_bad": "keep==0 or ((keep>>1)&~keep)!=0",
+    "rtl_changed": false,
+    "new_physical_result_exists": false
+  }
+}

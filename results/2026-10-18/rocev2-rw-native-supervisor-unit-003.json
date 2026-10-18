@@ -1,0 +1,42 @@
+{
+  "scope": "Native supervisor/provider/evidence models; no hardware",
+  "hardware_verified": false,
+  "complete": true,
+  "tests": {
+    "test_failed_worker_stops_only_its_owned_children_client_first": {
+      "pass_test": true
+    },
+    "test_incomplete_client_or_software_path_rejected": {
+      "pass_test": true,
+      "rejected": 30
+    },
+    "test_no_final_hardware_claim_before_thermal_and_owned_cleanup_proof": {
+      "pass_test": true
+    },
+    "test_read_source_bar_metadata_and_scoped_commands": {
+      "pass_test": true
+    },
+    "test_readonly_preflight_must_succeed_before_qp_creation": {
+      "pass_test": true
+    },
+    "test_thermal_supervisor_and_sensor_fingerprints_required": {
+      "pass_test": true
+    },
+    "test_write_uses_original_all_byte_native_receiver_verifier": {
+      "pass_test": true
+    },
+    "test_wrong_native_provider_nonce_mr_or_aborted_source_rejected": {
+      "pass_test": true,
+      "rejected": 21
+    }
+  },
+  "source_sha256": {
+    "rdma/read/tests/test_native_rw_test.py": "9f5152f90b2974a77a9a87b205c70ed42756e928545a7ab5264f3e1bf8122c73",
+    "rdma/read/host/native_rw_test.py": "1ec6a63e695e244c8d561bad95c24935f709cc1bdb65b6a23577a916695a2266",
+    "rdma/host/native_test.py": "1695787f534e8632cf7509ddf3644d112035f1720e9972014c309a323b0885d0",
+    "rdma/read/host/fpga_rw_client.py": "ddc35295d9cbc6722a9636df387cb0c2df8e75f22280eaeb85dc3cd62418441b",
+    "rdma/read/host/native_rw_preflight.py": "41e608e720bf62423197e11722cac2ec5b9aa20e587767667a085820d0262f5f",
+    "rdma/read/tests/test_rw_client.py": "f2027dfd294143b6b60e250259503d21e99678d53e05e7137cafb6383202903b",
+    "rdma/read/tests/test_rw_preflight.py": "2b92651a3f753083842d168252b4034a7d9749ccc5cbf80629164d9fabc44e53"
+  }
+}

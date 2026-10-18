@@ -1,0 +1,41 @@
+{
+  "scope": "Generated HLS/integrity RTL only, no board or protected sink",
+  "hardware_verified": false,
+  "complete": true,
+  "cases": [
+    {
+      "cycles": 6602,
+      "packets": 1,
+      "first_completion_cycle": 4790,
+      "last_data_cycle": 6503,
+      "message_bytes": 65,
+      "pass_test": true,
+      "original_requested_bytes_verified": true,
+      "padding_present_in_hls_memory_output": 3,
+      "memory_commands": [
+        {
+          "address": 0,
+          "length": 68,
+          "qpn": 2,
+          "host": 1,
+          "last": 1
+        }
+      ],
+      "completion_metadata_rd": 0,
+      "completion_precedes_payload_commit": true,
+      "hardware_verified": false
+    }
+  ],
+  "generated_hls_sha256": "7bcfddc9cb856060ccc3fbe4c8599538a03bf16105176b44f737c22fb0be55ff",
+  "source_sha256": {
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rtl/rocev2_tx_padding.v": "0eb7cb8288f7bc63a62d32e439cbba3dd87f1db829437806fb1392497a87162a",
+    "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b",
+    "external/corundum/fpga/lib/eth/lib/axis/rtl/axis_adapter.v": "4b9b6649f12e374c24d36f2d42680ecf1f38cca8ae4fda7fd68dbf722b6c8140",
+    "external/corundum/fpga/lib/eth/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+    "external/corundum/fpga/lib/eth/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+    "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+    "rdma/read/tests/probe_read_transport.py": "c8b05287dad1ebe47437eaf191b644a91a0f7941eb1a4ded678e89c30b91e693",
+    "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a"
+  }
+}

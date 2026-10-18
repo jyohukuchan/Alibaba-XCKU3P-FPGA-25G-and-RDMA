@@ -1,0 +1,28 @@
+{
+  "scope": "offline verification-only release preparation and fail-closed provenance tests, with /bin/false replacing Vivado and a deliberately invalid DCP fixture",
+  "complete": true,
+  "exit_status": 0,
+  "tests_run": 7,
+  "terminal_attestation_required": true,
+  "wrong_checkpoint_or_changed_compile_input_rejected": true,
+  "unreviewed_gate_or_pinned_alias_assumption_rejected": true,
+  "existing_image_preserved_and_alternate_release_refused": true,
+  "original_manifest_and_verifier_preserved": true,
+  "original_physical_gate_and_vio_copied_byte_identically": true,
+  "verification_revision_separately_hash_bound": true,
+  "staged_verifier_corruption_rejected_before_checkpoint_open": true,
+  "vivado_release_driver_executed_on_real_checkpoint": false,
+  "image_generated": false,
+  "final_physical_gate_passed": false,
+  "hardware_verified": false,
+  "source_sha256": {
+    "rdma/scripts/release_routed_candidate.sh": "f544ca77b7f4c775cc08aa88f51b19dddf81e9a69ec95084b88a5e08acc43762",
+    "rdma/scripts/release_routed_candidate.tcl": "f3d2a09f0e9c669acd1e7d4ee46b74e9fd5c6dc4f35adaebdfb089638fedab65",
+    "rdma/scripts/release_verify_mac_flow_control_cdc.tcl": "bef874b1cd80e4ce2de662a3ab02707b43f6b7ce6d80d87aeb185d8df17c1667",
+    "rdma/tests/test_release_provenance.py": "f8a73b74455665b90c56c03d9a3e3a777ba105c0e10c8e4c4cb04d8be80f09bf"
+  },
+  "raw_records": {
+    "rdma/logs/release-provenance-tests-002.log": "e99f84e29a5069beab99bd9ddb3cb86701b595dd36ecb844307b65695db619d3"
+  },
+  "remaining_qualification": "This record covers only /bin/false fixture tests. The separate real-DCP attempt on the previous compile is recorded in rocev2-board-routed-corrected-diagnostic.json and was rejected for max/setup timing. The newly selected input-stage RTL needs its own full-board physical result; no hardware qualification is implied."
+}

@@ -1,0 +1,20 @@
+{
+  "evidence_type": "AXI-Lite control/pattern RTL simulation, not hardware",
+  "hardware_verified": false,
+  "pass_test": true,
+  "axi_reads": 48,
+  "axi_writes": 28,
+  "write_response_stalls": 84,
+  "read_response_stalls": 144,
+  "payload_stalls": 25,
+  "verified_writes": 3,
+  "verified_bytes": 195,
+  "rejected_control_writes": 5,
+  "invalid_mr_rejected": true,
+  "source_sha256": {
+    "rocev2_control.v": "8a4beaa6ed9c3e0e0b74112f5fadd0c759e50bb4f34bee4bfe1028b60fbefb08",
+    "rocev2_write_engine.v": "0698f421ea45f316dd12f46e0b5003e3138c86b7a7ae8d5999e4e5f2aae658f7",
+    "rocev2_pattern_source.v": "95dcfd5c8f772c227a13943fac3ccfb0a10056caeb179e39b26f1c3acd7b8f9e"
+  },
+  "test_sha256": "bb74af70d8427596b01c286ff3b3cf3988278c92fd74247ef8b0966a6fa4193a"
+}

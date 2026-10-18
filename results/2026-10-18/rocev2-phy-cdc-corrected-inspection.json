@@ -1,0 +1,33 @@
+{
+  "scope": "read-only PHY/DRP structural and scoped-constraint inspection on the corrected fully linked post-opt board; not routed physical acceptance",
+  "exit_status": 0,
+  "inspection_complete": true,
+  "checkpoint": "fpga/builds/as02mc04-25g-rocev2-YZB6xDCr/as02mc04_25g.runs/impl_1/fpga_opt.dcp",
+  "checkpoint_sha256": "20cd9ed332cd2db9c544cd199ff0c45d442df07ddad9a233f030fa36b8766431",
+  "checkpoint_unchanged": true,
+  "compile_manifest_sha256": "e9a3f50ced727f0a57b6ab0ac60bad1855f1b3a4a3aeee5ece9bf26bae4ddd8f",
+  "inspector": "rdma/scripts/inspect_phy_cdc.tcl",
+  "inspector_sha256": "4e12587fda52296aa11c53895d8ee175ae1e4c912b428370f6e7fb00226524c5",
+  "gt_mode_pins_tied_to_vcc": 2,
+  "gt_locations": ["GTYE4_CHANNEL_X0Y15", "GTYE4_CHANNEL_X0Y14"],
+  "affected_cdc13_endpoints": 6,
+  "drp_request_destination_stages": 2,
+  "drp_request_async_reg_and_direct_connections_verified": true,
+  "scoped_max_delay_paths_checked": 24,
+  "scoped_max_delay_requirement_ns": 8,
+  "scoped_minimum_estimated_slack_ns": 7.707,
+  "static_configuration_bits_checked": 22,
+  "static_configuration_destination_stages": 1,
+  "static_configuration_init_zero_observed": true,
+  "common_reset_destination_stages_checked": 4,
+  "common_reset_async_reg_shared_preset_and_exceptions_verified": true,
+  "runtime_configuration_stability_proven": false,
+  "all_cdc_safe": false,
+  "final_bus_skew_review_required": true,
+  "final_physical_gate_passed": false,
+  "hardware_verified": false,
+  "raw_records": {
+    "rdma/logs/phy-cdc-corrected-001.log": "86deac04994e34f272119e316f40bd2cfb7be021f26149bad46425e6a4d085d3",
+    "rdma/logs/phy-cdc-corrected-001_drp_we.rpt": "2a31a0aa919669ef3bba72e2c8f8f52c2792c21d9d862be4a4c475d7e480c925"
+  }
+}

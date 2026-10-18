@@ -1,0 +1,51 @@
+{
+  "scope": "completed pre-route physical optimization for build 003; positive setup estimate but hold still unmet, not final physical or hardware acceptance",
+  "build_directory": "fpga/builds/as02mc04-25g-rocev2-XnWXCJXt",
+  "build_session_id": 30358,
+  "parent_pid": 790077,
+  "implementation_pid": 795454,
+  "source_manifest_entries": 298,
+  "source_manifest_sha256": "284e278b37a0dd56239874e399c65c4bb648fa27ba26cfdc6f31c47ea20d3648",
+  "source_manifest_verified_unchanged": true,
+  "physical_optimization": {
+    "command": "phys_opt_design -directive AggressiveExplore",
+    "command_completed_successfully": true,
+    "normal_end_marker_present": true,
+    "error_marker_present": false,
+    "elapsed_seconds": 443,
+    "reported_errors": 0,
+    "reported_critical_warnings": 0,
+    "reported_warnings": 38,
+    "estimated_setup_wns_ns": 0.015,
+    "estimated_setup_tns_ns": 0,
+    "estimated_hold_whs_ns": -0.583,
+    "estimated_hold_ths_ns": -422.719,
+    "hold_candidate_nets": 1067,
+    "hold_nets_optimized": 1007,
+    "hold_buffers_inserted": 800,
+    "full_timing_acceptance": false
+  },
+  "checkpoint": "fpga/builds/as02mc04-25g-rocev2-XnWXCJXt/as02mc04_25g.runs/impl_1/fpga_physopt.dcp",
+  "checkpoint_sha256": "0ff0d7ca1e335c003c8e43d18436f18841cb2bd04d96c352384e1ea7a90c1e65",
+  "evidence_snapshot": {
+    "path": "rdma/logs/native25-preroute-003.log",
+    "sha256": "e60c1e0661f25519ddfee1802381e79d7873b2853b9876bd064934e2b9521a8d",
+    "scope": "immutable prefix of impl_1/runme.log ending before the first Command: route_design line; includes completed phys_opt_design and its saved checkpoint",
+    "live_log_is_not_misrepresented_as_immutable": true
+  },
+  "routing": {
+    "command": "route_design -directive Explore -tns_cleanup",
+    "started": true,
+    "status_at_recording": "live; Build RT Design",
+    "completed": false,
+    "terminal_exit_observed": false
+  },
+  "clock_or_timing_constraints_relaxed": false,
+  "source_or_window_capacity_reduced": false,
+  "final_physical_gate_passed": false,
+  "final_routed_cdc_review_complete": false,
+  "fpga_programmed": false,
+  "hardware_rdma_verified": false,
+  "hardware_throughput_measured": false,
+  "fan_or_network_configuration_changed": false
+}

@@ -1,0 +1,31 @@
+{
+  "scope": "read-only qualification of the newly selected canonical LFC assertion shim on the previous failed complete-board DCP; not new input-stage RTL physical acceptance",
+  "exit_status": 0,
+  "inspection_complete": true,
+  "assertion_failed": false,
+  "checkpoint": "fpga/builds/as02mc04-25g-rocev2-YZB6xDCr/as02mc04_25g_routed.dcp",
+  "checkpoint_sha256": "87b4e04d21479890e2799b12e543acfde2383fc45392b8ee5ba9c5ba0cb5f2c9",
+  "checkpoint_contains_new_input_stage": false,
+  "additional_xdc_loaded": false,
+  "design_or_constraint_changes": false,
+  "vio_pairs_verified": 6,
+  "lfc_chains_verified": 4,
+  "lfc_destination_registers_verified": 8,
+  "audited_source_aliases": 1,
+  "minimum_lfc_second_stage_setup_slack_ns": 2.159,
+  "minimum_lfc_second_stage_hold_slack_ns": 0.066,
+  "other_critical_cdc_findings_not_waived": 18,
+  "physical_gate_passed": false,
+  "hardware_verified": false,
+  "source_sha256": {
+    "fpga/verify_mac_flow_control_cdc.tcl": "d850262ff5194420e76e8a05f5030321114e429ff8aa5b3e67164a22d0154bbc",
+    "rdma/scripts/verify_lfc_equivalent.tcl": "acb5a830f734b56ac6fe4fd0c95c6742f7434d82de0e66970d443f9c50089ff3",
+    "rdma/scripts/inspect_synth_cdc.tcl": "c57df48cb38d4757fa41ad50be6c223fdb4fc913a49182bf085805989f5edae6"
+  },
+  "raw_records": {
+    "rdma/logs/canonical-lfc-final-dcp-001.log": "63f4c538ce0b728a830f1471f865bbdb00fe4fb0602e42de1fd0389ef6aee449",
+    "rdma/logs/canonical-lfc-final-dcp-001_cdc.rpt": "79483596c7d741ff653a21866643c8ccc2f3b5f8bffee518e107c4379b6a6315",
+    "rdma/logs/canonical-lfc-final-dcp-001_methodology.rpt": "581f4148777e43136f98edb46615ba49cb3bcb762acc6dff1e761f75fed3305f",
+    "rdma/logs/canonical-lfc-final-dcp-001_timing_summary.rpt": "fdc1df18328b3093b2056b24fb7560a7cd7566619182c2b66245ee82798b26d4"
+  }
+}

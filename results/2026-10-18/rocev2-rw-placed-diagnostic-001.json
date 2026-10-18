@@ -1,0 +1,45 @@
+{
+  "scope": "Read-only fully placed checkpoint diagnosis; not final routed timing signoff",
+  "pass_test": false,
+  "diagnostic_complete": true,
+  "inspection_session_id": 98877,
+  "inspection_exit_status": 0,
+  "observed_utc": "2026-10-18 16:18:08 UTC",
+  "hardware_verified": false,
+  "full_board_verified": false,
+  "goal_complete": false,
+  "worst_paths": {
+    "max": {
+      "slack_ns": -0.014,
+      "source": "core_inst/core_inst/core_pcie_inst/core_inst/iface[0].interface_inst/cqm_inst/queue_ram_reg_uram_3/CLK",
+      "destination": "core_inst/core_inst/core_pcie_inst/core_inst/iface[0].interface_inst/cqm_inst/op_table_queue_ptr_reg_r1_0_31_0_13/RAMA/WE"
+    },
+    "min": {
+      "slack_ns": -0.597,
+      "source": "core_inst/core_inst/pcie_if_inst/pcie_us_if_cc_inst/m_axis_cc_tdata_reg_reg[191]/C",
+      "destination": "pcie4_uscale_plus_inst/inst/pcie4_uscale_plus_0_pcie_4_0_pipe_inst/pcie_4_0_e4_inst/SAXISCCTDATA[191]"
+    }
+  },
+  "eight_native_ethernet_clock_pair_reports_have_paths": true,
+  "clocks_constraints_and_source_rtl_modified": false,
+  "fpga_programmed": false,
+  "next_action": "Keep the active original implementation running; inspect final setup/hold/routing/skew/DRC and CDC, not these preliminary failures as a final result.",
+  "artifact_sha256": {
+    "rdma/logs/rw-placed-clock-001_cdc.rpt": "12163f60af15875f0e049b5b0b90539de4a82b393a64fd55087dc8ef5aa34bf4",
+    "rdma/logs/rw-placed-clock-001_ch0_rx_to_tx_max.rpt": "2d939ef885e915e0add5a4b35e1ab75263b9d1ff5642e5fd001ea826d62034c8",
+    "rdma/logs/rw-placed-clock-001_ch0_rx_to_tx_min.rpt": "0bdb6e4ce7eabd011fbba3761734afd49b165059e03a3195dcea4376dc10a52b",
+    "rdma/logs/rw-placed-clock-001_ch0_tx_to_rx_max.rpt": "67a507ecf34337d3949f97344d5cd565d39a02ea3d6f276c9825918b09da8d55",
+    "rdma/logs/rw-placed-clock-001_ch0_tx_to_rx_min.rpt": "1181f8955f99c8e8196e055d7058bbc44b417425b0622185241ec30e93ed5617",
+    "rdma/logs/rw-placed-clock-001_ch1_rx_to_tx_max.rpt": "0cc2de96ae45cef73cb8512afbcd1f2bc665b630434ed15abedf3b25405cbfd4",
+    "rdma/logs/rw-placed-clock-001_ch1_rx_to_tx_min.rpt": "bf7292f196c82e4b765a8fa30043def658076d5c1d8c82dc52bd31faaaea28e3",
+    "rdma/logs/rw-placed-clock-001_ch1_tx_to_rx_max.rpt": "d5fdfa212183197fe29c5715c8273ff1bdc722f6135da7f202010b224701f247",
+    "rdma/logs/rw-placed-clock-001_ch1_tx_to_rx_min.rpt": "eef2e1cc1f889646f2c97b2977603aa7c461ba8b4e648ae29ecf1cb99ede4c85",
+    "rdma/logs/rw-placed-clock-001_exceptions.rpt": "1dab92b2b563eb88430ba2887a35c6d3c9692b2f81f9b14959db2d822ff97159",
+    "rdma/logs/rw-placed-clock-001_hold.rpt": "597b72f477e0a11e11a437839562a08dec99a3b8834712649621d52b57c60e6e",
+    "rdma/logs/rw-placed-clock-001_interaction.rpt": "72b6ae763d38d3f2f7f2578024d2e27f0f789fb7ca21b46b0daa75964de4b9ea",
+    "rdma/logs/rw-placed-clock-001_setup.rpt": "9cab0d44eed013508c5729d1634bebb6145b6291d66942b26ef436733abed769",
+    "rdma/logs/rw-placed-clock-001-console.log": "1afc49162a4677078298c0aa8df7c435f73f3546feaacf5372028c045a509861",
+    "rdma/scripts/inspect_board_clocks.tcl": "a8db2501d9e4bcd8304c07a4e758d7a901d7c721d26bc61e7aeb3a8be0c6b8e5",
+    "fpga/builds/as02mc04-25g-rw-g9gbomFJ/as02mc04_25g.runs/impl_1/fpga_placed.dcp": "14916ac6128392d27d6b9b8eb24b2f48a77cf5aac373ae687625d222f59226cc"
+  }
+}

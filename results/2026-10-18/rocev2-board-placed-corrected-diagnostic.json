@@ -1,0 +1,52 @@
+{
+  "scope": "read-only corrected candidate placed-checkpoint diagnosis; estimated routing, not final timing or hardware validation",
+  "diagnosis_exit_status": 0,
+  "diagnosis_complete": true,
+  "checkpoint": "fpga/builds/as02mc04-25g-rocev2-YZB6xDCr/as02mc04_25g.runs/impl_1/fpga_placed.dcp",
+  "checkpoint_sha256": "da3d917bffe676a99c5f60f962aac1874c57bf02fc910d9ffa76e1ace331c5f8",
+  "setup": {
+    "slack_ns": -0.221,
+    "requirement_ns": 4,
+    "clock": "pcie_user_clk",
+    "source": "core_inst/core_inst/core_pcie_inst/core_inst/iface[1].interface_inst/tx_qm_inst/queue_ram_reg_uram_1/CLK",
+    "destination": "core_inst/core_inst/core_pcie_inst/core_inst/iface[1].interface_inst/tx_qm_inst/m_axis_dequeue_resp_addr_reg_reg[63]/D",
+    "source_primitive": "URAM288",
+    "destination_primitive": "FDRE",
+    "data_delay_ns": 3.935,
+    "logic_delay_ns": 1.922,
+    "estimated_route_delay_ns": 2.013,
+    "logic_levels": 14,
+    "carry8_cells": 7,
+    "lut3_cells": 1,
+    "lut6_cells": 5,
+    "ramd32_cells": 1,
+    "clock_path_skew_ns": -0.267,
+    "uncertainty_ns": 0.046,
+    "family": "host NIC TX queue RAM / active-operation-table lookup / consumer pointer / 64-bit dequeue address",
+    "previous_icrc_dense_mask_path_is_not_this_sampled_worst_path": true,
+    "all_icrc_paths_verified_nonnegative": false
+  },
+  "hold": {
+    "slack_ns": -0.652,
+    "source": "core_inst/core_inst/core_pcie_inst/pcie_msix_inst/tx_wr_req_tlp_hdr_reg_reg[59]/C",
+    "destination": "pcie4_uscale_plus_inst/inst/pcie4_uscale_plus_0_pcie_4_0_pipe_inst/pcie_4_0_e4_inst/CFGINTERRUPTMSIXADDRESS[59]",
+    "note": "placed estimate before route and clock/hold cleanup, not final acceptance"
+  },
+  "inspector": "rdma/scripts/inspect_board_clocks.tcl",
+  "inspector_sha256": "a8db2501d9e4bcd8304c07a4e758d7a901d7c721d26bc61e7aeb3a8be0c6b8e5",
+  "raw_records": {
+    "rdma/logs/board-placed-corrected-001.log": "016f17a420d0ba96c7d0a24e9a9cf970c7f9c3c53647c681495cd1f2ebd52af6",
+    "rdma/logs/board-placed-corrected-001_setup.rpt": "ca8d80c83b2679481eb52868ea9224c59da61cbf59828c1c0daa062435ffe256",
+    "rdma/logs/board-placed-corrected-001_hold.rpt": "080e17545d40134ca0339e821a181a18e4a61ff5b37f2d8637c05a902596e6b5",
+    "rdma/logs/board-placed-corrected-001_cdc.rpt": "4287234aa285ab5a0eb809824f12ae4f7b037e131c3cbd08f0ba3c4472ca3a0f",
+    "rdma/logs/board-placed-corrected-001_interaction.rpt": "5e9df362e85486327330e028eeb8ffab520467dcab4793484f26f2d4ad8f9d2e",
+    "rdma/logs/board-placed-corrected-001_exceptions.rpt": "ff29fd3a4b07f6ab37a4f644e690aafc93783b90d03bc16f26b4a2ae91191cb8"
+  },
+  "full_final_routed_timing_still_required": true,
+  "physical_gate_passed": false,
+  "build_inputs_changed": false,
+  "timing_constraints_relaxed": false,
+  "hardware_verified": false,
+  "fpga_programmed": false,
+  "flash_written": false
+}

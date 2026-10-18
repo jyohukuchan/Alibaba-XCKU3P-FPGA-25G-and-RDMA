@@ -61,6 +61,12 @@ foreach rel [make_files [file join $port Makefile] IP_TCL_FILES] {
     lappend ip_scripts $path
 }
 
+set roce_enabled [expr {[info exists env(AS02_ENABLE_ROCE)] && $env(AS02_ENABLE_ROCE) eq "1"}]
+if {$roce_enabled} {
+    source [file join $task_dir ../rdma/fpga/sources.tcl]
+    lappend constraints [file join $task_dir mac_flow_control_cdc.xdc]
+}
+
 if {[info exists env(AS02_SOURCE_CHECK_ONLY)] && $env(AS02_SOURCE_CHECK_ONLY) eq "1"} {
     puts "Source check passed: [llength $sources] HDL, [llength $constraints] constraints, [llength $ip_scripts] IP generators."
     exit 0
@@ -89,6 +95,23 @@ set_property STEPS.PHYS_OPT_DESIGN.ARGS.DIRECTIVE AggressiveExplore [get_runs im
 set_property STEPS.POST_ROUTE_PHYS_OPT_DESIGN.ARGS.DIRECTIVE AggressiveExplore [get_runs impl_1]
 set_property STEPS.PHYS_OPT_DESIGN.IS_ENABLED true [get_runs impl_1]
 set_property STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED true [get_runs impl_1]
+if {$roce_enabled} {
+    # HLS readmemh names are relative to the synthesis run working directory.
+    # Keep the generated sources intact; copy only their exact initialization
+    # files into this new run, never into another build or the source checkout.
+    set roce_run_dir [get_property DIRECTORY [get_runs synth_1]]
+    file mkdir $roce_run_dir
+    foreach path $roce_memory_init {file copy $path [file join $roce_run_dir [file tail $path]]}
+    set fd [open [file join $out_dir rocev2-source-identity.txt] w]
+    puts $fd [exec sha256sum {*}$sources {*}$roce_memory_init {*}$constraints {*}$ip_scripts \
+        [file join $task_dir build_25g.tcl] [file join $task_dir config_25g.tcl] \
+        [file join $task_dir implement_25g.tcl] [file join $task_dir write_verified_25g_eco.tcl] \
+        [file join $task_dir verify_vio_status_cdc.tcl] [file join $task_dir verify_mac_flow_control_cdc.tcl] \
+        [file join $task_dir ../rdma/scripts/verify_lfc_equivalent.tcl] \
+        [file join $task_dir ../rdma/fpga/sources.tcl] \
+        [file join $task_dir ../rdma/hls/probe/check_build.py]]
+    close $fd
+}
 launch_runs synth_1 -jobs 8
 wait_on_run synth_1
 if {![string match "*Complete*" [get_property STATUS [get_runs synth_1]]]} {

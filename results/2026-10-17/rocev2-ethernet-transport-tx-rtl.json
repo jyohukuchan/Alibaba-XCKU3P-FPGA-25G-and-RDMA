@@ -1,0 +1,32 @@
+{
+  "evidence_type": "RTL simulation, not hardware",
+  "hls_build": "probe-ku3p-512-8qp-010",
+  "direction": "tx",
+  "ethernet_boundary": true,
+  "cycles": 3000,
+  "verified_transmit_writes": 1,
+  "verified_transmit_bytes": 64,
+  "consumed_success_ack": 1,
+  "network_stall_cycles": 353,
+  "command_stall_cycles": 93,
+  "core_rx_words": 1,
+  "peer_qp_rejected_frames": 1,
+  "icrc_rejected_frames": 1,
+  "wire_ipv4_checksums_valid": true,
+  "wire_icrcs_valid": true,
+  "whole_invalid_frame_rejected_before_hls": true,
+  "hardware_verified": false,
+  "integrity_rtl_sha256": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+  "transport_rtl_sha256": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b",
+  "padding_rtl_sha256": "0eb7cb8288f7bc63a62d32e439cbba3dd87f1db829437806fb1392497a87162a",
+  "test_sha256": "a4d5ca06e97cc3b130986c61734422e715e761000a95fdb10466e55632148581",
+  "ethernet_rtl_sha256": {
+    "rocev2_ethernet_rx.v": "f726f52ffb9fcd7c858c6576f19051933989d89fa7c482cd795e6a6a3afa0ecc",
+    "rocev2_ethernet_tx.v": "8a74d989f9ce93a9c1dca712b459de9d1fa2664791839a4fcc613581eb5ba46c"
+  },
+  "generated_rtl_sha256": "24866cb7b43234a0066c5383b543a1bb702381a83dc11dac664543a6859f3b63",
+  "raw_records": {
+    "rdma/logs/integrity-stage-selected-ethernet-001.log": "05e4c69413bf9f9f95f4e4816513d86690371ed6ae3cad88d51a58f649f0f1fc",
+    "rdma/logs/integrity-stage-selected-ethernet-001.json": "6cf917112c05c7d151515180a9e3fcf178e87a55e2d587a4d99d178f462170b1"
+  }
+}

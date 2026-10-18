@@ -1,0 +1,142 @@
+{
+  "objective": "READ機能を追加して。",
+  "goal_complete": false,
+  "hardware_verified": false,
+  "full_board_verified": false,
+  "classification": "progress",
+  "observed_utc": "2026-10-18 15:43:40 UTC",
+  "previous_goal_turn_audit": {
+    "classification": "no progress",
+    "reason": "The previous user-triggered turn explained READ versus receive; this turn revalidated the specific live CAD job and resumed implementation."
+  },
+  "implemented_this_turn": [
+    "Native-host optional invalid remote extent -> app-local CLEAR -> valid native READ on the same BAR and peer MR/QP lease",
+    "Fail-closed error/recovery evidence validation, two-generation requirement and finite cleanup",
+    "Actual combined app/generated-HLS error/CLEAR/READ probe, including prefill preservation and zero invalid QP/connection/SQ/network valid assertions"
+  ],
+  "verified": {
+    "full_read_unit_tests": 64,
+    "unit_suites": 10,
+    "full_suite_command_exit_status": 0,
+    "native_tool_unit_tests": 33,
+    "native_host_suite_command_exit_status": 0,
+    "native_tool_and_recovery_report_source_hashes_checked": 53,
+    "actual_combined_app_recovery": {
+      "message_bytes": 65,
+      "operations": 3,
+      "psn_wrap": true,
+      "host_bar_payload_bytes_compared": 195,
+      "untouched_sentinel_bytes_compared": 253,
+      "prefill_bytes_preserved_and_compared": 448,
+      "invalid_probe_cycles": 1303,
+      "invalid_qp_conn_sq_network_valid_cycles": 0,
+      "error_code": 1,
+      "application_clear_used": true,
+      "post_boot_global_resets": 0,
+      "physical_mac_and_peer_modeled": true
+    },
+    "read_only_hardware_audit": {
+      "native_provider": "mlx5_0",
+      "native_bdf": "0000:03:00.0",
+      "current_application_version": 65536,
+      "version2_preflight_refused": true,
+      "traffic_generated": false,
+      "rdma_qp_created": false,
+      "hardware_configuration_modified": false
+    },
+    "current_and_accepted_compile_manifest_hash_check_exit0": true,
+    "synthesis": {
+      "terminal": true,
+      "successful": true,
+      "errors": 0,
+      "critical_warnings": 0,
+      "luts_used": 88546,
+      "luts_available": 162720,
+      "ffs_used": 130173,
+      "ffs_available": 325440,
+      "bram_tiles_used": 204,
+      "bram_tiles_available": 360,
+      "uram_used": 39,
+      "uram_available": 48,
+      "counts_preliminary_not_routed_signoff": true
+    }
+  },
+  "active_build": {
+    "directory": "fpga/builds/as02mc04-25g-rw-g9gbomFJ",
+    "session_id": 9912,
+    "parent_vivado_pid": 1050775,
+    "implementation_vivado_pid": 1056655,
+    "stage_at_observation": "impl_1 linking design / constraints before placement",
+    "live_processes_observed": true,
+    "terminal": false,
+    "result_unproven": true,
+    "revalidate_handle_or_pid_before_relying": true
+  },
+  "completion_requirements": [
+    {
+      "id": 1,
+      "status": "not achieved",
+      "missing": "Actual FPGA READ from native CX455A; peer/client prepared and offline-tested only"
+    },
+    {
+      "id": 2,
+      "status": "offline verified only",
+      "missing": "Actual PCIe BAR all-byte readback for tail/multiple/PSN-wrap/segmented/full-RAM native data"
+    },
+    {
+      "id": 3,
+      "status": "offline protected RAM/controller/app verified",
+      "missing": "Source-bound physical/native READ verification; no arbitrary DMA or inbound public MR introduced"
+    },
+    {
+      "id": 4,
+      "status": "combined app RTL verified only",
+      "missing": "Native all-byte receiver-verified WRITE on final READ/WRITE image"
+    },
+    {
+      "id": 5,
+      "status": "synthesis passed; implementation live",
+      "missing": "Final native-clock setup/hold/routing/skew/DRC gates and CDC review"
+    },
+    {
+      "id": 6,
+      "status": "no hardware mutation performed",
+      "missing": "Finite thermal-supervised reviewed SRAM bringup and native cases"
+    }
+  ],
+  "safety": {
+    "sram_or_flash_programmed": false,
+    "fan_or_network_changed": false,
+    "commit_or_push": false,
+    "accepted_write003_preserved": true
+  },
+  "next_action": "Revalidate session9912/PID1056655 without restarting; keep the compile inputs frozen. Inspect final physical/CDC reports, then reviewed SRAM-only bringup and finite guarded native READ/WRITE/error cases.",
+  "artifact_sha256": {
+    "rdma/read/host/fpga_rw_client.py": "ddc35295d9cbc6722a9636df387cb0c2df8e75f22280eaeb85dc3cd62418441b",
+    "rdma/read/host/native_rw_test.py": "1ec6a63e695e244c8d561bad95c24935f709cc1bdb65b6a23577a916695a2266",
+    "rdma/read/host/native_rw_preflight.py": "41e608e720bf62423197e11722cac2ec5b9aa20e587767667a085820d0262f5f",
+    "rdma/read/host/rc_read_peer.c": "9d7546f6f7102f735e999c1a503a37e16f31be0a4300b824436aaec18f3bdc1b",
+    "rdma/read/host/Makefile": "fab487a621ffb4ec0b9b349d1e3fb00f253c14649335a666349342520663025a",
+    "rdma/read/host/README.md": "f8357f73d3885ae5af571268cb485ed19655c941c59058715eff2d2f0ef3c0e2",
+    "rdma/read/Makefile": "af873074cf7df557d4604e4ce44474b99c1d3d2ebb734e60f470140d2f42e06b",
+    "rdma/read/README.md": "eb60683b33b7579c1cde29a84f49be5973e90a5e595278ad36770e94cfdc8c14",
+    "docs/ROCEV2_READ_PROGRESS.md": "a999a19e28f1e04a8f01599ec04e28e3df3b9ad6dd2364f42ffe435c0e027071",
+    "rdma/read/tests/test_read_recovery.py": "b3649e13b4d7f46e4c59eab6a6a6e0103270df9d48aec801a9d693b3fd832ded",
+    "rdma/read/tests/test_native_rw_test.py": "9f5152f90b2974a77a9a87b205c70ed42756e928545a7ab5264f3e1bf8122c73",
+    "rdma/read/tests/probe_rw_recovery.py": "5d2649835c734427c5e54c13b4eacf2ff5f7beff8c4f5c5f5da3df6ef541e926",
+    "results/2026-10-18/rocev2-rw-native-client-unit-002.json": "298a996348fb4ad68489fcdd66e073d627d8a3e2a82ea077d999ee7a8099824d",
+    "results/2026-10-18/rocev2-rw-native-preflight-unit-003.json": "33dc5d4f4326d52db1ff24223bdbc2c5a94c872c1a47a117c6ca2620c18bf99b",
+    "results/2026-10-18/rocev2-rw-native-supervisor-unit-003.json": "fc8e3c97d6c4f862bb6596d3a7a833cddd78cd51ccfd6ecf935b2cc376fc44bd",
+    "results/2026-10-18/rocev2-rw-native-recovery-unit-001.json": "b393f1291fcf824116672087bb4c22721ea4cddb5de4676ce553106ed5d3330a",
+    "results/2026-10-18/rocev2-rw-recovery-app-001.json": "1a7fc53b46899423bde5148f25951ed7e7565006a8244e3000f88a2d6cc18624",
+    "results/2026-10-18/rocev2-rw-native-preprogram-audit-001.json": "61ca2bfe884adf792c7704cb5eb4fcd7dfb364bf803d5aee4d81881e5fef797a",
+    "results/2026-10-18/rocev2-rw-native-preprogram-refusal-001.json": "ca9037c1a0c6e37c38f457eef2813ecacdbda67822afe9e460a0661b9765598b",
+    "rdma/logs/rw-native-host-suite-002.log": "97f9470573710e31f9be2e53e7d44db37d8ca45b8c486ad41b8ca785931a8255",
+    "rdma/logs/rw-read-suite-003.log": "421b5dd98842bc47655de483690ef6862d85536b95f4b93cc4a821d988e72bde",
+    "rdma/logs/rw-recovery-app-001.log": "1fc910e65c0a7a887de6cabf617a1bf15e46959307b55fb91ff1697d3ffc3da1",
+    "fpga/builds/as02mc04-25g-rw-g9gbomFJ/rocev2-source-identity.txt": "d566af8042953a37dbcdb217ff5e5d18c539ac4d59346986332eb8594c5286f0",
+    "fpga/builds/as02mc04-25g-rw-g9gbomFJ/as02mc04_25g.runs/synth_1/fpga.dcp": "1a2760bcd61d0821140fcc75d91db602055fdaa3a0254e867b2ab54a440505c7",
+    "fpga/builds/as02mc04-25g-rw-g9gbomFJ/as02mc04_25g.runs/synth_1/fpga_utilization_synth.rpt": "3d5102050bd9f262730ba891ebf36c670e2ee3e5204eb138007edceb2a27f5ab",
+    "fpga/builds/as02mc04-25g-rw-g9gbomFJ/as02mc04_25g.runs/synth_1/runme.log": "883fb5730e7ce17e11fd1874b410fc1a4a213593f663b0897dffe9667d9528c4"
+  }
+}

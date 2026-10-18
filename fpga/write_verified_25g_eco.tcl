@@ -9,6 +9,15 @@ if {![info exists out_dir] || ![info exists refine_label] ||
 }
 set final_prefix ${refine_label}_final
 source [file join [file dirname [file normalize [info script]]] verify_vio_status_cdc.tcl]
+if {[info exists roce_enabled] && $roce_enabled} {
+    set source_identity [file join $out_dir rocev2-source-identity.txt]
+    if {![file isfile $source_identity] ||
+        [catch {exec sha256sum --check --status $source_identity}]} {
+        error "RoCE build inputs changed or manifest is missing; refusing bitstream output"
+    }
+    puts "VERIFIED_ROCE_BUILD_INPUTS_UNCHANGED=1"
+    source [file join [file dirname [file normalize [info script]]] verify_mac_flow_control_cdc.tcl]
+}
 foreach direction {TXOUTCLK RXOUTCLK} {
     set pins [get_pins -hier -filter "NAME =~ sfp_phy_quad_inst/* && REF_PIN_NAME == $direction"]
     if {[llength $pins] != 2} {error "Expected two Ethernet $direction pins"}

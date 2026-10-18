@@ -1,16 +1,40 @@
 # Build and reproducibility status
 
-## Two different artifacts
+## Artifacts with different validation scopes
 
 1. **Hardware-tested historical image:** generated from the native-25G design
    with a post-route VIO CDC ECO, followed by physical optimization and guarded
    bit generation. Its SHA-256 is
    `83ab714e93a7279d179d773df2ef3787d752cd466cdbf5f48176f395838c14d3`.
-2. **Current clean-RTL source:** includes the equivalent six two-stage VIO
+2. **Earlier Ethernet-only clean-RTL run:** included the equivalent six two-stage VIO
    synchronizers before synthesis. Synthesis and placed-checkpoint inspection
    succeeded during bring-up, but that alternative run was intentionally
    stopped after the ECO image passed hardware testing. Its complete routed
-   build and hardware validation are **not yet established**.
+   build and hardware validation were not established by that stopped run.
+3. **Hardware-tested clean RoCE RTL build 003 (2026-10-18):** selected input
+   manifest `284e278b...` (298 files), bitstream SHA256
+   `ce5151679a0aeb2442f164ba63f7d85a3e753218808d588cdd46a4c498a31f60`.
+   The original complete static gate passes (setup 0.027ns / hold 0.010ns,
+   all 38 bus skews). Final routed CDC/PHY conditions were reviewed, then
+   SRAM-loaded; native WRITE/tail/PSN-wrap and finite 64 MiB / 24.264 Gbit/s
+   receiver-verified tests pass. Controlled ACK-loss retransmission,
+   watchdog/error and subsequent WRITE recovery also pass on the same image.
+   See [static acceptance](../results/2026-10-18/rocev2-board-build-003.json)
+   and [native test evidence](../results/2026-10-18/rocev2-native-003.json), plus
+   [fault/recovery evidence](../results/2026-10-18/rocev2-native-retry-recovery-003.json).
+4. **Hardware-tested combined READ/WRITE001 (2026-10-18):** manifest
+   `d566af80...` has766lines/600unique inputs; bitstream SHA256
+   `226c48c7756f311d511798c42435a438f20228eb313b909553638b12c3a58e0a`.
+   Original native25 physical gates pass (setup+0.052ns/hold+0.010ns,
+   all206064nets routed, all38bus skews); separate routed CDC/PHY review
+   retains the inherited18critical-row conditional operating requirements.
+   SRAM-loaded; native READ/full256KiB BAR capture, tails/segmentation/wrap,
+   error-CLEAR recovery and same-image acknowledged WRITE regression pass.
+   [Static](../results/2026-10-18/rocev2-rw-board-build-001.json),
+   [programming](../results/2026-10-18/rocev2-rw-sram-bringup-001.json) and
+   [native](../results/2026-10-18/rocev2-rw-native-001.json) evidence are distinct.
+   Use the separate [combined build](../rdma/read/README.md), not the
+   WRITE-only default RoCE recipe. No new sustained-throughput claim is made.
 
 Relocating scripts and adding publication checks do not constitute a fresh
 hardware validation. This initial publication does not promise bit-identical
@@ -24,6 +48,8 @@ The tested bitstream/checkpoints remain local and are not in this repository.
   Vivado Lab Edition can program/debug but cannot build this design.
 - The pinned submodules, initialized with `git submodule update --init --recursive`.
 - Sufficient RAM, disk space and time for a full implementation run.
+- For the optional RoCE build, the pinned Vitis HLS/generated profile and
+  additional dependencies described in [rdma/README.md](../rdma/README.md).
 
 The recorded workstation had 192 GB RAM; this is an environment description,
 not a measured minimum. Obtain and authenticate Vivado separately from AMD.

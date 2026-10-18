@@ -1,0 +1,55 @@
+--- a/rdma/rtl/rocev2_ipv4_icrc.v
++++ b/rdma/rtl/rocev2_ipv4_icrc.v
+@@ -176,7 +176,10 @@
+ reg staged_last;
+ wire staged_bad = extra_reg ? extra_bad_reg : bad_current;
+ wire staged_valid = extra_reg || s_axis_tvalid;
+-wire final_gate = !staged_last || staged_bad || !TX_MODE || meta_ready;
++// Reserve metadata capacity at every TX final beat, including a bad frame.
++// Admission must not depend combinationally on CRC/length validity. A bad
++// frame may wait for metadata capacity, but never consumes a metadata entry.
++wire final_gate = !staged_last || !TX_MODE || meta_ready;
+ wire fifo_valid = staged_valid && final_gate;
+ wire fifo_transfer = fifo_valid && fifo_ready;
+ wire meta_push = TX_MODE && fifo_transfer && staged_last && !staged_bad;
+@@ -230,6 +233,27 @@
+     end
+ end
+ 
++// Register the complete FIFO input beat and its bad-frame sideband together.
++// The two-entry skid stage retains one beat/cycle and decouples CRC/length
++// validation from the BRAM's input setup. Checksum metadata is reserved on
++// this stage's admission; its frame follows in order into the frame FIFO.
++wire [127:0] buffered_data;
++wire [15:0] buffered_keep;
++wire buffered_valid, buffered_ready, buffered_last, buffered_bad;
++axis_register #(
++    .DATA_WIDTH(128), .KEEP_ENABLE(1), .KEEP_WIDTH(16), .LAST_ENABLE(1),
++    .ID_ENABLE(0), .ID_WIDTH(1), .DEST_ENABLE(0), .DEST_WIDTH(1),
++    .USER_ENABLE(1), .USER_WIDTH(1), .REG_TYPE(2)
++) fifo_input_register (
++    .clk(clk), .rst(rst),
++    .s_axis_tdata(staged_data), .s_axis_tkeep(staged_keep), .s_axis_tvalid(fifo_valid),
++    .s_axis_tready(fifo_ready), .s_axis_tlast(staged_last), .s_axis_tid(1'b0),
++    .s_axis_tdest(1'b0), .s_axis_tuser(staged_bad),
++    .m_axis_tdata(buffered_data), .m_axis_tkeep(buffered_keep), .m_axis_tvalid(buffered_valid),
++    .m_axis_tready(buffered_ready), .m_axis_tlast(buffered_last), .m_axis_tid(),
++    .m_axis_tdest(), .m_axis_tuser(buffered_bad)
++);
++
+ wire [127:0] fifo_data;
+ wire [15:0] fifo_keep;
+ wire fifo_out_valid;
+@@ -241,9 +265,9 @@
+     .USER_ENABLE(1), .USER_WIDTH(1), .RAM_PIPELINE(2), .OUTPUT_FIFO_ENABLE(1),
+     .FRAME_FIFO(1), .DROP_OVERSIZE_FRAME(1), .DROP_BAD_FRAME(1), .DROP_WHEN_FULL(0)
+ ) packet_fifo (
+-    .clk(clk), .rst(rst), .s_axis_tdata(staged_data), .s_axis_tkeep(staged_keep),
+-    .s_axis_tvalid(fifo_valid), .s_axis_tready(fifo_ready), .s_axis_tlast(staged_last),
+-    .s_axis_tid(1'b0), .s_axis_tdest(1'b0), .s_axis_tuser(staged_bad),
++    .clk(clk), .rst(rst), .s_axis_tdata(buffered_data), .s_axis_tkeep(buffered_keep),
++    .s_axis_tvalid(buffered_valid), .s_axis_tready(buffered_ready), .s_axis_tlast(buffered_last),
++    .s_axis_tid(1'b0), .s_axis_tdest(1'b0), .s_axis_tuser(buffered_bad),
+     .m_axis_tdata(fifo_data), .m_axis_tkeep(fifo_keep), .m_axis_tvalid(fifo_out_valid),
+     .m_axis_tready(fifo_out_ready), .m_axis_tlast(fifo_last),
+     .m_axis_tid(), .m_axis_tdest(), .m_axis_tuser(), .pause_req(1'b0), .pause_ack(),

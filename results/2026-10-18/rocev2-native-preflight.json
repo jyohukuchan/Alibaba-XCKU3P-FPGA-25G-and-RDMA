@@ -1,0 +1,57 @@
+{
+  "scope": "read-only native-path inventory; not FPGA RDMA or physical timing validation",
+  "observed_at": "2026-10-18T04:09:27.761785+00:00",
+  "inventory_passed": true,
+  "offline_unit_tests_run": 10,
+  "application_required_preflight_refused": true,
+  "application_bar2_present": false,
+  "application_registers_read": false,
+  "traffic_generated": false,
+  "hardware_configuration_modified": false,
+  "fpga_programmed": false,
+  "rdma_qp_created": false,
+  "hardware_rdma_verified": false,
+  "timing_verified": false,
+  "temperature_checked": false,
+  "fpga": {
+    "bdf": "0000:82:00.0",
+    "driver": "mqnic",
+    "namespace": "fpga10g-fpga",
+    "netdev": "enp130s0np1",
+    "ip": "198.18.10.2/30",
+    "mac": "d6:b9:fb:83:a4:51",
+    "mtu": 9000,
+    "reported_speed": null,
+    "link_detected": true
+  },
+  "peer": {
+    "bdf": "0000:03:00.0",
+    "driver": "mlx5_core",
+    "pci_class": "020700",
+    "namespace": "fpga10g-cx4",
+    "netdev": "enp3s0np0",
+    "ip": "198.18.10.1/30",
+    "mac": "b8:83:03:67:c5:d0",
+    "mtu": 9000,
+    "reported_speed": "25000Mb/s",
+    "duplex": "Full",
+    "link_detected": true,
+    "active_fec": "Off",
+    "rdma_device": "mlx5_0",
+    "rdma_port": 1,
+    "link_layer": "Ethernet",
+    "gid_index": 3,
+    "gid": "0000:0000:0000:0000:0000:ffff:c612:0a01",
+    "gid_type": "RoCE v2",
+    "active_mtu_checked": false
+  },
+  "source_sha256": {
+    "native_preflight.py": "55b06074199648e7cb0bc378d6f1db50932e2798880bbf6a9155fc703d8e2845",
+    "fpga_write_client.py": "dc2e46d58547f1be3a30706b5e703f97facc57c6247b7b650efa1be170f7c13e"
+  },
+  "test_sha256": "4f138f1384eb9e9c2132ec7ca9fd3f1a11dff4cc45b0e12a3bc2533695228044",
+  "raw_records": {
+    "rdma/logs/native-preflight-001.json": "8583db24467d9ecc2933c4135e24511bad9b783c60b41690f60ee4f2a591dab7",
+    "rdma/logs/native-preflight-require-app-001.json": "1d728c3468e194a7e6e87dd67a0037ae8a3aa8e6a185ae1b61ebebde20a9827b"
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "event": "native_rw_preflight",
+  "success": false,
+  "traffic_generated": false,
+  "rdma_qp_created": false,
+  "hardware_configuration_modified": false,
+  "fpga_programmed": false,
+  "hardware_rdma_verified": false,
+  "timing_verified": false,
+  "temperature_checked": false,
+  "observed_at": "2026-10-18T15:41:16.489656+00:00",
+  "source_sha256": {
+    "rdma/read/host/native_rw_preflight.py": "41e608e720bf62423197e11722cac2ec5b9aa20e587767667a085820d0262f5f",
+    "rdma/host/native_preflight.py": "55b06074199648e7cb0bc378d6f1db50932e2798880bbf6a9155fc703d8e2845",
+    "rdma/read/host/fpga_rw_client.py": "ddc35295d9cbc6722a9636df387cb0c2df8e75f22280eaeb85dc3cd62418441b"
+  },
+  "observations": {
+    "devices": {
+      "fpga": {
+        "bdf": "0000:82:00.0",
+        "driver": "mqnic",
+        "pci": {
+          "vendor": 4660,
+          "device": 4097,
+          "subsystem_vendor": 7396,
+          "subsystem_device": 9,
+          "class": 131072
+        },
+        "addresses": [
+          {
+            "ifindex": 16,
+            "ifname": "enp130s0np1",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 9000,
+            "qdisc": "mq",
+            "operstate": "UP",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "ea:09:19:ea:b1:ea",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "198.18.10.2",
+                "prefixlen": 30,
+                "scope": "global",
+                "label": "enp130s0np1",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              },
+              {
+                "family": "inet6",
+                "local": "fe80::e809:19ff:feea:b1ea",
+                "prefixlen": 64,
+                "scope": "link",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          }
+        ],
+        "driver_info": "driver: mqnic\nversion: 0.1\nfirmware-version: 0.0.1.0\nexpansion-rom-version: \nbus-info: 0000:82:00.0\nsupports-statistics: no\nsupports-test: no\nsupports-eeprom-access: no\nsupports-register-dump: yes\nsupports-priv-flags: no\n",
+        "link": "Settings for enp130s0np1:\n\tLink detected: yes\n"
+      },
+      "peer": {
+        "bdf": "0000:03:00.0",
+        "driver": "mlx5_core",
+        "pci": {
+          "vendor": 5555,
+          "device": 4115,
+          "class": 132864
+        },
+        "addresses": [
+          {
+            "ifindex": 8,
+            "ifname": "enp3s0np0",
+            "flags": [
+              "BROADCAST",
+              "MULTICAST",
+              "UP",
+              "LOWER_UP"
+            ],
+            "mtu": 9000,
+            "qdisc": "mq",
+            "operstate": "UP",
+            "group": "default",
+            "txqlen": 1000,
+            "link_type": "ether",
+            "address": "b8:83:03:67:c5:d0",
+            "broadcast": "ff:ff:ff:ff:ff:ff",
+            "addr_info": [
+              {
+                "family": "inet",
+                "local": "198.18.10.1",
+                "prefixlen": 30,
+                "scope": "global",
+                "label": "enp3s0np0",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              },
+              {
+                "family": "inet6",
+                "local": "fe80::ba83:3ff:fe67:c5d0",
+                "prefixlen": 64,
+                "scope": "link",
+                "valid_life_time": 4294967295,
+                "preferred_life_time": 4294967295
+              }
+            ]
+          }
+        ],
+        "driver_info": "driver: mlx5_core\nversion: 6.17.0-1033-oem\nfirmware-version: 12.24.1000 (HP_2180110032)\nexpansion-rom-version: \nbus-info: 0000:03:00.0\nsupports-statistics: yes\nsupports-test: yes\nsupports-eeprom-access: no\nsupports-register-dump: no\nsupports-priv-flags: yes\n",
+        "link": "Settings for enp3s0np0:\n\tSupported ports: [ Backplane ]\n\tSupported link modes:   1000baseKX/Full\n\t                        10000baseKR/Full\n\t                        40000baseKR4/Full\n\t                        40000baseCR4/Full\n\t                        40000baseSR4/Full\n\t                        40000baseLR4/Full\n\t                        56000baseKR4/Full\n\t                        25000baseCR/Full\n\t                        25000baseKR/Full\n\t                        25000baseSR/Full\n\t                        50000baseCR2/Full\n\t                        50000baseKR2/Full\n\t                        100000baseKR4/Full\n\t                        100000baseSR4/Full\n\t                        100000baseCR4/Full\n\t                        100000baseLR4_ER4/Full\n\tSupported pause frame use: Symmetric\n\tSupports auto-negotiation: Yes\n\tSupported FEC modes: None\t RS\t BASER\n\tAdvertised link modes:  25000baseCR/Full\n\t                        25000baseKR/Full\n\t                        25000baseSR/Full\n\tAdvertised pause frame use: Symmetric\n\tAdvertised auto-negotiation: No\n\tAdvertised FEC modes: None\n\tSpeed: 25000Mb/s\n\tLanes: 1\n\tDuplex: Full\n\tAuto-negotiation: off\n\tPort: Direct Attach Copper\n\tPHYAD: 0\n\tTransceiver: internal\n\tSupports Wake-on: d\n\tWake-on: d\n\tLink detected: yes\n"
+      }
+    },
+    "rdma": {
+      "device": "mlx5_0",
+      "port": 1,
+      "bdf": "0000:03:00.0",
+      "state": "4: ACTIVE",
+      "link_layer": "Ethernet",
+      "gids": [
+        {
+          "index": 0,
+          "gid": "fe80:0000:0000:0000:ba83:03ff:fe67:c5d0",
+          "type": "IB/RoCE v1",
+          "netdev": "enp3s0np0"
+        },
+        {
+          "index": 1,
+          "gid": "fe80:0000:0000:0000:ba83:03ff:fe67:c5d0",
+          "type": "RoCE v2",
+          "netdev": "enp3s0np0"
+        },
+        {
+          "index": 2,
+          "gid": "0000:0000:0000:0000:0000:ffff:c612:0a01",
+          "type": "IB/RoCE v1",
+          "netdev": "enp3s0np0"
+        },
+        {
+          "index": 3,
+          "gid": "0000:0000:0000:0000:0000:ffff:c612:0a01",
+          "type": "RoCE v2",
+          "netdev": "enp3s0np0"
+        }
+      ]
+    },
+    "peer_fec": "FEC parameters for enp3s0np0:\nSupported/Configured FEC encodings: Off\nActive FEC encoding: Off\n",
+    "application": {
+      "bar2_present": true,
+      "registers_read": true,
+      "id": 1380926258,
+      "version": 65536,
+      "aperture_bytes": 16777216
+    }
+  },
+  "error": "version2 RW BAR/quiescence/generation proof required; no QP/test started"
+}

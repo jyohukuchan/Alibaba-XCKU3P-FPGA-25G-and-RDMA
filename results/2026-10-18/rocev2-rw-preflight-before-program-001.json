@@ -1,0 +1,18 @@
+{
+  "event": "native_rw_preflight",
+  "success": false,
+  "traffic_generated": false,
+  "rdma_qp_created": false,
+  "hardware_configuration_modified": false,
+  "fpga_programmed": false,
+  "hardware_rdma_verified": false,
+  "timing_verified": false,
+  "temperature_checked": false,
+  "observed_at": "2026-10-18T15:21:31.552591+00:00",
+  "source_sha256": {
+    "rdma/read/host/native_rw_preflight.py": "b2e2fa60dbf3a94ed0fd94fba0d78c8704fb4851373bcb7367c470adb2cfed4f",
+    "rdma/host/native_preflight.py": "55b06074199648e7cb0bc378d6f1db50932e2798880bbf6a9155fc703d8e2845",
+    "rdma/read/host/fpga_rw_client.py": "9175927614ae6d9e049c0138891057aa7aba45e4541c2821b25c52674825a0a0"
+  },
+  "error": "[Errno 13] Permission denied: '/sys/bus/pci/devices/0000:82:00.0/resource2'"
+}

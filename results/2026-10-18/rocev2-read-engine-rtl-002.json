@@ -1,0 +1,276 @@
+{
+  "scope": "READ controller RTL, modeled completion/capture inputs; not HLS/app/hardware",
+  "hardware_verified": false,
+  "complete": true,
+  "tests": {
+    "test_ack_without_payload_times_out": {
+      "pass_test": true,
+      "cycles": 313,
+      "issued": 1,
+      "transport_completed": 1,
+      "captured": 0,
+      "payload_bytes": 65,
+      "lease_bytes": 128,
+      "error_code": 2
+    },
+    "test_full_capture_capacity_and_sixteen_packet_psn_reservations": {
+      "pass_test": true,
+      "cycles": 61,
+      "issued": 4,
+      "transport_completed": 4,
+      "captured": 4,
+      "payload_bytes": 262144,
+      "lease_bytes": 262144,
+      "error_code": 0
+    },
+    "test_host_busy_blocks_arm_and_setup_stall_times_out": {
+      "pass_test": true,
+      "cycles": 165,
+      "issued": 0,
+      "transport_completed": 0,
+      "captured": 0,
+      "payload_bytes": 12291,
+      "lease_bytes": 12480,
+      "error_code": 2
+    },
+    "test_invalid_configurations_emit_nothing": {
+      "pass_test": true,
+      "scenarios": [
+        {
+          "pass_test": true,
+          "cycles": 3,
+          "issued": 0,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 0,
+          "lease_bytes": 0,
+          "error_code": 1
+        },
+        {
+          "pass_test": true,
+          "cycles": 3,
+          "issued": 0,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 196611,
+          "lease_bytes": 196800,
+          "error_code": 1
+        },
+        {
+          "pass_test": true,
+          "cycles": 3,
+          "issued": 0,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 0,
+          "lease_bytes": 0,
+          "error_code": 1
+        },
+        {
+          "pass_test": true,
+          "cycles": 3,
+          "issued": 0,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 16785409,
+          "lease_bytes": 17043520,
+          "error_code": 1
+        },
+        {
+          "pass_test": true,
+          "cycles": 3,
+          "issued": 0,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 12291,
+          "lease_bytes": 12480,
+          "error_code": 1
+        },
+        {
+          "pass_test": true,
+          "cycles": 3,
+          "issued": 0,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 12291,
+          "lease_bytes": 12480,
+          "error_code": 1
+        },
+        {
+          "pass_test": true,
+          "cycles": 3,
+          "issued": 0,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 12291,
+          "lease_bytes": 12480,
+          "error_code": 1
+        },
+        {
+          "pass_test": true,
+          "cycles": 3,
+          "issued": 0,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 12291,
+          "lease_bytes": 12480,
+          "error_code": 1
+        },
+        {
+          "pass_test": true,
+          "cycles": 3,
+          "issued": 0,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 12291,
+          "lease_bytes": 12480,
+          "error_code": 1
+        },
+        {
+          "pass_test": true,
+          "cycles": 3,
+          "issued": 0,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 12291,
+          "lease_bytes": 12480,
+          "error_code": 1
+        },
+        {
+          "pass_test": true,
+          "cycles": 3,
+          "issued": 0,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 12291,
+          "lease_bytes": 12480,
+          "error_code": 1
+        },
+        {
+          "pass_test": true,
+          "cycles": 3,
+          "issued": 0,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 12291,
+          "lease_bytes": 12480,
+          "error_code": 1
+        },
+        {
+          "pass_test": true,
+          "cycles": 3,
+          "issued": 0,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 327680,
+          "lease_bytes": 327680,
+          "error_code": 1
+        }
+      ]
+    },
+    "test_memory_fault_and_impossible_commit_progress": {
+      "pass_test": true,
+      "scenarios": [
+        {
+          "pass_test": true,
+          "cycles": 58,
+          "issued": 2,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 12291,
+          "lease_bytes": 12480,
+          "error_code": 4
+        },
+        {
+          "pass_test": true,
+          "cycles": 58,
+          "issued": 2,
+          "transport_completed": 0,
+          "captured": 3,
+          "payload_bytes": 12291,
+          "lease_bytes": 12480,
+          "error_code": 4
+        },
+        {
+          "pass_test": true,
+          "cycles": 58,
+          "issued": 2,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 12291,
+          "lease_bytes": 12480,
+          "error_code": 4
+        }
+      ]
+    },
+    "test_pending_sq_abort_holds_until_transport_reset": {
+      "pass_test": true,
+      "cycles": 66,
+      "issued": 0,
+      "transport_completed": 0,
+      "captured": 0,
+      "payload_bytes": 12291,
+      "lease_bytes": 12480,
+      "error_code": 5
+    },
+    "test_segmented_psn_wrap_window_snapshot_and_late_commit": {
+      "pass_test": true,
+      "cycles": 137,
+      "issued": 3,
+      "transport_completed": 3,
+      "captured": 3,
+      "payload_bytes": 12291,
+      "lease_bytes": 12480,
+      "error_code": 0
+    },
+    "test_wrong_completion_qp_type_psn_and_future": {
+      "pass_test": true,
+      "scenarios": [
+        {
+          "pass_test": true,
+          "cycles": 60,
+          "issued": 2,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 12291,
+          "lease_bytes": 12480,
+          "error_code": 3
+        },
+        {
+          "pass_test": true,
+          "cycles": 60,
+          "issued": 2,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 12291,
+          "lease_bytes": 12480,
+          "error_code": 3
+        },
+        {
+          "pass_test": true,
+          "cycles": 60,
+          "issued": 2,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 12291,
+          "lease_bytes": 12480,
+          "error_code": 3
+        },
+        {
+          "pass_test": true,
+          "cycles": 60,
+          "issued": 2,
+          "transport_completed": 0,
+          "captured": 0,
+          "payload_bytes": 12291,
+          "lease_bytes": 12480,
+          "error_code": 3
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "rdma/read/rtl/rocev2_read_engine.v": "cabf0b52017e5b411c0e64abb1b74c9d67fea685cf0fbd4a372e4ca58bdbb4e5",
+    "rdma/read/tests/test_read_engine_rtl.py": "a59f5e4b7188b4a3190eabf33c6f83bcd753fc58582a09cd056955af7a14387d"
+  }
+}

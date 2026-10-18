@@ -1,0 +1,74 @@
+{
+  "scope": "read-only checks of the currently loaded Ethernet image and native receiver before the new RoCE image; not new-image, physical or RDMA acceptance",
+  "observed_at_utc": "2026-10-18 08:27:45 UTC",
+  "fpga": {
+    "bdf": "0000:82:00.0",
+    "driver": "mqnic",
+    "resident_module_srcversion": "2B7846A14E770BA5B472258",
+    "stored_module_srcversion": "2B7846A14E770BA5B472258",
+    "stored_module_path": "/home/user/fpga-10gbe/corundum/modules/mqnic/mqnic.ko",
+    "stored_module_sha256": "221688a4061833e90938811613d5a3d9a8d4eb5f1fa3111ff79cbcb1c9aa7094",
+    "stored_module_vermagic": "6.17.0-1033-oem SMP preempt mod_unload modversions",
+    "resident_binary_sha256_measured": false,
+    "module_identity_limit": "Matching srcversion and vermagic are consistent with the stored build; they do not establish a cryptographic measurement of the resident binary.",
+    "reviewed_existing_driver_source": "/home/user/fpga-10gbe/corundum/modules/mqnic/mqnic_main.c",
+    "reviewed_existing_driver_source_sha256": "3ef05c996514572a42223bdffce284869bb5cc4ee0314984a39351f59d422636",
+    "pinned_driver_source_sha256": "8b2220a65db66fcba144173b931ae1f211b5ee04d2eb592dc1e597daedbb69ea",
+    "source_review": {
+      "bar2_is_mapped_when_present": true,
+      "application_id_is_not_whitelisted": true,
+      "auxiliary_application_device_registration_is_generic": true,
+      "dedicated_application_driver_is_required_by_base_probe": false,
+      "config_auxiliary_bus": "y",
+      "pci_regions_are_requested_exclusively": false,
+      "driver_replacement_indicated_by_review": false
+    },
+    "current_bar0_read_only_mapping_verified": true,
+    "bar0_register_offsets_read": [0, 4],
+    "bar0_expected_fw_id_block_type": "0xffffffff",
+    "bar0_expected_fw_id_block_version": "0x100",
+    "current_bar2_present": false,
+    "new_image_bar2_access_verified": false,
+    "new_image_application_probe_verified": false,
+    "fpga_kernel_verbs_provider_implemented": false
+  },
+  "peer": {
+    "bdf": "0000:03:00.0",
+    "namespace": "fpga10g-cx4",
+    "rdma_device": "mlx5_0",
+    "port": 1,
+    "link_layer": "Ethernet",
+    "port_state": "PORT_ACTIVE",
+    "link_speed_mbit_s": 25000,
+    "active_mtu_bytes": 4096,
+    "active_mtu_obtained_by": "ibv_devinfo -d mlx5_0 -i 1 in the dedicated peer namespace",
+    "ipv4_mapped_rocev2_gid_index": 3,
+    "active_fec": "Off"
+  },
+  "required_application_preflight": {
+    "success": false,
+    "refused_before_qp_or_traffic": true,
+    "reason": "The currently loaded old image has no supported ROC2 BAR2; expected refusal, not a new-image test.",
+    "native_preflight_includes_active_mtu_check": false,
+    "active_mtu_checked_separately_above": true
+  },
+  "source_sha256": {
+    "rdma/host/native_preflight.py": "55b06074199648e7cb0bc378d6f1db50932e2798880bbf6a9155fc703d8e2845",
+    "external/corundum/modules/mqnic/mqnic_main.c": "8b2220a65db66fcba144173b931ae1f211b5ee04d2eb592dc1e597daedbb69ea"
+  },
+  "raw_records": {
+    "rdma/logs/pre-program-native-path-001.json": "66c623d3563755bdff97d8d05c252b1e1c5b3320a0e11d774a24e1f4ee63c032",
+    "rdma/logs/pre-program-native-peer-query-001.log": "54ec2a2b42b89de7a0a647cc40c8417ae9427933839428929d091fa9cd31b95e",
+    "rdma/logs/pre-program-mqnic-module-001.log": "c4f842712e57cc98eb90c9a02f17e947079fdc7d1d0acce4de8659cb54f8ad37",
+    "rdma/logs/pre-program-bar0-readonly-001.json": "d283569e90cf018931d55e6683818b0f4c00edb3a058ea477bd144e09e170d63"
+  },
+  "driver_installed_or_reloaded": false,
+  "hardware_configuration_modified": false,
+  "traffic_generated": false,
+  "rdma_qp_created": false,
+  "fpga_programmed": false,
+  "temperature_checked": false,
+  "final_physical_gate_passed": false,
+  "hardware_rdma_verified": false,
+  "hardware_throughput_measured": false
+}

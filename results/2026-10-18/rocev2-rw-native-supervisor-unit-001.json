@@ -1,0 +1,42 @@
+{
+  "scope": "Native supervisor/provider/evidence models; no hardware",
+  "hardware_verified": false,
+  "complete": true,
+  "tests": {
+    "test_failed_worker_stops_only_its_owned_children_client_first": {
+      "pass_test": true
+    },
+    "test_incomplete_client_or_software_path_rejected": {
+      "pass_test": true,
+      "rejected": 30
+    },
+    "test_no_final_hardware_claim_before_thermal_and_owned_cleanup_proof": {
+      "pass_test": true
+    },
+    "test_read_source_bar_metadata_and_scoped_commands": {
+      "pass_test": true
+    },
+    "test_readonly_preflight_must_succeed_before_qp_creation": {
+      "pass_test": true
+    },
+    "test_thermal_supervisor_and_sensor_fingerprints_required": {
+      "pass_test": true
+    },
+    "test_write_uses_original_all_byte_native_receiver_verifier": {
+      "pass_test": true
+    },
+    "test_wrong_native_provider_nonce_mr_or_aborted_source_rejected": {
+      "pass_test": true,
+      "rejected": 21
+    }
+  },
+  "source_sha256": {
+    "rdma/read/tests/test_native_rw_test.py": "a70eb9bb6dc390959dc0e47e15fb6fb87f87e83b0cfb2ebd384b2c126b1c6c69",
+    "rdma/read/host/native_rw_test.py": "edefb9d806b628c48b88e3a159ad23da1d6ac790b1d154ed26c16df1260ac275",
+    "rdma/host/native_test.py": "1695787f534e8632cf7509ddf3644d112035f1720e9972014c309a323b0885d0",
+    "rdma/read/host/fpga_rw_client.py": "9175927614ae6d9e049c0138891057aa7aba45e4541c2821b25c52674825a0a0",
+    "rdma/read/host/native_rw_preflight.py": "b2e2fa60dbf3a94ed0fd94fba0d78c8704fb4851373bcb7367c470adb2cfed4f",
+    "rdma/read/tests/test_rw_client.py": "f2027dfd294143b6b60e250259503d21e99678d53e05e7137cafb6383202903b",
+    "rdma/read/tests/test_rw_preflight.py": "2d8d45fdf4ecc8766f3f6bd82552e515a9a15213ab9680407b58b414d8b2ce69"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "scope": "Four-state Atomic MAC lifetime/framer/mux and actual25G XGMII/FCS/SFD/receipt CDC in one unit case; HLS/service/host/PHY/PTP input models, not full native/board/global-drain proof",
+  "pass_test": true,
+  "source_unchanged": true,
+  "hardware_verified": false,
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_atomic_mac_tx.v": "f10b53946fb8d9ab354e3ca3f40c577c962b8955193c21ee4429bb70a1f9f0a5",
+    "rdma/rnic/tests/test_atomic_mac_tx_rtl.py": "7dfab2dcabf6b3689823e4323ae903a5f250603fa91b28db0dba163a91e49cdc",
+    "rdma/rnic/tests/atomic_mac_wire_fixture.py": "8e17dcb56ccb2bbbaac04f4f96f080e855355f4f8bba2f5c9a83513c71a1977d",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c910018a2e8a9d77e649437f9a7727f5cf2fd9c02cb20ab92016b5209a3a189e",
+    "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+    "external/corundum/fpga/lib/eth/rtl/axis_xgmii_tx_64.v": "097750af9f48497c3c5743c37e743eef22a314de139c2088756346c167915f7b",
+    "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+    "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+    "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+    "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+    "external/corundum/fpga/lib/axis/rtl/axis_async_fifo_adapter.v": "9dc661b88d459a318e40722df277720fe64ef4309230462e8538b1a44da1d57c",
+    "external/corundum/fpga/lib/axis/rtl/axis_async_fifo.v": "faeeaeadcba90268689f9fd227b1c8088d856ec8290ef6ab10b6d25e018858d4",
+    "external/corundum/fpga/lib/axis/rtl/axis_adapter.v": "4b9b6649f12e374c24d36f2d42680ecf1f38cca8ae4fda7fd68dbf722b6c8140"
+  },
+  "focused_MAC": {
+    "methods": 9,
+    "internal_simulations": 25,
+    "actual25G_MAC_RTL_cases": 1
+  },
+  "combined_Atomic": {
+    "methods": 21,
+    "internal_simulations": 73,
+    "seconds": 7.884,
+    "terminal_exit": 0,
+    "command": "python3 -m unittest discover -s rdma/rnic/tests -p 'test_atomic*_rtl.py' -v"
+  },
+  "cases": [
+    "core consumption required before wire",
+    "matching SFD receipt required, no EOF/quiet inference",
+    "SFD does not substitute for unaccepted EOF",
+    "actual matched tail and stable retirement under backpressure",
+    "cached wire MSN differs from current core MSN",
+    "sequence/access NAK and PSN wrap",
+    "drop then fresh positive with new nonce/tag",
+    "all5 native tag classes preserved",
+    "wrong/unknown service/core/peer/wire identity",
+    "stale/duplicate/unknown/premature Atomic MAC receipt fails closed",
+    "actual25G XGMII START/SFD/TERM/FCS with async frame and timestamp CDC"
+  ],
+  "per_simulation_limit_seconds": 10,
+  "strict_parent_gates_unchanged": true,
+  "native_integration": false,
+  "earlier_trials": "Initial new test driver parsed unknown unkept lanes and waited after deliberate fault; fixed driver to check each valid byte, stop after quarantined input and wait for actual native output. Production owner checks were not weakened."
+}

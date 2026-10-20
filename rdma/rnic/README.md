@@ -15,6 +15,37 @@ remaining run was interrupted). No all-suite or release-pass claim is made.
 
 ## Latest functional milestone (2026-10-20)
 
+Progress086 adds Atomic MAC lifetime and automatic guarded-packet retirement.
+The actual144-bit owner/392-bit service reply/224-bit consumed-core receipt
+must match the generated IP response before Ethernet transmission. Fresh
+private MAC tags1..8191 sit outside existing native WQE routing; positive
+retirement requires the OWN genuine SFD receipt, accepted EOF and wire tail.
+Drop uses actual no-packet consumption, not a fabricated receive WQE or MAC
+receipt. Existing native frame/completion classes pass independently. A new
+checked Atomic-only bridge snapshots peer sideband at actual admission and
+uses real AXIS fanout; hardware drives retirement directly, not a test knob.
+Nine four-state methods/25 simulations include actual25G XGMII TX/FCS/SFD-tag
+and timestamp CDC RTL in one case, decoded independently from actual wire
+outputs. Full generated-HLS composition is recorded separately after compile.
+This is not full ordinary/Atomic native MR/memory/QP integration, requester,
+standard API runtime, physical PHY or timing signoff. `IB_ATOMIC_NONE` and
+both0 global drains remain. No new push/install/programming/hardware changes.
+
+Current generated MAC composition002 PASSES4 cases <=8.79s with unchanged
+full owned HLS and actual Atomic/MR/PTE/DMA/RAM/IP/ICRC. The main11requests
+produce11 actual core receipts/automatic retirements and10 real Atomic MAC
+XGMII/FCS/SFD frames, alongside one unrelated native frame/completion. Drop
+tag10 emits no frame, then fresh FADD tag11 succeeds. Independent Python
+checks actual Ethernet/FCS and HLS wire/readbacks. MR denial retires through
+actual MAC with no DMA; failed fence/corrupted nonce retain ownership without
+completion. Physical host ordering/PHY/time input remain models.001 is retained
+as diagnostic scope-label failure;002 freshly translates and reruns all cases
+after checked label fix, without relaxing HDL checks. Future native admission
+must honor finite tag exhaustion. No new board/HLS synthesis; original4ns/
+1.08ns gates remain, owned raw HLS estimate13.568ns still misses target.
+
+Preceding consumed-core milestone:
+
 Progress084 implements immutable144-bit packet ownership through the actual
 Atomic HLS RX/service path and exports224-bit consumed-core completions only
 after real SAME-table MSN/EPSN readback on the existing ordered channels.

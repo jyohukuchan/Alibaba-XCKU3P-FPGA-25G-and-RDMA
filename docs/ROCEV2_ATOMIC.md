@@ -5,6 +5,81 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+## Atomic MAC lifetime and automatic retirement (086)
+
+`rocev2_atomic_mac_tx.v` adds an unposted Atomic packet lifetime, not a fake
+receive WQE/CQ. It joins the immutable144-bit packet owner, actual392-bit
+service reply,224-bit same-table consumed-core receipt and generated IP
+response. This is important for replay: the wire can contain cached OLD MSN
+while the consumed-core receipt reports CURRENT common MSN. Packet bytes must
+match the real service reply and independently snapshotted peer identity;
+fresh advancement/NAK/drop must match actual core flags and readbacks.
+
+The real Ethernet framer and frame arbiter sit OUTSIDE existing native WQE
+MAC routing. Atomic uses fresh nonzero low13-bit tags1..8191, disjoint from
+legacy0, WQE0x2000 class, responder0x4000, receiveACK0x6000 class and MSB1
+host tags. The corresponding actual SFD receipt never enters the inner
+native policy. Unknown/stale/duplicate/premature Atomic receipts quarantine
+the lease. Positive retirement additionally requires accepted final MAC beat,
+framer completion and1024 core cycles AFTER both SFD receipt and final beat.
+Drop requires actual no-packet core/service consumption and no offered IP;
+it invents neither a MAC receipt nor an RQ. Tags do not wrap, including drops;
+exhaustion fails closed. Whole-parent reset is not cancellation/unpin proof.
+An already offered frame/retirement stays stable under disable/late fault;
+fault still retains its aggregate configuration/queue guard.
+
+`derive_atomic_mac_bridge.py` is a checked new **Atomic-only branch**; it does
+not replace normal native admission. It snapshots trusted MAC/IP/peerQPN on
+the SAME accepted post-ICRC first beat as the existing QPN/epoch packet guard.
+Actual registered AXIS broadcasters carry owner and service response to HLS
+and MAC consumers independently under backpressure. The MAC lifetime directly
+drives the packet guard's exact retirement; no external test/CPU release.
+Existing ordinary Ethernet frames/completions can pass this final mux, but
+full shared normal/Atomic native QP/MR/memory integration is not yet selected.
+
+Nine four-state methods/25 simulations cover missing core/SFD, SFD without
+EOF, positive/NAK/replay/PSN wrap, drop then next positive, all native tag
+classes, unknown/stale identity/body and completion rejection. One case uses
+actual Corundum128-to64 asynchronous frame FIFO,25Gb/s XGMII TX/FCS/SFD-tag
+RTL and actual timestamp CDC FIFO, with250MHz core/390.625MHz MAC. Independent
+Python decodes actual START/SFD/TERM and checks Ethernet bytes/FCS plus IP/ICRC.
+Physical PHY pins, clock/time source and HLS/service inputs in this unit case
+remain models. Full generated-HLS composition is recorded separately after
+its feature-required compile; no board/native/Linux/timing claim follows from
+this unit result. Both global HLS drain inputs remain0; `IB_ATOMIC_NONE` stays.
+
+Generated MAC composition002 now PASSES4 actual-RTL cases, taking8.78/3.22/
+3.17/3.18seconds. The main case uses the unchanged complete owned HLS, real
+Atomic/MR/PTE/paged DMA/RAM and actual IP/ICRC stages, plus the real MAC path
+above. Eleven service requests yield11 consumed-core receipts and11 automatic
+packet retirements;10 actual Atomic response Ethernet frames and one unrelated
+native tag0x9234 frame leave the real XGMII TX. Actual SFD tags1..9/11 correspond
+to Atomic frames; drop consumes nonce/tag10 but emits no frame, and tag11's
+fresh FADD succeeds. Independent Python checks every HLS wire/core receipt and
+actual MAC preamble/SFD/TERM/FCS/bytes. No test/CPU writes a retirement or
+produces positive MAC receipt. Native completion0x9234 is forwarded, never
+miscounted as Atomic. The25G name describes the functional MAC clock/width,
+not a new physical throughput measurement or GTY/PHY qualification.
+
+Case1 sends actual no-DMA MR-denial NAK through MAC and retires normally;
+case2 failed visibility fence yields no service/core/wire completion and holds
+both packet/MAC guards;case3 flips one real returned owner nonce and HLS/MAC
+reject it without packet/core completion or release. Host DMA descriptors/
+ordering, physical PHY pins and PTP clock input remain modeled. Full normal/
+Atomic native admission/control/MR/ordinary-payload exclusion and requester/
+kernel/API runtime remain open. The next integration must also gate fresh
+admission on finite MAC tag exhaustion: the current MAC refuses that owner
+and retains/quarantines later work, not a successful execution/retirement.
+
+Diagnostic001 ran the main case successfully but strict result verification
+refused its accidentally retained old `MAC_boundary_model` labels. The exact
+pre-fix fixture, binary and logs remain.002 fixes only that checked label
+generation, freshly translates the entire RTL, reuses only exact identical
+compiler inputs, rebuilds changed files and reruns all4 cases. Its source/
+artifact SHA audit passes. No HDL/protection/check condition was weakened.
+No HLS/Vivado/board synthesis or programming is performed in086; unchanged
+owned raw HLS still estimates13.568ns against original4.00ns/1.08ns.
+
 ## Owned consumed-core completion (084)
 
 `atomic_owned_transport.py` adds a checked full-core derivative, retaining the

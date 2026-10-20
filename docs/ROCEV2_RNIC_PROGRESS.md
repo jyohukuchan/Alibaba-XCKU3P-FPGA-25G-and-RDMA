@@ -32,6 +32,34 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+Progress086 adds operation-owned Atomic MAC lifetime and a checked new branch
+composition with automatic packet retirement. It joins actual owner/service/
+consumed-core/wire identity, real Ethernet framing/native frame mux and fresh
+nonzero low13-bit MAC tags. Positive retirement waits for its OWN SFD receipt,
+accepted EOF/framer completion and1024-cycle tail; drop uses genuine no-packet
+consumption, not quiet/delay or a fake RQ. Admission-side trusted peer snapshots
+and registered AXIS fanout preserve ownership through backpressure. Nine
+four-state methods/25 cases cover those conditions; one uses actual25G XGMII
+TX/FCS/SFD and two real CDC FIFOs rather than test-produced MAC receipts.
+Full generated-HLS composition is recorded after its compile. This Atomic-only
+branch is not yet full normal/Atomic native admission/MR/memory integration;
+requester/standard API/physical/timing qualification and all11 requirements
+remain. No automatic new commit/push or hardware changes are authorized.
+
+Current generated MAC composition002 PASSES4 actual-RTL cases <=8.79seconds.
+The11-request main case produces11 consumed-core receipts/automatic packet
+retirements,10 actual Atomic XGMII/FCS/SFD responses and one independently
+forwarded native frame/completion. Drop tag10 has no frame and next FADD tag11
+succeeds. Independent Python validates actual wire/FCS and core ownership/
+readbacks. MR denial goes through actual MAC with no DMA; failed fence or
+corrupted echoed nonce cannot complete/release. Host descriptors/order and
+PHY/time input remain models; actual native QP/MR/normal memory integration
+is still separate work. Diagnostic001 was refused for stale scope labels;
+002 uses corrected checked labels and fresh RTL translation/all4 reruns.
+No new physical/HLS timing qualification; original target/uncertainty and
+both global0 drains remain, owned HLS estimate still13.568ns. Finite MAC tag
+exhaustion must gate future native admission; it is not successful completion.
+
 Progress084 adds immutable packet ownership through the complete Atomic HLS
 RX/service and a real consumed-core completion after SAME-table MSN/EPSN
 readbacks. It reuses both ordered RX query channels, not another state table.

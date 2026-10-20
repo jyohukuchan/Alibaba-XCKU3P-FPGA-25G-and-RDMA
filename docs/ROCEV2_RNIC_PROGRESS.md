@@ -32,6 +32,47 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+Progress093 connects actual128-byte PCIe/RAM/SQ fetch, ONE actual MR table
+and real guarded748-bit owner/408-bit SQ staging. Positive6 records/6 SQ
+offers PASS0.38s; UR-error4 records but only3 SQ offers PASS0.33s, with real
+drain/queue-halt/fresh-epoch recovery. Independent every-byte/full-owner/SQ
+oracles pass. Physical host/root/config and downstream executor/HLS sinks
+remain models; no actual HLS Atomic requester/result/CQ/API claim follows.
+
+Actual Atomic local-result MR admission passes8methods/23 four-state cases;
+owner/SQ staging passes5methods/13 cases. Denied/unknown/error records cannot
+carry operands or generate SQ authority. Actual LOCAL_WRITE is required for
+the8-byte result. Unchanged old admission/Immediate/owner suites pass23
+methods. Same-core Atomic HLS request/ACK/result/replay and matched native
+executor/MAC/CQ/SQC/kernel/provider remain next. All11 requirements remain.
+
+Progress092 completes fresh full-native runtime003: mixed FADD/duplicate/
+ordinary WRITE, READ and SEND_IMM PASS17.51/17.75/17.80s. Actual common native
+QP/HLS/MR/PTE/exclusive memory and Atomic MAC are connected. Mixed execution
+checks all host bytes, actual XGMII/FCS/SFD/CDC, full wire/ICRC, shared EPSN/MSN
+and hardware-owned retirement without fake WQE/RQ/CQ. Physical host/root/
+PHY/peer/PTP input remain models; ordinary requester MAC pins remain modeled.
+003 reuses an exact frozen executable with a strictly checked one-line Python
+normal-ACK oracle correction and ALL cases freshly rerun;001/002 failures
+remain preserved. This is not standard API, physical or timing signoff.
+
+The next major requester stage has actual128-byte C encode/decode (7 UBSan
+methods PASS) and a checked actual SQ/RAM/mux/PCIe DMA derivative. Positive/
+UR-error cases pass6/4 records, every128 bytes/operands checked, with queue
+halt/fresh-epoch recovery. Four-state fetch units pass6methods/9simulations;
+unchanged64-byte C/Immediate tests pass13methods. These do not implement the
+remaining128-byte SQC/driver negotiation, local-result MR admission, shared
+HLS Atomic request/ACK/replay/data placement or MAC/CQ/kernel/provider path.
+All11 requirements remain; no hardware/default profile or automatic push.
+
+Progress091 added native RX reference/classifier
+four-state tests002 PASS9 methods/27 simulations (0.84s), with adjacent
+endpoints modeled. The full native functional launcher and whole-wire/state
+oracle were implemented; its fresh runtime result is now recorded above.
+Atomic8-byte transfer/fence expectations
+are checked separately from the unchanged ordinary65-byte requester oracle.
+No hardware, clock/drain gate, installed driver or automatic push changes.
+
 Publication snapshot090 (2026-10-20) includes the opt-in complete normal/Atomic
 native integration candidate. Actual raw RX/context references, Atomic dispatch,
 shared owned HLS/MR/PTE, exclusive memory arbitration and outer MAC lifetime are

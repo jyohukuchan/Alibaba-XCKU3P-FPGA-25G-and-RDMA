@@ -5,6 +5,143 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+## Atomic requester MR admission and guarded SQ pipeline (093)
+
+`derive_atomic128_admission.py` adds checked replacements for actual WQE
+admission, the SQ-result bridge and owner-before-HLS-SQ staging. Atomic op7/8
+requires the REAL local MR validator's LOCAL_WRITE permission for its8-byte
+result, not REMOTE_ATOMIC permission or a CPU physical-address shortcut.
+Full key/PD/range, trusted queue/sequence/epoch and remote alignment are checked.
+All128 descriptor bytes must be known/canonical. Both64-bit operands remain
+independent and immutable; denied/failed fetches zero all operand authority.
+Normal/Immediate/RECV admission remains supported, including RECV-only refusal
+of Atomic TX. The original64-byte modules are unchanged.
+
+New [admission001](../results/2026-10-18/rocev2-rnic-atomic-request-admission-001.json)
+PASSES8 methods/23 four-state simulations in1.39s with actual C descriptors,
+the actual SQ bridge/frontend and ONE actual MR table. It covers permissions,
+keys/PD/ranges, unknown headers/operands/reserved bytes, all15 DMA error codes,
+stalls/disable and uncertain response ownership. Raw fetch/consumer endpoints
+remain models; this component result alone is not a PCIe or requester proof.
+
+The extended immutable owner is748 bits: existing Immediate620, compare64 at
+bits683:620, swap/add64 at747:684. SQ408 keeps the COMPLETE lower280-bit ABI,
+including its seven zero padding bits; compare is343:280, swap/add407:344.
+CAS/FADD map to wire opcodes0x13/0x14. Actual guarded staging passes5 methods/
+13 four-state simulations in0.30s: exact full-width fields, normal/Immediate
+compatibility, denied/no-SQ behavior and ownership before SQ, including late
+guard loss without retracting an already offered word. HLS/executor are
+explicit endpoint models. The future packed C++ `txMeta` must preserve those
+seven padding bits BEFORE the appended operands to match this explicit ABI.
+
+The [complete front-end pipeline001](../results/2026-10-18/rocev2-rnic-atomic-request-pipeline-001.json)
+and [UR-error pipeline002](../results/2026-10-18/rocev2-rnic-atomic-request-pipeline-002.json)
+now connect actual Corundum PCIe/RAM/mux/128-byte SQ fetch -> the SAME actual
+MR table -> actual immutable-owner/SQ staging, not separate elaborations.
+Positive6 records yield6 real guarded owners/SQ offers in0.38s. The error case
+has4 fetched/error owners but ONLY3 SQ offers in0.33s: UR retains trusted
+identity while zeroing all data/operand authority, halts its queue and needs
+actual parent drain plus a fresh epoch for recovery. Independent Python
+checks all128 fetched bytes, every748 owner bit and every408 SQ bit.
+Physical host/root/trusted config and downstream executor/HLS sinks remain
+models; their staging release is NOT a WR completion/unpin certificate.
+There is no test-produced MR reply, DMA descriptor/status/RAM data shortcut
+or SQ word. Unchanged old admission/Immediate/owner suites pass23 methods.
+
+This closes the requester FETCH/MR/STAGING portion only. SAME-core HLS Atomic
+request/ACK processing, protected BE-to-LE8-byte result placement, retransmit/
+common-state retirement, real executor/MAC/CQ and matched128-byte SQC/driver/
+provider remain incomplete. Existing native responder003 evidence stays
+unchanged. No hardware/default profile/capability/timing/drain gate is changed.
+
+## Full native responder runtime and requester groundwork (092)
+
+The [full native runtime003](../results/2026-10-18/rocev2-rnic-atomic-native-full-003.json)
+PASSES three FRESH cases: mixed FADD/duplicate/ordinary WRITE17.51s, ordinary
+READ17.75s and SEND_IMM17.80s. The complete shared native graph uses actual
+SQC route binding, one owned HLS/MR/PTE domain, exclusive memory arbitration
+and the outer Atomic MAC. Mixed execution has no posted WQE/RQ/CQ shortcut.
+Two FADD executions, one cached duplicate and one ordinary WRITE produce
+three genuine core receipts/automatic Atomic retirements, actual MAC tags
+1/2/0x4000/3, five read TLPs (including three visibility fences) and three
+write TLPs. All host bytes and neighbors, exact wire/FCS/ICRC, immutable owners
+and common EPSN987655/987655/987657 and MSN1/1/3 match independent oracles.
+The actual SQC retirement attempt is denied while the Atomic lease is held.
+
+This is OFFLINE simulation, not Linux/physical/timing/interop qualification.
+Atomic uses actual XGMII/SFD/FCS/CDC; physical host/root, PHY/peer/PTP input
+remain models. Ordinary requester cases retain their explicit MAC-pin model
+but still check actual SQ/MR/DMA/replay/core-owner/CQ and full wire output.
+All663 source/28 local artifact/one frozen RAM executable hashes match.
+
+Diagnostic002's RTL assertions completed successfully, but the Python oracle
+incorrectly expected Atomic ACK syndrome0x1f for the ordinary ACK too. The
+immutable selected HLS source explicitly generates ordinary ACK syndrome0.
+Only that expected byte was corrected; its exact old verifier is preserved.
+003 verifies all prior compiled RTL/bench/executable hashes, enforces that
+exact one-line Python-only diff and reruns ALL three cases. It reuses the
+unchanged frozen executable, not test results;002 remains a failure record.
+Its459.33s compilation is not repeated for a Python-only oracle correction.
+
+Requester groundwork now has a separate `wqe_atomic.h/.c`128-byte codec and
+checked `derive_atomic128_fetch.py` SQ/RQ DMA derivative. Bytes0..63 retain
+the normal/Immediate header;64..71 are LE compare,72..79 LE swap/add and
+80..127 reserved zero. Atomic op7/8 require length8, remote alignment and no
+Immediate; FADD compare must zero. Normal operations require a zero extension.
+The actual C codec passes7 UBSan methods, including full-width operands,
+failure zeroing, overlap and old64-byte API refusal. Unchanged old C/Immediate
+codec suites also pass13 methods. No default format or capability changes.
+
+The real Corundum DMA/RAM/mux/PCIe path fetches all128 bytes of CAS/FADD and
+normal/Immediate records: positive002 passes6 records/768 bytes in0.35s;
+UR-error003 passes4 records/512 bytes in0.31s, including128 zero error bytes,
+queue halt, real withheld-parent drain and fresh-epoch recovery. Host/root
+and trusted configuration remain models; no CPU payload-copy shortcut or
+host write/fence is used. The new four-state controller units002 pass6
+methods/9 simulations: both halves plus actual status required, malformed/
+unknown framing quarantine, held owners under disable, DMA64 ring limits,
+nonwrapping tags and separate same-QPN SQ/RQ contexts. Diagnostic preflights
+retain an old79-vs-current87-port fixture check and a test-only SystemVerilog
+reserved identifier; current exact interfaces/assertions and RTL are retained.
+
+These are necessary requester components, NOT an integrated Atomic requester.
+128-byte SQC/driver negotiation, actual local-MR result admission, immutable
+operand propagation into the SAME shared HLS, Atomic request/ACK processing,
+replay/result placement and real MAC/CQ/kernel/provider lifetimes remain.
+Default hardware, original protected responder, both global zero drains,
+`IB_ATOMIC_NONE`, original4ns/1.08ns and full-board qualification gates remain.
+
+## Integrated runtime work after snapshot090 (091 history)
+
+New four-state native RX reference/classifier tests002 PASS9 methods/27
+simulations in0.84s. They cover retained first offers during pause/query
+unavailability, actual checker EOF/drop accounting (including two releases
+and one acquisition together), context replacement protection, finite-count
+overflow containment, malformed headers and unchanged normal/Atomic routing
+under backpressure/late faults. Adjacent checker/context/endpoints are models;
+this is not complete native execution or safe host unpin proof. Diagnostic001
+retains a test stimulus-width failure: a seven-hex-digit literal truncated to
+the legal QPN2.002 uses an actual out-of-range24-bit QPN; RTL is unchanged.
+The failed fixture/binary/log and exact test preimage are retained locally.
+
+`probe_atomic_native_full.py` builds one actual full native graph. It adds
+mixed FADD/duplicate/normal WRITE and independent
+whole-wire/common-state oracles, alongside the ordinary READ/SEND_IMM cases.
+The Atomic case uses actual XGMII/FCS/SFD/receipt CDC; physical host/root,
+PHY/peer/PTP input remain models. Runtime outcomes are not inferred from
+fixture generation or compilation. Large new frozen binaries
+use task-owned RAM without lowering the original fresh-native1GiB guard.
+
+Full-native runtime001 compiled in468.52s and reached actual Atomic native
+memory execution, but its first13.44s case FAILED the inherited65-byte
+physical-address oracle; it is NOT a passing integrated result. Its frozen
+executable/log/bench and exact launcher preimage are retained. The separate
+`atomic_native_full_memory_fixture.py` preserves ordinary requester assertions
+while adding exact8-byte Atomic/WRITE key/offset/direction, physical-page,
+enabled-byte and ordered-fence expectations. Runtime002 is the fresh rebuild
+of that fixture, not a relabel of001; its later verifier failure and successful
+fresh003 runs are recorded above. No RTL safety condition was relaxed.
+
 ## Full native integration candidate (090; publication snapshot)
 
 The opt-in checked `derive_atomic_native.py` / `derive_atomic_native_rx.py`

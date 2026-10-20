@@ -1,0 +1,104 @@
+{
+  "scope": "Four-state128-byte SQ controller, DMA/status/config endpoints modeled.\n\nReal controller/guards/tables; no WQE authorization/native/API/unpin proof.\nActual PCIe/RAM tests are separate probe_atomic128_sq_dma evidence.\n",
+  "pass_test": true,
+  "source_sha256": {
+    "rdma/rnic/tests/test_atomic128_fetch_rtl.py": "dd76f78110d0d31ed8cdacf6447eb23d64e19613cd8062adeb3c545c269e4475",
+    "rdma/rnic/fpga/derive_atomic128_fetch.py": "4123c117771f568fc4a002a614ade421f6c94eb08dd17b27dff2a6a8d9dbe433",
+    "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+    "rdma/rnic/rtl/rocev2_sq_dma_fetch.v": "f6b79cb4352b60be7d0002494311e0ef79a09cc16a1bde0a0259499386ff88b3",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c910018a2e8a9d77e649437f9a7727f5cf2fd9c02cb20ab92016b5209a3a189e",
+    "rdma/rnic/tests/test_sq_fetch_rtl.py": "503be31337adec9c6622b1bed8e8d392c4bed0c0d153e514285223d9ac7242cb"
+  },
+  "methods": 6,
+  "internal_simulations": 9,
+  "seconds": 0.25830013101221994,
+  "tests": {
+    "test_bad_half_framing_keep_and_unknown_never_produce_result": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 30
+        },
+        "generated_RTL_sha256": "0cb799c2035ee4c5bf290432b94a607690f5b52d04f53c2eca7415a97410f7b2",
+        "bench_sha256": "117a7015871dec0137e887630e013c736b7c5ad7bcc26b74bda4fade408cffe7"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 30
+        },
+        "generated_RTL_sha256": "0cb799c2035ee4c5bf290432b94a607690f5b52d04f53c2eca7415a97410f7b2",
+        "bench_sha256": "fb015d73efc32b40cbab4d5eb491fe581694a718036671415848876f941a26cf"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 32
+        },
+        "generated_RTL_sha256": "0cb799c2035ee4c5bf290432b94a607690f5b52d04f53c2eca7415a97410f7b2",
+        "bench_sha256": "9c41a73eb4044f9fa365fc07758819e5784607274e5679b25e4f65b28c33ff32"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 32
+        },
+        "generated_RTL_sha256": "0cb799c2035ee4c5bf290432b94a607690f5b52d04f53c2eca7415a97410f7b2",
+        "bench_sha256": "564eda4f4ac7ec9e5dcd50f992f0b69469d494e62496db2435b0aedb5b11ae00"
+      }
+    ],
+    "test_early_status_does_not_release_partial_record_or_trusted_owner": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 62
+        },
+        "generated_RTL_sha256": "0cb799c2035ee4c5bf290432b94a607690f5b52d04f53c2eca7415a97410f7b2",
+        "bench_sha256": "e70d276640efa681f89960ded93dc406f812918227047243bfe3aaf46a736cac"
+      }
+    ],
+    "test_full_DMA64_ring_range_128_alignment_and_highest_exact_end": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 108
+        },
+        "generated_RTL_sha256": "0cb799c2035ee4c5bf290432b94a607690f5b52d04f53c2eca7415a97410f7b2",
+        "bench_sha256": "f6dcdd19bbe3a0f4cd122df4d69bae92f3e596814bb3832000a1731efcaf8a96"
+      }
+    ],
+    "test_full_record_DMA_error_zeroes_both_halves_and_halts_queue": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 69
+        },
+        "generated_RTL_sha256": "0cb799c2035ee4c5bf290432b94a607690f5b52d04f53c2eca7415a97410f7b2",
+        "bench_sha256": "dc2a1e75798038749fb0936e961051fd1ece8683f0df560b514e6a5bd310b536"
+      }
+    ],
+    "test_nonwrapping_finite_DMA_tags": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 68
+        },
+        "generated_RTL_sha256": "0cb799c2035ee4c5bf290432b94a607690f5b52d04f53c2eca7415a97410f7b2",
+        "bench_sha256": "df622a766971428ff9e23ea0891a520d80ad9e964b72148333ff88701c668a03"
+      }
+    ],
+    "test_same_QPN_separate_SQ_RQ_context_banks": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 101
+        },
+        "generated_RTL_sha256": "0cb799c2035ee4c5bf290432b94a607690f5b52d04f53c2eca7415a97410f7b2",
+        "bench_sha256": "c1ed29f49c3c5a859f365be51742c3a8bde788ffa53a0b8ccd0785d73ee1bafe"
+      }
+    ]
+  },
+  "four_state": true,
+  "native_requester_integrated": false,
+  "hardware_verified": false
+}

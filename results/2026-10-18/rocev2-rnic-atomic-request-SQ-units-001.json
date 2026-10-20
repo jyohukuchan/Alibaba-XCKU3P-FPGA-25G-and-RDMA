@@ -1,0 +1,19 @@
+{
+  "scope": "Four-state128-byte SQ controller, DMA/status/config endpoints modeled.\n\nReal controller/guards/tables; no WQE authorization/native/API/unpin proof.\nActual PCIe/RAM tests are separate probe_atomic128_sq_dma evidence.\n",
+  "pass_test": false,
+  "source_sha256": {
+    "rdma/rnic/tests/test_atomic128_fetch_rtl.py": "947e4118db929cde1aab2b47785dfa9c137c2a1d86997d05f86167da6ea79ae0",
+    "rdma/rnic/fpga/derive_atomic128_fetch.py": "4123c117771f568fc4a002a614ade421f6c94eb08dd17b27dff2a6a8d9dbe433",
+    "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+    "rdma/rnic/rtl/rocev2_sq_dma_fetch.v": "f6b79cb4352b60be7d0002494311e0ef79a09cc16a1bde0a0259499386ff88b3",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c910018a2e8a9d77e649437f9a7727f5cf2fd9c02cb20ab92016b5209a3a189e",
+    "rdma/rnic/tests/test_sq_fetch_rtl.py": "503be31337adec9c6622b1bed8e8d392c4bed0c0d153e514285223d9ac7242cb"
+  },
+  "methods": 6,
+  "internal_simulations": 0,
+  "seconds": 0.08484364696778357,
+  "tests": {},
+  "four_state": true,
+  "native_requester_integrated": false,
+  "hardware_verified": false
+}

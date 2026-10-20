@@ -1,0 +1,307 @@
+{
+  "scope": "Four-state native accepted-RX references/classifier; adjacent endpoints modeled.\n\nThese tests do NOT prove a complete native Atomic operation or host unpin.\n",
+  "pass_test": true,
+  "seconds": 0.842652064980939,
+  "methods": 9,
+  "internal_simulations": 27,
+  "tests": {
+    "test_complete_header_and_body_route_without_byte_changes_under_backpressure": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 10
+        },
+        "seconds": 0.0067272589658387005,
+        "RTL": "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v",
+        "RTL_sha256": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64",
+        "bench_sha256": "0aa071c34328b68ddac92ce4ce472a604bf9461e068f68b4f6a6b27bfc385f57"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 10
+        },
+        "seconds": 0.0062157310312613845,
+        "RTL": "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v",
+        "RTL_sha256": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64",
+        "bench_sha256": "4ba4ffc19ec6f643632786cd577e26233a2a547425ad072933a11f186cb82700"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 10
+        },
+        "seconds": 0.005738146021030843,
+        "RTL": "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v",
+        "RTL_sha256": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64",
+        "bench_sha256": "e8f013126d99f6323a0cb7db5999dbcf509d7af90ca455c8ae874f18b11d82d1"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 10
+        },
+        "seconds": 0.005796603043563664,
+        "RTL": "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v",
+        "RTL_sha256": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64",
+        "bench_sha256": "0169b2f52bd7c8974580c2ff50e9b8c95c1535e8044b1008613a309324da32ef"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 10
+        },
+        "seconds": 0.0061127119697630405,
+        "RTL": "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v",
+        "RTL_sha256": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64",
+        "bench_sha256": "8fafe7407b8e259f3a5c333d64147400b8b642b7daad3153c4220ad73f8b2bb7"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 10
+        },
+        "seconds": 0.005619272997137159,
+        "RTL": "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v",
+        "RTL_sha256": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64",
+        "bench_sha256": "3636d0c561ddab85dba4e54642520a3215f5c2b15c48c74c69333388ada72cf2"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 10
+        },
+        "seconds": 0.005716075014788657,
+        "RTL": "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v",
+        "RTL_sha256": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64",
+        "bench_sha256": "2cb697869df21aee2a3181c8bcc2de5f16981a9e994d00f03f1262107a0ac0b0"
+      }
+    ],
+    "test_invalid_unknown_alias_or_changed_context_fails_closed": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.006125633022747934,
+        "RTL": "rdma/rnic/rtl/rocev2_native_rx_refs.v",
+        "RTL_sha256": "64e37e154052bdbf1ee90ae464e89216109f635b485dd26b588d1c0dfa98b18d",
+        "bench_sha256": "06d749b001c1c3bd3268fb3df1d3f8c0e2111480414db2d364b01e73f14d7fda"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.00564441696042195,
+        "RTL": "rdma/rnic/rtl/rocev2_native_rx_refs.v",
+        "RTL_sha256": "64e37e154052bdbf1ee90ae464e89216109f635b485dd26b588d1c0dfa98b18d",
+        "bench_sha256": "c9ac6294c9d9865be66eebb684b1aa6d45e0ec64f35d3a5d54a23afa5ac62bfa"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.006147844018414617,
+        "RTL": "rdma/rnic/rtl/rocev2_native_rx_refs.v",
+        "RTL_sha256": "64e37e154052bdbf1ee90ae464e89216109f635b485dd26b588d1c0dfa98b18d",
+        "bench_sha256": "75c82888468b977d90b56942b859350e831e429bded1768b41bc64f67c66a83b"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.005930004001129419,
+        "RTL": "rdma/rnic/rtl/rocev2_native_rx_refs.v",
+        "RTL_sha256": "64e37e154052bdbf1ee90ae464e89216109f635b485dd26b588d1c0dfa98b18d",
+        "bench_sha256": "489a169d5f65858aebce5b4b421960664107e60116cfadb7a7c348b627b7a8ad"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 2
+        },
+        "seconds": 0.0056994520127773285,
+        "RTL": "rdma/rnic/rtl/rocev2_native_rx_refs.v",
+        "RTL_sha256": "64e37e154052bdbf1ee90ae464e89216109f635b485dd26b588d1c0dfa98b18d",
+        "bench_sha256": "5c046d64c69a62c3db67c8a019868aa8f0ee225e420e886b6585fdc6ee255b88"
+      }
+    ],
+    "test_late_fault_does_not_retract_already_offered_buffered_packet": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 11
+        },
+        "seconds": 0.005576319003012031,
+        "RTL": "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v",
+        "RTL_sha256": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64",
+        "bench_sha256": "eb685bc047917584ab03e5dbbec1d9a0e0cc2b404429434cf6bbae60979fbc1b"
+      }
+    ],
+    "test_new_context_only_after_actual_last_reference_release": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 7
+        },
+        "seconds": 0.006191774969920516,
+        "RTL": "rdma/rnic/rtl/rocev2_native_rx_refs.v",
+        "RTL_sha256": "64e37e154052bdbf1ee90ae464e89216109f635b485dd26b588d1c0dfa98b18d",
+        "bench_sha256": "89b891940b64af403d9c78b8514e85b94c0204a10209da7f03eae2e2f2fb0387"
+      }
+    ],
+    "test_offered_reference_drains_under_pause_and_context_query_unavailable": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 11
+        },
+        "seconds": 0.0058271249872632325,
+        "RTL": "rdma/rnic/rtl/rocev2_native_rx_refs.v",
+        "RTL_sha256": "64e37e154052bdbf1ee90ae464e89216109f635b485dd26b588d1c0dfa98b18d",
+        "bench_sha256": "f30e7a36a365b18ceabcf9f5628eb2b83c53eae59e857c417f616863b3d4a747"
+      }
+    ],
+    "test_reference_count_never_wraps_at_finite_capacity": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 65536
+        },
+        "seconds": 0.4213206539861858,
+        "RTL": "rdma/rnic/rtl/rocev2_native_rx_refs.v",
+        "RTL_sha256": "64e37e154052bdbf1ee90ae464e89216109f635b485dd26b588d1c0dfa98b18d",
+        "bench_sha256": "f53cf0235de2e05232fbdb8bb8f661b73c7d540e252a439077857f63ab48a1a3"
+      }
+    ],
+    "test_reference_underflow_unknown_outcomes_and_parent_fault_retain_guard": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.0063364190282300115,
+        "RTL": "rdma/rnic/rtl/rocev2_native_rx_refs.v",
+        "RTL_sha256": "64e37e154052bdbf1ee90ae464e89216109f635b485dd26b588d1c0dfa98b18d",
+        "bench_sha256": "8ceb3775fa0d55aecfd090d046079684f87686aa893f17ab2bed61404e27e8c1"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.005561862024478614,
+        "RTL": "rdma/rnic/rtl/rocev2_native_rx_refs.v",
+        "RTL_sha256": "64e37e154052bdbf1ee90ae464e89216109f635b485dd26b588d1c0dfa98b18d",
+        "bench_sha256": "91a0199d776fd92aa42752bd222611147a543ccd5bc2401a62b34cfc56b4c329"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.006050761032383889,
+        "RTL": "rdma/rnic/rtl/rocev2_native_rx_refs.v",
+        "RTL_sha256": "64e37e154052bdbf1ee90ae464e89216109f635b485dd26b588d1c0dfa98b18d",
+        "bench_sha256": "dd70eec75ae42361aefbd73d4416bf141753b6975a731460c15e201ea82d76b8"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.005596503964625299,
+        "RTL": "rdma/rnic/rtl/rocev2_native_rx_refs.v",
+        "RTL_sha256": "64e37e154052bdbf1ee90ae464e89216109f635b485dd26b588d1c0dfa98b18d",
+        "bench_sha256": "91b372555094a31d8e5b5780e49467d423abdf36b97e755b2a9408f1b09c5d7b"
+      }
+    ],
+    "test_short_unknown_or_malformed_header_does_not_offer_output": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.005458284984342754,
+        "RTL": "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v",
+        "RTL_sha256": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64",
+        "bench_sha256": "6436b2fe18762c6d74254f7f09b277b5aef48a2f5e2026c3539e5a26e9869639"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.005852408008649945,
+        "RTL": "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v",
+        "RTL_sha256": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64",
+        "bench_sha256": "56a393292edece5251f7fee941b24530458ba746230ddb3c0550e3d76dbcfd87"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.0054789590067230165,
+        "RTL": "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v",
+        "RTL_sha256": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64",
+        "bench_sha256": "2ed0f30fe9e62f53297f34ae9e59e36fbc722b7c5205429ebad1e3ab0d5de6bd"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 2
+        },
+        "seconds": 0.005552013986743987,
+        "RTL": "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v",
+        "RTL_sha256": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64",
+        "bench_sha256": "cba9328d0923158b68bb644b006d6a70c7760af3fb6b3cdb096ccd8b2d26b4e0"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 2
+        },
+        "seconds": 0.005907234037294984,
+        "RTL": "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v",
+        "RTL_sha256": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64",
+        "bench_sha256": "26601b60f2c60348726da840f40207887b78cbb85fb6a9886ce8d61e65093991"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 2
+        },
+        "seconds": 0.005443967005703598,
+        "RTL": "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v",
+        "RTL_sha256": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64",
+        "bench_sha256": "c369eef8155ad30d5a1c2e0c958acb6b48123bd020303ce37a7d1757c37ffa22"
+      }
+    ],
+    "test_simultaneous_acquire_and_two_actual_checker_outcomes": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 4
+        },
+        "seconds": 0.006178993033245206,
+        "RTL": "rdma/rnic/rtl/rocev2_native_rx_refs.v",
+        "RTL_sha256": "64e37e154052bdbf1ee90ae464e89216109f635b485dd26b588d1c0dfa98b18d",
+        "bench_sha256": "f68c08bd688f5d099adc2d8a33be933cf8fd094a7dabd1937b7208431f916c84"
+      }
+    ]
+  },
+  "source_sha256": {
+    "rdma/rnic/tests/test_atomic_native_rx_rtl.py": "71bed692333cc87e901cc6b13bc003ac1f43e8068ebf4989dbc1591a6989fecb",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c910018a2e8a9d77e649437f9a7727f5cf2fd9c02cb20ab92016b5209a3a189e",
+    "rdma/rnic/rtl/rocev2_native_rx_refs.v": "64e37e154052bdbf1ee90ae464e89216109f635b485dd26b588d1c0dfa98b18d",
+    "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64"
+  },
+  "four_state_simulation": true,
+  "endpoint_models": true,
+  "full_native_runtime": false,
+  "hardware_verified": false
+}

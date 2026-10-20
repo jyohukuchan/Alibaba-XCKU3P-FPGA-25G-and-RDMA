@@ -1,0 +1,11 @@
+{
+  "scope": "Initial128-byte SQ probe preflight; historical fixture expected79 ports, current exact interface has87 including eight reviewed separate-RQ controls.",
+  "pass_test": false,
+  "compiler_started": false,
+  "simulation_started": false,
+  "hardware_verified": false,
+  "directory": "rdma/rnic/build/atomic128-sq-dma-ms9ebpif",
+  "error": "SQ backend interface changed",
+  "probe_preimage": "rdma/rnic/build/atomic128-sq-dma-ms9ebpif/probe-before-current-interface-fixture.py",
+  "no_RTL_or_legacy_assertion_changed": true
+}

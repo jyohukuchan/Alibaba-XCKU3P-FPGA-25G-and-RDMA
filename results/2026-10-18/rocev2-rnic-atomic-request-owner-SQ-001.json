@@ -1,0 +1,174 @@
+{
+  "scope": "Actual748-bit owner/408-bit SQ staging; executor/HLS endpoints modeled.\n\nNo HLS Atomic operation, response placement, CQ or standard API claim.\n",
+  "pass_test": true,
+  "source_sha256": {
+    "rdma/rnic/tests/test_atomic128_hls_sq_rtl.py": "1f672210e88699b630421c7643020024d2f5e15b3121d47bc6b8e93ec85bc798",
+    "rdma/rnic/fpga/derive_atomic128_admission.py": "da4e91e41d7bb9861534cfe2b98e7690076850d192c401cc1290d1942b8d83e3",
+    "rdma/rnic/fpga/derive_atomic128_fetch.py": "4123c117771f568fc4a002a614ade421f6c94eb08dd17b27dff2a6a8d9dbe433",
+    "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "fcb802395ddd34e33491b7c4dd5136a5b5810a52d903e02863dcc88365a4c20b",
+    "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "2f092ca9eeee90d6a1ab57439227ad39b5d9b623947201e274b2654bf46c8af4"
+  },
+  "methods": 5,
+  "simulations": 13,
+  "tests": {
+    "test_CAS_FADD_full_operands_keys_and_owner_before_SQ": [
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 16,
+          "SQ": 16,
+          "fault": 0,
+          "cycles": 400
+        },
+        "bench_sha256": "b9c67b72b604124b888aefae3ca06d36299fce82710b469ff43dd02877de2cc0",
+        "derived_RTL_sha256": "fb60f2436d0faa83896fd9a1f9c619448113993305e4caefe203a3ab7b206f00"
+      }
+    ],
+    "test_failed_DMA_and_denied_MR_keep_identity_but_no_HLS_SQ": [
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 16,
+          "SQ": 0,
+          "fault": 0,
+          "cycles": 288
+        },
+        "bench_sha256": "93d395d9cec308a7c2854406671b193e3749601145968d4ebc25272f269aacbf",
+        "derived_RTL_sha256": "fb60f2436d0faa83896fd9a1f9c619448113993305e4caefe203a3ab7b206f00"
+      }
+    ],
+    "test_noncanonical_or_unknown_operands_never_become_HLS_authority": [
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "bench_sha256": "ee86d00aabc4507ce384cc394219b416c99841a674f06c4115905ac912a24176",
+        "derived_RTL_sha256": "fb60f2436d0faa83896fd9a1f9c619448113993305e4caefe203a3ab7b206f00"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "bench_sha256": "756c551e5b48025889009b6f72399dc5ecbe49042f555b38645261aa8456672a",
+        "derived_RTL_sha256": "fb60f2436d0faa83896fd9a1f9c619448113993305e4caefe203a3ab7b206f00"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "bench_sha256": "1137c6785b1fe96c6fc339f0faa1c03884aa2c6d67a4105ccf58bf4e9e889532",
+        "derived_RTL_sha256": "fb60f2436d0faa83896fd9a1f9c619448113993305e4caefe203a3ab7b206f00"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "bench_sha256": "96803b4acad988e15591f8a11be54bf8f254f1af652acecd8ec0554fb1660ba0",
+        "derived_RTL_sha256": "fb60f2436d0faa83896fd9a1f9c619448113993305e4caefe203a3ab7b206f00"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "bench_sha256": "4de62dab5c391f3f4b556a288c8e040341dcd90408e820617ce833a1c5de6871",
+        "derived_RTL_sha256": "fb60f2436d0faa83896fd9a1f9c619448113993305e4caefe203a3ab7b206f00"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "bench_sha256": "f99b1737ef636724c8875fdf2caf45dd979d2b617aa438b2d508bcb69e73d35a",
+        "derived_RTL_sha256": "fb60f2436d0faa83896fd9a1f9c619448113993305e4caefe203a3ab7b206f00"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "bench_sha256": "ed665be48b2f996da891073c9ead3c1d650cb9913dc10d8740b07d4831b6c320",
+        "derived_RTL_sha256": "fb60f2436d0faa83896fd9a1f9c619448113993305e4caefe203a3ab7b206f00"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "bench_sha256": "341000f835e1e3050ab7544426ca42ca1894e043c164e9eb3d80283771885799",
+        "derived_RTL_sha256": "fb60f2436d0faa83896fd9a1f9c619448113993305e4caefe203a3ab7b206f00"
+      }
+    ],
+    "test_normal_Immediate_have_zero_extension_and_exact_lower_ABI": [
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 5,
+          "SQ": 5,
+          "fault": 0,
+          "cycles": 125
+        },
+        "bench_sha256": "e12ec4ef2e50398e4f16df7267fea59cfe56277f565525580d88807a149d21d9",
+        "derived_RTL_sha256": "fb60f2436d0faa83896fd9a1f9c619448113993305e4caefe203a3ab7b206f00"
+      }
+    ],
+    "test_real_downstream_guard_required_and_late_loss_does_not_retract_SQ": [
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 10
+        },
+        "bench_sha256": "6d54e859a1581127352e029b53be5efaa0a85bfeeba8c1da46d19c65daf36be5",
+        "derived_RTL_sha256": "fb60f2436d0faa83896fd9a1f9c619448113993305e4caefe203a3ab7b206f00"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 1,
+          "SQ": 1,
+          "fault": 1,
+          "cycles": 20
+        },
+        "bench_sha256": "b47f5e5b6ec9cc6792c1fb2c653602aa32f50ad995ebed76ff29a3058da072b9",
+        "derived_RTL_sha256": "fb60f2436d0faa83896fd9a1f9c619448113993305e4caefe203a3ab7b206f00"
+      }
+    ]
+  },
+  "seconds": 0.299203795962967,
+  "four_state": true,
+  "HLS_endpoint_model": true,
+  "executor_model": true,
+  "native_requester_integrated": false,
+  "hardware_verified": false
+}

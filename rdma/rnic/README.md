@@ -15,6 +15,36 @@ remaining run was interrupted). No all-suite or release-pass claim is made.
 
 ## Latest functional milestone (2026-10-20)
 
+Progress093 adds Atomic requester local-result MR admission and connects it
+to actual128-byte SQ/PCIe/RAM fetch and real guarded748-bit owner/408-bit SQ
+staging. [Positive pipeline001](../../results/2026-10-18/rocev2-rnic-atomic-request-pipeline-001.json)
+and [UR-error pipeline002](../../results/2026-10-18/rocev2-rnic-atomic-request-pipeline-002.json)
+PASS0.38/0.33s, checking all fetched bytes, operands and context bits. Failed
+fetches preserve trusted identity but cannot generate HLS SQ authority.
+New four-state admission/staging tests PASS13 methods/36 simulations;
+unchanged old admission/Immediate/owner tests PASS23 methods. Physical host/
+root/config and downstream owner/HLS sinks remain models. SAME-core HLS
+Atomic request/ACK/result/replay, native executor/MAC/CQ and matched128-byte
+SQC/driver/provider are still incomplete; default `IB_ATOMIC_NONE` remains.
+
+Progress092: [full native runtime003](../../results/2026-10-18/rocev2-rnic-atomic-native-full-003.json)
+PASSES mixed FADD/duplicate/ordinary WRITE, READ and SEND_IMM, each<=17.80s.
+One actual native QP/HLS/MR/PTE/exclusive-memory graph and Atomic MAC path
+are connected. Independent full-byte memory/wire/FCS/ICRC/common-state and
+owner/retirement checks pass; Atomic uses actual XGMII/SFD/receipt CDC without
+fake WQE/RQ/CQ. Host/root/PHY/peer/PTP input remain models; ordinary requester
+MAC pins remain modeled. A strictly checked Python-only normal-ACK oracle
+correction reused the unchanged frozen executable but reran ALL cases fresh.
+Diagnostic001/002 remain failures. No physical/API/timing claim follows.
+
+Atomic requester groundwork now includes a separate128-byte C codec and
+actual extended SQ/RAM/mux/PCIe fetch:7 C UBSan methods,6 four-state methods/
+9 simulations and both positive/UR-error DMA cases PASS. Full-width operands,
+all128 bytes, queue ownership and recovery are checked. Requester admission,
+shared HLS Atomic TX/ACK/result placement, matched SQC/driver and MAC/CQ/
+kernel/provider integration remain; default64-byte profile and `IB_ATOMIC_NONE`
+are unchanged. See [Atomic details](../../docs/ROCEV2_ATOMIC.md).
+
 Publication snapshot090 also includes an opt-in full native normal/Atomic
 integration candidate. [Full-graph elaboration001](../../results/2026-10-18/rocev2-rnic-atomic-native-full-elaboration-001.json)
 PASSES with actual generated HLS, one shared MR/PTE domain and actual Atomic

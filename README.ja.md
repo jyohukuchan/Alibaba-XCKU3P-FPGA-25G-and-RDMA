@@ -32,9 +32,9 @@ Alibaba AS02MC04（XCKU3P）向けの、**Corundumベースの25GbE移植・検�
 ## RNIC開発中ソースの進捗（2026-10-20）
 
 [RNIC開発ソース](rdma/rnic/README.md)には、ホストメモリ保護・キュー・DMA・カーネル／プロバイダー、SEND/RECV/Immediate、Atomic（CAS／加算）の送受信候補を追加しています。
-[新HLS＋共有DMA識別子経路のシミュレーション](results/2026-10-18/rocev2-rnic-segmented-native-full-001.json)は全25ケース成功し、各ケース24秒未満でした。ゼロ長サービス、受信キュー／RNR、Atomic送信、権限確認を含み、生成HLS・MR/PTE・DMA・XGMII/FCS・SFD・CDC・MAC・CQには実際のRTLを使っています。ただし物理ホスト／接続先／PHY／PTPなどはモデルであり、Linuxや実機の検証ではありません。
+[送信データ所有権保持・共有DMA識別子経路のシミュレーション](results/2026-10-18/rocev2-rnic-segmented-executor-native-full-001.json)は全27ケース成功し、各ケース25秒未満でした。通常WRITE/SEND、ゼロ長サービス、受信キュー／RNR、Atomic送信、権限確認を含みます。新しい通常送信ケースでは生成HLS・MR/PTE・DMA・XGMII/FCS・SFD・CDC・MAC・CQに実際のRTLを使っています。ただし物理ホスト／接続先／PHY／PTPなどはモデルであり、通常READ/SEND_IMMのMAC完了には従来のモデルを使います。Linuxや実機の検証ではありません。
 
-通常WRITE/SENDは、HLSソース段階で最大1MiBのFIRST/MIDDLE/LAST分割と要求全体に対する1回の完了を確認しています。再送用データの所有権をCQ完了まで保持する切り替え処理と、共有DMAの識別子変換も単体RTL試験に成功しました。最新の切り替え処理を含む構成はコンパイル確認のみで、上記25ケースの全体動作確認とは別です。大容量転送の実RNIC経路・パケットごとの送信寿命・CQへの統合、複数SGE、標準APIの実行は未完了です。
+通常WRITE/SENDは、HLSソース試験とパケット所有権の部分RTL試験で最大1MiBのFIRST/MIDDLE/LAST分割と要求全体に対する1回の完了を確認しています。大容量用の非既定C128コーデックもC/UBSanの15項目に成功しました。一方、[新しい大容量転送構成の29ケース試験](results/2026-10-18/rocev2-rnic-segmented-wire-native-full-001.json)は、最初の8193バイトWRITEでMAC/FIFOエラーとなり、残り28ケースは未実行です。試験用の小容量FIFOと実機の送信経路に相違があり、原因の切り分け・試験構成の修正が残っています。上記27ケースの成功を新構成の成功として扱ってはいません。大容量転送の実RNIC経路・CQの動作確認、複数SGE、標準APIの実行は未完了です。
 
 これは**開発途中のソース公開**です。完全な実RNIC経路への統合・標準APIの実機動作は未完了で、ドライバーのAtomic対応申告も無効のままです。
 最新HLS見積りは11.180nsで元の4ns条件を満たしておらず、新しいイメージの実機適用・保証はしていません。

@@ -30,19 +30,22 @@ inbound SEND/WRITE target, READ responder, native InfiniBand or production-relia
 
 The new [incremental RNIC sources](rdma/rnic/README.md) include protected host
 memory/queues, kernel/provider work, SEND/RECV/Immediate and Atomic candidates.
-The [new segmented-HLS/shared-DMA-nonce native regression](results/2026-10-18/rocev2-rnic-segmented-native-full-001.json)
-passes all25 simulated cases, each under24s, including zero-length services,
-RQ/RNR, requester Atomic and permission checks. It uses actual generated HLS,
-MR/PTE/DMA and XGMII/FCS/SFD/CDC/MAC/CQ RTL; physical host/root/peer/PHY/PTP
-endpoints remain models, not Linux or hardware qualification.
+The [retained-source dispatcher native regression](results/2026-10-18/rocev2-rnic-segmented-executor-native-full-001.json)
+passes all27 simulated cases, each under25s, including ordinary WRITE/SEND,
+zero-length services, RQ/RNR, requester Atomic and permission checks. It uses
+actual generated HLS, MR/PTE/DMA and XGMII/FCS/SFD/CDC/MAC/CQ RTL for the new
+ordinary source cases; physical host/root/peer/PHY/PTP endpoints remain
+models, and ordinary READ/SEND_IMM retain prior MAC-receipt models.
 
-Ordinary WRITE/SEND up to1MiB now pass source-level segmented HLS tests with
-true FIRST/MIDDLE/LAST and one final WR receipt. A retained-source dispatcher
-and shared physical command nonce also pass focused RTL tests. The latest
-dispatcher graph has compile-only evidence, NOT the above25-case runtime
-pass. Native large admission/per-packet wire/CQ integration, multi-SGE and
-standard API runtime remain incomplete; the driver still advertises
-`IB_ATOMIC_NONE`.
+Ordinary WRITE/SEND up to1MiB pass segmented HLS and focused packet-owner
+tests with true FIRST/MIDDLE/LAST and one final WR receipt. A private C128
+codec passes15 real-C/UBSan methods without changing installed capabilities.
+However, the [new large-wire native29-case candidate](results/2026-10-18/rocev2-rnic-segmented-wire-native-full-001.json)
+FAILED its first8193-byte WRITE at a MAC/FIFO assertion; the remaining28 cases
+were not run. Its small-packet test FIFO differs from the board TX path;
+diagnosis/alignment remain. The prior27-case pass is NOT a pass for this new
+graph. Native large-transfer runtime/CQ, multi-SGE and standard API runtime
+remain incomplete; the driver still advertises `IB_ATOMIC_NONE`.
 
 This is a **work-in-progress source snapshot**, separate from the earlier
 hardware-tested READ/WRITE images. Its latest HLS estimate11.180ns misses the original

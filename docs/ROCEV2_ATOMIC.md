@@ -5,7 +5,219 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
-## Publication snapshot: segmented source and native regression (115)
+## Publication checkpoint: large-source native failure preserved (2026-10-20)
+
+The [new 29-case native run001](../results/2026-10-18/rocev2-rnic-segmented-wire-native-full-001.json)
+has finished, NOT passed. Compilation succeeded in424.65s. The first
+8193-byte WRITE stopped after19.60s at `real MAC/FIFO error`, following the
+first4170-byte frame's accepted final beat. The other28 cases were NOT RUN;
+there is no new-graph large WRITE/SEND runtime or CQ success claim. The
+failed report, original log, generated model and frozen binary are retained
+locally; all1276 bound source/artifact records were reverified for publication.
+
+The inherited small-packet fixture has a1024-byte whole-frame TX FIFO,
+whereas the board uses a32768-byte synchronous TX FIFO followed by a small
+cut-through CDC FIFO. This mismatch is under investigation; the exact fatal
+flag/root cause has not yet been isolated. The new fixture must model the
+actual board path before rerunning, with overflow/underflow assertions,
+original clocks,1024-cycle tails, identity checks and deadlines retained.
+No FIFO correction or new native runtime has been performed in this snapshot.
+
+The prior27-case pass below belongs to the PRE-large-wire graph, not this
+failed candidate. Component004 still passes10 cases including1MiB, and the
+private C128 codec passes15 real-C/UBSan methods; neither substitutes for a
+complete native large-transfer pass. Linux/API/physical/full-board timing and
+all11 original requirements remain open; HLS11.180ns still fails the original
+4ns/default1.08ns targets. This is a work-in-progress publication, not a release
+or programmed image. No hardware/network/fan/BIOS/installation/reboot changes.
+
+## Actual large-source codec, MR/DMA/peer fixture and29-case build (119, historical)
+
+NEW `kernel/wqe_segmented.c/.h` is an explicitly opt-in private C128 codec,
+not an installed post path or device capability. Ordinary WRITE/SEND accepts
+up to1MiB after REAL full64-bit last-byte range checks. Existing canonical
+sequence/epoch/flags/Immediate/operand/reserved-byte policies remain; other
+operations delegate to the unchanged zero/Atomic/4096-byte codecs. Only byte
+serialization uses a bounded local surrogate AFTER full-range validation;
+no MR/PD/DMA authorization is acquired or bypassed. Error outputs are fully
+zeroed and overlapping input/output remains supported.
+
+[Real C/UBSan codec002](../results/2026-10-18/rocev2-rnic-segmented-wqe-002.json)
+PASSES all15 methods, including inherited zero/Atomic, independent128-byte
+oracles,1MiB boundaries/top64-bit byte/wrap/canonical/padding/alias/null cases.
+Old codecs still refuse large WRs and default `IB_ATOMIC_NONE` remains.
+[Diagnostics001](../results/2026-10-18/rocev2-rnic-segmented-native-codec-diagnostics-001.json)
+preserves failed001: a size-negative RECV/SEND_IMM fixture also had forbidden
+remote fields and correctly returnedEINVAL before its expectedEMSGSIZE. Only
+the size fixture was canonicalized; no C validation or malformed-field test
+was removed. Checked generator/digest/AST development failures are separate
+from native runtime evidence.
+
+NEW `tests/segmented_wire_native_fixture.py` adds actual8193-byte WRITE/SEND
+while retaining ALL27 previous scenarios. It genuinely registers8721 bytes
+from the existing MR base/first offset and seals THREE scattered64-bit DMA
+pages, including the page ending at the maximum64-bit address. The complete
+8193-byte local MR query/grant must occur once. Retained source commands must
+be exactly4096/4096/1 at offsets0210/1210/2210 and logicalC001/C002/C003, with
+fresh genuine physical backend nonces/statuses. Actual PCIe page descriptors,
+TLP bytes/addresses/tags, untouched source/sentinels/SQ128 ring and no host
+writes/fences are checked independently.
+
+The peer model supplies three real CRC-valid ACK frames through actual RX;
+the issued PSNs must befffffe/ffffff/000000. Actual HLS packets, per-packet
+expectations/cache advances, full816-bit first/next receipt and ONE immutable
+748-bit CQ are checked. Final real MAC tag2003 is withheld past1024 cycles;
+aggregate memory/producer completion cannot release the full source first.
+The exact output wire oracle includes FIRST/MIDDLE/LAST/whole first RETH,
+all8193 source bytes, final padding/ICRC and actual XGMII/FCS/SFD/CDC frames.
+
+`probe_segmented_wire_native_full.py` freezes a checked extension of the exact
+27-case runner, adding both large cases FIRST:29 cases total, unchanged1200s
+build/30s per-case deadlines and all old assertions. Complete bench
+elaboration/width checks have passed and native-full001 is now COMPILING;
+no new-graph runtime success is claimed. Inputs/probes/fixtures/RTL/HLS remain
+frozen while that exact job is live. Physical host/root/peer/PHY/PTP remain
+models; no Linux/physical/timing signoff follows a future simulation pass.
+
+All11 requirements, large RX/READ/Immediate/multi-SGE/Linux/provider/API/
+recovery/physical and board timing work remain. HLS11.180ns still fails
+original4ns/default1.08ns. No hardware/install/network/BIOS/fan/reboot/flash,
+default capability or automatic Git publication changes.
+
+## Coordinated large packet ownership and native wiring (118, historical)
+
+NEW `fpga/derive_segmented_wire.py` extends the same private native graph with
+ordinary WRITE/SEND admission up to1MiB, true FIRST/MIDDLE/LAST header checks,
+whole-message first RETH, bounded per-packet lengths and consecutive24-bit PSNs
+including wrap. The full748-bit WR remains unchanged across every packet.
+READ/Immediate remain4096 bytes; Atomic/zero/RQ/default sources and the bounded
+source-DMA child remain unchanged. No default selection or capability changes.
+
+Each packet joins its exact full-owner RX event, HLS ACK and actual framer/tag/
+accepted EOF/own-receipt/1024-tail proof. The replay cache advances through an
+explicit persistent full-owner/PSN/index token only after those witnesses and
+actual packet MAC/cache drain. It never uses a fake CQ commit or global idle
+as packet retirement. Late faults preserve the offered token and whole-owner
+quarantine. The next real HLS packet may legally stall while the prior MAC
+receipt is held. Final CQ STILL requires whole memory/producer/transport drain,
+both observed last-PSN+1 and full first/next-PSN span, and exact whole owner.
+
+Retry-budget reload after a successful packet follows the behavior checked
+in the [Linux v6.17 RXE completer](https://github.com/torvalds/linux/blob/v6.17/drivers/infiniband/sw/rxe/rxe_comp.c).
+No implementation was copied. Policy is read from the same retained QP table;
+this is not recovery/interoperability qualification.
+
+[Four-state component004](../results/2026-10-18/rocev2-rnic-segmented-wire-004.json)
+PASSES five methods/10 cases, all240 bound records verified. WRITE4097,
+SEND8192, WRITE/SEND8193 and WRITE1048576 execute byte-exact true segmented
+Ethernet frames with actual lifetime/cache/framer/tag/EOF/tail RTL. The1MiB
+case has256 packets,255 genuine cache advances,256 MAC proofs and ONE final
+WR commit in29.17s; every DUT tail remains1024 cycles, including middle
+packets. First/last receipts are withheld past the tail; intermediate bulk
+receipts still stall. Missing HLS ACK, valid-CRC wrong first RETH/later PSN/
+opcode and wrong whole-WR receipt are refused without CQ/owner release.
+HLS/IP source, RX/HLS-ACK, memory, CQ and physical MAC receipt pins are MODELS:
+this is NOT actual generated-HLS/MR/DMA/XGMII native large runtime or hardware.
+
+[Diagnostics001](../results/2026-10-18/rocev2-rnic-segmented-wire-diagnostics-001.json)
+preserves both failed initial fixtures, compiled models/logs and source
+preimages. A just-deasserted physical receipt VALID was sampled before its
+combinational delta settled: cycle2152 was below limit3352, actual receipt1
+was present and tail1024 had just started. A#1 fixture settle, consistent with
+existing MAC tests, fixes observation only; all four DUT leaves are byte-exact
+between failed002 and pass003. No assertion/tail/drain/clock/deadline waiver.
+
+The coordinated source/HLS-SQ/shared-HLS/lifetime/MAC/RX/CQ range gates and
+full-WR receipt checks are now wired in ONE actual graph.
+[Whole-native elaboration001](../results/2026-10-18/rocev2-rnic-segmented-wire-native-elaboration-001.json)
+PASSES3.23s, all1211 source/artifact records verified, no port-width warnings,
+same module/domain multiplicities and byte-identical qualified root source/
+CQ fanout. This is COMPILE-ONLY; the prior27-case runtime pass below is the
+PRE-large-wire graph. Actual new-graph large WRITE/SEND and all27 regressions
+still need runtime verification with genuine full-range MR/descriptor/DMA,
+real HLS packets/ACK/PSN readbacks and exact source/per-packet/final CQ oracles.
+The current standard/kernel codec still refuses>4096; a matched private test
+codec/profile is required, not an unchecked descriptor shortcut.
+
+Large RX/READ/Immediate, multi-SGE, Linux/provider/API, physical/recovery and
+full-board timing remain open; all11 requirements retained. HLS11.180ns still
+fails original4ns/default1.08ns. Both global drains0 and all board/CDC gates
+remain unchanged. No hardware/install/network/BIOS/fan/reboot/flash or
+automatic Git publication changes.
+
+## Retained-source native integration: ALL27 scenarios passed (117, historical)
+
+[Dispatcher native-full001](../results/2026-10-18/rocev2-rnic-segmented-executor-native-full-001.json)
+PASSES414.61s compilation and ALL27 scenarios, each17.95..24.76s. All1398
+bound source/artifact records were reverified after terminal success. The
+previously pending ordinary nonzero65-byte WRITE/SEND now execute through
+actual trusted SQ/C128 decoding, MR/PTE/paged PCIe DMA, retained source, shared
+physical command nonce, generated HLS, replay and CQ. Their XGMII/FCS/SFD/two
+CDC FIFOs/MAC EOF/tail are actual RTL; second genuine MAC receipt is withheld
+past1024 cycles, not manufactured by the test. Physical host/root/peer/PHY/PTP
+endpoints remain two-state models; normal READ/SEND_IMM retain their existing
+physical-MAC receipt model. This is not Linux, physical or timing signoff.
+
+Each ordinary source case observes exactly one full748-bit source owner,
+aggregate event, same genuine CQ/HLS/dispatcher retirement, and two actual
+MAC SFD receipts. Source authority/guard persists continuously through final
+event and withheld MAC completion until that exact whole-owner CQ handshake.
+The independent CQ oracle equals the retained source owner. LogicalC001 is
+actually translated to fresh physical1; only the real backend's matching
+status/error maps back. No active source or nonce owner/fault remains.
+
+ALL25 prior service/RQ/RNR/requester/Atomic/permission cases also PASS on this
+SAME dispatcher/HLS/shared-MR/PTE/physical-nonce graph. No case, original
+1200s compile/30s runtime limit, identity/CRC/byte/deadline assertion or global
+drain gate was dropped. [Completed-source audit002](../results/2026-10-18/rocev2-rnic-segmented-executor-native-source-002.json)
+independently reexecutes the two finished cases' Python wire/CQ/owner/nonce
+oracles against archived inputs/logs/CQ snapshots;53 bound records verified.
+It records the earlier partial-batch state, NOT a new DUT run or27-case pass.
+A malformed first audit export was preserved under the build directory;
+only its truncated JSON observation was regenerated, without DUT/test edits.
+
+Native large admission remains CLOSED at4096 bytes. Remaining coordinated
+work includes full-range admission/HLS/CQ owner checks; true FIRST/MIDDLE/LAST
+header/RETH-total/fragment-offset validation; consecutive24-bit PSNs including
+wrap; per-packet exact response/HLS-ACK/MAC/tail/replay ownership and rearming;
+full-WR first/next-PSN receipt; and one final genuine CQ. The current one-frame
+replay cache must rotate only after real packet ownership transfer while the
+whole WR/source lease remains held, not simulated CQ or global idle signals.
+Do not merely raise length limits, relax PSN+1 or send child WRITE_ONLY verbs.
+
+Large RX/READ/Immediate, multi-SGE, real registered host memory/queues,
+Linux/provider/API, physical/recovery and full-board timing remain open.
+All11 original requirements are retained. HLS11.180ns still FAILS original
+4ns/default1.08ns; full-board setup/hold/pulse/skew/routing/DRC/check_timing/CDC
+gates and both global drains0 remain unchanged. No hardware/install/network/
+BIOS/fan/reboot/flash or automatic Git publication changes.
+
+## Retained-source ordinary WRITE/SEND native integration (116, historical)
+
+NEW `tests/segmented_executor_native_fixture.py` observes the ACTUAL dispatcher,
+trusted full748-bit source owner, source aggregate event and genuine CQ/HLS
+retirement. All local CQ, HLS-retire and dispatcher-retire handshakes must be
+identical; a retained source must keep its whole owner/guard continuously until
+that same genuine handshake. No observer drives a producer receipt or drain.
+
+The new dispatcher full-native001 now BUILDS ALL27 cases: both nonzero local
+ordinary WRITE/SEND plus all25 prior service/RQ/RNR/Atomic/permission cases.
+The ordinary cases switch to actual XGMII/FCS/SFD/CDC/MAC at the same drained
+boundary as the existing Atomic/zero cases. Their second actual MAC receipt
+is withheld beyond the1024-cycle tail, preserving the exact old wire/replay/
+source-byte/CQ checks. The logical command must be exactlyC001; the common
+nonce must actually translate it to physical1 and translate its real status
+back. The independent CQ-owner oracle must equal the retained source owner.
+
+Complete bench elaboration/width checks have passed and the new model is
+COMPILING under unchanged1200s build/30s per-case limits. No runtime pass is
+claimed yet. The previous25-case pass below remains the PRE-dispatcher graph;
+it is not substituted for this run. Large native admission/per-packet wire/
+whole-WR CQ, Linux/provider/physical/recovery/multi-SGE/full-board timing and
+all11 requirements remain open. Original4ns/default1.08ns and both global
+drains0 remain; no hardware, configuration, reboot or automatic push changes.
+
+## Publication snapshot: segmented source and native regression (115, historical)
 
 [Segmented-HLS/shared-nonce native-full001](../results/2026-10-18/rocev2-rnic-segmented-native-full-001.json)
 PASSES ALL25 existing scenarios after415.90s compilation, each at most23.91s.

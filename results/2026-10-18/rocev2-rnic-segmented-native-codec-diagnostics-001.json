@@ -1,0 +1,31 @@
+{
+  "scope": "Private large C128 codec/fixture development diagnostics; no actual native runtime or hardware qualification",
+  "created_UTC": "2026-10-20T22:44:54.019710+00:00",
+  "failed_codec001": {
+    "report": "results/2026-10-18/rocev2-rnic-segmented-wqe-001.json",
+    "sha256": "d0345edfb72fa04cb21c175fa5a25f82e408dd475e6f8fc7b6889a37b75ec493",
+    "pass_test": false,
+    "verified_source_records": 11,
+    "test_preimage": {
+      "path": "rdma/rnic/build/segmented-wqe-test-before-canonical-other-op-001.py",
+      "sha256": "551181a6abe8d3526a09adfad5a4cbdaca0c328e0c92c4ef302d03fb55b18496"
+    },
+    "cause": "Other-operation size negative reused WRITE remote VA/rkey on RECV/SEND_IMM. Decode correctly rejected noncanonical remote fields withEINVAL before the expectedEMSGSIZE; encode also refused. No malformed work was accepted.",
+    "correction": "Use canonical zero remote VA/rkey for RECV/SEND_IMM to isolate4096 size policy. Existing malformed largeSEND and inherited zero/Atomic/RECV shape checks retained; C codec implementation unchanged.",
+    "passing_report": "results/2026-10-18/rocev2-rnic-segmented-wqe-002.json"
+  },
+  "development_guards": [
+    {
+      "preimage": "rdma/rnic/build/segmented-native-fixture-before-codec-hash-helper.py",
+      "sha256": "75aa627c2e752a75d5134e24450ad1b4a0e111767bc1bfd693699b9e33acbb1f",
+      "cause": "Invalid inferred helper-module attribute chain; replaced by direct hashlib current-codec source verification before any native execution"
+    },
+    {
+      "preimage": "rdma/rnic/build/segmented-native-runner-before-specific-RQ-anchor.py",
+      "sha256": "5a9f2f1709b795a794b0f81136ab345c8c7574e2bab6f4015bb67a11b64a7304",
+      "cause": "Strict derivation found2genericRQ anchors; narrowed to exact RX input branch. AST then rejected one bad nested newline before execution; final generated runner AST and actual2-line ACK serialization are checked."
+    }
+  ],
+  "native29_report_pending": "results/2026-10-18/rocev2-rnic-segmented-wire-native-full-001.json",
+  "no_original_codec_or_kernel_capability_changes": true
+}

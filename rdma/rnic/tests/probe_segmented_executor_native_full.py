@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: BSD-2-Clause-Views
-"""Actual dispatcher/source/legacy/common-nonce graph, all25 existing cases.
+"""Actual dispatcher/source/legacy/common-nonce graph, all27 bounded cases.
 
 Same actual HLS/MR/PTE/DMA/MAC/CQ with new retained-source dispatcher and
 atomic CQ fanout; physical endpoints modeled. Large admission/wire remain
@@ -18,7 +18,7 @@ import tempfile
 import time
 import segmented_executor_native_sources as source
 import zero_rq_native_fixture as fixture
-import segmented_native_fixture as service
+import segmented_executor_native_fixture as service
 import probe_zero_native_full as legacy
 import probe_atomic128_native_full as prior
 import atomic_access_native_oracle as access
@@ -47,6 +47,10 @@ def main():
         raise ValueError('matched complete zero graph elaboration required')
     if (evidence.get('zero_service_owner_bits'),evidence.get('zero_service_done_bits'))!=(344,400):
         raise ValueError('matched ordinary zero service native ABI required')
+    if not all(evidence.get(n)for n in ['large_source_DMA_wired','atomic_CQ_retirement_fanout',
+        'actual_shared_physical_command_nonce'])or any(evidence.get('module_counts',{}).get(n)!=1 for n in
+        ['rocev2_segmented_executor_mux','rocev2_segmented_source_executor','rocev2_segmented_child_executor']):
+        raise ValueError('matched actual retained-source/legacy/common-nonce/CQ graph required')
     for n,h in evidence['source_sha256'].items():
         if digest(ROOT/n)!=h:raise ValueError('elaboration source changed: '+n)
     run=Path(tempfile.mkdtemp(prefix='segmented-executor-native-full-',dir=ROOT/'rdma/rnic/build'))
@@ -60,7 +64,9 @@ def main():
         compiler_output_split_cfuncs=500000,compile_owns_process_group=True,
         incoming_zero_RQ_source_candidate=True,incoming_zero_RQ_runtime_verified=False,
         ordinary_zero_service_candidate=True,ordinary_zero_service_runtime_verified=False,provider4095_implemented=False,
-        actual_shared_physical_command_nonce=True,large_native_admission=False,large_source_DMA_wired=True,atomic_CQ_retirement_fanout=True,large_native_wire_CQ=False,tests={})
+        actual_shared_physical_command_nonce=True,large_native_admission=False,large_source_DMA_wired=True,
+        atomic_CQ_retirement_fanout=True,large_native_wire_CQ=False,planned_cases=27,
+        ordinary_source_runtime_verified=False,tests={})
     try:
         src,data,before=source.sources(a.hls_build.resolve(),a.native_hls_report.resolve(),
             a.owned_hls_report.resolve(),a.request_hls_report.resolve(),run)
@@ -104,7 +110,9 @@ def main():
         rx_cases += [('RX_RNR_'+str(op),op,0,['+RQ','+RQ_OP='+str(op),'+RQ_RNR'],False,0)for op in [3,6]]
         service_cases=[('SERVICE_'+name,op,0,['+ZERO_SERVICE','+SERVICE_OP='+str(op)],False,-1)
             for name,op in [('AFTER_WRITE',13),('WRITE',10),('READ',12),('MIXED',0)]]
-        cases=service_cases+rx_cases+[(*case,None)for case in cases]
+        cases=[('WRITE',1,0,['+WRITE'],False,None),('SEND',3,0,['+SEND'],False,None)]+\
+            service_cases+rx_cases+[(*case,None)for case in cases]
+        if len(cases)!=27:raise ValueError('all25 prior cases plus ordinary WRITE/SEND required')
         for name,opcode,immediate,args,zero,capacity in cases:
             words,records,request=fixture.old.variant(opcode,immediate,zero)if capacity is None else fixture.old.variant(2,0,False)
             inputs={'input.hex':''.join(f'{w:x}\n'for w in words),
@@ -131,6 +139,13 @@ def main():
                 access.verify(output,name=='QP_DENIED')if name in ['QP_DENIED','MR_DENIED']else
                 responder.verify(output)if name=='ATOMIC_MIXED'else prior.verify(output,records,request,opcode,immediate,run))
             result['actual_common_nonce_backend']=service.verify_nonce(output)
+            result['actual_source_and_atomic_CQ']=service.verify_executor(output,name,request,
+                result.get('full748_bit_CQ_owner'))
+            if name in ['WRITE','SEND']:
+                result['wire']['physical_MAC_receipt_model']=False
+                if result['actual_common_nonce_backend']!=dict(admitted=1,issued=1,backend_completed=1,
+                    logical_completed=1,translated=1,active=0,fault=0):
+                    raise ValueError('ordinary retained source must use actual translated physical command/status')
             if capacity is not None and capacity>=0:
                 for seq in [1,2]:shutil.copy2(run/f'zero-rq-event{seq}.hex',run/(name+f'-event{seq}.hex'))
             elif capacity is None and name not in ['ATOMIC_MIXED','QP_DENIED','MR_DENIED']:shutil.copy2(run/'request-event.hex',run/(name+'-event.hex'))
@@ -138,7 +153,7 @@ def main():
         for n,h in before.items():
             if digest(ROOT/n)!=h:raise ValueError('consumed source changed: '+n)
         report.update(pass_test=True,source_unchanged=True,incoming_zero_RQ_runtime_verified=True,
-            ordinary_zero_service_runtime_verified=True)
+            ordinary_zero_service_runtime_verified=True,ordinary_source_runtime_verified=True)
     except Exception as e:report.update(error_type=type(e).__name__,error=str(e));raise
     finally:
         report['artifact_sha256']={str(p.relative_to(ROOT)):digest(p)for p in run.iterdir()if p.is_file()}

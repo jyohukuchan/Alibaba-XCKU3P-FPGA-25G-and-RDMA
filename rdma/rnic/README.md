@@ -15,7 +15,55 @@ remaining run was interrupted). No all-suite or release-pass claim is made.
 
 ## Latest functional milestone (2026-10-20)
 
-Publication115: the new segmented-HLS/shared-DMA-nonce native simulation PASSES
+Publication checkpoint: the new29-case large-wire native run has finished
+FAILED. Compilation passed in424.65s; its first8193-byte WRITE stopped at a
+MAC/FIFO assertion after19.60s. The other28 cases were NOT RUN. Failed evidence
+is retained and its1276 bound records were reverified. The inherited1KiB
+whole-frame test FIFO differs from the board's32KiB TX FIFO/cut-through CDC;
+diagnosis and fixture alignment remain, with no correction in this snapshot.
+The prior27-case pass is PRE-large-wire; component1MiB and codec15-method
+passes do not establish native large-transfer success. This is not a release
+or new hardware image. Linux/API/physical/original timing remain open.
+[Failed run](../../results/2026-10-18/rocev2-rnic-segmented-wire-native-full-001.json)
+and [evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Progress119 (historical): private full-range C128 codec PASSES15 C/UBSan methods without
+changing old codecs/capabilities. New actual8193-byte WRITE/SEND cases use
+genuine full-range MR/three DMA pages, bounded source reads, real HLS/packet/
+MAC/CQ and independent wire/host oracles. All29 cases, including ALL27 prior
+cases, are COMPILING after bench/width elaboration, NOT runtime-passed yet.
+Physical endpoints remain models; Linux/physical/multi-SGE/recovery/original
+timing remain open. [Evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Progress118 (historical): an opt-in derivative now wires true large WRITE/SEND packet
+ownership, coordinated range/PSN gates and one final whole-WR CQ. Actual
+lifetime/cache/framer/tag/EOF/tail component tests PASS10 cases including1MiB/
+256 packets in29.17s; surrounding HLS/memory/RX/CQ/MAC pins remain models.
+New actual native-graph elaboration PASSES, COMPILE-ONLY. Prior27-case runtime
+is the pre-large-wire graph; actual generated-HLS/native large runtime and
+new-graph27-case regression remain unproved. Standard codec still limits4096.
+No default/device capability/hardware changes; Linux/physical/multi-SGE/
+recovery/original timing remain open. [Evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Progress117 (historical): actual retained-source dispatcher native simulation PASSES ALL27
+cases, each<=24.76s. Nonzero65-byte WRITE/SEND now traverse actual MR/PTE/DMA,
+shared physical nonce, HLS, replay, XGMII/FCS/SFD/CDC/MAC and genuine atomic
+CQ/HLS/source retirement, retaining the full owner past aggregate memory event
+and withheld second MAC receipt. All25 old cases also pass on the same graph.
+Physical endpoints remain models; ordinary READ/SEND_IMM keep prior MAC models.
+Native large admission/per-packet wire/whole-WR CQ, Linux/provider/physical,
+multi-SGE/recovery and original timing remain OPEN. No hardware capability or
+new image is advertised. [Evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Progress116 (historical): actual retained-source/CQ ownership observers and nonzero ordinary
+WRITE/SEND are added to the new dispatcher native runtime suite. All27 cases
+are COMPILING after bench elaboration/width checks, NOT runtime-passed yet.
+The new ordinary cases use actual MAC/XGMII/FCS/SFD/CDC, withholding its second
+receipt, and check exact full owner plus genuine DMA tag/status translation.
+Large native admission/wire/CQ, Linux/provider/physical and original timing
+remain unproven. [Evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Publication115 (historical): the new segmented-HLS/shared-DMA-nonce native simulation PASSES
 all25 existing cases, each<=23.91s. A new retained-source/legacy dispatcher now
 keeps ordinary WRITE/SEND authority through replay until genuine atomic CQ
 retirement; source and dispatcher unit tests each PASS11 cases. The latest

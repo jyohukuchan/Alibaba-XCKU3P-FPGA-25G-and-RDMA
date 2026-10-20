@@ -1,0 +1,128 @@
+{
+  "scope": "Preserved development failures and exact packet-MAC fixture delta diagnosis; no native/HW failure relabeling",
+  "created_UTC": "2026-10-20T22:24:04.287346+00:00",
+  "records": [
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-wire-001.json",
+      "sha256": "0b801c93944b9a60033f15cd2b38e4a1f66abf1234a9413c8e87f77e286bcd75",
+      "pass_test": false,
+      "verified_bound_records": 15,
+      "preimages": {
+        "rdma/rnic/tests/test_segmented_wire_rtl.py": {
+          "path": "rdma/rnic/build/segmented-wire-test-before-MAC-detail-001.py",
+          "sha256": "dc7c11064e678bbf364fd8aae8a4d9c31f643f23ad60434747542e83aec730eb"
+        },
+        "rdma/rnic/fpga/derive_segmented_wire.py": {
+          "path": "rdma/rnic/build/segmented-wire-derive-before-profile-gate-003.py",
+          "sha256": "1f5ce02599467fafd6e9850da0927bddaea7c13116f43debb2b6eb1b95e0cb5c"
+        }
+      },
+      "preserved_first_run_artifacts": {
+        "rdma/rnic/build/segmented-wire-unit-kr2g2gnk/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-wire-unit-kr2g2gnk/rocev2_wqe_replay.v": "c3cf496283bba0001c8718a4653548ddd46a0b834b35c9fdeaf4f60df9d91955",
+        "rdma/rnic/build/segmented-wire-unit-kr2g2gnk/rocev2_wqe_lifetime.v": "3002ed5e181d50c5b2dbc7cdb1be7f0f7400a7f1e20ab00ad8298872883a123d",
+        "rdma/rnic/build/segmented-wire-unit-kr2g2gnk/test.vvp": "dc3822c29e2a722001ffa826a8902cf87c585f066d97372919f7a06cbaae1ca2",
+        "rdma/rnic/build/segmented-wire-unit-kr2g2gnk/rocev2_wqe_mac_tx.v": "044c0e666d36ede5f8d2d839dce8a45c910b56f116c1fff8cbb7a5a000457443",
+        "rdma/rnic/build/segmented-wire-unit-kr2g2gnk/packets.hex": "e23e6c0858244fbcdfb9c497a7ac835734e6037f02ffd4529e547abf8de24a9b",
+        "rdma/rnic/build/segmented-wire-unit-kr2g2gnk/tb.v": "bc21ae36f59ff434d35a4338d2514b5d086f8d732b2d64653235457afd58fd0f",
+        "rdma/rnic/build/segmented-wire-unit-kr2g2gnk/simulation.log": "24614cdda2461d25499006ae19f11a50fadb6bdcd8801089311bd01062343553",
+        "rdma/rnic/build/segmented-wire-unit-kr2g2gnk/rocev2_wqe_tx_lifetime.v": "b4d212836338102266914639c5ad134ebc87d892f353610fea660787af9a32c3"
+      }
+    },
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-wire-002.json",
+      "sha256": "4bd5d2d3d6c68eb25baf51393b011366d5bf97c27d80c8b866c5d853e9a6c532",
+      "pass_test": false,
+      "verified_bound_records": 24,
+      "preimages": {
+        "rdma/rnic/tests/test_segmented_wire_rtl.py": {
+          "path": "rdma/rnic/build/segmented-wire-test-before-receipt-delta-002.py",
+          "sha256": "a104f639aa6aabb1be6e3ca1b7b73f9e33bfde8ed383b312cf14566322a51c92"
+        },
+        "rdma/rnic/fpga/derive_segmented_wire.py": {
+          "path": "rdma/rnic/build/segmented-wire-derive-before-profile-gate-003.py",
+          "sha256": "1f5ce02599467fafd6e9850da0927bddaea7c13116f43debb2b6eb1b95e0cb5c"
+        }
+      },
+      "preserved_first_run_artifacts": {
+        "rdma/rnic/build/segmented-wire-unit-z6pnni7d/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-wire-unit-z6pnni7d/rocev2_wqe_replay.v": "c3cf496283bba0001c8718a4653548ddd46a0b834b35c9fdeaf4f60df9d91955",
+        "rdma/rnic/build/segmented-wire-unit-z6pnni7d/rocev2_wqe_lifetime.v": "3002ed5e181d50c5b2dbc7cdb1be7f0f7400a7f1e20ab00ad8298872883a123d",
+        "rdma/rnic/build/segmented-wire-unit-z6pnni7d/test.vvp": "60815822c7eda497b1a5ff8a77464226b67e092255ead62c02d8b6b0a726e0ce",
+        "rdma/rnic/build/segmented-wire-unit-z6pnni7d/rocev2_wqe_mac_tx.v": "044c0e666d36ede5f8d2d839dce8a45c910b56f116c1fff8cbb7a5a000457443",
+        "rdma/rnic/build/segmented-wire-unit-z6pnni7d/packets.hex": "e23e6c0858244fbcdfb9c497a7ac835734e6037f02ffd4529e547abf8de24a9b",
+        "rdma/rnic/build/segmented-wire-unit-z6pnni7d/tb.v": "491aed406ddd936e2ad17b93ddb0780edbc1ab6b4d3eddcea3145c769ee8c451",
+        "rdma/rnic/build/segmented-wire-unit-z6pnni7d/simulation.log": "89c4638c397bbc7c5d838f249b7ce5556979d7a999bb53887887b0dbb4d65308",
+        "rdma/rnic/build/segmented-wire-unit-z6pnni7d/rocev2_wqe_tx_lifetime.v": "b4d212836338102266914639c5ad134ebc87d892f353610fea660787af9a32c3"
+      }
+    },
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-wire-003.json",
+      "sha256": "0808b7d4cb21bb9b7abe0cc792013a18f7a61eaf51114b99c40bb8b54eef2547",
+      "pass_test": true,
+      "verified_bound_records": 48,
+      "preimages": {
+        "rdma/rnic/tests/test_segmented_wire_rtl.py": {
+          "path": "rdma/rnic/build/segmented-wire-test-before-expanded-cases-003.py",
+          "sha256": "625cf3cae07a1d9685979c511bdf992ef6f56ae49532bce5a7358e84532fe35e"
+        },
+        "rdma/rnic/fpga/derive_segmented_wire.py": {
+          "path": "rdma/rnic/build/segmented-wire-derive-before-profile-gate-003.py",
+          "sha256": "1f5ce02599467fafd6e9850da0927bddaea7c13116f43debb2b6eb1b95e0cb5c"
+        }
+      },
+      "preserved_first_run_artifacts": {
+        "rdma/rnic/build/segmented-wire-unit-_sjymwrw/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-wire-unit-_sjymwrw/rocev2_wqe_replay.v": "c3cf496283bba0001c8718a4653548ddd46a0b834b35c9fdeaf4f60df9d91955",
+        "rdma/rnic/build/segmented-wire-unit-_sjymwrw/rocev2_wqe_lifetime.v": "3002ed5e181d50c5b2dbc7cdb1be7f0f7400a7f1e20ab00ad8298872883a123d",
+        "rdma/rnic/build/segmented-wire-unit-_sjymwrw/test.vvp": "f1688478969d4250bb94fb0ea33f5482bd0560842a6fb5e0a5b780a2a680eabd",
+        "rdma/rnic/build/segmented-wire-unit-_sjymwrw/rocev2_wqe_mac_tx.v": "044c0e666d36ede5f8d2d839dce8a45c910b56f116c1fff8cbb7a5a000457443",
+        "rdma/rnic/build/segmented-wire-unit-_sjymwrw/packets.hex": "e23e6c0858244fbcdfb9c497a7ac835734e6037f02ffd4529e547abf8de24a9b",
+        "rdma/rnic/build/segmented-wire-unit-_sjymwrw/tb.v": "c6e59d72524f0c479786249b9a701588e7c92402e5d7477b610b01db179821ab",
+        "rdma/rnic/build/segmented-wire-unit-_sjymwrw/simulation.log": "84d9fa720d60b1f5b4e122f45fafe8ab2204c117619b5f44e586c8ace2956225",
+        "rdma/rnic/build/segmented-wire-unit-_sjymwrw/rocev2_wqe_tx_lifetime.v": "b4d212836338102266914639c5ad134ebc87d892f353610fea660787af9a32c3"
+      }
+    }
+  ],
+  "development_generator_API_error": {
+    "path": "rdma/rnic/build/segmented-wire-before-connect-items-001.py",
+    "sha256": "62029d2a5bc003c1b536a3e720be8b74f5ffdfaff49dc99dd66b9ef912fae352",
+    "cause": "connect helper expects pair iterable, not dictionary iteration; changed caller to list/items before formal unit001"
+  },
+  "failure_diagnosis": {
+    "failed_reports": [
+      "001",
+      "002"
+    ],
+    "actual_fatal_scope": "tb.receipt after deasserting accepted MAC completion VALID without a delta settle",
+    "observed_state": {
+      "cycle": 2152,
+      "limit": 3352,
+      "index": 0,
+      "MAC_proofs": 0,
+      "frames": 1,
+      "receipts": 1,
+      "mac_active": 1,
+      "mac_done": 1,
+      "ip_done": 1,
+      "receipt_seen": 1,
+      "tail_left": 1024,
+      "framer_busy": 0,
+      "MAC_valid": 0,
+      "MAC_ready": 1,
+      "replay_state": 2,
+      "fault_codes": "top/life/replay00"
+    },
+    "cause": "Fixture immediately sampled stale combinational aggregate fault from the just-consumed receipt before VALID deassertion propagated; not a timeout because cycle<limit",
+    "correction": "Add#1 after physical receipt VALID deassertion, matching preexisting MAC/replay fixture convention; no DUT/tail/drain/clock/deadline/identity/CRC assertion changes",
+    "unchanged_private_DUT_leaves": [
+      "rocev2_wqe_lifetime.v",
+      "rocev2_wqe_replay.v",
+      "rocev2_wqe_mac_tx.v",
+      "rocev2_wqe_tx_lifetime.v"
+    ],
+    "failed002_and_pass003_DUT_byte_identical": true
+  },
+  "current_expanded_component_report": "results/2026-10-18/rocev2-rnic-segmented-wire-004.json",
+  "physical_or_native_runtime": false
+}

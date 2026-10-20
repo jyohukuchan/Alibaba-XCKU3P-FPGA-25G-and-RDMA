@@ -32,7 +32,73 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
-Publication115: segmented-HLS/shared-physical-nonce native-full001 PASSES ALL25
+Publication checkpoint (2026-10-20): new large-wire native-full001 is terminal
+FAILED, not compiling. Compilation succeeded in424.65s; the first8193-byte
+WRITE hit `real MAC/FIFO error` after19.60s and the remaining28 cases were NOT
+RUN. All1276 bound records were reverified; failed evidence is preserved.
+The inherited1KiB whole-frame test FIFO differs from the board's32KiB TX FIFO
+plus small cut-through CDC path; exact fatal flag/root cause remains under
+investigation, with no correction or new runtime in this snapshot. The prior
+27-case pass is PRE-large-wire, not this candidate. Component10-case/1MiB
+and private codec15-method passes remain narrower evidence. All11 requirements,
+Linux/API/physical/recovery/multi-SGE and original timing remain OPEN;
+HLS11.180ns still fails original4ns/default1.08ns. No hardware changes.
+[Failed run](../results/2026-10-18/rocev2-rnic-segmented-wire-native-full-001.json)
+and [evidence limits](ROCEV2_ATOMIC.md).
+
+Progress119 (historical): explicit private full-range C128 codec PASSES15 real-C/UBSan
+methods; legacy zero/Atomic/4096 policies and installed/default capability
+are unchanged. New actual-native8193-byte WRITE/SEND fixture genuinely
+registers8721 bytes/three scattered DMA pages, checks one fullMR grant and
+4096/4096/1 source reads, per-packet real HLS/ACK/PSN/MAC/cache lifetimes,
+exact host/wire/sentinel bytes and one full748 CQ. Both large cases plus ALL27
+prior cases are COMPILING in new native-full001 after complete bench/width
+elaboration; no runtime success yet. Same1200sbuild/30scase limits/globaldrains0.
+Physical endpoints remain models; all11 requirements and large RX/READ/
+Immediate/multi-SGE/Linux/API/physical/recovery/timing work retained. HLS
+11.180ns still fails original clocks. [Evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress118 (historical): coordinated large WRITE/SEND packet ownership is implemented in
+an opt-in private derivative. Full748 owner, true FIRST/MIDDLE/LAST/whole RETH,
+per-packet consecutive PSNs/RX/HLS-ACK/MAC/EOF/1024-tail and explicit cache
+advance precede one final whole-WR receipt/CQ; no fake CQ/global-idle bypass.
+Four-state component004 PASSES five methods/10 cases,240 records verified,
+including1MiB/256 packets/255 advances/one commit in29.17s and protocol/receipt
+negative controls. HLS/RX/memory/CQ/MAC-pin boundaries are models. Whole native
+new-graph elaboration001 PASSES3.23s/1211 records/no width warnings, but is
+COMPILE-ONLY. Prior27-case runtime is PRE-large-wire; actual new large HLS/MR/
+DMA/XGMII/source/CQ runtime and all27 regressions remain. Standard codec still
+limits4096; no capability/default/hardware changed. Large RX/READ/Immediate,
+multi-SGE/Linux/API/physical/recovery/timing and all11 requirements retained.
+HLS11.180ns still fails original clocks. [Evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress117 (historical): actual retained-source dispatcher native-full001 PASSES ALL27
+scenarios after414.61s compilation, each<=24.76s;1398 source/artifact records
+reverified after terminal success. Ordinary65-byte WRITE/SEND now prove actual
+full748 source ownership through MR/PTE/DMA/HLS/replay, shared physical nonce,
+two genuine XGMII/FCS/SFD/CDC/MAC receipts, withheld second receipt and exact
+atomic CQ/HLS/source retirement. All25 old cases also pass on the same graph.
+Physical endpoints remain models; normal READ/SEND_IMM keep prior MAC-receipt
+models. This is not Linux/physical/timing qualification. Native large admission
+still4096; per-packet true segmentation/PSN/ACK/MAC/replay ownership and one
+whole-WR final CQ must be integrated coherently. Large RX/READ/Immediate,
+multi-SGE, real host/API/physical/recovery/timing and all11 requirements remain.
+HLS11.180ns still fails original clocks; no hardware or automatic publication.
+[Evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress116 (historical): a new read-only actual source/CQ observer checks the same full748
+owner across trusted admission, retained DMA/replay authority, aggregate event
+and atomic genuine HLS/CQ retirement. Dispatcher native-full001 is COMPILING
+ALL27 cases: nonzero ordinary WRITE/SEND plus all25 previous cases. Ordinary
+source traffic now uses actual XGMII/FCS/SFD/CDC/MAC and withheld second MAC
+receipt, exact logicalC001->physical1->C001 status, independent CQ-owner and
+source/sentinel/wire/replay checks. Bench elaboration/width checks passed;
+runtime is NOT yet proved. Original1200s build/30s-case limits remain. Large
+native wire/admission/CQ, Linux/physical/API/multi-SGE/recovery/timing and all11
+requirements remain open; no hardware or automatic publication changes.
+[Evidence and limits](ROCEV2_ATOMIC.md).
+
+Publication115 (historical): segmented-HLS/shared-physical-nonce native-full001 PASSES ALL25
 existing cases after415.90s compilation, each<=23.91s;1380 source/artifact
 records reverified. Actual HLS/MR/PTE/DMA/XGMII/FCS/SFD/CDC/MAC/CQ execute
 together, but physical endpoints remain models, not Linux/hardware signoff.

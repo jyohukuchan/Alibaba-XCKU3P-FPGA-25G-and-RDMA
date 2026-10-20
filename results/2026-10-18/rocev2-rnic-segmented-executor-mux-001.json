@@ -1,0 +1,107 @@
+{
+  "scope": "Actual dispatcher/legacy/large child/common nonce, backend/CQ are MODELS.\n\nExercise same-instance legacy -> large+replays -> legacy, real unchanged READ/\nAtomic placement, zero work, and fail-closed foreign interfaces. Not native\nlarge admission, peer/MAC/CQ or physical qualification.\n",
+  "pass_test": true,
+  "methods": 4,
+  "seconds": 1.7018500880221836,
+  "source_sha256": {
+    "rdma/rnic/tests/test_segmented_executor_mux_rtl.py": "0861d2cf4108da160c8b4fd2cb44dea4d746e6d9827b04ca1d466a27aa3be2a6",
+    "rdma/rnic/fpga/derive_segmented_executor.py": "6e48e62a8e0b65e0f11dbd1fcf937b3fcc952ac830472dd3b69661a99e58f64b",
+    "rdma/rnic/tests/test_segmented_source_executor_rtl.py": "7259530a6f84b85d13324ba76148cac46ec4a0bf72fd829477117bb4ca116ec1",
+    "rdma/rnic/rtl/rocev2_segmented_source_executor.v": "346bd54fb2b5471020d85cca254ee84db44e8baa0f3c4a6653429be454b5f9a6",
+    "rdma/rnic/rtl/rocev2_memory_command_nonce.v": "f61b5d9d62a6ca82548d883a83b4ddea2ff74ce10005cf70aef5c7ea7eeeb439",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c910018a2e8a9d77e649437f9a7727f5cf2fd9c02cb20ab92016b5209a3a189e"
+  },
+  "tests": {
+    "test_large_mode_rejects_unowned_placement_or_write_interfaces": [
+      {
+        "directory": "rdma/rnic/build/segmented-executor-mux-1gxguryx",
+        "seconds": 0.030421433970332146,
+        "RAM_binary_sha256": "368ac7ba46594d5e5b046fc14b7603e01748484c81b9cba3249016d51c24f297"
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-executor-mux-crqt80tx",
+        "seconds": 0.029903059010393918,
+        "RAM_binary_sha256": "afeca0145d340bf6b336db759482bd58bf115f33f2ab3bfb07ca0c8cca3256e7"
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-executor-mux-a9klu3s6",
+        "seconds": 0.03003611002350226,
+        "RAM_binary_sha256": "641f00df56cba5687b7e10102986c516e3f1d43c12b70f4e8a87c857ae205fd7"
+      }
+    ],
+    "test_legacy_READ_and_Atomic_actual_result_placement": [
+      {
+        "directory": "rdma/rnic/build/segmented-executor-mux-c62f_jfv",
+        "seconds": 0.030391121981665492,
+        "RAM_binary_sha256": "dfd2426fd65d9b2401375ca3a050e0792e619d3a42a00f3829d1ce2b7ae2f2f0"
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-executor-mux-ny34suxp",
+        "seconds": 0.031715832999907434,
+        "RAM_binary_sha256": "510b0939a7bbcdb61c267de7d4c365474d4d81540765b380953077dbb73d91b5"
+      }
+    ],
+    "test_same_instance_legacy_large_replays_legacy_and_global_nonce": [
+      {
+        "directory": "rdma/rnic/build/segmented-executor-mux-0h1gefwi",
+        "seconds": 0.16236884699901566,
+        "RAM_binary_sha256": "63ceb8ca5fe5257b9245d79fd9722882e2701bdc8812971f137530fe089e4b2a"
+      }
+    ],
+    "test_zero_SEND_keeps_no_memory_authority_on_legacy_path": [
+      {
+        "directory": "rdma/rnic/build/segmented-executor-mux-sxdvx7cf",
+        "seconds": 0.030442387040238827,
+        "RAM_binary_sha256": "eb2977b4228ce941926cfc117fcdb931d1305ca7d358d67ced9ff8e8984cc67b"
+      }
+    ]
+  },
+  "four_state": true,
+  "actual_legacy_source_child_and_common_nonce": true,
+  "backend_CQ_and_trusted_MR_grant_modeled": true,
+  "native_large_or_hardware_runtime": false,
+  "artifact_sha256": {
+    "rdma/rnic/build/segmented-executor-mux-1gxguryx/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/segmented-executor-mux-1gxguryx/rocev2_segmented_child_executor.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+    "rdma/rnic/build/segmented-executor-mux-1gxguryx/rocev2_segmented_executor_mux.v": "8f05ca82c8c278933145ac82160e136d20e9cd8650ecb072869630005fd30b64",
+    "rdma/rnic/build/segmented-executor-mux-1gxguryx/tb.v": "e87ee73fd91116756a16f52bff9003743b8600821e1d8fbd69308f2add1df21b",
+    "rdma/rnic/build/segmented-executor-mux-1gxguryx/simulation.log": "dd99f3d3a72c4cae172740a9a3fbec51398f1d8b07cb57a362f985d3916cf9de",
+    "rdma/rnic/build/segmented-executor-mux-1gxguryx/rocev2_wqe_memory_executor.v": "6b42de07bb2fa9df935f505fe678594e42b052bf01fbe7d263e54b4f8ace9cc4",
+    "rdma/rnic/build/segmented-executor-mux-crqt80tx/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/segmented-executor-mux-crqt80tx/rocev2_segmented_child_executor.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+    "rdma/rnic/build/segmented-executor-mux-crqt80tx/rocev2_segmented_executor_mux.v": "8f05ca82c8c278933145ac82160e136d20e9cd8650ecb072869630005fd30b64",
+    "rdma/rnic/build/segmented-executor-mux-crqt80tx/tb.v": "f32b53863119ac4669a43e863e371782517ab8832743204d317fe15cdaf5c383",
+    "rdma/rnic/build/segmented-executor-mux-crqt80tx/simulation.log": "28dd3dd0b71377bc1fc7a2641c687ec30fff4b6d29fb206da36810dcffeec217",
+    "rdma/rnic/build/segmented-executor-mux-crqt80tx/rocev2_wqe_memory_executor.v": "6b42de07bb2fa9df935f505fe678594e42b052bf01fbe7d263e54b4f8ace9cc4",
+    "rdma/rnic/build/segmented-executor-mux-a9klu3s6/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/segmented-executor-mux-a9klu3s6/rocev2_segmented_child_executor.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+    "rdma/rnic/build/segmented-executor-mux-a9klu3s6/rocev2_segmented_executor_mux.v": "8f05ca82c8c278933145ac82160e136d20e9cd8650ecb072869630005fd30b64",
+    "rdma/rnic/build/segmented-executor-mux-a9klu3s6/tb.v": "764e92759d2d3a1d0ede22966d800ff07538d466d557b34052778d3b0a69e436",
+    "rdma/rnic/build/segmented-executor-mux-a9klu3s6/simulation.log": "f33cd799da7d4da41550b308b2165d3a6cd85f3c8dba0b13e441554ddde9fe26",
+    "rdma/rnic/build/segmented-executor-mux-a9klu3s6/rocev2_wqe_memory_executor.v": "6b42de07bb2fa9df935f505fe678594e42b052bf01fbe7d263e54b4f8ace9cc4",
+    "rdma/rnic/build/segmented-executor-mux-c62f_jfv/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/segmented-executor-mux-c62f_jfv/rocev2_segmented_child_executor.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+    "rdma/rnic/build/segmented-executor-mux-c62f_jfv/rocev2_segmented_executor_mux.v": "8f05ca82c8c278933145ac82160e136d20e9cd8650ecb072869630005fd30b64",
+    "rdma/rnic/build/segmented-executor-mux-c62f_jfv/tb.v": "5e1cd64960eaefbff05f7c8acc04e97d68658e1ffcaa85b355378d88b815b9a3",
+    "rdma/rnic/build/segmented-executor-mux-c62f_jfv/simulation.log": "03c95c699b802132abad4e5cbbb78e14cfba2054d3b1a36b7c50b453c728744f",
+    "rdma/rnic/build/segmented-executor-mux-c62f_jfv/rocev2_wqe_memory_executor.v": "6b42de07bb2fa9df935f505fe678594e42b052bf01fbe7d263e54b4f8ace9cc4",
+    "rdma/rnic/build/segmented-executor-mux-ny34suxp/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/segmented-executor-mux-ny34suxp/rocev2_segmented_child_executor.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+    "rdma/rnic/build/segmented-executor-mux-ny34suxp/rocev2_segmented_executor_mux.v": "8f05ca82c8c278933145ac82160e136d20e9cd8650ecb072869630005fd30b64",
+    "rdma/rnic/build/segmented-executor-mux-ny34suxp/tb.v": "6026f76dc3524504b1e8df002703dd45636c4a8cbed8197af460ce3ce82caf96",
+    "rdma/rnic/build/segmented-executor-mux-ny34suxp/simulation.log": "76320404ff9122d8e779ae5d5789e29535083fc6bd35d3b7602a479199d07561",
+    "rdma/rnic/build/segmented-executor-mux-ny34suxp/rocev2_wqe_memory_executor.v": "6b42de07bb2fa9df935f505fe678594e42b052bf01fbe7d263e54b4f8ace9cc4",
+    "rdma/rnic/build/segmented-executor-mux-0h1gefwi/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/segmented-executor-mux-0h1gefwi/rocev2_segmented_child_executor.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+    "rdma/rnic/build/segmented-executor-mux-0h1gefwi/rocev2_segmented_executor_mux.v": "8f05ca82c8c278933145ac82160e136d20e9cd8650ecb072869630005fd30b64",
+    "rdma/rnic/build/segmented-executor-mux-0h1gefwi/tb.v": "bbbc4ac99359330e4d010662b134005755f3383f04ea9e4ef0e4fbfae39cc1ec",
+    "rdma/rnic/build/segmented-executor-mux-0h1gefwi/simulation.log": "6b1ac7ef7b0839c02a6648806c11344beaebad95d19f8f5d3628552dda046b1f",
+    "rdma/rnic/build/segmented-executor-mux-0h1gefwi/rocev2_wqe_memory_executor.v": "6b42de07bb2fa9df935f505fe678594e42b052bf01fbe7d263e54b4f8ace9cc4",
+    "rdma/rnic/build/segmented-executor-mux-sxdvx7cf/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/segmented-executor-mux-sxdvx7cf/rocev2_segmented_child_executor.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+    "rdma/rnic/build/segmented-executor-mux-sxdvx7cf/rocev2_segmented_executor_mux.v": "8f05ca82c8c278933145ac82160e136d20e9cd8650ecb072869630005fd30b64",
+    "rdma/rnic/build/segmented-executor-mux-sxdvx7cf/tb.v": "beda3aaf983e6e833b78f5ec3dd1823e38e4ba5942061a1a5bbf6df53264ceb9",
+    "rdma/rnic/build/segmented-executor-mux-sxdvx7cf/simulation.log": "a8e3e88a5ba32aa8b7e03107db67dd6d32fa0ac7cb996b8e2eab2b6696b90775",
+    "rdma/rnic/build/segmented-executor-mux-sxdvx7cf/rocev2_wqe_memory_executor.v": "6b42de07bb2fa9df935f505fe678594e42b052bf01fbe7d263e54b4f8ace9cc4"
+  }
+}

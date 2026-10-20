@@ -1,0 +1,18 @@
+{
+  "scope": "Actual outer+unchanged native child; backend/CQ endpoints are MODELED.\n\nFull WR identity, per-DMA nonreused tags and exact raw/data/status joins;\nreplays after final data receipt retain lease until identical CQ retirement.\nNot native MR/page/DMA/MAC/CQ integration, HLS runtime or hardware proof.\n",
+  "pass_test": false,
+  "methods": 4,
+  "seconds": 0.3606831079814583,
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_segmented_source_executor.v": "38d12844440edce5106fdfa1b6605d02dfa5ad9c0f44c75380a967a157fce9e9",
+    "rdma/rnic/tests/test_segmented_source_executor_rtl.py": "076a214720df7be29119358f2b0b5c050f851be8164201831e518b9120e7c289",
+    "rdma/rnic/fpga/derive_segmented_source.py": "138c80829c920c6d8d32a7a7ac29cb05e33bec051028dd741558979b5314ad62",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c910018a2e8a9d77e649437f9a7727f5cf2fd9c02cb20ab92016b5209a3a189e"
+  },
+  "tests": {},
+  "four_state": true,
+  "actual_bounded_native_child": true,
+  "backend_and_CQ_endpoints_modeled": true,
+  "reserved_backend_namespace_globally_integrated": false,
+  "native_or_hardware_runtime": false
+}

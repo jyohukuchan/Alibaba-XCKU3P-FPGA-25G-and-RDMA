@@ -1,0 +1,62 @@
+{
+  "scope": "Actual native ordinary zero service003 reaches real core/MAC retirement, then fails fixture task-loop tag oracle. Not a whole-native runtime pass.",
+  "created_UTC": "2026-10-20T20:24:17.304245+00:00",
+  "failed_report": {
+    "path": "results/2026-10-18/rocev2-rnic-zero-service-native-full-003.json",
+    "sha256": "9fdb053645b02dac57ace03d18629cee357225db8139cde226fe9a716e504276"
+  },
+  "whole_batch_pass": false,
+  "compilation_seconds": 421.02716627303744,
+  "failed_case": "SERVICE_AFTER_WRITE",
+  "failed_case_seconds": 19.401594975031912,
+  "failed_case_exit": -6,
+  "remaining24_cases_not_executed": true,
+  "verified_bound_source_artifact_records_before_correction": 1085,
+  "failed_binary": {
+    "path": "/dev/shm/as02-zero-native-artifacts-ev98pxed/Vtb",
+    "sha256": "db200eda7a53633db04f23be1ec7e081882c7279ff42d1b963b825d1ab516cdf"
+  },
+  "actual_genuine_fatal": {
+    "cycle": 15331,
+    "service_owner_count": 1,
+    "service_hls_owner_count": 1,
+    "service_core_count": 1,
+    "service_retire_count": 0,
+    "retire_valid": 1,
+    "retire_ready": 1,
+    "active": 1,
+    "MAC_state": 4,
+    "mac_started": 1,
+    "mac_done": 1,
+    "receipt_seen": 1,
+    "tail_started": 1,
+    "tail_left": 0,
+    "actual_tag": 16385,
+    "task_service_seq": 0,
+    "DUT_fault": 0,
+    "full344_owner_matches": true,
+    "full400_core_matches": true
+  },
+  "cause": "The cross-process monitor compared actual tag4001 against4000+service_seq; the task's loop variable still reads0 at the genuine fatal. In the unchanged generated C++ the first iteration's uses are constant-folded but its global store1 is absent; stores2 and3 remain. No general compiler bug diagnosis is claimed beyond this exact frozen model.",
+  "correction": "Use this independent monitor's accepted-retirement count: exact tag4001+count[15:0], count must be below2. All full owner/core, accepted MAC EOF, genuine own SFD, unchanged1024-cycle tail, no-data authority and external independently reconstructed wire/tag checks remain. No task state writes, assertion suppression or DUT mutation in GDB.",
+  "debugger_exit": 0,
+  "debugger_runtime_limit_seconds": 30,
+  "debug_link": "Original unchanged failed model archive/runtime objects with diagnostic-only debug types and existing zero_native_debug_main.cpp.",
+  "preserved_or_current_hashes": {
+    "results/2026-10-18/rocev2-rnic-zero-service-native-full-003.json": "9fdb053645b02dac57ace03d18629cee357225db8139cde226fe9a716e504276",
+    "rdma/rnic/build/zero-service-native-full-4ml5lzr_/fixture-before-retire-sequence.py": "2edd91dbc61fa6b8406ac1e9a1df788eb554ad00bcc9ee83ee6c9a6fa346bb24",
+    "rdma/rnic/build/zero-service-native-full-4ml5lzr_/gdb-retire-fatal-excerpt.log": "ce9f5d1c10dae9dab197d9346b71da6abf5bb11f771d2786922ce3420d871c4e",
+    "rdma/rnic/tests/zero_service_native_debug_retire.gdb": "b323a9da53dbed08ffe551f28875a07c7f53d8ebbb8653388cb753ec18231cdd",
+    "rdma/rnic/tests/zero_service_native_fixture.py": "471a3cb57fcbc31fac16b3c226ff20c33db2bc49f03e1afddb1c2772ab602fcc",
+    "/dev/shm/as02-zero-service-retire-debug-cei56X/debug-model": "bb43fef0edcec3ff9fdd50557f52d6a881b53a8b83ccbc0c33f0da3472500025",
+    "/dev/shm/as02-zero-native-obj-11qdm6g2/Vtb___024root__DepSet_hfe20aad3__1.cpp": "f7c44906b262c91834ceebb37854fa12a6628fecbab59cdf5252dbbe4ead7ddd",
+    "/dev/shm/as02-zero-native-obj-11qdm6g2/Vtb__ALL.a": "eb3603da0385b598a8413d55ccd96a07aa2418a69c701074ac8a7edffd504f1f"
+  },
+  "unchanged_retry_DUT_RTL_HLS_data_files": 47,
+  "DUT_HLS_clock_drain_timeout_MAC_owner_gate_changed": false,
+  "fresh_full_run": "results/2026-10-18/rocev2-rnic-zero-service-native-full-004.json",
+  "fresh_state": "compiling,25 planned cases,not pass",
+  "compile_limit_seconds": 1200,
+  "each_runtime_limit_seconds": 30,
+  "physical_Linux_board_timing_verified": false
+}

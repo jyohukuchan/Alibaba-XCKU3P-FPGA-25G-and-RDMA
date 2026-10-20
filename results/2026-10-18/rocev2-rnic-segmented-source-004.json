@@ -1,0 +1,104 @@
+{
+  "scope": "Actual outer+unchanged native child; backend/CQ endpoints are MODELED.\n\nFull WR identity, per-DMA nonreused tags and exact raw/data/status joins;\nreplays after final data receipt retain lease until identical CQ retirement.\nNot native MR/page/DMA/MAC/CQ integration, HLS runtime or hardware proof.\n",
+  "pass_test": true,
+  "methods": 4,
+  "seconds": 1.047930654953234,
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_segmented_source_executor.v": "3ca64477cd197dd4fc8fafe46c13b2c4ee794b79db14c6106d16d8d296224214",
+    "rdma/rnic/tests/test_segmented_source_executor_rtl.py": "0524cc3352512b3e6dd625d54154f171b53300184f6c7b98e432f5256c852d79",
+    "rdma/rnic/fpga/derive_segmented_source.py": "138c80829c920c6d8d32a7a7ac29cb05e33bec051028dd741558979b5314ad62",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c910018a2e8a9d77e649437f9a7727f5cf2fd9c02cb20ab92016b5209a3a189e"
+  },
+  "tests": {
+    "test_WRITE_SEND_one_event_and_final_replay_retained_until_exact_CQ": [
+      {
+        "directory": "rdma/rnic/build/segmented-source-1krh96rb",
+        "seconds": 0.12124885799130425,
+        "artifacts": {
+          "rdma/rnic/build/segmented-source-1krh96rb/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-source-1krh96rb/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-source-1krh96rb/tb.v": "26bb452935922c917d2ce89825ea675330878abb99e556caad18abbeb391a7aa",
+          "rdma/rnic/build/segmented-source-1krh96rb/simulation.log": "c8e78f503b54e7fccb878a01a27430204bf1f6fd95dbed2242b74f6680effdc2"
+        },
+        "RAM_binary_sha256": "5c9528fd24ce1e332f6da27a4f4cfd4c2d1f21e0a9b61d1b4b6df12db1edc145"
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-source-8swyjoek",
+        "seconds": 0.12204129801830277,
+        "artifacts": {
+          "rdma/rnic/build/segmented-source-8swyjoek/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-source-8swyjoek/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-source-8swyjoek/tb.v": "cb05a61082fa654db59226b639475563c2361beffcc00218afbbd5cd130d5b7c",
+          "rdma/rnic/build/segmented-source-8swyjoek/simulation.log": "a1e797f6616938c5859d456cb31563997373461c09ecf06bd357a25987fc18d0"
+        },
+        "RAM_binary_sha256": "ee788394661acd68b0607f913f4e25d6733b10802dfd880baa355df99bb1259b"
+      }
+    ],
+    "test_nonsequential_raw_and_foreign_retirement_never_authorize": [
+      {
+        "directory": "rdma/rnic/build/segmented-source-d6n33f62",
+        "seconds": 0.016698085004463792,
+        "artifacts": {
+          "rdma/rnic/build/segmented-source-d6n33f62/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-source-d6n33f62/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-source-d6n33f62/tb.v": "9a6edc15b0b2ffb4f5d5cde3e12375db1eef3aaf5360aa379cbd50f779a90d1d",
+          "rdma/rnic/build/segmented-source-d6n33f62/simulation.log": "0b0bd27c996292f0b163a0981252d657e4c5f63cf9cdc09a65775a2f0c58a5a7"
+        },
+        "RAM_binary_sha256": "48a4807f8fd94fc0e218bae08bbc6bf25b714a6461c17136f3b53c11cd47bc07"
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-source-8oi6tcsx",
+        "seconds": 0.01652557303896174,
+        "artifacts": {
+          "rdma/rnic/build/segmented-source-8oi6tcsx/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-source-8oi6tcsx/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-source-8oi6tcsx/tb.v": "42c51b56c8e5bb268fcbec8f642c14b4272fe47f6eb820187f46abf334447f00",
+          "rdma/rnic/build/segmented-source-8oi6tcsx/simulation.log": "216dc191ceeea45fd2a2fe72d7ada4932589a4329f64611c86b8476fdc1aeb8b"
+        },
+        "RAM_binary_sha256": "acca408955b1ec50caac2be189598260741b67b9debcaa66fd0433b8d612ba9f"
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-source-cmncnrv1",
+        "seconds": 0.016038278001360595,
+        "artifacts": {
+          "rdma/rnic/build/segmented-source-cmncnrv1/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-source-cmncnrv1/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-source-cmncnrv1/tb.v": "1e16ef4a1124b72b62a452bb966b637cafb7cf46924d7af6d6b890f010f2ae23",
+          "rdma/rnic/build/segmented-source-cmncnrv1/simulation.log": "c29791759058bffa0759ba4152818d3e72dcd5c98a51051b0038021eb8e51287"
+        },
+        "RAM_binary_sha256": "3a68c355a0a138a22673c61de85dae56a3ad0c126c3b5221d6507d14e92267ce"
+      }
+    ],
+    "test_parent_fault_retains_whole_owner_and_offered_backend_command": [
+      {
+        "directory": "rdma/rnic/build/segmented-source-alo9t01j",
+        "seconds": 0.017352934053633362,
+        "artifacts": {
+          "rdma/rnic/build/segmented-source-alo9t01j/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-source-alo9t01j/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-source-alo9t01j/tb.v": "c43f938fad783aa2caf9ae4c80562c6806b1b3b7ff2bf8a030f087c84309ca2d",
+          "rdma/rnic/build/segmented-source-alo9t01j/simulation.log": "c293cc466452c9b76e71c970a679c89a9f5de086d8b6fd1e387a684e03447f80"
+        },
+        "RAM_binary_sha256": "21ca19fc6b89270d39cc0528df0fb90816b4b18d407734234ca8e9293aa0bcf8"
+      }
+    ],
+    "test_stale_backend_status_rejected_during_next_unique_tag": [
+      {
+        "directory": "rdma/rnic/build/segmented-source-f8yv531n",
+        "seconds": 0.05382345803081989,
+        "artifacts": {
+          "rdma/rnic/build/segmented-source-f8yv531n/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-source-f8yv531n/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-source-f8yv531n/tb.v": "b5f0c58db7c130aef255ad9f2f2a4a31c44364846eee4b86ab119c340f1d3735",
+          "rdma/rnic/build/segmented-source-f8yv531n/simulation.log": "50323ab2efa8a5b46f3aaed9ff0f4c25ff3d818a2874da65866f9c22ae7a8b0b"
+        },
+        "RAM_binary_sha256": "d72ba73cf93e2f60beef9d8fd8650d6f691d52dfe62c8cf50b21e78c30899627"
+      }
+    ]
+  },
+  "four_state": true,
+  "actual_bounded_native_child": true,
+  "backend_and_CQ_endpoints_modeled": true,
+  "reserved_backend_namespace_globally_integrated": false,
+  "native_or_hardware_runtime": false
+}

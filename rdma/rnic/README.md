@@ -15,7 +15,51 @@ remaining run was interrupted). No all-suite or release-pass claim is made.
 
 ## Latest functional milestone (2026-10-20)
 
-Publication109: prior zero-RQ native validation PASSES all21 cases. The newer
+Publication115: the new segmented-HLS/shared-DMA-nonce native simulation PASSES
+all25 existing cases, each<=23.91s. A new retained-source/legacy dispatcher now
+keeps ordinary WRITE/SEND authority through replay until genuine atomic CQ
+retirement; source and dispatcher unit tests each PASS11 cases. The latest
+dispatcher graph has COMPILE-ONLY evidence, not the25-case runtime pass, which
+is on the previous graph and lacks nonzero local ordinary WRITE/SEND cases.
+Large native admission/wire/CQ, multi-SGE, Linux/provider/physical operation
+and full-board timing remain OPEN. HLS11.180ns STILL fails original clocks.
+No new device capability or hardware-tested image is advertised.
+[Evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Progress114 (historical): a shared physical DMA-command identity translator is now connected
+after all actual memory clients, before the one paged backend. Unit tests and
+whole new-HLS/native graph elaboration PASS; the25-case native regression is
+RUNNING with its first case passed, not a whole-batch pass. Large native admission/source/wire/CQ still
+remain OPEN; no device capability or physical/timing success is advertised.
+[Evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Progress113 (historical): segmented WRITE/SEND HLS generation PASSES,75,548LUT/98,051FF/
+209BRAM18; estimated11.180ns STILL fails original timing. A new retained
+whole-WR source DMA component PASSES six four-state methods/nine cases with
+the actual unchanged bounded native child. Shared backend tag isolation and
+actual large native memory/wire/CQ integration remain OPEN; backend/CQ in
+these units are models. No device capability, bitstream, Linux or physical
+success is claimed. [Evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Progress112 (historical): full-native004 PASSES all25 ordinary-zero/RQ/RNR/requester/Atomic/
+permission scenarios, with actual HLS/MAC/real SFD/EOF/tail. NEW same-core
+large WRITE/SEND source PASSES C++ tests through1MiB: real FIRST/MIDDLE/LAST,
+six WRs/284 packets/seven stored replays,291 independent full-wire checks,
+one final WR receipt, PSN wrap and five no-issue negatives. Actual Atomic RTL/
+unchanged Immediate compatibility also PASS. New-top HLS generation is RUNNING,
+not yet generated-RTL or timing proof. Large native/kernel/provider/physical,
+READ/Immediate>4096 and multi-SGE remain open. No actual device capability is
+advertised. [Evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Progress111 (historical): the first ordinary zero WRITE now reaches its real core and
+tagged4001 MAC/SFD/EOF/tail lifetime, but native003 FAILS a fixture tag oracle;
+the remaining24 cases did not run. Frozen-model inspection isolates the task
+loop-number reference. The corrected monitor uses independent accepted order,
+with all exact owner/core/wire/drain checks retained and no DUT/HLS changes.
+Fresh25-case native004 is COMPILING, NOT a pass. Linux/physical, large/multi-SGE,
+recovery and original timing remain open. [Evidence](../../docs/ROCEV2_ATOMIC.md).
+
+Publication109 (historical): prior zero-RQ native validation PASSES all21 cases. The newer
 ordinary zero WRITE/READ graph is still a development candidate: full-native002
 failed a reused Atomic-history byte oracle during its normal-WRITE prelude,
 before any zero service ran. Frozen-model inspection confirmed correct data

@@ -1,0 +1,55 @@
+{
+  "scope": "113 actual large-WR source controller plus unchanged native child; modeled backend/CQ, not whole-native large runtime.",
+  "created_UTC": "2026-10-20T21:03:03.896149+00:00",
+  "hashes": {
+    "results/2026-10-18/rocev2-rnic-segmented-source-001.json": "b50f41a803189916887e41528d68e03dda7951a176c2f0923a5d3fedc77cd5b4",
+    "results/2026-10-18/rocev2-rnic-segmented-source-002.json": "019510fc180cd322a1a85bee2757be05a946560311fd96e4015ba6d7a87d2937",
+    "results/2026-10-18/rocev2-rnic-segmented-source-003.json": "7ab4a7a07391f0b7312396747d7ba108df01ae5a431d985a766951cf6ca26d6d",
+    "results/2026-10-18/rocev2-rnic-segmented-source-004.json": "0f426bf48c6111a12adcdbb2abe74a16896882d1b0b7087a7a2e702a607320b3",
+    "results/2026-10-18/rocev2-rnic-segmented-source-005.json": "dfed39787c6b4db7d4919713ce3dd67b5c25f2f4b48ed19a8a379856041cb6a8",
+    "results/2026-10-18/rocev2-rnic-segmented-source-006.json": "7048685ec6f12ca149cb82ef559dfdfee7272e422b7c0aa6a0f0aed31a81dced",
+    "rdma/rnic/build/segmented-source-alarv32h/test-before-task-rename.py": "1f52d684c6942ade76a188c87c36eeae41aa9eceda0aa8aae15fbea2a8553999",
+    "rdma/rnic/build/segmented-source-atce7qrd/test-before-QP-parameter.py": "076a214720df7be29119358f2b0b5c050f851be8164201831e518b9120e7c289",
+    "rdma/rnic/build/segmented-source-0i943oob/source-before-explicit-function-inputs.v": "38d12844440edce5106fdfa1b6605d02dfa5ad9c0f44c75380a967a157fce9e9",
+    "rdma/rnic/build/segmented-source-0i943oob/source-before-offer-guard.v": "3ca64477cd197dd4fc8fafe46c13b2c4ee794b79db14c6106d16d8d296224214",
+    "rdma/rnic/build/segmented-source-0i943oob/test-before-exhaustion-stall-error-cases.py": "0524cc3352512b3e6dd625d54154f171b53300184f6c7b98e432f5256c852d79",
+    "rdma/rnic/build/segmented-source-k748khq0/test-before-settle-and-tag-parameter.py": "d93e66edb4e469e7c76e6aa2f257b7c2e6477d3bdae849bceb5bc1cce737dfcc",
+    "rdma/rnic/build/segmented-source-0i943oob/tb-debug-dependencies.v": "802806629978c87cec49d60ec8be1653d3c11e0fd19b214251b7eaaf055146dc",
+    "rdma/rnic/build/segmented-source-0i943oob/implicit-dependency-excerpt.log": "a2da7227df13fcef37c290a4ef6e8117fa0f713713b98a588b8a7aa3152080bd"
+  },
+  "failed001": "All four methods failed fixture compilation: SystemVerilog reserved task name bind. Exact test preimage/compile logs retained; no runtime proof.",
+  "failed002": "All four methods failed fixture elaboration: generic port declaration needed explicit top MAX_QPS=8. Exact preimage/logs retained; no ignored port-width warning.",
+  "failed003": "Actual controller mismatch on first raw command: known wire equals direct function result, length8193/next0/limit1 but cached next_match0. Debug observation-only copies did not force state/suppress assertions. Full saved WR/length/QPN are now explicit function arguments in continuous logic rather than implicit global dependencies; this is a DUT fix, not an oracle waiver.",
+  "observed_debug_excerpt": {
+    "path": "rdma/rnic/build/segmented-source-0i943oob/implicit-dependency-excerpt.log",
+    "note": "Verbatim five diagnostic lines, not full simulator log.",
+    "active": 1,
+    "length": 8193,
+    "next_offset": 0,
+    "raw_known": 1,
+    "direct_equality": 1,
+    "next_offset_in_range": 1,
+    "cached_match": 0,
+    "retire_match": 1
+  },
+  "historical004": "PASS four methods/seven cases before immediate offered-owner/bad-offer guard was added. Not the current final source proof.",
+  "failed005": "New guard exposed fixture zero-delta observation after dropping retire-valid; add1ns after stimulus before checking combinational output. Tag-exhaustion parameter substitution also required exact generated no-space instance syntax. All existing assertions retained; tests now assert the intended parameter substitution occurs exactly once.",
+  "current006": {
+    "pass_test": true,
+    "methods": 6,
+    "cases": 9,
+    "seconds": 1.3943868689821102,
+    "verified_source_and_all_run_artifact_records": 40,
+    "unchanged_full_native004_child_clones": 9
+  },
+  "coverage": [
+    "WRITE and SEND8193-byte WRs split into4096/4096/1-byte chunks, initial and final replays, one aggregate whole-WR event, full748-bit owner unchanged.",
+    "Actual child data beats stalled and checked byte-for-byte; unused lanes zeroed; aggregate event stable under stall.",
+    "Exact genuine whole-WR retirement required; early and foreign retirement cannot release; replay after memory-event handoff remains owned.",
+    "Actual bounded child backend error propagates error7, never whole success; old status tag during next DMA rejected.",
+    "Nonwrapping reduced tag space deliberately exhausted without fourth DMA or false completion; late parent fault retains offered backend command."
+  ],
+  "open_integration_contract": "Logical source DMA tags C001..ffff still require global backend namespace isolation or a shared nonreusing physical-command nonce translator AFTER all actual memory clients. That adapter and whole-native large memory/MAC/CQ wiring are NOT implemented/qualified here. Native MR/page/DMA and CQ boundaries remain models in these units.",
+  "hardware_actions": [],
+  "automatic_Git_publication": false
+}

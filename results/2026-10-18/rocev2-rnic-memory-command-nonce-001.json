@@ -1,0 +1,90 @@
+{
+  "scope": "Actual shared-command nonce RTL; command/status neighbors are MODELED.\n\nNo MR/data/fence/physical-backend completion is manufactured or proved here.\n",
+  "pass_test": true,
+  "methods": 4,
+  "seconds": 0.13461468496825546,
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_memory_command_nonce.v": "f61b5d9d62a6ca82548d883a83b4ddea2ff74ce10005cf70aef5c7ea7eeeb439",
+    "rdma/rnic/tests/test_memory_command_nonce_rtl.py": "6b88fa5050deb258997fd76050fa583a7ff25de0ad1f29e2ab90645c8e848d33",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c910018a2e8a9d77e649437f9a7727f5cf2fd9c02cb20ab92016b5209a3a189e"
+  },
+  "tests": {
+    "test_late_fault_preserves_already_offered_command_and_status": [
+      {
+        "directory": "rdma/rnic/build/memory-nonce-yutchtpx",
+        "seconds": 0.007676651002839208,
+        "RAM_binary_sha256": "54bc4c46022930385471d2a2af689490a1e1208059ac74befb4c00a351d2317f"
+      }
+    ],
+    "test_nonce_exhaustion_finishes_last_command_without_wrap": [
+      {
+        "directory": "rdma/rnic/build/memory-nonce-czcmzvtf",
+        "seconds": 0.00692661403445527,
+        "RAM_binary_sha256": "66f3e5b691cf376673c22142c0235ddd5d5b9d00debaa790602510fe8fd39686"
+      }
+    ],
+    "test_reused_and_overlapping_logical_tags_keep_distinct_physical_identity": [
+      {
+        "directory": "rdma/rnic/build/memory-nonce-rkop3ic4",
+        "seconds": 0.0074328319751657546,
+        "RAM_binary_sha256": "0e036244cd118ed22920bbe9a50f79f6871d18580d40a788cb821e0a94e4536a"
+      }
+    ],
+    "test_stale_unknown_duplicate_or_premature_status_never_translates": [
+      {
+        "directory": "rdma/rnic/build/memory-nonce-gk6x0_x0",
+        "seconds": 0.006366128975059837,
+        "RAM_binary_sha256": "fd55228bbf9235423e8c64e78a45e912d2bd74847c145095aba3f4e265bcb9a3"
+      },
+      {
+        "directory": "rdma/rnic/build/memory-nonce-rhygesgz",
+        "seconds": 0.007248028996400535,
+        "RAM_binary_sha256": "d8ba91e31528984dc1e9504b90e8c00f714a6053f6c4e39cef1f8458a9b9d2b0"
+      },
+      {
+        "directory": "rdma/rnic/build/memory-nonce-p40efmlz",
+        "seconds": 0.0067692589946091175,
+        "RAM_binary_sha256": "df98c076e43318cfa6fadbecfa641410e238d3cb01f5f6d844b7e32d5ff62d8d"
+      },
+      {
+        "directory": "rdma/rnic/build/memory-nonce-q2530jbq",
+        "seconds": 0.007109671016223729,
+        "RAM_binary_sha256": "9dcb9a8eac8214fe96c2afb49c7124be2029415fd580bde73f3e38d41f0231d3"
+      },
+      {
+        "directory": "rdma/rnic/build/memory-nonce-z8wk5mci",
+        "seconds": 0.006585505034308881,
+        "RAM_binary_sha256": "6ca1c626bcbf049f9cc0d0025c191ac21b2be8cb29526268324fc6e42bf117ff"
+      }
+    ]
+  },
+  "four_state": true,
+  "backend_and_clients_modeled": true,
+  "actual_MR_data_fence_or_native_integration": false,
+  "artifact_sha256": {
+    "rdma/rnic/build/memory-nonce-yutchtpx/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/memory-nonce-yutchtpx/tb.v": "e9930453dcb97417ad5dc5d207aa67c820ac693413ee96b05a27f4bf149cab8a",
+    "rdma/rnic/build/memory-nonce-yutchtpx/simulation.log": "b7bfc3ae6010d04967c2953206511b7f37dfbe98f2c3deeffedd6d94d6077fee",
+    "rdma/rnic/build/memory-nonce-czcmzvtf/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/memory-nonce-czcmzvtf/tb.v": "68f320b247244cafe2bd0b3165881a0e28730fd063c29e9e59240f5f07a46d81",
+    "rdma/rnic/build/memory-nonce-czcmzvtf/simulation.log": "f911b3280ab878a0221e2fd13547cc3b9e09755abda0a5aed81dd5e34bce293f",
+    "rdma/rnic/build/memory-nonce-rkop3ic4/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/memory-nonce-rkop3ic4/tb.v": "19dcd61fd148531f553e7c44dc77e515c5959f737b47824020e4459b7e18695c",
+    "rdma/rnic/build/memory-nonce-rkop3ic4/simulation.log": "176bd74bbab2b84a9892de952d83555635de3f83c2a2a92aa25462c3192307b6",
+    "rdma/rnic/build/memory-nonce-gk6x0_x0/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/memory-nonce-gk6x0_x0/tb.v": "73b58ff9374dab7d9c7259fad2a890119f603851aead488d4b8afb8ee0d5803b",
+    "rdma/rnic/build/memory-nonce-gk6x0_x0/simulation.log": "1a12574107707b65dac8f52e8b69f691b3cef0e6f8b4c5c8ba0263990214e44e",
+    "rdma/rnic/build/memory-nonce-rhygesgz/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/memory-nonce-rhygesgz/tb.v": "177b78b4270fadf3264ccacbc653272f8accfac51d57f9216d7ea2d19f2d892f",
+    "rdma/rnic/build/memory-nonce-rhygesgz/simulation.log": "07a3cb84d7e58fadfa432955dcd8e6e687c3db48fdc3a3a9798a6a021b1c2ee7",
+    "rdma/rnic/build/memory-nonce-p40efmlz/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/memory-nonce-p40efmlz/tb.v": "26d131c09c98e9dfe1492af2707d31a2b7eb5201251cf3e950b04c061406ad84",
+    "rdma/rnic/build/memory-nonce-p40efmlz/simulation.log": "6a72a632f3bfddd95601f200ed48de929fdba1e93ec37a0b469a18913503c38e",
+    "rdma/rnic/build/memory-nonce-q2530jbq/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/memory-nonce-q2530jbq/tb.v": "939b6597d29bc7add8337edc60cadb0e513ec96827e4878b9415160060c6e1c2",
+    "rdma/rnic/build/memory-nonce-q2530jbq/simulation.log": "46c6cb5677b46239d7e5164fd8b442b054ccb7bd6c18da4d3b3ca42d09bac50b",
+    "rdma/rnic/build/memory-nonce-z8wk5mci/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/memory-nonce-z8wk5mci/tb.v": "a63efa38072f4835a0244834423ff6f215ed1711df6c5b94fd7891ae7426c5d1",
+    "rdma/rnic/build/memory-nonce-z8wk5mci/simulation.log": "dcb2327d8b63a5e074231b76f313619a5d3b270b6152070483568aa0ce0fc784"
+  }
+}

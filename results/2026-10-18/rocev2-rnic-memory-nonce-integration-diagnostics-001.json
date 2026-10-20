@@ -1,0 +1,53 @@
+{
+  "scope": "114 common physical command nonce: actual unit and whole graph elaboration; native runtime pending, not large native support.",
+  "created_UTC": "2026-10-20T21:18:34.497287+00:00",
+  "hashes": {
+    "results/2026-10-18/rocev2-rnic-memory-command-nonce-001.json": "ee0191d7a1b4cc07c8916a102d197bbca60471f4defe0233ea161f51d56ef407",
+    "results/2026-10-18/rocev2-rnic-segmented-native-elaboration-001.json": "1baaeb50292fa924afad508554ce67df722138edf4a99ba408533d16d2d14065",
+    "results/2026-10-18/rocev2-rnic-segmented-native-elaboration-002.json": "7f1589d13e273349f45f87eaa1374160c21529549a7e9fed7206e344d1499fb3",
+    "rdma/rnic/build/segmented-native-elaboration-4jn5jhjv/derive-before-existing-port-replacement.py": "b5e182363721852f0d2303f8299206a90ab7010a7f64822bfe8e6755405ae253"
+  },
+  "unit001": {
+    "pass_test": true,
+    "methods": 4,
+    "cases": 8,
+    "seconds": 0.13461468496825546,
+    "verified_source_artifact_records": 27,
+    "adjacent_clients_and_backend_modeled": true
+  },
+  "failed_elaboration001": {
+    "pass_test": false,
+    "verified_bound_records_before_correction": 1196,
+    "reason": "Derivation used a helper intended to APPEND new ports on existing backend ports, producing15 duplicate bindings. No runtime ran; exact failed derived sources/log/report and helper preimage retained."
+  },
+  "correction": "Strict unique replacement of the15 existing command/status/idle/fault backend ports; no default source change, width waiver or nonce policy weakening.",
+  "elaboration002": {
+    "pass_test": true,
+    "seconds": 3.228932755999267,
+    "source_records": 1162,
+    "no_width_warnings": true,
+    "single_new_segmented_HLS": true,
+    "single_MR_PTE_PSN_MSN_domain": true,
+    "single_common_nonce": true,
+    "single_actual_paged_backend": true,
+    "both_original_global_drains_zero": true
+  },
+  "integration": "Actual normal/local/Atomic client command output -> immutable common nonce -> actual paged backend, with exact real status mapped back to logical tag. Data/EOF/fence/descriptor semantics are unchanged. Busy/fault and configuration guards are wired into backend idle/drained/fault and MR/PTE/QP configuration. No data or completion is manufactured.",
+  "full_runtime001": {
+    "pending_report": "results/2026-10-18/rocev2-rnic-segmented-native-full-001.json",
+    "session": 33721,
+    "launcher_PID": 2807716,
+    "compiler_PID": 2807731,
+    "compiler_group": 2807729,
+    "directory": "rdma/rnic/build/segmented-native-full-dyu551ur",
+    "object_directory": "/dev/shm/as02-zero-native-obj-g4v56yuf",
+    "planned_cases": 25,
+    "compile_limit_seconds": 1200,
+    "each_runtime_limit_seconds": 30,
+    "status": "compiling,not pass"
+  },
+  "observer": "Read-only actual common-nonce and paged-backend command/status handshakes; full immutable tuple/strict physical sequence/error/logical mapping/order counts checked. No injected DUT receipts or direct assignments; original25 case oracles retained.",
+  "open": "Large native admission/source dispatcher/per-packet wire/whole-WR CQ remain unwired. Shared nonce alone is not source/component/HLS/native/physical large transfer completion. All11 requirements retained; HLS11.180ns still fails original timing.",
+  "hardware_actions": [],
+  "automatic_Git_publication": false
+}

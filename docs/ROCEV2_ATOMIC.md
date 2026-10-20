@@ -5,7 +5,221 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
-## Publication snapshot: ordinary zero-service validation (109)
+## Publication snapshot: segmented source and native regression (115)
+
+[Segmented-HLS/shared-nonce native-full001](../results/2026-10-18/rocev2-rnic-segmented-native-full-001.json)
+PASSES ALL25 existing scenarios after415.90s compilation, each at most23.91s.
+All1380 bound source/artifact records were reverified before publication.
+The actual generated HLS, shared MR/PTE/paged backend, physical command nonce,
+XGMII/FCS/SFD/CDC/MAC/CQ run together. Mixed Atomic executes five genuine
+backend commands with four actual logical/physical tag translations. Every
+prior zero-service/RQ/RNR/requester/permission oracle remains. Physical host,
+root, peer, PHY and PTP endpoints remain models: no Linux or hardware signoff.
+
+NEW `fpga/derive_segmented_executor.py` wires the actual retained-source
+controller alongside the unchanged legacy executor, using ONE common native
+MR/PTE/backend/physical-nonce domain. All ordinary nonzero WRITE/SEND retain
+their full748-bit source owner through fragment reads/replays and the final
+memory event until an identical genuine whole-WR CQ retirement. READ/Atomic
+placement, Immediate and zero-length work keep the legacy path. The actual CQ
+handshake releases HLS and retained source atomically; a raw CQ offer is also
+identity-checked even when the other consumer withholds ready.
+
+[Source007](../results/2026-10-18/rocev2-rnic-segmented-source-007.json)
+PASSES seven methods/11 cases1.63s;48 records reverified.
+[Dispatcher003](../results/2026-10-18/rocev2-rnic-segmented-executor-mux-003.json)
+PASSES five methods/11 cases2.51s;72 records reverified. These include small
+WRITE/SEND,8193-byte fragmentation, initial/final replay, mixed legacy and
+retained-source traffic, global nonreusing physical tags, withheld genuine CQ
+and foreign raw CQ offers. Backend/CQ/trusted MR grants in these units remain
+MODELS. [Latest complete-graph elaboration002](../results/2026-10-18/rocev2-rnic-segmented-executor-native-elaboration-002.json)
+PASSES3.25s with1206 bound records reverified. It checks actual dispatcher/
+source/legacy/HLS/MR/PTE/backend wiring and dual CQ fanout, but is compile-only,
+not a runtime pass.
+
+The25-case native pass above is the PRE-dispatcher graph. Those cases contain
+no nonzero local ordinary WRITE/SEND, so they do NOT qualify the new source
+path. The new full-native dispatcher probe is an unexecuted development
+candidate; add ordinary WRITE/SEND runtime cases and read-only exact CQ/source
+observations before relying on it. Native admission still limits work to4096
+bytes. Large admission, per-packet wire/MAC/PSN span and one final CQ must be
+extended coherently; C++1MiB success alone is not native1MiB support.
+
+READ/Immediate>4096, multi-SGE, Linux/provider, physical/recovery and full-board
+timing remain open. HLS11.180ns STILL fails original4ns/default1.08ns. All11
+requirements and both global drains0 remain; no new device capability, board
+image, hardware/install/network/BIOS/fan/reboot/flash changes. This publication
+is explicitly user-requested; it does not authorize future automatic pushes.
+
+Publication checks parse all17 new Python modules and27 new JSON records;
+`git diff --check` passes. A fresh `bash scripts/check.sh` still exits1 at the
+known historical `rocev2_tx_padding.v` SHA mismatch in the2026-10-17 transport
+record, after Tcl/allowlist/source checks pass. That provenance gate is NOT
+waived or relabeled; this is not an all-tests-green release.
+
+## Shared physical DMA-command identity in actual native graph (114, historical)
+
+NEW `rocev2_memory_command_nonce` sits AFTER every normal/local/Atomic memory
+client and BEFORE the one actual shared paged backend. It captures the whole
+immutable write/offset/length/full-key/logical-tag tuple, assigns each backend
+command a fresh nonwrapping physical nonce, and translates ONLY that genuine
+matching backend status back to the retained logical tag/error. Overlapping
+or reused client tags such asf123/c001 no longer imply physical identity.
+Data, EOF, page/DMA/descriptor/fence semantics stay with the ACTUAL backend;
+the translator does not manufacture them or grant memory authority.
+
+[Four-state nonce001](../results/2026-10-18/rocev2-rnic-memory-command-nonce-001.json)
+PASSES four methods/eight cases in0.13s, with all27 source/artifact records
+verified: reused/overlapping logical tags, command/status stalls, premature/
+stale/unknown/duplicate statuses, late fault with held offers, unchanged real
+error7 and nonwrapping exhaustion. Adjacent clients/backend remain MODELS.
+The final allocated nonce may complete; new commands are blocked at exhaustion.
+
+`fpga/derive_segmented_native.py` connects this translator into the SAME actual
+native graph and selects the real new segmented HLS generation. Physical tags
+reach the actual paged backend; real statuses return through the translator.
+Its busy/fault/configuration guard participates in real idle/drained/fault and
+MR/PTE/QP management gates. Default sources and both global drains0 remain.
+[Whole-native elaboration002](../results/2026-10-18/rocev2-rnic-segmented-native-elaboration-002.json)
+PASSES3.23s, with all1162 source records current and no port-width warnings:
+one actual new HLS, MR/PTE/PSN/MSN domain, common nonce and paged backend.
+[Diagnostic](../results/2026-10-18/rocev2-rnic-memory-nonce-integration-diagnostics-001.json)
+preserves the first duplicate-port derivation failure; existing connections
+are now uniquely replaced, not appended, with no policy or width waiver.
+
+Fresh native-full001 is RUNNING all25 prior zero-service/RQ/RNR/requester/
+Atomic/permission scenarios against this new HLS+nonce graph. Its first
+`SERVICE_AFTER_WRITE` case PASSES21.50s, including one actual admitted/issued/
+backend-completed/logical-completed transaction and no nonce fault/held owner;
+the remaining24 cases are pending. Added read-only
+observers check the ACTUAL full command tuple/physical sequence/backend status/
+logical error mapping and lifetime cardinality, without driving DUT receipts.
+Original1200s compile/30s per-case limits and every prior case oracle remain.
+No whole-batch success is inferred yet. Large native admission, retained source
+dispatcher, per-packet wire and whole-WR CQ wiring are STILL OPEN: the new
+source DMA component is not selected as a working large native datapath.
+READ/Immediate>4096, multi-SGE, Linux/provider/recovery/physical/full-board
+timing and all11 requirements remain. HLS11.180ns still fails original clocks.
+No hardware/default/install/load/network/BIOS/fan/reboot/flash or auto-push.
+
+## Segmented HLS generated; retained whole-WR source DMA component (113, historical)
+
+[Actual new-top HLS001](../results/2026-10-18/rocev2-rnic-segmented-request-synth-001.json)
+PASSES351.54s generation with all696 source/frozen/generated records reverified.
+The selected top is `rocev2_native_segmented_request_top`; every old external
+ABI width remains exact. Resources:75,548LUT/98,051FF/209BRAM18/0DSP.
+Original4ns/default1.08ns,8QP/2000entries are unchanged. Estimated11.180ns
+STILL FAILS original timing; no full-board, bitstream or physical claim.
+
+NEW `rocev2_segmented_source_executor` retains one trusted748-bit large WRITE/
+SEND owner across ordered bounded reads, the most recent fragment's replays,
+and the aggregate memory event. Every child subrange/VA/offset/key/PD/identity
+comes from that saved full owner. A fresh nonwrapping logical DMA tag is used
+for EVERY read/re-read; the real HLS ctl bit is checked before translating it
+to the bounded child's complete-transaction ctl. The actual prior native
+child executor, unchanged except its module name, still checks every command,
+data byte/keep/EOF and matching status. Its downstream ownership transfer goes
+to this still-held actual whole-WR owner, not an idle or constant drain flag.
+One aggregate memory event does NOT release the source: final-fragment replays
+remain possible until an identical genuine whole-WR CQ retirement is received.
+
+[Four-state source006](../results/2026-10-18/rocev2-rnic-segmented-source-006.json)
+PASSES six methods/nine cases in1.39s. WRITE/SEND8193-byte WRs split into
+4096/4096/1-byte reads; initial and final replays, stalled real data and whole
+event, early/foreign retirement, stale status during the next unique tag,
+actual child backend error7, nonwrapping tag exhaustion and late faults are
+checked. All40 bound source/run-artifact records and all nine exact child
+clones were verified against full-native004's actual executor. Backend and CQ
+endpoints are MODELS, not actual MR/page/DMA/native HLS/MAC/CQ integration.
+[Diagnostics](../results/2026-10-18/rocev2-rnic-segmented-source-diagnostics-001.json)
+preserve failed fixtures and a real implicit-function-dependency RTL defect.
+The saved WR/length/QPN are now explicit function inputs; no identity assertion
+was removed. Historical source004 pass is not substituted for current006.
+
+Logical source tagsC001..ffff still require global backend namespace isolation
+or a shared nonreusing physical-command nonce translator AFTER all memory
+clients. That adapter and whole-native large memory/wire/CQ wiring remain
+OPEN; this component is not selected as a working large native datapath yet.
+READ/Immediate>4096, multi-SGE, Linux/provider, recovery, physical operation and
+all11 original requirements remain. No hardware/default/install/load/network/
+BIOS/fan/reboot/flash or automatic Git publication changes.
+
+## Whole-native zero-service pass; real multi-packet WRITE/SEND source (112, historical)
+
+[Fresh full-native004](../results/2026-10-18/rocev2-rnic-zero-service-native-full-004.json)
+PASSES410.44s compilation and ALL25 scenarios, each17.00..22.66s. Four new
+ordinary zero WRITE/READ/mixed/after-normal-WRITE scenarios each execute two
+services through actual privileged QP binding, generated HLS, XGMII/FCS/SFD,
+two CDC FIFOs, MAC EOF/tail and exact400-bit retirement. All21 old zero-RQ,
+RNR, requester, Atomic and permission cases also pass on this SAME graph.
+All1207 bound source/artifact records were reverified. Physical host/root/
+peer/PHY/PTP remain TWO-STATE MODELS: this is NOT Linux or physical signoff.
+
+NEW `hls/segmented_request_transport.py` extends the SAME complete source
+with genuine multi-packet ordinary WRITE and SEND up to1MiB. One748-bit WR
+owner remains retained through FIRST/MIDDLE/LAST and one final816-bit receipt;
+these are NOT multiple independent WRITE_ONLY verbs. Each next fragment waits
+for its real previous ACK, exact singleton replay pointer/pool release,
+consumed timer and SAME common-PSN readback. FIRST WRITE retains full-message
+RETH length/key/VA but fetches only4096 bytes; actual stored FIRST replay does
+the same. Terminal zero padding and BTH pad count are exact, including dirty
+unused source-memory lanes. Whole-message first/next PSN and wrap are retained.
+
+[Fresh C++003](../results/2026-10-18/rocev2-rnic-segmented-request-csim-003.json)
+PASSES51.23s compilation/8.06s runtime: six WRs,284 fresh packets, seven actual
+stored replays, independent Python reconstruction of all291 complete wire
+records,4097/8192/12289/8193/65537/1048576-byte transfers, withheld real ACK/
+timer/common-state consumers, and five actual pre-issue rejection cases.
+All previous Atomic/zero-requester/zero-RQ/ordinary-zero cases repeat on this
+new source. [Compatibility001](../results/2026-10-18/rocev2-rnic-segmented-request-compat-001.json)
+PASSES25.25s/1.01s: actual owned Atomic/MR/paged-memory RTL supplies nine jobs,
+and unchanged Immediate TX/RX assertions pass. Peer/connection/source-memory
+endpoints remain models. [Diagnostics](../results/2026-10-18/rocev2-rnic-segmented-request-diagnostics-001.json)
+preserve the first failed JSON/hex-output batch and exact preimages; later
+source metadata only documented inherited ports, leaving all9 derived HLS
+files unchanged and freshly retested. Failed001 is not relabeled.
+
+Actual new-top HLS generation001 is RUNNING, using all original parent
+consumer/ABI/frozen-source gates and1500MiB/4ns/default1.08ns/8QP/2000entries.
+The run-directory prefix is inherited from the unchanged parent builder;
+the actual selected top is `rocev2_native_segmented_request_top`, NOT the old
+zero-service top. No generated-RTL or timing success is inferred yet. An
+inactive old object cache alone was losslessly archived, all106 files verified
+against persistent compressed backup and RAM, with the original path kept.
+No source/evidence/binary bytes were discarded.
+
+Large-transfer native MR/DMA/MAC/CQ, kernel/provider and physical integration
+remain open. READ/Immediate remain4096 bytes; multi-SGE is NOT implemented.
+The prior zero-service13.568ns estimate STILL FAILS original timing; full-board
+setup/hold/pulse/skew/routing/DRC/check_timing/CDC and all11 requirements remain.
+No hardware/install/load/network/BIOS/fan/reboot/flash or automatic Git changes.
+
+## Ordinary zero-service native validation (111, historical)
+
+[Full-native003](../results/2026-10-18/rocev2-rnic-zero-service-native-full-003.json)
+compiled421.03s, then stopped19.40s into its first `SERVICE_AFTER_WRITE`
+case. Unlike002, a genuine zero WRITE reaches its actual HLS400-bit receipt,
+real tagged4001 XGMII/FCS/SFD transmission, accepted MAC EOF and the complete
+1024-cycle tail. The batch is STILL FAILED; the other24 cases did not run.
+
+[Frozen-model diagnostic004](../results/2026-10-18/rocev2-rnic-zero-service-native-diagnostics-004.json)
+reverified all1085 bound records before correction. At the genuine fatal,
+full owner/core match, MAC-done/own-receipt/tail-started are1, tail-left is0,
+retire-valid/ready are1, actual tag is4001 and DUT fault is0. The monitor's
+task loop-control variable unexpectedly still reads0; the frozen generated
+C++ contains no first store1, although stores2/3 remain. This is an observation
+of this exact model, not a general diagnosis of the compiler.
+
+Only the fixture's expected tag now uses its INDEPENDENT accepted-retirement
+counter: exact4001+count, with count strictly below2. Full wire/tag/owner/core,
+accepted EOF/genuine SFD/tail and all no-data-authority checks remain. No DUT,
+HLS, clock, drain, deadline or tag policy changed; all47 derived RTL/HLS-data
+files match003. Full-native004 is now COMPILING all25 cases under the unchanged
+1200s/30s limits, NOT a pass. No hardware or automatic publication changes.
+The open Linux/provider/physical/large/multi-SGE/recovery/timing requirements
+below are unchanged; original HLS timing still fails13.568ns.
+
+## Publication snapshot: ordinary zero-service validation (109, historical)
 
 The current zero-service source is a development candidate, NOT a completed
 native runtime pass. [Full-native002](../results/2026-10-18/rocev2-rnic-zero-service-native-full-002.json)

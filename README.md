@@ -29,18 +29,23 @@ inbound SEND/WRITE target, READ responder, native InfiniBand or production-relia
 ### RNIC development snapshot (2026-10-20)
 
 The new [incremental RNIC sources](rdma/rnic/README.md) include protected host
-memory/queues, kernel/provider work, SEND/RECV/Immediate, and an Atomic
-CAS/FADD responder candidate with immutable packet ownership and actual shared
-PSN/MSN readback completions. The latest [generated Atomic MAC RTL composition](results/2026-10-18/rocev2-rnic-atomic-MAC-generated-002.json)
-passes four short simulated cases, including drop then forward progress. It
-connects actual Ethernet framing, XGMII/FCS, SFD completion and receipt CDC
-RTL to automatic packet retirement; positive MAC receipts are not test-generated.
-Physical host ordering, PHY pins and the PTP time input remain models.
-Atomic requester/full native integration and standard API runtime remain
-incomplete; the driver still advertises `IB_ATOMIC_NONE`.
+memory/queues, kernel/provider work, SEND/RECV/Immediate and Atomic candidates.
+The [new segmented-HLS/shared-DMA-nonce native regression](results/2026-10-18/rocev2-rnic-segmented-native-full-001.json)
+passes all25 simulated cases, each under24s, including zero-length services,
+RQ/RNR, requester Atomic and permission checks. It uses actual generated HLS,
+MR/PTE/DMA and XGMII/FCS/SFD/CDC/MAC/CQ RTL; physical host/root/peer/PHY/PTP
+endpoints remain models, not Linux or hardware qualification.
+
+Ordinary WRITE/SEND up to1MiB now pass source-level segmented HLS tests with
+true FIRST/MIDDLE/LAST and one final WR receipt. A retained-source dispatcher
+and shared physical command nonce also pass focused RTL tests. The latest
+dispatcher graph has compile-only evidence, NOT the above25-case runtime
+pass. Native large admission/per-packet wire/CQ integration, multi-SGE and
+standard API runtime remain incomplete; the driver still advertises
+`IB_ATOMIC_NONE`.
 
 This is a **work-in-progress source snapshot**, separate from the earlier
-hardware-tested READ/WRITE images. Its HLS estimate13.568ns misses the original
+hardware-tested READ/WRITE images. Its latest HLS estimate11.180ns misses the original
 4ns target; no new FPGA image, installation or hardware claim is published.
 The recorded-data part of `bash scripts/check.sh` currently detects a stale
 historical `rocev2_tx_padding.v` SHA after adding44-byte SEND support. The old

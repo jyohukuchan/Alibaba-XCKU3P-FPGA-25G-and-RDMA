@@ -121,9 +121,13 @@ always @(posedge clk)if(!rst && service_runtime_started)begin
   service_core_count=service_core_count+1;$display("ZERO_SERVICE_NATIVE_CORE %0100h",dut.m_zero_core_done);
  end
  if(dut.s_zero_retire_valid && dut.m_zero_retire_ready)begin
+  // Check tags against this monitor's independent accepted-retirement order,
+  // not the task loop-control variable (its first assignment was absent in
+  // the failed Verilator model). Full wire/owner/core oracles remain exact.
   if(dut.s_zero_retire_owner!==expected_service_owner || dut.s_zero_retire_core!==expected_service_core ||
    !dut.zero_wire_lifetime.mac_done || !dut.zero_wire_lifetime.receipt_seen || dut.zero_wire_lifetime.tail_left ||
-   dut.zero_wire_lifetime.active_tag!==16'h4000+service_seq)$fatal(1,"ordinary zero real MAC/SFD/EOF/tail retirement");
+   service_retire_count>=2 || dut.zero_wire_lifetime.active_tag!==16'h4001+service_retire_count[15:0])
+   $fatal(1,"ordinary zero real MAC/SFD/EOF/tail retirement");
   service_retire_count=service_retire_count+1;$display("ZERO_SERVICE_NATIVE_RETIRE %0100h",dut.s_zero_retire_core);
  end
  if(dut.cq_commit_valid || dut.cq_retire_valid || dut.rq_post_valid || dut.rq_core_valid || dut.m_work_handoff || dut.owner_take ||

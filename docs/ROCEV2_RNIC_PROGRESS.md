@@ -32,7 +32,76 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
-Publication109: the genuine normal8-byte WRITE prelude in full-native002
+Publication115: segmented-HLS/shared-physical-nonce native-full001 PASSES ALL25
+existing cases after415.90s compilation, each<=23.91s;1380 source/artifact
+records reverified. Actual HLS/MR/PTE/DMA/XGMII/FCS/SFD/CDC/MAC/CQ execute
+together, but physical endpoints remain models, not Linux/hardware signoff.
+New retained-source/legacy dispatcher and atomic genuine-CQ fanout are wired.
+Source007 PASSES seven methods/11 cases; dispatcher003 five methods/11 cases,
+including ordinary small WRITE/SEND,8193-byte fragmentation/replay, common
+physical tags and withheld/foreign CQ. Their adjacent backend/CQ/grant are
+models. Latest dispatcher native elaboration002 is COMPILE-ONLY; the25-case
+runtime pass is the previous graph and does not exercise nonzero local
+ordinary WRITE/SEND. The new dispatcher full-native probe remains unexecuted.
+Native large admission/per-packet wire/whole-WR CQ, READ/Immediate>4096,
+multi-SGE, standard API/Linux/physical/recovery/full-board timing and all11
+requirements remain open. HLS11.180ns STILL fails original clocks. No hardware
+changes; this push is explicitly requested, not future automatic authority.
+[Evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress114 (historical): new common physical command nonce captures the full immutable
+logical tuple AFTER all memory clients, maps fresh nonwrapping physical tags
+to the actual paged backend and translates only its real matching status.
+Four-state nonce001 PASSES four methods/eight cases0.13s;27records verified.
+Actual new-HLS/shared-MR/PTE/backend graph elaboration002 PASSES3.23s with
+1162current source records, singular domains and no width/drain bypass.
+New native-full001 is RUNNING all25 existing scenarios; first AFTER_WRITE
+PASSES21.50s with actual backend/nonce identity/counts checked, remaining24
+pending. Read-only observers retain full tuple/status checks; no batch pass.
+Large native admission/source/wire/whole-WR CQ are still OPEN, as are all11
+requirements, READ/Immediate large/multi-SGE/Linux/physical/recovery/timing.
+HLS11.180ns still fails original clocks. No hardware or automatic Git changes.
+[Evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress113 (historical): actual segmented HLS001 PASSES generation351.54s; all696 bound
+records/old ABIs verified.75,548LUT/98,051FF/209BRAM18/0DSP;11.180ns STILL
+FAILS original4ns/default1.08ns. New whole-WR source DMA component retains
+full748-bit authority across bounded reads/re-reads, fresh nonwrapping logical
+tags and final-event handoff until exact CQ retirement. Actual unchanged
+native child executes command/data/status guards; four-state source006 PASSES
+six methods/nine cases1.39s with40records/nine exact child clones verified.
+Backend/CQ endpoints are models; shared physical nonce isolation and actual
+large native memory/wire/CQ wiring remain OPEN. READ/Immediate>4096, multi-SGE,
+Linux/provider/recovery/physical/full-board timing and all11 requirements
+remain. No hardware or automatic publication. [Evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress112 (historical): fresh full-native004 PASSES ALL25 zero-service/RQ/RNR/requester/
+Atomic/permission scenarios, each<=22.66s, after410.44s compilation; all1207
+records reverified. Actual HLS/MAC/SFD/EOF/tail run together; physical endpoints
+remain two-state models. NEW same-core large WRITE/SEND source implements
+true FIRST/MIDDLE/LAST, one full WR owner/final receipt, actual per-packet
+ACK/replay/pointer/pool/timer/common-PSN joins and exact terminal padding.
+C++00351.23s/8.06s PASSES six WRs/284 packets/seven stored replays, independent
+291-wire reconstruction,1MiB payload and five no-issue negatives, plus all old
+cases. Actual Atomic-RTL/unchanged Immediate compatibility00125.25s/1.01s PASS.
+New-top HLS generation001 is RUNNING under original clocks/geometry/gates.
+Large native/MR/DMA/MAC/CQ/kernel/provider, READ/Immediate>4096, multi-SGE,
+physical/recovery/full-board timing remain open; prior13.568ns still fails.
+All11 requirements retained; no hardware or automatic Git changes.
+[Exact evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress111 (historical): full-native003 compiled421.03s and the first ordinary zero WRITE
+reaches its real HLS/core, actual tagged4001 MAC/XGMII/FCS/SFD and full EOF/tail
+lifetime. The batch FAILS its first case at a fixture tag comparison; all24
+later cases did not run. Frozen-model inspection proves exact owner/core,
+MAC-done/receipt/tail and fault0, but a task loop-control variable still reads0.
+The expected tag now uses the monitor's independent accepted-retirement order,
+retaining every exact wire/owner/drain assertion; all47 derived RTL/HLS-data
+files are unchanged. Fresh25-case full-native004 is COMPILING, not a pass.
+All11 requirements remain; Linux/physical/large/multi-SGE/recovery/timing are
+open. No hardware or automatic Git publication. [Exact evidence](ROCEV2_ATOMIC.md).
+
+Publication109 (historical): the genuine normal8-byte WRITE prelude in full-native002
 compiled412.05s, then failed its reused Atomic-history byte oracle before
 any zero-service execution; the other24 cases did not run. Frozen-model
 inspection confirmed the intended data and untouched sentinels, with no DUT

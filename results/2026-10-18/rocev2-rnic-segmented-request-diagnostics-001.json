@@ -1,0 +1,61 @@
+{
+  "scope": "New same-core large WRITE/SEND development evidence; failed001 is preserved, not relabeled; no native/physical qualification.",
+  "created_UTC": "2026-10-20T20:43:24.377445+00:00",
+  "failed001": {
+    "pass_test": false,
+    "compile_seconds": 46.66989324003225,
+    "runtime_seconds": 8.236426780000329,
+    "actual_runtime_exit": 0,
+    "error_type": "JSONDecodeError",
+    "reason": "Inherited std::hex stream state printed JSON packets as11c and wire metadata as hexadecimal. C++ assertions ran, but the independent report parser failed; this batch remains failed."
+  },
+  "preimages": {
+    "hashes": {
+      "results/2026-10-18/rocev2-rnic-segmented-request-csim-001.json": "90d753e8e2b06be18a9109d3cca23321e4f1e5145e1133a4a98a0497c295173a",
+      "rdma/rnic/build/segmented-request-csim-u8ls49hw/test_segmented_request-before-decimal.cpp": "65be5789ef6119231b9a0bc6dc13ff65b384f4a038c421eb2f284a1ee1c7b89e",
+      "rdma/rnic/build/segmented-request-csim-u8ls49hw/probe-before-policy-reporting.reconstructed.py": "50c8af6223dc697e5aa9f061dbf8295514dbb1ccafdf9dc35bbc46ab0c6d6cf7",
+      "rdma/rnic/build/segmented-request-csim-e9qe3pqw/generator-before-inherited-profile-fields.py": "88e3f13c52d9f9060af3d8c2066c84d03b5f3b37ed0d43fa8fd01f0828cae4be",
+      "results/2026-10-18/rocev2-rnic-segmented-request-csim-002.json": "c6f55b2d611786a7ac5a36a0192a1a394d16309c2fcc22ec0482acc8f803f5c3",
+      "results/2026-10-18/rocev2-rnic-segmented-request-csim-003.json": "b4cebd8c5b02ae4c802d4a4cc85761af3f0302f755e5c5a7316f2280a5c7ab52",
+      "results/2026-10-18/rocev2-rnic-segmented-request-compat-001.json": "668fa693c4db6bb68aa06afdba2c078e4485c88ea5bd03f54eb83d0ccc300ba8"
+    },
+    "probe_preimage_note": "Reconstructed after the two policy-reporting edits were identified, then hash verified EXACTLY against failed001. Not represented as captured before editing.",
+    "verified_failed001_records_before_correction": 297,
+    "verified_PASS002_records_before_metadata_change": 297
+  },
+  "correction": "Only explicitly select std::dec for new per-packet metadata/JSON and add five actual no-issue policy negatives. Preserve full independent wire and stored-replay oracles; do not relax30s runtime or claim first failed report passed.",
+  "PASS002": {
+    "compile_seconds": 48.97976909397403,
+    "runtime_seconds": 8.0448965029791,
+    "whole_WRs": 6,
+    "fresh_packets": 284,
+    "stored_replays": 7,
+    "independent_full_wire_records": 291,
+    "actual_no_issue_negatives": 5
+  },
+  "source003": "Only inherited profile flags were added to generator source.json output, accurately describing the retained existing Atomic/zero/RQ ports. No derived HLS file changed; fresh C++003 and actual owned RTL/Immediate compatibility rebind this source path and generator hash.",
+  "identical_derived_HLS_files_between002_and003": 9,
+  "PASS003": {
+    "compile_seconds": 51.22757498401916,
+    "runtime_seconds": 8.055494710977655,
+    "verified_source_artifact_records": 297
+  },
+  "compatibility001": {
+    "compile_seconds": 25.246225889015477,
+    "runtime_seconds": 1.0109001499949954,
+    "actual_Atomic_RTL_jobs": 9,
+    "legacy_Immediate_TX_RX_cases_unchanged": true,
+    "verified_source_artifact_records": 308
+  },
+  "limits": {
+    "large_ordinary_WRITE_SEND_max_bytes": 1048576,
+    "READ_Immediate_max_bytes": 4096,
+    "multi_SGE_implemented": false,
+    "physical_source_memory_peer_connection_modeled": true,
+    "native_MAC_CQ_kernel_provider_physical_timing_qualified": false
+  },
+  "fresh_HLS_synth001": "running, actual top rocev2_native_segmented_request_top; directory prefix inherited from unchanged parent builder is native-zero-service-hls-b5olkhrg. Do not mistake this for old zero-service top or a completed synthesis.",
+  "timing_gates": "Original1500MiB/4ns/default1.08ns/8QP/2000entries and all parent consumer/ABI/frozen-source gates unchanged. No timing success inferred.",
+  "hardware_actions": [],
+  "automatic_Git_publication": false
+}

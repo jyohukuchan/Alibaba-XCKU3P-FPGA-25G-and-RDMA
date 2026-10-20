@@ -32,6 +32,44 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+Progress100 implements zero-length normal REQUESTER behavior in the same
+complete Atomic/Immediate HLS SOURCE: real packet/stored replay/ACK/header/
+timer/state retirement, no data-memory command, one-PSN zero READ, full
+owner and exact wire oracles. C++002 PASSES0.92s and actual owned-RTL-service/
+Immediate compatibility001 PASSES0.89s after permitted feature compilation.
+Fresh HLS001 PASSES318.05s generation with unchanged port/capacity geometry,
+63,274LUT/86,265FF/189BRAM18;13.568ns estimate still misses original clocks.
+A private future4095 kernel source cohort supports actual standard zero
+SQ/RQ/CQ callbacks without a local MR reference, exact full-owner checks
+and explicit feature negotiation. Running-header/W=1 build PASSES9.19s;
+47 ASan/UBSan modeled callback cases and11 UBSan codec methods PASS.
+These are separate HLS/C/kernel-model proofs, NOT a coupled native or Linux
+runtime. Complete native zero integration, incoming zero responder/RQ
+semantics, matched provider4095, large/multi-SGE and all11 original goal
+requirements remain. Source/evidence/cache recovery and failures are recorded
+in [Atomic/zero status](ROCEV2_ATOMIC.md). No hardware or automatic push.
+
+Progress099 adds a NEW private RNC2047 Atomic128 cohort: real privileged
+QP access6/14 is bound to actual SQC cookie/epoch/PD, retained in immutable
+raw RX references and captured by the actual Atomic executor. QP denial
+returns RemoteAccess0x62 before lock/MR/replay; allowed QPs still need actual
+MR Atomic permission. General RW-only RX remains admitted. Binding11/25,
+RX refs9/16 and actual MR/paged-memory19 four-state cases PASS. Matched
+standard kernel registration/QP-route/source negotiation builds with actual
+running headers/W=1 in8.84s, then37 ASan/UBSan modeled callback cases PASS.
+Private provider/installed serializer checks EXACT511/1023/2047 contexts and
+standard MR/QP access serialization in<0.019s each. Full native elaboration
+PASSES2.63s without port-width mismatches. Fresh full runtime002 PASSES465.97s
+compilation then eight cases, each15.44..19.00s: all prior normal/Atomic
+requester and mixed responder cases plus outgoing CAS on incoming-Atomic-
+denied QP, QP denial and MR denial. Actual normal WRITE succeeds first; real
+owned NAK62 requires no Atomic memory operation, with zero QP-denied MR
+queries versus one MR-denied query, exact wire/FCS/ICRC/common-state and
+real MAC/HLS retirement. Physical host/root/peer/PHY/PTP remain models;
+ordinary requester MAC pins remain modeled. Default/proof-bound files and Atomic
+capability NONE remain unchanged. All Linux/HW boundary and full-goal
+requirements remain. See [Atomic details](ROCEV2_ATOMIC.md).
+
 Progress098 verifies that the UNCHANGED public provider already transports
 standard CAS/FADD through actual installed libibverbs; hardware128 records
 remain kernel-private. Provider002 PASSES both511/1023 contexts in<0.017s

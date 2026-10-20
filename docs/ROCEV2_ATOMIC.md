@@ -5,6 +5,176 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+## Zero-length requester/source extension (100, native integration remains)
+
+`hls/zero_request_transport.py` extends the SAME full Atomic/Immediate core,
+not an independent transport. Five normal zero-length requester operations
+(WRITE, READ, SEND, SEND_IMM, WRITE_IMM) issue real packets, retain full owners
+and actual stored replay entries, and retire only through actual ACK/parser,
+pointer/pool, timer and common-state consumers. Neither fresh nor replayed
+zero work emits a data-memory command. Header-only SEND uses an internal EOF
+marker, never a fake memory-data transaction. A zero READ consumes one PSN
+and its ACTUAL four-byte AETH response through the guarded real RAW consumer;
+there is no zero-length memory command, fabricated payload receipt or assumed
+quiet completion. Malformed zero response framing quarantines the owner.
+
+The canonical zero descriptor has no local address/key/offset or operands.
+Remote READ/WRITE VA/rkey remain exact wire fields but are not dereferenced
+for zero bytes, consistent with [Linux RXE's C9-88 handling](https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux/+/5b10ff013e8a57f8845615ac2cc37edf7f6eef05/drivers/infiniband/sw/rxe/rxe_resp.c).
+Atomic STILL requires an8-byte result. This is a new checked cohort, not a
+change to default/099 proof inputs or an installed firmware feature.
+
+[Requester C++002](../results/2026-10-18/rocev2-rnic-zero-request-csim-002.json)
+PASSES27.50s compilation/0.92s execution: all nine prior mixed requester
+cases/four Atomic replays plus five zero requests/five actual stored replays,
+PSN wrap, exact byte oracles, seven canonical/Atomic/response negatives,
+withheld actual header/timer/state consumers, and nonzero READ after zero on
+the SAME domain. [Compatibility001](../results/2026-10-18/rocev2-rnic-zero-request-compat-001.json)
+PASSES21.65s compilation/0.89s runtime with previous Immediate TX/RX consumers
+and the actual owned Atomic/MR/paged-memory RTL service. Peer, connection,
+host/physical memory endpoints remain models. No zero native MAC/CQ proof.
+
+[Fresh HLS001](../results/2026-10-18/rocev2-rnic-zero-request-synth-001.json)
+PASSES318.05s code generation: `rocev2_native_zero_request_top`, unchanged
+request owner748/SQ408/done816 and receive/service ABIs. The independently
+tested source is frozen before synthesis. Actual port widths and original
+8QP/2000-entry capacity are checked. Resources are63,274LUT/86,265FF/
+189BRAM18/0DSP. Estimated13.568ns STILL misses the original4ns/default1.08ns
+constraints; no timing/CDC gate is relaxed. Generated RTL zero execution and
+whole native integration are NOT tested by successful synthesis.
+
+`kernel/wqe_zero.c`, `verbs_zero_wqe.c` and `derive_zero_kernel.py` add a
+PRIVATE future RNC4095/bit2048 source cohort over099. Exact Atomic128 geometry
+must bind before zero posting is enabled; old1023/2047 refuse zero work.
+Actual num_sge0/one zero-length SGE adapters canonicalize unused local memory
+fields, including invalid unused pointers/keys, without dereferencing them.
+The actual SQ/RQ shadow can retain a zero work slot with NO MR reference;
+full128-byte saved-WR/operand/offset/proof/CQ comparison and actual queue
+ownership remain mandatory before WC publication. Zero RQ completions use
+the distinct actual RQC cookie, not the SQ cookie. Empty WC byte_len is not
+confused with a missing work/event. Full-CQ backpressure and bad offset
+retain the genuine queue owner; no timeout or fake unpin/cancellation proof.
+
+[Running-header build001](../results/2026-10-18/rocev2-rnic-zero-kernel-build-001.json)
+PASSES9.19s/GCC13/W=1 with both complete modules linked. [Post002](../results/2026-10-18/rocev2-rnic-zero-kernel-post-002.json)
+PASSES47 fresh ASan/UBSan cases: ten zero SQ/RQ/CQ/no-MR/legacy-denial cases
+plus all37 previous cases. These are actual C bodies in USERSPACE with
+explicit Linux/pin/coherent-DMA/MMIO/completion models, not Linux runtime
+or a live kernel/HLS/native link. [Codec001](../results/2026-10-18/rocev2-rnic-zero-wqe-001.json)
+PASSES11 UBSan methods including all seven prior Atomic methods and
+independent full128-byte zero/alias/null/padding/local-authority oracles.
+
+This does NOT yet implement/qualify the complete native zero admission,
+executor/response/lifetime/CQ path, zero incoming responder/RQ semantics,
+matched4095 user provider, physical Linux operation or original timing.
+Large/multi-SGE work and all11 full-goal requirements remain. Default and
+generated device Atomic capability stay NONE; no module/provider is loaded,
+installed or programmed. See [preserved diagnostics](../results/2026-10-18/rocev2-rnic-zero-diagnostics-001.json)
+for the genuine replay ACK-request fix and rejected wrong-cookie fixture.
+One completed719MiB compiler cache was losslessly compressed, verified,
+moved to RAM and symlinked, retaining a persistent archive and all182 files;
+the original1500MiB synthesis guard is unchanged. No source/evidence deletion,
+hardware/network/BIOS/fan/reboot/flash or automatic Git write occurs.
+
+## Per-QP AND MR Atomic receive authority (099)
+
+`fpga/derive_atomic_access_native.py` generates29 checked private module
+replacements. NEW RNC feature1024/full2047 distinguishes this cohort from
+the earlier Atomic128 graph. The actual privileged21-word controller saves
+QP access with its accepted command: live READ/WRITE6 or READ/WRITE/Atomic14,
+TX-only0 and inaccessible PD0 tombstone0. Noncanonical/unknown QP access
+cannot become a route. The real SQC cookie/epoch/PD binding saves access
+ONLY at the drained actual configuration handshake; TX-only preserves it.
+
+General trusted RX admission is NOT gated by the Atomic bit: a QP with
+access6 must still receive normal WRITE/READ and requester responses.
+All four access bits extend the real raw-RX immutable snapshot to356 bits,
+captured even at FIRST OFFER before ready. No lower context field changes.
+The actual Atomic executor captures this saved access with the accepted
+owned request, not a live software/current-head lookup. After actual identity
+and shape checks, anything other than canonical14 returns RemoteAccess
+NAK0x62 BEFORE replay, memory lock or MR query. Allowed QPs still require
+the SAME actual MR op4 Atomic permission before any paged-memory RMW.
+There is no synthetic successful MR response, additional MR/PSN namespace,
+global drain tie-high or HLS512/392/144/224 ABI change.
+
+[Binding001](../results/2026-10-18/rocev2-rnic-atomic-access-binding-001.json)
+PASSES11 methods/25 four-state cases against actual SQC/mailbox/fetch owner
+arrays: all prior ownership/epoch/lease checks, access6 general admission,
+accepted-only permission snapshot, canonical/unknown rejection, TX preservation
+and tombstone revocation. Downstream lease/network/DMA endpoints are modeled.
+[RX refs001](../results/2026-10-18/rocev2-rnic-atomic-access-refs-001.json)
+PASSES9 methods/16 four-state cases: all six prior reference/accounting/fault
+methods plus permission first-offer capture, RW-only admission, live-reference
+permission-change quarantine and unknown denial. Checker/binding/network
+endpoints are modeled. [Responder001](../results/2026-10-18/rocev2-rnic-atomic-access-responder-001.json)
+PASSES19 actual MR/exclusive/paged-memory RTL cases, each<0.203s: all14 prior
+RMW/replay/failure cases plus QP denied/unknown, immutable captured permission
+in both directions, and QP denial BEFORE cached replay. This component uses
+the original private PSN/MSN mode and modeled trusted/physical boundaries,
+not actual native HLS or hardware execution.
+
+`kernel/derive_atomic_access.py` adds a matched PRIVATE source cohort over097.
+RNC2047 must negotiate exact SQC13/RQC15/CQC15 and128/748/0xa0 geometry
+before enabling standard `IB_ACCESS_REMOTE_ATOMIC` MR/QP registration.
+The real QP route retains access, actual privileged QP snapshots carry6/14,
+TX-only carries0 without replacing the saved RX owner, and drained teardown
+carries PD0/access0. Old1023 still refuses remote-Atomic MR and QP flags.
+Local-write pins remain necessary for remote Atomic MR registration.
+[Running-header build001](../results/2026-10-18/rocev2-rnic-atomic-access-kernel-build-001.json)
+PASSES8.84s GCC13/W=1 with both complete modules linked, never installed or
+loaded. [Callback post002](../results/2026-10-18/rocev2-rnic-atomic-access-kernel-post-002.json)
+PASSES37 ASan/UBSan cases, each<0.017s: eight new access/canonical/lifetime
+cases plus all29 prior Atomic/geometry/legacy cases. Actual standard C bodies
+and CSR transports execute in USERSPACE; Linux/pins/DMA/MMIO/completion
+remain explicit models, not callbacks executing inside Linux.
+
+`provider/derive_atomic_access.py` produces a private provider accepting
+2047 as well as511/1023; generic uverbs remains unchanged, with no128-byte
+user ABI. [Provider002](../results/2026-10-18/rocev2-rnic-atomic-access-provider-002.json)
+PASSES actual public libibverbs/installed serializer/checked provider with
+three EXACT511/1023/2047 contexts, each<0.019s. New2047 checks MR access15
+and both QP INIT access14/6 in standard serialized commands, alongside all
+full64 Atomic operands/bad-WR/WC checks. Only fake-fd kernel replies are
+modeled. The default provider is unchanged and nothing is installed.
+
+[Complete elaboration001](../results/2026-10-18/rocev2-rnic-atomic-access-native-elaboration-001.json)
+PASSES2.63s with no port-width warnings and one actual native requester
+HLS/PSN/MSN/MR/PTE domain. [Fresh whole-native002](../results/2026-10-18/rocev2-rnic-atomic-access-native-full-002.json)
+PASSES465.97s new compilation, then eight actual TWO-STATE RTL cases:
+CAS18.85s, FADD18.80s, READ18.80s, SEND_IMM19.00s, mixed responder/WRITE18.75s,
+CAS with no incoming Atomic permission18.90s, QP denial15.44s and MR denial
+15.59s. All existing complete-native requester/result/replay/MAC/CQ and mixed
+responder regressions run fresh against this SAME selected graph; no older
+result/executable is substituted. Atomic request/reply uses actual MAC RTL;
+ordinary requester MAC pins remain modeled, as in096.
+
+Both denial cases FIRST complete a normal WRITE, then accept a real incoming
+FADD without posting any fake WQE/RQ/CQ. The QP-denied path issues ZERO
+Atomic MR queries; the permitted-QP/denied-MR path issues exactly one actual
+MR query. Neither issues Atomic memory commands or modifies the Atomic
+target/neighbor bytes. The only host DMA write and readback fence belong to
+the preceding normal WRITE. Independent whole Ethernet/IP/UDP/BTH/AETH/ICRC
+and actual XGMII/FCS/SFD/CDC oracles check normal ACK then RemoteAccess NAK62.
+The actual owned HLS/core/MAC retirement preserves EPSN/MSN on that NAK and
+retires exactly once. The separate CAS/access6 case proves incoming Atomic
+permission is not incorrectly required for outgoing CAS or its AtomicACK
+response/result/CQ. No post-NAK general-QP recovery/RC-wide error behavior is
+claimed from these two denial cases. Physical host/root/peer/PHY/PTP remain
+models; no live Linux or hardware execution is implied.
+
+The original/default/096--098 proof inputs are untouched. Both default and
+generated device code still advertise `IB_ATOMIC_NONE`. The tests above are
+not a live syscall/kernel/RTL/PCIe coupling, physical atomicity, complete
+RC-wide error/recovery behavior, Linux pin/unpin or original timing/CDC
+qualification. All11 original requirements remain; no hardware/network/BIOS/
+fan/reboot/flash or automatic publication action occurs.
+Exact initial derivation/fixture/compile failures and preimages, including
+provider001's ambiguous inherited profile label, are preserved in
+[diagnostics001](../results/2026-10-18/rocev2-rnic-atomic-access-diagnostics-001.json).
+No failed report is overwritten or reclassified and no successful result is
+substituted for a fresh changed-source test.
+
 ## Public provider transport and native/kernel SQ-CQ compatibility (098)
 
 Inspection of the ACTUAL existing provider and pinned rdma-core50 serializer

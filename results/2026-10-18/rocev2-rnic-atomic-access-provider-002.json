@@ -1,0 +1,127 @@
+{
+  "scope": "Actual matched provider public QP/MR access and Atomic serialization.\n\nInstalled libibverbs and pinned rdma-core50/PABI34 headers; ONLY fake-fd\nioctl/write replies model kernel. No real NIC/context/driver/provider install,\nDMA, kernel callback or device capability claim. ASan/UBSan, <=10s/case.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/provider-atomic-access-4xgqdrmg",
+  "source_sha256": {
+    "rdma/rnic/tests/probe_provider_atomic_access.py": "d611cb2f922746d52757d63a7d609fd6e1e729b784687a564b1f912d8b96227b",
+    "rdma/rnic/tests/probe_provider_commands.py": "cb1ab6bcf540e427c00f1e042a91673ce81b2e32fd64dc7634a7297f9959f8ec",
+    "rdma/rnic/tests/provider_atomic_commands.c": "935aa546f37ba757db6f3ced65eacfad1477310d2ac649fbe194d8c62239b987",
+    "rdma/rnic/tests/provider_commands.c": "88665c39dd254735da8fdb07a4d54097fe15a68814cd4bf06e3b2579012c0dd8",
+    "rdma/rnic/provider/as02.c": "377c4b056e45a1d9031689d6e795176177eab60649b3a9ac9208738e9df106e3",
+    "rdma/rnic/provider/derive_atomic_access.py": "da675577301a9f2228fb18ddafbd3f45e7c5b67d6090ba5e760f592339c04be9"
+  },
+  "upstream_sha256": {
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0/libibverbs/cmd.c": "813968afad472f6b60813983509aaaeb79712fa99f95eeb005fb323c09bd39ea",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0/libibverbs/driver.h": "74d0a29cf20c6510dc9f32b7479648ded56c48a32e200a956f31bc2426036add",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0/libibverbs/verbs.h": "fab5bd6f7d17b23f9afac2b4e4ad06315f964a69d695d0ea06402e8858adb8f2",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0/build/include/config.h": "25ec47917ae7388ab95c9322322ec22c3a299153a96eb8ffb293076d7df3a3a7"
+  },
+  "actual_installed_library_sha256": {
+    "/usr/lib/x86_64-linux-gnu/libibverbs.so.1.14.50.0": "249242c3ba29d72b7a9be560b768bf43fc5924c8a166f4e3bbb224bd81ade3ab"
+  },
+  "rdma_core_commit": "bc6b4bc134532e952fe7f8efc251e1f89b912098",
+  "provider_PABI": 34,
+  "production_provider_changed": false,
+  "private_provider_cohort_generated": true,
+  "provider_installed": false,
+  "real_NIC_opened": false,
+  "kernel_loaded": false,
+  "syscall_boundary_modeled": true,
+  "hardware_verified": false,
+  "Atomic_cap_advertised": false,
+  "simulation_limit_seconds": 10,
+  "tests": {
+    "0": {
+      "seconds": 0.01722967700334266,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "profile1023": false,
+        "profile2047": false,
+        "actual_public_ibv_and_command_serializer": true,
+        "full64bit_CAS_FADD_operands": true,
+        "exact_second_bad_WR": true,
+        "Atomic_WC_metadata": true,
+        "commands": 6,
+        "polls": 3,
+        "kernel_syscall_boundary_modeled": true,
+        "device_Atomic_cap_still_NONE": true,
+        "no_result_DMA_or_hardware_claim": true
+      },
+      "RNC_features": 511
+    },
+    "1": {
+      "seconds": 0.017810205987188965,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "profile1023": true,
+        "profile2047": false,
+        "actual_public_ibv_and_command_serializer": true,
+        "full64bit_CAS_FADD_operands": true,
+        "exact_second_bad_WR": true,
+        "Atomic_WC_metadata": true,
+        "commands": 6,
+        "polls": 3,
+        "kernel_syscall_boundary_modeled": true,
+        "device_Atomic_cap_still_NONE": true,
+        "no_result_DMA_or_hardware_claim": true
+      },
+      "RNC_features": 1023
+    },
+    "2": {
+      "seconds": 0.018388291005976498,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "profile1023": false,
+        "profile2047": true,
+        "actual_public_ibv_and_command_serializer": true,
+        "full64bit_CAS_FADD_operands": true,
+        "exact_second_bad_WR": true,
+        "Atomic_WC_metadata": true,
+        "commands": 6,
+        "polls": 3,
+        "kernel_syscall_boundary_modeled": true,
+        "device_Atomic_cap_still_NONE": true,
+        "no_result_DMA_or_hardware_claim": true
+      },
+      "RNC_features": 2047
+    }
+  },
+  "compile_command": [
+    "cc",
+    "-std=gnu11",
+    "-D_GNU_SOURCE",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-O1",
+    "-g",
+    "-fsanitize=address,undefined",
+    "-fno-sanitize-recover=undefined",
+    "-isystem",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0/build/include",
+    "-isystem",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/provider-atomic-access-4xgqdrmg/tests/provider_atomic_commands.c",
+    "-pthread",
+    "-Wl,-export-dynamic",
+    "-libverbs",
+    "-o",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/provider-atomic-access-4xgqdrmg/cases"
+  ],
+  "compile_seconds": 1.0417233449988998,
+  "ldd": "\tlinux-vdso.so.1 (0x00007b07a22de000)\n\tlibasan.so.8 => /lib/x86_64-linux-gnu/libasan.so.8 (0x00007b07a1a00000)\n\tlibibverbs.so.1 => /lib/x86_64-linux-gnu/libibverbs.so.1 (0x00007b07a226e000)\n\tlibubsan.so.1 => /lib/x86_64-linux-gnu/libubsan.so.1 (0x00007b07a1200000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007b07a0e00000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007b07a2185000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007b07a2155000)\n\tlibnl-route-3.so.200 => /lib/x86_64-linux-gnu/libnl-route-3.so.200 (0x00007b07a1971000)\n\tlibnl-3.so.200 => /lib/x86_64-linux-gnu/libnl-3.so.200 (0x00007b07a2133000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007b07a0a00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007b07a22e0000)\n",
+  "source_unchanged": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/provider-atomic-access-4xgqdrmg/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/provider-atomic-access-4xgqdrmg/1.log": "c70240aaf19ccffccfb91dfec004b424dc8e5fbbea73e2ce73c15521acf77148",
+    "rdma/rnic/build/provider-atomic-access-4xgqdrmg/2.log": "ddc7161029ee077c0f6d6c840fab66aa8558341cbe8483146c4b9bbf2e9c83f0",
+    "rdma/rnic/build/provider-atomic-access-4xgqdrmg/0.log": "c18f7be8eb5945f11847dd614287f19e6705142997248f336c81bc1c44e44a2a",
+    "rdma/rnic/build/provider-atomic-access-4xgqdrmg/cases": "c6d5dcaaccd1b93ce5429c7a09fac5b040555e7568c909bea03d247d02d9dd87",
+    "rdma/rnic/build/provider-atomic-access-4xgqdrmg/provider/as02.c": "ca3b5a997fa7fca206539138bebb4d66378c9829925f7255a815f46e87e657a6",
+    "rdma/rnic/build/provider-atomic-access-4xgqdrmg/tests/provider_commands.c": "2d67ed44a29e4f45f90f09df783432b6232c282a1f9375a3c7c18f6fd2076652",
+    "rdma/rnic/build/provider-atomic-access-4xgqdrmg/tests/provider_atomic_commands.c": "a20835c7b80d58109acc01b23039438fba5752e95b4fafdf50b36e32baae03b1"
+  }
+}

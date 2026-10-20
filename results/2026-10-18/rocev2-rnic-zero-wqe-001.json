@@ -1,0 +1,23 @@
+{
+  "scope": "Actual zero-aware C128 codec, independent byte oracle and UBSan.\n\nRetain all seven prior Atomic codec methods; test new zero canonical forms,\nignored remote fields, malformed padding/local authority and alias/nulls.\nNo posting, MR, DMA, native or device-capability claim follows this codec.\n",
+  "pass_test": true,
+  "methods": 11,
+  "seconds": 0.3646952169947326,
+  "source_sha256": {
+    "rdma/rnic/kernel/wqe.c": "4b3618b01a20876084cd56c5c14c27c3cb8d2c6390aa328bdbf795cd64104211",
+    "rdma/rnic/kernel/wqe.h": "646e0f6c09f85af72cd9d93016f1368ee7378b6f0cc1f869e4ace0e8e68e8a2a",
+    "rdma/rnic/kernel/wqe_atomic.c": "965050dda10092921a48d9caa6e9557562c9704c0d39f9289b54f997c6046f72",
+    "rdma/rnic/kernel/wqe_atomic.h": "f971b72123b3b3a24c78c28a2c1a856d5c9a9597977fae0a09f654b13f952f68",
+    "rdma/rnic/kernel/wqe_zero.c": "dbeb8076d21f809253fd96871c0861e316559b34478c02c7352d20e681352348",
+    "rdma/rnic/kernel/wqe_zero.h": "70087a973c4eee08b25c93c8d5aab60ff2e9d9a0e9888363201bf4d375697f9b",
+    "rdma/rnic/tests/test_zero_wqe.py": "15f995aa9227b08da7f4c75a35d980dec29306d1e9231c142a1f0827f4269a9d",
+    "rdma/rnic/tests/test_atomic_wqe.py": "da6e83a20073aa3a397f969130cb773bd5e603de0b64a5ffeb3ccb644915f38f",
+    "rdma/rnic/tests/test_wqe_codec.py": "7d5e8718e585bd9b5aedd57fa7c8b5d0f66b7af9b35e809cf59860b3fa043aed"
+  },
+  "C_UBSan": true,
+  "descriptor_bytes": 128,
+  "independent_byte_oracle": true,
+  "default_codecs_unchanged": true,
+  "native_requester_integrated": false,
+  "hardware_verified": false
+}

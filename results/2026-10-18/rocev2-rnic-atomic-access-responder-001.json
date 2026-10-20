@@ -1,0 +1,516 @@
+{
+  "scope": "Actual QP AND MR Atomic permission with real exclusive paged-memory RTL.\n\nQP permission is the immutable upstream trusted contract here; full native\nSQC/RX propagation is NOT exercised by this component. Private PSN/MSN mode.\nReuse14 original memory/replay/failure cases unchanged, plus captured QP\ndenial/allow/unknown and denial BEFORE cached replay. No physical/API proof.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/atomic-access-responder-e7mzatad",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_atomic_responder.v": "34df53f431c2fec7f0938b760c733553b6f50a388afb469eae795b5aed450c38",
+    "rdma/rnic/rtl/rocev2_atomic_memory_bridge.v": "5d088b5090b58ba18b8dd62dee8cfbe4c64cc58bbdefe8e9c609710e868eb1b4",
+    "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "1c1f0b98d23d9a9cd9400c10545a1d4ce4202812cc400a1ae28e6505760e4e09",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/rtl/rocev2_paged_memory_backend.v": "268d72371e5717fc13e009a5e881b34b91c459a1193afc42d760246d8e4e3bd6",
+    "rdma/rnic/rtl/rocev2_page_dma_engine.v": "a8801822361c399716c6336c4887612804d019701d2f357d1964788e9d6c9b24",
+    "rdma/rnic/rtl/rocev2_mr_page_table.v": "7cebd68efbf32f25f2a44f933c8d90231d5e9a185348ab0ab73def4235406239",
+    "rdma/rnic/rtl/rocev2_corundum_dma_backend.v": "f713c19873b8a52f4f038ab22bcc816dfc0d65b7fca72a75c73e2499cd2dd943",
+    "external/corundum/fpga/lib/pcie/rtl/dma_client_axis_sink.v": "a1e03efa7a8810a967b1e4a6b68fc75b0cbfc6f6a2ac137b9aa7321001029dd5",
+    "external/corundum/fpga/lib/pcie/rtl/dma_client_axis_source.v": "e2dc4b2ab3ed88e2d6256e3ebcb7470fe0b11249a1616bbd1746460399ba5044",
+    "external/corundum/fpga/lib/pcie/rtl/dma_psdpram.v": "5d06400fe8c45ff27a0eaabb33206b684b2f2c5adf59353fcabe891e9ac29513",
+    "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+    "rdma/rnic/tests/probe_atomic_access_responder.py": "aec2ce44192ca1ebdb6037f7fdbefeda94bd6204639165805f01914c5178b393",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c910018a2e8a9d77e649437f9a7727f5cf2fd9c02cb20ab92016b5209a3a189e",
+    "rdma/rnic/fpga/derive_atomic_access_native.py": "ab42d555c459c2e7b7da71686539c3d75a31e075a3a8c11c66e09a59e6e903ee",
+    "rdma/rnic/tests/test_paged_memory_backend_rtl.py": "860ebddc40c0bbff2f8eed74da2a1339b0c7b982bbcfa4b00fa73913e2d63ba2"
+  },
+  "simulation_limit_seconds": 10,
+  "hardware_verified": false,
+  "shared_HLS": false,
+  "native_integrated": false,
+  "QP_authority_source_modeled": true,
+  "physical_descriptor_host_visibility_modeled": true,
+  "tests": {
+    "0": {
+      "seconds": 0.20265871204901487,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "cycles": 690,
+        "executed": 4,
+        "replayed": 2,
+        "dropped": 0,
+        "commands": 7,
+        "physical_reads": 7,
+        "physical_writes": 3,
+        "fences": 3
+      },
+      "independent_wire_replies": [
+        {
+          "bytes": 24,
+          "wire_hex": "1200ffff00f1234500fffffe1ffffffff123456789abcdef",
+          "wire_oracle_pass": true
+        },
+        {
+          "bytes": 24,
+          "wire_hex": "1200ffff00f1234500fffffe1ffffffff123456789abcdef",
+          "wire_oracle_pass": true
+        },
+        {
+          "bytes": 24,
+          "wire_hex": "1200ffff00f1234500ffffff1f0000008123456789abcdef",
+          "wire_oracle_pass": true
+        },
+        {
+          "bytes": 24,
+          "wire_hex": "1200ffff00f12345000000001f0000018123456789abcdef",
+          "wire_oracle_pass": true
+        },
+        {
+          "bytes": 24,
+          "wire_hex": "1200ffff00f12346001234561fffffff0000000000000000",
+          "wire_oracle_pass": true
+        },
+        {
+          "bytes": 24,
+          "wire_hex": "1200ffff00f12346001234561fffffff0000000000000000",
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "1": {
+      "seconds": 0.13996897399192676,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "cycles": 262,
+        "executed": 1,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 3,
+        "physical_reads": 3,
+        "physical_writes": 1,
+        "fences": 1
+      },
+      "independent_wire_replies": [
+        {
+          "bytes": 24,
+          "wire_hex": "1200ffff00f1234500fffffe1ffffffff123456789abcdef",
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "2": {
+      "seconds": 0.11146793101215735,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "cycles": 70,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      },
+      "independent_wire_replies": [
+        {
+          "bytes": 16,
+          "wire_hex": "1100ffff00f1234500fffffe62fffffe",
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "3": {
+      "seconds": 0.11590645799878985,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "cycles": 70,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      },
+      "independent_wire_replies": [
+        {
+          "bytes": 16,
+          "wire_hex": "1100ffff00f123470034567862fffffe",
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "4": {
+      "seconds": 0.11280016700038686,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "cycles": 70,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      },
+      "independent_wire_replies": [
+        {
+          "bytes": 16,
+          "wire_hex": "1100ffff00f1234500fffffe62fffffe",
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "5": {
+      "seconds": 0.1123994140070863,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "cycles": 70,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      },
+      "independent_wire_replies": [
+        {
+          "bytes": 16,
+          "wire_hex": "1100ffff00f1234500fffffe62fffffe",
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "6": {
+      "seconds": 0.1112040689913556,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "cycles": 65,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      },
+      "independent_wire_replies": [
+        {
+          "bytes": 16,
+          "wire_hex": "1100ffff00f1234500fffffe61fffffe",
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "7": {
+      "seconds": 0.1505668670288287,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "cycles": 264,
+        "executed": 1,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 2,
+        "physical_reads": 2,
+        "physical_writes": 1,
+        "fences": 1
+      },
+      "independent_wire_replies": [
+        {
+          "bytes": 16,
+          "wire_hex": "1100ffff00f1234500fffffe60fffffe",
+          "wire_oracle_pass": true
+        },
+        {
+          "bytes": 24,
+          "wire_hex": "1200ffff00f1234500fffffe1ffffffff123456789abcdef",
+          "wire_oracle_pass": true
+        },
+        {
+          "bytes": 16,
+          "wire_hex": "1100ffff00f1234500fffffe61ffffff",
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "8": {
+      "seconds": 0.15056505100801587,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "cycles": 253,
+        "executed": 1,
+        "replayed": 0,
+        "dropped": 2,
+        "commands": 2,
+        "physical_reads": 2,
+        "physical_writes": 1,
+        "fences": 1
+      },
+      "independent_wire_replies": [
+        {
+          "bytes": 24,
+          "wire_hex": "1200ffff00f1234500fffffe1ffffffff123456789abcdef",
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "9": {
+      "seconds": 0.1770701510249637,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "cycles": 746,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 1,
+        "physical_reads": 1,
+        "physical_writes": 0,
+        "fences": 0
+      },
+      "independent_wire_replies": []
+    },
+    "10": {
+      "seconds": 0.17897557996911928,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "cycles": 746,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 2,
+        "physical_reads": 1,
+        "physical_writes": 1,
+        "fences": 0
+      },
+      "independent_wire_replies": []
+    },
+    "11": {
+      "seconds": 0.1792725480045192,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "cycles": 746,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 2,
+        "physical_reads": 2,
+        "physical_writes": 1,
+        "fences": 1
+      },
+      "independent_wire_replies": []
+    },
+    "12": {
+      "seconds": 0.18073427199851722,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "cycles": 746,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 1,
+        "physical_reads": 1,
+        "physical_writes": 0,
+        "fences": 0
+      },
+      "independent_wire_replies": []
+    },
+    "13": {
+      "seconds": 0.1755342580145225,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "cycles": 414,
+        "executed": 2,
+        "replayed": 0,
+        "dropped": 1,
+        "commands": 4,
+        "physical_reads": 4,
+        "physical_writes": 2,
+        "fences": 2
+      },
+      "independent_wire_replies": [
+        {
+          "bytes": 24,
+          "wire_hex": "1200ffff00f1234500fffffe1ffffffff123456789abcdef",
+          "wire_oracle_pass": true
+        },
+        {
+          "bytes": 24,
+          "wire_hex": "1200ffff00f1234500ffffff1f000000f123456789abcdf0",
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "14": {
+      "seconds": 0.12039157398976386,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 14,
+        "cycles": 65,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      },
+      "independent_wire_replies": [
+        {
+          "bytes": 16,
+          "wire_hex": "1100ffff00f1234500fffffe62fffffe",
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "15": {
+      "seconds": 0.11738522601081058,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 15,
+        "cycles": 65,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      },
+      "independent_wire_replies": [
+        {
+          "bytes": 16,
+          "wire_hex": "1100ffff00f1234500fffffe62fffffe",
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "16": {
+      "seconds": 0.14491001900751144,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 16,
+        "cycles": 222,
+        "executed": 1,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 2,
+        "physical_reads": 2,
+        "physical_writes": 1,
+        "fences": 1
+      },
+      "independent_wire_replies": [
+        {
+          "bytes": 24,
+          "wire_hex": "1200ffff00f1234500fffffe1ffffffff123456789abcdef",
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "17": {
+      "seconds": 0.1136690040002577,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 17,
+        "cycles": 65,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      },
+      "independent_wire_replies": [
+        {
+          "bytes": 16,
+          "wire_hex": "1100ffff00f1234500fffffe62fffffe",
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "18": {
+      "seconds": 0.14332984399516135,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 18,
+        "cycles": 243,
+        "executed": 1,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 2,
+        "physical_reads": 2,
+        "physical_writes": 1,
+        "fences": 1
+      },
+      "independent_wire_replies": [
+        {
+          "bytes": 24,
+          "wire_hex": "1200ffff00f1234500fffffe1ffffffff123456789abcdef",
+          "wire_oracle_pass": true
+        },
+        {
+          "bytes": 16,
+          "wire_hex": "1100ffff00f1234500fffffe62ffffff",
+          "wire_oracle_pass": true
+        }
+      ]
+    }
+  },
+  "compile_seconds": 0.07855978998122737,
+  "source_unchanged": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/6.log": "7d48df9fd507228f644c2943ea684be99bfde52468beef3c537d21934ff4b802",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/10.log": "1134dbd0c2787e61374f7394b0944b0fe30157a898aa63b4d6fd04a35a52aad0",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/12.log": "07c7f131c15d04842094cf71085a272bcb419034bf3622e1aac50d279b322521",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/15.log": "cfe3fd25c820d09c1ec572b7755d1bc8e2c96c7fb477d904a34a0d95c6562441",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/4.log": "118f4b77e72c37a8f072e08c8c673756e2a69c2c11011c6da56057513243a25b",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/test.vvp": "d6ab2a63d984dceb460884ad04e6d1ed55ecc0011f0d238b0f9f262dfdf71f3f",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/18.log": "1179877b749a970a069b546d76c3e993ab605af2809cfeeac53090b32fa886d1",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/1.log": "c1931144426bfba497de6a43dc3e32cc85c006983c98781ccad986064b534a26",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/14.log": "31a8335085f3ac4f60083813231762e9723281143d1a37ba7025511b03245911",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/2.log": "8b7f05d7bc36fbb053b41cab0c97f2a0800496e7f6676ae82505bb85d0e2d4a4",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/17.log": "083d27579673fb690436a58bdb1abebb7f9cff3c542000c026f29a73856c8a94",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/11.log": "5b4aa5f6d3f29118fbafa43784720321e2b7b761e1488b307c20f177659536a5",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/3.log": "99b79848b8ff289ac7b36cffe9a671747077380fc2276c79eb9058a4f93e18da",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/0.log": "41cfdab8e67c6c835afaaf91e209f049566215ec2b7cd8810ca3b127d3d9c8eb",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/tb.v": "03354b740abd822569899bb260a868a2557f0c2924fb3538d409cf0b1f221548",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/8.log": "64159f7cd6b236923aba38f581252eb0397963a3cfaca800408f2cb8ed18c46e",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/13.log": "fdd87683481003448c5814b306024ed83dd77ac8f137d146c227a8c30211572a",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/atomic.v": "3751c739faee6358dc85a2fab69aa96ca9286a1cd0bc514d796c982bfc0b29d3",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/9.log": "141e3e90259779d6bb05f70048b9ce7bcd3460888fa184eff777b004144c2457",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/16.log": "8a132d81355cdb43a14cfc8cfccea2b877d47c2f5cb7da5de1f6c694d016dc41",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/7.log": "17c54c0fa42485343bda1a958bf50529d2b89e68636f4a5e49c430d4d0eb70a2",
+    "rdma/rnic/build/atomic-access-responder-e7mzatad/5.log": "688fcb26468adcd78b457e02882d300dcaec24d095cad080a67dccac16fa3d50"
+  }
+}

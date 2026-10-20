@@ -1,0 +1,199 @@
+{
+  "scope": "Actual raw RX reference capture includes immutable four-bit QP permission.\n\nAdjacent checker outcomes, network input and trusted binding are models.\nRetain all six original reference/accounting/fault methods; no drain bypass.\nThe separate actual SQC binding and whole-native tests cover their own scope.\n",
+  "pass_test": true,
+  "methods": 9,
+  "simulations": 16,
+  "seconds": 0.8436223239987157,
+  "tests": {
+    "test_RW_only_permission_is_accepted_but_permission_changes_with_live_refs_fault": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 2
+        },
+        "seconds": 0.007940644980408251,
+        "RTL": "rdma/rnic/build/atomic-access-refs-9emv53vx/rocev2_native_rx_refs.v",
+        "RTL_sha256": "f272ef37a4d2908d8e1c2f6dbae344bede227d2298fe80ffa98e01495aff4630",
+        "bench_sha256": "5dfff24a6a5065448ce6041a7d46f373e2467a43390825807b4b648ea6789124"
+      }
+    ],
+    "test_invalid_unknown_alias_or_changed_context_fails_closed": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.007918435032479465,
+        "RTL": "rdma/rnic/build/atomic-access-refs-9emv53vx/rocev2_native_rx_refs.v",
+        "RTL_sha256": "f272ef37a4d2908d8e1c2f6dbae344bede227d2298fe80ffa98e01495aff4630",
+        "bench_sha256": "20d622a741e413c8411af6d64fef1ff9f1483171f1c3334a70d35f3469341cad"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.007917039038147777,
+        "RTL": "rdma/rnic/build/atomic-access-refs-9emv53vx/rocev2_native_rx_refs.v",
+        "RTL_sha256": "f272ef37a4d2908d8e1c2f6dbae344bede227d2298fe80ffa98e01495aff4630",
+        "bench_sha256": "008ea70721dd760a6b6b755cd198fdcd87720fc9b5bfbc90ec6089c07b1c6f12"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.007926048012450337,
+        "RTL": "rdma/rnic/build/atomic-access-refs-9emv53vx/rocev2_native_rx_refs.v",
+        "RTL_sha256": "f272ef37a4d2908d8e1c2f6dbae344bede227d2298fe80ffa98e01495aff4630",
+        "bench_sha256": "df6f3d0c7a7078232b49f019e501286c6637b3679236ecb59f091ee63a38aa53"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.007749277981929481,
+        "RTL": "rdma/rnic/build/atomic-access-refs-9emv53vx/rocev2_native_rx_refs.v",
+        "RTL_sha256": "f272ef37a4d2908d8e1c2f6dbae344bede227d2298fe80ffa98e01495aff4630",
+        "bench_sha256": "d9a6efe147cee4f2a3104fb80e448e2d7cb76d2678800e2f311ba0072206fa3c"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 2
+        },
+        "seconds": 0.0079822710249573,
+        "RTL": "rdma/rnic/build/atomic-access-refs-9emv53vx/rocev2_native_rx_refs.v",
+        "RTL_sha256": "f272ef37a4d2908d8e1c2f6dbae344bede227d2298fe80ffa98e01495aff4630",
+        "bench_sha256": "d3fb562dfcbafa6847e85f10d05b768ebad948f26d4e23810f906d551a962b6d"
+      }
+    ],
+    "test_new_context_only_after_actual_last_reference_release": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 7
+        },
+        "seconds": 0.007867031963542104,
+        "RTL": "rdma/rnic/build/atomic-access-refs-9emv53vx/rocev2_native_rx_refs.v",
+        "RTL_sha256": "f272ef37a4d2908d8e1c2f6dbae344bede227d2298fe80ffa98e01495aff4630",
+        "bench_sha256": "0b8fc440ef151979296900a09491d54d4af1a0a2445a148ee67df88407aacb2e"
+      }
+    ],
+    "test_offered_reference_drains_under_pause_and_context_query_unavailable": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 11
+        },
+        "seconds": 0.008224344986956567,
+        "RTL": "rdma/rnic/build/atomic-access-refs-9emv53vx/rocev2_native_rx_refs.v",
+        "RTL_sha256": "f272ef37a4d2908d8e1c2f6dbae344bede227d2298fe80ffa98e01495aff4630",
+        "bench_sha256": "9f203f9d20ec04c3e6a678237cf6c0f6cd9489b5c632ab66f0a1bb016a3e2d14"
+      }
+    ],
+    "test_permission_is_captured_at_first_offer_even_before_ready": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 12
+        },
+        "seconds": 0.008246204990427941,
+        "RTL": "rdma/rnic/build/atomic-access-refs-9emv53vx/rocev2_native_rx_refs.v",
+        "RTL_sha256": "f272ef37a4d2908d8e1c2f6dbae344bede227d2298fe80ffa98e01495aff4630",
+        "bench_sha256": "d8300ea0ce87bc5557dd48d0279168893d3f5be9c9fc7f2ae995a7ed69e71ef4"
+      }
+    ],
+    "test_reference_count_never_wraps_at_finite_capacity": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 65536
+        },
+        "seconds": 0.44692266394849867,
+        "RTL": "rdma/rnic/build/atomic-access-refs-9emv53vx/rocev2_native_rx_refs.v",
+        "RTL_sha256": "f272ef37a4d2908d8e1c2f6dbae344bede227d2298fe80ffa98e01495aff4630",
+        "bench_sha256": "33fd0d87cdab9c5224291c430cac81e4d9c60164113274217fca0fcfbd870914"
+      }
+    ],
+    "test_reference_underflow_unknown_outcomes_and_parent_fault_retain_guard": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.007800680992659181,
+        "RTL": "rdma/rnic/build/atomic-access-refs-9emv53vx/rocev2_native_rx_refs.v",
+        "RTL_sha256": "f272ef37a4d2908d8e1c2f6dbae344bede227d2298fe80ffa98e01495aff4630",
+        "bench_sha256": "3dd558efb71ccaa6796e7d96414d8402c3f257aabbd01eaa3059c51493dad977"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.007710375008173287,
+        "RTL": "rdma/rnic/build/atomic-access-refs-9emv53vx/rocev2_native_rx_refs.v",
+        "RTL_sha256": "f272ef37a4d2908d8e1c2f6dbae344bede227d2298fe80ffa98e01495aff4630",
+        "bench_sha256": "47e7bdfd88fd813a587ab2dede0deff9f005116ecf6bfc60384e367a5ff075c8"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.007727276999503374,
+        "RTL": "rdma/rnic/build/atomic-access-refs-9emv53vx/rocev2_native_rx_refs.v",
+        "RTL_sha256": "f272ef37a4d2908d8e1c2f6dbae344bede227d2298fe80ffa98e01495aff4630",
+        "bench_sha256": "121c1265db15424a730b0c33d796b6c25b6e6bdd70135d2f3bf272c2a82a63de"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.007725740026216954,
+        "RTL": "rdma/rnic/build/atomic-access-refs-9emv53vx/rocev2_native_rx_refs.v",
+        "RTL_sha256": "f272ef37a4d2908d8e1c2f6dbae344bede227d2298fe80ffa98e01495aff4630",
+        "bench_sha256": "19bef6682c9f38d74a6e3cfe018607e73edeeba75dc568405eea7b37d11a445a"
+      }
+    ],
+    "test_simultaneous_acquire_and_two_actual_checker_outcomes": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 4
+        },
+        "seconds": 0.007925070996861905,
+        "RTL": "rdma/rnic/build/atomic-access-refs-9emv53vx/rocev2_native_rx_refs.v",
+        "RTL_sha256": "f272ef37a4d2908d8e1c2f6dbae344bede227d2298fe80ffa98e01495aff4630",
+        "bench_sha256": "1b68311c2d969ed8e5dab1d15755f3bf0c685db3ae3cd82bba1a3b4d22b3efe1"
+      }
+    ],
+    "test_unknown_permission_cannot_acquire_a_raw_RX_reference": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 1
+        },
+        "seconds": 0.007940156036056578,
+        "RTL": "rdma/rnic/build/atomic-access-refs-9emv53vx/rocev2_native_rx_refs.v",
+        "RTL_sha256": "f272ef37a4d2908d8e1c2f6dbae344bede227d2298fe80ffa98e01495aff4630",
+        "bench_sha256": "ccaba561438a4b4708329d482f9f4404b08b145d9ef753207dc5c6381ee573aa"
+      }
+    ]
+  },
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_native_rx_refs.v": "64e37e154052bdbf1ee90ae464e89216109f635b485dd26b588d1c0dfa98b18d",
+    "rdma/rnic/fpga/derive_atomic_access_native.py": "ab42d555c459c2e7b7da71686539c3d75a31e075a3a8c11c66e09a59e6e903ee",
+    "rdma/rnic/tests/test_atomic_native_rx_rtl.py": "71bed692333cc87e901cc6b13bc003ac1f43e8068ebf4989dbc1591a6989fecb",
+    "rdma/rnic/tests/test_atomic_access_rx_refs_rtl.py": "932c8fc7aa8a6e9d268c67d5f85de95aefda49d4af8232ae636d1a91bcea562f"
+  },
+  "artifact_sha256": {
+    "rdma/rnic/build/atomic-access-refs-9emv53vx/rocev2_native_rx_refs.v": "f272ef37a4d2908d8e1c2f6dbae344bede227d2298fe80ffa98e01495aff4630"
+  },
+  "checker_binding_and_network_endpoints_modeled": true,
+  "native_integrated": false,
+  "hardware_verified": false
+}

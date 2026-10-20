@@ -1,0 +1,41 @@
+{
+  "scope": "100 zero-length feature development diagnostics; failed reports and their exact inputs/binaries/logs remain distinct from fresh successful runs.",
+  "diagnostics": [
+    {
+      "failed_report": "results/2026-10-18/rocev2-rnic-zero-request-csim-001.json",
+      "directory": "rdma/rnic/build/zero-request-csim-ewm1lfk2",
+      "frozen_source": "rdma/rnic/build/native-zero-request-transport-001",
+      "binary_directory": "/dev/shm/as02-zero-request-cxx-9lkvvju8",
+      "cause": "Fresh zero SEND passed, but a genuine stored-entry replay cleared the BTH ACK-request bit, unlike the fresh request. The original inherited producer only restored ACK-request for Atomic valid-PSN replay.",
+      "correction": "The checked new zero cohort sets ACK-request for simple normal requester opcodes on real replay as well as fresh issue. No byte oracle, consumer check, source-memory expectation or deadline was weakened.",
+      "preimage": "rdma/rnic/build/zero-request-csim-ewm1lfk2/generator-before-zero-replay-ack-request.py",
+      "sha256": "c85e86009055cca22cece66c8406193042ac7cdc517cc95be1bb4f1cb50bb614",
+      "successful_fresh_report": "results/2026-10-18/rocev2-rnic-zero-request-csim-002.json",
+      "successful_fresh_source": "rdma/rnic/build/native-zero-request-transport-002"
+    },
+    {
+      "failed_report": "results/2026-10-18/rocev2-rnic-zero-kernel-post-001.json",
+      "directory": "rdma/rnic/build/zero-kernel-post-dx440fek",
+      "cause": "Zero0--Zero6 passed. Zero7 correctly failed ESTALE because the new receive-completion boundary model echoed SQ cookie1, although actual RQC allocation had separate cookie2. Real full-owner decoder succeeded; actual queue-owner comparison correctly rejected it.",
+      "correction": "The explicit boundary model now takes the cookie from the actual allocated RQC reply, not the SQ owner. No production C or identity/proof check changed, no driver shadow is used as a hardware owner substitute, and sanitizers/deadlines remain unchanged.",
+      "preimage": "rdma/rnic/build/zero-kernel-post-dx440fek/body-before-distinct-RQ-cookie.c",
+      "sha256": "bbb115464959b42446631f71fbf990d2968d76ac0a7e0b06235e95782ef5bf11",
+      "successful_fresh_report": "results/2026-10-18/rocev2-rnic-zero-kernel-post-002.json",
+      "tests_executed_inside_Linux": false
+    }
+  ],
+  "recoverable_cache_relocation": {
+    "administrative_record": "results/2026-10-18/rocev2-rnic-cache-archive-zero-request-100.json",
+    "persistent_archive": "rdma/rnic/build/cache-archive-zero-request-AMHj7ho2/obj.tar.gz",
+    "archive_sha256": "82af605fceaa511b87a54251b33d9d6866c6610152595e0702fd285ad2d7ab98",
+    "files": 182,
+    "all_file_manifest_sha256": "a603b44fa43a39e3adf75d1eef05621289fd72ec7ca08c2090902d4dc7f72883",
+    "original_path": "rdma/rnic/build/native-sq-forward-3jwi8n0h/obj",
+    "RAM_expanded_copy": "/dev/shm/as02-zero-request-cache-nZq97mZk/obj",
+    "original_path_is_symlink": true,
+    "every_file_verified_before_archive_after_archive_after_move": true,
+    "source_or_test_evidence_deleted": false,
+    "HLS_free_space_guard_lowered": false,
+    "note": "The RAM cache is volatile but the verified compressed archive is persistent. No reboot is needed or performed. Before any necessary reboot, authenticated thread/goal restoration still must be proved."
+  }
+}

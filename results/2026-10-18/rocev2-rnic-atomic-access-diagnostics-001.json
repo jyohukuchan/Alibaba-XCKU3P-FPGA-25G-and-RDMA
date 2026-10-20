@@ -1,0 +1,53 @@
+{
+  "scope": "099 development diagnostics and exact preserved preimages; never relabel a failed test or substitute a prior result for a fresh run.",
+  "hardware_changed": false,
+  "diagnostics": [
+    {
+      "stage": "Initial checked native derivation",
+      "error": "ValueError: one real child required: guard",
+      "cause": "The paged module intentionally contains shared_hls and rollback legacy_hls guard instances. A generic child-name-only anchor was ambiguous.",
+      "correction": "Use the existing strict shared-protected-instance connection helper; leave the rollback instance and original RTL unchanged.",
+      "preimage": "rdma/rnic/build/atomic-access-derive-failure-RNAmbB/derive_atomic_access_native.before-paged-anchor.py",
+      "sha256": "d2e2726f59251241eea7591698193d0ff8bc2d75f4e4a10265595db48f0cc0cd",
+      "runtime_claim": false
+    },
+    {
+      "stage": "Initial binding test launcher before any test body ran",
+      "error": "TypeError: PosixPath object is not callable",
+      "cause": "The fixture's class attribute run shadowed unittest.TestCase.run.",
+      "correction": "Rename only the fixture directory attribute to artifacts. No test assertion or RTL change.",
+      "preimage": "rdma/rnic/build/atomic-access-binding-launcher-failure-lSyA7O/launcher-before-run-name.py",
+      "sha256": "b9ae48cd96c4c941639fd149b509809831747606ff4a584baf5ce6e6dbfafba0",
+      "successful_fresh_report": "results/2026-10-18/rocev2-rnic-atomic-access-binding-001.json"
+    },
+    {
+      "stage": "Full-native001 bench elaboration",
+      "failed_report": "results/2026-10-18/rocev2-rnic-atomic-access-native-full-001.json",
+      "preserved_compile_log": "rdma/rnic/build/atomic-access-native-full-s0gzhuy9/elaborate.log",
+      "cause": "The new observational MR-query counter omitted the real shared_hls generate-scope component of its hierarchical signal path.",
+      "correction": "Include endpoint.shared_hls.guard. The counter still observes the actual executor handshake; no DUT RTL, guard, expected count or deadline is changed.",
+      "preimage": "rdma/rnic/build/atomic-access-native-full-s0gzhuy9/fixture-before-permission-expression.py",
+      "sha256": "27f8b510cf32b2f186dd6a3a94f5074b526423ae6196dc8c715ffe88c302d888",
+      "fresh_followup_report": "results/2026-10-18/rocev2-rnic-atomic-access-native-full-002.json"
+    },
+    {
+      "stage": "Kernel modeled callback compile001",
+      "failed_report": "results/2026-10-18/rocev2-rnic-atomic-access-kernel-post-001.json",
+      "preserved_compile_log": "rdma/rnic/build/atomic-access-kernel-post-ib_log3g/compile.log",
+      "cause": "Three signed/unsigned comparisons in the newly authored test body failed unchanged -Werror.",
+      "correction": "Use an int for the atomic_int pin counter snapshot and an explicit bounded int QP-flag comparison. Production kernel source, -Werror and sanitizers unchanged.",
+      "preimage": "rdma/rnic/build/atomic-access-kernel-post-ib_log3g/body-before-signed-counters.c",
+      "sha256": "1d8bfd09107fcd93b458bb3e1479175fd7bad3b5333fa09a11d06d7388a62adc",
+      "successful_fresh_report": "results/2026-10-18/rocev2-rnic-atomic-access-kernel-post-002.json"
+    },
+    {
+      "stage": "Provider001 diagnostic metadata",
+      "original_report": "results/2026-10-18/rocev2-rnic-atomic-access-provider-001.json",
+      "cause": "All three contexts ran successfully, but the inherited profile1023 summary boolean meant Immediate-header enabled and therefore also read true for the new2047 context. This is not an exact feature identity claim.",
+      "correction": "Emit separate exact profile1023/profile2047 booleans and record RNC_features for each fresh case;002 is the authoritative exact-feature evidence.",
+      "preimage": "rdma/rnic/build/provider-atomic-access-6p5wi8r7/launcher-before-distinct-profile-output.py",
+      "sha256": "9bb4dd1658c7c3002f8ba3b624f90fbf42695b8a4a0307deb30b9f809a296652",
+      "successful_fresh_report": "results/2026-10-18/rocev2-rnic-atomic-access-provider-002.json"
+    }
+  ]
+}

@@ -15,6 +15,31 @@ remaining run was interrupted). No all-suite or release-pass claim is made.
 
 ## Latest functional milestone (2026-10-20)
 
+Progress100 adds real zero-length requester SOURCE handling to the same
+Atomic/Immediate HLS: five operations, stored replay and guarded ACK/header/
+timer/state retirement without data-memory commands. Full C++/owned RTL
+service compatibility and fresh HLS generation PASS. Private future4095
+kernel zero SQ/RQ/CQ code builds with actual headers;47 modeled callback
+cases and11 UBSan codec methods PASS. Complete native zero/receiver/provider
+integration is still pending; no coupled Linux/native or physical result is
+claimed. Original13.568ns HLS estimate still misses the timing gate. See
+[full boundaries and evidence](../../docs/ROCEV2_ATOMIC.md).
+
+Progress099 adds actual SQC-bound per-QP Atomic receive permission in a
+NEW RNC2047/private Atomic128 graph, separate from general RW admission and
+independently required alongside MR permission. Binding/RX-reference/MR-
+paged-memory four-state cases PASS. Matched running-header kernel build,
+37 modeled actual-C callback cases and public provider511/1023/2047 standard
+permission serialization also PASS. Whole-native elaboration passes, and
+fresh [whole-native002](../../results/2026-10-18/rocev2-rnic-atomic-access-native-full-002.json)
+PASSES465.97s compilation and eight cases, each15.44..19.00s. Actual ordinary
+WRITE and outgoing CAS work on an incoming-Atomic-denied QP; actual incoming
+Atomic QP/MR denial returns owned NAK62 without Atomic memory commands,
+with exact wire/common-state and real MAC/HLS retirement. Physical host/
+root/peer/PHY/PTP remain models; ordinary requester MAC pins stay modeled.
+Default/proof inputs and Atomic NONE remain. See
+[permission evidence and scope](../../docs/ROCEV2_ATOMIC.md).
+
 Progress098: [public provider002](../../results/2026-10-18/rocev2-rnic-atomic-provider-002.json)
 PASSES actual libibverbs CAS/FADD serialization/WC metadata with the unchanged
 provider;128-byte descriptors remain kernel-private. [Kernel/native-CQ001](../../results/2026-10-18/rocev2-rnic-atomic128-kernel-native-cq-001.json)

@@ -15,7 +15,36 @@ remaining run was interrupted). No all-suite or release-pass claim is made.
 
 ## Latest functional milestone (2026-10-20)
 
-Publication106: actual fullRX003 PASSES zero-buffer SEND/SEND_IMM/WRITE_IMM
+Publication109: prior zero-RQ native validation PASSES all21 cases. The newer
+ordinary zero WRITE/READ graph is still a development candidate: full-native002
+failed a reused Atomic-history byte oracle during its normal-WRITE prelude,
+before any zero service ran. Frozen-model inspection confirmed correct data
+and sentinels; only the scenario-specific expected-byte selection changed.
+Fresh25-case full-native003 is IN PROGRESS at this snapshot, not a pass.
+Original timing still fails13.568ns; no Linux/physical/board qualification
+is claimed. [Evidence and remaining work](../../docs/ROCEV2_ATOMIC.md).
+
+Progress108 (historical): ordinary zero WRITE/READ HLS generation PASSES, and the real
+native graph now connects privileged QP/RX identity, distinct service owner,
+MAC-first reservation and fresh SFD/EOF/tail lifetime. Actual owner/MAC RTL
+tests and full-graph elaboration PASS. Zero admission also waits for the
+actual preceding normal-response MAC drain; the25-case fixture includes a
+real normal WRITE prelude followed by zero WRITE/READ. Fresh native002 is still
+COMPILING, not a pass. New HLS estimate13.568ns still fails original clocks;
+no board signoff or actual Linux/physical qualification is claimed.
+[Evidence, resources and remaining work](../../docs/ROCEV2_ATOMIC.md).
+
+Progress107 (historical): fullRX004 now PASSES all21 whole-native requester/Atomic/zero-RQ/
+RNR cases, each<=21.91s, with actual generated HLS/RQ fetch/MAC/CQ and exact
+wire/owner checks. Physical host/root/peer/PHY/PTP remain models. NEW same-core
+ordinary zero WRITE/READ service source uses its own344-bit owner and real
+RETH/MSN/TX/PSN400-bit core receipt, no RQ or Atomic alias/data DMA. Actual
+C++/owned-RTL-service/Immediate compatibility PASS; HLS generation subsequently
+passes at108, not native zero-service runtime or board proof. Original timing gates and
+all Linux/physical/large/multi-SGE/recovery work remain. No hardware/default/
+automatic publication changes. [Exact boundaries](../../docs/ROCEV2_ATOMIC.md).
+
+Publication106 (historical): actual fullRX003 PASSES zero-buffer SEND/SEND_IMM/WRITE_IMM
 reception, two receives each with generated HLS/RQ fetch/MAC/CQ and independent
 wire/CQ checks. The entire batch FAILS a later fixture counter check: local
 posted-buffer MR authorization was mislabeled as wire traffic. Only the

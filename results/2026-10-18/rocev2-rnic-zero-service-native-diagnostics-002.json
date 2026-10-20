@@ -1,0 +1,42 @@
+{
+  "scope": "108 source-review discovery: serialize a new ordinary zero owner behind genuine pre-existing normal response MAC drain. Not an observed runtime failure, timeout or successful native run.",
+  "created_UTC": "2026-10-20T20:03:59.155609+00:00",
+  "stopped_full_run": {
+    "path": "results/2026-10-18/rocev2-rnic-zero-service-native-full-001.json",
+    "sha256": "2b5f3020084531a7a36a292bc22b3d4621442dbce68a99eb7fc64e5ee38fda9b"
+  },
+  "pass_test": false,
+  "compile_exit": -15,
+  "compile_seconds": 294.24638964800397,
+  "runtime_cases_executed": 0,
+  "verified_exact_stopped_source_artifact_records": 1074,
+  "owned_compiler_group": 2800431,
+  "launcher_PID": 2800390,
+  "stop_reason": "Concrete source review, not an expired observation: the ordinary protected lease previously ends at IP handoff, while the existing normal-tag4000 response guard may still own MAC/SFD/tail. A new zero owner must not capture that older4000 frame or receive its legacy completion.",
+  "termination": "Only verified own compiler process group2800431 received SIGTERM. Launcher finally wrote the original unsuccessful report. Same handle81724 is terminal exit1; no live compiler-group members remained. All inputs/logs/partial model artifacts retained.",
+  "source_preimages": {
+    "rdma/rnic/fpga/derive_zero_service_native.py": {
+      "path": "rdma/rnic/build/zero-service-native-full-h81xwugl/before-response-drain-derive_zero_service_native.py",
+      "sha256": "9213bc3f41a91c57f9223f70f51e183ab9e1858f6b6d088a4327a6493b04ca8b"
+    },
+    "rdma/rnic/tests/zero_service_native_fixture.py": {
+      "path": "rdma/rnic/build/zero-service-native-full-h81xwugl/before-response-drain-zero_service_native_fixture.py",
+      "sha256": "9943e966ba87200c0f136033789794ecf755a0ac420c071bccd88abe3850ee2e"
+    },
+    "rdma/rnic/tests/probe_zero_service_native_full.py": {
+      "path": "rdma/rnic/build/zero-service-native-full-h81xwugl/before-response-drain-probe_zero_service_native_full.py",
+      "sha256": "4198bcc96cd31efc65aebcdd543d7ffbee5dec863f679e74538a5e0f3d510f62"
+    }
+  },
+  "correction": "New zero_mac_available additionally requires the existing response_tx_quiescent===1. A valid zero packet waits in PARSE for actual drain instead of being rejected merely because the MAC is temporarily busy. All original CRC/tuple/QPN/expected-PSN/privileged context/access/profile checks remain; no data-memory authority is granted.",
+  "fresh_whole_elaboration": {
+    "path": "results/2026-10-18/rocev2-rnic-zero-service-native-elaboration-003.json",
+    "sha256": "ab04b663f09c920790cf5c53c8c1f2d734a1a28dc82565bd331b0ca527fa3087"
+  },
+  "new_native_case": "SERVICE_AFTER_WRITE: actual normal8-byte WRITE through unchanged MR/PTE/PCIe, hold its genuine legacy MAC receipt, require zero owner/HLS admission to wait, release the old real receipt and original drain tail, then complete mixed zero WRITE/READ with independent344/400/wire/sentinel checks. Zero-service traffic counters are scoped after the real prelude; do not claim globally zero DMA.",
+  "fresh_full_run": "results/2026-10-18/rocev2-rnic-zero-service-native-full-002.json",
+  "fresh_runtime_state": "compiling,25 planned cases,not a pass",
+  "original_compile_limit_seconds": 1200,
+  "original_each_runtime_limit_seconds": 30,
+  "hardware_or_clock_or_global_drain_or_HLS_or_leaf_MAC_RTL_changed": false
+}

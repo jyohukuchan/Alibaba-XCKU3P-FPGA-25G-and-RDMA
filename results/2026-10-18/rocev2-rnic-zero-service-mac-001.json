@@ -1,0 +1,195 @@
+{
+  "scope": "Actual ordinary zero-service MAC/owner RTL, adjacent endpoints MODELED.\n\nExact genuine-owner/core/wire join, fresh SFD tag, accepted MAC EOF/tail,\nbackpressure, stale/unknown receipt and late fault. Not native/HW signoff.\n",
+  "pass_test": true,
+  "methods": 5,
+  "seconds": 1.0386792600038461,
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_zero_service_mac.v": "d3082ba0190aea6941965126fdfa853d1194d2c2fc487c5dc04c8f44023754b0",
+    "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+    "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+    "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+    "rdma/rnic/rtl/rocev2_zero_service_owner.v": "56732fc20484dbe54bb40a473d8cbfe8cd2bc6d4ba54b41beebf82a90dcd5fd6",
+    "rdma/rnic/tests/test_zero_service_mac_rtl.py": "3e5e5516e6db7d9035c3fa680e8ed4e77bb19a863dfab926138a91e727ede7d2",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c910018a2e8a9d77e649437f9a7727f5cf2fd9c02cb20ab92016b5209a3a189e"
+  },
+  "tests": {
+    "test_MAC_backpressure_blocks_EOF_and_source_owner_changes_do_not_retarget": [
+      {
+        "directory": "rdma/rnic/build/zero-service-mac-08yxdddb",
+        "seconds": 0.06133225600933656,
+        "artifacts": {
+          "rdma/rnic/build/zero-service-mac-08yxdddb/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-service-mac-08yxdddb/tb.v": "624e21e3ddecbc85b3a732f6971330d69eb3f2b131e7863a246228bc3042f27e",
+          "rdma/rnic/build/zero-service-mac-08yxdddb/simulation.log": "9edad87d0bdad57562f74cb2f6daa4ffc7c81fb58f112f6b7d82ab2465f2813a",
+          "rdma/rnic/build/zero-service-mac-08yxdddb/input.hex": "c0b702ab51903a38c8c4b96b502f4027cece2d5925db6082daccb84efee852e6"
+        },
+        "RAM_binary_sha256": "813f5b2916876a479875f4d53d99364a167da8c692306b0c091825535c26a665"
+      }
+    ],
+    "test_WRITE_READ_need_exact_core_SFD_EOF_tail_and_stable_retirement": [
+      {
+        "directory": "rdma/rnic/build/zero-service-mac-t1gt7i6h",
+        "seconds": 0.09196939901448786,
+        "artifacts": {
+          "rdma/rnic/build/zero-service-mac-t1gt7i6h/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-service-mac-t1gt7i6h/tb.v": "966964503dab3a63df4c3127e818e109161454804eebc5465b21dd3152632b74",
+          "rdma/rnic/build/zero-service-mac-t1gt7i6h/simulation.log": "020402eeec09753aeb4783fb7063631d438e364c1d4b600f3937c3bcccc03ecf",
+          "rdma/rnic/build/zero-service-mac-t1gt7i6h/input.hex": "c0b702ab51903a38c8c4b96b502f4027cece2d5925db6082daccb84efee852e6"
+        },
+        "RAM_binary_sha256": "b7e9c3bf3e83470917d664a6fd6336bd376887c10ed221b1e4ff3079bc61fd82"
+      },
+      {
+        "directory": "rdma/rnic/build/zero-service-mac-mbtyepu7",
+        "seconds": 0.0903061639983207,
+        "artifacts": {
+          "rdma/rnic/build/zero-service-mac-mbtyepu7/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-service-mac-mbtyepu7/tb.v": "621b70a70af7b9928ab2e3b97097dca55cc6259bf85e262d9a4e89db8a9169ee",
+          "rdma/rnic/build/zero-service-mac-mbtyepu7/simulation.log": "f37a527954e0a6e0d08701f4b8bfd768fa4d056229b752a3273decf82c52b4c6",
+          "rdma/rnic/build/zero-service-mac-mbtyepu7/input.hex": "f59e55f1a0da1f4ad8dbf87480e74a1c82fa2a62fad808516f2cae9f0a5db4a2"
+        },
+        "RAM_binary_sha256": "7fb135c4f23bf6a8595b1757e96ce8ea180b2683d135b474c856a0d02e1ded0a"
+      }
+    ],
+    "test_bad_core_or_wire_is_quarantined_before_transmission": [
+      {
+        "directory": "rdma/rnic/build/zero-service-mac-i6lhvlsk",
+        "seconds": 0.039644131960812956,
+        "artifacts": {
+          "rdma/rnic/build/zero-service-mac-i6lhvlsk/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-service-mac-i6lhvlsk/tb.v": "e547b4e516a73966197538ddca5538c9be14d02d764d0ae9995e166fa1e78a16",
+          "rdma/rnic/build/zero-service-mac-i6lhvlsk/simulation.log": "f147dc257640658d4eab994678448b710ad58a0791f89f43ffbd9c6673de8631",
+          "rdma/rnic/build/zero-service-mac-i6lhvlsk/input.hex": "c0b702ab51903a38c8c4b96b502f4027cece2d5925db6082daccb84efee852e6"
+        },
+        "RAM_binary_sha256": "cd9958c7c6901712bdeb99a7bbbc3ec95ab637297ad4e0d3ff639d999e18946d"
+      },
+      {
+        "directory": "rdma/rnic/build/zero-service-mac-eo4yjgo8",
+        "seconds": 0.04007247800473124,
+        "artifacts": {
+          "rdma/rnic/build/zero-service-mac-eo4yjgo8/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-service-mac-eo4yjgo8/tb.v": "2af6cafd4b9fbeed56fdbc19b01d209403bfb6a141f0c391284a953c57722ee8",
+          "rdma/rnic/build/zero-service-mac-eo4yjgo8/simulation.log": "45abdc37ec484d2001c9637f3e8f7d5bf87ca0cfa979683d8f7b521e17292e34",
+          "rdma/rnic/build/zero-service-mac-eo4yjgo8/input.hex": "c0b702ab51903a38c8c4b96b502f4027cece2d5925db6082daccb84efee852e6"
+        },
+        "RAM_binary_sha256": "b2cd0329e980af755e8bc29c4dc66bc62d9b151fd246f10976d466ea07964390"
+      },
+      {
+        "directory": "rdma/rnic/build/zero-service-mac-etggrz2i",
+        "seconds": 0.040015205973759294,
+        "artifacts": {
+          "rdma/rnic/build/zero-service-mac-etggrz2i/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-service-mac-etggrz2i/tb.v": "25254c47edff414c91a3c081563f93f5b6eea5c7a639b97aff9caba1f8d24fe3",
+          "rdma/rnic/build/zero-service-mac-etggrz2i/simulation.log": "2c7082140b003590a58f77b811ba9f000bf909187a838b13d5e137e870375d76",
+          "rdma/rnic/build/zero-service-mac-etggrz2i/input.hex": "c0b702ab51903a38c8c4b96b502f4027cece2d5925db6082daccb84efee852e6"
+        },
+        "RAM_binary_sha256": "ab8713c935a4635577fb355006e4a1714cf0b61e6b66bb4100ad9f21dfdb8b23"
+      },
+      {
+        "directory": "rdma/rnic/build/zero-service-mac-49e6pi2n",
+        "seconds": 0.03991512203356251,
+        "artifacts": {
+          "rdma/rnic/build/zero-service-mac-49e6pi2n/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-service-mac-49e6pi2n/tb.v": "144dd2e61be1ca4a44bb435d3fdc230fb18bb185813c4aebe4400af1fa669705",
+          "rdma/rnic/build/zero-service-mac-49e6pi2n/simulation.log": "23c314a177f65cf3ef06ba2feee870b383536639e85cd55e5cb2dfc53a2cb4ea",
+          "rdma/rnic/build/zero-service-mac-49e6pi2n/input.hex": "c0b702ab51903a38c8c4b96b502f4027cece2d5925db6082daccb84efee852e6"
+        },
+        "RAM_binary_sha256": "3b6ef0da1038fa2a7bfe23392818df76c54758b008c8581b6e11eb134439c359"
+      },
+      {
+        "directory": "rdma/rnic/build/zero-service-mac-jwwlhevh",
+        "seconds": 0.04053113504778594,
+        "artifacts": {
+          "rdma/rnic/build/zero-service-mac-jwwlhevh/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-service-mac-jwwlhevh/tb.v": "e415706e57ac671dc48ff5d41704edc079a5d2035a40b2aa779db2ab669dc384",
+          "rdma/rnic/build/zero-service-mac-jwwlhevh/simulation.log": "6938fc6a272a27a993822191d5964ec3b9dc43e9b934bdba5b2e353562ba8451",
+          "rdma/rnic/build/zero-service-mac-jwwlhevh/input.hex": "c0b702ab51903a38c8c4b96b502f4027cece2d5925db6082daccb84efee852e6"
+        },
+        "RAM_binary_sha256": "fa0a2e6a3056c44e9b704b0e9f34ddf0c3df7e3fa6c2f094b3500964f74640cf"
+      },
+      {
+        "directory": "rdma/rnic/build/zero-service-mac-zumlbx4p",
+        "seconds": 0.04046059295069426,
+        "artifacts": {
+          "rdma/rnic/build/zero-service-mac-zumlbx4p/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-service-mac-zumlbx4p/tb.v": "c5d6ba6627be6db0cbdda4c739435619b47092df6a04741db5bc029fb58827c0",
+          "rdma/rnic/build/zero-service-mac-zumlbx4p/simulation.log": "19a1a504b5459e80e1f99bb79f8bcc6ac0f800ccb13a4e8ca1da02acc49df3f4",
+          "rdma/rnic/build/zero-service-mac-zumlbx4p/input.hex": "c0b702ab51903a38c8c4b96b502f4027cece2d5925db6082daccb84efee852e6"
+        },
+        "RAM_binary_sha256": "e194774e09c7bbbe26576d180e1c5366894383c0addaeef34df7bb124bda2fa5"
+      }
+    ],
+    "test_late_parent_fault_retains_owner_and_does_not_retract_stalled_output": [
+      {
+        "directory": "rdma/rnic/build/zero-service-mac-gjqt0trs",
+        "seconds": 0.04156124504515901,
+        "artifacts": {
+          "rdma/rnic/build/zero-service-mac-gjqt0trs/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-service-mac-gjqt0trs/tb.v": "c870407fb7db8f7b04880d2ef78826289125405d345dd9b8944157d615b383b1",
+          "rdma/rnic/build/zero-service-mac-gjqt0trs/simulation.log": "a23ad8dc75cc56a4bc860005c4220b607a849817b17299f6580e42e4618cbeb3",
+          "rdma/rnic/build/zero-service-mac-gjqt0trs/input.hex": "c0b702ab51903a38c8c4b96b502f4027cece2d5925db6082daccb84efee852e6"
+        },
+        "RAM_binary_sha256": "7a6e36312108f4bba837a549f265f0641e8255c59d7f74dc4032f7da4a144702"
+      }
+    ],
+    "test_stale_unknown_duplicate_or_legacy_receipts_never_retire": [
+      {
+        "directory": "rdma/rnic/build/zero-service-mac-b9oikvb8",
+        "seconds": 0.0405381890013814,
+        "artifacts": {
+          "rdma/rnic/build/zero-service-mac-b9oikvb8/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-service-mac-b9oikvb8/tb.v": "38768215c2f875ffb5c30b426b497ddcedd40fac2f464dddc5d7f174fe010f39",
+          "rdma/rnic/build/zero-service-mac-b9oikvb8/simulation.log": "2441b560854f0453eb5e65b7156e107c1ebbbb724e41580994e55c3abd9e4d7d",
+          "rdma/rnic/build/zero-service-mac-b9oikvb8/input.hex": "c0b702ab51903a38c8c4b96b502f4027cece2d5925db6082daccb84efee852e6"
+        },
+        "RAM_binary_sha256": "171d240e8dcab47cbc26511ef68d9f4e2137fe9069369b30acd05fa713b0db8c"
+      },
+      {
+        "directory": "rdma/rnic/build/zero-service-mac-yncmq954",
+        "seconds": 0.040721525030676275,
+        "artifacts": {
+          "rdma/rnic/build/zero-service-mac-yncmq954/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-service-mac-yncmq954/tb.v": "923cc2883b353ca869542e99537432b2fcc42f681cab174403c7ad907512570c",
+          "rdma/rnic/build/zero-service-mac-yncmq954/simulation.log": "4aece17312e52a0f0b66d3a8d30157e5afcc05c79a44233897f0d8543714a8d7",
+          "rdma/rnic/build/zero-service-mac-yncmq954/input.hex": "c0b702ab51903a38c8c4b96b502f4027cece2d5925db6082daccb84efee852e6"
+        },
+        "RAM_binary_sha256": "ed8d8b1daaff6674cf4a80373e17c9c4b741c84878ced201afeb87318876d8af"
+      },
+      {
+        "directory": "rdma/rnic/build/zero-service-mac-d7lm1b0w",
+        "seconds": 0.04077607300132513,
+        "artifacts": {
+          "rdma/rnic/build/zero-service-mac-d7lm1b0w/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-service-mac-d7lm1b0w/tb.v": "692b098380a9301d62406c728d8300b5a52532e1d68236ee0b425e39e366bb56",
+          "rdma/rnic/build/zero-service-mac-d7lm1b0w/simulation.log": "e2737f1af92288c429ae02a960c1906eba1419610a53d5291a95d6e9a7e55219",
+          "rdma/rnic/build/zero-service-mac-d7lm1b0w/input.hex": "c0b702ab51903a38c8c4b96b502f4027cece2d5925db6082daccb84efee852e6"
+        },
+        "RAM_binary_sha256": "1605152f39d2cbf31af43a287c2a997e9ff2535e11295302267c3e54ce5625aa"
+      },
+      {
+        "directory": "rdma/rnic/build/zero-service-mac-x5hcbyg7",
+        "seconds": 0.04127726500155404,
+        "artifacts": {
+          "rdma/rnic/build/zero-service-mac-x5hcbyg7/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-service-mac-x5hcbyg7/tb.v": "3a4545932e528ce14b1f5e055c1db6ebea17b0be1e14334a6330e55b2766eade",
+          "rdma/rnic/build/zero-service-mac-x5hcbyg7/simulation.log": "27c9637ffcc186c62635fc2a62fe7309a4c9b05e8f7504666553783707da8ad3",
+          "rdma/rnic/build/zero-service-mac-x5hcbyg7/input.hex": "c0b702ab51903a38c8c4b96b502f4027cece2d5925db6082daccb84efee852e6"
+        },
+        "RAM_binary_sha256": "ae1f5d835da2736d5d3112eb7e21c791d3a34a69faaab4927b52e61240429494"
+      },
+      {
+        "directory": "rdma/rnic/build/zero-service-mac-nvjr2zcu",
+        "seconds": 0.039674933010246605,
+        "artifacts": {
+          "rdma/rnic/build/zero-service-mac-nvjr2zcu/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-service-mac-nvjr2zcu/tb.v": "52b1c5aa00cfb3350d980b1de8480352873b8d37724bc67e47acf3ce178d8cff",
+          "rdma/rnic/build/zero-service-mac-nvjr2zcu/simulation.log": "5581208367b2fa2a07d00579e66a92e81d5fd54d04cc771927b23af12714169d",
+          "rdma/rnic/build/zero-service-mac-nvjr2zcu/input.hex": "c0b702ab51903a38c8c4b96b502f4027cece2d5925db6082daccb84efee852e6"
+        },
+        "RAM_binary_sha256": "42431fc8e3498fd306efe482f7e5d5bd4dfa299c9c78cddc16f8384ea1f27297"
+      }
+    ]
+  },
+  "four_state": true,
+  "physical_MAC_receipts_modeled": true,
+  "native_or_hardware_runtime": false
+}

@@ -1,0 +1,80 @@
+{
+  "scope": "109 first actual normal-prelude service run fails a reused Atomic-history byte oracle, before any zero-service execution. Not a native zero-service pass.",
+  "created_UTC": "2026-10-20T20:14:21.369172+00:00",
+  "failed_report": {
+    "path": "results/2026-10-18/rocev2-rnic-zero-service-native-full-002.json",
+    "sha256": "e7fa45549f5361d656f8271359a54eb0e3c7cb1a2a296f40d1070b4082744d21"
+  },
+  "whole_batch_pass": false,
+  "compile_seconds": 412.0542980610044,
+  "failed_case": "SERVICE_AFTER_WRITE",
+  "failed_case_seconds": 15.745224814978428,
+  "failed_case_exit": -6,
+  "remaining24_cases_not_executed": true,
+  "zero_service_owner_HLS_core_retire_counts_all_zero": true,
+  "verified_exact_failed_input_artifact_records_before_correction": 1085,
+  "failed_binary": {
+    "path": "/dev/shm/as02-zero-native-artifacts-3cbxk88o/Vtb",
+    "sha256": "89c4eec63c56a9e04e08dd6c7f0458ae5e6132e587c101bec3c8ffb34c1da3d6"
+  },
+  "fixture_preimage": {
+    "path": "rdma/rnic/build/zero-service-native-full-hsag0907/fixture-before-normal-prelude-sentinel.py",
+    "sha256": "c0718582a8ba89fe6ca989d4274fb8631be27a7c0cdd5d84697c2f3e469720f3"
+  },
+  "actual_genuine_fatal": {
+    "guard_byte": 4101,
+    "DUT_fault": 0,
+    "atomic_phase": 3,
+    "expected_atomic_write": 0,
+    "commands": 1,
+    "statuses": 1,
+    "read_TLPs": 1,
+    "write_TLPs": 1,
+    "actual_host_bytes": {
+      "4100": 206,
+      "4101": 227,
+      "4108": 230,
+      "4109": 239,
+      "4116": 1,
+      "4117": 83
+    },
+    "all_sampled_posted_valid_bits_zero": true
+  },
+  "debugger": {
+    "exit": 0,
+    "runtime_limit_seconds": 30,
+    "script": {
+      "path": "rdma/rnic/tests/zero_service_native_debug.gdb",
+      "sha256": "d7ad55ea0730fdf0c1404ab4a6332bf480d03d741e606872a3397125c11f74cd"
+    },
+    "debug_model": {
+      "path": "/dev/shm/as02-zero-service-debug-muFxs5/debug-model",
+      "sha256": "3b96ed26b7ab3932d8754270d51f30d55fb8153fe9aba805bced10ecb8bddd20"
+    },
+    "excerpt": {
+      "path": "rdma/rnic/build/zero-service-native-full-hsag0907/gdb-normal-prelude-fatal-excerpt.log",
+      "sha256": "fb6413dea5ccbd586cdc71e976fe9c7e003bc12e05b1f907c88fe76c16ba0d68"
+    },
+    "note": "Verbatim counter/byte excerpt, not full GDB log. Unchanged failed model archive/runtime linked only with diagnostic types. Stop at genuine vl_fatal; no assertion suppression, state mutation or successful DUT relabeling.",
+    "original_model_inputs": {
+      "Vtb__ALL.a": "50dc224064c72f759bb6fc8076aa16cc1ca359246465257c64c2c4346cf3bdad",
+      "Vtb___024root.h": "9c146b668b2d3c2acfafbe42920766c8e4459b87c27f94c3dc518ae2ccee7a05",
+      "verilated.o": "59665c8006c0474ed74159a3fbacc24c5675d6dc080ff0f1fa48a0d9a35b543a",
+      "verilated_timing.o": "04ef0e2d20c8e295af2d45698ec6ea9a37d9f26ccb852ae57de6a453970d6c12",
+      "verilated_threads.o": "697c708f864cb11754cdc66e226a9f39f43c8a94344b3f71271b3e12c6c11a9a"
+    }
+  },
+  "cause": "Reused atomic_host_byte_ok always expects a previous Atomic update at4101..4108, although the new standalone normal8-byte WRITE prelude never executes Atomic. expected_atomic_write remains0, but actual bytes correctly retain the initial sentinel (byte4101=227,4108=230); intended normal bytes4109..4116 correctly hold0123456789abcdef LE.",
+  "correction": "Only select the Atomic-history expected bytes when !runtime_service. In ordinary service mode all4101..4108 bytes are still checked against their exact initial pattern, and4109..4116 against the actual normal WRITE. Every address/posted-valid check and independent final full-host/sentinel check remains; no blanket assertion removal.",
+  "current_fixture": {
+    "path": "rdma/rnic/tests/zero_service_native_fixture.py",
+    "sha256": "2edd91dbc61fa6b8406ac1e9a1df788eb554ad00bcc9ee83ee6c9a6fa346bb24"
+  },
+  "unchanged_retry_DUT_RTL_HLS_data_files": 47,
+  "DUT_or_HLS_or_clock_or_drain_or_timeout_or_MAC_owner_gate_changed": false,
+  "fresh_full_run": "results/2026-10-18/rocev2-rnic-zero-service-native-full-003.json",
+  "fresh_state": "compiling,25 planned cases,not a pass",
+  "compile_limit_seconds": 1200,
+  "each_runtime_limit_seconds": 30,
+  "physical_or_Linux_or_board_timing_verified": false
+}

@@ -1,0 +1,15 @@
+{
+  "scope": "Four-state ordinary zero-service owner reservation, actual RTL, endpoints modeled.",
+  "pass_test": true,
+  "methods": 5,
+  "seconds": 0.19716817402513698,
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_zero_service_owner.v": "56732fc20484dbe54bb40a473d8cbfe8cd2bc6d4ba54b41beebf82a90dcd5fd6",
+    "rdma/rnic/tests/test_zero_service_owner_rtl.py": "9c64adfe22d909d1dc9bba0e81c60d0e04a6e2c9ee6e51fb366e8c118fdd9f7d",
+    "rdma/rnic/tests/test_zero_service_mac_rtl.py": "3e5e5516e6db7d9035c3fa680e8ed4e77bb19a863dfab926138a91e727ede7d2",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c910018a2e8a9d77e649437f9a7727f5cf2fd9c02cb20ab92016b5209a3a189e"
+  },
+  "four_state": true,
+  "adjacent_HLS_MAC_modeled": true,
+  "native_or_hardware_runtime": false
+}

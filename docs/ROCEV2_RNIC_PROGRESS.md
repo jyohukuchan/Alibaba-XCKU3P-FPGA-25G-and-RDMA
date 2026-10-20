@@ -32,7 +32,49 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
-Publication106: fullRX003 compiled402.94s and PASSES three actual zero-buffer
+Publication109: the genuine normal8-byte WRITE prelude in full-native002
+compiled412.05s, then failed its reused Atomic-history byte oracle before
+any zero-service execution; the other24 cases did not run. Frozen-model
+inspection confirmed the intended data and untouched sentinels, with no DUT
+fault. Only scenario-specific expected-byte selection was corrected, retaining
+all byte/posted-valid checks and all47 derived RTL/HLS-data files unchanged.
+Fresh25-case full-native003 is IN PROGRESS at publication, NOT a runtime pass.
+Successful source/unit/HLS-generation and prior zero-RQ21-case evidence remain
+distinct. Original timing still fails13.568ns; Linux/provider/physical,
+large/multi-SGE, recovery and all11 requirements remain open. Explicitly
+requested checkpoint push only; no hardware changes or future auto-push.
+[Failure, correction and exact boundaries](ROCEV2_ATOMIC.md).
+
+Progress108 (historical): actual ordinary-zero HLS generation PASSES340.46s,67,767LUT/
+92,925FF/209BRAM18;13.568ns still FAILS original clocks. Distinct344-owner/
+400-core ports and all old ABIs verified. New native integration binds the
+actual privileged QP/RX references, reserves MAC before HLS, takes no RQ or
+data-memory authority, and retains the packet through fresh real SFD/EOF/
+1024-cycle-tail retirement. Owner/MAC tests and actual whole-native
+elaboration003 PASS with singular domains/no width or drain bypass. A source
+review added the real existing normal-response drain gate before zero-owner
+admission; first compilation001 was stopped at294.25s before runtime and
+all evidence preserved. Fresh25-case actual HLS/PCIe/XGMII/MAC native
+compilation002 is LIVE, including real normal8-byte WRITE followed by zero
+WRITE/READ, not a
+runtime pass. All original Linux/provider/physical/large/multi-SGE/recovery/
+timing requirements remain. [Exact boundaries](ROCEV2_ATOMIC.md).
+
+Progress107 (historical): fresh fullRX004 PASSES all21 whole-native cases, each<=21.91s:
+six zero-RQ capacity0/128 scenarios, two empty-RQ/RNR scenarios and all13
+old requester/Atomic/permission cases. All1182 inputs/artifacts reverified;
+real generated HLS/RQ fetch/ACK/XGMII/MAC/CQ execute together, physical host/
+root/peer/PHY/PTP still modeled. NEW ordinary zero WRITE/READ service SOURCE
+uses a distinct344-bit owner and400-bit same-table RETH/MSN/TX/PSN receipt,
+not a fake RQ/Atomic alias or memory operation. C++00344.43s/2.53s and actual
+owned-service/Immediate compatibility00123.58s/0.93s PASS. Native zero-service
+integration and HLS generation remain separate: synth001 subsequently passes
+generation at108 but fails original timing; new native runtime pending.
+Original clocks/drains/geometry/board gates unchanged. All11
+requirements, Linux/physical/large/multi-SGE/recovery/timing remain open.
+No hardware or automatic publication changes. [Evidence and limits](ROCEV2_ATOMIC.md).
+
+Publication106 (historical): fullRX003 compiled402.94s and PASSES three actual zero-buffer
 receive scenarios (SEND/SEND_IMM/WRITE_IMM), two receives each with independent
 wire/CQ checks, actual generated HLS/RQ fetch/MAC/CQ and no data MR/DMA. The
 whole batch FAILS its fourth case: two128-byte-buffer receipts complete,

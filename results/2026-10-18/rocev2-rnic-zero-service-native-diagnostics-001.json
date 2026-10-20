@@ -1,0 +1,35 @@
+{
+  "scope": "108 native zero-service integration build/report failures retained, no failed run relabeled.",
+  "created_UTC": "2026-10-20T19:56:14.289428+00:00",
+  "first_elaboration": {
+    "path": "results/2026-10-18/rocev2-rnic-zero-service-native-elaboration-001.json",
+    "sha256": "9cf5afa2fb8f2a7d2366248203d55a6233fcf3f7c0133cedf379017ef9545ab4"
+  },
+  "first_elaboration_pass": false,
+  "cause": "The paged wrapper has both shared and immutable legacy guard instances with the same local name. Generic single-child insertion deliberately refused the ambiguous name before compilation. The correction targets only the exact existing rocev2_shared_protected_responder instance, using the same checked helper as the previous native graph.",
+  "failed_generator_preimage": {
+    "path": "rdma/rnic/build/zero-service-native-derive-before-shared-guard.py",
+    "sha256": "85d250863ab05edd081160ff183142a8c1468bb18d1ffe723388832886ee7565"
+  },
+  "current_elaboration": {
+    "path": "results/2026-10-18/rocev2-rnic-zero-service-native-elaboration-002.json",
+    "sha256": "3c0b7dce6c97e08a1fbd5de06542ececf0ee9d1f5936c2ce3c17dd79f4d656a5"
+  },
+  "current_MAC_tests": {
+    "path": "results/2026-10-18/rocev2-rnic-zero-service-mac-001.json",
+    "sha256": "cc9df2f9058fda06dc71451d5f8449308934c19957d2de63920e65f39a6455b6"
+  },
+  "current_owner_tests": {
+    "path": "results/2026-10-18/rocev2-rnic-zero-service-owner-002.json",
+    "sha256": "a684cfabdcdf3e60513a3ba8998e099e8e40d7412360e4bacdafcbfa7a53aedf"
+  },
+  "first_owner_report": {
+    "path": "rdma/rnic/build/zero-service-owner-001-report.json.invalid",
+    "sha256": "28062388cce2f57fb2cf68a89146531a6494bca36eb14863156cf1104dc95503"
+  },
+  "first_owner_report_note": "The actual five owner RTL test methods passed, but the initial runner serialized a literal backslash-n after the JSON object. Exact malformed bytes are retained under build, not rewritten into a valid pass report. Only report newline serialization changed; fresh002 repeated all tests against unchanged RTL and produces valid JSON.",
+  "runtime_full_native": "results/2026-10-18/rocev2-rnic-zero-service-native-full-001.json",
+  "runtime_state": "compiling, not a pass",
+  "physical_or_Linux_or_board_timing_verified": false,
+  "original_integrity_ownership_drain_timing_or_timeout_gates_relaxed": false
+}

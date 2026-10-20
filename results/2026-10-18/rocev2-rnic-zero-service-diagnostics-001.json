@@ -1,0 +1,65 @@
+{
+  "scope": "107 ordinary zero WRITE/READ source integration failures and verified corrections; not native or physical proof.",
+  "created_UTC": "2026-10-20T19:37:24.741233+00:00",
+  "failed_runs": [
+    {
+      "report": {
+        "path": "results/2026-10-18/rocev2-rnic-zero-service-csim-001.json",
+        "sha256": "a9bf406bc82fb26e152acbe4c4c86a51f2dba191a30a6bccbd3a82e8c2ab11ee"
+      },
+      "whole_batch_pass": false,
+      "verified_input_artifact_records": 291,
+      "compile_seconds": 15.674880733015016,
+      "full_top_CPP_compiled": false,
+      "simulation_seconds": null,
+      "error": "complete zero service compile failed: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/zero-service-csim-xxnnzt6s/compile.log"
+    },
+    {
+      "report": {
+        "path": "results/2026-10-18/rocev2-rnic-zero-service-csim-002.json",
+        "sha256": "4c8f3282eefa2d1114495501be0c1e26d34442c2eab473fea1ea5e41b6f04ca7"
+      },
+      "whole_batch_pass": false,
+      "verified_input_artifact_records": 293,
+      "compile_seconds": 43.249671622004826,
+      "full_top_CPP_compiled": true,
+      "simulation_seconds": 2.6828600860317238,
+      "error": "actual zero service consumers failed: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/zero-service-csim-cjbcmksj/simulation.log"
+    }
+  ],
+  "first_cause": "The top-level API port insertion also matched the local rx_exh_fsm formal name, unintentionally adding two unused outer API parameters there; full-top C++ compile rejected 24 vs22 arguments. Corrected only that local signature scope; no oracle or deadline changes.",
+  "first_generator_preimage": {
+    "path": "rdma/rnic/build/zero-service-csim-xxnnzt6s/generator-before-signature-scope.py",
+    "sha256": "85e7184e831a28f8f1fa072214eb93f051491308b32a7f7ffd548b9cdac6e4c9"
+  },
+  "first_probe_preimage": {
+    "path": "rdma/rnic/build/zero-service-csim-xxnnzt6s/probe-before-negative-count.py",
+    "sha256": "49d4054bf252c2aacbbb53d07dc87341c95aff382e4ac4b8cb9bb735380e1d58"
+  },
+  "first_probe_reconstruction_note": "Reconstructed after the independent negative-count expansion by reversing the one exact15->16 predicate edit, and SHA256 matched the failed report. The exact failed bench copy and generated source tree were already frozen.",
+  "second_cause": "The requester-only fixture had no outgoing responder event merger: new real RX ack events remained unconsumed. Added execution of the actual as02_native_rnr_merger, no manual stream forwarding or synthesized done. DUT/generated source003 unchanged for the fresh retry.",
+  "second_fixture_preimage": {
+    "path": "rdma/rnic/build/zero-service-csim-cjbcmksj/bench-before-response-event-merger.cpp",
+    "sha256": "1378bfbb4f7ab9e840050fb02c4395de521951afd02d60ec6499fc742f50d2a6"
+  },
+  "second_failed_log": {
+    "path": "rdma/rnic/build/zero-service-csim-cjbcmksj/simulation.log",
+    "sha256": "541d42863aa9b7f0849e3451db1fe14003e74afe9e835a4d8793b8fa4e12f83f"
+  },
+  "current_successful_source_consumers": {
+    "path": "results/2026-10-18/rocev2-rnic-zero-service-csim-003.json",
+    "sha256": "056d9dee0dc5c37d80a69dd104259afe8a7e3a0cfac034790b50534c142d1c7f"
+  },
+  "current_successful_compatibility": {
+    "path": "results/2026-10-18/rocev2-rnic-zero-service-compat-001.json",
+    "sha256": "e59aa6b003d0955c9cc25e49f7dd1cd07fa4cdf37762bd2ff8422c2535283e24"
+  },
+  "stronger_final_tests": "Four alternating ordinary WRITE/READ services, same-domain PSN wrap, real owner/RETH/MSN/TX/PSN consumers independently withheld, exact full wire/owner,16 owner/RETH/sequence negatives; all old Atomic/zero requester/zero-RQ cases repeated.",
+  "actual_owned_Atomic_MR_paged_RTL_and_Immediate_compatibility": true,
+  "zero_service_owner_bits": 344,
+  "zero_service_core_receipt_bits": 400,
+  "no_fake_RQ_or_Atomic_alias_or_data_DMA": true,
+  "native_zero_service_integration": false,
+  "standard_Linux_or_physical_hardware": false,
+  "full_board_timing": false
+}

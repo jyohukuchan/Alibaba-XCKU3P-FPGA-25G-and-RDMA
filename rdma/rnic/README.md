@@ -15,6 +15,38 @@ remaining run was interrupted). No all-suite or release-pass claim is made.
 
 ## Latest functional milestone (2026-10-20)
 
+Progress096 additionally contains an UNVALIDATED full-native integration draft
+(`fpga/derive_atomic128_native.py`). Derivation currently stops at a checked
+SQC source-anchor mismatch; there is no complete generated graph or native
+runtime evidence for that draft. The verified component milestones below
+must not be read as a completed native Atomic requester profile.
+
+Progress095: [generated requester003](../../results/2026-10-18/rocev2-rnic-atomic-request-generated-003.json)
+PASSES actual full HLS/integrity RTL execution in1.77s: CAS/FADD exact wire/
+ICRC/operands, LE8-byte result and816-bit core receipts with PSN wrap. This
+is two-state RTL; upstream owner/SQ/connection/peer/memory endpoints are models.
+Native response/executor/MAC-lifetime/result-pad leaves additionally PASS21
+methods/110 four-state cases, preserving full748-bit ownership and existing
+normal/Immediate operations. See [Atomic details](../../docs/ROCEV2_ATOMIC.md).
+The PCIe/MR/staging, generated core and these native leaves are NOT yet ONE
+matched128-byte native/SQC/kernel/provider/result-DMA/MAC/CQ graph. Core done
+is not host visibility or WR completion. Default hardware/`IB_ATOMIC_NONE`
+and original timing/CDC gates remain unchanged; no automatic push.
+
+Progress094 adds SAME-core CAS/FADD request TX/replay and AtomicACK-derived
+8-byte LE result output. [Requester C++001](../../results/2026-10-18/rocev2-rnic-atomic-request-HLS-001.json)
+PASSES9 mixed fresh requests/4 real stored replays in0.47s, including held
+actual result/timer/state consumers and negative class/operand/framing tests.
+[Compatibility003](../../results/2026-10-18/rocev2-rnic-atomic-request-compat-003.json)
+PASSES prior Immediate TX/RX and owned Atomic responder against the actual
+protected MR/paged-memory RTL service in0.88s. This is C++ transport evidence,
+not generated RTL/native result DMA/MAC/CQ/API/physical or timing signoff.
+The matched source preserves receive620 while requester748/SQ408/done816
+carry both operands. Fresh full HLS synthesis001 completes318.01s and the
+actual generated bridge elaborates with ONE shared domain. Estimated13.568ns
+still FAILS original4ns/1.08ns; these are not generated runtime/native/timing
+signoff. Default64-byte profile and `IB_ATOMIC_NONE` remain unchanged.
+
 Progress093 adds Atomic requester local-result MR admission and connects it
 to actual128-byte SQ/PCIe/RAM fetch and real guarded748-bit owner/408-bit SQ
 staging. [Positive pipeline001](../../results/2026-10-18/rocev2-rnic-atomic-request-pipeline-001.json)

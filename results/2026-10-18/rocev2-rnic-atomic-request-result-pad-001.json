@@ -1,0 +1,224 @@
+{
+  "scope": "Actual748-bit Atomic/READ result-pad staging; adjacent endpoints modeled.\n\nCheck exact8-byte Atomic results and retained ordinary65-byte READ padding.\nNot actual generated HLS, native result DMA, CQ or safe unpin proof.\n",
+  "pass_test": true,
+  "methods": 3,
+  "simulations": 9,
+  "seconds": 0.24008565698750317,
+  "tests": {
+    "test_CAS_FADD8_byte_result_and_ordinary_READ65_byte_padding": [
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 0,
+          "fault": 0,
+          "cycles": 26
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/fpga/derive_atomic128_lifetime.py": "09148e2f11eb3c2ea9bd72fc28cf357e8991de64acef1af9ad79b17dfebc90cb",
+          "rdma/rnic/fpga/derive_atomic128_response.py": "eaa3439ece1fd0fad5ff30e81aab0d14346c3739058c1272a4fdc4b8e431063e",
+          "rdma/rnic/fpga/derive_immediate_native.py": "9281857caf2714945f280e126eb39553e8f9324c8416b5b71bbd79c5ed6fdac4",
+          "rdma/rnic/tests/test_atomic128_result_pad_rtl.py": "e391595dcbc4d58fa83fec2e45b1b35df25a28e6ea14ab4cf4e9b09c520a78c4",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_atomic128_response_rtl.py": "f45f24ac5941fa1591fd03f114d05d6d092f970a4bcc9d74036f57fa3a55bcc1",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "2f092ca9eeee90d6a1ab57439227ad39b5d9b623947201e274b2654bf46c8af4",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "71aa1b6edc3af5a86a56a7aed1f1cd770871e9ceae5346d38a4255eedb35cbc6",
+        "generated_RTL_sha256": "fad3a2de0bb8471bca6fd464293c2af756beac54b6aa6103b37a45b71230629f"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 0,
+          "fault": 0,
+          "cycles": 26
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/fpga/derive_atomic128_lifetime.py": "09148e2f11eb3c2ea9bd72fc28cf357e8991de64acef1af9ad79b17dfebc90cb",
+          "rdma/rnic/fpga/derive_atomic128_response.py": "eaa3439ece1fd0fad5ff30e81aab0d14346c3739058c1272a4fdc4b8e431063e",
+          "rdma/rnic/fpga/derive_immediate_native.py": "9281857caf2714945f280e126eb39553e8f9324c8416b5b71bbd79c5ed6fdac4",
+          "rdma/rnic/tests/test_atomic128_result_pad_rtl.py": "e391595dcbc4d58fa83fec2e45b1b35df25a28e6ea14ab4cf4e9b09c520a78c4",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_atomic128_response_rtl.py": "f45f24ac5941fa1591fd03f114d05d6d092f970a4bcc9d74036f57fa3a55bcc1",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "2f092ca9eeee90d6a1ab57439227ad39b5d9b623947201e274b2654bf46c8af4",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "82ffacd14f60be625352ce7b2cc23920b5f4937ebb58a1fcc36a7d219d9dc376",
+        "generated_RTL_sha256": "fad3a2de0bb8471bca6fd464293c2af756beac54b6aa6103b37a45b71230629f"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 3,
+          "fault": 0,
+          "cycles": 35
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/fpga/derive_atomic128_lifetime.py": "09148e2f11eb3c2ea9bd72fc28cf357e8991de64acef1af9ad79b17dfebc90cb",
+          "rdma/rnic/fpga/derive_atomic128_response.py": "eaa3439ece1fd0fad5ff30e81aab0d14346c3739058c1272a4fdc4b8e431063e",
+          "rdma/rnic/fpga/derive_immediate_native.py": "9281857caf2714945f280e126eb39553e8f9324c8416b5b71bbd79c5ed6fdac4",
+          "rdma/rnic/tests/test_atomic128_result_pad_rtl.py": "e391595dcbc4d58fa83fec2e45b1b35df25a28e6ea14ab4cf4e9b09c520a78c4",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_atomic128_response_rtl.py": "f45f24ac5941fa1591fd03f114d05d6d092f970a4bcc9d74036f57fa3a55bcc1",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "2f092ca9eeee90d6a1ab57439227ad39b5d9b623947201e274b2654bf46c8af4",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "074f0568fcea823b0590a860af2026c04d45823cb45c22e3813ecd740689379c",
+        "generated_RTL_sha256": "fad3a2de0bb8471bca6fd464293c2af756beac54b6aa6103b37a45b71230629f"
+      }
+    ],
+    "test_fault_does_not_retract_already_offered8byte_command": [
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 11
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/fpga/derive_atomic128_lifetime.py": "09148e2f11eb3c2ea9bd72fc28cf357e8991de64acef1af9ad79b17dfebc90cb",
+          "rdma/rnic/fpga/derive_atomic128_response.py": "eaa3439ece1fd0fad5ff30e81aab0d14346c3739058c1272a4fdc4b8e431063e",
+          "rdma/rnic/fpga/derive_immediate_native.py": "9281857caf2714945f280e126eb39553e8f9324c8416b5b71bbd79c5ed6fdac4",
+          "rdma/rnic/tests/test_atomic128_result_pad_rtl.py": "e391595dcbc4d58fa83fec2e45b1b35df25a28e6ea14ab4cf4e9b09c520a78c4",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_atomic128_response_rtl.py": "f45f24ac5941fa1591fd03f114d05d6d092f970a4bcc9d74036f57fa3a55bcc1",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "2f092ca9eeee90d6a1ab57439227ad39b5d9b623947201e274b2654bf46c8af4",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "e1092de74405cf144e5293ba1fe7a27108891a2f17d1a5a4379ef88a7ef48cfe",
+        "generated_RTL_sha256": "fad3a2de0bb8471bca6fd464293c2af756beac54b6aa6103b37a45b71230629f"
+      }
+    ],
+    "test_noncanonical_result_context_never_acquires_staging_authority": [
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 0,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/fpga/derive_atomic128_lifetime.py": "09148e2f11eb3c2ea9bd72fc28cf357e8991de64acef1af9ad79b17dfebc90cb",
+          "rdma/rnic/fpga/derive_atomic128_response.py": "eaa3439ece1fd0fad5ff30e81aab0d14346c3739058c1272a4fdc4b8e431063e",
+          "rdma/rnic/fpga/derive_immediate_native.py": "9281857caf2714945f280e126eb39553e8f9324c8416b5b71bbd79c5ed6fdac4",
+          "rdma/rnic/tests/test_atomic128_result_pad_rtl.py": "e391595dcbc4d58fa83fec2e45b1b35df25a28e6ea14ab4cf4e9b09c520a78c4",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_atomic128_response_rtl.py": "f45f24ac5941fa1591fd03f114d05d6d092f970a4bcc9d74036f57fa3a55bcc1",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "2f092ca9eeee90d6a1ab57439227ad39b5d9b623947201e274b2654bf46c8af4",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "862b958b04ede749865e661679d9b511682248502c75b78f8b4f45baa4575617",
+        "generated_RTL_sha256": "fad3a2de0bb8471bca6fd464293c2af756beac54b6aa6103b37a45b71230629f"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 0,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/fpga/derive_atomic128_lifetime.py": "09148e2f11eb3c2ea9bd72fc28cf357e8991de64acef1af9ad79b17dfebc90cb",
+          "rdma/rnic/fpga/derive_atomic128_response.py": "eaa3439ece1fd0fad5ff30e81aab0d14346c3739058c1272a4fdc4b8e431063e",
+          "rdma/rnic/fpga/derive_immediate_native.py": "9281857caf2714945f280e126eb39553e8f9324c8416b5b71bbd79c5ed6fdac4",
+          "rdma/rnic/tests/test_atomic128_result_pad_rtl.py": "e391595dcbc4d58fa83fec2e45b1b35df25a28e6ea14ab4cf4e9b09c520a78c4",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_atomic128_response_rtl.py": "f45f24ac5941fa1591fd03f114d05d6d092f970a4bcc9d74036f57fa3a55bcc1",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "2f092ca9eeee90d6a1ab57439227ad39b5d9b623947201e274b2654bf46c8af4",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "1567d1984ba43b542796298372582729c3af90fb5da0c3187cd2098980982c82",
+        "generated_RTL_sha256": "fad3a2de0bb8471bca6fd464293c2af756beac54b6aa6103b37a45b71230629f"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 0,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/fpga/derive_atomic128_lifetime.py": "09148e2f11eb3c2ea9bd72fc28cf357e8991de64acef1af9ad79b17dfebc90cb",
+          "rdma/rnic/fpga/derive_atomic128_response.py": "eaa3439ece1fd0fad5ff30e81aab0d14346c3739058c1272a4fdc4b8e431063e",
+          "rdma/rnic/fpga/derive_immediate_native.py": "9281857caf2714945f280e126eb39553e8f9324c8416b5b71bbd79c5ed6fdac4",
+          "rdma/rnic/tests/test_atomic128_result_pad_rtl.py": "e391595dcbc4d58fa83fec2e45b1b35df25a28e6ea14ab4cf4e9b09c520a78c4",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_atomic128_response_rtl.py": "f45f24ac5941fa1591fd03f114d05d6d092f970a4bcc9d74036f57fa3a55bcc1",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "2f092ca9eeee90d6a1ab57439227ad39b5d9b623947201e274b2654bf46c8af4",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "85422622740928a1c13b735563cd8485906eaa2c6d7c351e9a263b60ed531a19",
+        "generated_RTL_sha256": "fad3a2de0bb8471bca6fd464293c2af756beac54b6aa6103b37a45b71230629f"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 0,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/fpga/derive_atomic128_lifetime.py": "09148e2f11eb3c2ea9bd72fc28cf357e8991de64acef1af9ad79b17dfebc90cb",
+          "rdma/rnic/fpga/derive_atomic128_response.py": "eaa3439ece1fd0fad5ff30e81aab0d14346c3739058c1272a4fdc4b8e431063e",
+          "rdma/rnic/fpga/derive_immediate_native.py": "9281857caf2714945f280e126eb39553e8f9324c8416b5b71bbd79c5ed6fdac4",
+          "rdma/rnic/tests/test_atomic128_result_pad_rtl.py": "e391595dcbc4d58fa83fec2e45b1b35df25a28e6ea14ab4cf4e9b09c520a78c4",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_atomic128_response_rtl.py": "f45f24ac5941fa1591fd03f114d05d6d092f970a4bcc9d74036f57fa3a55bcc1",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "2f092ca9eeee90d6a1ab57439227ad39b5d9b623947201e274b2654bf46c8af4",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "9bdf3cf39f4f0dd81ab5c4f31e2cc7de459d38c667d51fd289eda42516cf8c5a",
+        "generated_RTL_sha256": "fad3a2de0bb8471bca6fd464293c2af756beac54b6aa6103b37a45b71230629f"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 0,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/fpga/derive_atomic128_lifetime.py": "09148e2f11eb3c2ea9bd72fc28cf357e8991de64acef1af9ad79b17dfebc90cb",
+          "rdma/rnic/fpga/derive_atomic128_response.py": "eaa3439ece1fd0fad5ff30e81aab0d14346c3739058c1272a4fdc4b8e431063e",
+          "rdma/rnic/fpga/derive_immediate_native.py": "9281857caf2714945f280e126eb39553e8f9324c8416b5b71bbd79c5ed6fdac4",
+          "rdma/rnic/tests/test_atomic128_result_pad_rtl.py": "e391595dcbc4d58fa83fec2e45b1b35df25a28e6ea14ab4cf4e9b09c520a78c4",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_atomic128_response_rtl.py": "f45f24ac5941fa1591fd03f114d05d6d092f970a4bcc9d74036f57fa3a55bcc1",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "2f092ca9eeee90d6a1ab57439227ad39b5d9b623947201e274b2654bf46c8af4",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "c4565e278072cfbd49831a9b44a663a7581477a0dde3597ea9bb4cb73caf626d",
+        "generated_RTL_sha256": "fad3a2de0bb8471bca6fd464293c2af756beac54b6aa6103b37a45b71230629f"
+      }
+    ]
+  },
+  "actual_native_result_DMA_WR_CQ": false,
+  "hardware_verified": false
+}

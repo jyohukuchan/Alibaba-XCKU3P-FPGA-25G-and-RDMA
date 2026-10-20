@@ -32,6 +32,46 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+Progress096 is an UNVALIDATED full-native integration draft in
+`derive_atomic128_native.py`. Its first derivation stops at a checked SQC
+source-anchor mismatch (`initial if(MAX_QPS`); no complete generated graph,
+elaboration or runtime result is claimed. See [Atomic status](ROCEV2_ATOMIC.md).
+
+Progress095 completes the SAME live generated-requester003 build:502.94s
+compile,1.77s TWO-STATE RTL runtime PASS. Two successive CAS/FADD requests
+produce exact IP/UDP/ICRC/operands and8-byte LE command/data plus full816-bit
+core receipts with PSN wrap. Peer/owner/SQ/connection/memory endpoints remain
+MODELS; core bookkeeping is NOT protected host visibility/CQ/unpin evidence.
+
+Actual native Atomic response/result protection leaves now pass21 methods/
+110 four-state cases: response guard32 (each<10s), protected executor53,
+MAC/lifetime16 and result-pad9. Full748 owner/operands and real integrity/
+peer/issued-PSN protect result placement; exact96-bit command and actual data/
+backend-status/guarded handoff remain required. Native lifetime checks all
+wire operands across a widened80-byte header window and matches816-bit core
+receipts, joining actual MAC frame/tag/EOF/tail with other proofs. Adjacent
+MR/HLS/physical memory/CQ boundaries are models; replay-enabled family only
+elaborates. No complete native128 profile or standard Atomic capability is
+claimed. Parent/SQC/kernel/provider/result-DMA/MAC/CQ integration and all11
+requirements remain, including unchanged original timing/CDC/physical gates.
+
+Progress094 implements CAS/FADD requester TX, real stored-entry replay,
+AtomicACK parsing and8-byte LE result-data production in the SAME full owned
+Atomic/Immediate HLS source. Requester C++001 PASSES0.47s:9 fresh mixed
+requests,4 actual stored replays, operand/padding/response-class/framing/
+syndrome/length negatives, and completion held by actual result, timer and
+common-state consumers. Same-source compatibility003 PASSES0.88s with prior
+Immediate TX/RX and ACTUAL protected Atomic/MR/paged-memory RTL service.
+Endpoint peer/connection/physical memory remain models; no actual generated
+RTL/native result DMA/MAC/CQ/API/physical/timing completion is claimed.
+Fresh HLS synthesis001 completes318.01s: actual SQ408/owner752/done816 and
+unchanged receive/service ABIs verified,61,986LUT/85,982FF/189BRAM18/0DSP.
+Actual HLS+bridge elaboration002 passes1.12s with ONE real common domain;
+this is compile-only, not generated packet/runtime/native qualification.
+Estimated13.568ns still misses original4ns/1.08ns; capacities8QP/2000entries
+and original1500MiB free-space guard remain. No timing gate is waived.
+All11 requirements remain; no automatic publication or hardware changes.
+
 Progress093 connects actual128-byte PCIe/RAM/SQ fetch, ONE actual MR table
 and real guarded748-bit owner/408-bit SQ staging. Positive6 records/6 SQ
 offers PASS0.38s; UR-error4 records but only3 SQ offers PASS0.33s, with real

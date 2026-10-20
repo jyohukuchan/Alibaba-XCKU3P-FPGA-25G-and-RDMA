@@ -5,6 +5,146 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+## Full native requester integration draft (096, not validated)
+
+`derive_atomic128_native.py` is an IN-PROGRESS generator for a single matched
+128-byte requester/responder graph, including parent context widths, SQC/RQC
+descriptor stride, CQ operand registers and Atomic request routing. Its first
+derivation attempt stops at the checked SQC anchor `initial if(MAX_QPS` with
+`ValueError: source derivation anchor changed`. No complete output graph,
+elaboration or runtime result exists for this draft. It is included as a work
+checkpoint, not a usable native profile; the verified leaf/component evidence
+below does not validate this integration. Default RTL, driver negotiation and
+`IB_ATOMIC_NONE` remain unchanged.
+
+## Generated requester execution and native proof leaves (095)
+
+[Generated requester003](../results/2026-10-18/rocev2-rnic-atomic-request-generated-003.json)
+PASSES the SAME full synthesized HLS/integrity bridge in1.77s after502.94s
+feature compilation. Two successive CAS/FADD requests produce actual72-byte
+IPv4/UDP/AtomicETH/ICRC packets, two exact LE8-byte result commands/data offers
+and two816-bit core receipts, including PSN wrap. Independent Python checks
+all wire bytes/operands and checksum/ICRC; RTL checks full owner/command/data
+and retained offers under backpressure. No Atomic source-read DMA occurs.
+This is TWO-STATE compiled RTL, NOT the earlier C++ producer model.
+
+QP/connection/owner/SQ/peer/physical-memory boundaries remain models. The
+HLS receipt is producer/bookkeeping evidence, NOT protected host-DMA memory
+visibility, safe unpin or a WR/CQ completion. In particular an exported core
+receipt can be offered while its result data is buffered; native parents
+must independently join actual result-DMA and memory lifetime proofs.
+Diagnostic001's four-state run failed a sink fixture that demanded command
+and data offers simultaneously BEFORE accepting the command.002 orders the
+sink correctly but reaches the30s Icarus runtime cap.003 uses faster Verilator
+without changing HLS RTL or the30s cap. Failed reports, frozen binaries,
+fixtures and exact source preimages remain preserved; no result is relabeled.
+
+New `derive_atomic128_response.py` extends the ACTUAL native response guard:
+full748-bit immutable owner, real whole-packet integrity, trusted peer/QPN/
+issued PSN, ACK syndrome TYPE and exact56-byte AtomicACK/no-pad shape. A real
+result-placement token must be accepted under a held downstream queue guard
+BEFORE ANY HLS beat. Both operands/keys/PD/ranges stay bound to that owner;
+ordinary READ/WRITE/SEND/Immediate policies remain. Control NAK can retain
+the same owner without inventing result/positive completion authority.
+[Response002](../results/2026-10-18/rocev2-rnic-atomic-request-response-002.json)
+PASSES8 methods/32 four-state cases, each<10s.001's test incorrectly awaited
+a later parser rejection for a bad UDP port already dropped by the real
+earlier integrity checker.002 verifies that actual earlier drop separately;
+guard RTL is unchanged and all eight methods are freshly rerun.
+
+`derive_atomic128_executor.py` extends the SAME protected memory executor:
+CAS/FADD are8-byte local RESULT writes, never operand-source reads. Both the
+full748-bit placement token and exact96 post-origin-router command must match
+before issuing saved full MR key/offset/length/tag authority. Actual data EOF,
+tagged backend status and guarded downstream handoff remain necessary; DMA
+errors quarantine ownership. [Executor002](../results/2026-10-18/rocev2-rnic-atomic-request-executor-002.json)
+PASSES7 methods/53 four-state cases, including prior normal/Immediate paths.
+
+`derive_atomic128_lifetime.py` extends native lifetime/MAC/replay/result-pad
+leaves. The TX observer captures FIVE128-bit header words: Atomic compare's
+wire bytes60..67 do not fit in the previous64-byte window. It checks EVERY
+swap/add and compare bit, the actual issued PSN/peer and exact72-byte frame.
+Atomic ACK-kind bookkeeping is READ-like; the816-bit HLS receipt must match
+the entire748-bit owner, PSN/next/opcode/error. Actual Ethernet framer/tag/
+accepted EOF/tail proofs still join independent memory/RX/ACK/core/CQ proofs,
+never a constant global drain. [Lifetime001](../results/2026-10-18/rocev2-rnic-atomic-request-lifetime-001.json)
+PASSES3 methods/16 four-state cases; actual MAC output bytes/tags/tail are
+checked. Physical completion pins and memory/RX/ACK/core/CQ endpoints remain
+models. The retained replay-enabled family is elaborated, NOT runtime-tested.
+[Result-pad001](../results/2026-10-18/rocev2-rnic-atomic-request-result-pad-001.json)
+PASSES3 methods/9 cases: CAS/FADD8-byte result and ordinary READ65-byte padding,
+canonical extended ownership and held offers after late guard loss.
+
+These are necessary native LEAVES, not a completed matched native requester
+graph. Actual128-byte SQC/driver/provider negotiation, complete parent routing
+and owner widths, SAME MR/PTE/sealed-page result DMA, actual CQ/MAC retirement
+and short whole-native runtime remain. The earlier128-byte PCIe/MR/staging and
+new generated HLS execution are still separate graphs. No hardware/driver/
+BIOS/network/reboot or automatic publication occurs. Original13.568ns HLS
+estimate still misses4ns/1.08ns; full-board/CDC gates and `IB_ATOMIC_NONE` stay.
+
+## Same-core Atomic requester transport (094)
+
+`hls/atomic_request_transport.py` adds opt-in CAS/FADD requester execution to
+the SAME complete owned Atomic/Immediate transport. It preserves the existing
+PSN/MSN tables, real retransmission entries/pointer pool, timers and retirement
+join. Both64-bit operands survive actual stored-entry replay and its readback
+receipt. SQ408 explicitly retains the original seven zero padding bits BEFORE
+the appended operands; receive owners remain620, independent of requester748.
+The requester completion is816 bits, retaining the complete immutable owner.
+
+[Requester C++001](../results/2026-10-18/rocev2-rnic-atomic-request-HLS-001.json)
+PASSES0.47s after a22.78s complete-top compile. Nine fresh CAS/FADD/WRITE/READ/
+SEND/Immediate operations and four genuine stored-record replays check exact
+wire bytes and common PSN wrap. Atomic emits28-byte AtomicETH with no source
+memory read. Actual BTH/EXH parsing consumes AtomicACK's AETH4+oldvalue8;
+the existing memory-data consumer emits an8-byte LE result and only THEN its
+real result-consumed receipt. Pausing that consumer, timer bookkeeping and
+the same common-state readback independently prevents successful completion.
+Mismatched operands/padding, response class, framing, syndrome and UDP length
+cannot fabricate a result or successful completion. Peer/connection/physical
+memory endpoints remain MODELS; the raw command's legacy48-bit address still
+requires native binding to the full64-bit authorized MR owner/sealed pages.
+
+[Same-core compatibility003](../results/2026-10-18/rocev2-rnic-atomic-request-compat-003.json)
+PASSES0.88s after21.49s compilation: prior Immediate TX8/receive8 operations,
+normal SEND/WRITE, and nine owned Atomic responder jobs using the ACTUAL
+protected Atomic/MR/paged-memory RTL service. It retains withheld-service,
+MSN/PSN-readback, replay/drop and two-QP assertions. Diagnostic001/002 retain
+a launcher formatting failure: C++'s `0x` prefix was sent verbatim to Verilog
+`%h`. Canonical128-hex-digit input fixes the launcher; service RTL, deadlines
+and all actual assertions are unchanged. Both failed launchers/logs/binaries
+and exact preimages remain locally preserved;003 is a fresh complete run.
+
+Atomic ACK accepts only the ACK syndrome TYPE, not RNR/NAK/reserved types;
+its low credit bits need not equal0x1f. BE wire old-value decoding and local
+result-write semantics follow the primary Linux RXE
+[header definitions](https://github.com/torvalds/linux/blob/master/drivers/infiniband/sw/rxe/rxe_hdr.h)
+and [Atomic completion consumer](https://github.com/torvalds/linux/blob/master/drivers/infiniband/sw/rxe/rxe_comp.c).
+
+`build_native_atomic_request.py` freezes the exact tested complete source and
+requires both requester and compatibility evidence before HLS synthesis.
+Original4ns/default1.08ns uncertainty,8QP/2000entries and1500MiB guard remain.
+[Fresh synthesis001](../results/2026-10-18/rocev2-rnic-atomic-request-synth-001.json)
+completes in318.01s with61,986LUT/85,982FF/189BRAM18/0DSP. Actual generated
+ports are SQ408, requester owner752 (748+4zero AXIS padding), done816;
+receive680/done752 and Atomic service512/reply392/owner144/done224 stay exact.
+Estimated13.568ns STILL FAILS the original4ns/1.08ns requirement: generation
+success is not timing closure or a deployable board image. Capacities are
+not reduced and no physical timing/CDC gate is waived.
+
+`derive_atomic_request_bridge.py` only
+matches the new SQ/requester geometry while preserving actual integrity and
+the existing receive/owned-service ABIs.
+[Actual HLS+bridge elaboration002](../results/2026-10-18/rocev2-rnic-atomic-request-elaboration-002.json)
+PASSES1.12s with ONE actual HLS/state-table/MSN/RX/Atomic-commit domain, not
+an unreachable default-disabled generate branch. Diagnostic001 omitted the
+existing `axis_register.v` compilation dependency; adding that real dependency
+requires no RTL edits. This is compile-only, not packet execution or a native
+profile. Protected result DMA, actual executor/MAC/CQ lifetimes,
+128-byte SQC/kernel/provider and physical/timing qualification remain open.
+Default hardware, `IB_ATOMIC_NONE` and both original zero drains are unchanged.
+
 ## Atomic requester MR admission and guarded SQ pipeline (093)
 
 `derive_atomic128_admission.py` adds checked replacements for actual WQE

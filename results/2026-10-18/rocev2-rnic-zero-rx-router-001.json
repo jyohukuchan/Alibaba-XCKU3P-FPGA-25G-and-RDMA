@@ -1,0 +1,51 @@
+{
+  "scope": "Actual private Ethernet routing: only exact SEND44 admits60-byte frames.\n\nResponse-mode minimum, ordinary host sidebands, dense keeps and errors stay\nchecked. No CRC/HLS/MR/native runtime proof follows this routing test alone.\n",
+  "pass_test": true,
+  "methods": 2,
+  "seconds": 0.1987147550098598,
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4",
+    "rdma/rnic/fpga/derive_zero_rq_native.py": "e5f7d789868c8c05c422c78fb9fb7c7a58b318f6b70887f95be215d390a986be",
+    "rdma/rnic/tests/test_zero_rx_router_rtl.py": "a6d94b260df642ffd3aee34f73684322b0cb91d9f7c9f1098dbb1aacedc93409",
+    "rdma/rnic/tests/zero_rq_native_fixture.py": "d90b036819890ff4dbade9161c6e189b96688c98323835ca6a3d46991786bf14",
+    "rdma/rnic/tests/test_zero_integrity_rtl.py": "bf57573a43b62ec0da5e3fc3a7609cf3269df79a3f233ce9d882711e36d81904"
+  },
+  "tests": {
+    "test_request_mode_exact_short_SEND_only_and_unchanged_host_errors": {
+      "seconds": 0.014990174968261272,
+      "counts": {
+        "HOST": 2,
+        "ROCE": 2,
+        "DROP": 5
+      },
+      "directory": "rdma/rnic/build/zero-rx-router-t0lsfh9r",
+      "artifact_sha256": {
+        "rdma/rnic/build/zero-rx-router-t0lsfh9r/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/zero-rx-router-t0lsfh9r/tb.v": "0871277f6484dfd56e6f69f7a61362f2584b3e395aaffbf006746d17af486893",
+        "rdma/rnic/build/zero-rx-router-t0lsfh9r/simulation.log": "5f9420b2c6743fab33da6082e40e4646602dfc85bc9022520be4bc5214109a2d",
+        "rdma/rnic/build/zero-rx-router-t0lsfh9r/input.hex": "811f59c6d6fecac713f1e328038e66eb0a8f738290cc5fa0ac328d78ab8e1b78",
+        "rdma/rnic/build/zero-rx-router-t0lsfh9r/test": "5a514e6c03e4a811a6c137df89f60bbc66deb4af7c14fef82780aa80d5082578",
+        "rdma/rnic/build/zero-rx-router-t0lsfh9r/router.v": "0ee7151467528a08705af8ba304f84a39b9008fdf27f9a7fcb8429b66459d18b"
+      }
+    },
+    "test_response_mode_never_inherits_short_request_minimum": {
+      "seconds": 0.011709681013599038,
+      "counts": {
+        "HOST": 1,
+        "ROCE": 1,
+        "DROP": 1
+      },
+      "directory": "rdma/rnic/build/zero-rx-router-3r_f3rit",
+      "artifact_sha256": {
+        "rdma/rnic/build/zero-rx-router-3r_f3rit/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/zero-rx-router-3r_f3rit/tb.v": "06f03a8bfc234f92230a0af4cfc72fee0817ce39d7866e4312cbe9aaeeddb7a6",
+        "rdma/rnic/build/zero-rx-router-3r_f3rit/simulation.log": "916506f55fb9282c18b734e60a46e4ef87ec7d5cd3e98d40043f8645df405a1e",
+        "rdma/rnic/build/zero-rx-router-3r_f3rit/input.hex": "62bce7722d623af618e8ec30ef83a7b325d90f643fca34f468a50c9d3da60862",
+        "rdma/rnic/build/zero-rx-router-3r_f3rit/test": "7ac95287aa291bf40a009ff13b14c7f8d5ee80f14765c10632efe2e8a682ca05",
+        "rdma/rnic/build/zero-rx-router-3r_f3rit/router.v": "0ee7151467528a08705af8ba304f84a39b9008fdf27f9a7fcb8429b66459d18b"
+      }
+    }
+  },
+  "four_state": true,
+  "native_or_hardware_runtime": false
+}

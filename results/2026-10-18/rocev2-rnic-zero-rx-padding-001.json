@@ -1,0 +1,68 @@
+{
+  "scope": "Actual MAC-padding adapter plus unchanged private IP checksum/ICRC/FIFO.\n\nFull original65536 keep-mask and21-bit RX checksum predicate checks stay.\nNot whole native/HLS/Linux/physical qualification; <=30s per simulation.\n",
+  "pass_test": true,
+  "methods": 2,
+  "seconds": 30.189135612978134,
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_zero_rx_padding.v": "d292473098725df210bfa51eb9d8ed63f81e454aced2467e8fd6b7305c86a5fe",
+    "rdma/rnic/tests/test_zero_rx_padding_rtl.py": "175c58de7a2d5ffba5bb182d8646d5f40488beddfdccef23fcc071b9304c34ad",
+    "rdma/rnic/tests/test_zero_integrity_rtl.py": "bf57573a43b62ec0da5e3fc3a7609cf3269df79a3f233ce9d882711e36d81904",
+    "rdma/tests/test_icrc_rtl.py": "669d93c43d83a9609eeff9ed659f8de1920b41f2a43ea54f73033ca68af83b02",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/fpga/derive_zero_native.py": "d652f5e0a805b96d2a963f33d9112d8121f1170a15b111e3e400c81eface97a7"
+  },
+  "tests": {
+    "test_exact_Ethernet_padding_and_normal_packets_keep_real_ICRC_backpressure": {
+      "summary": {
+        "cycles": 124,
+        "input_beats": 47,
+        "output_beats": 47,
+        "good_frames": 11,
+        "bad_frames": 0,
+        "input_stall_cycles": 0,
+        "output_stall_cycles": 18,
+        "first_output": 11,
+        "last_output": 75
+      },
+      "seconds": 15.18809750804212,
+      "directory": "rdma/rnic/build/zero-rx-padding-wpof_89w",
+      "artifact_sha256": {
+        "rdma/rnic/build/zero-rx-padding-wpof_89w/expected.hex": "70a06fa492d188f1aeb4b0f56ea33459062019a2f37d4ee4f7af51eb37b6f65a",
+        "rdma/rnic/build/zero-rx-padding-wpof_89w/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/zero-rx-padding-wpof_89w/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+        "rdma/rnic/build/zero-rx-padding-wpof_89w/tb.v": "3543f53c8b5d650e26283271e9c0de289ae845c96529f314b0e7a417f70f67c9",
+        "rdma/rnic/build/zero-rx-padding-wpof_89w/simulation.log": "50605eac74bb2451546851a132359bd0f7846395fdbaa1632501de2c796af8be",
+        "rdma/rnic/build/zero-rx-padding-wpof_89w/input.hex": "dd95874a1fd1e4d37e4ff692f1e2da76b6da6b3cd7055b92f93b650988821939",
+        "rdma/rnic/build/zero-rx-padding-wpof_89w/test": "fd108793882abcce7f83d05f9c13960dd253036fa2f865bb5a5ccc01bbcaa9c0"
+      }
+    },
+    "test_padding_never_waives_crc_checksum_packet_class_dense_keep_or_length": {
+      "summary": {
+        "cycles": 121,
+        "input_beats": 60,
+        "output_beats": 30,
+        "good_frames": 10,
+        "bad_frames": 10,
+        "input_stall_cycles": 0,
+        "output_stall_cycles": 12,
+        "first_output": 15,
+        "last_output": 72
+      },
+      "seconds": 14.87474357301835,
+      "directory": "rdma/rnic/build/zero-rx-padding-f7nu3wq8",
+      "artifact_sha256": {
+        "rdma/rnic/build/zero-rx-padding-f7nu3wq8/expected.hex": "9df1a306c996bfa0d4e2d89ebace3baa6f97c9d1d2f626e4b4a83ebdd74953e9",
+        "rdma/rnic/build/zero-rx-padding-f7nu3wq8/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/zero-rx-padding-f7nu3wq8/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+        "rdma/rnic/build/zero-rx-padding-f7nu3wq8/tb.v": "7a7257fe54260ae00861deebb964d2eba178ca63c5776bc2ee4587fa1d3e7ae6",
+        "rdma/rnic/build/zero-rx-padding-f7nu3wq8/simulation.log": "d5e6b917998fda987ee234b70b57180007d82cb89b431dd43610367e6822f0d3",
+        "rdma/rnic/build/zero-rx-padding-f7nu3wq8/input.hex": "5d8d0a3a0776cd07cd2d5c15a8b365008a9d7cbe345162ca25f1a2576f09e9b7",
+        "rdma/rnic/build/zero-rx-padding-f7nu3wq8/test": "1232691c269173c449399d15ba1fefb4b778c25e1407ba18ab2e90a73b6b6378"
+      }
+    }
+  },
+  "four_state": true,
+  "simulation_limit_seconds": 30,
+  "original_integrity_oracles_unchanged": true,
+  "native_or_hardware_runtime": false
+}

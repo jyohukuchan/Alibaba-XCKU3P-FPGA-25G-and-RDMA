@@ -1,0 +1,99 @@
+{
+  "scope": "105 actual first zero-RQ native runtime failure and two distinct minimum-Ethernet-frame integration fixes. Debugger stop is not a DUT pass.",
+  "failed_report": "results/2026-10-18/rocev2-rnic-zero-rq-native-full-001.json",
+  "failed_report_sha256": "2d65929fc1f8a5b289b8d67575b0d69d9a64d31bcb31a9f5b63b977b5907e1da",
+  "whole_batch_pass": false,
+  "actual_compile_seconds": 406.98068301804597,
+  "failed_case": {
+    "seconds": 22.708296166034415,
+    "exit": -6,
+    "runtime_input_sha256": {
+      "input.hex": "5261b184336d034f13fc1f07e63a2e40080d305d6d4d2a4a0c65c2c15072976b",
+      "records.hex": "38bd14a1ffd0bf2fc3851788a0774d9e992baafd0047b3189e54195adacaf35f",
+      "receive-input.hex": "9a25349ccec9518781591763b721149211c50c0481eba08486f9eb07a32c273f",
+      "receive-records.hex": "fbdc435d11e27ee2605a1f229a422e0f84df1a7bbaab3bb623f56f68a6102f85"
+    }
+  },
+  "remaining20_cases": "Not executed after first RX case failed; do not infer passes.",
+  "verified_failed_source_artifact_records_before_correction": 1076,
+  "binary": {
+    "path": "/dev/shm/as02-zero-native-artifacts-cx679s9o/Vtb",
+    "sha256": "043521ed53b5579a5be8872e6dea30246bf2ae45c27038b17cc56de7ed76cd68"
+  },
+  "preimages": {
+    "rdma/rnic/fpga/derive_zero_rq_native.py": {
+      "path": "rdma/rnic/build/zero-rq-native-full-ashc1p57/native-before-MAC-padding.py",
+      "sha256": "30294d972815f304b8e34a4b17198cf626ce437147105ad0769a9350375998ad"
+    },
+    "rdma/rnic/tests/zero_rq_native_sources.py": {
+      "path": "rdma/rnic/build/zero-rq-native-full-ashc1p57/sources-before-MAC-padding.py",
+      "sha256": "04c8bcd55c963cc6ef1275089f55d7a62230b52c19b7304657cb656611810251"
+    },
+    "rdma/rnic/tests/check_zero_rq_native_elaboration.py": {
+      "path": "rdma/rnic/build/zero-rq-native-full-ashc1p57/checker-before-MAC-padding.py",
+      "sha256": "be4283d698603d1882bc5c9a684793cea7b449ca4c20d1d5626c4cf209e2ce12"
+    }
+  },
+  "checker_preimage_note": "Exact old checker bytes recovered from the one-line module-count delta AFTER editing, and SHA256 matched authoritative104 checkpoint before saving; not described as a pre-edit file copy.",
+  "additional_preimage": {
+    "path": "rdma/rnic/build/zero-rq-native-full-ashc1p57/native-before-router-short-SEND.py",
+    "sha256": "2044724225b508c184bb763882735c2b305aa767e02025c4f4eaee66bd1885f4"
+  },
+  "actual_fatal_observations": {
+    "rxgood": 0,
+    "rxbad": 0,
+    "request_drop_count": 1,
+    "RQ_posted": 1,
+    "RQ_taken": 0,
+    "RQ_core_receipts": 0
+  },
+  "actual_fatal_evidence": {
+    "excerpt": "rdma/rnic/build/zero-rq-native-full-ashc1p57/gdb-actual-fatal-excerpt.log",
+    "excerpt_sha256": "f06bcd8fafcfec9029dff5857dde50c0147e43a46a9b8a47130141d82f47af77",
+    "note": "Verbatim counter excerpt of the observed GDB tool output, not a complete debugger log. Unchanged failed model archive/runtime linked with debug-types main; stopped at genuine vl_fatal, no mutation or suppressed assertion.",
+    "script": "rdma/rnic/tests/zero_rq_native_debug.gdb",
+    "script_sha256": "28684b2d77c8310892d96ca3a099a4bbee95826e255867d040bf8c53bd501d36",
+    "debug_model": "/dev/shm/as02-zero-rq-debug-ZkQjSc/debug-model",
+    "debug_model_sha256": "0fcb83d3f0f5a2891ce416e678cbc99d8739406e4be86c13bf10186b18bfb3e7",
+    "model_inputs_sha256": {
+      "/dev/shm/as02-zero-native-obj-1rtfgmtq/Vtb__ALL.a": "093f341131a084b7280ceae009156627791921ae94fc6623a746eadef122a94e",
+      "/dev/shm/as02-zero-native-obj-1rtfgmtq/Vtb___024root.h": "1a12b78524c685b4c297140eac24f3ff438e10bb9fe6058b4e0db5109b478a9f",
+      "/dev/shm/as02-zero-native-obj-1rtfgmtq/verilated.o": "59665c8006c0474ed74159a3fbacc24c5675d6dc080ff0f1fa48a0d9a35b543a",
+      "/dev/shm/as02-zero-native-obj-1rtfgmtq/verilated_timing.o": "04ef0e2d20c8e295af2d45698ec6ea9a37d9f26ccb852ae57de6a453970d6c12",
+      "/dev/shm/as02-zero-native-obj-1rtfgmtq/verilated_threads.o": "697c708f864cb11754cdc66e226a9f39f43c8a94344b3f71271b3e12c6c11a9a"
+    }
+  },
+  "first_cause": "Actual whole-native ingress drops the60-byte Ethernet minimum SEND frame BEFORE IP integrity because its old minimum assumes62 bytes (14 Ethernet+48 IP). This was not initially an IP-CRC drop: actual rxgood/rxbad remained0.",
+  "second_independent_gap": {
+    "cause": "After stripping14 Ethernet bytes, valid minimum SEND carries44 IP bytes plus2 Ethernet pad bytes. The unchanged IP integrity correctly refuses46-byte untrimmed input.",
+    "diagnostic_feature_pass": false,
+    "actual_integrity_summary": {
+      "cycles": 66,
+      "input_beats": 6,
+      "output_beats": 3,
+      "good_frames": 1,
+      "bad_frames": 1,
+      "input_stall_cycles": 0,
+      "output_stall_cycles": 1,
+      "first_output": 15,
+      "last_output": 17
+    },
+    "artifact_sha256": {
+      "rdma/rnic/build/zero-integrity-ifnruhv5/expected.hex": "0796e8e2a177b45dfc6091e164172ffd9408ad6195efa3efeac64717056e79b8",
+      "rdma/rnic/build/zero-integrity-ifnruhv5/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "rdma/rnic/build/zero-integrity-ifnruhv5/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+      "rdma/rnic/build/zero-integrity-ifnruhv5/test.vvp": "d2f6cd12519475517bdc67b9ccbd952d60b1c3efb61ee977b7b1e7742d120ba1",
+      "rdma/rnic/build/zero-integrity-ifnruhv5/tb.v": "ef5b02e0937f800ac6ebf9a50ffe34f86cc8ab06d6d8e0f15e0c6b46858d084c",
+      "rdma/rnic/build/zero-integrity-ifnruhv5/simulation.log": "c87fd373a64723588f5644e7c78b64e9b9588d3a0b954900af16bb860f2b0cae",
+      "rdma/rnic/build/zero-integrity-ifnruhv5/input.hex": "308571f8b3515bc0b243c193c9a4bf6c5d81f3d122518471fefa096ba8eca5b7"
+    }
+  },
+  "correction": "Checked private ingress derivative admits60 ONLY for request-mode SEND_ONLY, IP44, pad0; response-mode and other minimum/identity/keep/error gates unchanged. New separate adapter removes EXACTLY2 Ethernet pad bytes only from that complete shape, before unchanged private whole-IP checksum/ICRC checks.",
+  "component_reports": [
+    "results/2026-10-18/rocev2-rnic-zero-rx-router-001.json",
+    "results/2026-10-18/rocev2-rnic-zero-rx-padding-001.json"
+  ],
+  "fresh_actual_native_elaboration": "results/2026-10-18/rocev2-rnic-zero-rq-native-elaboration-004.json",
+  "fresh_native_runtime_pending": "results/2026-10-18/rocev2-rnic-zero-rq-native-full-002.json",
+  "hardware_or_original_source_or_timing_or_drain_oracle_changed": false
+}

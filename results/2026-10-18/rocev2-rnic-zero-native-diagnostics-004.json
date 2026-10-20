@@ -1,0 +1,51 @@
+{
+  "scope": "Whole-native003/004 compiler-output scope failures, not executed DUT failures. Preserve exact failed inputs/results before compiler-partition retry.",
+  "hardware_changed": false,
+  "diagnostics": [
+    {
+      "report": "results/2026-10-18/rocev2-rnic-zero-native-full-003.json",
+      "report_sha256": "e3fff7a40c49c45631689531f3d2b657ad61a8ce60027c36240d2c88267d97bc",
+      "pass_test": false,
+      "compile_seconds": 141.35832427704008,
+      "runtime_cases": 0,
+      "output_split_cfuncs": 5000,
+      "launcher_preimage": "rdma/rnic/build/zero-native-debug-M0hO1S/probe-before-larger-function-split.py",
+      "launcher_preimage_sha256": "75e1c040a4ee374a3c5e951015eabda5c1cce0b2227af2bef8c87dfd85f64674",
+      "preserved_generated_error_sources": {
+        "rdma/rnic/build/zero-native-debug-M0hO1S/split5000-coroutine-scope-error.cpp": "6549db832377e57ca5773936803305ec18b9ca52fc3a74f9c0416b21010fa94c"
+      },
+      "common_source_changes_from_full002": [
+        "rdma/rnic/tests/probe_zero_native_full.py"
+      ]
+    },
+    {
+      "report": "results/2026-10-18/rocev2-rnic-zero-native-full-004.json",
+      "report_sha256": "f63c98f49f7006a74c5ab6d33a7cb9683a905069f9bbaca4aaac0ed04b6e6244",
+      "pass_test": false,
+      "compile_seconds": 146.86604242702015,
+      "runtime_cases": 0,
+      "output_split_cfuncs": 50000,
+      "launcher_preimage": "rdma/rnic/build/zero-native-debug-M0hO1S/probe-before-coroutine-preserving-split.py",
+      "launcher_preimage_sha256": "d6478aa8816a2b2eae84833570f309248cd6837c635fbd6cbf0c3b49e28fa502",
+      "preserved_generated_error_sources": {
+        "rdma/rnic/build/zero-native-debug-M0hO1S/split50000-coroutine-scope-error-3.cpp": "049437f9980a2b47fb83983f3354dad4f5a13d56601a5d4df530fcb2864f5d56",
+        "rdma/rnic/build/zero-native-debug-M0hO1S/split50000-coroutine-scope-error-4.cpp": "5e13699f9c2925594a9be69ba1e819aea55979c0ddafca25f2ab14baf9391531"
+      },
+      "common_source_changes_from_full002": [
+        "rdma/rnic/tests/probe_zero_native_full.py"
+      ]
+    }
+  ],
+  "selected_bench_RTL_data_files_identical_to_full002": 45,
+  "actual_error": "Generated C++ coroutine helpers reference undeclared __Vfork_*__sync locals after function splitting.",
+  "local_compiler_source_reason": "V3Sched.cpp splits by AST node count; V3CCtors.cpp separately splits constructor statements. Full004 divided the main timed coroutine into five pieces at50000;500000 is chosen to retain that coroutine while still partitioning the large reset constructor.",
+  "local_compiler_source_sha256": {
+    "/home/user/fpga-rocev2-research/verilator-v5.036/src/V3Sched.cpp": "c2767d29e6829ae81abf2b4a2c9e02ecdbdde239a101fb8eb0a605fa3325ee57",
+    "/home/user/fpga-rocev2-research/verilator-v5.036/src/V3CCtors.cpp": "79aca3969b8a24d7fa0241563168302d13adb120755efdcac670b5c24220e961"
+  },
+  "fresh_retry_report": "results/2026-10-18/rocev2-rnic-zero-native-full-005.json",
+  "fresh_retry_success_not_inferred": true,
+  "original_1200s_compile_30s_runtime_timing_CRC_owner_drain_oracles_unchanged": true,
+  "compile_timeout_ownership_unit_report": "results/2026-10-18/rocev2-rnic-zero-native-compiler-001.json",
+  "compile_timeout_ownership_scope": "Four mocked process/signal cases only, not an actual1200s timeout or RTL qualification."
+}

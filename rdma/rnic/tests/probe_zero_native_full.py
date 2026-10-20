@@ -12,6 +12,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import signal
 import subprocess
 import sys
 import tempfile
@@ -25,6 +26,26 @@ import native_request_cq_fixture as wire
 import probe_immediate_native_request as tool
 
 ROOT=source.ROOT;digest=source.digest
+
+
+def compile_owned(command,run,log,env):
+    # Own a new session so the unchanged execution deadline also stops the
+    # compiler's actual descendants, not only its perl/Python launcher.
+    with subprocess.Popen(command,cwd=run,stdout=log,stderr=subprocess.STDOUT,
+            env=env,start_new_session=True) as process:
+        try:
+            process.wait(timeout=1200)
+        except subprocess.TimeoutExpired:
+            try:os.killpg(process.pid,signal.SIGTERM)
+            except ProcessLookupError:pass
+            try:process.wait(timeout=5)
+            except subprocess.TimeoutExpired:pass
+            finally:
+                try:os.killpg(process.pid,signal.SIGKILL)
+                except ProcessLookupError:pass
+                process.wait()
+            raise
+        return process.returncode
 
 
 def verify_zero(output,records,request,opcode,immediate,run):
@@ -81,6 +102,7 @@ def main():
         two_state_simulation=True,hardware_verified=False,standard_API_runtime=False,full_board_timing=False,
         physical_host_root_peer_PHY_PTP_inputs_modeled=True,simulation_limit_seconds=30,compile_limit_seconds=1200,
         both_global_drains_zero=True,default_hardware_changed=False,RNC_features=4095,
+        compiler_output_split_cfuncs=500000,compile_owns_process_group=True,
         incoming_zero_RQ_implemented=False,provider4095_implemented=False,tests={})
     try:
         src,data,before=source.sources(a.hls_build.resolve(),a.native_hls_report.resolve(),
@@ -101,16 +123,16 @@ def main():
         if c.returncode or any('expects'in l and 'bits'in l for l in c.stderr.splitlines()):
             raise ValueError('complete zero bench elaboration/width mismatch: '+str(run/'elaborate.log'))
         command=[str(tool.TOOL),'--binary','--timing','--top-module','tb','-Wno-fatal','-j','4',
-            '--output-split','20000','--output-split-cfuncs','0','--output-groups','0','-CFLAGS','-O0',
+            '--output-split','20000','--output-split-cfuncs','500000','--output-groups','0','-CFLAGS','-O0',
             '--Mdir',str(obj),str(run/'tb.v'),*map(str,src)]
         report['compile_command']=command;env=os.environ.copy()
         env['TMPDIR']='/dev/shm/as02-native-compiler-tmp-QYQsVyT5'
         print(json.dumps(dict(directory=str(run),compile_directory=str(obj),compile_limit_seconds=1200)),flush=True)
         start=time.monotonic()
         with(run/'compile.log').open('x')as log:
-            c=subprocess.run(command,cwd=run,stdout=log,stderr=subprocess.STDOUT,env=env,timeout=1200)
-        report.update(compilation_seconds=time.monotonic()-start,compile_exit=c.returncode)
-        if c.returncode:raise ValueError('actual zero native compilation failed: '+str(run/'compile.log'))
+            compile_exit=compile_owned(command,run,log,env)
+        report.update(compilation_seconds=time.monotonic()-start,compile_exit=compile_exit)
+        if compile_exit:raise ValueError('actual zero native compilation failed: '+str(run/'compile.log'))
         shutil.copy2(obj/'Vtb',ram/'Vtb');report.update(frozen_binary_path=str(ram/'Vtb'),binary_sha256=digest(ram/'Vtb'))
         cases=[('CAS',7,0,['+CAS'],False),('FADD',8,0,['+FADD'],False),('READ',2,0,[],False),
             ('SEND_IMM',5,0x89abcdef,['+SEND_IMM','+IMM=89abcdef'],False),('ATOMIC_MIXED',2,0,['+ATOMIC_ONLY'],False),

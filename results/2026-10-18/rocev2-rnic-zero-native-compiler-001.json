@@ -1,0 +1,13 @@
+{
+  "scope": "Compiler process ownership only; no RTL/runtime qualification.",
+  "pass_test": true,
+  "methods": 4,
+  "seconds": 0.006932973978109658,
+  "source_sha256": {
+    "rdma/rnic/tests/test_zero_native_compile.py": "6f1a63021825054530c66ba87524e468f84f207fc60a27659b48dfce4b7dc646",
+    "rdma/rnic/tests/probe_zero_native_full.py": "863c9b3630d70d2a35ff332b86cf110d59fa22d41c77997e47c6aa33f35e2408"
+  },
+  "process_and_signals_mocked": true,
+  "actual_timeout_or_RTL_runtime": false,
+  "hardware_changed": false
+}

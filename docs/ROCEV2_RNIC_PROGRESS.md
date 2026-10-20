@@ -32,6 +32,51 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+Publication106: fullRX003 compiled402.94s and PASSES three actual zero-buffer
+receive scenarios (SEND/SEND_IMM/WRITE_IMM), two receives each with independent
+wire/CQ checks, actual generated HLS/RQ fetch/MAC/CQ and no data MR/DMA. The
+whole batch FAILS its fourth case: two128-byte-buffer receipts complete,
+but the fixture counts shared local MR-table traffic as remote queries.
+The fixture observer is corrected with exact independent RX/local/RQ/table
+checks; all1102 failed inputs/artifacts are reverified with source preimages.
+Fresh21-case fullRX004 is RUNNING at publication, NOT a pass; all47 derived
+RTL/HLS-data files are unchanged. Linux/physical, remaining native cases,
+ordinary zeroWRITE/READ, large/multi-SGE, original timing and all11 goal
+requirements remain. This push is explicitly requested, not a release or
+hardware qualification. [Details and evidence](ROCEV2_ATOMIC.md).
+
+Progress105 (historical) adds actual coherent RQ128/zero RX/MAC/CQ full-native scenarios
+alongside all13 old cases. First RX001 compiled406.98s then FAILED the first
+case: actual debugger confirmed Ethernet ingress dropped a legitimate60-byte
+empty SEND before IP integrity, not an observed CRC failure. Private exact
+SEND44/60 steering and separate two-Ethernet-pad-byte normalization now pass
+four component methods (12 routed frames plus21 good/10 bad strict-IP frames)
+and actual whole-native elaboration0042.78s, no width/drain bypass. FullRX002
+then passed actual IP integrity but FAILED the first case at the inherited
+parser minimum requiring four payload bytes. Exact failed-model counters
+and source preimages are preserved. That private minimum is corrected,
+retaining full final length/pad/owner/PSN/profile checks; actual elaboration005
+PASSES2.87s. FullRX003 subsequently has partial passes but FAILS the batch
+(see106 above). All original checksum/ICRC/predicate/timing gates stay.
+Remaining zero RX/Linux/physical/normal zeroWRITE/READ/
+large/multi-SGE/timing and all11 requirements remain. [Details](ROCEV2_ATOMIC.md).
+
+Progress104 integrates a private zero RQ admission/placement/ACK/CQ candidate
+with no fake MR/DMA status.25 four-state methods PASS3.78s, including old
+Atomic/Immediate cases and real ACK-owner tag/receipt/tail/CQ checks. Fresh
+complete zero-RQ HLS generation PASSES321.30s; real whole-native elaboration
+PASSES2.88s with one HLS/MR/PTE/PSN/MSN/fetch/RQ/ACK/CQ domain and no width
+warnings. Original timing STILL FAILS (estimated13.568ns vs4ns/default1.08ns).
+Native RX runtime/Linux/physical/normal zeroWRITE/READ/large/multi-SGE and
+all11 original requirements remain. Independent requester full003/004
+failed generated-C++ scope compilation; exact inputs/results preserved.
+Fresh005 PASSES422.29s compilation and all13 whole-native REQUESTER cases,
+including five zero operations with real replay/XGMII/MAC/CQ and no data
+MR/DMA. Compiler partitioning only changed, deadlines/oracles unchanged.
+It does NOT test the newer zero-RQ graph or Linux/physical operation.
+No hardware/default/install/network/BIOS/reboot/push.
+See [current boundaries](ROCEV2_ATOMIC.md).
+
 Progress103 adds SOURCE zero RQ receive semantics in the SAME complete HLS:
 real SEND/SEND_IMM/WRITE_IMM headers/empty EOF/ACK/MSN/common PSN, six posted
 zero/nonzero buffer cases and six owner/EOF negatives. No zero memory

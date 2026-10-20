@@ -15,6 +15,38 @@ remaining run was interrupted). No all-suite or release-pass claim is made.
 
 ## Latest functional milestone (2026-10-20)
 
+Publication106: actual fullRX003 PASSES zero-buffer SEND/SEND_IMM/WRITE_IMM
+reception, two receives each with generated HLS/RQ fetch/MAC/CQ and independent
+wire/CQ checks. The entire batch FAILS a later fixture counter check: local
+posted-buffer MR authorization was mislabeled as wire traffic. Only the
+observer is corrected, with stronger independent exact counts/owner fields.
+Fresh21-case fullRX004 is RUNNING at publication, not a pass. No DUT/HLS or
+deadline/oracle/drain/timing relaxation. Linux/physical, remaining native
+cases, ordinary incoming zeroWRITE/READ and large/multi-SGE remain open.
+This commit/push is user-requested. [Evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Progress105 (historical) adds actual coherent zero-RQ receive/MAC/CQ runtime fixtures.
+The first whole-native RX run FAILED at an old62-byte Ethernet minimum;
+actual debugger confirmed the drop occurred before IP integrity. Exact
+private SEND44/60 routing and separate two-byte Ethernet-padding handling
+now pass targeted real RTL and whole-graph elaboration. FullRX002 passed
+actual IP integrity, then found the old parser minimum requiring four data
+bytes; its private zero-RQ derivative is corrected and elaboration005 passes.
+Strict CRC/final length/predicate/owner/drain/timing gates stay. Subsequent
+RX003 has partial passes but FAILS the batch (see106 above). No hardware/default changes.
+See [scope and preserved evidence](../../docs/ROCEV2_ATOMIC.md).
+
+Progress104 connects a private zero RQ/ACK/CQ source candidate and freshly
+generates the actual matching complete HLS.25 four-state methods and real
+whole-graph elaboration pass; native RX runtime is NOT yet proved. One
+HLS/MR/PTE/PSN/MSN domain, no fabricated data-memory completion, original
+drains/clocks retained. Estimated13.568ns still fails timing. Independent
+requester full003/004 hit generated-C++ scope errors before runtime; fresh
+005 now PASSES all13 requester cases (five zero operations), real replay/
+XGMII/MAC/CQ and no data MR/DMA, each<=19.21s. This tests the older zero
+requester graph, NOT native zero-RQ runtime. Linux/physical/large/multi-SGE and
+normal incoming zeroWRITE/READ remain. [Details](../../docs/ROCEV2_ATOMIC.md).
+
 Progress103 adds real RQ-owned empty SEND/Immediate SOURCE behavior with
 actual header/EOF/ACK/MSN/PSN consumers and no memory transaction. Fresh
 full-top C++ and actual owned-RTL-service/Immediate compatibility pass; all

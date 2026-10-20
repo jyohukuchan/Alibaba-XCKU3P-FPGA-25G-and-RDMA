@@ -1,0 +1,31 @@
+{
+  "scope": "Zero RQ native integration diagnostics; historical component passes do not imply complete native runtime.",
+  "hardware_changed": false,
+  "failed_elaboration": {
+    "report": "results/2026-10-18/rocev2-rnic-zero-rq-native-elaboration-001.json",
+    "sha256": "847bb949fc7f6d5aa0dd02a20d0f983ffe5ea4435795f6eb28bb51201fd554ac",
+    "error": "AttributeError: derive_zero_rq_native.ICRC absent from the new selector interface; selection stopped before compile.",
+    "correction": "Export the exact inherited ICRC key and use the explicit immutable PROTECTED key instead of assuming the old wrapper nesting.",
+    "selector_preimage": "rdma/rnic/build/zero-native-debug-M0hO1S/RQ-sources-before-exact-protected-key.py",
+    "selector_preimage_sha256": "d36467964c89c214a13132e5d3c478aff367a4a53eb3cc099558228e1209b3ae",
+    "fresh_success": "results/2026-10-18/rocev2-rnic-zero-rq-native-elaboration-002.json"
+  },
+  "native_ACK_integration": {
+    "reason": "Inspection of the actual ACK-owner RTL found its independent posted/core nonzero-length gates. New checked zero cohort extends those exact gates while retaining full ACK frame/PSN/MSN/notification/fresh tag/MAC receipt/tail/CQ retirement checks.",
+    "prior_native_generator": "rdma/rnic/build/zero-native-debug-M0hO1S/RQ-native-before-ACK-owner-integration.py",
+    "prior_native_generator_sha256": "8369aa9e7567ecaa8e2393c6d7a2de86ae7792d412b4ed9734c671a9f25393a3",
+    "prior_component_reports": [
+      "results/2026-10-18/rocev2-rnic-zero-rq-native-units-001.json",
+      "results/2026-10-18/rocev2-rnic-zero-rq-native-units-002.json"
+    ],
+    "prior_scope": "23 admission/RQ-store/CQ component methods on the earlier31-module source, NOT actual zero ACK runtime. Exact source snapshots remain in those reports input directories.",
+    "new_source_scope": "32 checked native replacements;25 four-state methods/63 simulations include actual ACK-owner six profiles and canonical-owner negatives, adjacent proof producers remain models.",
+    "fresh_success": "results/2026-10-18/rocev2-rnic-zero-rq-native-units-003.json"
+  },
+  "no_data_lease": "No MR query/response/DMA command/data/backend status invented; actual RQ owner and header/EOF/HLS PSN/MAC/CQ owners are mandatory. Incoming normal zero WRITE/READ still refused. Zero admission requires the complete receive-retirement/CQ profile.",
+  "current_HLS": "results/2026-10-18/rocev2-rnic-zero-rq-synth-001.json",
+  "timing": "Estimated13.568ns FAILS original4ns/default1.08ns; not board qualification.",
+  "native_zero_RQ_runtime_proved": false,
+  "original_protected_sha256": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+  "original_integrity_sha256": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3"
+}

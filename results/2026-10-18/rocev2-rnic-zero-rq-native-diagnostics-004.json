@@ -1,0 +1,107 @@
+{
+  "scope": "106 publication: three actual zero-RQ receive scenarios pass; whole RX003 batch fails a fixture MR-client observation. Not full Linux/physical/timing qualification.",
+  "publication_snapshot_UTC": "2026-10-20T19:22:37.071260+00:00",
+  "failed_report": {
+    "path": "results/2026-10-18/rocev2-rnic-zero-rq-native-full-003.json",
+    "sha256": "7fc83ebef430b24d4dfee28a4ef74dd1a427138a81c18e2dc96dbb4e42e25e8f"
+  },
+  "whole_batch_pass": false,
+  "compilation_seconds": 402.93874863901874,
+  "passed_cases": {
+    "RX_3_CAP0": {
+      "seconds": 20.703443643986247,
+      "receives": 2,
+      "actual_HLS_MAC_CQ": true,
+      "independent_wire_CQ_checks": true
+    },
+    "RX_5_CAP0": {
+      "seconds": 20.603260964970104,
+      "receives": 2,
+      "actual_HLS_MAC_CQ": true,
+      "independent_wire_CQ_checks": true
+    },
+    "RX_6_CAP0": {
+      "seconds": 20.50262342800852,
+      "receives": 2,
+      "actual_HLS_MAC_CQ": true,
+      "independent_wire_CQ_checks": true
+    }
+  },
+  "failed_case": "RX_3_CAP128",
+  "failed_case_seconds": 21.755687955010217,
+  "failed_case_two_actual_receipts_not_full_case_pass": true,
+  "remaining_cases_not_executed": 17,
+  "failed_binary": {
+    "path": "/dev/shm/as02-zero-native-artifacts-gne7bv08/Vtb",
+    "sha256": "70cd5949a79f941c5be721076346566915806cbf2195b16a578f03b49c96aa00"
+  },
+  "verified_failed_source_artifact_hash_records": 1102,
+  "verification_note": "All source/artifact/RAM records reverified at publication; the two corrected source files are checked against preserved exact preimages. Original failed reports are not rewritten.",
+  "source_preimages": {
+    "fixture-before-RQ-query-observer.py": {
+      "path": "rdma/rnic/build/zero-rq-native-full-1o9smrho/fixture-before-RQ-query-observer.py",
+      "sha256": "d90b036819890ff4dbade9161c6e189b96688c98323835ca6a3d46991786bf14"
+    },
+    "probe-before-RQ-query-observer.py": {
+      "path": "rdma/rnic/build/zero-rq-native-full-1o9smrho/probe-before-RQ-query-observer.py",
+      "sha256": "28d2a7740bf3ac18881fca6d3dabf1b6f9e8689b39a130129c66ca7bce754f30"
+    },
+    "counts-gdb-before-field-lookup.gdb": {
+      "path": "rdma/rnic/build/zero-rq-native-full-1o9smrho/counts-gdb-before-field-lookup.gdb",
+      "sha256": "5006c90c95a9e9b31b6e51521170b7fb53102c380d5110b5ceb65c11cf764417"
+    }
+  },
+  "actual_fatal_counters": {
+    "actual_native_SFD_count": 2,
+    "expected_psn": 9991766,
+    "fault": 0,
+    "fences": 0,
+    "local_committed_count": 0,
+    "read_tlps": 2,
+    "rq_dma_seen": 2,
+    "rq_local_queries": 2,
+    "old_mislabeled_rq_remote_queries": 2,
+    "commands": 0,
+    "statuses": 0,
+    "write_tlps": 0
+  },
+  "debugger": {
+    "exit": 0,
+    "excerpt": {
+      "path": "rdma/rnic/build/zero-rq-native-full-1o9smrho/gdb-counts-fatal-excerpt.log",
+      "sha256": "d0efe8401238ca6ceb281d2e7f6d4ad79594e6f34ec2e9a2244492929676556f"
+    },
+    "script": {
+      "path": "rdma/rnic/tests/zero_rq_native_debug_counts.gdb",
+      "sha256": "1f128ed71fb07cd40e457f4f4f2c5e3dc5547bd8e9cf8ee3545a4022f655e897"
+    },
+    "model": {
+      "path": "/dev/shm/as02-zero-rq-count-debug-zUu6Oi/debug-model",
+      "sha256": "bf1336645a9432cdbcaf24d7d89c3f14f29c23c58f806ffb58935e97cc40b059"
+    },
+    "note": "Verbatim counter excerpt from a bounded read-only debugger repeat at genuine vl_fatal, not a complete GDB log. Same original failed model archive/runtime; diagnostic types only. Initial field lookup failed on an optimized alias; its script is preserved above. No assertion suppression, state write or relabeling as DUT pass."
+  },
+  "cause": "The actual guard MR arbiter merges local posted-buffer authorization and wire RX LOOKUP requests. The old fixture counted the merged table output as remote requests; capacity128 legitimately needs two local buffer authorizations. Capacity0 needs neither.",
+  "correction": "Fixture only: count real RX LOOKUP&&!fault&&mr_request_ready separately; retain exact local, posted-RQ and merged-table counts (2 for capacity128, 0 for capacity0), additionally verify actual posted PD17/key8/VAfedcba9876543210/length128/operation1. Preserve all no-data DMA/status, wire/CQ/host/sentinel/owner gates and deadlines.",
+  "current_fixture": {
+    "path": "rdma/rnic/tests/zero_rq_native_fixture.py",
+    "sha256": "1492b3bf08e9e25684c836e607446d2a56f7a66c8d55a0f73b239b01709c6e04"
+  },
+  "current_launcher": {
+    "path": "rdma/rnic/tests/probe_zero_rq_native_full.py",
+    "sha256": "9a0327e103e6d0f48ea865c3f4278d4ec547afe481be18f511b92833a71d4bf9"
+  },
+  "fresh_retry": {
+    "report": "results/2026-10-18/rocev2-rnic-zero-rq-native-full-004.json",
+    "directory": "rdma/rnic/build/zero-rq-native-full-klul81lv",
+    "state_at_publication": "RUNNING_NOT_A_PASS",
+    "planned_cases": 21,
+    "capacity128_cases_first": true,
+    "unchanged_derived_RTL_and_HLS_data_files": 47
+  },
+  "compiler_limit_seconds": 1200,
+  "per_case_limit_seconds": 30,
+  "hardware_or_default_or_DUT_or_HLS_or_timing_or_drain_changed": false,
+  "standard_Linux_or_physical_hardware": false,
+  "full_board_timing": false
+}

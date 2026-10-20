@@ -1,0 +1,57 @@
+{
+  "scope": "105 second actual zero-RQ native failure: IP integrity succeeds, zero SEND rejected by inherited parser payload minimum. Not a successful receive run.",
+  "failed_report": "results/2026-10-18/rocev2-rnic-zero-rq-native-full-002.json",
+  "failed_report_sha256": "dbe3b03708f9e98a08766a1fea714679fd4449f016bfdb23246c2c79fc510af6",
+  "whole_batch_pass": false,
+  "compile_seconds": 408.67642195901135,
+  "first_failed_case": {
+    "seconds": 21.70542359398678,
+    "exit": -6,
+    "runtime_input_sha256": {
+      "input.hex": "5261b184336d034f13fc1f07e63a2e40080d305d6d4d2a4a0c65c2c15072976b",
+      "records.hex": "38bd14a1ffd0bf2fc3851788a0774d9e992baafd0047b3189e54195adacaf35f",
+      "receive-input.hex": "9a25349ccec9518781591763b721149211c50c0481eba08486f9eb07a32c273f",
+      "receive-records.hex": "fbdc435d11e27ee2605a1f229a422e0f84df1a7bbaab3bb623f56f68a6102f85"
+    }
+  },
+  "other20_cases_not_executed": true,
+  "verified_exact_failed_input_artifact_records_before_correction": 1079,
+  "failed_binary_path": "/dev/shm/as02-zero-native-artifacts-sc_5i35i/Vtb",
+  "failed_binary_sha256": "1b1a37957927b9474b017348c2391e9e11635e89bdcc8413a9d995ac6af400c6",
+  "native_generator_preimage": {
+    "path": "rdma/rnic/build/zero-rq-native-full-l72j67ho/native-before-zero-SEND-header-min.py",
+    "sha256": "e5f7d789868c8c05c422c78fb9fb7c7a58b318f6b70887f95be215d390a986be"
+  },
+  "actual_fatal": {
+    "request_drop_count": 0,
+    "rxgood": 1,
+    "rxbad": 0,
+    "reject_error": 16,
+    "reject_valid": 1,
+    "byte_count": 44,
+    "frame_bad": 0,
+    "state": 6
+  },
+  "evidence": {
+    "excerpt": "rdma/rnic/build/zero-rq-native-full-l72j67ho/gdb-parser-fatal-excerpt.log",
+    "excerpt_sha256": "233135c32169ec700d0938e51f9b74cb72613d92a2e9f2087e284ba4530dd5a5",
+    "note": "Verbatim counter excerpt from actual GDB tool output, not a complete debugger log. Original failed model archive/runtime unchanged, linked only with diagnostic types and stopped at genuine vl_fatal. No suppressed assertion, state write or DUT pass.",
+    "debugger_script": "rdma/rnic/tests/zero_rq_native_debug_parser.gdb",
+    "debugger_script_sha256": "a7b90ace9bf83b6f5fd51159cf57a2c6c810e6995e4921499d8943362884ac8f",
+    "debug_model": "/dev/shm/as02-zero-rq-parser-debug-TVfHcm/debug-model",
+    "debug_model_sha256": "0d798de0aeccaf5fab83e9fc36ccf770cb1e1400e51b2ea3a11c134947edcca3",
+    "original_model_inputs_sha256": {
+      "/dev/shm/as02-zero-native-obj-_0r3sz5e/Vtb__ALL.a": "098f9f3c82f0d45dd984a52f2549cc54fde3c8e587031884dec298e2172d8f76",
+      "/dev/shm/as02-zero-native-obj-_0r3sz5e/Vtb___024root.h": "d5896db625ca05768a9e3d1e540f1281d82ebc7dbb294e7c45486468fc611008",
+      "/dev/shm/as02-zero-native-obj-_0r3sz5e/verilated.o": "59665c8006c0474ed74159a3fbacc24c5675d6dc080ff0f1fa48a0d9a35b543a",
+      "/dev/shm/as02-zero-native-obj-_0r3sz5e/verilated_timing.o": "04ef0e2d20c8e295af2d45698ec6ea9a37d9f26ccb852ae57de6a453970d6c12",
+      "/dev/shm/as02-zero-native-obj-_0r3sz5e/verilated_threads.o": "697c708f864cb11754cdc66e226a9f39f43c8a94344b3f71271b3e12c6c11a9a"
+    }
+  },
+  "cause": "send_header_bytes already includes ICRC and is44 for SEND_ONLY/48 for SEND_IMM. The inherited byte_count<send_header_bytes+4 predicate rejects legitimate zero payload before later exact length/pad/owner checks.",
+  "correction": "PRIVATE derivative uses byte_count<send_header_bytes for SEND classes. Exact full packet length, BTH pad/class, configured peer/QPN/PSN, genuine RQ owner and full zero receive-retirement/CQ profile gates remain; normal incoming zero WRITE/READ remain refused. No CRC, opcode or ownership oracle relaxed.",
+  "successful_current_elaboration": "results/2026-10-18/rocev2-rnic-zero-rq-native-elaboration-005.json",
+  "repeated_unchanged_router_component": "results/2026-10-18/rocev2-rnic-zero-rx-router-002.json",
+  "fresh_full_native_pending": "results/2026-10-18/rocev2-rnic-zero-rq-native-full-003.json",
+  "hardware_or_original_source_or_timing_or_drain_changed": false
+}

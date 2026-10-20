@@ -1,0 +1,168 @@
+{
+  "scope": "Actual public4095 provider/zero verbs serialization, not Linux runtime.\n\nReal installed libibverbs and reviewed pinned rdma-core headers; only fake-fd\nsyscall replies are modeled. Preserve all511/1023/2047 Atomic regressions,\nadd exact4095 context and six zero operations with both canonical user SGE\nrepresentations. Never install/load/open a real NIC or claim physical DMA.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/provider-zero-s773p4xl",
+  "source_sha256": {
+    "rdma/rnic/tests/probe_provider_zero.py": "03cf564269d6eed0a083fe1162a9a8c1c4a191e1d7d2e45abe86ae707ddc1372",
+    "rdma/rnic/tests/probe_provider_commands.py": "cb1ab6bcf540e427c00f1e042a91673ce81b2e32fd64dc7634a7297f9959f8ec",
+    "rdma/rnic/provider/as02.c": "377c4b056e45a1d9031689d6e795176177eab60649b3a9ac9208738e9df106e3",
+    "rdma/rnic/provider/derive_zero_provider.py": "35fdde2b7b395f37e3af83348f7822969768809fd7daf69c561d2ad5ba0a5d2e",
+    "rdma/rnic/provider/derive_atomic_access.py": "da675577301a9f2228fb18ddafbd3f45e7c5b67d6090ba5e760f592339c04be9",
+    "rdma/rnic/tests/provider_commands.c": "88665c39dd254735da8fdb07a4d54097fe15a68814cd4bf06e3b2579012c0dd8",
+    "rdma/rnic/tests/provider_atomic_commands.c": "935aa546f37ba757db6f3ced65eacfad1477310d2ac649fbe194d8c62239b987",
+    "rdma/rnic/tests/provider_zero_commands.h": "7ccacbaa8f00286da10221b4b26f41f01eb817faba7e7452c7a032beefbaf20e"
+  },
+  "upstream_sha256": {
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0/libibverbs/cmd.c": "813968afad472f6b60813983509aaaeb79712fa99f95eeb005fb323c09bd39ea",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0/libibverbs/driver.h": "74d0a29cf20c6510dc9f32b7479648ded56c48a32e200a956f31bc2426036add",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0/libibverbs/verbs.h": "fab5bd6f7d17b23f9afac2b4e4ad06315f964a69d695d0ea06402e8858adb8f2",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0/build/include/config.h": "25ec47917ae7388ab95c9322322ec22c3a299153a96eb8ffb293076d7df3a3a7"
+  },
+  "actual_installed_library_sha256": {
+    "/usr/lib/x86_64-linux-gnu/libibverbs.so.1.14.50.0": "249242c3ba29d72b7a9be560b768bf43fc5924c8a166f4e3bbb224bd81ade3ab"
+  },
+  "rdma_core_commit": "bc6b4bc134532e952fe7f8efc251e1f89b912098",
+  "provider_PABI": 34,
+  "production_provider_changed": false,
+  "private_provider_cohort_generated": true,
+  "provider_installed": false,
+  "real_NIC_opened": false,
+  "kernel_loaded": false,
+  "syscall_boundary_modeled": true,
+  "hardware_verified": false,
+  "Atomic_cap_advertised": false,
+  "simulation_limit_seconds": 10,
+  "tests": {
+    "0": {
+      "seconds": 0.01727633801056072,
+      "exit": 0,
+      "RNC_features": 511,
+      "atomic_summary": {
+        "pass_test": true,
+        "profile1023": false,
+        "profile2047": false,
+        "profile4095": false,
+        "actual_public_ibv_and_command_serializer": true,
+        "full64bit_CAS_FADD_operands": true,
+        "exact_second_bad_WR": true,
+        "Atomic_WC_metadata": true,
+        "commands": 6,
+        "polls": 3,
+        "kernel_syscall_boundary_modeled": true,
+        "device_Atomic_cap_still_NONE": true,
+        "no_result_DMA_or_hardware_claim": true
+      }
+    },
+    "1": {
+      "seconds": 0.01731258601648733,
+      "exit": 0,
+      "RNC_features": 1023,
+      "atomic_summary": {
+        "pass_test": true,
+        "profile1023": true,
+        "profile2047": false,
+        "profile4095": false,
+        "actual_public_ibv_and_command_serializer": true,
+        "full64bit_CAS_FADD_operands": true,
+        "exact_second_bad_WR": true,
+        "Atomic_WC_metadata": true,
+        "commands": 6,
+        "polls": 3,
+        "kernel_syscall_boundary_modeled": true,
+        "device_Atomic_cap_still_NONE": true,
+        "no_result_DMA_or_hardware_claim": true
+      }
+    },
+    "2": {
+      "seconds": 0.017318034020718187,
+      "exit": 0,
+      "RNC_features": 2047,
+      "atomic_summary": {
+        "pass_test": true,
+        "profile1023": false,
+        "profile2047": true,
+        "profile4095": false,
+        "actual_public_ibv_and_command_serializer": true,
+        "full64bit_CAS_FADD_operands": true,
+        "exact_second_bad_WR": true,
+        "Atomic_WC_metadata": true,
+        "commands": 6,
+        "polls": 3,
+        "kernel_syscall_boundary_modeled": true,
+        "device_Atomic_cap_still_NONE": true,
+        "no_result_DMA_or_hardware_claim": true
+      }
+    },
+    "3": {
+      "seconds": 0.017663892009295523,
+      "exit": 0,
+      "RNC_features": 4095,
+      "atomic_summary": {
+        "pass_test": true,
+        "profile1023": false,
+        "profile2047": false,
+        "profile4095": true,
+        "actual_public_ibv_and_command_serializer": true,
+        "full64bit_CAS_FADD_operands": true,
+        "exact_second_bad_WR": true,
+        "Atomic_WC_metadata": true,
+        "commands": 6,
+        "polls": 3,
+        "kernel_syscall_boundary_modeled": true,
+        "device_Atomic_cap_still_NONE": true,
+        "no_result_DMA_or_hardware_claim": true
+      },
+      "zero_summary": {
+        "pass_test": true,
+        "zero_operations": 6,
+        "num_sge_zero_and_one_zero_SGE": true,
+        "unused_pointer_not_dereferenced": true,
+        "exact_remote_Immediate_fields": true,
+        "exact_bad_WR": true,
+        "zero_WC_bytes": true,
+        "posts_including_errors": 24,
+        "polls": 12,
+        "actual_public_API_and_serializer": true,
+        "kernel_syscall_boundary_modeled": true,
+        "hardware_verified": false
+      }
+    }
+  },
+  "compile_command": [
+    "cc",
+    "-std=gnu11",
+    "-D_GNU_SOURCE",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-O1",
+    "-g",
+    "-fsanitize=address,undefined",
+    "-fno-sanitize-recover=undefined",
+    "-isystem",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0/build/include",
+    "-isystem",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/provider-zero-s773p4xl/tests/provider_atomic_commands.c",
+    "-pthread",
+    "-Wl,-export-dynamic",
+    "-libverbs",
+    "-o",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/provider-zero-s773p4xl/cases"
+  ],
+  "compile_seconds": 1.367160130001139,
+  "ldd": "\tlinux-vdso.so.1 (0x00007d23bd0bd000)\n\tlibasan.so.8 => /lib/x86_64-linux-gnu/libasan.so.8 (0x00007d23bc800000)\n\tlibibverbs.so.1 => /lib/x86_64-linux-gnu/libibverbs.so.1 (0x00007d23bd043000)\n\tlibubsan.so.1 => /lib/x86_64-linux-gnu/libubsan.so.1 (0x00007d23bc000000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007d23bbc00000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007d23bcf5a000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007d23bcf2a000)\n\tlibnl-route-3.so.200 => /lib/x86_64-linux-gnu/libnl-route-3.so.200 (0x00007d23bc771000)\n\tlibnl-3.so.200 => /lib/x86_64-linux-gnu/libnl-3.so.200 (0x00007d23bcf08000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007d23bb800000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007d23bd0bf000)\n",
+  "source_unchanged": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/provider-zero-s773p4xl/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/provider-zero-s773p4xl/1.log": "f6ea6ac03a29f07302d0aefeb7a8eaa6c5730197557372255b39185984daf8be",
+    "rdma/rnic/build/provider-zero-s773p4xl/2.log": "5c8d6cd5ddc9616b971cefdcc00ffd79538216f9ae6e8f53c6ac1db7bb3bfdc7",
+    "rdma/rnic/build/provider-zero-s773p4xl/3.log": "3254fef52a6beca0daf64a12cebda458a7bfea20eae28751390f822849a05701",
+    "rdma/rnic/build/provider-zero-s773p4xl/0.log": "09bfe56aa6a42f4760ac29a736e983db5a18100453f92e6b613426f6edf3a295",
+    "rdma/rnic/build/provider-zero-s773p4xl/cases": "a5262da9cc31d47050d572ea89797c3eb0b7487a65768f8e5569255f816ae362",
+    "rdma/rnic/build/provider-zero-s773p4xl/provider/as02.c": "f4297eafa79da9ec52128622187e218fa7e3694bedc1d39277910072abeb7e96",
+    "rdma/rnic/build/provider-zero-s773p4xl/tests/provider_commands.c": "363d33b5ad8c0b7f90473e141a1824d5fd77bca307720428746f06a16b39473c",
+    "rdma/rnic/build/provider-zero-s773p4xl/tests/provider_atomic_commands.c": "7c40e8e1a2cc7f29bb23a9eace2165e7066dfae1696b29a905791780ba92e115",
+    "rdma/rnic/build/provider-zero-s773p4xl/tests/provider_zero_commands.h": "7ccacbaa8f00286da10221b4b26f41f01eb817faba7e7452c7a032beefbaf20e"
+  }
+}

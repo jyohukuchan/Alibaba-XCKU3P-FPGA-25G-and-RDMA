@@ -1,0 +1,49 @@
+{
+  "scope": "101 zero native integration development diagnostics; prior failures, exact source preimages and fresh reports remain distinct.",
+  "hardware_changed": false,
+  "diagnostics": [
+    {
+      "stage": "Initial checked source derivation",
+      "error": "KeyError: rdma/rnic/rtl/rocev2_integrity_transport.v",
+      "cause": "The actual shared integrity bridge key lives in rdma/rtl, not rdma/rnic/rtl.",
+      "correction": "Use the exact real parent replacement key, without copying or changing the original bridge.",
+      "preimage": "rdma/rnic/build/zero-native-derive-failure-fAL5N8/generator-before-bridge-key.py",
+      "sha256": "f8edac1364924ccdccc3327a44ef0bad62c10094dcca7c4cc44ddb447fa0c27f"
+    },
+    {
+      "stage": "Complete graph elaboration001",
+      "failed_report": "results/2026-10-18/rocev2-rnic-zero-native-elaboration-001.json",
+      "cause": "The shared transport calls its saved local address va; the new canonical-zero policy incorrectly referred to address, which was unbound.",
+      "correction": "Use the actual full saved va alongside key and offset; no validation field or scope removed.",
+      "preimage": "rdma/rnic/build/zero-native-elaboration-3og4vbq7/generator-before-shared-VA-name.py",
+      "sha256": "acb366330b79f71c7831670e94f740a85705c4fa2b8970296336ee289be82c7a",
+      "successful_fresh_report": "results/2026-10-18/rocev2-rnic-zero-native-elaboration-002.json"
+    },
+    {
+      "stage": "Leaf001 fixture setup for two new zero RX tests",
+      "failed_report": "results/2026-10-18/rocev2-rnic-zero-native-leaves-001.json",
+      "cause": "37 methods passed. Two new methods called the unchanged legacy nonempty host READ encoder with a zero payload and failed before sending any packet to the DUT.",
+      "correction": "Construct the legitimate AETH-only zero response from a complete ACK header and recompute lengths, IP checksum and ICRC. The old encoder, real guard, expected identity/length and all assertions remain strict.",
+      "preimage": "rdma/rnic/build/zero-native-elaboration-3og4vbq7/tests-before-zero-response-template.py",
+      "sha256": "ce0986e869b1a13b45e3d642ecb0cf6e236104341c32de47d9e4de2d82d68241",
+      "fresh_report_pending": "results/2026-10-18/rocev2-rnic-zero-native-leaves-002.json"
+    },
+    {
+      "stage": "Whole-native fixture derivation, before compilation",
+      "cause": "Two strict summary-insertion anchors assumed two leading spaces; the real inherited summary has one. Both derivations rejected the mismatched anchor.",
+      "correction": "Use the unique exact summary token independent of leading indentation; no DUT, observation, test deadline or assertion changed.",
+      "preimages": [
+        {
+          "path": "rdma/rnic/build/zero-native-fixture-derive-OcrI0V/fixture-before-summary-anchor.py",
+          "sha256": "dda1a22eefd23b67e5db40463b5af3e60bc1967bced4c1ce5a5c36e7da21f527"
+        },
+        {
+          "path": "rdma/rnic/build/zero-native-fixture-derive-OcrI0V/fixture-before-leading-space-anchor.py",
+          "sha256": "01e9926b7b311d0bf5940f1f3e674ba46799e59daf793988420f4e1ed3f8cd71"
+        }
+      ]
+    }
+  ],
+  "staging001": "Historical passing component run on the pre-shared-name-fix generator; retained unchanged. Fresh staging002 is bound to the current corrected generator. No older executable is used for changed-source proof.",
+  "whole_native_runtime": "Pending fresh compilation/runtime at this diagnostic checkpoint; no success or hardware qualification is implied."
+}

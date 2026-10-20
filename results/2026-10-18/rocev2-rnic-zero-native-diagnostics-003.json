@@ -1,0 +1,35 @@
+{
+  "scope": "Publication checkpoint: complete native002 compile execution timeout, not a runtime pass or an observed DUT fault.",
+  "date_UTC": "2026-10-20",
+  "failed_report": "results/2026-10-18/rocev2-rnic-zero-native-full-002.json",
+  "failed_report_sha256": "d77e9db729294b3a86ae43616968e390f0c133ca90e1f2840ed369f0e649823a",
+  "pass_test": false,
+  "error_type": "TimeoutExpired",
+  "compile_limit_seconds": 1200,
+  "runtime_cases_executed": 0,
+  "observed_compiler_bottleneck": {
+    "source": "/dev/shm/as02-zero-native-obj-hlieoqkn/Vtb___024root__DepSet_hfe20aad3__0__Slow.cpp",
+    "bytes": 422627074,
+    "optimization": "-O0",
+    "output_split": 20000,
+    "output_split_cfuncs": 0
+  },
+  "timeout_log_preimage": {
+    "original": "rdma/rnic/build/zero-native-full-5jqul73o/compile.log",
+    "preserved": "rdma/rnic/build/zero-native-full-5jqul73o/compile-at-timeout-preserved.log",
+    "sha256": "2c52c86c631233aa396405cd4ad7b479823bca18fdc7b4ddfed092c7471e3d9c",
+    "matches_failed_report_artifact": true
+  },
+  "cleanup": {
+    "reason": "The timed-out Python/perl launcher had exited, but verified compiler descendants remained alive in the original build process group.",
+    "signal": "SIGTERM",
+    "verified_own_build_child_PIDs": [2786815, 2786814, 2786661, 2786660, 2786575],
+    "all_five_PIDs_gone_after_cleanup": true,
+    "files_deleted": false,
+    "final_compile_log_sha256": "12a0f2f4bdddab78ee4eb33ee4929d271df458405e60c95b1f666644e0a895cb",
+    "final_log_note": "Termination appended build messages; the exact earlier report-bound log is retained separately, not overwritten or relabeled."
+  },
+  "retry_started_for_publication": false,
+  "future_work": "A fresh function-split compiler-output retry may address compile size, but must retain actual RTL/HLS, independent oracles, timing/drain gates, 1200s compile and 30s per-runtime limits. No successful result is inferred.",
+  "hardware_or_install_or_network_or_BIOS_or_reboot_changed": false
+}

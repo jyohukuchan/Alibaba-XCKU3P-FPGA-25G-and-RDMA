@@ -1,0 +1,147 @@
+{
+  "scope": "Actual native-only SEND44 integrity extension; strict real CRC/FIFO RTL.\n\nTX/RX byte oracles, malformed short class/pad/length/ICRC/UDP/keep rejection,\nordinary packets and stalled full-frame recovery. Original module unchanged.\nNo HLS/full-native/Linux/physical/timing proof; every runtime bounded30s.\n",
+  "pass_test": true,
+  "methods": 3,
+  "seconds": 66.61217321502045,
+  "source_sha256": {
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/fpga/derive_zero_native.py": "d652f5e0a805b96d2a963f33d9112d8121f1170a15b111e3e400c81eface97a7",
+    "rdma/rnic/fpga/derive_atomic_access_native.py": "ab42d555c459c2e7b7da71686539c3d75a31e075a3a8c11c66e09a59e6e903ee",
+    "rdma/tests/test_icrc_rtl.py": "669d93c43d83a9609eeff9ed659f8de1920b41f2a43ea54f73033ca68af83b02",
+    "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "022eee2383a8be45e8858946659fc05182537f0a09562b6011bde5285536de16",
+    "rdma/rnic/tests/test_zero_integrity_rtl.py": "bf57573a43b62ec0da5e3fc3a7609cf3269df79a3f233ce9d882711e36d81904",
+    "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+  },
+  "tests": {
+    "test_actual_TX_RX_SEND44_and_ordinary_ACK_WRITE_all_pad_positions": [
+      {
+        "summary": {
+          "cycles": 724,
+          "input_beats": 309,
+          "output_beats": 309,
+          "good_frames": 11,
+          "bad_frames": 0,
+          "input_stall_cycles": 0,
+          "output_stall_cycles": 117,
+          "first_output": 11,
+          "last_output": 675
+        },
+        "seconds": 11.421925349044614,
+        "directory": "rdma/rnic/build/zero-integrity-aj_psvvj",
+        "artifact_sha256": {
+          "rdma/rnic/build/zero-integrity-aj_psvvj/expected.hex": "3b31dc267cde11894efefde679af908781cf0533478387be1c5186f0a8b8c340",
+          "rdma/rnic/build/zero-integrity-aj_psvvj/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-integrity-aj_psvvj/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+          "rdma/rnic/build/zero-integrity-aj_psvvj/test.vvp": "bfc15a26969ba21cdc3653a8fb892016a9bb7dbabfdb733ff7eea5a0982d16fc",
+          "rdma/rnic/build/zero-integrity-aj_psvvj/tb.v": "2c4b137d872b8f9bf35e8d2932a73c3adf490e7fee07774454f927a93884569c",
+          "rdma/rnic/build/zero-integrity-aj_psvvj/simulation.log": "d8294cbb9716216e0796fb8db77ca95d888a877fc004930066e09504b080d909",
+          "rdma/rnic/build/zero-integrity-aj_psvvj/input.hex": "6ce4adf1b05d8066549e780249d031559f59a56fc346f54ad33aa97bebe4a6ad"
+        }
+      },
+      {
+        "summary": {
+          "cycles": 724,
+          "input_beats": 309,
+          "output_beats": 309,
+          "good_frames": 11,
+          "bad_frames": 0,
+          "input_stall_cycles": 0,
+          "output_stall_cycles": 117,
+          "first_output": 11,
+          "last_output": 675
+        },
+        "seconds": 15.309590490011033,
+        "directory": "rdma/rnic/build/zero-integrity-f92o75pu",
+        "artifact_sha256": {
+          "rdma/rnic/build/zero-integrity-f92o75pu/expected.hex": "3b31dc267cde11894efefde679af908781cf0533478387be1c5186f0a8b8c340",
+          "rdma/rnic/build/zero-integrity-f92o75pu/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-integrity-f92o75pu/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+          "rdma/rnic/build/zero-integrity-f92o75pu/test.vvp": "cf856a031dbf68094574b578f06c17a75b7bb839f6a42a6a00cb438d7619cb54",
+          "rdma/rnic/build/zero-integrity-f92o75pu/tb.v": "6e6304343a1bcf9187333f4168a1a777778bc722c644c42922ee499c6563efc4",
+          "rdma/rnic/build/zero-integrity-f92o75pu/simulation.log": "6c8c70e8f94bcbfa1befe6250ba3fe25bebcdaca55e0fc08d7d7e1aeda745765",
+          "rdma/rnic/build/zero-integrity-f92o75pu/input.hex": "3b31dc267cde11894efefde679af908781cf0533478387be1c5186f0a8b8c340"
+        }
+      }
+    ],
+    "test_short_packet_class_and_pad_are_not_generic_minimum_length_waivers": [
+      {
+        "summary": {
+          "cycles": 113,
+          "input_beats": 54,
+          "output_beats": 27,
+          "good_frames": 9,
+          "bad_frames": 9,
+          "input_stall_cycles": 0,
+          "output_stall_cycles": 10,
+          "first_output": 15,
+          "last_output": 64
+        },
+        "seconds": 10.564265950000845,
+        "directory": "rdma/rnic/build/zero-integrity-usod13vh",
+        "artifact_sha256": {
+          "rdma/rnic/build/zero-integrity-usod13vh/expected.hex": "b3364ba3470599abfb9ff2c5588e4870b2c646aa98368f6525d2abdd47bc7097",
+          "rdma/rnic/build/zero-integrity-usod13vh/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-integrity-usod13vh/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+          "rdma/rnic/build/zero-integrity-usod13vh/test.vvp": "7ce2c47b241c1cde2b903e0343e733faf082b504aee30e02acc18c69e001f2c3",
+          "rdma/rnic/build/zero-integrity-usod13vh/tb.v": "389cb93d3c84309888b65434d2f31b1e2be4d68c6cfc1b797d4a4e483c57b83d",
+          "rdma/rnic/build/zero-integrity-usod13vh/simulation.log": "8d77c52d85ff8301ef3ea05ad7c4d9a08c2466194b2557f12d7360e5026e2a2d",
+          "rdma/rnic/build/zero-integrity-usod13vh/input.hex": "ddd04c48bffd6176b9bec652f9c26f5eac1ef6022f5f2696ede1e2d1f86ada15"
+        }
+      },
+      {
+        "summary": {
+          "cycles": 113,
+          "input_beats": 54,
+          "output_beats": 27,
+          "good_frames": 9,
+          "bad_frames": 9,
+          "input_stall_cycles": 0,
+          "output_stall_cycles": 10,
+          "first_output": 15,
+          "last_output": 64
+        },
+        "seconds": 14.670086816011462,
+        "directory": "rdma/rnic/build/zero-integrity-hvsfojpm",
+        "artifact_sha256": {
+          "rdma/rnic/build/zero-integrity-hvsfojpm/expected.hex": "b3364ba3470599abfb9ff2c5588e4870b2c646aa98368f6525d2abdd47bc7097",
+          "rdma/rnic/build/zero-integrity-hvsfojpm/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-integrity-hvsfojpm/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+          "rdma/rnic/build/zero-integrity-hvsfojpm/test.vvp": "7e92f960e1d256aee037d57559eefaac7f81bdeedc2a69897c271983ae044775",
+          "rdma/rnic/build/zero-integrity-hvsfojpm/tb.v": "cb33eba227f94dce850ad55e3aca4bbfb74efb1e74b72238cc76a45c26ba140f",
+          "rdma/rnic/build/zero-integrity-hvsfojpm/simulation.log": "24e3a5b9b3a7e04d74fd6dbbc32dd3c17419f0cd593e855781efac580c951ca3",
+          "rdma/rnic/build/zero-integrity-hvsfojpm/input.hex": "3224c8358018fcf3a02e76b6eb01f88775c81ef7a17cd3180e0e79c5b917cebe"
+        }
+      }
+    ],
+    "test_zero_still_checks_ICRC_IP_checksum_UDP_dense_keep_and_final_length": [
+      {
+        "summary": {
+          "cycles": 101,
+          "input_beats": 42,
+          "output_beats": 21,
+          "good_frames": 7,
+          "bad_frames": 7,
+          "input_stall_cycles": 0,
+          "output_stall_cycles": 7,
+          "first_output": 15,
+          "last_output": 52
+        },
+        "seconds": 14.314601571008097,
+        "directory": "rdma/rnic/build/zero-integrity-0g6ovznr",
+        "artifact_sha256": {
+          "rdma/rnic/build/zero-integrity-0g6ovznr/expected.hex": "3ac6862d26981d590a488c12de13cff240907462ee7d03e4633376279e164213",
+          "rdma/rnic/build/zero-integrity-0g6ovznr/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-integrity-0g6ovznr/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+          "rdma/rnic/build/zero-integrity-0g6ovznr/test.vvp": "e8440493d3068b865f634bc0a408bf9771b65aedabbba2732c9e280a3c245f4e",
+          "rdma/rnic/build/zero-integrity-0g6ovznr/tb.v": "fa8516d409339d33f25aea439bd7d9b1eeadc19af2217d6653d74e055f2045c5",
+          "rdma/rnic/build/zero-integrity-0g6ovznr/simulation.log": "15ff93079478188620bdc0ba72a3c8be5a6f79044482cbdf36a5b57f6592d752",
+          "rdma/rnic/build/zero-integrity-0g6ovznr/input.hex": "b2e05602c08a126848d319e042bbf0421266effc728c1572d8ae3db8368ebd31"
+        }
+      }
+    ]
+  },
+  "simulation_limit_seconds": 30,
+  "four_state": true,
+  "original_integrity_unchanged": true,
+  "native_or_hardware_runtime": false
+}

@@ -5,6 +5,176 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+## Same-core zero RQ receive source (103, native integration remains)
+
+`hls/zero_rq_transport.py` extends the SAME complete zero requester/Atomic/
+Immediate core, preserving request748/SQ408/done816 and receive620/680/752
+ABIs. Incoming empty SEND/SEND_IMM/WRITE_IMM uses the ACTUAL posted receive
+owner, not a fake WQE or an anonymous ACK. A posted zero buffer must have
+zero local key/VA/offset. A normal nonzero posted buffer can also receive0
+bytes and keeps its full owner. WRITE_IMM still uses independent RETH data
+authority when nonzero, never the RQ buffer as the remote-write destination.
+
+No zero data-memory command or data beat is produced. The actual RX header
+parser/stripper emits a real empty EOF; a new guarded consumer requires
+that precise EOF and matching zero receive owner BEFORE the actual receipt
+join can advance. It STILL needs actual ACK/MSN consumption and the SAME
+PSN-table fence. Empty stream/quiet interfaces are not receipt substitutes.
+Wrong local fields/QPN or malformed nonempty/nonfinal EOF quarantines the
+operation without memory or receive completion. No extra PSN/MR domain.
+
+[RQ C++003](../results/2026-10-18/rocev2-rnic-zero-rq-csim-003.json) PASSES
+36.86s fresh full-top C++ compilation and1.40s execution: six actual zero RX
+cases across all three operations/both posted buffer types, six owner/EOF
+negatives, PSN wrap, immutable620-bit owners and actual wire Immediate,
+withheld real EOF/ACK/state consumers, exact ACK QPN/PSN/MSN and no duplicate
+receipt. All nine prior Atomic/normal requester cases and five zero requester
+requests/stored replays/negatives run AGAIN on this SAME changed source.
+[Compatibility001](../results/2026-10-18/rocev2-rnic-zero-rq-compat-001.json)
+PASSES22.19s compilation/0.91s runtime with unchanged earlier Immediate TX/RX
+assertions and actual owned Atomic/MR/paged-memory RTL service: nine Atomic
+jobs, shared PSN/MSN, withheld real service/state consumers and replay/drop.
+Peer/RQ/connection/physical memory boundaries remain explicit models.
+Prefilled/quarantined test FIFOs and HLS-library warnings remain in logs;
+no global FIFO-empty/drain or safe-unpin claim follows these component tests.
+
+This SOURCE cohort is `rocev2_native_zero_rq_top`; it has NOT been HLS-
+generated, integrated into native RQ/guard/CQ, installed or programmed.
+Ordinary incoming zero WRITE/READ remain REQUIRED separate work: they must
+not consume a fictitious RQ to obtain completion. Large/multi-SGE, actual
+Linux/physical/timing/recovery and all11 goal requirements remain.
+See [preserved fixture diagnostics](../results/2026-10-18/rocev2-rnic-zero-rq-diagnostics-001.json).
+
+Publication checkpoint (2026-10-20): the independent102 requester
+[full-native002](../results/2026-10-18/rocev2-rnic-zero-native-full-002.json)
+reached its original1200s compile execution limit. It FAILED with
+`TimeoutExpired`; ZERO runtime cases executed. A422.6MB generated C++
+slow/reset function was the observed compiler bottleneck at -O0. This is
+not a passing native run or an observed DUT runtime fault. Its original
+report-bound log was preserved before stopping only the verified leftover
+build children. See [timeout diagnostics](../results/2026-10-18/rocev2-rnic-zero-native-diagnostics-003.json).
+No retry or new long build was started for publication. A future compiler-
+output-function-splitting retry must preserve RTL/HLS/timing/CRC/oracles
+and original1200s compile/30s per-test limits.
+
+Publication checks freshly PASS14 staging methods/49 four-state cases in
+3.88s ([staging003](../results/2026-10-18/rocev2-rnic-zero-native-staging-003.json))
+and11 zero-WQE codec methods in0.40s. These are component regressions, not
+a replacement for the failed whole-native run. Source/artifact hashes in
+six selected current reports were rechecked:2663 records match, using the
+exact preserved compile-log preimage for the timeout report.
+
+## Zero native runtime / SEND44 and matched provider (102)
+
+[Whole-native001](../results/2026-10-18/rocev2-rnic-zero-native-full-001.json)
+completed456.73s fresh compilation and PASSED all eight099 normal/Atomic/
+permission regressions, then actual zero WRITE and READ, each15.39..19.05s.
+The two zero cases use actual generated HLS/SQ128 fetch, real stored replay,
+protected ACK/AETH, actual XGMII/FCS/SFD/CDC and full CQ/host-ACK ownership.
+There are ZERO local MR queries/data-memory commands/statuses/writes/fences;
+the ONE PCIe read is the genuine SQ fetch. All host/sentinel bytes stay exact.
+This is still TWO-STATE simulation with physical host/root/peer/PHY/PTP inputs
+modeled, NOT actual Linux or hardware qualification. The BATCH IS FAILED:
+ZERO_SEND stopped at14.29s and its final two zero Immediate cases did not run.
+No partial result is relabeled as a complete five-operation native pass.
+
+The preserved failed model and debugger show actual `core_tx_bad=1`, not a
+missing/delayed MAC completion. Original integrity RTL assumes minimum IP48;
+empty SEND_ONLY legitimately has IPv4/UDP/BTH/ICRC20+8+12+4=44 bytes. A NEW
+named `rocev2_zero_ipv4_icrc` checked clone permits44 ONLY for opcode04 with
+pad0, retaining all original whole-frame/UDP/checksum/ICRC/mask checks.
+Only the actual native bridge's two RX/TX instances select this helper;
+legacy/default and incoming protected-admission integrity remain ORIGINAL.
+One native HLS/MR/PTE/PSN/MSN domain remains; no timing/drain gate changes.
+The same change corrects the new fixture's expected SEND/Immediate-SEND
+remote key to canonical0, without altering the already-correct actual C WQE.
+
+[Integrity002](../results/2026-10-18/rocev2-rnic-zero-integrity-002.json)
+PASSES3 methods/five four-state simulations, each10.56..15.31s:47 good and25
+bad frames with actual FIFO backpressure, exact zero SEND44 TX/RX and
+ordinary ACK/WRITE/padding/4096-byte cases, short wrong op/pad/truncated
+BTH, invalid ICRC/IP checksum/UDP/keep/final length and recovery. Original
+65536-mask and RX21-bit checksum-predicate oracles are retained. This is
+actual integrity RTL, NOT full native execution. [Full elaboration003](../results/2026-10-18/rocev2-rnic-zero-native-elaboration-003.json)
+PASSES2.74s without width warnings, including EXACTLY two private integrity
+instances and zero global-drain overrides. Fresh whole-native002 compilation
+was IN PROGRESS at102 and later timed out before any of its13 cases ran
+(see publication checkpoint above). The unchanged11 tested
+requester leaves are byte-identical to101's frozen component RTL, but no old
+whole-native executable/result is substituted for this changed active graph.
+
+`provider/derive_zero_provider.py` adds a PRIVATE future4095 context alongside
+511/1023/2047, without a new user WQE ABI or any payload-copy/direct-BAR path.
+[Provider001](../results/2026-10-18/rocev2-rnic-zero-provider-001.json) PASSES
+the actual installed public libibverbs/serializer/provider in four exact
+contexts, each<0.018s, ASan/UBSan. All prior CAS/FADD/full64 operands/MR15/
+QP6,14/bad-second-WR/WC cases remain. New4095 runs six zero operations
+(WRITE/READ/SEND/SEND_IMM/WRITE_IMM/RECV), both num_sge0 with unused pointer1
+and one zero SGE with unused VA/key all-ones. Actual standard command bytes,
+Immediate/remote fields,24 posts including exact bad-WR errors, and12 empty
+WCs are checked. ONLY syscall replies are modeled; kernel/native completion
+or physical zero reception is not proved and no provider is installed.
+
+[Diagnostics102](../results/2026-10-18/rocev2-rnic-zero-native-diagnostics-002.json)
+binds preserved model/binary/source preimages and debugger evidence, including
+the malformed-short-packet fixture correction; no original validator was
+weakened to encode an invalid packet. Incoming zero responder/RQ/native API
+coupling, large/multi-SGE, Linux/physical operation, original timing/CDC and
+all11 goal requirements remain. No hardware/install/load/network/BIOS/fan/
+reboot/flash or automatic Git publication occurs.
+
+## Zero requester native integration candidate (101, runtime pending)
+
+`fpga/derive_zero_native.py` extends the SAME29-module Atomic-access graph,
+selecting actual `rocev2_native_zero_request_top` rather than adding another
+HLS/MR/PTE/PSN/MSN domain. Canonical zero WRITE/READ/SEND/Immediate owners
+keep all748 bits through SQ408, response/lifetime/MAC and CQ; Atomic stays
+8 bytes and posted zero RECV is STILL refused. The PRIVATE RNC4095 cohort
+is not an installable/qualified complete zero RNIC or a default selection.
+
+Zero admission validates the actual fetched descriptor, context, sequence,
+epoch and opcode, but makes NO MR query and grants no data address. The
+executor cannot issue any zero command/data/status transaction. A no-data
+WRITE/SEND memory event only hands off the genuine owner; READ additionally
+waits for the actual identical protected response token. The result-pad
+staging lease can end without payload only AFTER that real token, while
+the actual executor/HLS/wire/CQ owners independently retain the operation.
+No fabricated backend status, fake HLS receipt, quiet-based WR completion,
+global drain override, or local key/address/offset on zero work is allowed.
+
+[Complete elaboration002](../results/2026-10-18/rocev2-rnic-zero-native-elaboration-002.json)
+PASSES2.92s: real generated zero HLS, no port-width warnings, one native
+requester/PSN/MSN/MR/PTE/fetch domain, full requester/receive ABIs unchanged,
+and both original global HLS drain inputs remain0. [Staging002](../results/2026-10-18/rocev2-rnic-zero-native-staging-002.json)
+PASSES14 methods/49 four-state cases, including all previous Atomic staging
+cases, five exact zero SQs and five actual Ethernet-framer/lifetime cases.
+The zero cases withhold MAC completion for1100 cycles and still require the
+full816-bit HLS receipt and actual CQ commit. HLS/memory/protected-response/
+physical MAC pins/CQ endpoints in these component tests remain MODELS.
+These are not generated-HLS/full-native zero runtime or Linux evidence.
+
+`tests/test_zero_native_leaves.py` separately runs actual admission/MR,
+executor, RX integrity/response-token and CQ tests, including prior Atomic
+regressions. [Fresh002](../results/2026-10-18/rocev2-rnic-zero-native-leaves-002.json)
+PASSES39 methods/155 four-state cases in361.98s total, each simulation
+bounded30s. Zero ACK/AETH frames traverse actual integrity and protected
+token replay; malformed nonempty/wrong-class/negative AETH cannot retire
+zero READ. The first001 is a preserved failed fixture run, not a pass.
+`zero_native_fixture.py` and
+`probe_zero_native_full.py` prepare a fresh whole-native13-case executable:
+all eight099 regressions and five actual zero requester/replay/MAC/CQ cases.
+Compilation/runtime are IN PROGRESS, NOT successful evidence yet. Expected
+zero data DMA/MR effects are independently zero; the actual coherent SQ128
+fetch is still a genuine PCIe read, and every host/sentinel byte must remain
+unchanged. SEND0 additionally requires real MAC minimum padding/FCS.
+
+See [diagnostics101](../results/2026-10-18/rocev2-rnic-zero-native-diagnostics-001.json)
+for preserved initial source-key/shared-VA/test-template/fixture-anchor
+failures. No old source/result is overwritten or relabeled. Incoming zero
+responder/RQ, matched4095 provider, large/multi-SGE, actual Linux/hardware,
+original timing/CDC and all11 original goal requirements still remain.
+No install/load/programming/network/BIOS/fan/reboot/flash or automatic push.
+
 ## Zero-length requester/source extension (100, native integration remains)
 
 `hls/zero_request_transport.py` extends the SAME full Atomic/Immediate core,

@@ -15,6 +15,38 @@ remaining run was interrupted). No all-suite or release-pass claim is made.
 
 ## Latest functional milestone (2026-10-20)
 
+Progress103 adds real RQ-owned empty SEND/Immediate SOURCE behavior with
+actual header/EOF/ACK/MSN/PSN consumers and no memory transaction. Fresh
+full-top C++ and actual owned-RTL-service/Immediate compatibility pass; all
+prior Atomic/zero requester cases run again. Native RQ/CQ, HLS generation
+and incoming normal zeroWRITE/READ remain unfinished. At publication,
+requester native002 FAILED its1200s compile deadline; NO runtime cases ran.
+The giant generated C++ function was the observed compiler bottleneck, not
+a reported hardware fault. The original log is preserved and only its own
+leftover children were stopped. No retry was started for publication;
+original limits/source gates remain unchanged.
+See [exact stage boundaries](../../docs/ROCEV2_ATOMIC.md).
+
+Progress102: fresh whole-native batch001 passed all eight previous cases and
+real zero WRITE/READ, then FAILED zero SEND at the old integrity IP48 limit.
+A new native-only SEND44/opcode04/pad0 integrity helper passes targeted real
+TX/RX RTL and whole-graph elaboration; fresh complete13-case compilation002
+was IN PROGRESS at102, then timed out before runtime (see103 above).
+Original integrity/timing/drains stay unchanged. A matched
+private4095 provider now passes actual public libibverbs zero serialization
+for six operations/both SGE forms alongside every earlier Atomic context.
+These are NOT live Linux/hardware tests or a complete native zero RX/RQ pass.
+See [status and preserved diagnostics](../../docs/ROCEV2_ATOMIC.md).
+
+Progress101 integrates zero REQUESTER source into the SAME private actual
+native graph. Canonical zero work uses no data MR/DMA; READ waits for the
+actual protected response token. Whole-graph elaboration and14-method/49-case
+four-state SQ/pad/framer/lifetime regression PASS. Actual leaf regression
+also PASSES39 methods/155 cases. Complete generated-HLS/native13-case
+compilation/runtime remains IN PROGRESS at this checkpoint. No whole-native zero runtime or Linux/HW
+pass is claimed. Incoming zero/RQ/provider and original timing are pending.
+See [current evidence and scope](../../docs/ROCEV2_ATOMIC.md).
+
 Progress100 adds real zero-length requester SOURCE handling to the same
 Atomic/Immediate HLS: five operations, stored replay and guarded ACK/header/
 timer/state retirement without data-memory commands. Full C++/owned RTL

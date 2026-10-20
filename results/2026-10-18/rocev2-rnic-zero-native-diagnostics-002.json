@@ -1,0 +1,112 @@
+{
+  "scope": "102 actual failed whole-native zero SEND diagnosis and native-only SEND44 feature correction. Debugger exit0 is NOT a passing DUT test.",
+  "failed_report": "results/2026-10-18/rocev2-rnic-zero-native-full-001.json",
+  "failed_report_sha256": "3ccfff1eb40014419383458f2f03c017b80a9f3c7db4269a63416ce009c0b3d0",
+  "actual_fresh_compile_seconds": 456.73141050199047,
+  "whole_batch_pass": false,
+  "partial_passes": {
+    "CAS": 19.050632825004868,
+    "FADD": 18.750410770007875,
+    "READ": 18.64959979901323,
+    "SEND_IMM": 18.900220129988156,
+    "ATOMIC_MIXED": 18.699849500029813,
+    "CAS_NO_RX_ATOMIC": 18.85002676397562,
+    "QP_DENIED": 15.493962737033144,
+    "MR_DENIED": 15.393868416023906,
+    "ZERO_WRITE": 18.800242880999576,
+    "ZERO_READ": 18.800144396023825
+  },
+  "failed_case": {
+    "seconds": 14.293195304984692,
+    "exit": -6,
+    "runtime_input_sha256": {
+      "input.hex": "6adecf2ebc76f03a9f3cff5c9c677621c0d44a5bfdc61b5cec59b3580622da49",
+      "records.hex": "2afe79bf4e8edf93f21419f5b941486bb68fb345261e31c812653cb462c84609"
+    }
+  },
+  "last_two_zero_Immediate_cases": "Not executed in failed001; never infer their success from requester C++ or component tests.",
+  "binary": {
+    "path": "/dev/shm/as02-zero-native-artifacts-9xvoxmo2/Vtb",
+    "sha256": "8754146e230750b97ed5d0725b59007f54269e6f84f9029eaaa08ace3cb08cfb"
+  },
+  "verified_failed_input_artifact_hash_records_using_exact_preimages": 1097,
+  "changed_source_preimages": {
+    "rdma/rnic/fpga/derive_zero_native.py": {
+      "preimage": "rdma/rnic/build/zero-native-debug-M0hO1S/native-before-SEND44-integrity.py",
+      "sha256": "18867734ef9e85945cf4b10a875998107062e9789facbf7849ae043ea8a8b63b"
+    },
+    "rdma/rnic/tests/zero_native_sources.py": {
+      "preimage": "rdma/rnic/build/zero-native-debug-M0hO1S/sources-before-SEND44-integrity.py",
+      "sha256": "958cb707084abbc7f61af73a6a1adba8fc56faaa9fa3ed9a679451ccacce2a64"
+    },
+    "rdma/rnic/tests/check_zero_native_elaboration.py": {
+      "preimage": "rdma/rnic/build/zero-native-debug-M0hO1S/elaboration-before-SEND44-integrity.py",
+      "sha256": "f8217fc68df0df16c954578f30e57fe1590613515771bd28396c49c7f27ce97c"
+    },
+    "rdma/rnic/tests/zero_native_fixture.py": {
+      "preimage": "rdma/rnic/build/zero-native-debug-M0hO1S/fixture-before-ZERO_SEND-investigation.py",
+      "sha256": "8da0cf78549b88266a0b83c98ec1b92971b27aea3737e534c996ee6dd233d831"
+    }
+  },
+  "diagnostic_directory": "rdma/rnic/build/zero-native-debug-M0hO1S",
+  "diagnostic_artifact_sha256": {
+    "rdma/rnic/build/zero-native-debug-M0hO1S/gdb-before-integrity-counters.gdb": "c6b65fc1d7a1fbdf1795513c6b52655e3484223fb6b9d0e7271753418d096f0b",
+    "rdma/rnic/build/zero-native-debug-M0hO1S/gdb-before-anonymous-member-lookup.gdb": "45702aff7eecc4232022a0fe5377cb8bf182916b9fcbfbb30032b6366e6bc321",
+    "rdma/rnic/build/zero-native-debug-M0hO1S/gdb.log": "803aa951f3b3d3e53165909e4008b1fb236c7c037692663ae988a2bf38f379b1",
+    "rdma/rnic/build/zero-native-debug-M0hO1S/gdb-002.log": "67c5a99c8b77b1f10d4471176bcf3c030c4c3a9def1cad776f2d61fdcb707835",
+    "rdma/rnic/build/zero-native-debug-M0hO1S/native-before-SEND44-integrity.py": "18867734ef9e85945cf4b10a875998107062e9789facbf7849ae043ea8a8b63b",
+    "rdma/rnic/build/zero-native-debug-M0hO1S/probe-before-ZERO_SEND-investigation.py": "8b07bcd43f4ad89c7cdd677379339c0247771a1b2f959310d463cd95a5a74d22",
+    "rdma/rnic/build/zero-native-debug-M0hO1S/gdb-003.log": "29e5af0e650e7d2ae7a759dd3e62de38df82fe968afc11f7db6a697fc931064f",
+    "rdma/rnic/build/zero-native-debug-M0hO1S/integrity-test-before-truncated-input.py": "a0088ccd380f5a0d298393eca3644e135be2e544c3df2741010d167683fffb3b",
+    "rdma/rnic/build/zero-native-debug-M0hO1S/elaboration-before-SEND44-integrity.py": "f8217fc68df0df16c954578f30e57fe1590613515771bd28396c49c7f27ce97c",
+    "rdma/rnic/build/zero-native-debug-M0hO1S/sources-before-SEND44-integrity.py": "958cb707084abbc7f61af73a6a1adba8fc56faaa9fa3ed9a679451ccacce2a64",
+    "rdma/rnic/build/zero-native-debug-M0hO1S/fixture-before-ZERO_SEND-investigation.py": "8da0cf78549b88266a0b83c98ec1b92971b27aea3737e534c996ee6dd233d831",
+    "rdma/rnic/build/zero-native-debug-M0hO1S/debug-model": "196272e52f9aad099ca5010fec76747950bc07647cbd1e9208d9a557044b271b"
+  },
+  "diagnostic_source_sha256": {
+    "rdma/rnic/tests/zero_native_debug_main.cpp": "80e2da0651df4a88dd7c9c6c24fb90bb0f4f8f0095a118db0a3bf6919e0b8dab",
+    "rdma/rnic/tests/zero_native_debug.gdb": "17f4694e6527e11ed4b9f9d465608e1f32f6f3d0a9d5ec4878e72b3391a448c4"
+  },
+  "unchanged_failed_model_object_and_header_sha256": {
+    "/dev/shm/as02-zero-native-obj-xg0inxki/Vtb__ALL.a": "d3f023489de8889e0a6843c3e57dafac70f923e736929b1cc3ae4fe54841cb57",
+    "/dev/shm/as02-zero-native-obj-xg0inxki/verilated.o": "59665c8006c0474ed74159a3fbacc24c5675d6dc080ff0f1fa48a0d9a35b543a",
+    "/dev/shm/as02-zero-native-obj-xg0inxki/verilated_timing.o": "04ef0e2d20c8e295af2d45698ec6ea9a37d9f26ccb852ae57de6a453970d6c12",
+    "/dev/shm/as02-zero-native-obj-xg0inxki/verilated_threads.o": "697c708f864cb11754cdc66e226a9f39f43c8a94344b3f71271b3e12c6c11a9a",
+    "/dev/shm/as02-zero-native-obj-xg0inxki/Vtb___024root.h": "a14719a6e135d555352a9b731d3f4735a0906bdccdeb323b3d0a696c1c004f9a",
+    "/dev/shm/as02-zero-native-obj-xg0inxki/Vtb.h": "47db47b898b619f1b32ebadf2b927248912841c302fe1975ab60d943235642ad",
+    "/dev/shm/as02-zero-native-obj-xg0inxki/Vtb__main.cpp": "b6c7eda60a088c96039b864f66cd0c611075c0c33c6978e4f4734d5af9f43e43"
+  },
+  "debugger_runs": [
+    {
+      "log": "rdma/rnic/build/zero-native-debug-M0hO1S/gdb.log",
+      "seconds": 13.689534958975855,
+      "interpretation": "Stopped at genuine fatal; initial field traversal missed anonymous structs. No DUT success or mutation."
+    },
+    {
+      "log": "rdma/rnic/build/zero-native-debug-M0hO1S/gdb-002.log",
+      "seconds": 15.693046156025957,
+      "interpretation": "Normal C++ member lookup reveals actual protected/native fault23. Nonzero channel write/push flags are NOT themselves error values."
+    },
+    {
+      "log": "rdma/rnic/build/zero-native-debug-M0hO1S/gdb-003.log",
+      "seconds": 15.493721809994895,
+      "interpretation": "Actual core_tx_bad=1 and guard/native fault23; no completion timeout assumption."
+    }
+  ],
+  "cause": "Original ICRC generic minimum IP48 rejects actual header-only SEND_ONLY IP44 (IPv4/UDP/BTH/ICRC20+8+12+4).",
+  "correction": "NEW named rocev2_zero_ipv4_icrc clone in only the actual native integrity bridge RX/TX:44 permitted only for opcode04/pad0, all original whole-packet/UDP/CRC/checksum/mask checks retained. Original integrity definition/legacy/default/protected admission unchanged.",
+  "fixture_correction": "Expected remote key for zero SEND/SEND_IMM is canonical0, not the unrelated zero-RDMA remote key fedcba98. Actual C descriptor already had0 and is not altered by the expected-value correction.",
+  "component_fixture_failure": {
+    "failed_report": "results/2026-10-18/rocev2-rnic-zero-integrity-001.json",
+    "cause": "Two methods passed. Short-class method attempted to pass a deliberately incomplete40-byte BTH frame to the unchanged valid-packet ICRC oracle, which correctly rejected it before simulation.",
+    "correction": "Keep malformed truncated wire malformed with explicit IP/UDP lengths/checksum; do not weaken the valid-packet oracle.",
+    "preimage": "rdma/rnic/build/zero-native-debug-M0hO1S/integrity-test-before-truncated-input.py",
+    "sha256": "a0088ccd380f5a0d298393eca3644e135be2e544c3df2741010d167683fffb3b",
+    "successful_fresh_report": "results/2026-10-18/rocev2-rnic-zero-integrity-002.json"
+  },
+  "fresh_private_integrity_elaboration": "results/2026-10-18/rocev2-rnic-zero-native-elaboration-003.json",
+  "fresh_full_native_runtime_pending": "results/2026-10-18/rocev2-rnic-zero-native-full-002.json",
+  "hardware_or_network_or_install_or_reboot_changed": false,
+  "timing_or_drain_gate_relaxed": false,
+  "original_integrity_sha256": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3"
+}

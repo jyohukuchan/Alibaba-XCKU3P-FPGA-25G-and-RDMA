@@ -1,0 +1,97 @@
+{
+  "scope": "Actual native-only SEND44 integrity extension; strict real CRC/FIFO RTL.\n\nTX/RX byte oracles, malformed short class/pad/length/ICRC/UDP/keep rejection,\nordinary packets and stalled full-frame recovery. Original module unchanged.\nNo HLS/full-native/Linux/physical/timing proof; every runtime bounded30s.\n",
+  "pass_test": false,
+  "methods": 3,
+  "seconds": 41.910825875995215,
+  "source_sha256": {
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/fpga/derive_zero_native.py": "d652f5e0a805b96d2a963f33d9112d8121f1170a15b111e3e400c81eface97a7",
+    "rdma/rnic/fpga/derive_atomic_access_native.py": "ab42d555c459c2e7b7da71686539c3d75a31e075a3a8c11c66e09a59e6e903ee",
+    "rdma/tests/test_icrc_rtl.py": "669d93c43d83a9609eeff9ed659f8de1920b41f2a43ea54f73033ca68af83b02",
+    "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "022eee2383a8be45e8858946659fc05182537f0a09562b6011bde5285536de16",
+    "rdma/rnic/tests/test_zero_integrity_rtl.py": "a0088ccd380f5a0d298393eca3644e135be2e544c3df2741010d167683fffb3b",
+    "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+  },
+  "tests": {
+    "test_actual_TX_RX_SEND44_and_ordinary_ACK_WRITE_all_pad_positions": [
+      {
+        "summary": {
+          "cycles": 724,
+          "input_beats": 309,
+          "output_beats": 309,
+          "good_frames": 11,
+          "bad_frames": 0,
+          "input_stall_cycles": 0,
+          "output_stall_cycles": 117,
+          "first_output": 11,
+          "last_output": 675
+        },
+        "seconds": 11.941202135989442,
+        "directory": "rdma/rnic/build/zero-integrity-nwpcx7da",
+        "artifact_sha256": {
+          "rdma/rnic/build/zero-integrity-nwpcx7da/expected.hex": "3b31dc267cde11894efefde679af908781cf0533478387be1c5186f0a8b8c340",
+          "rdma/rnic/build/zero-integrity-nwpcx7da/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-integrity-nwpcx7da/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+          "rdma/rnic/build/zero-integrity-nwpcx7da/test.vvp": "ef098d69da227ffff440dc049653798cf89141b6c50ee942d310726cccfa2b9e",
+          "rdma/rnic/build/zero-integrity-nwpcx7da/tb.v": "2c4b137d872b8f9bf35e8d2932a73c3adf490e7fee07774454f927a93884569c",
+          "rdma/rnic/build/zero-integrity-nwpcx7da/simulation.log": "9ab95e5886781f6697f8e998d5b8cbbb3eab4bf9c30047928d895832f7b9d252",
+          "rdma/rnic/build/zero-integrity-nwpcx7da/input.hex": "6ce4adf1b05d8066549e780249d031559f59a56fc346f54ad33aa97bebe4a6ad"
+        }
+      },
+      {
+        "summary": {
+          "cycles": 724,
+          "input_beats": 309,
+          "output_beats": 309,
+          "good_frames": 11,
+          "bad_frames": 0,
+          "input_stall_cycles": 0,
+          "output_stall_cycles": 117,
+          "first_output": 11,
+          "last_output": 675
+        },
+        "seconds": 15.115662192984018,
+        "directory": "rdma/rnic/build/zero-integrity-zpqb45ol",
+        "artifact_sha256": {
+          "rdma/rnic/build/zero-integrity-zpqb45ol/expected.hex": "3b31dc267cde11894efefde679af908781cf0533478387be1c5186f0a8b8c340",
+          "rdma/rnic/build/zero-integrity-zpqb45ol/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-integrity-zpqb45ol/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+          "rdma/rnic/build/zero-integrity-zpqb45ol/test.vvp": "cfc71c9091606762500e8e97c0923c2383237ac6e9946010ed14c6bdef8a6b87",
+          "rdma/rnic/build/zero-integrity-zpqb45ol/tb.v": "6e6304343a1bcf9187333f4168a1a777778bc722c644c42922ee499c6563efc4",
+          "rdma/rnic/build/zero-integrity-zpqb45ol/simulation.log": "60fe12110427b44c120a269a7922651cb8eaa057d642bd0606767d83b6079ed3",
+          "rdma/rnic/build/zero-integrity-zpqb45ol/input.hex": "3b31dc267cde11894efefde679af908781cf0533478387be1c5186f0a8b8c340"
+        }
+      }
+    ],
+    "test_zero_still_checks_ICRC_IP_checksum_UDP_dense_keep_and_final_length": [
+      {
+        "summary": {
+          "cycles": 101,
+          "input_beats": 42,
+          "output_beats": 21,
+          "good_frames": 7,
+          "bad_frames": 7,
+          "input_stall_cycles": 0,
+          "output_stall_cycles": 7,
+          "first_output": 15,
+          "last_output": 52
+        },
+        "seconds": 14.659948248998262,
+        "directory": "rdma/rnic/build/zero-integrity-tr6e7w40",
+        "artifact_sha256": {
+          "rdma/rnic/build/zero-integrity-tr6e7w40/expected.hex": "3ac6862d26981d590a488c12de13cff240907462ee7d03e4633376279e164213",
+          "rdma/rnic/build/zero-integrity-tr6e7w40/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/zero-integrity-tr6e7w40/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+          "rdma/rnic/build/zero-integrity-tr6e7w40/test.vvp": "b00ef40bc84531a46ceeed50dc115c955f51c5ef96d1cebf09f05bc6646e8888",
+          "rdma/rnic/build/zero-integrity-tr6e7w40/tb.v": "fa8516d409339d33f25aea439bd7d9b1eeadc19af2217d6653d74e055f2045c5",
+          "rdma/rnic/build/zero-integrity-tr6e7w40/simulation.log": "a9e302fa26a8a35fd0c383cc79307051288c626435dbc4f295c1510fab0dffa5",
+          "rdma/rnic/build/zero-integrity-tr6e7w40/input.hex": "b2e05602c08a126848d319e042bbf0421266effc728c1572d8ae3db8368ebd31"
+        }
+      }
+    ]
+  },
+  "simulation_limit_seconds": 30,
+  "four_state": true,
+  "original_integrity_unchanged": true,
+  "native_or_hardware_runtime": false
+}

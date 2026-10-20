@@ -32,6 +32,47 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+Progress103 adds SOURCE zero RQ receive semantics in the SAME complete HLS:
+real SEND/SEND_IMM/WRITE_IMM headers/empty EOF/ACK/MSN/common PSN, six posted
+zero/nonzero buffer cases and six owner/EOF negatives. No zero memory
+command/data, fake RQ or quiet receipt. Full-top C++003 PASSES36.86s compile/
+1.40s execution with ALL prior Atomic/zero requester cases repeated. Actual
+owned-service/Immediate compatibility001 PASSES22.19s/0.91s. Native RQ/CQ,
+HLS generation, incoming normal zeroWRITE/READ, large/multi-SGE and all
+Linux/physical/timing/full-goal work remain. At publication, separate
+requester native002 has FAILED its original1200s compile limit, with NO
+runtime cases executed. The huge generated C++ function at -O0 was the
+observed bottleneck. Its report-bound log was preserved and only its own
+leftover build children stopped; no retry, clock/source relaxation or
+hardware mutation. [Details](ROCEV2_ATOMIC.md).
+
+Progress102 observed fresh whole-native001:456.73s compilation, all eight
+099 regressions and actual zero WRITE/READ PASS with real HLS/replay/MAC/
+CQ and no data MR/DMA; entire batch FAILS at zero SEND. Actual frozen-model
+diagnosis found the old IP48 minimum rejecting legitimate empty SEND44.
+A new named native-only ICRC helper accepts44 only for SEND_ONLY/pad0;
+original legacy/default/admission integrity stays unchanged. New integrity
+002 PASSES3 methods/five<=15.31s four-state runs,47 valid/25 invalid frames;
+full elaboration003 PASSES2.74s. Fresh changed-graph whole-native002 was
+COMPILING at102, then timed out before runtime (see103 above). The new matched private4095 provider separately
+PASSES all four old/new profiles and six public zero verbs/SGE/bad-WR/WC
+serialization cases; syscall replies remain models. Incoming zero/RQ and
+Linux/physical/large/multi-SGE/timing/full-goal qualification remain.
+See [exact evidence and failure boundaries](ROCEV2_ATOMIC.md).
+
+Progress101 adds a checked zero REQUESTER native integration candidate over
+the same29-module Atomic-access graph, with actual generated zero HLS and
+full748/408/816 requester ABIs. No local MR query/DMA for canonical zero
+work; READ still waits for the real protected response token. Full native
+elaboration002 PASSES2.92s with one MR/PTE/PSN/MSN domain and no width/drain
+bypass. Staging002 PASSES14 methods/49 four-state cases, including five
+actual zero framer/lifetime cases and prior Atomic regressions. Leaf002 also
+PASSES39 methods/155 four-state cases in361.98s total, each simulation
+bounded30s. Adjacent endpoints remain models. Fresh whole-native13-case
+compilation/runtime is IN PROGRESS at this checkpoint, not a pass.
+All zero incoming/RQ/provider, large/multi-SGE, actual Linux/physical and
+original timing/CDC/full-goal requirements remain. See [boundaries](ROCEV2_ATOMIC.md).
+
 Progress100 implements zero-length normal REQUESTER behavior in the same
 complete Atomic/Immediate HLS SOURCE: real packet/stored replay/ACK/header/
 timer/state retirement, no data-memory command, one-PSN zero READ, full

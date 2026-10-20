@@ -1,0 +1,25 @@
+{
+  "scope": "103 zero RQ receive source fixture diagnostics; failed reports/preimages remain distinct from fresh successful tests.",
+  "hardware_changed": false,
+  "diagnostics": [
+    {
+      "failed_report": "results/2026-10-18/rocev2-rnic-zero-rq-csim-001.json",
+      "stage": "C++ fixture compile",
+      "cause": "The new helper positive() collided with the actual inherited Atomic fixture helper, and an ACK-header queue was named as an Endpoint member that does not exist.",
+      "correction": "Use the unique zero_rq_positive helper and the real tx_assembled output. Actual HLS source, compiler assertions and runtime deadline unchanged.",
+      "preimage": "rdma/rnic/build/zero-rq-csim-owj_snw1/test-before-RQ-helper-names.cpp",
+      "sha256": "843bd0ed87c3bb927d0080dca3bada142193f2929c2948a719ca5c2b1f77c074"
+    },
+    {
+      "failed_report": "results/2026-10-18/rocev2-rnic-zero-rq-csim-002.json",
+      "stage": "Actual RX PSN consumer",
+      "cause": "The fixture reversed actual QP request/response PSN initialization arguments. The real common state table expected123400, so correctly refused packetfffffe and generated a NAK, rather than offering a receive completion.",
+      "correction": "Initialize the actual RX EPSN to the independently intendedfffffe and TX PSN to123400. No packet-PSN check, state consumer or DUT behavior was weakened.",
+      "preimage": "rdma/rnic/build/zero-rq-csim-f6ha25ih/test-before-QP-PSN-argument-order.cpp",
+      "sha256": "158b526402ca9df72edd64079cca14389283f5089259d2e404a08a3a1c71e75d",
+      "successful_fresh_report": "results/2026-10-18/rocev2-rnic-zero-rq-csim-003.json"
+    }
+  ],
+  "same_HLS_source_unchanged_during_fixture_corrections": "rdma/rnic/build/native-zero-rq-transport-001",
+  "current_scope": "Source C++ consumers/owned-service compatibility only. HLS generation/native RQ/CQ/Linux/physical and normal incoming zero WRITE/READ remain unimplemented or unproven."
+}

@@ -32,10 +32,47 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
-Progress096 is an UNVALIDATED full-native integration draft in
-`derive_atomic128_native.py`. Its first derivation stops at a checked SQC
-source-anchor mismatch (`initial if(MAX_QPS`); no complete generated graph,
-elaboration or runtime result is claimed. See [Atomic status](ROCEV2_ATOMIC.md).
+Progress098 verifies that the UNCHANGED public provider already transports
+standard CAS/FADD through actual installed libibverbs; hardware128 records
+remain kernel-private. Provider002 PASSES both511/1023 contexts in<0.017s
+with full64-bit operands, bad-WR and WC metadata; only syscall replies are
+modeled. Kernel/native-CQ001 additionally PASSES12 ASan/UBSan cases: actual
+097 standard callbacks reproduce all128 bytes of096 native SQ inputs and
+consume its unedited CAS/FADD/READ/SEND_IMM CQ snapshots, while eight labeled
+operand/padding mutations retain refs/no WC/no ACK. Linux/pins/DMA/MMIO/
+teardown are modeled, so this is ABI-data compatibility, not live kernel/
+RTL/hardware integration. Per-QP Atomic receive authority plus MR permission
+must still be propagated before standard remote-Atomic registration is
+enabled. All original scope/timing/physical/lifetime requirements remain.
+
+Progress097 adds a checked PRIVATE kernel128 requester cohort, leaving all
+default/096 proof inputs untouched. Actual standard Atomic post_send, typed
+signal-all, dual128-byte coherent SQ/RQ allocation, strict live tuple/geometry
+negotiation, local result-write MR refs and full-operand CQ comparison/WC
+retirement are implemented. Actual running-header/GCC13/W=1 build001 PASSES
+8.49s; ASan/UBSan post002 PASSES14 new Atomic/geometry and15 prior verbs
+cases, each<0.015s. Linux/pins/DMA/MMIO/completion are modeled in those tests;
+no actual Linux callback, installed provider or coupled RTL/kernel runtime
+is claimed. Default Makefile and both device `IB_ATOMIC_NONE` stay unchanged.
+Remote-Atomic MR/QP receive permission and provider128 posting remain, along
+with every original physical/timing/lifetime requirement. See
+[Atomic details](ROCEV2_ATOMIC.md) for exact failures and boundaries.
+
+Progress096 generates24 matched replacements and PASSES complete native
+elaboration003 in2.61s with no port-width mismatch: one actual new requester
+HLS/PSN/MSN domain, one MR/PTE domain and full native parents/leaves, alongside
+unchanged legacy delivery. Shared SQ/RQ fetch remains one actual engine.
+New SQC/RQC128-byte stride/feature13/15 and CQ feature15/operand aperture
+pass11 methods/42 four-state cases; adjacent backend/guards/lifetime are
+explicit models. Fresh whole-native001 now PASSES447.86s compilation and
+five bounded cases: CAS18.80s/FADD19.00s/READ18.90s/SEND_IMM18.85s/mixed
+Atomic responder/WRITE18.65s. CAS/FADD use actual C128 SQ, same MR/PTE,
+8-byte protected3+5 page-split result DMA/fence, real XGMII/FCS/SFD/CDC,
+byte-identical native replay, withheld second MAC receipt and actual CQ
+commit/core-retire/host-ACK. Physical host/root/peer/PHY/PTP are models;
+ordinary requester MAC pins remain modeled. Kernel/provider128 posting,
+standard API, physical operation and original timing/CDC remain incomplete.
+See [Atomic status](ROCEV2_ATOMIC.md) for boundaries and failed diagnostics.
 
 Progress095 completes the SAME live generated-requester003 build:502.94s
 compile,1.77s TWO-STATE RTL runtime PASS. Two successive CAS/FADD requests

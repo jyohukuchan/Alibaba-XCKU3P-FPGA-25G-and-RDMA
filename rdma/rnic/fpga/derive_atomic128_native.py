@@ -94,8 +94,11 @@ def root(t):
         count=t.count(a)
         if not count:raise ValueError('receive commit/retire connection changed '+a)
         t=t.replace(a,b)
-    # Undo the ONE local requester retire input: it needs all748 bits.
-    t=once(t,'.s_local_retire_context(cq_retire_context),','.s_local_retire_context(cq_retire_context),')
+    t=once(t,'.s_recv_retire_context(cq_retire_context),',
+        '.s_recv_retire_context(cq_retire_context[619:0]),')
+    # The separately named local requester retire input retains all748 bits.
+    if t.count('.s_local_retire_context(cq_retire_context),')!=1:
+        raise ValueError('full local requester retirement connection changed')
     t=once(t,'    output wire [31:0] m_work_immediate,',
         '    output wire [31:0] m_work_immediate,\n    output wire [63:0] m_work_compare,m_work_swap_add,')
     return once(t,'.m_work_immediate(m_work_immediate),',
@@ -108,8 +111,9 @@ def sq_control(t):
     t=once(t,'ra==12 || ra==28 ||','ra==12 || ra==28 || ra==32 ||')
     t=once(t,"8:rd=(RECV_CANCEL_ENABLE ? 32'h3:32'h1) | (IMMEDIATE_ENABLE ? 32'h4:0);",
         "8:rd=(RECV_CANCEL_ENABLE ? 32'h3:32'h1) | 32'hc;\n    32:rd=128;")
-    return once(t,'initial if(MAX_QPS',
-        'initial if(!IMMEDIATE_ENABLE)$fatal(1,"matched128-byte Immediate-header profile required");\ninitial if(MAX_QPS')
+    return once(t,'initial begin if(ADDR_WIDTH!=12 || MAX_QPS!=8)',
+        'initial if(!IMMEDIATE_ENABLE)$fatal(1,"matched128-byte Immediate-header profile required");\n'
+        'initial begin if(ADDR_WIDTH!=12 || MAX_QPS!=8)')
 
 
 def cq():

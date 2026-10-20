@@ -1,0 +1,63 @@
+{
+  "scope": "Actual unchanged provider/public ibv Atomic request/WC serialization.\n\nInstalled libibverbs and pinned rdma-core50/PABI34 headers; ONLY fake-fd\nioctl/write replies model kernel. No real NIC/context/driver/provider install,\nDMA, kernel callback or device capability claim. ASan/UBSan, <=10s/case.\n",
+  "pass_test": false,
+  "directory": "rdma/rnic/build/provider-atomic-u4dckc9a",
+  "source_sha256": {
+    "rdma/rnic/tests/probe_provider_atomic.py": "bafcf00396056ef480399305d428e5ae006ad106bcc7a9c2f3208668be5be945",
+    "rdma/rnic/tests/probe_provider_commands.py": "cb1ab6bcf540e427c00f1e042a91673ce81b2e32fd64dc7634a7297f9959f8ec",
+    "rdma/rnic/tests/provider_atomic_commands.c": "935aa546f37ba757db6f3ced65eacfad1477310d2ac649fbe194d8c62239b987",
+    "rdma/rnic/tests/provider_commands.c": "88665c39dd254735da8fdb07a4d54097fe15a68814cd4bf06e3b2579012c0dd8",
+    "rdma/rnic/provider/as02.c": "377c4b056e45a1d9031689d6e795176177eab60649b3a9ac9208738e9df106e3"
+  },
+  "upstream_sha256": {
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0/libibverbs/cmd.c": "813968afad472f6b60813983509aaaeb79712fa99f95eeb005fb323c09bd39ea",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0/libibverbs/driver.h": "74d0a29cf20c6510dc9f32b7479648ded56c48a32e200a956f31bc2426036add",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0/libibverbs/verbs.h": "fab5bd6f7d17b23f9afac2b4e4ad06315f964a69d695d0ea06402e8858adb8f2",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0/build/include/config.h": "25ec47917ae7388ab95c9322322ec22c3a299153a96eb8ffb293076d7df3a3a7"
+  },
+  "actual_installed_library_sha256": {
+    "/usr/lib/x86_64-linux-gnu/libibverbs.so.1.14.50.0": "249242c3ba29d72b7a9be560b768bf43fc5924c8a166f4e3bbb224bd81ade3ab"
+  },
+  "rdma_core_commit": "bc6b4bc134532e952fe7f8efc251e1f89b912098",
+  "provider_PABI": 34,
+  "production_provider_changed": false,
+  "provider_installed": false,
+  "real_NIC_opened": false,
+  "kernel_loaded": false,
+  "syscall_boundary_modeled": true,
+  "hardware_verified": false,
+  "Atomic_cap_advertised": false,
+  "simulation_limit_seconds": 10,
+  "tests": {},
+  "compile_command": [
+    "cc",
+    "-std=gnu11",
+    "-D_GNU_SOURCE",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-O1",
+    "-g",
+    "-fsanitize=address,undefined",
+    "-fno-sanitize-recover=undefined",
+    "-isystem",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0/build/include",
+    "-isystem",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/provider-atomic-u4dckc9a/tests/provider_atomic_commands.c",
+    "-pthread",
+    "-Wl,-export-dynamic",
+    "-libverbs",
+    "-o",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/provider-atomic-u4dckc9a/cases"
+  ],
+  "compile_seconds": 0.8298460699734278,
+  "error_type": "ValueError",
+  "error": "real provider Atomic compile failed: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/provider-atomic-u4dckc9a/compile.log",
+  "artifact_sha256": {
+    "rdma/rnic/build/provider-atomic-u4dckc9a/compile.log": "51ce6f92c1aaa698b2355387fa55da7180eeadef0feaa9f0b011b7782747267f",
+    "rdma/rnic/build/provider-atomic-u4dckc9a/provider/as02.c": "377c4b056e45a1d9031689d6e795176177eab60649b3a9ac9208738e9df106e3",
+    "rdma/rnic/build/provider-atomic-u4dckc9a/tests/provider_commands.c": "88665c39dd254735da8fdb07a4d54097fe15a68814cd4bf06e3b2579012c0dd8",
+    "rdma/rnic/build/provider-atomic-u4dckc9a/tests/provider_atomic_commands.c": "935aa546f37ba757db6f3ced65eacfad1477310d2ac649fbe194d8c62239b987"
+  }
+}

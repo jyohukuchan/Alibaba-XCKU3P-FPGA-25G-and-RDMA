@@ -1,0 +1,284 @@
+{
+  "scope": "Actual matched standard callbacks consume096 full-native RTL SQ/CQ bytes.\n\nDo not rerun/relabel native tests. Verify exact successful sources/artifacts,\nthen consume each unedited real CQ snapshot and compare all128 posted bytes.\nLinux/pins/DMA/MMIO/peer are still modeled; no live kernel/RTL coupling or\nhardware proof. ASan/UBSan, <=10s each; malformed copies are labeled mutations.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9",
+  "source_sha256": {
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/mr.c": "fafe25e2d81236cd155436dd4a5d723662ac6cd4872824655ecf438b1c43feab",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/mr_contract.c": "fba5388020b03409654f46dfce12aed7a9f4776dc22c32a964a3aecf69da6adf",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/wqe.c": "4b3618b01a20876084cd56c5c14c27c3cb8d2c6390aa328bdbf795cd64104211",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/verbs_wqe.c": "82ccb5072a8955058abab1edfd7bca9f2fd26f60329ebd5ee59608d626ae49ba",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/sq.c": "9d08bf53b0db63bf01d523f1761696f3978081d19e6ace0971ca1d5fbb31bb64",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/sq_io.c": "1ccaf912ba5fa4f4b41643d7b404119726a2320c1c29e1cad4c244262d5870cb",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/sq_hw.c": "868e0095a0e7e382b6064aff5f86d5067db096e77195902ef9dec2377140803d",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/cq_io.c": "a210841bdf3f271961a7b687dc01332200a23fe201cd1604019c4ca3e167add9",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/cq_hw.c": "62727e3661de59f10456deffcc864920746a196fc80ec9226498b6945684fe33",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/cq.c": "3fea3dd751d491b6241f8a55db4b65fa92a7c2ff72263d948ad45f1d912404c5",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/rnic_io.c": "f8f112bb8805a8e2725c62fc6754113475dab87df7ac9f15ed0651abf0352d42",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/qp_hw.c": "5bb0a0351af8b69a6099eb9ffbaaeb8734f0b1da3c42fb997cc7f4943b6ff4a9",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/retry_io.c": "9455b9bb7cd157d6fbbf667144612a8034e4c72d24dad979529b440f7b8eb489",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/verbs.c": "a15a23249e8f340f9404392cae02affa692f7eef8d83f5baf1121ea9e9beec23",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/wqe_atomic.c": "965050dda10092921a48d9caa6e9557562c9704c0d39f9289b54f997c6046f72",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/verbs_atomic_wqe.c": "93a0b279add531f5de82006c8435fd1ed13cd2c7450f0bed2c58fbe1d6971ec7",
+    "rdma/rnic/tests/kernel_queue_model.c": "040e9a6c3ec021996f8af51f50d180043cf440933f13d116bbdb04f0b92ce240",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/models/kernel_atomic128_native_cq.c": "657d377cd038180bcae822a83cc6c8ecc2773717104458a6ca96db76e3a17b9a",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/rnic_regs.h": "ffa13a0bb96b57e097d9061d0da3481161f7a630612ddd6a75ebca0a33840d1e",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/qp_hw.h": "79744b42f6e83c02e0ce1acc9d7e1f34a470c1dba95241f504278c3aa21cd9b2",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/wqe_atomic.h": "f971b72123b3b3a24c78c28a2c1a856d5c9a9597977fae0a09f654b13f952f68",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/atomic_profile.h": "9160d0ec96f2b0f0729b54e7451e04961869dcb5796b51f2f46ea6e58703ccf6",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/rnic_hw.h": "87f084df23fa172ddc76fbcffb30338a5d9a28e68fd08ec3f54157317f9960f7",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/cq_regs.h": "d8b0c553cde7baee136c919837d0bcc8d8308de1a2ac2155207a7cb771c20033",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/sq.h": "3f040782da417dd690aae6a6ec22599f08b785c8c4c8e968852eeefa726b82c5",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/sq_io.h": "9ab44b2186598290b57ac0999b861f01b212ef7e6ed7e890870bbdc1d9731d60",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/mqnic_graph.h": "c7e78ac4f98d8841fbc1e9f7a531cffa9f675be00710295da7183fd22864dc2b",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/cq_hw.h": "9cfbf94b2a7ebcfcc4465b761fb6ccf4c93844b7dd67d8e3f7e81983e5e0e673",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/native_attach.h": "c75bc0317787962e5b803f04fee05e8f556614df85fcb40ea851148fa45d923b",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/retry_io.h": "aad5018d4cb7292ef0240f09f1495453030f5211c98999fa0edec5b0fbee9167",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/cq.h": "8fa35025b2c276de11d026dcb1cf9d324637dba1fb3e743c0261f447447a44a4",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/wqe.h": "646e0f6c09f85af72cd9d93016f1368ee7378b6f0cc1f869e4ace0e8e68e8a2a",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/native_regs.h": "1958df9642bd0c865d97c584cda9902fa689d9049b3f415c75f342dddd7b0b97",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/device.h": "830ced5f865bb1af7f7e73ed3e952fa1f745934f1500d4e2f2090e2511274f41",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/verbs.h": "9f2623733d2dd8c326c62489130ca427a46790e2b63284ee3022ab0ca3c341e6",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/rnic_io.h": "92999a3752af6fce6c8556c9c2724ce85918949966f35d2420695e8671d0ffc3",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/mr.h": "427c947b5e8491e4444cf1fd0e726cfbcdfdae00113020ec67b7e7f314c5cfc3",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/sq_hw.h": "3b314f585820e35d33e17dc362c92b070b14171d29e59cbedb25699863d50fd8",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/cq_io.h": "4829744349a8d4587f4b9aa704d854969b25b6d860a2b10bd63b4f6aa8b4b03e",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/native_graph.h": "d2d0d4722d0e336fcc9649c3d0dc6b758c587a6398555424da1d16d773b39555",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/models/kernel_sq_hw_cases.c": "6a6ab05085c5684274560a5980bfa6965a3267a570915d625c91c52c944dff04",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/models/kernel_cq_model.h": "7a97b34bdb70fab41fc3f1ac926ae96aed15dce09f230733bac487cd3bd64615",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/models/kernel_queue_model.h": "fa79e208e46cefa0180ad8356b7a6f8437c15ff63073f2831cba8cf06ff5bc14",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/models/kernel_atomic128_model.h": "dc7abcc6dbbeb954f43b9f85be0a6213e043eda0c355c46007bba2335d147edf",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/models/kernel_verbs_cases.c": "09036a7ef175d8c66d751d7d86832c5d78611924f6aa01c22421e039214d4bf4",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/models/kernel_sq_hw_model.h": "3e4db9a8dfb956b8c748912fa99ba8ded276bf10529463198f398a077d65c771",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/models/kernel_verbs_model.h": "035149fed01b1b6e8b195bc8be290879932496cb8d383130574d6da95b5d7b7a",
+    "rdma/rnic/build/atomic128-native-full-bgqi2vew/CAS-event.hex": "21620ea94c0230377e4b119df881c7dc10d254cdaf454ae1688b10b7e8796dd5",
+    "rdma/rnic/build/atomic128-native-full-bgqi2vew/CAS-records.hex": "643d74541adeba971f276fc0690515e4dd1d3fa803f853971dd81bbf1fa1b240",
+    "rdma/rnic/build/atomic128-native-full-bgqi2vew/FADD-event.hex": "38617c2107123a02e8844e75aff17427a382b63e6fd174291fd6f11d029310b6",
+    "rdma/rnic/build/atomic128-native-full-bgqi2vew/FADD-records.hex": "333673538788f41b204e993db95d762ad77267d352aa56a5186f7566564c68bf",
+    "rdma/rnic/build/atomic128-native-full-bgqi2vew/READ-event.hex": "9d2c2ab9d730ce5c4b6ce3f96fec422889c73c6f9b7f942500c4d7775b892e48",
+    "rdma/rnic/build/atomic128-native-full-bgqi2vew/READ-records.hex": "38bd14a1ffd0bf2fc3851788a0774d9e992baafd0047b3189e54195adacaf35f",
+    "rdma/rnic/build/atomic128-native-full-bgqi2vew/SEND_IMM-event.hex": "90d110b967f5c178395641ce5f9badbb99b312fad47f0fc3d354e3fc9a3ca011",
+    "rdma/rnic/build/atomic128-native-full-bgqi2vew/SEND_IMM-records.hex": "1fce85a4ad3ef030c2c601d88967e5847f25a0386bd26614212f6a5f9d47c97b",
+    "rdma/rnic/tests/probe_kernel_atomic128_native_cq.py": "b24bba3f83bcfdd37e82ebd9b854549f863656cd4a218125072de10de0eaad8a",
+    "rdma/rnic/tests/atomic128_kernel_models.py": "f3ecb9d09300aad83770f77e532210f3d5065805c306c61f7ac600e07df9cef7",
+    "rdma/rnic/tests/test_kernel_verbs.py": "0ee8ea79e8c26a8d80fb388beccbbbf7ba101d7317e8703605e18b800b7e9b00",
+    "rdma/rnic/tests/kernel_atomic128_native_cq.c": "657d377cd038180bcae822a83cc6c8ecc2773717104458a6ca96db76e3a17b9a",
+    "rdma/rnic/tests/kernel_sq_hw_cases.c": "86f4f6f8f7a5f0bb663f61d04b1b746b0d6694d79f82449f97776ad30157f798",
+    "rdma/rnic/tests/kernel_verbs_cases.c": "525d56e92d9f152d6bfc340579ef2a4aacf552f55731629985cd4bb5039fad07",
+    "results/2026-10-18/rocev2-rnic-atomic128-native-full-001.json": "cc5f5c396ea9e786c0008bda2e9046193db210d6efe05fb99805a1a24c58b984",
+    "results/2026-10-18/rocev2-rnic-atomic128-kernel-build-001.json": "b84306bb55bad880a1acdd1ef932e5eee0854cf877a2f20db39640e208dc4f52",
+    "rdma/rnic/tests/kernel_verbs_model.h": "035149fed01b1b6e8b195bc8be290879932496cb8d383130574d6da95b5d7b7a",
+    "rdma/rnic/tests/kernel_cq_model.h": "7a97b34bdb70fab41fc3f1ac926ae96aed15dce09f230733bac487cd3bd64615",
+    "rdma/rnic/tests/kernel_sq_hw_model.h": "3e4db9a8dfb956b8c748912fa99ba8ded276bf10529463198f398a077d65c771",
+    "rdma/rnic/tests/kernel_queue_model.h": "fa79e208e46cefa0180ad8356b7a6f8437c15ff63073f2831cba8cf06ff5bc14"
+  },
+  "actual_standard_C_bodies": true,
+  "native_RTL_snapshots_consumed": true,
+  "live_kernel_RTL_coupling": false,
+  "Linux_primitives_pins_DMA_MMIO_peer_models": true,
+  "hardware_verified": false,
+  "simulation_limit_seconds": 10,
+  "tests": {
+    "CAS-0": {
+      "seconds": 0.014533247973304242,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 7,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "CAS-1": {
+      "seconds": 0.011915888055227697,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 7,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "CAS-2": {
+      "seconds": 0.011857359029818326,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 7,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "FADD-0": {
+      "seconds": 0.013420164003036916,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 8,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "FADD-1": {
+      "seconds": 0.012343187001533806,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 8,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "FADD-2": {
+      "seconds": 0.013155597960576415,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 8,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "READ-0": {
+      "seconds": 0.013352136011235416,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "READ-1": {
+      "seconds": 0.013133389002177864,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "READ-2": {
+      "seconds": 0.012964299006853253,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "SEND_IMM-0": {
+      "seconds": 0.013714550994336605,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "SEND_IMM-1": {
+      "seconds": 0.013001595041714609,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "SEND_IMM-2": {
+      "seconds": 0.013027157983742654,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    }
+  },
+  "compile_command": [
+    "cc",
+    "-std=c11",
+    "-D_GNU_SOURCE",
+    "-D__KERNEL__",
+    "-O1",
+    "-g",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pthread",
+    "-fsanitize=address,undefined",
+    "-fno-sanitize-recover=undefined",
+    "-I",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/include",
+    "-I",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/models",
+    "-I",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel",
+    "-include",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/models/kernel_atomic128_model.h",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/mr.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/mr_contract.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/verbs_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/sq.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/sq_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/sq_hw.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/cq_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/cq_hw.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/cq.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/rnic_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/qp_hw.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/retry_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/verbs.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/wqe_atomic.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/kernel/verbs_atomic_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/kernel_queue_model.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/models/kernel_atomic128_native_cq.c",
+    "-o",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/cases"
+  ],
+  "compile_seconds": 6.1121527930372395,
+  "source_unchanged": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/SEND_IMM-1.log": "b0514234599a603c7a4dbc294e0b407008984a0e271b7e162849f9868576d7e9",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/CAS-0.log": "cd3282e0c88a71a10e91c2d78f5e1ea8eb8be531a2a998237fb92a6c32ec4828",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/CAS-2.log": "86c84974c3b8bdb79a3e3ed36d67fbd1a92964ae3535dc9ba9d217c3ca014d77",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/READ-2.log": "d8d108d0fd344d3081dc374843008d65636bde7f20ab28f4a12ae8fefdd0bbdb",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/FADD-0.log": "6fb90902ad09970fafe9f31dbd685c64332a8b1e3e02b2f1b8e44105f3c20a72",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/SEND_IMM-0.log": "2d3592de24742aa07b85e0dc4162c65052b4315bb1ea246f42ea9fcb3bee9dd9",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/CAS-1.log": "48ef8ade499c775267d02c25ab72ab8b5059852db147b67122f7f61f9d178c63",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/READ-0.log": "09ab1cd2116af830cd5d1b2a5ba7f218e7bda2eb68244868daad55521731801a",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/cases": "a535e1b9a34b225afbdf76ab0179813ad201894e26b84f4c91ef00c0410fe4a3",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/READ-1.log": "cdc43ed39c94acf616b81601e5a14d7066e286e04ce0f10a13b3f2e231b7ed6d",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/SEND_IMM-2.log": "f681b87ff122928e73a96b153dec2c1049f23342e7687c4ccd394e2ebab68a08",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/FADD-2.log": "5c211581307146210ff6cd17806b516be9d7b0735558232149f0a6dff7f92eb1",
+    "rdma/rnic/build/atomic128-kernel-native-cq-2n1r0dg9/FADD-1.log": "98e1ea23cb0a60d576f4f03e83504ad346e4a0b46cba6f5828a420c628dee2c9"
+  }
+}

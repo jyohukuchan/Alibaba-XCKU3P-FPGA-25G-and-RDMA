@@ -1,0 +1,105 @@
+{
+  "scope": "Actual748-bit CQ ABI; ticket/commit/retire and host are explicit models.\n\nAtomic operands occupy0xa0..0xac, NEVER the legacy notification at0x90 or\nthe old context's zero padding. Runtime publisher test, not native DMA proof.\n",
+  "pass_test": true,
+  "methods": 2,
+  "simulations": 6,
+  "seconds": 0.23477373796049505,
+  "tests": {
+    "test_CAS_FADD_READ_RECV_preserve_operands_notification_padding_and_owned_ACK": [
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_cq_mmio.v": "8f71ae4440734e68ddee0cf5c815a6813744c4ce3a9b76bb6ede40a2c8dd9154",
+          "rdma/rnic/fpga/derive_atomic128_native.py": "9be2756604ed23cc9b41b2fd8d1a3b8db9bf2e2176663878463c12abc03b20ad",
+          "rdma/rnic/tests/test_atomic128_cq_rtl.py": "adf25cc140f37f043790d7b6fa7a6a20cac91a2d8ad00069b27533a7b4509c63",
+          "rdma/rnic/tests/test_message_cq_rtl.py": "b0ffdf182ad2c331f900e07cc4d7579fec243ab9acfd932495fd8de7eec78ef4",
+          "rdma/rnic/tests/test_cq_path_rtl.py": "a20c3d210892f3ff2a539373052461570524088ebbcf722a8f37292d8cb91898",
+          "rdma/rnic/tests/test_atomic128_response_rtl.py": "f45f24ac5941fa1591fd03f114d05d6d092f970a4bcc9d74036f57fa3a55bcc1",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412"
+        },
+        "bench_sha256": "46877a1a080a9027e97a08fb5b496042bb9c06a064c92c52e6a22c34d644d977",
+        "generated_CQ_sha256": "97010d52beeff528c6850de19bdf1b00650ac75d381cfd4fca7fd494aa9dd9e2"
+      }
+    ],
+    "test_noncanonical_Atomic_and_normal_extensions_never_publish": [
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_cq_mmio.v": "8f71ae4440734e68ddee0cf5c815a6813744c4ce3a9b76bb6ede40a2c8dd9154",
+          "rdma/rnic/fpga/derive_atomic128_native.py": "9be2756604ed23cc9b41b2fd8d1a3b8db9bf2e2176663878463c12abc03b20ad",
+          "rdma/rnic/tests/test_atomic128_cq_rtl.py": "adf25cc140f37f043790d7b6fa7a6a20cac91a2d8ad00069b27533a7b4509c63",
+          "rdma/rnic/tests/test_message_cq_rtl.py": "b0ffdf182ad2c331f900e07cc4d7579fec243ab9acfd932495fd8de7eec78ef4",
+          "rdma/rnic/tests/test_cq_path_rtl.py": "a20c3d210892f3ff2a539373052461570524088ebbcf722a8f37292d8cb91898",
+          "rdma/rnic/tests/test_atomic128_response_rtl.py": "f45f24ac5941fa1591fd03f114d05d6d092f970a4bcc9d74036f57fa3a55bcc1",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412"
+        },
+        "bench_sha256": "7fd71ff38de0280f96446070e0c3c80ad060e5931e2c81a460c94177243ead8b",
+        "generated_CQ_sha256": "97010d52beeff528c6850de19bdf1b00650ac75d381cfd4fca7fd494aa9dd9e2"
+      },
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_cq_mmio.v": "8f71ae4440734e68ddee0cf5c815a6813744c4ce3a9b76bb6ede40a2c8dd9154",
+          "rdma/rnic/fpga/derive_atomic128_native.py": "9be2756604ed23cc9b41b2fd8d1a3b8db9bf2e2176663878463c12abc03b20ad",
+          "rdma/rnic/tests/test_atomic128_cq_rtl.py": "adf25cc140f37f043790d7b6fa7a6a20cac91a2d8ad00069b27533a7b4509c63",
+          "rdma/rnic/tests/test_message_cq_rtl.py": "b0ffdf182ad2c331f900e07cc4d7579fec243ab9acfd932495fd8de7eec78ef4",
+          "rdma/rnic/tests/test_cq_path_rtl.py": "a20c3d210892f3ff2a539373052461570524088ebbcf722a8f37292d8cb91898",
+          "rdma/rnic/tests/test_atomic128_response_rtl.py": "f45f24ac5941fa1591fd03f114d05d6d092f970a4bcc9d74036f57fa3a55bcc1",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412"
+        },
+        "bench_sha256": "2367a1c2cb2019c2accd7d06c763de02696f4a9ea7dda5a908311f103c1001ef",
+        "generated_CQ_sha256": "97010d52beeff528c6850de19bdf1b00650ac75d381cfd4fca7fd494aa9dd9e2"
+      },
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_cq_mmio.v": "8f71ae4440734e68ddee0cf5c815a6813744c4ce3a9b76bb6ede40a2c8dd9154",
+          "rdma/rnic/fpga/derive_atomic128_native.py": "9be2756604ed23cc9b41b2fd8d1a3b8db9bf2e2176663878463c12abc03b20ad",
+          "rdma/rnic/tests/test_atomic128_cq_rtl.py": "adf25cc140f37f043790d7b6fa7a6a20cac91a2d8ad00069b27533a7b4509c63",
+          "rdma/rnic/tests/test_message_cq_rtl.py": "b0ffdf182ad2c331f900e07cc4d7579fec243ab9acfd932495fd8de7eec78ef4",
+          "rdma/rnic/tests/test_cq_path_rtl.py": "a20c3d210892f3ff2a539373052461570524088ebbcf722a8f37292d8cb91898",
+          "rdma/rnic/tests/test_atomic128_response_rtl.py": "f45f24ac5941fa1591fd03f114d05d6d092f970a4bcc9d74036f57fa3a55bcc1",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412"
+        },
+        "bench_sha256": "8bf16368fd5a1fa0d0bfa73f081f2842991b405be03b089e95d133e69d0c6025",
+        "generated_CQ_sha256": "97010d52beeff528c6850de19bdf1b00650ac75d381cfd4fca7fd494aa9dd9e2"
+      },
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_cq_mmio.v": "8f71ae4440734e68ddee0cf5c815a6813744c4ce3a9b76bb6ede40a2c8dd9154",
+          "rdma/rnic/fpga/derive_atomic128_native.py": "9be2756604ed23cc9b41b2fd8d1a3b8db9bf2e2176663878463c12abc03b20ad",
+          "rdma/rnic/tests/test_atomic128_cq_rtl.py": "adf25cc140f37f043790d7b6fa7a6a20cac91a2d8ad00069b27533a7b4509c63",
+          "rdma/rnic/tests/test_message_cq_rtl.py": "b0ffdf182ad2c331f900e07cc4d7579fec243ab9acfd932495fd8de7eec78ef4",
+          "rdma/rnic/tests/test_cq_path_rtl.py": "a20c3d210892f3ff2a539373052461570524088ebbcf722a8f37292d8cb91898",
+          "rdma/rnic/tests/test_atomic128_response_rtl.py": "f45f24ac5941fa1591fd03f114d05d6d092f970a4bcc9d74036f57fa3a55bcc1",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412"
+        },
+        "bench_sha256": "aea9d8d8ac395c0e26c8a701a5eef591e45625b8ee32b31ba3ce82a842504602",
+        "generated_CQ_sha256": "97010d52beeff528c6850de19bdf1b00650ac75d381cfd4fca7fd494aa9dd9e2"
+      },
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_cq_mmio.v": "8f71ae4440734e68ddee0cf5c815a6813744c4ce3a9b76bb6ede40a2c8dd9154",
+          "rdma/rnic/fpga/derive_atomic128_native.py": "9be2756604ed23cc9b41b2fd8d1a3b8db9bf2e2176663878463c12abc03b20ad",
+          "rdma/rnic/tests/test_atomic128_cq_rtl.py": "adf25cc140f37f043790d7b6fa7a6a20cac91a2d8ad00069b27533a7b4509c63",
+          "rdma/rnic/tests/test_message_cq_rtl.py": "b0ffdf182ad2c331f900e07cc4d7579fec243ab9acfd932495fd8de7eec78ef4",
+          "rdma/rnic/tests/test_cq_path_rtl.py": "a20c3d210892f3ff2a539373052461570524088ebbcf722a8f37292d8cb91898",
+          "rdma/rnic/tests/test_atomic128_response_rtl.py": "f45f24ac5941fa1591fd03f114d05d6d092f970a4bcc9d74036f57fa3a55bcc1",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412"
+        },
+        "bench_sha256": "3df019ef6e5d643d6637045157aa2b1bae1bbbeac429fde8b9c227e2ec68e8e3",
+        "generated_CQ_sha256": "97010d52beeff528c6850de19bdf1b00650ac75d381cfd4fca7fd494aa9dd9e2"
+      }
+    ]
+  },
+  "upstream_lifetime_models": true,
+  "hardware_verified": false
+}

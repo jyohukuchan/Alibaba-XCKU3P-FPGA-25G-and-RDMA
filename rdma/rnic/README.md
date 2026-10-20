@@ -15,11 +15,40 @@ remaining run was interrupted). No all-suite or release-pass claim is made.
 
 ## Latest functional milestone (2026-10-20)
 
-Progress096 additionally contains an UNVALIDATED full-native integration draft
-(`fpga/derive_atomic128_native.py`). Derivation currently stops at a checked
-SQC source-anchor mismatch; there is no complete generated graph or native
-runtime evidence for that draft. The verified component milestones below
-must not be read as a completed native Atomic requester profile.
+Progress098: [public provider002](../../results/2026-10-18/rocev2-rnic-atomic-provider-002.json)
+PASSES actual libibverbs CAS/FADD serialization/WC metadata with the unchanged
+provider;128-byte descriptors remain kernel-private. [Kernel/native-CQ001](../../results/2026-10-18/rocev2-rnic-atomic128-kernel-native-cq-001.json)
+PASSES12 cases: actual standard callback C reproduces096 native128-byte SQ
+records and consumes its unedited Atomic/READ/SEND_IMM CQ snapshots, with
+operand/padding negatives retaining ownership. Syscall/Linux/pin/DMA/MMIO/
+teardown boundaries are modeled, not a live kernel/RTL/physical path.
+Per-QP remote-Atomic receive authority and MR permission propagation remain;
+no capability advertisement, install, hardware or timing qualification.
+
+Progress097 implements an opt-in, checked PRIVATE kernel128 requester
+cohort: actual Atomic post_send/typed signal-all, dual coherent128-byte
+rings, strict format negotiation, RESULT-write MR refs and full-operand
+CQ/WC retirement. [Running-header build001](../../results/2026-10-18/rocev2-rnic-atomic128-kernel-build-001.json)
+PASSES8.49s and [ASan/UBSan post002](../../results/2026-10-18/rocev2-rnic-atomic128-kernel-post-002.json)
+PASSES14 new/15 legacy cases, each<0.015s. Those callbacks run in USERSPACE
+with modeled Linux/pin/DMA/MMIO/completion boundaries, NOT in Linux or
+coupled to096 RTL. Default sources/build and `IB_ATOMIC_NONE` stay unchanged.
+Provider128 posting, remote-Atomic MR/QP receive permissions, actual kernel/
+physical/timing qualification remain. Nothing is installed or loaded.
+
+Progress096 now connects24 matched native replacements and PASSES
+[complete elaboration003](../../results/2026-10-18/rocev2-rnic-atomic128-native-elaboration-003.json)
+in2.61s with no port-width mismatch: one actual new requester HLS/PSN/MSN
+and MR/PTE domain alongside unchanged legacy delivery. SQC/RQC128-byte
+format and CQ operands pass11 methods/42 four-state cases with modeled
+adjacent endpoints. [Fresh whole-native001](../../results/2026-10-18/rocev2-rnic-atomic128-native-full-001.json)
+PASSES CAS/FADD/READ/SEND_IMM/mixed Atomic responder-WRITE, each18.65..19.01s
+after447.86s feature compilation. CAS/FADD execute actual C128 SQ, same
+MR/PTE, protected8-byte page-split result DMA/fence, real MAC XGMII/FCS/SFD/
+CDC/replay and actual CQ ownership. Host/root/peer/PHY/PTP remain modeled;
+ordinary requester MAC pins remain modeled. Kernel/provider128 posting,
+standard API, physical and original timing/CDC qualification are incomplete.
+Default drivers still refuse the new exact features; `IB_ATOMIC_NONE` stays.
 
 Progress095: [generated requester003](../../results/2026-10-18/rocev2-rnic-atomic-request-generated-003.json)
 PASSES actual full HLS/integrity RTL execution in1.77s: CAS/FADD exact wire/

@@ -5,17 +5,187 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
-## Full native requester integration draft (096, not validated)
+## Public provider transport and native/kernel SQ-CQ compatibility (098)
 
-`derive_atomic128_native.py` is an IN-PROGRESS generator for a single matched
-128-byte requester/responder graph, including parent context widths, SQC/RQC
-descriptor stride, CQ operand registers and Atomic request routing. Its first
-derivation attempt stops at the checked SQC anchor `initial if(MAX_QPS` with
-`ValueError: source derivation anchor changed`. No complete output graph,
-elaboration or runtime result exists for this draft. It is included as a work
-checkpoint, not a usable native profile; the verified leaf/component evidence
-below does not validate this integration. Default RTL, driver negotiation and
-`IB_ATOMIC_NONE` remain unchanged.
+Inspection of the ACTUAL existing provider and pinned rdma-core50 serializer
+shows no new user-visible128-byte protocol is needed: `as02.c` already uses
+standard `ibv_cmd_post_send`. The128-byte hardware descriptor stays INSIDE
+the matched kernel queue path. [Provider002](../results/2026-10-18/rocev2-rnic-atomic-provider-002.json)
+PASSES real public `ibv_post_send`/`ibv_poll_cq`, unchanged provider and actual
+installed libibverbs under ASan/UBSan, with pinned PABI34 headers. Both511
+and1023 context checks run fresh in<0.017s each. Six serialized CAS/FADD
+submissions per context check zero/high-bit/all-one64-bit compare/add/swap,
+full remote VA/rkey/result SGE, exact second bad-WR pointer, and Atomic WC
+metadata. ONLY fake-fd ioctl/write replies model the kernel; no real NIC is
+opened, no result DMA is modeled as a provider success and no capability is
+advertised (`IBV_ATOMIC_NONE` remains). The legacy kernel still refuses
+Atomic; generic serialization is not permission or an installed backend.
+
+Provider001 failed compilation after reusing the original test main under
+a different function name: its implicit C main return0 no longer applied.
+The generated private fixture now has an explicit return0. Production
+provider/original fixture, `-Werror`, sanitizers and deadlines are unchanged.
+The failed report/log/private copy and exact launcher preimage are preserved.
+
+[Kernel/native CQ001](../results/2026-10-18/rocev2-rnic-atomic128-kernel-native-cq-001.json)
+PASSES12 fresh ASan/UBSan cases after6.11s compilation. Actual097 standard
+post_send/SQ/MR/CQ bodies reproduce ALL128 coherent descriptor bytes from
+the096 complete-native CAS/FADD/READ/SEND_IMM inputs. They consume each
+UNEDITED35-word actual RTL-produced CQ snapshot, including cookie/epoch/
+PD/QPN, legacy padding, independent notification and both full operands.
+The real CQ/WR comparison publishes the appropriate WC and releases exactly
+the corresponding work reference; a second poll does not duplicate it.
+Eight explicitly labeled operand/padding MUTATIONS instead retain owners,
+publish nothing and do not ACK. Those altered copies are not represented
+as unedited native evidence. The complete096 sources/artifacts/RAM executable
+are verified before/after, not rerun or relabeled as a new native test.
+
+This closes the prior ABI-data compatibility gap between the096 RTL and097
+kernel model, NOT a live syscall/kernel/RTL/PCIe link. Linux primitives,
+pins/coherent DMA/MMIO, peer and teardown remain models. No module/provider
+is installed and no callbacks execute inside Linux. Actual permission
+propagation, standard/live physical operation and original timing/CDC remain.
+In particular the current MR contract understands remote-Atomic bit8, but
+verbs registration still permits only7 and QP INIT only remote READ/WRITE6.
+The privileged controller retains a four-bit access field, yet the current
+Atomic QP binding has no saved per-QP Atomic permission. The next feature
+must propagate and retain that authority with the accepted QP/SQC identity,
+and require BOTH QP and MR permission, before widening the standard checks.
+Merely accepting another flag or advertising Atomic is not sufficient.
+
+## Matched kernel requester/SQ/CQ source cohort (097)
+
+`kernel/derive_atomic128.py` now generates a checked, PRIVATE full kernel
+cohort without rewriting the default64-byte files or096 proof inputs.
+`atomic_profile.h` defines negotiated profile3: the existing Immediate header
+plus Atomic operands. Actual SQ/RQC MMIO adapters accept exact features13/15
+ONLY with descriptor-size128. Actual CQ feature15 additionally requires
+owner-size748 and operand-base0xa0. The real transport binder re-reads the
+entire RNC1023/SQC13/RQC15/CQC15 tuple and geometry under the existing locks
+BEFORE creating any queue. Mixed formats/changed geometry are not adopted.
+
+The SAME actual SQ pool allocates BOTH coherent rings with128-byte stride,
+alignment and extent; no second MR or queue namespace is introduced.
+`verbs_atomic_wqe.c` maps genuine `ib_atomic_wr` CAS/FADD operands explicitly
+to the C128 codec. Signal-all handling copies the correctly typed Atomic WR,
+not a base SEND or an `ib_rdma_wr` cast. Actual standard post_send retains
+the two operands in its shadow, acquires local RESULT-write MR permission,
+executes `dma_wmb()` and uses the existing actual producer transport. Normal
+READ/WRITE/SEND/Immediate/RECV use zero-extended records in this format.
+
+Actual CQ IO reads complete operands separately from legacy context padding
+and receive notification. Full128-byte re-encoding compares the saved WR,
+both operands and decoded owner before publishing `IB_WC_COMP_SWAP` or
+`IB_WC_FETCH_ADD` with byte_len8 and releasing a work reference. Proof-only
+legacy completion cannot release profile3 work. CQ backpressure, changed
+operands and ambiguous ACK retain the corresponding owners/metadata rather
+than rewinding a posted queue or delivering a second WC.
+
+[Kernel build001](../results/2026-10-18/rocev2-rnic-atomic128-kernel-build-001.json)
+PASSES8.49s against the ACTUAL running6.17.0-1033-oem headers with GCC13/W=1.
+Both complete modules link the actual adapters, standard callbacks, SQ/MR/CQ
+and graph/publication entry points. This is compile/link ONLY: neither
+module is installed/loaded and no callback is executed in Linux.
+[Post002](../results/2026-10-18/rocev2-rnic-atomic128-kernel-post-002.json)
+PASSES29 fresh ASan/UBSan cases after6.20s compilation, each<0.015s:
+CAS/FADD exact operands, signal-all and exact bad-WR tail, dual128 rings,
+LOCAL_WRITE denial, malformed request rejection, CQ-full ring reuse,
+operand-mismatch quarantine, forbidden proof-only release, ambiguous ACK
+without duplicate delivery, normal READ/SEND_IMM, legacy Atomic refusal,
+four geometry mismatches before queues and ALL15 previous verbs cases.
+All Linux primitives/pins/coherent DMA/MMIO/peer completion are EXPLICIT
+USERSPACE MODELS; these are real C bodies, not actual Linux/RTL execution.
+The097 modeled callback graph and096 actual RTL graph remain separate.
+
+Diagnostic post001 passed its first three cases, then LeakSanitizer found
+the caller's56-byte MR wrapper unreachable at process exit in an intentionally
+quarantined case.002 keeps that real caller-owned wrapper in an explicit
+test-global quarantine root. No driver body, sanitizer option, deadline,
+reference-release check or cleanup proof was weakened. Failed binary/log/
+report/exact body preimage remain preserved;002 freshly runs all29 cases.
+
+The new cohort is NOT selected by the default Makefile or an installed
+provider. `IB_ATOMIC_NONE` remains in BOTH default and generated device code.
+User-provider128 posting, actual Linux/RTL coupling and runtime pin/unpin,
+remote-Atomic MR/QP receive-permission negotiation, physical operation and
+all original timing/CDC requirements remain. Existing reg_user_mr and QP
+receive-access checks still refuse standard remote-Atomic permission; the
+requester source support must not be advertised as full RNIC Atomic support.
+No hardware/network/BIOS/fan/reboot or automatic push occurs.
+
+## Full native requester execution and queue ABI (096)
+
+`derive_atomic128_native.py` now generates24 matched native replacements.
+The first checked SQC-anchor mismatch is fixed against the actual source;
+its exact preimage remains preserved. The selected graph connects the actual
+128-byte fetch/admission,748-bit requester owner/408-bit SQ/816-bit core
+receipt, generated requester HLS, protected result executor, MAC/lifetime
+and CQ parents. Receive owners remain620, with explicit receive-only slices;
+the owned Atomic responder service ABI and original protected source stay.
+
+[Complete elaboration003](../results/2026-10-18/rocev2-rnic-atomic128-native-elaboration-003.json)
+PASSES2.61s, with NO port truncation/padding warnings. Actual elaborated
+instances include ONE native requester HLS/PSN/MSN/RX domain, ONE MR table,
+ONE PTE table and the complete real response/executor/replay/MAC/CQ path.
+The unchanged legacy HLS is ALSO present, not mistaken for a duplicated
+native domain. SQ/RQ share ONE actual fetch/DMA engine through the existing
+arbiter, while retaining their separate admission/ownership paths.
+Diagnostic001 incorrectly expected two fetch engines;002 counted legacy
+and native HLS instance names together. Both failed reports/verifiers are
+preserved;003 freshly elaborates the same RTL with explicit native types.
+This is COMPILE-ONLY, not actual requester result DMA/CQ execution.
+
+Both SQC/RQC use128-byte stride/alignment and a read-only descriptor-size
+register at0x20, with exact feature values13/15. CQ feature15 retains the
+lower620-bit context window at0x40..0x8c with its original zero padding,
+separate receive notification0x90, owner-size748 at0x94, extension base0xa0
+at0x98, and complete compare/swap-add words at0xa0..0xac. Existing exact-
+feature kernel negotiators correctly refuse these NEW unmatched formats;
+no old64-byte ring allocation/posting is silently used for this candidate.
+[SQC001](../results/2026-10-18/rocev2-rnic-atomic128-sqc-001.json)
+PASSES9 methods/36 four-state cases with actual AXI/SQC/two-beat fetch:
+allocation, ring/sequence bounds, ownership, guards, faults and retirement.
+Backend/guards remain MODELS. [CQ001](../results/2026-10-18/rocev2-rnic-atomic128-cq-001.json)
+PASSES2 methods/6 cases: four successive CAS/FADD/READ/RECV events preserve
+complete operands, original context padding and separate notification;
+five malformed-owner runs cannot publish. Upstream lifetime owners remain
+MODELS, not new host visibility/CQ completion evidence.
+
+`probe_atomic128_native_full.py` now PASSES a FRESH full executable in
+[full-native001](../results/2026-10-18/rocev2-rnic-atomic128-native-full-001.json):
+447.86s feature compilation, then CAS18.80s, FADD19.00s, READ18.90s,
+SEND_IMM18.85s and mixed Atomic responder/WRITE18.65s. Its complete testbench
+also elaborates without port-width mismatches. This is actual TWO-STATE
+compiled RTL, not a cached result or behavioral HLS. Physical host/root/peer/
+PHY/PTP inputs remain models; ordinary READ/SEND_IMM retain the prior
+physical-MAC-pin model, while Atomic requester/responder use real MAC RTL.
+
+Both CAS/FADD traverse actual C128-byte encoding, coherent SQ fetch, ONE
+real MR/PTE domain, guarded748-bit ownership, generated HLS and real response
+integrity/peer/issued-PSN protection. The AtomicACK old value is written as
+LE8 bytes through actual protected result DMA, split3+5 across two sealed
+DMA64 pages, with two posted write TLPs and one readback fence. The tested
+TX-sequence and readback delays cannot be replaced by quiet/count models.
+No Atomic operand-source DMA occurs: the only two read TLPs are SQ fetch
+and result-write readback. Every host result/sentinel/ring byte is checked.
+
+The native replay path sends two byte-identical72-byte IP Atomic requests
+under fresh tags0x2001/0x2002. Independent oracles check ALL operands/wire
+bytes, IPv4/ICRC and actual XGMII preamble/FCS/SFD/CDC. Withholding the second
+REAL MAC receipt for1100 core cycles retains the complete owner/HLS receipt
+and prevents CQ publication. Actual result memory status, MAC/EOF/tail,
+816-bit producer receipt, CQ commit, shared-core retirement and host CQ ACK
+join in the real parent graph; neither original global drain is tied high.
+The independent host CQ snapshot checks all lower620 bits/padding, separate
+notification and all128 operand bits. Existing READ/SEND_IMM, duplicate
+Atomic responder suppression and mixed normal WRITE continue to pass on the
+SAME selected graph. This is still modeled host memory, NOT Linux pin/unpin.
+
+Each runtime stays below30s and feature compilation below1200s. Standard
+kernel/provider128 negotiation/posting, physical execution and original
+timing/CDC gates remain incomplete; `IB_ATOMIC_NONE` and both original
+global zero drains are unchanged. No driver is installed/loaded and no
+hardware, network, BIOS, fan, clock or reboot action is taken.
 
 ## Generated requester execution and native proof leaves (095)
 

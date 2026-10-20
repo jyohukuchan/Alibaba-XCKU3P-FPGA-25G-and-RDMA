@@ -1,0 +1,34 @@
+{
+  "scope": "Actual C-encoded64-byte descriptors through actual admission+MR-table RTL, full local lkey/PD/access/VA/range and trusted context/shape checks, stalls/disable/config ownership and uncertain-response retention. No software MR substitute or internal force. Dedicated MR-instance fixture, not shared native queue integration.",
+  "pass_test": true,
+  "terminal_exit_status": 0,
+  "seconds": 0.44750156000372954,
+  "passed_names": [
+    "test_actual_C_descriptors_full_keys_high_IOVA_cross_page_both_local_operations",
+    "test_actual_MR_denies_wrong_key_PD_permissions_and_full_ranges",
+    "test_last_64bit_byte_remote_key_zero_and_maximum_valid_QP",
+    "test_stalled_query_response_result_survive_disable_and_block_configuration",
+    "test_untrusted_record_and_full_trusted_context_reject_before_any_MR_query",
+    "test_wrong_tag_length_or_unknown_response_retains_uncertain_owner"
+  ],
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_wqe_admission.v": "dd5e4e348c276173dd552fca81196fe65df3c52f1ee8008ad68f1c784852644c",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+    "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f",
+    "rdma/rnic/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+    "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2"
+  },
+  "stdout": "test_actual_C_descriptors_full_keys_high_IOVA_cross_page_both_local_operations (test_wqe_admission_rtl.WQEAdmissionRTLTests.test_actual_C_descriptors_full_keys_high_IOVA_cross_page_both_local_operations) ... ok\ntest_actual_MR_denies_wrong_key_PD_permissions_and_full_ranges (test_wqe_admission_rtl.WQEAdmissionRTLTests.test_actual_MR_denies_wrong_key_PD_permissions_and_full_ranges) ... ok\ntest_last_64bit_byte_remote_key_zero_and_maximum_valid_QP (test_wqe_admission_rtl.WQEAdmissionRTLTests.test_last_64bit_byte_remote_key_zero_and_maximum_valid_QP) ... ok\ntest_stalled_query_response_result_survive_disable_and_block_configuration (test_wqe_admission_rtl.WQEAdmissionRTLTests.test_stalled_query_response_result_survive_disable_and_block_configuration) ... ok\ntest_untrusted_record_and_full_trusted_context_reject_before_any_MR_query (test_wqe_admission_rtl.WQEAdmissionRTLTests.test_untrusted_record_and_full_trusted_context_reject_before_any_MR_query) ... ok\ntest_wrong_tag_length_or_unknown_response_retains_uncertain_owner (test_wqe_admission_rtl.WQEAdmissionRTLTests.test_wrong_tag_length_or_unknown_response_retains_uncertain_owner) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.369s\n\nOK\n",
+  "hardware_verified": false,
+  "standard_verbs_implemented": false,
+  "real_registered_user_pages_pinned": false,
+  "actual_admission_and_MR_RTL": true,
+  "actual_C_encoder": true,
+  "four_state_simulation": true,
+  "shared_native_MR_arbiter_integrated": false,
+  "host_queue_DMA_fetch_implemented": false,
+  "DMA_or_page_execution_implemented": false,
+  "CQE_implemented": false
+}

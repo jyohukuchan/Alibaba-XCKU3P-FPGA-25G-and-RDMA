@@ -1,0 +1,83 @@
+{
+  "scope": "Actual RQC mailbox + fetcher + posted-owner queue cancellation.\n\nAXI/registers, fetch selection and scoped owner cancellation are actual RTL.\nDescriptor backend, admission/MR context construction and external drain are\nMODELS. No generated HLS, physical DMA, Linux lifetime or full-board proof.\n",
+  "pass_test": true,
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_sq_control_regs.v": "39a9697ace3c6cf2889de9afa15b53a79b0bd5ceaf1846ab569a773737febedc",
+    "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+    "rdma/rnic/rtl/rocev2_receive_queue.v": "71bd10f5789d38214c295428b0783f82f1fa61e64de517758f66d2371b02f160",
+    "rdma/rnic/kernel/sq_regs.h": "fcd382943783b06aab4d95e1e78a30d028b1f9dadf110d094343d11acea10264",
+    "rdma/rnic/tests/probe_receive_cancel_rtl.py": "937c22819e711fb3791388c2b546fe974a3913422437a24e4d8343600d9b6658",
+    "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+    "rdma/rnic/tests/test_receive_queue_rtl.py": "e1dcb10a93a20abd1ef1b46627778e2f06398a3a872cf076ac2ff3c6462c7d2a",
+    "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+  },
+  "hardware_verified": false,
+  "tests": {
+    "0": {
+      "seconds": 0.055153091001557186,
+      "output": "RECV_CANCEL_RESULT {\"pass_test\":true,\"scenario\":0,\"fetched\":1,\"cancelled_posted\":1,\"held_retained\":0,\"reply_flags\":63}\n/tmp/as02-recv-cancel-94zvodc4/tb.v:285: $finish called at 4588000 (1ps)\n",
+      "summary": {
+        "pass_test": true,
+        "scenario": 0,
+        "fetched": 1,
+        "cancelled_posted": 1,
+        "held_retained": 0,
+        "reply_flags": 63
+      }
+    },
+    "1": {
+      "seconds": 0.05183995098923333,
+      "output": "RECV_CANCEL_RESULT {\"pass_test\":true,\"scenario\":1,\"fetched\":0,\"cancelled_posted\":0,\"held_retained\":0,\"reply_flags\":63}\n/tmp/as02-recv-cancel-94zvodc4/tb.v:285: $finish called at 4480000 (1ps)\n",
+      "summary": {
+        "pass_test": true,
+        "scenario": 1,
+        "fetched": 0,
+        "cancelled_posted": 0,
+        "held_retained": 0,
+        "reply_flags": 63
+      }
+    },
+    "2": {
+      "seconds": 0.05227381500299089,
+      "output": "RECV_CANCEL_RESULT {\"pass_test\":true,\"scenario\":2,\"fetched\":2,\"cancelled_posted\":2,\"held_retained\":0,\"reply_flags\":63}\n/tmp/as02-recv-cancel-94zvodc4/tb.v:285: $finish called at 4480000 (1ps)\n",
+      "summary": {
+        "pass_test": true,
+        "scenario": 2,
+        "fetched": 2,
+        "cancelled_posted": 2,
+        "held_retained": 0,
+        "reply_flags": 63
+      }
+    },
+    "3": {
+      "seconds": 0.050528580002719536,
+      "output": "RECV_CANCEL_RESULT {\"pass_test\":true,\"scenario\":3,\"fetched\":1,\"cancelled_posted\":0,\"held_retained\":1,\"reply_flags\":0}\n/tmp/as02-recv-cancel-94zvodc4/tb.v:285: $finish called at 4040000 (1ps)\n",
+      "summary": {
+        "pass_test": true,
+        "scenario": 3,
+        "fetched": 1,
+        "cancelled_posted": 0,
+        "held_retained": 1,
+        "reply_flags": 0
+      }
+    },
+    "4": {
+      "seconds": 0.05209403901244514,
+      "output": "RECV_CANCEL_RESULT {\"pass_test\":true,\"scenario\":4,\"fetched\":1,\"cancelled_posted\":0,\"held_retained\":0,\"reply_flags\":0}\n/tmp/as02-recv-cancel-94zvodc4/tb.v:285: $finish called at 4416000 (1ps)\n",
+      "summary": {
+        "pass_test": true,
+        "scenario": 4,
+        "fetched": 1,
+        "cancelled_posted": 0,
+        "held_retained": 0,
+        "reply_flags": 0
+      }
+    }
+  },
+  "simulation_limit_seconds": 10,
+  "bench_sha256": "37eeb985cee2801aabc7ce071393130a4fa7c11cd30936d006da45bb0650c8c8",
+  "source_unchanged": true
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "rocev2-rnic-tx-lifetime-lint-001",
+  "scope": "Only syntax/elaboration and absence of reported combinatorial-loop warnings for production MAC/tag/lifetime binding. NOT warning-free lint, synthesis, physical signoff or deployed parent configuration proof.",
+  "pass_test": true,
+  "terminal_exit_status": 0,
+  "tool": "/home/user/fpga-rocev2-research/verilator-v5.036-install/bin/verilator",
+  "arguments": [
+    "--lint-only",
+    "--top-module",
+    "rocev2_wqe_tx_lifetime",
+    "-Wno-fatal"
+  ],
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+    "rdma/rnic/rtl/rocev2_wqe_tx_lifetime.v": "cbbc30b887dc1c4c43d55d95f85b3ce6c85c97ca0bae2644a02557ad7bc1572a",
+    "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+    "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+    "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+    "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+    "rdma/rnic/rtl/rocev2_wqe_lifetime.v": "eb3017f9e7c85f4c53d99a1a5dced3fe35244df60b782f7cc46424e1ae8023b5"
+  },
+  "artifact_sha256": {
+    "rdma/logs/rnic-tx-lifetime-lint-001.log": "3e60a4c8b990180b0fa09de1a428d7d89e8272c4b00e80e68ca1a9817acb1832"
+  },
+  "findings": {
+    "warnings": 30,
+    "by_type": {
+      "WIDTHTRUNC": 8,
+      "WIDTHEXPAND": 21,
+      "ASCRANGE": 1
+    },
+    "by_source": {
+      "external/corundum/fpga/lib/axis/rtl/arbiter.v": 2,
+      "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": 1,
+      "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": 23,
+      "rdma/rnic/rtl/rocev2_wqe_lifetime.v": 4
+    },
+    "errors": 0,
+    "loop_warnings": 0,
+    "top": "rocev2_wqe_tx_lifetime",
+    "tool": "Verilator5.036"
+  },
+  "warning_free_lint": false,
+  "resulting_full_board_timing_or_CDC_signoff": false,
+  "hardware_verified": false
+}

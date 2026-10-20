@@ -1,0 +1,266 @@
+--- a/mqnic_core_pcie.v
++++ b/mqnic_core_pcie.v
+@@ -1081,6 +1081,28 @@
+ wire stat_wr_tx_limit;
+ wire stat_wr_tx_stall;
+ 
++// RNIC-only profile: actual PCIe engine-boundary ownership proof.
++wire rnic_parent_rd_busy,rnic_parent_wr_busy;
++wire rnic_parent_drained,rnic_parent_fault;
++rocev2_pcie_parent_guard #(.SEG_COUNT(RAM_SEG_COUNT),.COUNT_WIDTH(16)) rnic_parent_guard (
++    .clk(clk),.rst(rst),.rd_busy(rnic_parent_rd_busy),.wr_busy(rnic_parent_wr_busy),
++    .rd_desc_valid(dma_read_desc_valid),.rd_desc_ready(dma_read_desc_ready),
++    .wr_desc_valid(dma_write_desc_valid),.wr_desc_ready(dma_write_desc_ready),
++    .rd_status_valid(dma_read_desc_status_valid),.rd_status_error(dma_read_desc_status_error),
++    .wr_status_valid(dma_write_desc_status_valid),.wr_status_error(dma_write_desc_status_error),
++    .ram_wr_cmd_valid(dma_ram_wr_cmd_valid),.ram_wr_cmd_ready(dma_ram_wr_cmd_ready),.ram_wr_done(dma_ram_wr_done),
++    .ram_rd_cmd_valid(dma_ram_rd_cmd_valid),.ram_rd_cmd_ready(dma_ram_rd_cmd_ready),
++    .ram_rd_resp_valid(dma_ram_rd_resp_valid),.ram_rd_resp_ready(dma_ram_rd_resp_ready),
++    .tlp_activity((|pcie_tx_rd_req_tlp_valid) || (|pcie_tx_wr_req_tlp_valid) || (|pcie_rx_cpl_tlp_valid)),
++    .error_event((|pcie_error_cor_int) || (|pcie_error_uncor_int)),
++    .drained(rnic_parent_drained),.fault(rnic_parent_fault),.fault_code()
++);
++initial begin
++    if(APP_ID!=32'h41534e31 || !APP_ENABLE || !APP_DMA_ENABLE || DMA_TAG_WIDTH!=19 || !TX_SEQ_NUM_ENABLE) begin
++        $error("Invalid RNIC parent profile: require ASN1/real DMA/sequence tracking/19-bit tags");$finish;
++    end
++end
++
+ dma_if_pcie #(
+     .TLP_DATA_WIDTH(TLP_DATA_WIDTH),
+     .TLP_STRB_WIDTH(TLP_STRB_WIDTH),
+@@ -1225,8 +1247,8 @@
+     /*
+      * Status
+      */
+-    .status_rd_busy(),
+-    .status_wr_busy(),
++    .status_rd_busy(rnic_parent_rd_busy),
++    .status_wr_busy(rnic_parent_wr_busy),
+     .status_error_cor(pcie_error_cor_int[2]),
+     .status_error_uncor(pcie_error_uncor_int[2]),
+ 
+@@ -1764,6 +1786,8 @@
+ core_inst (
+     .clk(clk),
+     .rst(rst),
++    .parent_dma_drained(rnic_parent_drained),
++    .parent_dma_fault(rnic_parent_fault),
+ 
+     /*
+      * DMA read descriptor output
+--- a/mqnic_core.v
++++ b/mqnic_core.v
+@@ -201,6 +201,8 @@
+ (
+     input  wire                                         clk,
+     input  wire                                         rst,
++    input  wire                                         parent_dma_drained,
++    input  wire                                         parent_dma_fault,
+ 
+     /*
+      * AXI-Lite slave interface (control)
+@@ -3672,6 +3674,22 @@
+ 
+ if (APP_ENABLE) begin : app
+ 
++// Actual engine proof AND every descriptor mux/status/leaf-RAM stage.
++wire rnic_app_parent_drained=parent_dma_drained && !parent_dma_fault &&
++    !m_axis_dma_read_desc_valid && !m_axis_dma_write_desc_valid &&
++    !s_axis_dma_read_desc_status_valid && !s_axis_dma_write_desc_status_valid &&
++    !ctrl_dma_read_desc_valid && !ctrl_dma_write_desc_valid &&
++    !data_dma_read_desc_valid && !data_dma_write_desc_valid &&
++    !(|if_ctrl_dma_read_desc_valid) && !(|if_ctrl_dma_write_desc_valid) &&
++    !(|if_data_dma_read_desc_valid) && !(|if_data_dma_write_desc_valid) &&
++    !(|if_ctrl_dma_read_desc_status_valid) && !(|if_ctrl_dma_write_desc_status_valid) &&
++    !(|if_data_dma_read_desc_status_valid) && !(|if_data_dma_write_desc_status_valid) &&
++    !(|app_ctrl_dma_ram_wr_cmd_valid) && !(|app_ctrl_dma_ram_wr_done) &&
++    !(|app_ctrl_dma_ram_rd_cmd_valid) && !(|app_ctrl_dma_ram_rd_resp_valid) &&
++    !(|app_data_dma_ram_wr_cmd_valid) && !(|app_data_dma_ram_wr_done) &&
++    !(|app_data_dma_ram_rd_cmd_valid) && !(|app_data_dma_ram_rd_resp_valid);
++
++
+     mqnic_app_block #(
+         // Structural configuration
+         .IF_COUNT(IF_COUNT),
+@@ -3806,6 +3824,8 @@
+     app_block_inst (
+         .clk(clk),
+         .rst(rst),
++        .parent_dma_drained(rnic_app_parent_drained),
++        .parent_dma_fault(parent_dma_fault),
+ 
+         /*
+          * AXI-Lite slave interface (control from host)
+--- a/mqnic_app_block.v
++++ b/mqnic_app_block.v
+@@ -151,6 +151,8 @@
+ (
+     input  wire                                           clk,
+     input  wire                                           rst,
++    input wire parent_dma_drained,
++    input wire parent_dma_fault,
+ 
+     /*
+      * AXI-Lite slave interface (control from host)
+@@ -595,11 +597,14 @@
+ // This build is intentionally for the preserved native25 AS02 configuration.
+ localparam ROCE_PORT=1;
+ initial begin
+-    if (APP_ID!=32'h41535232 || PORT_COUNT!=2 || CLK_PERIOD_NS_NUM!=4 ||
++    if (APP_ID!=32'h41534e31 || PORT_COUNT!=2 || CLK_PERIOD_NS_NUM!=4 ||
+             CLK_PERIOD_NS_DENOM!=1 || AXIS_SYNC_DATA_WIDTH!=128 ||
+             AXIS_SYNC_KEEP_WIDTH!=16 || AXIS_SYNC_TX_USER_WIDTH!=TX_TAG_WIDTH+1 ||
+             AXIL_APP_CTRL_DATA_WIDTH!=32 || AXIL_APP_CTRL_STRB_WIDTH!=4 ||
+-            !APP_CTRL_ENABLE || !APP_AXIS_SYNC_ENABLE || APP_DMA_ENABLE ||
++            !APP_CTRL_ENABLE || !APP_AXIS_SYNC_ENABLE || !APP_DMA_ENABLE ||
++            AXIL_APP_CTRL_ADDR_WIDTH!=24 || DMA_ADDR_WIDTH!=64 || DMA_LEN_WIDTH!=16 ||
++            DMA_TAG_WIDTH!=16 || RAM_ADDR_WIDTH!=15 || RAM_SEL_WIDTH!=1 ||
++            RAM_SEG_COUNT!=2 || RAM_SEG_DATA_WIDTH!=256 || RAM_SEG_ADDR_WIDTH!=9 ||
+             APP_AXIS_DIRECT_ENABLE || APP_AXIS_IF_ENABLE || APP_STAT_ENABLE) begin
+         $error("Invalid AS02 native25 RoCE application configuration"); $finish;
+     end
+@@ -638,35 +643,16 @@
+ assign m_axis_ctrl_dma_write_desc_tag = 0;
+ assign m_axis_ctrl_dma_write_desc_valid = 1'b0;
+ 
+-assign ctrl_dma_ram_wr_cmd_ready = 1'b1;
+-assign ctrl_dma_ram_wr_done = ctrl_dma_ram_wr_cmd_valid;
+-assign ctrl_dma_ram_rd_cmd_ready = ctrl_dma_ram_rd_resp_ready;
++assign ctrl_dma_ram_wr_cmd_ready = 0; // unused control DMA: never fabricate completion
++assign ctrl_dma_ram_wr_done = 0; // unused control DMA: never fabricate completion
++assign ctrl_dma_ram_rd_cmd_ready = 0; // unused control DMA: never fabricate completion
+ assign ctrl_dma_ram_rd_resp_data = 0;
+-assign ctrl_dma_ram_rd_resp_valid = ctrl_dma_ram_rd_cmd_valid;
++assign ctrl_dma_ram_rd_resp_valid = 0; // unused control DMA: never fabricate completion
+ 
+ /*
+  * DMA interface (data)
+  */
+-assign m_axis_data_dma_read_desc_dma_addr = 0;
+-assign m_axis_data_dma_read_desc_ram_sel = 0;
+-assign m_axis_data_dma_read_desc_ram_addr = 0;
+-assign m_axis_data_dma_read_desc_len = 0;
+-assign m_axis_data_dma_read_desc_tag = 0;
+-assign m_axis_data_dma_read_desc_valid = 1'b0;
+-assign m_axis_data_dma_write_desc_dma_addr = 0;
+-assign m_axis_data_dma_write_desc_ram_sel = 0;
+-assign m_axis_data_dma_write_desc_ram_addr = 0;
+-assign m_axis_data_dma_write_desc_imm = 0;
+-assign m_axis_data_dma_write_desc_imm_en = 0;
+-assign m_axis_data_dma_write_desc_len = 0;
+-assign m_axis_data_dma_write_desc_tag = 0;
+-assign m_axis_data_dma_write_desc_valid = 1'b0;
+-
+-assign data_dma_ram_wr_cmd_ready = 1'b1;
+-assign data_dma_ram_wr_done = data_dma_ram_wr_cmd_valid;
+-assign data_dma_ram_rd_cmd_ready = data_dma_ram_rd_resp_ready;
+-assign data_dma_ram_rd_resp_data = 0;
+-assign data_dma_ram_rd_resp_valid = data_dma_ram_rd_cmd_valid;
++// Data DMA descriptors and segmented RAM connect to the real endpoint below.
+ 
+ /*
+  * Ethernet (direct MAC interface - lowest latency raw traffic)
+@@ -693,9 +679,17 @@
+ /*
+  * Ethernet (synchronous MAC interface - low latency raw traffic)
+  */
+-rocev2_rw_endpoint #(
+-    .ADDR_WIDTH(AXIL_APP_CTRL_ADDR_WIDTH),.TAG_WIDTH(TX_TAG_WIDTH),
+-    .TS_WIDTH(PTP_TS_WIDTH),.RX_USER_WIDTH(AXIS_SYNC_RX_USER_WIDTH)
++wire rnic_rx_ready,rnic_rx_valid;
++rocev2_parent_rx_admission parent_rx_admission (
++    .clk(clk),.rst(rst),.parent_fault(parent_dma_fault),
++    .s_valid(s_axis_sync_rx_tvalid[ROCE_PORT]),.s_ready(s_axis_sync_rx_tready[ROCE_PORT]),
++    .s_last(s_axis_sync_rx_tlast[ROCE_PORT]),.m_valid(rnic_rx_valid),.m_ready(rnic_rx_ready)
++);
++rocev2_native_endpoint #(
++    .TX_TAG_WIDTH(TX_TAG_WIDTH),.TS_WIDTH(PTP_TS_WIDTH),.RX_USER_WIDTH(AXIS_SYNC_RX_USER_WIDTH),
++    .RAM_ADDR_WIDTH(RAM_ADDR_WIDTH),.SEG_COUNT(RAM_SEG_COUNT),.SEG_DATA_WIDTH(RAM_SEG_DATA_WIDTH),
++    .SEG_BE_WIDTH(RAM_SEG_BE_WIDTH),.SEG_ADDR_WIDTH(RAM_SEG_ADDR_WIDTH),
++    .RAM_SEL_WIDTH(RAM_SEL_WIDTH),.DMA_LEN_WIDTH(DMA_LEN_WIDTH),.DMA_TAG_WIDTH(DMA_TAG_WIDTH)
+ ) endpoint (
+     .clk(clk),.rst(rst),
+     .s_axil_awaddr(s_axil_app_ctrl_awaddr),
+@@ -739,8 +733,8 @@
+     .m_axis_host_cpl_ready(m_axis_sync_tx_cpl_ready[ROCE_PORT]),
+     .s_axis_mac_rx_tdata(s_axis_sync_rx_tdata[ROCE_PORT*AXIS_SYNC_DATA_WIDTH +: AXIS_SYNC_DATA_WIDTH]),
+     .s_axis_mac_rx_tkeep(s_axis_sync_rx_tkeep[ROCE_PORT*AXIS_SYNC_KEEP_WIDTH +: AXIS_SYNC_KEEP_WIDTH]),
+-    .s_axis_mac_rx_tvalid(s_axis_sync_rx_tvalid[ROCE_PORT]),
+-    .s_axis_mac_rx_tready(s_axis_sync_rx_tready[ROCE_PORT]),
++    .s_axis_mac_rx_tvalid(rnic_rx_valid),
++    .s_axis_mac_rx_tready(rnic_rx_ready),
+     .s_axis_mac_rx_tlast(s_axis_sync_rx_tlast[ROCE_PORT]),
+     .s_axis_mac_rx_tuser(s_axis_sync_rx_tuser[ROCE_PORT*AXIS_SYNC_RX_USER_WIDTH +: AXIS_SYNC_RX_USER_WIDTH]),
+     .m_axis_host_rx_tdata(m_axis_sync_rx_tdata[ROCE_PORT*AXIS_SYNC_DATA_WIDTH +: AXIS_SYNC_DATA_WIDTH]),
+@@ -748,7 +742,45 @@
+     .m_axis_host_rx_tvalid(m_axis_sync_rx_tvalid[ROCE_PORT]),
+     .m_axis_host_rx_tready(m_axis_sync_rx_tready[ROCE_PORT]),
+     .m_axis_host_rx_tlast(m_axis_sync_rx_tlast[ROCE_PORT]),
+-    .m_axis_host_rx_tuser(m_axis_sync_rx_tuser[ROCE_PORT*AXIS_SYNC_RX_USER_WIDTH +: AXIS_SYNC_RX_USER_WIDTH])
++    .m_axis_host_rx_tuser(m_axis_sync_rx_tuser[ROCE_PORT*AXIS_SYNC_RX_USER_WIDTH +: AXIS_SYNC_RX_USER_WIDTH]),
++    .parent_dma_drained(parent_dma_drained && !parent_dma_fault),
++    .m_reject_ready(1'b1),
++    .m_dma_read_address(m_axis_data_dma_read_desc_dma_addr),
++    .m_dma_read_ram_sel(m_axis_data_dma_read_desc_ram_sel),
++    .m_dma_read_ram_address(m_axis_data_dma_read_desc_ram_addr),
++    .m_dma_read_length(m_axis_data_dma_read_desc_len),
++    .m_dma_read_tag(m_axis_data_dma_read_desc_tag),
++    .m_dma_read_valid(m_axis_data_dma_read_desc_valid),
++    .m_dma_read_ready(m_axis_data_dma_read_desc_ready),
++    .s_dma_read_status_tag(s_axis_data_dma_read_desc_status_tag),
++    .s_dma_read_status_error(s_axis_data_dma_read_desc_status_error),
++    .s_dma_read_status_valid(s_axis_data_dma_read_desc_status_valid),
++    .m_dma_write_address(m_axis_data_dma_write_desc_dma_addr),
++    .m_dma_write_ram_sel(m_axis_data_dma_write_desc_ram_sel),
++    .m_dma_write_ram_address(m_axis_data_dma_write_desc_ram_addr),
++    .m_dma_write_length(m_axis_data_dma_write_desc_len),
++    .m_dma_write_tag(m_axis_data_dma_write_desc_tag),
++    .m_dma_write_valid(m_axis_data_dma_write_desc_valid),
++    .m_dma_write_ready(m_axis_data_dma_write_desc_ready),
++    .s_dma_write_status_tag(s_axis_data_dma_write_desc_status_tag),
++    .s_dma_write_status_error(s_axis_data_dma_write_desc_status_error),
++    .s_dma_write_status_valid(s_axis_data_dma_write_desc_status_valid),
++    .m_dma_write_imm(m_axis_data_dma_write_desc_imm),
++    .m_dma_write_imm_en(m_axis_data_dma_write_desc_imm_en),
++    .dma_ram_wr_cmd_sel(data_dma_ram_wr_cmd_sel),
++    .dma_ram_wr_cmd_be(data_dma_ram_wr_cmd_be),
++    .dma_ram_wr_cmd_addr(data_dma_ram_wr_cmd_addr),
++    .dma_ram_wr_cmd_data(data_dma_ram_wr_cmd_data),
++    .dma_ram_wr_cmd_valid(data_dma_ram_wr_cmd_valid),
++    .dma_ram_wr_cmd_ready(data_dma_ram_wr_cmd_ready),
++    .dma_ram_wr_done(data_dma_ram_wr_done),
++    .dma_ram_rd_cmd_sel(data_dma_ram_rd_cmd_sel),
++    .dma_ram_rd_cmd_addr(data_dma_ram_rd_cmd_addr),
++    .dma_ram_rd_cmd_valid(data_dma_ram_rd_cmd_valid),
++    .dma_ram_rd_cmd_ready(data_dma_ram_rd_cmd_ready),
++    .dma_ram_rd_resp_data(data_dma_ram_rd_resp_data),
++    .dma_ram_rd_resp_valid(data_dma_ram_rd_resp_valid),
++    .dma_ram_rd_resp_ready(data_dma_ram_rd_resp_ready)
+ );
+ 
+ genvar p;
+--- a/config_25g.tcl
++++ b/config_25g.tcl
+@@ -141,10 +141,10 @@
+ dict set params APP_STAT_ENABLE "1"
+ if {[info exists env(AS02_ENABLE_ROCE)] && $env(AS02_ENABLE_ROCE) eq "1"} {
+     # Explicit optional variant. Keep the existing Ethernet-only build intact.
+-    dict set params APP_ID "32'h41535232"
++    dict set params APP_ID "32'h41534e31"
+     dict set params APP_ENABLE "1"
+     dict set params APP_CTRL_ENABLE "1"
+-    dict set params APP_DMA_ENABLE "0"
++    dict set params APP_DMA_ENABLE "1"
+     dict set params APP_AXIS_DIRECT_ENABLE "0"
+     dict set params APP_AXIS_SYNC_ENABLE "1"
+     dict set params APP_AXIS_IF_ENABLE "0"
+@@ -155,7 +155,7 @@
+ dict set params DMA_IMM_ENABLE "0"
+ dict set params DMA_IMM_WIDTH "32"
+ dict set params DMA_LEN_WIDTH "16"
+-dict set params DMA_TAG_WIDTH "16"
++dict set params DMA_TAG_WIDTH "19"
+ dict set params RAM_ADDR_WIDTH [expr int(ceil(log(max([dict get $params TX_RAM_SIZE], [dict get $params RX_RAM_SIZE]))/log(2)))]
+ dict set params RAM_PIPELINE "2"
+ 

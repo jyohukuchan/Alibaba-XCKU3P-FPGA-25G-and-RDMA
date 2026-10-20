@@ -1,0 +1,16 @@
+{
+  "scope": "Actual coherent SQ/SAME-MR + shared payload PTE/RAM/router/mux/PCIe.\n\nActual C/UBSan WQEs and original production paths. HLS is explicitly STUBBED;\nlocal transport/executor/WR-CQ lifetime, physical host/link/MAC are MODELS.\nLocal memory DMA is real RTL, NOT actual RDMA completion/pins/verbs/runtime.\n",
+  "pass_test": false,
+  "methods": 0,
+  "tests": {},
+  "actual_C_UBSan_codec": true,
+  "actual_single_MR_PTE_payload_backend": true,
+  "actual_coherent_SQ_generic_PCIe": true,
+  "local_transport_executor_CQ_lifetime_model": true,
+  "HLS_transport_stub": true,
+  "actual_RDMA_completion": false,
+  "actual_kernel_pins": false,
+  "board_integrated": false,
+  "hardware_verified": false,
+  "standard_verbs": false
+}

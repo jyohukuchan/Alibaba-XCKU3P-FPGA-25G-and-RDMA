@@ -1,0 +1,897 @@
+{
+  "scope": "Characterize actual generated IPv4 static construction across clocked resets.\n\nNo header repair, forced internal state, transport stub, or hardware access.\nThis narrow state-level test is not the full HLS/PCIe/wire integration gate.\n",
+  "characterization_pass": true,
+  "release_reset_gate_pass": true,
+  "expected_old_defect": false,
+  "hardware_verified": false,
+  "generated_hls_sha256": "60c9a20e6671f223444c9a115d6295fdff456672d6354ed240e2317529cdbc19",
+  "generated_files": 138,
+  "selected_module_sha256": "2c095efe9ed78014b9c1113c372506b8f5afcb7d4aa0f50b8bf95b0ac3d5734f",
+  "observations": [
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 0,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 0,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 0,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 0,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 0,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 0,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 0,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 0,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 1,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 1,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 1,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 1,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 1,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 1,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 1,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 1,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 2,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 2,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 2,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 2,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 2,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 2,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 2,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 2,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 3,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 3,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 3,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 3,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 3,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 3,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 3,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 3,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 4,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 4,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 4,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 4,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 4,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 4,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 4,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 4,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 5,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 5,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 5,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 5,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 5,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 5,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 5,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 5,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 6,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 6,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 6,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 6,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 6,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 6,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 6,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 6,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 7,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 7,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 7,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 7,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 7,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 7,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 7,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 7,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 8,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 8,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 8,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 8,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 8,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 8,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 8,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 8,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 16,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 16,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 16,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 16,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 16,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 16,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 16,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 16,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 64,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 64,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 64,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 64,
+      "reset_cycles": 1,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "RESET_STATE",
+      "delay_cycles": 64,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 64,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 64,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    },
+    {
+      "kind": "WARM_STATE",
+      "delay_cycles": 64,
+      "reset_cycles": 8,
+      "version_IHL_hex": "45",
+      "TTL_hex": "64",
+      "state_hex": "0",
+      "ctor_flag_hex": "1",
+      "valid": true
+    }
+  ],
+  "invalid_observations": 0,
+  "total_observations": 88,
+  "source_sha256": {
+    "rdma/rnic/tests/probe_hls_ipv4_reset.py": "3ae4f0bbd9a9dac780ddca7d836872c289b0134c32f41d2e17d9074e7448daf3"
+  }
+}

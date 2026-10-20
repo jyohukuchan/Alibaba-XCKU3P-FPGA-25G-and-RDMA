@@ -1,0 +1,23 @@
+{
+  "evidence_type": "generated HLS timer RTL simulation, not physical timing or hardware",
+  "hardware_verified": false,
+  "core_clock_ps": 4000,
+  "max_qps": 8,
+  "pass_test": true,
+  "cycles": 8621169,
+  "retry_events_checked": 26,
+  "first_retry_qps_checked": 8,
+  "first_retry_min_clocks": 250002,
+  "first_retry_max_clocks": 250007,
+  "ack_restart_scan_phases_checked": 8,
+  "stop_restart_phases_checked": 8,
+  "ack_stop_checked": true,
+  "retry_output_backpressure_checked": true,
+  "warm_reset_checked": true,
+  "timer_table_storage": "registers",
+  "simulator": "verilator",
+  "powerup_zero_delay_delta_ignored": true,
+  "hls_build": "project",
+  "generated_rtl_sha256": "53d2587920d678969f045a7ba300d821533b5efae35f09145aba3b0344a36b0c",
+  "test_sha256": "2ac38a00439c1473a4b2b90e5d397aebccfd600bd0aae097153150ac066a65e2"
+}

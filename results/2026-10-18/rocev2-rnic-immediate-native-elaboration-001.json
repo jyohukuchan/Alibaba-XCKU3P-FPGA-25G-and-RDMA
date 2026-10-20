@@ -1,0 +1,11 @@
+{
+  "scope": "Elaborate the complete matching Immediate native graph and real generated HLS.\n\nNo behavioral core or second native MR/PTE, no simulation/hardware/timing claim.\nLegacy initiator delivery remains intact. Default sources are not rewritten.\n",
+  "pass_test": false,
+  "directory": "rdma/rnic/build/immediate-native-elaboration-fdhz_omf",
+  "hardware_verified": false,
+  "runtime_test": false,
+  "full_board_timing": false,
+  "default_graph_changed": false,
+  "error_type": "ValueError",
+  "error": "complete matched successful Immediate synthesis required"
+}

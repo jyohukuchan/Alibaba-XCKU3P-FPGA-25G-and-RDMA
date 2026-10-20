@@ -1,0 +1,408 @@
+{
+  "scope": "Actual parser/MR/ICRC gates with BTH MigReq0/1; EXPLICIT HLS/backend MODELS.\n\nMigReq is not TVer/reserved and cannot reconfigure a trusted peer or MR. No\nactual HLS wire, path migration, native DMA/CQ/runtime claim by these units.\n",
+  "pass_test": true,
+  "methods": 3,
+  "tests": {
+    "test_MigReq_clear_set_READ_WRITE_remain_subject_to_actual_MR": {
+      "summary": {
+        "pass_test": true,
+        "cycles": 5560,
+        "commands": 4,
+        "write_frames": 2,
+        "read_frames": 2,
+        "tx_frames": 4,
+        "statuses": 4,
+        "accepted": 4,
+        "rejected": 0,
+        "completed": 4,
+        "rx_good": 4,
+        "rx_bad": 0,
+        "deferred_tx_cycles": 1224
+      },
+      "cases": [
+        {
+          "name": "M0WRITE",
+          "operation": "write",
+          "MigReq": 0,
+          "flags": "30",
+          "expected_error": 0,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M1READ",
+          "operation": "read",
+          "MigReq": 1,
+          "flags": "40",
+          "expected_error": 0,
+          "expected_integrity_drop": false,
+          "psn": 9991765,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M1WRITE",
+          "operation": "write",
+          "MigReq": 1,
+          "flags": "70",
+          "expected_error": 0,
+          "expected_integrity_drop": false,
+          "psn": 9991766,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M0READ",
+          "operation": "read",
+          "MigReq": 0,
+          "flags": "00",
+          "expected_error": 0,
+          "expected_integrity_drop": false,
+          "psn": 9991767,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        }
+      ],
+      "source_sha256": {
+        "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+        "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+        "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+        "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+        "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+        "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+        "rdma/rnic/tests/test_bth_migreq_rtl.py": "5d06464aad5d6e2def0e37b5490897f71d17439a4c4fa6910ebc3af58182f42e",
+        "rdma/rnic/tests/test_protected_responder_rtl.py": "f9bfb4a13a78f7732e936be2ff87bf8dcc3bde21826477ed992cf8262e0127e8",
+        "rdma/rnic/tests/probe_protected_responder.py": "45908371b011a0785598a0800acb9e970cbc71d60160ce5788d3cf333639bf3f",
+        "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c",
+        "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a"
+      },
+      "bench_sha256": "90429a61358e8ec46588953a9fa9d9d0f9ddd909042c1fba975799f7099a1a6a"
+    },
+    "test_MigReq_never_bypasses_ICRC_peer_QP_PSN_PD_key_permissions_PKey_range": {
+      "summary": {
+        "pass_test": true,
+        "cycles": 5575,
+        "commands": 2,
+        "write_frames": 1,
+        "read_frames": 1,
+        "tx_frames": 2,
+        "statuses": 2,
+        "accepted": 2,
+        "rejected": 8,
+        "completed": 2,
+        "rx_good": 10,
+        "rx_bad": 1,
+        "deferred_tx_cycles": 612
+      },
+      "cases": [
+        {
+          "name": "M1bad_key",
+          "operation": "write",
+          "MigReq": 1,
+          "flags": "70",
+          "expected_error": 1,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 2147483656
+        },
+        {
+          "name": "M1bad_PD",
+          "operation": "write",
+          "MigReq": 1,
+          "flags": "70",
+          "expected_error": 2,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 9
+        },
+        {
+          "name": "M1bad_access",
+          "operation": "write",
+          "MigReq": 1,
+          "flags": "70",
+          "expected_error": 3,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 10
+        },
+        {
+          "name": "M1below_MR",
+          "operation": "write",
+          "MigReq": 1,
+          "flags": "70",
+          "expected_error": 4,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876542fff",
+          "key": 8
+        },
+        {
+          "name": "M1bad_peer_QP",
+          "operation": "write",
+          "MigReq": 1,
+          "flags": "70",
+          "expected_error": 17,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M1bad_peer_IP",
+          "operation": "write",
+          "MigReq": 1,
+          "flags": "70",
+          "expected_error": 17,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M1bad_PSN",
+          "operation": "write",
+          "MigReq": 1,
+          "flags": "70",
+          "expected_error": 18,
+          "expected_integrity_drop": false,
+          "psn": 9991765,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M1bad_PKey",
+          "operation": "write",
+          "MigReq": 1,
+          "flags": "70",
+          "expected_error": 16,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M1bad_ICRC",
+          "operation": "write",
+          "MigReq": 1,
+          "flags": "70",
+          "expected_error": 0,
+          "expected_integrity_drop": true,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M1WRITE",
+          "operation": "write",
+          "MigReq": 1,
+          "flags": "70",
+          "expected_error": 0,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M1READ",
+          "operation": "read",
+          "MigReq": 1,
+          "flags": "40",
+          "expected_error": 0,
+          "expected_integrity_drop": false,
+          "psn": 9991765,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        }
+      ],
+      "source_sha256": {
+        "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+        "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+        "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+        "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+        "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+        "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+        "rdma/rnic/tests/test_bth_migreq_rtl.py": "5d06464aad5d6e2def0e37b5490897f71d17439a4c4fa6910ebc3af58182f42e",
+        "rdma/rnic/tests/test_protected_responder_rtl.py": "f9bfb4a13a78f7732e936be2ff87bf8dcc3bde21826477ed992cf8262e0127e8",
+        "rdma/rnic/tests/probe_protected_responder.py": "45908371b011a0785598a0800acb9e970cbc71d60160ce5788d3cf333639bf3f",
+        "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c",
+        "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a"
+      },
+      "bench_sha256": "53d65086e0265e315f192bd50e742fe16e86a72f5f5f413d0f68ddeabdd4aa39"
+    },
+    "test_TVers_and_current_SE_policy_rejections_preserved_for_both_M_values": {
+      "summary": {
+        "pass_test": true,
+        "cycles": 5356,
+        "commands": 2,
+        "write_frames": 1,
+        "read_frames": 1,
+        "tx_frames": 2,
+        "statuses": 2,
+        "accepted": 2,
+        "rejected": 10,
+        "completed": 2,
+        "rx_good": 12,
+        "rx_bad": 0,
+        "deferred_tx_cycles": 612
+      },
+      "cases": [
+        {
+          "name": "M0_bad_flag1",
+          "operation": "write",
+          "MigReq": 0,
+          "flags": "31",
+          "expected_error": 16,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M0_bad_flag2",
+          "operation": "write",
+          "MigReq": 0,
+          "flags": "32",
+          "expected_error": 16,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M0_bad_flag4",
+          "operation": "write",
+          "MigReq": 0,
+          "flags": "34",
+          "expected_error": 16,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M0_bad_flag8",
+          "operation": "write",
+          "MigReq": 0,
+          "flags": "38",
+          "expected_error": 16,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M0_bad_flag80",
+          "operation": "write",
+          "MigReq": 0,
+          "flags": "b0",
+          "expected_error": 16,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M1_bad_flag1",
+          "operation": "write",
+          "MigReq": 1,
+          "flags": "71",
+          "expected_error": 16,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M1_bad_flag2",
+          "operation": "write",
+          "MigReq": 1,
+          "flags": "72",
+          "expected_error": 16,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M1_bad_flag4",
+          "operation": "write",
+          "MigReq": 1,
+          "flags": "74",
+          "expected_error": 16,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M1_bad_flag8",
+          "operation": "write",
+          "MigReq": 1,
+          "flags": "78",
+          "expected_error": 16,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M1_bad_flag80",
+          "operation": "write",
+          "MigReq": 1,
+          "flags": "f0",
+          "expected_error": 16,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M1WRITE",
+          "operation": "write",
+          "MigReq": 1,
+          "flags": "70",
+          "expected_error": 0,
+          "expected_integrity_drop": false,
+          "psn": 9991764,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        },
+        {
+          "name": "M1READ",
+          "operation": "read",
+          "MigReq": 1,
+          "flags": "40",
+          "expected_error": 0,
+          "expected_integrity_drop": false,
+          "psn": 9991765,
+          "address": "0xfedcba9876543210",
+          "key": 8
+        }
+      ],
+      "source_sha256": {
+        "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+        "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+        "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+        "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+        "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+        "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+        "rdma/rnic/tests/test_bth_migreq_rtl.py": "5d06464aad5d6e2def0e37b5490897f71d17439a4c4fa6910ebc3af58182f42e",
+        "rdma/rnic/tests/test_protected_responder_rtl.py": "f9bfb4a13a78f7732e936be2ff87bf8dcc3bde21826477ed992cf8262e0127e8",
+        "rdma/rnic/tests/probe_protected_responder.py": "45908371b011a0785598a0800acb9e970cbc71d60160ce5788d3cf333639bf3f",
+        "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c",
+        "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a"
+      },
+      "bench_sha256": "93ea801f7e87e9997ab373a85814a9ead58f4801b2c6428d76ea03906c8209e1"
+    }
+  },
+  "actual_parser_MR_integrity": true,
+  "HLS_backend_models": true,
+  "path_migration_implemented": false,
+  "hardware_verified": false,
+  "completion_claim": false
+}

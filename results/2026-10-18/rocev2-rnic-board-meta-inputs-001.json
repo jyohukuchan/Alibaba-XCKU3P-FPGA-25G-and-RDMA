@@ -1,0 +1,43 @@
+{
+  "scope": "Exact metadata candidate full-board ANALYSIS input preparation and source-only validation. NO image/native/physical success.",
+  "pass_test": true,
+  "preparation_session": 68237,
+  "preparation_terminal_exit_status": 0,
+  "hls_policy": "metadata-sequential",
+  "generated_hls_sha256": "60c9a20e6671f223444c9a115d6295fdff456672d6354ed240e2317529cdbc19",
+  "directory": "rdma/rnic/build/full-board-meta-analysis-001",
+  "HDL": 288,
+  "constraints": 13,
+  "IP_generators": 3,
+  "gate_unit_tests": 8,
+  "gate_unit_seconds": 0.083,
+  "full_portable_methods": 145,
+  "full_portable_seconds": 177.24,
+  "source_only_terminal_exit_status": 0,
+  "release_authorized": false,
+  "hardware_verified": false,
+  "full_board_physical_gate_passed": false,
+  "conditional_CDC_reviewed": false,
+  "full_legacy_qualification_rerun": false,
+  "actual_CAD": {
+    "session": 11803,
+    "terminal_exit_status": null,
+    "live": true,
+    "real_project_IP_and_top_synthesis_launched": true
+  },
+  "source_sha256": {
+    "rdma/rnic/fpga/prepare_board.py": "92c5c485e1e5349dbe5deacb0f8c2e514af87b17b696317b9258804c967a0573",
+    "rdma/rnic/tests/test_board_analysis.py": "71b5e5f6c354c8d6c511b1331d535db547c8dd400def61d96eccdff2d1a5e240",
+    "rdma/rnic/tests/bounded_transport_sim.py": "673b9a5567f4adc8ee155c4c72a5b2496e7350fbdc731048981db1ddd4696a2f"
+  },
+  "artifact_sha256": {
+    "rdma/rnic/build/full-board-meta-analysis-001/analysis-inputs.json": "3a79832ffab1fbfaed0b0a80bc31f4a2f7de6e758859888552cab4aa88225dfd",
+    "rdma/rnic/build/full-board-meta-analysis-001/inputs/inputs.sha256": "75840c365a47ead1aaa4b05bd13f5ba87100c8efdf82e94d30648b8d0867c596",
+    "rdma/logs/rnic-full-board-meta-source-001.log": "9db66b7f6c1e360acf9e04204a322f20f2d92d84fae2a5d129a56831954ec042",
+    "rdma/logs/rnic-board-analysis-unit-003.log": "5d80a3c06d0420ae1344b894ff8fd2aef9406afdec58b374002f2bb66c1cce65",
+    "rdma/logs/rnic-all-rtl-014.log": "ce25416153afd9a5d4e45ae4e60250af641fd9195eabf71cad20eb9ec9152b95",
+    "rdma/logs/rnic-source-checks-013.log": "aec54f6515e0410babcb40cf1b5114d2986f007a2a89734455213d2bc4087f36"
+  },
+  "original_files": 1069,
+  "frozen_files": 1070
+}

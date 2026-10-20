@@ -1,0 +1,54 @@
+{
+  "scope": "Candidate wire Atomic -> real MR -> exclusive arbiter -> paged RAM/DMA.\n\nPhysical descriptor engine, host storage and visibility ordering are MODELS.\nIntegrity/peer admission is an explicit upstream contract, NOT exercised here.\nThis is not native/shared-HLS QP integration, requester, standard verbs, timing\nor physical atomicity evidence. All simulations <=30s; no device is opened.\n",
+  "pass_test": false,
+  "run": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic-responder-_bevxpwp",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_atomic_responder.v": "952054f56c886ede6ad685ed9793a5b56fd12b60b867dfc9edd422411479ff04",
+    "rdma/rnic/rtl/rocev2_atomic_memory_bridge.v": "5d088b5090b58ba18b8dd62dee8cfbe4c64cc58bbdefe8e9c609710e868eb1b4",
+    "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "1c1f0b98d23d9a9cd9400c10545a1d4ce4202812cc400a1ae28e6505760e4e09",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/rtl/rocev2_paged_memory_backend.v": "268d72371e5717fc13e009a5e881b34b91c459a1193afc42d760246d8e4e3bd6",
+    "rdma/rnic/rtl/rocev2_page_dma_engine.v": "a8801822361c399716c6336c4887612804d019701d2f357d1964788e9d6c9b24",
+    "rdma/rnic/rtl/rocev2_mr_page_table.v": "7cebd68efbf32f25f2a44f933c8d90231d5e9a185348ab0ab73def4235406239",
+    "rdma/rnic/rtl/rocev2_corundum_dma_backend.v": "f713c19873b8a52f4f038ab22bcc816dfc0d65b7fca72a75c73e2499cd2dd943",
+    "external/corundum/fpga/lib/pcie/rtl/dma_client_axis_sink.v": "a1e03efa7a8810a967b1e4a6b68fc75b0cbfc6f6a2ac137b9aa7321001029dd5",
+    "external/corundum/fpga/lib/pcie/rtl/dma_client_axis_source.v": "e2dc4b2ab3ed88e2d6256e3ebcb7470fe0b11249a1616bbd1746460399ba5044",
+    "external/corundum/fpga/lib/pcie/rtl/dma_psdpram.v": "5d06400fe8c45ff27a0eaabb33206b684b2f2c5adf59353fcabe891e9ac29513",
+    "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+    "rdma/rnic/tests/probe_atomic_responder.py": "1556024eab2947028c0a8aa66dfadef8d3f1f8fe187dbfd9941094707e2a1565",
+    "rdma/rnic/tests/test_paged_memory_backend_rtl.py": "860ebddc40c0bbff2f8eed74da2a1339b0c7b982bbcfa4b00fa73913e2d63ba2"
+  },
+  "simulation_limit_seconds": 30,
+  "hardware_verified": false,
+  "native_integrated": false,
+  "standard_verbs": false,
+  "shared_HLS_QP_table": false,
+  "integrity_peer_admission_model": true,
+  "physical_descriptor_host_visibility_model": true,
+  "atomic_capability_advertised": false,
+  "bench_sha256": "9b7f44d26cf0878a16048c17c509ac3a6182e54df6cc89bb010da07035d6ddfb",
+  "compile_seconds": 0.07860134798102081,
+  "tests": {
+    "0": {
+      "seconds": 0.19830118099343963,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "cycles": 690,
+        "executed": 4,
+        "replayed": 2,
+        "dropped": 0,
+        "commands": 7,
+        "physical_reads": 7,
+        "physical_writes": 3,
+        "fences": 3
+      }
+    },
+    "1": {
+      "seconds": 0.11044489100459032,
+      "exit_code": 1
+    }
+  },
+  "error": "FATAL: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic-responder-_bevxpwp/tb.v:438: normal client preempted response lease\n       Time: 908000  Scope: tb\n"
+}

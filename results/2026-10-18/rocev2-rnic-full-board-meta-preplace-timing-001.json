@@ -1,0 +1,71 @@
+{
+  "scope": "Actual FULL frozen META unplaced post-synthesis timing and pre-place optimized DRC. Not separate per-WR candidate, not a placed/routed/native signoff.",
+  "driver_session": 11803,
+  "driver_terminal_exit_status": null,
+  "full_board_physical_signoff": false,
+  "programming_authorized": false,
+  "hardware_verified": false,
+  "selected_generated_HLS_sha256": "60c9a20e6671f223444c9a115d6295fdff456672d6354ed240e2317529cdbc19",
+  "frozen_files_verified": 1070,
+  "original_files_verified": 1069,
+  "original_and_frozen_inputs_unchanged": true,
+  "timing": {
+    "WNS_ns": -3.176,
+    "TNS_ns": -35832.352,
+    "setup_failing_endpoints": 35271,
+    "setup_total_endpoints": 655354,
+    "WHS_ns": -0.661,
+    "THS_ns": -18415.924,
+    "hold_failing_endpoints": 324076,
+    "hold_total_endpoints": 654862,
+    "WPWS_ns": 0,
+    "TPWS_ns": 0,
+    "pulse_failing_endpoints": 0,
+    "pulse_total_endpoints": 258418,
+    "constraints_met": false,
+    "routed": false
+  },
+  "worst_path": {
+    "source": "pcie_user_reset_reg_2_reg/C",
+    "destination": "core_inst/core_inst/core_pcie_inst/core_inst/app.app_block_inst/endpoint/datapath/responder/endpoint/guard/transport/transport/rx_remoteMemCmd_U/U_rocev2_top_fifo_w150_d512_A_ram/mem_reg_0/REGCEAREGCE",
+    "clock": "pcie_user_clk",
+    "requirement_ns": 4,
+    "data_delay_ns": 6.734,
+    "logic_delay_ns": 0.677,
+    "estimated_route_ns": 6.057,
+    "logic_levels": 13,
+    "reset_net_fanout": 28387,
+    "scope": "Reset -> controller/config/page/query/transport-ready -> RAM CE; unplaced estimated routes, not final physical diagnosis."
+  },
+  "preplace_optimized_DRC": {
+    "rules": {
+      "DPIP-2": {
+        "severity": "Warning",
+        "checks": 6
+      },
+      "DPOP-4": {
+        "severity": "Warning",
+        "checks": 3
+      },
+      "REQP-1858": {
+        "severity": "Warning",
+        "checks": 22
+      }
+    },
+    "errors": 0,
+    "critical_warnings": 0,
+    "warnings": 31,
+    "full_route_or_CDC_pass": false
+  },
+  "unconstrained_internal_endpoints_at_synthesis": 372,
+  "clock_or_constraints_relaxed": false,
+  "resource_error_waived": false,
+  "artifact_sha256": {
+    "rdma/rnic/build/full-board-meta-analysis-001/analysis-inputs.json": "3a79832ffab1fbfaed0b0a80bc31f4a2f7de6e758859888552cab4aa88225dfd",
+    "rdma/rnic/build/full-board-meta-analysis-001/inputs/inputs.sha256": "75840c365a47ead1aaa4b05bd13f5ba87100c8efdf82e94d30648b8d0867c596",
+    "rdma/rnic/build/full-board-meta-analysis-001/synthesis_utilization.rpt": "dada54e124c2b381e51a3e3f350998675850043357ab910478171c8de1aab400",
+    "rdma/rnic/build/full-board-meta-analysis-001/synthesis_timing.rpt": "6d2287cf1a555baef625c235b881df36a7f1fc8fe44d2b7984ff99e754884e3b",
+    "rdma/rnic/build/full-board-meta-analysis-001/full_board_post_synth.dcp": "28bcec0c3e964cb924ec09800b1999b48941214e127fe7f28c35176f9e461da9",
+    "rdma/rnic/build/full-board-meta-analysis-001/project/as02mc04_rnic_analysis.runs/impl_1/fpga_drc_opted.rpt": "0c8541e0ae3b12aed701be042794ee85ee06037103817df0d2fdf7541efac761"
+  }
+}

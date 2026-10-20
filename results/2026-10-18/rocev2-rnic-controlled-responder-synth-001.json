@@ -1,0 +1,32 @@
+{
+  "scope": "Actual combined AXI/controller/HLS protected paged top synthesis ONLY; not native board or PCIe-engine top",
+  "session": 46864,
+  "terminal_exit_status": 0,
+  "source_manifest_count": 162,
+  "original_inputs_unchanged_at_terminal": true,
+  "luts": 45795,
+  "registers": 76792,
+  "bram_tiles": 53,
+  "period_ns": 4,
+  "post_synthesis_wns_ns": -2.267,
+  "post_synthesis_whs_ns": 0.016,
+  "setup_failing_endpoints": 5300,
+  "hold_failing_endpoints": 0,
+  "pulse_failing_endpoints": 0,
+  "constraints_met": false,
+  "critical_path": "External DMA RAM write address -> per-byte bounds -> RAM pending/drain -> endpoint quiet -> controller command-valid;21logic levels; POST-SYNTH ESTIMATE ONLY",
+  "placed_or_routed": false,
+  "native_board_signoff": false,
+  "native_dma_verified": false,
+  "completion_claim": false,
+  "next_action": "Continue exact-source physical route session76914; do not infer physical timing from synthesis.",
+  "artifact_sha256": {
+    "rdma/rnic/build/controlled-responder-synth-2i2PSnYr/impl/original_inputs.sha256": "d6032ee4258a8159dbd94f98c0eb8e133f470cdaf73dfd5ab9128d7a7632c358",
+    "rdma/rnic/build/controlled-responder-synth-2i2PSnYr/impl/post_synth.dcp": "378a214aa39146b59ab003348f0797f9b74e05a340a61a71b843f9f7d4ab93fe",
+    "rdma/rnic/build/controlled-responder-synth-2i2PSnYr/impl/utilization.rpt": "b6025756d1833132689556820cc7776a10fd2924aa264053ff723e4d7b57c51b",
+    "rdma/rnic/build/controlled-responder-synth-2i2PSnYr/impl/timing.rpt": "548a56abf10de050fb9a973ba6fd263238f1826d953163df5d0cbaca4dc7008a",
+    "rdma/rnic/build/controlled-responder-synth-2i2PSnYr/impl/setup_paths.rpt": "9131f8963b86cf0f000cdcbf18c8fe52c1f12545a02f54edf6f17d6e6897fa95",
+    "rdma/rnic/build/controlled-responder-synth-2i2PSnYr/impl/drc.rpt": "714a36018af492c87d7e06bd90f7776863e4fcd140186e590d173a99706202ee",
+    "rdma/logs/rnic-controlled-responder-synth-001.log": "9dd19d4e9e0bed135b541d35e1c5fa112132862cbbb4ac22bd83cbe3bae9b5e4"
+  }
+}

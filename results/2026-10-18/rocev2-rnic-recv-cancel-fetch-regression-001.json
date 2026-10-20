@@ -1,0 +1,166 @@
+{
+  "scope": "Actual SQ-fetch RTL, explicit read-backend/parent-drain/host DATA MODELS.\n\nNo native pinned/coherent allocation, actual PCIe, WQE authorization, outgoing\nRDMA or CQ completion is claimed by these controller-only units.\n",
+  "pass_test": true,
+  "methods": 7,
+  "tests": {
+    "test_bad_data_shape_wrong_status_tag_and_unknown_status_fault_without_result": [
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "results": 0,
+          "cycles": 35,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "rdma/rnic/tests/test_sq_fetch_rtl.py": "503be31337adec9c6622b1bed8e8d392c4bed0c0d153e514285223d9ac7242cb"
+        },
+        "bench_sha256": "f053311b03c30d2d79d5eb125ddc542592d9ddf5339a24695e3614c3db3564fd"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "results": 0,
+          "cycles": 35,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "rdma/rnic/tests/test_sq_fetch_rtl.py": "503be31337adec9c6622b1bed8e8d392c4bed0c0d153e514285223d9ac7242cb"
+        },
+        "bench_sha256": "f0e1c5791d7d0373f9f19e86b61fcc0a8eba588db07c6759199d191ac945b4b0"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "results": 0,
+          "cycles": 35,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "rdma/rnic/tests/test_sq_fetch_rtl.py": "503be31337adec9c6622b1bed8e8d392c4bed0c0d153e514285223d9ac7242cb"
+        },
+        "bench_sha256": "ba8e12a23bd890eeb290ef79256661c05a43bf2bd98227ab529d8b4e6a91528f"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "results": 0,
+          "cycles": 35,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "rdma/rnic/tests/test_sq_fetch_rtl.py": "503be31337adec9c6622b1bed8e8d392c4bed0c0d153e514285223d9ac7242cb"
+        },
+        "bench_sha256": "5d1557bd172a1afdb7330adba1c4db9e9ff84a220ce26e08c84227aa61006915"
+      }
+    ],
+    "test_configuration_full_QP_bounds_epoch_ring_range_and_producer_credits": [
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 2,
+          "results": 2,
+          "cycles": 164,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "rdma/rnic/tests/test_sq_fetch_rtl.py": "503be31337adec9c6622b1bed8e8d392c4bed0c0d153e514285223d9ac7242cb"
+        },
+        "bench_sha256": "98371690b437c3c22bfae67988ea7d09e0389c8cd7ca83171824fa2592e52497"
+      }
+    ],
+    "test_disable_does_not_cancel_offered_descriptor_or_held_result_or_downstream_guard": [
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "results": 1,
+          "cycles": 63,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "rdma/rnic/tests/test_sq_fetch_rtl.py": "503be31337adec9c6622b1bed8e8d392c4bed0c0d153e514285223d9ac7242cb"
+        },
+        "bench_sha256": "a90c9e7b2749d711f9f5cc98f001ee1f43ec9abb315f41f5127a09c18100733b"
+      }
+    ],
+    "test_known_DMA_error_zeroes_record_halts_only_its_queue_and_preserves_other_progress": [
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 2,
+          "results": 2,
+          "cycles": 111,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "rdma/rnic/tests/test_sq_fetch_rtl.py": "503be31337adec9c6622b1bed8e8d392c4bed0c0d153e514285223d9ac7242cb"
+        },
+        "bench_sha256": "9a64165df29c1059fb6a04f7d3b5f801d386be4e907795e7759344ea3fe68155"
+      }
+    ],
+    "test_tag_exhaustion_refuses_wrap_and_does_not_fabricate_queued_work": [
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "results": 1,
+          "cycles": 50,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "rdma/rnic/tests/test_sq_fetch_rtl.py": "503be31337adec9c6622b1bed8e8d392c4bed0c0d153e514285223d9ac7242cb"
+        },
+        "bench_sha256": "9236880f74cb3cf6dbff92a1f405b22cec9f7df7de01aedfbf74826f42298603"
+      }
+    ],
+    "test_two_QP_full_DMA64_PD_epoch_sequence_and_fair_ring_wrap": [
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 6,
+          "results": 6,
+          "cycles": 196,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "rdma/rnic/tests/test_sq_fetch_rtl.py": "503be31337adec9c6622b1bed8e8d392c4bed0c0d153e514285223d9ac7242cb"
+        },
+        "bench_sha256": "d0a72035198333f6ac1cc056fd7cfa94a76ba2e805a1a93874cef84151e5a5da"
+      }
+    ],
+    "test_unexpected_status_never_accepts_or_retracts_offered_work": [
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "results": 0,
+          "cycles": 29,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "rdma/rnic/tests/test_sq_fetch_rtl.py": "503be31337adec9c6622b1bed8e8d392c4bed0c0d153e514285223d9ac7242cb"
+        },
+        "bench_sha256": "230ad7b4714410227baf455efcf4f62eebe3e1882f29fb9b6c6b067748a068e5"
+      }
+    ]
+  },
+  "hardware_verified": false,
+  "actual_PCIe_engine": false,
+  "real_host_queue_mapping": false,
+  "standard_verbs_implemented": false,
+  "RDMA_completion_claim": false
+}

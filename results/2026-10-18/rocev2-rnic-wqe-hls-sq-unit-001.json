@@ -1,0 +1,292 @@
+{
+  "scope": "Actual owner-before-HLS-SQ RTL; work authorization/executor/HLS are MODELS.\n\nNo actual MR/SQ fetch/HLS memory/wire/CQ/runtime completion is claimed here.\n",
+  "pass_test": true,
+  "methods": 7,
+  "simulations": 19,
+  "tests": {
+    "test_all_failed_fetches_handoff_identity_but_never_offer_HLS_SQ": [
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 15,
+          "SQ": 0,
+          "fault": 0,
+          "cycles": 270
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "cfbe7fb1a8d022e935437725b79140810ec52e435fff979d7ada627bfed549a9"
+      }
+    ],
+    "test_complete_WRITE_READ_ABI_full_zero_high_keys_and_QP0_PD0": [
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 16,
+          "SQ": 16,
+          "fault": 0,
+          "cycles": 400
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "0129400b3afc078ace9ca0a54b856c3d3787fa4e9e11ddb170a57b4a1cae4cef"
+      }
+    ],
+    "test_denied_MR_record_handoff_does_not_become_a_transport_operation": [
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 1,
+          "SQ": 0,
+          "fault": 0,
+          "cycles": 18
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "31a060da68463f7dd78f0895b92a96f85dd23a44d95f025d30feefd4fd4ec569"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 1,
+          "SQ": 0,
+          "fault": 0,
+          "cycles": 18
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "5f464e34d3651baca02a96cfe46db7f16140258bc82f73e9a540a5d09b42e4ee"
+      }
+    ],
+    "test_halt_prevents_NEW_SQ_but_not_accepted_context_progress": [
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 1,
+          "SQ": 1,
+          "fault": 0,
+          "cycles": 38
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "47016c3ec8aa7f0217786295c2c7cd1af596f5ef3f50a34d45e0302dd0f8f425"
+      }
+    ],
+    "test_invalid_or_unknown_full_context_never_gets_owner_or_HLS_authority": [
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "159036c0e460a1bb748c93a48ccc4e2df25d51f6219e9d64411fc58a660da4e4"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "d6862b84376ea8a26fe8687dad50353768b80bbe0e41a8cff94bd5d533cf5269"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "d2b2c0fea3f161911f85620a1083b7af8ef60d0e45311d35f63af4dd89e91f41"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "37d55c3c6d1b699afcff93e2689916b9e4b76f4e95f89af8c404d4ad10f8eb47"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "2ada6ea30cab2e0c38af38dc6fbbb351ba7d0bc02250506c2fbc89df8a4c1e6e"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "9b6a9cdf887dc7d5f61785dcef3f09512c038bcd6f0c7d8abe27e21607212f35"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "3f4d6598bb659e46415ade15636cd351e05506c72108db7268299c85c2494f41"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "6b4511bc6672bb19342f18422e691fdade1abb2718a9c824fc5debdbf5ecfb96"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "ac794040f37a56ccaab56a000b6c8d52eef699716c589a1247ceef149dca9eee"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "8e0c1d9ee0ad5679f37646c086c9e88c0bd7ffc7b8689e76082ebac565a59dec"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "30385388d879ba5bec093ecba83311c252a07473aa8fb86b6da64ceefb389e55"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "f89e9c8cd5751b33252b0ab555fa13684d0428ffd4295078d0fd0fcbadd20541"
+      }
+    ],
+    "test_lost_downstream_guard_does_not_retract_already_offered_SQ": [
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 1,
+          "SQ": 1,
+          "fault": 1,
+          "cycles": 20
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "dbd5430ffea34dce4eaa8f5d72cc90feccd06b1ad7c64adfc91ce56427823be0"
+      }
+    ],
+    "test_owner_cannot_handoff_without_existing_downstream_lifetime_guard": [
+      {
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 10
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "3a6f114c3936928becc55541363c5e5d08b34101690d5194ff352220b384035f",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "bench_sha256": "b3bc5108df56720446216214504cb033eb0e95c70dd3d8674f52ee536be3411c"
+      }
+    ]
+  },
+  "actual_MR_SQ_fetch_HLS": false,
+  "actual_executor_CQ": false,
+  "hardware_verified": false,
+  "completion_claim": false
+}

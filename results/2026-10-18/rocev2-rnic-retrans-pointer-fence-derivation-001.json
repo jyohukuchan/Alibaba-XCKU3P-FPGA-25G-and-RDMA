@@ -1,0 +1,46 @@
+{
+  "scope": "Real pointer consumer source invariants, not actual RTL/full-core proof.",
+  "pass_test": true,
+  "methods": 4,
+  "tests": {
+    "test_both_markers_full168bit_identity_actual_pointer_and_global_lock": {
+      "source_sha256": {
+        "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/retransmitter/retransmitter.hpp": "290c476d45672c15b864e258a8944117ee6ce479fc55dfb3588027eb00b50732",
+        "rdma/rnic/hls/retrans_pointer_fence_profile.py": "250e7e5534472fd8a4aecc31d37aba259cd86c8b2b11b07a318b7140a7adf568",
+        "rdma/rnic/tests/test_retrans_pointer_fence_derivation.py": "f827b57986a5bf90bfe35ff848e40bc5c2617e2c8b8dfc5ec5315652be94ee2b"
+      },
+      "actual_table_and_global_lock": true,
+      "full16bit_QPN_guard": true,
+      "metadata_capacity_2000_not_reduced": true,
+      "whole_core_drain": false
+    },
+    "test_changed_unique_anchors_rejected_original_untouched": {
+      "source_sha256": {
+        "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/retransmitter/retransmitter.hpp": "290c476d45672c15b864e258a8944117ee6ce479fc55dfb3588027eb00b50732",
+        "rdma/rnic/hls/retrans_pointer_fence_profile.py": "250e7e5534472fd8a4aecc31d37aba259cd86c8b2b11b07a318b7140a7adf568",
+        "rdma/rnic/tests/test_retrans_pointer_fence_derivation.py": "f827b57986a5bf90bfe35ff848e40bc5c2617e2c8b8dfc5ec5315652be94ee2b"
+      },
+      "rejected_anchors": 5,
+      "original_unchanged": true
+    },
+    "test_original_header_and_normal_update_request_wait_actions_exact": {
+      "source_sha256": {
+        "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/retransmitter/retransmitter.hpp": "290c476d45672c15b864e258a8944117ee6ce479fc55dfb3588027eb00b50732",
+        "rdma/rnic/hls/retrans_pointer_fence_profile.py": "250e7e5534472fd8a4aecc31d37aba259cd86c8b2b11b07a318b7140a7adf568",
+        "rdma/rnic/tests/test_retrans_pointer_fence_derivation.py": "f827b57986a5bf90bfe35ff848e40bc5c2617e2c8b8dfc5ec5315652be94ee2b"
+      },
+      "complete_original_header": true,
+      "normal_update_request_wait_actions_exact": true
+    },
+    "test_real_BRAM_all_eight_cleared_before_consuming_not_bitmap_fabrication": {
+      "source_sha256": {
+        "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/retransmitter/retransmitter.hpp": "290c476d45672c15b864e258a8944117ee6ce479fc55dfb3588027eb00b50732",
+        "rdma/rnic/hls/retrans_pointer_fence_profile.py": "250e7e5534472fd8a4aecc31d37aba259cd86c8b2b11b07a318b7140a7adf568",
+        "rdma/rnic/tests/test_retrans_pointer_fence_derivation.py": "f827b57986a5bf90bfe35ff848e40bc5c2617e2c8b8dfc5ec5315652be94ee2b"
+      },
+      "real_addressed_full_table_init": true,
+      "BRAM_and_RAW_preserved": true
+    }
+  },
+  "hardware_verified": false
+}

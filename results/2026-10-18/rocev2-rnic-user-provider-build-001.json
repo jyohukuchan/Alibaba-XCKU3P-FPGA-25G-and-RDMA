@@ -1,0 +1,43 @@
+{
+  "scope": "Build actual pinned-rdma-core50/PABI34 AS02 provider, never install/open NIC.\n\nUses real installed libibverbs private34 symbols with upstream50.0 headers.\nNo kernel module, driver config, network, FPGA or /dev/infiniband is changed.\n",
+  "pass_test": false,
+  "source_sha256": {
+    "rdma/rnic/provider/build_frozen.py": "abf7db03266fd13bfec2b2b0b62b4b2f8a8aee5a5a4b76c80f9b3e9328e3ca9b",
+    "rdma/rnic/provider/as02.c": "49ccbfb777afa11a8823a545c53962ad63a79ba5384ea7e84aa72ca97e20f99d",
+    "rdma/rnic/provider/as02.driver": "bde66cb9998ca8086a62453af3e95001ee83688c1c1645a78d7fc0d5566e1002"
+  },
+  "frozen_sha256": {
+    "as02.c": "49ccbfb777afa11a8823a545c53962ad63a79ba5384ea7e84aa72ca97e20f99d",
+    "as02.driver": "bde66cb9998ca8086a62453af3e95001ee83688c1c1645a78d7fc0d5566e1002",
+    "build_frozen.py": "abf7db03266fd13bfec2b2b0b62b4b2f8a8aee5a5a4b76c80f9b3e9328e3ca9b"
+  },
+  "directory": "rdma/rnic/build/provider-frozen-jly10zck",
+  "rdma_core_commit": "bc6b4bc134532e952fe7f8efc251e1f89b912098",
+  "rdma_core": "/home/user/fpga-rocev2-research/rdma-core-v50.0",
+  "provider_PABI": 34,
+  "command": [
+    "cc",
+    "-std=gnu11",
+    "-D_GNU_SOURCE",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-O2",
+    "-fPIC",
+    "-shared",
+    "-I/home/user/fpga-rocev2-research/rdma-core-v50.0/build/include",
+    "-I/home/user/fpga-rocev2-research/rdma-core-v50.0",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/provider-frozen-jly10zck/as02.c",
+    "-pthread",
+    "-Wl,-z,defs",
+    "-libverbs",
+    "-o",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/provider-frozen-jly10zck/libas02-rdmav34.so"
+  ],
+  "installed": false,
+  "NIC_opened": false,
+  "hardware_verified": false,
+  "bus_driver_wired": false,
+  "compile_seconds": 0.12949337798636407,
+  "error": "In file included from /home/user/fpga-rocev2-research/rdma-core-v50.0/build/include/infiniband/driver.h:42,\n                 from /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/provider-frozen-jly10zck/as02.c:12:\n/home/user/fpga-rocev2-research/rdma-core-v50.0/build/include/infiniband/cmd_ioctl.h: In function \u2018_scrub_ptr_attr\u2019:\n/home/user/fpga-rocev2-research/rdma-core-v50.0/build/include/infiniband/cmd_ioctl.h:62:43: error: unused parameter \u2018ptr\u2019 [-Werror=unused-parameter]\n   62 | static inline void _scrub_ptr_attr(void **ptr)\n      |                                    ~~~~~~~^~~\n/home/user/fpga-rocev2-research/rdma-core-v50.0/build/include/infiniband/cmd_ioctl.h: In function \u2018fill_attr_out_fd\u2019:\n/home/user/fpga-rocev2-research/rdma-core-v50.0/build/include/infiniband/cmd_ioctl.h:338:72: error: unused parameter \u2018fd\u2019 [-Werror=unused-parameter]\n  338 | fill_attr_out_fd(struct ibv_command_buffer *cmd, uint16_t attr_id, int fd)\n      |                                                                    ~~~~^~\ncc1: all warnings being treated as errors\n"
+}

@@ -1,0 +1,15 @@
+{
+  "scope": "Existing default-disabled main READ/WRITE regression after independent physical SQ/RQ implementation. HLS ports, physical host and MAC are explicit models; not actual generated HLS or hardware evidence.",
+  "command": "python3 rdma/rnic/tests/test_native_rnic_rtl.py",
+  "pass_test": true,
+  "exit_code": 0,
+  "tests": 2,
+  "total_unittest_seconds": 56.617,
+  "each_simulation_timeout_seconds": 30,
+  "results": [
+    {"operation":"READ","pass_test":true,"payload_bytes":65,"proof_flags":63,"descriptors":4,"read_TLPs":2,"write_TLPs":2,"fences":1,"HLS_model":true,"CQ_committed":false},
+    {"operation":"WRITE","pass_test":true,"payload_bytes":65,"proof_flags":63,"descriptors":3,"read_TLPs":3,"write_TLPs":0,"fences":0,"HLS_model":true,"CQ_committed":false}
+  ],
+  "hardware_verified": false,
+  "registered_RDMA_device_or_provider": false
+}

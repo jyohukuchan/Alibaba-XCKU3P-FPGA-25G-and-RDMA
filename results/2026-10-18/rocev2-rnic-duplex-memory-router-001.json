@@ -1,0 +1,127 @@
+{
+  "scope": "Four-state duplex memory router; command producers/memory are explicit models.",
+  "pass_test": true,
+  "methods": 4,
+  "simulations": 11,
+  "tests": {
+    "test_backpressure_and_unselected_client_cannot_overtake": [
+      {
+        "summary": {
+          "pass_test": true,
+          "read_return": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "4344e8d428823700452e01bf00b7c4e5cca0c58e96f2f3c7ab0c6abb83651798",
+          "rdma/rnic/tests/test_memory_origin_router.py": "1f445e08b6f5fc711484652275fa6f24fae952b1746d4faaf64ae29e981d6b71"
+        }
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "read_return": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "4344e8d428823700452e01bf00b7c4e5cca0c58e96f2f3c7ab0c6abb83651798",
+          "rdma/rnic/tests/test_memory_origin_router.py": "1f445e08b6f5fc711484652275fa6f24fae952b1746d4faaf64ae29e981d6b71"
+        }
+      }
+    ],
+    "test_interleaved_clients_retain_origin_until_exact_EOF": [
+      {
+        "summary": {
+          "pass_test": true,
+          "read_return": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "4344e8d428823700452e01bf00b7c4e5cca0c58e96f2f3c7ab0c6abb83651798",
+          "rdma/rnic/tests/test_memory_origin_router.py": "1f445e08b6f5fc711484652275fa6f24fae952b1746d4faaf64ae29e981d6b71"
+        }
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "read_return": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "4344e8d428823700452e01bf00b7c4e5cca0c58e96f2f3c7ab0c6abb83651798",
+          "rdma/rnic/tests/test_memory_origin_router.py": "1f445e08b6f5fc711484652275fa6f24fae952b1746d4faaf64ae29e981d6b71"
+        }
+      }
+    ],
+    "test_invalid_or_unowned_origins_quarantine": [
+      {
+        "summary": {
+          "pass_test": true,
+          "read_return": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "4344e8d428823700452e01bf00b7c4e5cca0c58e96f2f3c7ab0c6abb83651798",
+          "rdma/rnic/tests/test_memory_origin_router.py": "1f445e08b6f5fc711484652275fa6f24fae952b1746d4faaf64ae29e981d6b71"
+        }
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "read_return": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "4344e8d428823700452e01bf00b7c4e5cca0c58e96f2f3c7ab0c6abb83651798",
+          "rdma/rnic/tests/test_memory_origin_router.py": "1f445e08b6f5fc711484652275fa6f24fae952b1746d4faaf64ae29e981d6b71"
+        }
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "read_return": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "4344e8d428823700452e01bf00b7c4e5cca0c58e96f2f3c7ab0c6abb83651798",
+          "rdma/rnic/tests/test_memory_origin_router.py": "1f445e08b6f5fc711484652275fa6f24fae952b1746d4faaf64ae29e981d6b71"
+        }
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "read_return": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "4344e8d428823700452e01bf00b7c4e5cca0c58e96f2f3c7ab0c6abb83651798",
+          "rdma/rnic/tests/test_memory_origin_router.py": "1f445e08b6f5fc711484652275fa6f24fae952b1746d4faaf64ae29e981d6b71"
+        }
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "read_return": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "4344e8d428823700452e01bf00b7c4e5cca0c58e96f2f3c7ab0c6abb83651798",
+          "rdma/rnic/tests/test_memory_origin_router.py": "1f445e08b6f5fc711484652275fa6f24fae952b1746d4faaf64ae29e981d6b71"
+        }
+      }
+    ],
+    "test_wrong_payload_length_never_releases_credit": [
+      {
+        "summary": {
+          "pass_test": true,
+          "read_return": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "4344e8d428823700452e01bf00b7c4e5cca0c58e96f2f3c7ab0c6abb83651798",
+          "rdma/rnic/tests/test_memory_origin_router.py": "1f445e08b6f5fc711484652275fa6f24fae952b1746d4faaf64ae29e981d6b71"
+        }
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "read_return": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "4344e8d428823700452e01bf00b7c4e5cca0c58e96f2f3c7ab0c6abb83651798",
+          "rdma/rnic/tests/test_memory_origin_router.py": "1f445e08b6f5fc711484652275fa6f24fae952b1746d4faaf64ae29e981d6b71"
+        }
+      }
+    ]
+  },
+  "hardware_verified": false
+}

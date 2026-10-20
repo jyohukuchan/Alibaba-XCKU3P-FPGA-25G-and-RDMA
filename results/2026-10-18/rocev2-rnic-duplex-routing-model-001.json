@@ -1,0 +1,9 @@
+{
+  "scope": "Actual duplex RTL/derivation with explicitly controlled HLS-port models.\n\nThis tests packet/command routing and independent lifetime handshakes, not\nactual HLS receipts, memory authorization, native DMA or physical operation.\n",
+  "pass_test": false,
+  "methods": 0,
+  "simulations": 0,
+  "tests": {},
+  "actual_HLS": false,
+  "hardware_verified": false
+}

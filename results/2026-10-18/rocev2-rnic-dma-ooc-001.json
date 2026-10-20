@@ -1,0 +1,26 @@
+{
+  "scope": "Isolated routed Corundum DMA backend; failed timing, not board signoff",
+  "session": 28370,
+  "terminal_exit_status": 1,
+  "period_ns": 4,
+  "wns_ns": -0.057,
+  "whs_ns": 0.043,
+  "luts": 3435,
+  "registers": 1860,
+  "source_unchanged": true,
+  "full_board_signoff": false,
+  "completion_claim": false,
+  "critical_path": "Input s_axis_write_tkeep[61] -> Corundum sink status_fifo_len RAMD32 data input,15logic levels",
+  "next_action": "Add validated AXIS ingress skid register, preserving existing Corundum source, then revalidate all-byte/error/ownership tests and native15-bit RAM geometry.",
+  "artifact_sha256": {
+    "rdma/rnic/build/dma-ooc-PfmNQrXv/impl/original_inputs.sha256": "ec85d7a5ded89a5c5a1092070441ffc8b43376352bad85cf332b23ac9a89d337",
+    "rdma/rnic/build/dma-ooc-PfmNQrXv/impl/routed.dcp": "0ede2d26aa086e47c0daf7750435dfdaa2a97b4a3b8fbb6f9cdca6483b70c0ac",
+    "rdma/rnic/build/dma-ooc-PfmNQrXv/impl/timing.rpt": "7f45342e9102f61a524495cf597f916ffe32e18ed9a1cda5d7b22621e9ade6e0",
+    "rdma/rnic/build/dma-ooc-PfmNQrXv/impl/utilization.rpt": "3b86ef858ba080fe8b51f3996e147b654e4818b5d11ba1ab246f58387cb1f1be",
+    "rdma/rnic/build/dma-ooc-PfmNQrXv/impl/setup_paths.rpt": "eb8a3e3ddcbf3a6d1f3c7d2920fd13f473b31135509db623dd2ed05d2737df7e",
+    "rdma/rnic/build/dma-ooc-PfmNQrXv/impl/drc.rpt": "dd1051490e3c5fb1c0dc0e1450deb54c61b0ae3885695923cea70a8ad10780f7",
+    "rdma/logs/rnic-dma-ooc-001.log": "43f62297b956fc3e0e88f3c1675f1a6c6dcf9d22a5b99be6adfa09d945a2edf6",
+    "rdma/rnic/rtl/rocev2_corundum_dma_backend.v": "3fd531bc1a38d1031887664f5b7d746b9b098badd23e4390df4a32a03d6088e4",
+    "rdma/rnic/rtl/dma_backend_ooc.tcl": "82bfe76828f3cf1d761e89dfafe397aa04738b24104ee204ce322a998226b6e6"
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "scope": "Exact generated actual TX graph, bounded FOUR-STATE; not native/physical.",
+  "pass_test": true,
+  "terminal_exit_status": 0,
+  "retained_directory": "rdma/rnic/build/owned-wire-tx-RTL-1lg23au8",
+  "source_sha256": {
+    "rdma/rnic/tests/probe_owned_wire_tx.py": "d9d8715ea7a0e07fc7d546113e0492944cfcdd0edd47425b5fdfd076c6174591",
+    "rdma/rnic/hls/owned_wire_tx_profile.py": "2b6dc023cf0adadd6e3a302627d4c26338d8a9ceeb467800cbc5f3fa34e4310e",
+    "rdma/rnic/hls/owned_timer_profile.py": "32e7d898d458e42fa78f7b90d5fba99b9d0ddcfb7c92648c60ffd0239daff7a3",
+    "rdma/rnic/hls/owned_retrans_fence_profile.py": "f59a6407183dc1cae26099ecb9797b62788bf7dc6cd87bc75cbbfcc44af62fa0",
+    "rdma/rnic/hls/owned_retrans_profile.py": "28aafc3d0667efd78d7ab1c8ed1e02fe20015c7e3c4a9593811b365b5712e500",
+    "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/ib_transport_protocol.cpp": "ee67cd84f078b876a87b92859c6297f8601f72289e46b338ad1d8052e4d61d52",
+    "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/ib_transport_protocol.hpp": "9e9fb3cbb48bcacfdc2a81f49431d04294d5feb5d2b625ef31687a16b8f4c44e",
+    "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/retransmitter/retransmitter.hpp": "290c476d45672c15b864e258a8944117ee6ce479fc55dfb3588027eb00b50732",
+    "rdma/rnic/hls/test_owned_wire_tx.cpp": "9f0a3562122b5e8cd044a7db156eadee3fc9e334b56244bc47e432dd4a59fd7b",
+    "rdma/rnic/tests/fast_transport_sim.py": "940518b5ea3ebb73ee9a5e2f04244e9378e2304096946644fffdfd11dfd5cf1a",
+    "results/2026-10-18/rocev2-rnic-owned-wire-tx-003.json": "9c50efc09f0c5efa6c83d4fd8a1c415ebf82075a6092dfd7d042b0d786e28954",
+    "rdma/rnic/tests/probe_owned_wire_tx_hls.py": "94957d4fc61aea731ca5a2404c7ed72f1fad799d0500bb085023426d3a8c5a9b",
+    "rdma/rnic/hls/owned_wire_tx_top.cpp": "7711854f3a4b46861077640ae8c19f17ac1a2e71ec1938fe608bbf2fba55dfa5",
+    "rdma/rnic/hls/owned_wire_tx_synth.tcl": "0aee9486568df1c14c63a79cd1b5602c08942fa7cc688425759cb3513480c45d",
+    "results/2026-10-18/rocev2-rnic-owned-wire-tx-hls-002.json": "9dadf4c04e0d01c4cb983730f77e2fb67f9943c2c9e7557546e560081852c76b",
+    "rdma/rnic/tests/probe_owned_wire_tx_rtl.py": "048a03c25152147b7faa2df6d8cfbe2c4efc7a402d9fed54ebfbeb538488c1d3",
+    "rdma/rnic/tests/owned_wire_tx_tb.v": "38cea1e8f30bc6919f35bb0e62cb766d500960273aaa22895e102671ffb494f3"
+  },
+  "component_generated_sha256": {
+    "rdma/rnic/build/owned-wire-tx-hls-99o5z31f/project/solution1/syn/verilog/as02_owned_wire_tx_top_regslice_both.v": "eab89ac6e56680054344c8095fa5a1922cba21d745adfb2628c607334ef49f07",
+    "rdma/rnic/build/owned-wire-tx-hls-99o5z31f/project/solution1/syn/verilog/as02_owned_wire_tx_top_as02_owned_wire_meta_merger_51_s.v": "4add4442a53f4ebfc68ff6d10fe4960d94e5f6e0cc49842846b6525ff63bd52a",
+    "rdma/rnic/build/owned-wire-tx-hls-99o5z31f/project/solution1/syn/verilog/as02_owned_wire_tx_top_fifo_w605_d2_S.v": "55c0f5dcb841486241028afaeba1581fead52b0421f247e4f7ccfa8e2bee6ecd",
+    "rdma/rnic/build/owned-wire-tx-hls-99o5z31f/project/solution1/syn/verilog/as02_owned_wire_tx_top_as02_owned_wire_generate_ibh_64_51_s.v": "7e5ca079621005dec5424bf6db4ad47a5aa29afd8b014867f80ee15601645b4e",
+    "rdma/rnic/build/owned-wire-tx-hls-99o5z31f/project/solution1/syn/verilog/as02_owned_wire_tx_top_as02_owned_wire_admit_51_s.v": "9532ac0b234cd41ca7ed0eee2188666406b267324f8350d06323958cf1eec5f9",
+    "rdma/rnic/build/owned-wire-tx-hls-99o5z31f/project/solution1/syn/verilog/as02_owned_wire_tx_top.v": "6b67ff353a489af9c6fee05e3f7832a673806807988c13b617bc001301f66010",
+    "rdma/rnic/build/owned-wire-tx-hls-99o5z31f/project/solution1/syn/verilog/as02_owned_wire_tx_top_fifo_w635_d2_S.v": "a7d87f4c4dd8d8cf5046518216c033298d944f1f56a6932d2d136f609094bac4",
+    "rdma/rnic/build/owned-wire-tx-hls-99o5z31f/project/solution1/syn/verilog/as02_owned_wire_tx_top_as02_owned_wire_generate_exh_64_51_s.v": "37c9b6af7cc7c487ec385b9161cae1427a9064f8b425191a7c2d341eb4877bde",
+    "rdma/rnic/build/owned-wire-tx-hls-99o5z31f/project/solution1/syn/verilog/as02_owned_wire_tx_top_fifo_w113_d2_S.v": "291259aa01cd0c9c9349cd0cd654078b987ceef4c69f1ad8f7a6f6c61bd59053",
+    "rdma/rnic/build/owned-wire-tx-hls-99o5z31f/project/solution1/syn/verilog/as02_owned_wire_tx_top_fifo_w593_d2_S.v": "5025759466fc736a4d0aab3488b488dc26ecd088282e4204d1c4c616d683d2dd",
+    "rdma/rnic/build/owned-wire-tx-hls-99o5z31f/project/solution1/syn/verilog/as02_owned_wire_tx_top_fifo_w513_d2_S.v": "2f0b4267767b2e6898f3015586f87e8dd1e06548a9ee907b24a2e454ca91427a",
+    "rdma/rnic/build/owned-wire-tx-hls-99o5z31f/project/solution1/syn/verilog/as02_owned_wire_tx_top_as02_owned_wire_header_pack.v": "5342f091b6aa2063e4a2ca2eae4b7f78877806ac206b749741918627a7b25351",
+    "rdma/rnic/build/owned-wire-tx-hls-99o5z31f/project/solution1/syn/verilog/as02_owned_wire_tx_top_as02_owned_wire_merge_retrans_request.v": "65edb76990cb0681de69228e8f222a66332099c1c2cd3291123c147cc3dfe4a6",
+    "rdma/rnic/build/owned-wire-tx-hls-99o5z31f/project/solution1/syn/verilog/as02_owned_wire_tx_top_fifo_w466_d2_S.v": "9902dec3b5203fb502fc7a7243a94fa56a4a0259db9ba76efded905003eccce2",
+    "rdma/rnic/build/owned-wire-tx-hls-99o5z31f/project/solution1/syn/verilog/as02_owned_wire_tx_top_as02_owned_wire_local_req_handler_51_s.v": "712030316bf695e34a5987666fcb3d9c3dbd0dbe82eec27e6e22353fed475a4e"
+  },
+  "frozen_source_sha256": {
+    "probe_owned_wire_tx_rtl.py": "048a03c25152147b7faa2df6d8cfbe2c4efc7a402d9fed54ebfbeb538488c1d3",
+    "owned_wire_tx_tb.v": "38cea1e8f30bc6919f35bb0e62cb766d500960273aaa22895e102671ffb494f3"
+  },
+  "source_and_generated_inputs_unchanged": true,
+  "simulations": [
+    {
+      "case": 1,
+      "seconds": 0.3068928779975977,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "cycles": 1040,
+        "actual_insertions": 4,
+        "wire_BTHs": 4,
+        "wire_EXH_words": 8,
+        "wire_RETH_words": 8,
+        "wire_AETH_words": 0,
+        "AXIS_hold_monitors": 12,
+        "four_state": true,
+        "native_CQ": false
+      },
+      "binary_unchanged": true
+    },
+    {
+      "case": 2,
+      "seconds": 0.1852062069810927,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "cycles": 504,
+        "actual_insertions": 0,
+        "wire_BTHs": 0,
+        "wire_EXH_words": 0,
+        "wire_RETH_words": 0,
+        "wire_AETH_words": 0,
+        "AXIS_hold_monitors": 12,
+        "four_state": true,
+        "native_CQ": false
+      },
+      "binary_unchanged": true
+    },
+    {
+      "case": 3,
+      "seconds": 0.18547719699563459,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "cycles": 504,
+        "actual_insertions": 0,
+        "wire_BTHs": 0,
+        "wire_EXH_words": 0,
+        "wire_RETH_words": 0,
+        "wire_AETH_words": 0,
+        "AXIS_hold_monitors": 12,
+        "four_state": true,
+        "native_CQ": false
+      },
+      "binary_unchanged": true
+    },
+    {
+      "case": 4,
+      "seconds": 0.1846018579963129,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "cycles": 504,
+        "actual_insertions": 0,
+        "wire_BTHs": 0,
+        "wire_EXH_words": 0,
+        "wire_RETH_words": 0,
+        "wire_AETH_words": 0,
+        "AXIS_hold_monitors": 12,
+        "four_state": true,
+        "native_CQ": false
+      },
+      "binary_unchanged": true
+    },
+    {
+      "case": 5,
+      "seconds": 0.2594181780004874,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "cycles": 802,
+        "actual_insertions": 0,
+        "wire_BTHs": 1,
+        "wire_EXH_words": 1,
+        "wire_RETH_words": 0,
+        "wire_AETH_words": 1,
+        "AXIS_hold_monitors": 12,
+        "four_state": true,
+        "native_CQ": false
+      },
+      "binary_unchanged": true
+    }
+  ],
+  "four_state": true,
+  "actual_FNS_selected_TX_functions": 5,
+  "clock_period_ns": 4.0,
+  "cycle_bound": 3000,
+  "simulation_wall_bound_seconds": 30,
+  "native_admission_connected": false,
+  "RX_context_lookup": false,
+  "MAC_SFD_verified": false,
+  "allocator_or_actual_timer_joined": false,
+  "full_wire_producer_fence": false,
+  "native_CQ": false,
+  "whole_core_drain": false,
+  "physical_signoff": false,
+  "hardware_verified": false,
+  "compile_seconds": 0.11478278500726447,
+  "compiled_binary_sha256": "c5c3c43d30b5583ec476f0faaffe07a0c6480436b1b2c21f2145e5182f2e66b4",
+  "artifact_sha256": {
+    "rdma/rnic/build/owned-wire-tx-RTL-1lg23au8/case-1.log": "4d79cd7a22372c062526db3753d799f12b8ffa8b6ca5ef3dc55a685a94d455cf",
+    "rdma/rnic/build/owned-wire-tx-RTL-1lg23au8/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/owned-wire-tx-RTL-1lg23au8/compile-command.json": "c17a447c95ddff100aa18191f0eaa0d7b8bda046423cd2eda7c1f275735d4851",
+    "rdma/rnic/build/owned-wire-tx-RTL-1lg23au8/sim": "c5c3c43d30b5583ec476f0faaffe07a0c6480436b1b2c21f2145e5182f2e66b4",
+    "rdma/rnic/build/owned-wire-tx-RTL-1lg23au8/case-3.log": "57391e22a4d95c170c117d3b2d9a26aba002993c0b6b3356c2fb8e898ca363b3",
+    "rdma/rnic/build/owned-wire-tx-RTL-1lg23au8/case-2.log": "3353da070a571ab199467f45233eb9e5d85a182ea75bd5bb502acb05a7c6bc20",
+    "rdma/rnic/build/owned-wire-tx-RTL-1lg23au8/case-4.log": "1bda47e62e161dc49576d574c0a8650f042b741e9ca28f7ee56d9757b61c3e37",
+    "rdma/rnic/build/owned-wire-tx-RTL-1lg23au8/case-5.log": "273a2344dc864cc61897c37de3ae94e61692adad1ce20552d8ba79f1aa6a8b42"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "rocev2-rnic-binary-evidence-v1",
+  "scope": "Preserve the exact successful generated-HLS candidate test executable outside volatile compiler RAM. No test or input was changed or rerun.",
+  "pass_test": true,
+  "report": "results/2026-10-18/rocev2-rnic-immediate-WQE-wire-003.json",
+  "report_sha256": "800f5fb152fbc4b8d9ce94ceb1b0b4775a3075907c5ee28832a94a7be3eb4a44",
+  "binary": "rdma/rnic/build/immediate-wqe-wire-pbcgtp_y/Vtb",
+  "binary_sha256": "b8975476d0d246a291932784f3aacfa3395e56b447c4885dfc9a398734333294",
+  "original_binary": "/dev/shm/as02-immediate-obj-r2bcbrh_/Vtb",
+  "exact_byte_cmp_passed": true,
+  "original_positive_report_unchanged": true,
+  "hardware_verified": false,
+  "native_integration": false
+}

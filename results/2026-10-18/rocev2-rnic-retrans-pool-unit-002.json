@@ -1,0 +1,365 @@
+{
+  "scope": "Actual2000-slot lease RAM/ring RTL, not FNS/native/core/CQ integration.\n\nLocal-reset retention is NOT FPGA reconfiguration/power-loss recovery.\nKnown-signal SYNTHESIS-defined simulations are NOT physical synthesis/signoff.\n",
+  "pass_test": true,
+  "terminal_exit_status": 0,
+  "retained_directory": "rdma/rnic/build/retrans-pool-7tat4enl",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_retrans_pool.v": "d8e85255df334e8423e7d7bb5509884c962cba6c4e08593a516f528a4b0d2d92",
+    "rdma/rnic/tests/retrans_pool_tb.v": "616964ab6ffeacca21adedcdaf9195274711df086d8f3ad725433a4cf4693fc9",
+    "rdma/rnic/tests/test_retrans_pool_rtl.py": "9e13b5ac1c71469feff67114bc12158d2ef74e2f08a66af205e832d67dc865eb"
+  },
+  "frozen_source_sha256": {
+    "rocev2_retrans_pool.v": "d8e85255df334e8423e7d7bb5509884c962cba6c4e08593a516f528a4b0d2d92",
+    "test_retrans_pool_rtl.py": "9e13b5ac1c71469feff67114bc12158d2ef74e2f08a66af205e832d67dc865eb",
+    "retrans_pool_tb.v": "616964ab6ffeacca21adedcdaf9195274711df086d8f3ad725433a4cf4693fc9"
+  },
+  "expected_cases": [
+    "case_00_full_2000_exhaust_release_reuse",
+    "case_01_owned_leases_survive_local_reset",
+    "case_02_unconsumed_offer_survives_reset",
+    "case_03_duplicate_release_fault_retained",
+    "case_04_full_owner_mismatch",
+    "case_05_stale_generation_after_full_pool_reuse",
+    "case_06_full_index_range",
+    "case_07_full_QPN_no_alias",
+    "case_08_both_markers_and_later_work",
+    "case_09_high64_marker_mismatch",
+    "case_10_X_Z_diagnostics",
+    "case_11_generation_nonwrap",
+    "synth_case_00_full_2000_exhaust_release_reuse",
+    "synth_case_01_owned_leases_survive_local_reset",
+    "synth_case_05_stale_generation_after_full_pool_reuse",
+    "synth_case_11_generation_nonwrap"
+  ],
+  "completed_cases": [
+    "case_00_full_2000_exhaust_release_reuse",
+    "case_01_owned_leases_survive_local_reset",
+    "case_02_unconsumed_offer_survives_reset",
+    "case_03_duplicate_release_fault_retained",
+    "case_04_full_owner_mismatch",
+    "case_05_stale_generation_after_full_pool_reuse",
+    "case_06_full_index_range",
+    "case_07_full_QPN_no_alias",
+    "case_08_both_markers_and_later_work",
+    "case_09_high64_marker_mismatch",
+    "case_10_X_Z_diagnostics",
+    "case_11_generation_nonwrap",
+    "synth_case_00_full_2000_exhaust_release_reuse",
+    "synth_case_01_owned_leases_survive_local_reset",
+    "synth_case_05_stale_generation_after_full_pool_reuse",
+    "synth_case_11_generation_nonwrap"
+  ],
+  "cases": {
+    "case_00_full_2000_exhaust_release_reuse": {
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "capacity": 2000,
+        "allocations": 2002,
+        "releases": 2002,
+        "fences": 6,
+        "simulated_local_resets": 2,
+        "cycles": 60397,
+        "actual_FNS_process_integrated": false,
+        "whole_core_drain": false
+      },
+      "simulation_seconds": 0.734840165998321,
+      "SYNTHESIS_defined": false,
+      "pass_test": true
+    },
+    "case_01_owned_leases_survive_local_reset": {
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "capacity": 2000,
+        "allocations": 3,
+        "releases": 3,
+        "fences": 3,
+        "simulated_local_resets": 2,
+        "cycles": 20167,
+        "actual_FNS_process_integrated": false,
+        "whole_core_drain": false
+      },
+      "simulation_seconds": 0.20995567698264495,
+      "SYNTHESIS_defined": false,
+      "pass_test": true
+    },
+    "case_02_unconsumed_offer_survives_reset": {
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "capacity": 2000,
+        "allocations": 0,
+        "releases": 0,
+        "fences": 2,
+        "simulated_local_resets": 3,
+        "cycles": 20150,
+        "actual_FNS_process_integrated": false,
+        "whole_core_drain": false
+      },
+      "simulation_seconds": 0.2246827659837436,
+      "SYNTHESIS_defined": false,
+      "pass_test": true
+    },
+    "case_03_duplicate_release_fault_retained": {
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "capacity": 2000,
+        "allocations": 1,
+        "releases": 1,
+        "fences": 2,
+        "simulated_local_resets": 2,
+        "cycles": 16140,
+        "actual_FNS_process_integrated": false,
+        "whole_core_drain": false
+      },
+      "simulation_seconds": 0.17019688501022756,
+      "SYNTHESIS_defined": false,
+      "pass_test": true
+    },
+    "case_04_full_owner_mismatch": {
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "capacity": 2000,
+        "allocations": 1,
+        "releases": 1,
+        "fences": 2,
+        "simulated_local_resets": 1,
+        "cycles": 12120,
+        "actual_FNS_process_integrated": false,
+        "whole_core_drain": false
+      },
+      "simulation_seconds": 0.13277968199690804,
+      "SYNTHESIS_defined": false,
+      "pass_test": true
+    },
+    "case_05_stale_generation_after_full_pool_reuse": {
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "capacity": 2000,
+        "allocations": 2001,
+        "releases": 1,
+        "fences": 2,
+        "simulated_local_resets": 2,
+        "cycles": 30140,
+        "actual_FNS_process_integrated": false,
+        "whole_core_drain": false
+      },
+      "simulation_seconds": 0.36733034800272435,
+      "SYNTHESIS_defined": false,
+      "pass_test": true
+    },
+    "case_06_full_index_range": {
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "capacity": 2000,
+        "allocations": 1,
+        "releases": 1,
+        "fences": 2,
+        "simulated_local_resets": 1,
+        "cycles": 12137,
+        "actual_FNS_process_integrated": false,
+        "whole_core_drain": false
+      },
+      "simulation_seconds": 0.130215818004217,
+      "SYNTHESIS_defined": false,
+      "pass_test": true
+    },
+    "case_07_full_QPN_no_alias": {
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "capacity": 2000,
+        "allocations": 0,
+        "releases": 0,
+        "fences": 1,
+        "simulated_local_resets": 1,
+        "cycles": 8062,
+        "actual_FNS_process_integrated": false,
+        "whole_core_drain": false
+      },
+      "simulation_seconds": 0.09183068099082448,
+      "SYNTHESIS_defined": false,
+      "pass_test": true
+    },
+    "case_08_both_markers_and_later_work": {
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "capacity": 2000,
+        "allocations": 2,
+        "releases": 2,
+        "fences": 2,
+        "simulated_local_resets": 1,
+        "cycles": 12186,
+        "actual_FNS_process_integrated": false,
+        "whole_core_drain": false
+      },
+      "simulation_seconds": 0.13281036299304105,
+      "SYNTHESIS_defined": false,
+      "pass_test": true
+    },
+    "case_09_high64_marker_mismatch": {
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "capacity": 2000,
+        "allocations": 0,
+        "releases": 0,
+        "fences": 2,
+        "simulated_local_resets": 1,
+        "cycles": 12066,
+        "actual_FNS_process_integrated": false,
+        "whole_core_drain": false
+      },
+      "simulation_seconds": 0.13204642798518762,
+      "SYNTHESIS_defined": false,
+      "pass_test": true
+    },
+    "case_10_X_Z_diagnostics": {
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "capacity": 2000,
+        "allocations": 0,
+        "releases": 0,
+        "fences": 1,
+        "simulated_local_resets": 1,
+        "cycles": 8082,
+        "actual_FNS_process_integrated": false,
+        "whole_core_drain": false
+      },
+      "simulation_seconds": 0.09154526100610383,
+      "SYNTHESIS_defined": false,
+      "pass_test": true
+    },
+    "case_11_generation_nonwrap": {
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "capacity": 2000,
+        "allocations": 1,
+        "releases": 1,
+        "fences": 2,
+        "simulated_local_resets": 3,
+        "cycles": 20142,
+        "actual_FNS_process_integrated": false,
+        "whole_core_drain": false
+      },
+      "simulation_seconds": 0.2099858250003308,
+      "SYNTHESIS_defined": false,
+      "pass_test": true
+    },
+    "synth_case_00_full_2000_exhaust_release_reuse": {
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "capacity": 2000,
+        "allocations": 2002,
+        "releases": 2002,
+        "fences": 6,
+        "simulated_local_resets": 2,
+        "cycles": 60397,
+        "actual_FNS_process_integrated": false,
+        "whole_core_drain": false
+      },
+      "simulation_seconds": 0.7120643620146438,
+      "SYNTHESIS_defined": true,
+      "pass_test": true
+    },
+    "synth_case_01_owned_leases_survive_local_reset": {
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "capacity": 2000,
+        "allocations": 3,
+        "releases": 3,
+        "fences": 3,
+        "simulated_local_resets": 2,
+        "cycles": 20167,
+        "actual_FNS_process_integrated": false,
+        "whole_core_drain": false
+      },
+      "simulation_seconds": 0.21018796801217832,
+      "SYNTHESIS_defined": true,
+      "pass_test": true
+    },
+    "synth_case_05_stale_generation_after_full_pool_reuse": {
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "capacity": 2000,
+        "allocations": 2001,
+        "releases": 1,
+        "fences": 2,
+        "simulated_local_resets": 2,
+        "cycles": 30140,
+        "actual_FNS_process_integrated": false,
+        "whole_core_drain": false
+      },
+      "simulation_seconds": 0.3576369770162273,
+      "SYNTHESIS_defined": true,
+      "pass_test": true
+    },
+    "synth_case_11_generation_nonwrap": {
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "capacity": 2000,
+        "allocations": 1,
+        "releases": 1,
+        "fences": 2,
+        "simulated_local_resets": 3,
+        "cycles": 20142,
+        "actual_FNS_process_integrated": false,
+        "whole_core_drain": false
+      },
+      "simulation_seconds": 0.20868534399778582,
+      "SYNTHESIS_defined": true,
+      "pass_test": true
+    }
+  },
+  "errors": [],
+  "actual_production_RTL": true,
+  "four_state_simulation": true,
+  "capacity": 2000,
+  "clock_period_ns": 4.0,
+  "actual_FNS_process_integrated": false,
+  "whole_core_drain": false,
+  "native_or_CQ_or_hardware_verified": false,
+  "physical_signoff": false,
+  "reset_retention_not_reconfiguration_powerloss_recovery": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/retrans-pool-7tat4enl/case_07_full_QPN_no_alias.log": "298c69dc1bd1f3d1f07ad95cea7c71c97b23fd50e4d4948e2ae03dac251512be",
+    "rdma/rnic/build/retrans-pool-7tat4enl/case_04_full_owner_mismatch.log": "b164b629fc13cfb6db5979a8f817f30dcca0023d854726808b47d314211f2bc5",
+    "rdma/rnic/build/retrans-pool-7tat4enl/fourstate.vvp": "d4e9bfff8b05e07d084275ced728a94af2858c1b0c612218cb16b1bd3d3fc7bc",
+    "rdma/rnic/build/retrans-pool-7tat4enl/fourstate-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/retrans-pool-7tat4enl/case_08_both_markers_and_later_work.log": "e5d164d2dd51dc13a010bff88f25b2f3df5b37c53e3d98eb72f14816235ce062",
+    "rdma/rnic/build/retrans-pool-7tat4enl/case_11_generation_nonwrap.log": "badf6d94f4f6b0d28c69c28379fa85cc21d655242699fe2964ca9d7162e099e3",
+    "rdma/rnic/build/retrans-pool-7tat4enl/fourstate-nearmax-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/retrans-pool-7tat4enl/synth_case_11_generation_nonwrap.log": "badf6d94f4f6b0d28c69c28379fa85cc21d655242699fe2964ca9d7162e099e3",
+    "rdma/rnic/build/retrans-pool-7tat4enl/case_01_owned_leases_survive_local_reset.log": "415c83e578a199ebaa2184814367db5df25d55bdc980b47fed2cc99e020c5aa5",
+    "rdma/rnic/build/retrans-pool-7tat4enl/case_06_full_index_range.log": "5509731ff2f0abbdd3cfa9c897f6ed63dd7414de7169102f5ce33518fe918958",
+    "rdma/rnic/build/retrans-pool-7tat4enl/synth.vvp": "525e86aef43682c86d37aea48560eee06143b1e88bca69e6edbba3ea10d9db63",
+    "rdma/rnic/build/retrans-pool-7tat4enl/fourstate-nearmax.vvp": "c22a275efbe2f5f1e6a4949b16c08ca4646395c6da03985bf014bf1cfdf0105b",
+    "rdma/rnic/build/retrans-pool-7tat4enl/synth_case_05_stale_generation_after_full_pool_reuse.log": "4088368446224923d8836fe00c7bfd68d8f03e2c18d73086e788320c2fb43cf4",
+    "rdma/rnic/build/retrans-pool-7tat4enl/case_00_full_2000_exhaust_release_reuse.log": "9cff96a140d426c1090ea7bc38b6a1bc9c7bc6342f4b800e02a7eea626fc7f74",
+    "rdma/rnic/build/retrans-pool-7tat4enl/case_02_unconsumed_offer_survives_reset.log": "4c759c77e888cff89fba98056b057c113d3591a1e8cd3464a808cc3a56f8dae0",
+    "rdma/rnic/build/retrans-pool-7tat4enl/synth-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/retrans-pool-7tat4enl/synth-nearmax.vvp": "3ae6e9d780665a9249f083b60d010b12ce57c4269b214847f233b2a0e55ca8a5",
+    "rdma/rnic/build/retrans-pool-7tat4enl/synth_case_00_full_2000_exhaust_release_reuse.log": "9cff96a140d426c1090ea7bc38b6a1bc9c7bc6342f4b800e02a7eea626fc7f74",
+    "rdma/rnic/build/retrans-pool-7tat4enl/synth-nearmax-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/retrans-pool-7tat4enl/case_10_X_Z_diagnostics.log": "0380e11bb6e1fae12ee786f14e9c3b0c398e0d72364936c602cfecd6f1586d58",
+    "rdma/rnic/build/retrans-pool-7tat4enl/case_03_duplicate_release_fault_retained.log": "995be92c114e69be923e546deec8884745c4b235d625169a04c21efaddc979f6",
+    "rdma/rnic/build/retrans-pool-7tat4enl/synth_case_01_owned_leases_survive_local_reset.log": "415c83e578a199ebaa2184814367db5df25d55bdc980b47fed2cc99e020c5aa5",
+    "rdma/rnic/build/retrans-pool-7tat4enl/case_05_stale_generation_after_full_pool_reuse.log": "4088368446224923d8836fe00c7bfd68d8f03e2c18d73086e788320c2fb43cf4",
+    "rdma/rnic/build/retrans-pool-7tat4enl/case_09_high64_marker_mismatch.log": "18b49c627efb5fb729167695e5fb2791db98b3eb3269c386f53dca7b56a75bce",
+    "rdma/rnic/build/retrans-pool-7tat4enl/inputs/rocev2_retrans_pool.v": "d8e85255df334e8423e7d7bb5509884c962cba6c4e08593a516f528a4b0d2d92",
+    "rdma/rnic/build/retrans-pool-7tat4enl/inputs/test_retrans_pool_rtl.py": "9e13b5ac1c71469feff67114bc12158d2ef74e2f08a66af205e832d67dc865eb",
+    "rdma/rnic/build/retrans-pool-7tat4enl/inputs/retrans_pool_tb.v": "616964ab6ffeacca21adedcdaf9195274711df086d8f3ad725433a4cf4693fc9"
+  }
+}

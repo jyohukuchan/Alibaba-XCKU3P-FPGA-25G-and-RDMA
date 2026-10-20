@@ -1,0 +1,364 @@
+{
+  "scope": "Actual router RTL with explicit descriptor/RAM/parent MODELS, no PCIe engine.\n\nNo actual backend/host pages/HLS/board/kernel/verbs proof in these units.\nOnly public input ports are used for fault injection; no internal forcing.\n",
+  "pass_test": false,
+  "methods": 11,
+  "simulations": 22,
+  "tests": {
+    "test_accepted_RAM_command_and_response_survive_fault_and_backpressure": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 25,
+          "descriptors": 1,
+          "completions": 0,
+          "statuses": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "8b08add8f8e2a46bb017859798cf284c0610dfe22697514c815fe36444004b2e"
+      }
+    ],
+    "test_bad_full_descriptor_range_RAM_selector_or_unsupported_immediate_never_accepted": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 5,
+          "descriptors": 0,
+          "completions": 0,
+          "statuses": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "3f2ab5c62870df9905e75a11373ef4ec08556173fbbb269365796a6972165316"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 5,
+          "descriptors": 0,
+          "completions": 0,
+          "statuses": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "61aa712904f977bf319008baa94bbf48943cf0788fe071332708accdea9b373b"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 5,
+          "descriptors": 0,
+          "completions": 0,
+          "statuses": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "d669afbd34b71060cc912e3742b6849989da04c5ef7f7eb2d12d044601590268"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 5,
+          "descriptors": 0,
+          "completions": 0,
+          "statuses": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "2ea10850a5f10fd81f2f2bf8c7acefbb6e3ee8e7e7acf0efbf06f475b264c3fd"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 5,
+          "descriptors": 0,
+          "completions": 0,
+          "statuses": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "5a552fb130a48341cf0a2fac50afb63386401538b11bc1c1980054867d374327"
+      }
+    ],
+    "test_disable_only_stops_new_admission_not_existing_RAM_or_status": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 25,
+          "descriptors": 1,
+          "completions": 1,
+          "statuses": 1,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "1f5da5135a177656ee3233532c683816254ac99497d879582a4befc0979ba0fd"
+      }
+    ],
+    "test_duplicate_old_status_cannot_release_new_identical_logical_tag_owner": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 26,
+          "descriptors": 2,
+          "completions": 1,
+          "statuses": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "556ce90d2c2e407e4ea8abb7c6a3b87bf2e5c9ef105228aa1f5680c75751af2d"
+      }
+    ],
+    "test_invalid_RAM_address_bank_direction_byte_mask_and_unsolicited_child_completion": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 13,
+          "descriptors": 1,
+          "completions": 0,
+          "statuses": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "d45170e3bbd38bc7584415d26079afc711cfcd90f542ba4bcfbc2b25c03c24fb"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 13,
+          "descriptors": 1,
+          "completions": 0,
+          "statuses": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "72773e63eac26922d4896ca57549315bb70168908087eceaac2ee2d4ec7c1517"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 13,
+          "descriptors": 1,
+          "completions": 0,
+          "statuses": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "8769a2ca3dccc85a9ae94cab693403e6a2d3e7d0558486e4ef920eedc6fda316"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 13,
+          "descriptors": 1,
+          "completions": 0,
+          "statuses": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "a8b408cd3a4089b251aaf79096ce11853b652df4616c5620743c3ada96493d38"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 13,
+          "descriptors": 1,
+          "completions": 0,
+          "statuses": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "47b6494afee18e62406b15485bc29eaeea62885695b84432b05eb9e0d1ddc8be"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 13,
+          "descriptors": 1,
+          "completions": 0,
+          "statuses": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "37037bf08ec278511d310dde245ff8a07c3ebf8f32c39716a6298d6b967cc5e9"
+      }
+    ],
+    "test_later_fault_does_not_withdraw_accepted_physical_descriptor": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 20,
+          "descriptors": 1,
+          "completions": 0,
+          "statuses": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "027d12926838e96e31042efd1a5ce80a4aab2d3eed87aac13bdcf2a7001e09b1"
+      }
+    ],
+    "test_physical_tag_exhaustion_refuses_wrap_without_shortening_logical_tag": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 19,
+          "descriptors": 1,
+          "completions": 1,
+          "statuses": 1,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "2b4c31401603ad8fb14c6dc027f0808dac2d15f2df3249272b6779562cd683ff"
+      }
+    ],
+    "test_read_response_ready_has_registered_command_boundary_even_for_zero_latency_offer": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 20,
+          "descriptors": 1,
+          "completions": 1,
+          "statuses": 1,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "9f804c401bc0508bdf1b05b849dad202fe0a8c3798a02a138ac2c01f6696867b"
+      }
+    ],
+    "test_same_full_logical_tags_two_banks_mixed_directions_reverse_status_and_RAM": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 55,
+          "descriptors": 2,
+          "completions": 2,
+          "statuses": 2,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "ad3c7bf78674bf68ee805216bf9df968e06440875bfe7b7831885d5608c21733"
+      }
+    ],
+    "test_unknown_or_duplicate_physical_status_never_completes_a_logical_owner": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 15,
+          "descriptors": 1,
+          "completions": 0,
+          "statuses": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "0fe9331d91766bc634c4da51b549bff5ca87ac7fa5daa0ddc41a7384652ab1fc"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 15,
+          "descriptors": 1,
+          "completions": 0,
+          "statuses": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "a90cf6e98a3fbf9b7ff9cd969fd6a15a7264446c99e7000154b3dee0f7820043"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 15,
+          "descriptors": 1,
+          "completions": 0,
+          "statuses": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "02491529efde00c31abede2b6c740e09367b72bd0e5cdaa82769c6c41b81b859"
+      }
+    ],
+    "test_zero_and_high_logical_tag_preserve_error_and_physical_independence": [
+      {
+        "summary": {
+          "pass_test": true,
+          "cycles": 40,
+          "descriptors": 2,
+          "completions": 2,
+          "statuses": 2,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+          "rdma/rnic/tests/test_dma_client_router_rtl.py": "9c0854e78a8c3c9744bf55c6286864c08808ecb69d673a908093cb9ea7c5a4e5"
+        },
+        "bench_sha256": "def4c288458ad37aa800ff0bdc565a35c50580fdb0b9ea2254c39f0eaef3ca61"
+      }
+    ]
+  },
+  "hardware_verified": false,
+  "actual_PCIe_engine": false,
+  "native_host_page_DMA": false,
+  "standard_verbs_implemented": false
+}

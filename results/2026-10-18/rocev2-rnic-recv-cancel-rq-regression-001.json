@@ -1,0 +1,40 @@
+{
+  "scope": "Short four-state checks of the actual posted receive-owner store.\n\nWhole native placement/HLS is tested separately. No retirement/CQ/unpin or\nreal multi-QP transport claim is inferred from these storage checks.\n",
+  "pass_test": true,
+  "four_state_simulation": true,
+  "cases": {
+    "test_core_receipt_waits_for_matching_placement_and_never_releases_posted_owner0": {
+      "pass_test": true,
+      "posted": 1,
+      "taken": 1,
+      "placed": 1,
+      "received": 65,
+      "fault": 0
+    },
+    "test_full_eight_QP_eight_entry_owner_capacity_and_placement_keeps_all_refs1": {
+      "pass_test": true,
+      "posted": 64,
+      "taken": 1,
+      "placed": 1,
+      "received": 65,
+      "fault": 0
+    },
+    "test_full_high_QPN_and_unknown_epoch_cannot_alias_a_receive_owner2": {
+      "pass_test": true,
+      "posted": 0,
+      "taken": 0,
+      "placed": 0,
+      "received": 0,
+      "fault": 1
+    },
+    "test_full_high_QPN_and_unknown_epoch_cannot_alias_a_receive_owner3": {
+      "pass_test": true,
+      "posted": 0,
+      "taken": 0,
+      "placed": 0,
+      "received": 0,
+      "fault": 1
+    }
+  },
+  "hardware_verified": false
+}

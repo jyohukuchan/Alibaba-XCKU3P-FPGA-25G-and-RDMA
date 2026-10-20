@@ -1,0 +1,25 @@
+{
+  "scope": "3 synthetic per-WR patch-scope/refusal checks and2 actual SQ-adapter RTL tests only; not HLS/standard verbs/native hardware.",
+  "terminal_exit_status": 0,
+  "pass_test": true,
+  "seconds": 0.16918295199866407,
+  "passed_names": [
+    "test_exact_change_set_required_and_extra_artifact_refused",
+    "test_failed_dry_run_never_runs_mutating_patch",
+    "test_unlisted_target_rejected_before_any_command",
+    "test_exact_full_key_zero_legacy_bits_and_handshakes",
+    "test_invalid_mode_refused"
+  ],
+  "source_sha256": {
+    "rdma/rnic/tests/test_wrkey_profile.py": "f40b82b045bad671a2f06da2503875396629beb23d3243debb0d4ea55ec6d3e0",
+    "rdma/rnic/tests/test_wrkey_sq_adapter.py": "c3b3636bd63ad3d1822232fbe5452cd62a9b0510b0cc2fcbcbff593a2830647c",
+    "rdma/rnic/rtl/rocev2_wrkey_sq_adapter.v": "9d7df0577d515ca814fe2b688b69603c411b12d0957242a49e4bdd10d7e2eab9",
+    "rdma/rnic/hls/prepare_wrkey_profile.py": "ef9d70b1621be7a62b6e8db36b10b5a76b072d54113e7250ca5b293a1d376dea",
+    "rdma/rnic/hls/per_wr_context.patch": "2e2c36732f12a757f84d19bff10de8f7dc2f48bb2b41fafc5a390d8b10fa5f0e",
+    "rdma/rnic/hls/build_meta_reset_profile.py": "93f0d9c5d7c556772766404e56cb813c8060b1c5224252acecb9ebdfb383a61c",
+    "rdma/rnic/hls/build_reset_profile.py": "121c78dc5258a307c6d6de9d65eadd349ea8bade00c5e56ed6d3de7697e19cb4"
+  },
+  "stdout": "test_exact_change_set_required_and_extra_artifact_refused (test_wrkey_profile.WRKeyProfileTests.test_exact_change_set_required_and_extra_artifact_refused) ... ok\ntest_failed_dry_run_never_runs_mutating_patch (test_wrkey_profile.WRKeyProfileTests.test_failed_dry_run_never_runs_mutating_patch) ... ok\ntest_unlisted_target_rejected_before_any_command (test_wrkey_profile.WRKeyProfileTests.test_unlisted_target_rejected_before_any_command) ... ok\ntest_exact_full_key_zero_legacy_bits_and_handshakes (test_wrkey_sq_adapter.WRKeySQAdapterTests.test_exact_full_key_zero_legacy_bits_and_handshakes) ... ok\ntest_invalid_mode_refused (test_wrkey_sq_adapter.WRKeySQAdapterTests.test_invalid_mode_refused) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.039s\n\nOK\n",
+  "hardware_verified": false,
+  "generated_HLS_RTL_tested": false
+}

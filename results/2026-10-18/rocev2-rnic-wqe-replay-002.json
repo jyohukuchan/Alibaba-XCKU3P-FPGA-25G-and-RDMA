@@ -1,0 +1,142 @@
+{
+  "scope": "Retained native replay + actual MAC/framer/tag/lifetime composition.\n\nConfig/authorized control and HLS/memory/core-drain inputs are explicit test\nmodels. MAC bytes/receipts/EOF/tail and retained replay are real production\nRTL. No kernel, real HLS drain, native board or error-CQ release proof.\n",
+  "pass_test": true,
+  "methods": 5,
+  "tests": {
+    "test_RNR_waits_remote_delay_and_uses_its_separate_retry_budget": {
+      "summary": {
+        "pass_test": true,
+        "proofs": 127,
+        "committed": 1,
+        "fault": 0,
+        "cycles": 4660
+      },
+      "source_sha256": {
+        "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+        "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+        "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+        "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+        "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+        "rdma/rnic/rtl/rocev2_wqe_lifetime.v": "eb3017f9e7c85f4c53d99a1a5dced3fe35244df60b782f7cc46424e1ae8023b5",
+        "rdma/rnic/rtl/rocev2_wqe_tx_lifetime.v": "12a486f0195c49c72e3d690332ce6d209080d35e1890cae2088269d25c9fb246",
+        "rdma/rnic/rtl/rocev2_wqe_replay.v": "e5039d76ae682c982bb9597f3cd217a12adac1d230e6d875cd22cc89f0723008",
+        "rdma/rnic/tests/test_wqe_replay_rtl.py": "606accfdcbc720af96c4a70389dd9f896e9adb8c3886589549ced4f70e4e4d08",
+        "rdma/rnic/tests/test_wqe_tx_lifetime_rtl.py": "de7c99c07a447079ddb17e85f4884e9d8459d57a8a9da2ffe4cea3d8bd5c12d6",
+        "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a"
+      },
+      "attempts": 2,
+      "identical_MAC_frames_with_fresh_tags": true,
+      "source_unchanged": true,
+      "models": "Authorized control/config, HLS/memory and genuine internal core drain; real MAC/framer/receipt/EOF/tail RTL"
+    },
+    "test_exhausted_RNR_retains_full_owner_and_never_publishes_success": {
+      "summary": {
+        "pass_test": true,
+        "proofs": 3,
+        "committed": 0,
+        "fault": 1,
+        "cycles": 1076
+      },
+      "source_sha256": {
+        "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+        "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+        "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+        "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+        "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+        "rdma/rnic/rtl/rocev2_wqe_lifetime.v": "eb3017f9e7c85f4c53d99a1a5dced3fe35244df60b782f7cc46424e1ae8023b5",
+        "rdma/rnic/rtl/rocev2_wqe_tx_lifetime.v": "12a486f0195c49c72e3d690332ce6d209080d35e1890cae2088269d25c9fb246",
+        "rdma/rnic/rtl/rocev2_wqe_replay.v": "e5039d76ae682c982bb9597f3cd217a12adac1d230e6d875cd22cc89f0723008",
+        "rdma/rnic/tests/test_wqe_replay_rtl.py": "606accfdcbc720af96c4a70389dd9f896e9adb8c3886589549ced4f70e4e4d08",
+        "rdma/rnic/tests/test_wqe_tx_lifetime_rtl.py": "de7c99c07a447079ddb17e85f4884e9d8459d57a8a9da2ffe4cea3d8bd5c12d6",
+        "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a"
+      },
+      "attempts": 1,
+      "identical_MAC_frames_with_fresh_tags": true,
+      "source_unchanged": true,
+      "models": "Authorized control/config, HLS/memory and genuine internal core drain; real MAC/framer/receipt/EOF/tail RTL"
+    },
+    "test_exhausted_timeout_retains_full_owner_and_never_publishes_success": {
+      "summary": {
+        "pass_test": true,
+        "proofs": 3,
+        "committed": 0,
+        "fault": 1,
+        "cycles": 3122
+      },
+      "source_sha256": {
+        "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+        "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+        "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+        "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+        "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+        "rdma/rnic/rtl/rocev2_wqe_lifetime.v": "eb3017f9e7c85f4c53d99a1a5dced3fe35244df60b782f7cc46424e1ae8023b5",
+        "rdma/rnic/rtl/rocev2_wqe_tx_lifetime.v": "12a486f0195c49c72e3d690332ce6d209080d35e1890cae2088269d25c9fb246",
+        "rdma/rnic/rtl/rocev2_wqe_replay.v": "e5039d76ae682c982bb9597f3cd217a12adac1d230e6d875cd22cc89f0723008",
+        "rdma/rnic/tests/test_wqe_replay_rtl.py": "606accfdcbc720af96c4a70389dd9f896e9adb8c3886589549ced4f70e4e4d08",
+        "rdma/rnic/tests/test_wqe_tx_lifetime_rtl.py": "de7c99c07a447079ddb17e85f4884e9d8459d57a8a9da2ffe4cea3d8bd5c12d6",
+        "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a"
+      },
+      "attempts": 1,
+      "identical_MAC_frames_with_fresh_tags": true,
+      "source_unchanged": true,
+      "models": "Authorized control/config, HLS/memory and genuine internal core drain; real MAC/framer/receipt/EOF/tail RTL"
+    },
+    "test_timeout_replays_identical_frame_with_fresh_actual_MAC_receipt": {
+      "summary": {
+        "pass_test": true,
+        "proofs": 127,
+        "committed": 1,
+        "fault": 0,
+        "cycles": 4206
+      },
+      "source_sha256": {
+        "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+        "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+        "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+        "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+        "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+        "rdma/rnic/rtl/rocev2_wqe_lifetime.v": "eb3017f9e7c85f4c53d99a1a5dced3fe35244df60b782f7cc46424e1ae8023b5",
+        "rdma/rnic/rtl/rocev2_wqe_tx_lifetime.v": "12a486f0195c49c72e3d690332ce6d209080d35e1890cae2088269d25c9fb246",
+        "rdma/rnic/rtl/rocev2_wqe_replay.v": "e5039d76ae682c982bb9597f3cd217a12adac1d230e6d875cd22cc89f0723008",
+        "rdma/rnic/tests/test_wqe_replay_rtl.py": "606accfdcbc720af96c4a70389dd9f896e9adb8c3886589549ced4f70e4e4d08",
+        "rdma/rnic/tests/test_wqe_tx_lifetime_rtl.py": "de7c99c07a447079ddb17e85f4884e9d8459d57a8a9da2ffe4cea3d8bd5c12d6",
+        "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a"
+      },
+      "attempts": 2,
+      "identical_MAC_frames_with_fresh_tags": true,
+      "source_unchanged": true,
+      "models": "Authorized control/config, HLS/memory and genuine internal core drain; real MAC/framer/receipt/EOF/tail RTL"
+    },
+    "test_timeout_zero_disables_expiration_but_not_actual_completion": {
+      "summary": {
+        "pass_test": true,
+        "proofs": 127,
+        "committed": 1,
+        "fault": 0,
+        "cycles": 4115
+      },
+      "source_sha256": {
+        "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+        "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+        "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+        "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+        "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+        "rdma/rnic/rtl/rocev2_wqe_lifetime.v": "eb3017f9e7c85f4c53d99a1a5dced3fe35244df60b782f7cc46424e1ae8023b5",
+        "rdma/rnic/rtl/rocev2_wqe_tx_lifetime.v": "12a486f0195c49c72e3d690332ce6d209080d35e1890cae2088269d25c9fb246",
+        "rdma/rnic/rtl/rocev2_wqe_replay.v": "e5039d76ae682c982bb9597f3cd217a12adac1d230e6d875cd22cc89f0723008",
+        "rdma/rnic/tests/test_wqe_replay_rtl.py": "606accfdcbc720af96c4a70389dd9f896e9adb8c3886589549ced4f70e4e4d08",
+        "rdma/rnic/tests/test_wqe_tx_lifetime_rtl.py": "de7c99c07a447079ddb17e85f4884e9d8459d57a8a9da2ffe4cea3d8bd5c12d6",
+        "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a"
+      },
+      "attempts": 1,
+      "identical_MAC_frames_with_fresh_tags": true,
+      "source_unchanged": true,
+      "models": "Authorized control/config, HLS/memory and genuine internal core drain; real MAC/framer/receipt/EOF/tail RTL"
+    }
+  },
+  "actual_MAC_and_cached_replay": true,
+  "HLS_memory_core_drain_models": true,
+  "hardware_verified": false,
+  "actual_native_main": false,
+  "kernel_or_error_CQ_release": false
+}

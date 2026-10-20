@@ -1,0 +1,29 @@
+{
+  "scope": "Explicit per-WR transport delivery source preparation only; functional results are separate records.",
+  "prepared": true,
+  "pass_test": false,
+  "full_wire_verified": false,
+  "board_built": false,
+  "hardware_verified": false,
+  "programming_authorized": false,
+  "source_sha256": {
+    "results/2026-10-18/rocev2-rnic-wrkey-source-001.json": "4ad9a2c1412d003f7e9c5cb724de153b391b808122eb9d710a21ec788a7ee83a",
+    "results/2026-10-18/rocev2-rnic-wrkey-hls-001.json": "ba373c6b668014057787881068ae5454c03c29a7c1ba821aac9d2507d7627629",
+    "results/2026-10-18/rocev2-rnic-wrkey-table-001.json": "acdb8e9ff7b10555855d70ba8792bd2547d8d7b3bfb8d245a5e5abb6845607e3",
+    "results/2026-10-18/rocev2-rnic-wrkey-ipv4-001.json": "e9ea1a8981e3aaeafc12e1d702fcc4733f81173225d5b063830a499188fbf594",
+    "rdma/rnic/fpga/prepare_wrkey_transport.py": "11aff17a0d9eb097abc4a5eec097409171b997d59c451ffb6e8fad3d4984e8c3",
+    "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b",
+    "rdma/rnic/rtl/rocev2_wrkey_sq_adapter.v": "9d7df0577d515ca814fe2b688b69603c411b12d0957242a49e4bdd10d7e2eab9"
+  },
+  "original_generated_HLS_sha256": "716f5d9262ac414f88406600f5d88fe83a9bf2fa122b49eec2fd1aa8584a8f2a",
+  "delivery_sha256": "569df76e3fbd33346ce830e580fc9671dd8ae33e6c410b0e7b79018681cec828",
+  "original_generated_files": 138,
+  "delivery_files": 140,
+  "legacy_default_mode": 1,
+  "explicit_key_mode": 0,
+  "original_generated_RTL_unchanged": true,
+  "bridge_interface_only_derivation": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/wrkey-transport-profile-001/wrkey-delivery.json": "6c44b70a77082074edfe8cb14135c81fc03a3c64e8f04735090112b9bc4e1a24"
+  }
+}

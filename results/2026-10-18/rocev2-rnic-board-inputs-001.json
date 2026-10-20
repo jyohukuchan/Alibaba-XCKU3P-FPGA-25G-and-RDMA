@@ -1,0 +1,25 @@
+{
+  "scope": "Actual frozen full-board source selection plus six snapshot/selection unit tests; no full-board synthesis/route/physical/native claim.",
+  "pass_test": true,
+  "hardware_verified": false,
+  "release_authorized": false,
+  "unit_tests": 6,
+  "unit_test_fixtures_synthetic": true,
+  "source_only_Tcl_terminal_exit_status": 0,
+  "actual_full_board_source_selection": true,
+  "prepared_directory": "rdma/rnic/build/full-board-analysis-002",
+  "full_project_CAD_session": 5544,
+  "full_project_terminal_exit_status": null,
+  "analysis_driver_writes_image": false,
+  "source_files": 294,
+  "constraints": 13,
+  "IP_generators": 3,
+  "frozen_files": 810,
+  "artifact_sha256": {
+    "rdma/rnic/build/full-board-analysis-002/analysis-inputs.json": "e2bd324fd94d8a98e672750186a5fd0659d57ba72a2d81ac7ec0c7384b938867",
+    "rdma/rnic/build/full-board-analysis-002/inputs/inputs.sha256": "a96559d9b5a0c3d25a4e384774183331f5e90b48dec34fd19da61d3e18b15851",
+    "rdma/logs/rnic-full-board-source-002.log": "588825c0853daa8c1895a3e91178fc24dbdfcac035cdda518d5753745862cc09",
+    "rdma/logs/rnic-board-analysis-unit-002.log": "e9580bae03baeccbb2fd575439fa2b105f395ed62f7876dbfbf3a263f36cc207",
+    "rdma/logs/rnic-all-rtl-011.log": "98cbf1fc73af383e5848adcf04a2b4691624df9caa09b53654839802cce00219"
+  }
+}

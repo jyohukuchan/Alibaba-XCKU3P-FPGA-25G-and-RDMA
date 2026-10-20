@@ -1,0 +1,11 @@
+{
+  "scope": "Actual coherent SQ/native SAME-MR -> guarded owner ->248-bit HLS SQ.\n\nTransport is explicitly STUBBED and executor/HLS-SQ receiver/WR-CQ lifetime\nare MODELS. No local memory/ACK/wire/CQ execution or hardware claim.\n",
+  "pass_test": false,
+  "methods": 0,
+  "tests": {},
+  "HLS_transport_stub": true,
+  "actual_native_SQ_MR_PTE_generic_PCIe": true,
+  "executor_HLS_receiver_CQ_owner_models": true,
+  "actual_local_RDMA_execution": false,
+  "hardware_verified": false
+}

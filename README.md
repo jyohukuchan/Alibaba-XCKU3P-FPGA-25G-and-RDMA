@@ -23,7 +23,31 @@ inbound SEND/WRITE target, READ responder, native InfiniBand or production-relia
 | Static timing | Tested clean RoCE RTL image passes setup/hold, native clocks, routing, 38 bus skews and DRC gates |
 | Clean-RTL build | Combined READ/WRITE001 SRAM-loaded; accepted WRITE003 preserved as rollback |
 | RDMA / RoCEv2 | Native READ/all-byte BAR capture, segmentation/tails/PSN wrap/error-CLEAR recovery and same-image WRITE regression verified; WRITE003 separately has ACK-loss/watchdog evidence |
+| Incremental RNIC source | Offline native queue/MR/DMA/kernel/provider development, SEND/RECV/Immediate and Atomic responder candidates; not a new hardware-qualified image |
 | Persistence | SRAM programming only; flash was not modified |
+
+### RNIC development snapshot (2026-10-20)
+
+The new [incremental RNIC sources](rdma/rnic/README.md) include protected host
+memory/queues, kernel/provider work, SEND/RECV/Immediate, and an Atomic
+CAS/FADD responder candidate with immutable packet ownership and actual shared
+PSN/MSN readback completions. The latest [generated Atomic RTL composition](results/2026-10-18/rocev2-rnic-atomic-owned-generated-002.json)
+passes four short simulated cases, including drop then forward progress.
+Physical host ordering and positive MAC completion boundaries in that test
+are models. Atomic requester/full native integration and standard API runtime
+remain incomplete; the driver still advertises `IB_ATOMIC_NONE`.
+
+This is a **work-in-progress source snapshot**, separate from the earlier
+hardware-tested READ/WRITE images. Its HLS estimate13.568ns misses the original
+4ns target; no new FPGA image, installation or hardware claim is published.
+The recorded-data part of `bash scripts/check.sh` currently detects a stale
+historical `rocev2_tx_padding.v` SHA after adding44-byte SEND support. The old
+evidence and strict check are retained, not relabeled or waived. See
+[current scope and limitations](docs/ROCEV2_RNIC_PROGRESS.md).
+The focused Atomic RTL suite passes12 methods. A broader RNIC suite is not
+green: native MAC-lifetime and QP-TX cases reported errors/failure, and the
+remaining full-suite run was stopped. This snapshot is not a passing release
+or a claim that every older test matches the current development profile.
 
 The two throughput measurements were **sequential**, not simultaneous full
 duplex, using MTU 9000, four TCP streams and 20 measured seconds per direction.

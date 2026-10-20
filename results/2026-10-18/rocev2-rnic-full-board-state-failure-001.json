@@ -1,0 +1,46 @@
+{
+  "scope": "Actual FULL STATE-board synthesis and failed implementation; not the newer metadata candidate. No image or native trial.",
+  "session": 5544,
+  "terminal_exit_status": 1,
+  "pass_test": false,
+  "tool_failed_as_expected_gate": true,
+  "generated_hls_sha256": "53d2587920d678969f045a7ba300d821533b5efae35f09145aba3b0344a36b0c",
+  "directory": "rdma/rnic/build/full-board-analysis-002",
+  "synthesis_completed": true,
+  "synthesis_resources": {
+    "LUT": 188637,
+    "LUT_percent": 115.93,
+    "FF": 251154,
+    "BRAM_tiles": 264,
+    "DSP": 3
+  },
+  "implementation_failure": {
+    "rule": "DRC UTLZ-1",
+    "phase": "precondition to place_design",
+    "LUT_as_logic_required": 162912,
+    "compatible_sites_available": 162720,
+    "excess": 192,
+    "placer_ran": false,
+    "route_performed": false
+  },
+  "resource_error_waived": false,
+  "constraints_or_part_relaxed": false,
+  "full_board_physical_signoff": false,
+  "conditional_CDC_reviewed": false,
+  "programming_authorized": false,
+  "hardware_verified": false,
+  "images_written": 0,
+  "frozen_inputs_unchanged": true,
+  "mutable_original_generator_current_not_claimed": true,
+  "frozen_files_verified": 810,
+  "artifact_sha256": {
+    "rdma/rnic/build/full-board-analysis-002/analysis-inputs.json": "e2bd324fd94d8a98e672750186a5fd0659d57ba72a2d81ac7ec0c7384b938867",
+    "rdma/rnic/build/full-board-analysis-002/inputs/inputs.sha256": "a96559d9b5a0c3d25a4e384774183331f5e90b48dec34fd19da61d3e18b15851",
+    "rdma/rnic/build/full-board-analysis-002/synthesis_utilization.rpt": "2ebe9425ba2eb5ab1d35385c750b105b665d0f62f788a48f3c3f9f1a54fcf2a9",
+    "rdma/rnic/build/full-board-analysis-002/synthesis_timing.rpt": "c979b58384995d143215f9e20aac4d1b46e3386881f47ce881ade7456fae37e9",
+    "rdma/rnic/build/full-board-analysis-002/full_board_post_synth.dcp": "54fe41384c20b8158f398fffe9c6c327b72a31da060f4298878b1309eb3c77fd",
+    "rdma/rnic/build/full-board-analysis-002/project/as02mc04_rnic_analysis.runs/synth_1/fpga_utilization_synth.rpt": "92512f727c09f876d9d56bfc109a4cd93ac8a761b5d8624274b7b8eaeb42bef5",
+    "rdma/rnic/build/full-board-analysis-002/project/as02mc04_rnic_analysis.runs/impl_1/runme.log": "fc96e504f8157dae60fdccf959c6b0da787959f7702834fe7507ef6b9b86049d",
+    "rdma/logs/rnic-full-board-analysis-002.log": "690ac450789a7ac9870b50a2a3882cca7aaea0b54e9d220754cf8ba9728da7d5"
+  }
+}

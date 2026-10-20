@@ -1,0 +1,64 @@
+{
+  "scope": "Actual FPGA page table vs shared kernel C contract, not responder/SG-DMA/native integration",
+  "hardware_verified": false,
+  "kernel_runtime_pin_verified": false,
+  "integrated_with_dma_backend": false,
+  "completion_claim": false,
+  "pass_test": true,
+  "tests": {
+    "test_all_slots_scattered_dma64_and_independent_first_offset": {
+      "pass_test": true,
+      "cycles": 868,
+      "management_commands": 40,
+      "queries": 56
+    },
+    "test_captured_cfg_payload_and_lost_quiescence": {
+      "pass_test": true,
+      "cycles": 37,
+      "management_commands": 4,
+      "queries": 1
+    },
+    "test_deterministic_query_oracle_with_mutation_and_stale_keys": {
+      "pass_test": true,
+      "cycles": 3031,
+      "management_commands": 29,
+      "queries": 300
+    },
+    "test_external_dma_lease_blocks_reconfiguration": {
+      "pass_test": true,
+      "cycles": 66,
+      "management_commands": 5,
+      "queries": 2
+    },
+    "test_maximum256_pages_and_full_operation_before_first_segment": {
+      "pass_test": true,
+      "cycles": 4646,
+      "management_commands": 258,
+      "queries": 258
+    },
+    "test_partial_population_duplicate_and_active_immutability": {
+      "pass_test": true,
+      "cycles": 105,
+      "management_commands": 10,
+      "queries": 3
+    },
+    "test_range_offset_length_key_and_config_boundaries": {
+      "pass_test": true,
+      "cycles": 148,
+      "management_commands": 10,
+      "queries": 8
+    },
+    "test_reset_unpopulated_ram_and_stale_generation": {
+      "pass_test": true,
+      "cycles": 121,
+      "management_commands": 9,
+      "queries": 5
+    }
+  },
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_mr_page_table.v": "7cebd68efbf32f25f2a44f933c8d90231d5e9a185348ab0ab73def4235406239",
+    "rdma/rnic/tests/test_mr_page_table_rtl.py": "e6ce6ccd7952a54e4983d760cd750351ff451527be54691097cc29f32676790a",
+    "rdma/rnic/kernel/mr_contract.c": "fba5388020b03409654f46dfce12aed7a9f4776dc22c32a964a3aecf69da6adf",
+    "rdma/rnic/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c"
+  }
+}

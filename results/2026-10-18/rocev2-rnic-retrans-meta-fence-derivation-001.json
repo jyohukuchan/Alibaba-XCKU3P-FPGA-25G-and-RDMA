@@ -1,0 +1,46 @@
+{
+  "scope": "Full metadata consumer source invariants, not allocator/core/CQ proof.",
+  "pass_test": true,
+  "methods": 4,
+  "tests": {
+    "test_actual_full2000_BRAM_clear_preserved_false_dependency_removed_only_in_derivative": {
+      "source_sha256": {
+        "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/retransmitter/retransmitter.hpp": "290c476d45672c15b864e258a8944117ee6ce479fc55dfb3588027eb00b50732",
+        "rdma/rnic/hls/retrans_meta_fence_profile.py": "3f07c8431a8756107dcc803664b13ba052a2816e24bfafbbb6dd08ebeaf2b76f",
+        "rdma/rnic/tests/test_retrans_meta_fence_derivation.py": "22918dc96e534f453877861422674d957c7063107c2b3648636b0ea216992030"
+      },
+      "all2000entries_actual_clear_unchanged": true,
+      "real_RAW_WAR_WAW_not_waived": true
+    },
+    "test_changed_unique_anchors_rejected_original_untouched": {
+      "source_sha256": {
+        "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/retransmitter/retransmitter.hpp": "290c476d45672c15b864e258a8944117ee6ce479fc55dfb3588027eb00b50732",
+        "rdma/rnic/hls/retrans_meta_fence_profile.py": "3f07c8431a8756107dcc803664b13ba052a2816e24bfafbbb6dd08ebeaf2b76f",
+        "rdma/rnic/tests/test_retrans_meta_fence_derivation.py": "22918dc96e534f453877861422674d957c7063107c2b3648636b0ea216992030"
+      },
+      "rejected_anchors": 4,
+      "original_unchanged": true
+    },
+    "test_complete_original_header_and_normal_write_append_read_actions_exact": {
+      "source_sha256": {
+        "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/retransmitter/retransmitter.hpp": "290c476d45672c15b864e258a8944117ee6ce479fc55dfb3588027eb00b50732",
+        "rdma/rnic/hls/retrans_meta_fence_profile.py": "3f07c8431a8756107dcc803664b13ba052a2816e24bfafbbb6dd08ebeaf2b76f",
+        "rdma/rnic/tests/test_retrans_meta_fence_derivation.py": "22918dc96e534f453877861422674d957c7063107c2b3648636b0ea216992030"
+      },
+      "original_complete_header_and_normal_actions_exact": true
+    },
+    "test_ordered_actual_snapshot_full_ranges_not_valid_bit_ownership_inference": {
+      "source_sha256": {
+        "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/retransmitter/retransmitter.hpp": "290c476d45672c15b864e258a8944117ee6ce479fc55dfb3588027eb00b50732",
+        "rdma/rnic/hls/retrans_meta_fence_profile.py": "3f07c8431a8756107dcc803664b13ba052a2816e24bfafbbb6dd08ebeaf2b76f",
+        "rdma/rnic/tests/test_retrans_meta_fence_derivation.py": "22918dc96e534f453877861422674d957c7063107c2b3648636b0ea216992030"
+      },
+      "full16bit_index_QPN_range": true,
+      "actual_table_data": true,
+      "registered_ordered_request": true,
+      "valid_is_not_allocator_ownership": true,
+      "whole_core_drain": false
+    }
+  },
+  "hardware_verified": false
+}

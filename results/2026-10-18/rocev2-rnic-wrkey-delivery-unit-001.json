@@ -1,0 +1,28 @@
+{
+  "scope": "7 synthetic interface/provenance/refusal/API-identity tests; no generated HLS/wire/physical/native result.",
+  "terminal_exit_status": 0,
+  "pass_test": true,
+  "seconds": 1.0818663760146592,
+  "passed_names": [
+    "test_exact_interface_derivation_keeps_original_and_refuses_reapplication",
+    "test_existing_output_refused_before_input_access",
+    "test_extra_or_missing_HDL_refused_even_if_manifest_rewritten",
+    "test_identity_extension_does_not_collide_with_original_report_fields",
+    "test_self_consistent_output_manifest_cannot_hide_raw_or_adapter_edits",
+    "test_unreviewed_original_interface_refused",
+    "test_wrong_reset_scope_or_mixed_candidate_refused"
+  ],
+  "source_sha256": {
+    "rdma/rnic/tests/test_wrkey_delivery.py": "725ca389975e7de486450fd08b9b2ce2863571ce1e03329f4780f0b377ec7dff",
+    "rdma/rnic/tests/wrkey_delivery_sim.py": "1c9a4d21ab3a933f5ace6e51405232da216b4751381c55d063546fae3e0c8afe",
+    "rdma/rnic/fpga/prepare_wrkey_transport.py": "11aff17a0d9eb097abc4a5eec097409171b997d59c451ffb6e8fad3d4984e8c3",
+    "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b",
+    "rdma/rnic/rtl/rocev2_wrkey_sq_adapter.v": "9d7df0577d515ca814fe2b688b69603c411b12d0957242a49e4bdd10d7e2eab9",
+    "rdma/rnic/tests/bounded_transport_sim.py": "673b9a5567f4adc8ee155c4c72a5b2496e7350fbdc731048981db1ddd4696a2f",
+    "rdma/rnic/tests/fast_transport_sim.py": "940518b5ea3ebb73ee9a5e2f04244e9378e2304096946644fffdfd11dfd5cf1a",
+    "rdma/read/tests/rw_sim.py": "a2d5f91d09bec3e4b22827acee74ed76e80a3a8814c7df9483948c87690a205a"
+  },
+  "stdout": "test_exact_interface_derivation_keeps_original_and_refuses_reapplication (test_wrkey_delivery.WRKeyDeliveryTests.test_exact_interface_derivation_keeps_original_and_refuses_reapplication) ... ok\ntest_existing_output_refused_before_input_access (test_wrkey_delivery.WRKeyDeliveryTests.test_existing_output_refused_before_input_access) ... ok\ntest_extra_or_missing_HDL_refused_even_if_manifest_rewritten (test_wrkey_delivery.WRKeyDeliveryTests.test_extra_or_missing_HDL_refused_even_if_manifest_rewritten) ... ok\ntest_identity_extension_does_not_collide_with_original_report_fields (test_wrkey_delivery.WRKeyDeliveryTests.test_identity_extension_does_not_collide_with_original_report_fields) ... ok\ntest_self_consistent_output_manifest_cannot_hide_raw_or_adapter_edits (test_wrkey_delivery.WRKeyDeliveryTests.test_self_consistent_output_manifest_cannot_hide_raw_or_adapter_edits) ... ok\ntest_unreviewed_original_interface_refused (test_wrkey_delivery.WRKeyDeliveryTests.test_unreviewed_original_interface_refused) ... ok\ntest_wrong_reset_scope_or_mixed_candidate_refused (test_wrkey_delivery.WRKeyDeliveryTests.test_wrong_reset_scope_or_mixed_candidate_refused) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.937s\n\nOK\n",
+  "hardware_verified": false,
+  "generated_HLS_function_verified": false
+}

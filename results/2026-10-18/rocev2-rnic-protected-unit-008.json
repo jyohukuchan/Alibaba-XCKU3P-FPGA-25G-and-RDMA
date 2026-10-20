@@ -1,0 +1,135 @@
+{
+  "scope": "Actual admission/MR/lease/backend-contract RTL with EXPLICIT transport stub, not HLS wire evidence",
+  "hardware_verified": false,
+  "board_integrated": false,
+  "transport_stub": true,
+  "pass_test": true,
+  "method_count": 10,
+  "simulation_count": 14,
+  "tests": {
+    "test_admission_rejections_lease_and_invalidation": [
+      {
+        "pass_test": true,
+        "cycles": 6716,
+        "commands": 5,
+        "write_frames": 2,
+        "read_frames": 3,
+        "tx_frames": 5,
+        "statuses": 5,
+        "accepted": 5,
+        "rejected": 13,
+        "completed": 5,
+        "rx_good": 18,
+        "rx_bad": 1,
+        "deferred_tx_cycles": 1530
+      }
+    ],
+    "test_backend_error_never_acknowledged": [
+      {
+        "pass_test": true,
+        "fault_code": 34,
+        "commands_before_fault": 1
+      }
+    ],
+    "test_bad_read_keep": [
+      {
+        "pass_test": true,
+        "fault_code": 33,
+        "commands_before_fault": 1
+      }
+    ],
+    "test_bad_write_keep": [
+      {
+        "pass_test": true,
+        "fault_code": 33,
+        "commands_before_fault": 1
+      }
+    ],
+    "test_command_address_length_host_route_and_qp_corruption": [
+      {
+        "pass_test": true,
+        "fault_code": 32,
+        "commands_before_fault": 0
+      },
+      {
+        "pass_test": true,
+        "fault_code": 32,
+        "commands_before_fault": 0
+      },
+      {
+        "pass_test": true,
+        "fault_code": 32,
+        "commands_before_fault": 0
+      },
+      {
+        "pass_test": true,
+        "fault_code": 32,
+        "commands_before_fault": 0
+      },
+      {
+        "pass_test": true,
+        "fault_code": 32,
+        "commands_before_fault": 0
+      }
+    ],
+    "test_early_read_last": [
+      {
+        "pass_test": true,
+        "fault_code": 33,
+        "commands_before_fault": 1
+      }
+    ],
+    "test_early_write_last": [
+      {
+        "pass_test": true,
+        "fault_code": 33,
+        "commands_before_fault": 1
+      }
+    ],
+    "test_pending_invalidation_does_not_deadlock_partial_frame": [
+      {
+        "pass_test": true,
+        "cycles": 4479,
+        "commands": 1,
+        "write_frames": 1,
+        "read_frames": 0,
+        "tx_frames": 1,
+        "statuses": 1,
+        "accepted": 1,
+        "rejected": 0,
+        "completed": 1,
+        "rx_good": 1,
+        "rx_bad": 0,
+        "deferred_tx_cycles": 306
+      }
+    ],
+    "test_unexpected_command_direction": [
+      {
+        "pass_test": true,
+        "fault_code": 35,
+        "commands_before_fault": 0
+      }
+    ],
+    "test_wrong_completion_tag_never_acknowledged": [
+      {
+        "pass_test": true,
+        "fault_code": 34,
+        "commands_before_fault": 1
+      }
+    ]
+  },
+  "source_sha256": {
+    "rdma/rnic/tests/test_protected_responder_rtl.py": "f9bfb4a13a78f7732e936be2ff87bf8dcc3bde21826477ed992cf8262e0127e8",
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "6931f276d08d0ec5bf3b2cd55aef6e50bc4bf4c0763b04fe217d7bb3835c7963",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/tests/probe_protected_responder.py": "45908371b011a0785598a0800acb9e970cbc71d60160ce5788d3cf333639bf3f",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b",
+    "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c",
+    "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+    "rdma/tests/test_icrc_rtl.py": "669d93c43d83a9609eeff9ed659f8de1920b41f2a43ea54f73033ca68af83b02",
+    "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+    "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+    "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079"
+  }
+}

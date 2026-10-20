@@ -1,0 +1,25 @@
+{
+  "scope": "Actual shared C SG/lifecycle contract, Python integer oracle; no runtime page pin or FPGA translation",
+  "hardware_verified": false,
+  "kernel_runtime_pin_verified": false,
+  "fpga_sg_translation_implemented": false,
+  "completion_claim": false,
+  "method_count": 9,
+  "resolve_queries": 3330,
+  "tests": [
+    "test_64bit_exclusive_end_and_zeroized_denials",
+    "test_deterministic_randomized_independent_range_oracle",
+    "test_failed_publish_and_bad_revoke_proof_cannot_unpin",
+    "test_fresh_epoch_floor_covers_all_prior_generations",
+    "test_generation_exhaustion_does_not_wrap",
+    "test_page_population_zero_alias_alignment_and_immutability",
+    "test_permissions_pd_full_key_and_range_matrix",
+    "test_reinitialization_and_revoke_cannot_disclose_addresses",
+    "test_scattered_page_boundaries_and_independent_iova_offset"
+  ],
+  "source_sha256": {
+    "rdma/rnic/kernel/mr_contract.c": "fba5388020b03409654f46dfce12aed7a9f4776dc22c32a964a3aecf69da6adf",
+    "rdma/rnic/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/tests/test_mr_contract.py": "9091b35dc00f49cae27cc05e2e8c674e1c714adbd64fd45c3785312b4233ee8f"
+  }
+}

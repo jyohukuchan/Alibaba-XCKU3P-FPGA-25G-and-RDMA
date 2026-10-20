@@ -1,0 +1,66 @@
+{
+  "scope": "Four-state Immediate RQ provenance/retention units, all proof inputs MODELS.",
+  "pass_test": true,
+  "methods": 5,
+  "tests": {
+    "test_MAC_receipt_cannot_change_the_bound_notification": [
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_receive_queue.v": "0a61c59c719fdb489430e15ac0fb7ca7feed4092d6063fdc29332ccad04a53c1",
+          "rdma/rnic/tests/test_receive_queue_rtl.py": "61269b2b3cae53c17eba37660f8029765b3366c6f2ee9d55922daf66824e4bbd",
+          "rdma/rnic/tests/test_immediate_receive_lifetime_rtl.py": "9a85e9d2f2c25ddac27b970a0b38c66ba620632223fa87a9766d84e4d5704895",
+          "rdma/rnic/tests/immediate_receive_cq_fixture.py": "902eee8fed4437ac5eb30ea9022eeb6f58a06dee19e716166a470332a9e201a2"
+        },
+        "pass_test": true
+      }
+    ],
+    "test_SEND_notification_cannot_exceed_posted_receive_capacity": [
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_receive_queue.v": "0a61c59c719fdb489430e15ac0fb7ca7feed4092d6063fdc29332ccad04a53c1",
+          "rdma/rnic/tests/test_receive_queue_rtl.py": "61269b2b3cae53c17eba37660f8029765b3366c6f2ee9d55922daf66824e4bbd",
+          "rdma/rnic/tests/test_immediate_receive_lifetime_rtl.py": "9a85e9d2f2c25ddac27b970a0b38c66ba620632223fa87a9766d84e4d5704895",
+          "rdma/rnic/tests/immediate_receive_cq_fixture.py": "902eee8fed4437ac5eb30ea9022eeb6f58a06dee19e716166a470332a9e201a2"
+        },
+        "pass_test": true
+      }
+    ],
+    "test_core_cannot_turn_SEND_notification_into_WRITE_capacity_bypass": [
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_receive_queue.v": "0a61c59c719fdb489430e15ac0fb7ca7feed4092d6063fdc29332ccad04a53c1",
+          "rdma/rnic/tests/test_receive_queue_rtl.py": "61269b2b3cae53c17eba37660f8029765b3366c6f2ee9d55922daf66824e4bbd",
+          "rdma/rnic/tests/test_immediate_receive_lifetime_rtl.py": "9a85e9d2f2c25ddac27b970a0b38c66ba620632223fa87a9766d84e4d5704895",
+          "rdma/rnic/tests/immediate_receive_cq_fixture.py": "902eee8fed4437ac5eb30ea9022eeb6f58a06dee19e716166a470332a9e201a2"
+        },
+        "pass_test": true
+      }
+    ],
+    "test_unknown_wire_notification_is_not_placement_authority": [
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_receive_queue.v": "0a61c59c719fdb489430e15ac0fb7ca7feed4092d6063fdc29332ccad04a53c1",
+          "rdma/rnic/tests/test_receive_queue_rtl.py": "61269b2b3cae53c17eba37660f8029765b3366c6f2ee9d55922daf66824e4bbd",
+          "rdma/rnic/tests/test_immediate_receive_lifetime_rtl.py": "9a85e9d2f2c25ddac27b970a0b38c66ba620632223fa87a9766d84e4d5704895",
+          "rdma/rnic/tests/immediate_receive_cq_fixture.py": "902eee8fed4437ac5eb30ea9022eeb6f58a06dee19e716166a470332a9e201a2"
+        },
+        "pass_test": true
+      }
+    ],
+    "test_wire_and_core_notification_value_mismatch_retains_owner": [
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_receive_queue.v": "0a61c59c719fdb489430e15ac0fb7ca7feed4092d6063fdc29332ccad04a53c1",
+          "rdma/rnic/tests/test_receive_queue_rtl.py": "61269b2b3cae53c17eba37660f8029765b3366c6f2ee9d55922daf66824e4bbd",
+          "rdma/rnic/tests/test_immediate_receive_lifetime_rtl.py": "9a85e9d2f2c25ddac27b970a0b38c66ba620632223fa87a9766d84e4d5704895",
+          "rdma/rnic/tests/immediate_receive_cq_fixture.py": "902eee8fed4437ac5eb30ea9022eeb6f58a06dee19e716166a470332a9e201a2"
+        },
+        "pass_test": true
+      }
+    ]
+  },
+  "actual_RQ_RTL": true,
+  "four_state": true,
+  "proof_sources_modeled": true,
+  "hardware_verified": false
+}

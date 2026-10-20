@@ -1,0 +1,168 @@
+{
+  "scope": "Actual full-board frozen older META60c9a20e comparison, terminal post-route optimization/report result. NOT current per-WR/shared-MR/SQ/native release.",
+  "driver_session": 11803,
+  "driver_terminal_exit_status": 0,
+  "analysis_completed": true,
+  "timing_constraints_met": false,
+  "full_board_physical_signoff": false,
+  "current_source_physical_signoff": false,
+  "programming_authorized": false,
+  "image_written": false,
+  "hardware_verified": false,
+  "selected_generated_HLS_sha256": "60c9a20e6671f223444c9a115d6295fdff456672d6354ed240e2317529cdbc19",
+  "frozen_files_verified": 1070,
+  "original_paths": 1069,
+  "frozen_inputs_unchanged": true,
+  "current_original_path_differences": [
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_protected_responder.v",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_corundum_dma_backend.v"
+  ],
+  "timing": {
+    "WNS_ns": -0.348,
+    "TNS_ns": -799.383,
+    "setup_failures": 6144,
+    "setup_endpoints": 656015,
+    "WHS_ns": 0.008,
+    "THS_ns": 0,
+    "hold_failures": 0,
+    "hold_endpoints": 655507,
+    "WPWS_ns": 0,
+    "TPWS_ns": 0,
+    "pulse_failures": 0,
+    "pulse_endpoints": 258577
+  },
+  "check_timing": {
+    "no_clock": 0,
+    "constant_clock": 0,
+    "pulse_width_clock": 0,
+    "unconstrained_internal_endpoints": 0,
+    "no_input_delay": 0,
+    "no_output_delay": 0,
+    "multiple_clock": 0,
+    "generated_clocks": 0,
+    "loops": 0,
+    "partial_input_delay": 0,
+    "partial_output_delay": 0,
+    "latch_loops": 0
+  },
+  "routing": {
+    "routable_nets": 312317,
+    "fully_routed_nets": 312317,
+    "routing_errors": 0
+  },
+  "bus_skew": {
+    "constraints": 38,
+    "min_slack_ns": 1.712,
+    "failures": 0
+  },
+  "DRC": {
+    "errors": 0,
+    "critical_warnings": 0,
+    "warnings": 36,
+    "rules": {
+      "DPIP-2": 6,
+      "DPOP-3": 1,
+      "DPOP-4": 3,
+      "PDCN-1569": 3,
+      "REQP-1858": 22,
+      "RTSTAT-10": 1
+    }
+  },
+  "CDC": {
+    "summary": {
+      "CDC-1": {
+        "severity": "Critical",
+        "count": 7
+      },
+      "CDC-3": {
+        "severity": "Info",
+        "count": 207
+      },
+      "CDC-4": {
+        "severity": "Critical",
+        "count": 4
+      },
+      "CDC-6": {
+        "severity": "Warning",
+        "count": 14
+      },
+      "CDC-9": {
+        "severity": "Info",
+        "count": 24
+      },
+      "CDC-10": {
+        "severity": "Critical",
+        "count": 1
+      },
+      "CDC-13": {
+        "severity": "Critical",
+        "count": 6
+      },
+      "CDC-15": {
+        "severity": "Warning",
+        "count": 1555
+      }
+    },
+    "critical_paths": 18,
+    "conditional_review_complete": false,
+    "blanket_waiver": false
+  },
+  "resources": {
+    "LUT": 134148,
+    "LUT_percent": 82.44,
+    "FF": 222844,
+    "BRAM_tiles": 286,
+    "URAM": 39,
+    "DSP": 3
+  },
+  "worst_setup_path": {
+    "Source": "core_inst/core_inst/core_pcie_inst/core_inst/app.app_block_inst/endpoint/datapath/responder/endpoint/guard/data_remaining_reg[19]/C",
+    "Destination": "core_inst/core_inst/core_pcie_inst/core_inst/app.app_block_inst/endpoint/datapath/responder/endpoint/guard/transport/transport/convert_net_axis_to_axis_512_2_U0/inputWord_data_reg_105_reg[13]/CE",
+    "Data Path Delay": "4.278ns  (logic 1.311ns (30.644%)  route 2.967ns (69.356%))",
+    "Logic Levels": "14  (CARRY8=3 LUT2=1 LUT3=2 LUT4=2 LUT5=1 LUT6=5)",
+    "Requirement": "4.000ns  (pcie_user_clk rise@4.000ns - pcie_user_clk rise@0.000ns)"
+  },
+  "critical_CDC_path_rows": [
+    "38  CDC-1   Critical  1-bit unknown CDC circuitry                         0  Max Delay Datapath Only  core_inst/sfp_rb_drp_inst/rb_we_reg_reg/C                                                                       core_inst/sfp_rb_drp_inst/drp_we_reg_reg/D",
+    "1  CDC-10  Critical  Combinational logic detected before a synchronizer      4  False Path  sfp_sync_reset_inst/sync_reg_reg[3]/C  sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/sync_reset_common_reset_inst/sync_reg_reg[0]/PRE",
+    "8  CDC-1   Critical  1-bit unknown CDC circuitry                                  0  Max Delay Datapath Only  sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_rxpolarity_drp_reg_reg/C                                                  sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_rxpolarity_sync_reg_reg/D",
+    "11  CDC-4   Critical  Multi-bit unknown CDC circuitry                              0  Max Delay Datapath Only  sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_rxprbssel_drp_reg_reg[3:0]/C                                              sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_rxprbssel_sync_reg_reg[3:0]/D",
+    "8  CDC-1   Critical  1-bit unknown CDC circuitry                                  0  Max Delay Datapath Only  sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_rxpolarity_drp_reg_reg/C                                                  sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_rxpolarity_sync_reg_reg/D",
+    "11  CDC-4   Critical  Multi-bit unknown CDC circuitry                              0  Max Delay Datapath Only  sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_rxprbssel_drp_reg_reg[3:0]/C                                              sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_rxprbssel_sync_reg_reg[3:0]/D",
+    "8  CDC-1   Critical  1-bit unknown CDC circuitry                                  0  Max Delay Datapath Only  sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txinhibit_drp_reg_reg/C                                                   sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txinhibit_sync_reg_reg/D",
+    "9  CDC-1   Critical  1-bit unknown CDC circuitry                                  0  Max Delay Datapath Only  sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txpolarity_drp_reg_reg/C                                                  sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txpolarity_sync_reg_reg/D",
+    "11  CDC-4   Critical  Multi-bit unknown CDC circuitry                              0  Max Delay Datapath Only  sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txprbssel_drp_reg_reg[3:0]/C                                              sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txprbssel_sync_reg_reg[3:0]/D",
+    "13  CDC-13  Critical  1-bit CDC path on a non-FD primitive                         0  False Path               sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_txelecidle_reg_reg/C                                                      sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/xcvr_gty_com_usp.eth_xcvr_gty_full_inst/inst/gen_gtwizard_gtye4_top.eth_xcvr_gty_full_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[0].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXELECIDLE",
+    "14  CDC-13  Critical  1-bit CDC path on a non-FD primitive                         0  False Path               sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_tx_pd_reg_reg/C                                                           sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/xcvr_gty_com_usp.eth_xcvr_gty_full_inst/inst/gen_gtwizard_gtye4_top.eth_xcvr_gty_full_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[0].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXPD[0]",
+    "15  CDC-13  Critical  1-bit CDC path on a non-FD primitive                         0  False Path               sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/gt_tx_pd_reg_reg/C                                                           sfp_phy_quad_inst/phy1.eth_xcvr_phy_1/xcvr_gty_com_usp.eth_xcvr_gty_full_inst/inst/gen_gtwizard_gtye4_top.eth_xcvr_gty_full_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[0].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXPD[1]",
+    "8  CDC-1   Critical  1-bit unknown CDC circuitry                                  0  Max Delay Datapath Only  sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txinhibit_drp_reg_reg/C                                                   sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txinhibit_sync_reg_reg/D",
+    "9  CDC-1   Critical  1-bit unknown CDC circuitry                                  0  Max Delay Datapath Only  sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txpolarity_drp_reg_reg/C                                                  sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txpolarity_sync_reg_reg/D",
+    "11  CDC-4   Critical  Multi-bit unknown CDC circuitry                              0  Max Delay Datapath Only  sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txprbssel_drp_reg_reg[3:0]/C                                              sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txprbssel_sync_reg_reg[3:0]/D",
+    "13  CDC-13  Critical  1-bit CDC path on a non-FD primitive                         0  False Path               sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_txelecidle_reg_reg/C                                                      sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/xcvr_gty.eth_xcvr_gty_channel_inst/inst/gen_gtwizard_gtye4_top.eth_xcvr_gty_channel_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[0].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXELECIDLE",
+    "14  CDC-13  Critical  1-bit CDC path on a non-FD primitive                         0  False Path               sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_tx_pd_reg_reg/C                                                           sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/xcvr_gty.eth_xcvr_gty_channel_inst/inst/gen_gtwizard_gtye4_top.eth_xcvr_gty_channel_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[0].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXPD[0]",
+    "15  CDC-13  Critical  1-bit CDC path on a non-FD primitive                         0  False Path               sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/gt_tx_pd_reg_reg/C                                                           sfp_phy_quad_inst/phy2.eth_xcvr_phy_2/xcvr_gty.eth_xcvr_gty_channel_inst/inst/gen_gtwizard_gtye4_top.eth_xcvr_gty_channel_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[0].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXPD[1]"
+  ],
+  "physical_clock_or_constraint_or_resource_gates_relaxed": false,
+  "artifact_sha256": {
+    "rdma/rnic/build/full-board-meta-analysis-001/analysis-inputs.json": "3a79832ffab1fbfaed0b0a80bc31f4a2f7de6e758859888552cab4aa88225dfd",
+    "rdma/rnic/build/full-board-meta-analysis-001/inputs/inputs.sha256": "75840c365a47ead1aaa4b05bd13f5ba87100c8efdf82e94d30648b8d0867c596",
+    "rdma/rnic/build/full-board-meta-analysis-001/clocks.rpt": "0400acb11c3fff028d9eb340401dd1397ffbfeb83309eb2e17ee28434b17bf02",
+    "rdma/rnic/build/full-board-meta-analysis-001/timing.rpt": "ae6f6821aa3b72b7b960cdd8a4eb7d11ea5f05228d83ca5a1983e8fd785669b8",
+    "rdma/rnic/build/full-board-meta-analysis-001/setup_paths.rpt": "3ad2feb64cdfbddc457d26eec9a56b0ce1f62885f030e7d2808cc97f1993471c",
+    "rdma/rnic/build/full-board-meta-analysis-001/hold_paths.rpt": "71e3267aad4ca5366f78e2bc80675ee5c900912a76392bf5d1ca7dbc4aedd538",
+    "rdma/rnic/build/full-board-meta-analysis-001/routing.rpt": "36c4aabf6d6a88db6cf992e5db0fc6c1aa5b9b393d1a5b25ca20a6425ff7146e",
+    "rdma/rnic/build/full-board-meta-analysis-001/bus_skew.rpt": "15a8227085d7e581d9661118135c195ceaf6a712f1e42d4e30be37cbc1515fa8",
+    "rdma/rnic/build/full-board-meta-analysis-001/drc.rpt": "7fa3774d6f0948de7a8bffc721d5091ffdfc1a4bbd65cbcfe4a7ec27e3d8d543",
+    "rdma/rnic/build/full-board-meta-analysis-001/cdc.rpt": "6378b94d6eaf2f93acea356ff034f2482f170928dd7efe2998918cda9d1b7566",
+    "rdma/rnic/build/full-board-meta-analysis-001/check_timing.rpt": "86d110b4c6f9ef5ab3499bb122cf2cb454bbffd9372be97480bd99409d34767b",
+    "rdma/rnic/build/full-board-meta-analysis-001/utilization.rpt": "e24e2ab6fc8173f1a930ff95a831480415e818093f5eb843f9293db35454ee34",
+    "rdma/rnic/build/full-board-meta-analysis-001/full_board_routed.dcp": "557fd0d6bd731c8362fbcaa3342b49f8bc684fb30389d1cdb3c1404c34f7e7ba",
+    "rdma/logs/rnic-full-board-meta-analysis-001.log": "6b5e709f6d41fb6d55c8e43ceba62a42008a17a0373ee0ad9dc9a66791053773"
+  },
+  "remaining": [
+    "Setup failures must be corrected in a new source-bound resulting feature image; do not lower clock/waive paths/claim process0 is timing pass.",
+    "Current desired per-WR/shared-MR/SQ/kernel/standard verbs image is not this snapshot.",
+    "Conditional18-CDC-path review not transferred from old rollback image; current exact snapshot review remains open.",
+    "No native programming/host page DMA/verbs/thermal function result."
+  ]
+}

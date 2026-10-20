@@ -1,0 +1,12 @@
+{
+  "scope": "Actual whole-packet integrity/trusted-WQE response protection and replay.\n\nExpected issued peer/PSN/WQE and downstream executor/HLS/wire/CQ are MODELS.\nThis is a real receive protection component, not native placement or CQ proof.\n",
+  "pass_test": false,
+  "methods": 0,
+  "simulations": 0,
+  "tests": {},
+  "actual_integrity_peer_PS\u039d_QP_opcode_AETH_length_guard": true,
+  "issued_context_downstream_HLS_executor_CQ_models": true,
+  "actual_native_READ_placement": false,
+  "actual_WR_completion": false,
+  "hardware_verified": false
+}

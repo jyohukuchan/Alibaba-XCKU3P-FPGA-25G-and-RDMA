@@ -1,0 +1,27 @@
+{
+  "scope": "Actual shared C MMIO client/UBSan, MMIO/controller-reply MODEL only",
+  "pass_test": true,
+  "kernel_readl_writel_executed": false,
+  "hardware_verified": false,
+  "board_integrated": false,
+  "completion_claim": false,
+  "test_names": [
+    "test_ack_error_never_becomes_success_and_lost_ack_is_not_guessed",
+    "test_all_commands_actual_full64_metadata_snapshot_and_flags",
+    "test_ambiguous_doorbell_failure_retains_then_matches_real_reply",
+    "test_bad_response_identity_key_and_proof_never_ack_or_publish",
+    "test_error_response_is_transport_completion_not_memory_proof",
+    "test_fatal_after_reply_read_forbids_ack_and_release",
+    "test_old_device_abi_live_state_and_missing_transport_rejected_without_writes",
+    "test_staging_failure_or_readback_mismatch_never_rings_doorbell",
+    "test_timeout_keeps_expected_owner_and_late_reply_can_only_resynchronize",
+    "test_validation_and_sequence_exhaustion_prevent_truncation_and_reuse"
+  ],
+  "source_sha256": {
+    "rdma/rnic/kernel/rnic_io.c": "ce7078e615791c85a5a503ea0052cf3b30c4b7c89ae5e7277ec58a72ed0fb76b",
+    "rdma/rnic/kernel/rnic_io.h": "dcea4daddc6478902efb10a5332be8563c8220e5cfffb652953ccf4699622a28",
+    "rdma/rnic/kernel/rnic_regs.h": "10032bb69d98f6d2ee527c7f6f3b86c3407deb8bd0a46e782d481f6f36be52e3",
+    "rdma/rnic/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/tests/test_rnic_io.py": "369838ef89e6d8900ad5db23959744d62ae6633bab7772e90deb4657f7146e48"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "scope": "Synthesize the source-frozen per-WR-key candidate after actual C++ checks.\n\nHLS-only construction: no board selection, bitstream or hardware commands.\nA successful synthesis/port-width check is NOT a generated-RTL function,\nreset, wire, physical timing, native DMA or standard verbs qualification.\n",
+  "started_at": "2026-10-19T01:15:43.567953+00:00",
+  "finished_at": "2026-10-19T01:19:45.370993+00:00",
+  "terminal_exit_status": 0,
+  "source_and_frozen_inputs_unchanged": true,
+  "source_sha256": {
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/hls/synthesize_wrkey_profile.py": "7f4a8eeccffa1537951c7e3823a3e8fe4a2500050201e212a9c998fd5cd0f614",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/results/2026-10-18/rocev2-rnic-wrkey-source-001.json": "4ad9a2c1412d003f7e9c5cb724de153b391b808122eb9d710a21ec788a7ee83a",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/results/2026-10-18/rocev2-rnic-wrkey-csim-004.json": "3e4e8892ca8dc2b586e53fa0c7d2c739cab6498d6d982084989b431c7ab3a637"
+  },
+  "frozen_launch_sha256": {
+    "1-rocev2-rnic-wrkey-source-001.json": "4ad9a2c1412d003f7e9c5cb724de153b391b808122eb9d710a21ec788a7ee83a",
+    "2-rocev2-rnic-wrkey-csim-004.json": "3e4e8892ca8dc2b586e53fa0c7d2c739cab6498d6d982084989b431c7ab3a637",
+    "0-synthesize_wrkey_profile.py": "7f4a8eeccffa1537951c7e3823a3e8fe4a2500050201e212a9c998fd5cd0f614"
+  },
+  "hls_build": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/wrkey-hls-p037tedt/project",
+  "source_record": "results/2026-10-18/rocev2-rnic-wrkey-source-001.json",
+  "csim_record": "results/2026-10-18/rocev2-rnic-wrkey-csim-004.json",
+  "generated_hls_sha256": "716f5d9262ac414f88406600f5d88fe83a9bf2fa122b49eec2fd1aa8584a8f2a",
+  "generated_files": 138,
+  "SQ_AXIS_width_248_verified": true,
+  "metadata_entries": 2000,
+  "metadata_fields": 13,
+  "hardware_verified": false,
+  "generated_RTL_function_tested": false,
+  "hardware_reset_verified": false,
+  "physical_signoff": false,
+  "standard_verbs_implemented": false,
+  "programming_authorized": false,
+  "pass_test": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/wrkey-hls-p037tedt/wrkey-synthesis.log": "40608fdd5038fd5c26d432f35cd0f5868a1039a999cc52a7e29c52c5bd818dfc"
+  },
+  "target_part_and_4ns_verified": true,
+  "estimated_period_ns": 4.043,
+  "resources": {
+    "BRAM_18K": 85,
+    "FF": 64686,
+    "LUT": 25114,
+    "URAM": 0,
+    "DSP": 0
+  },
+  "synthesis_report_sha256": "393e30841ce0900036b55295659639cde9a143f421aff0e73d1633a765e372ac"
+}

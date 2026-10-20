@@ -1,0 +1,38 @@
+{
+  "scope": "Finite actual generated metadata-table RTL reset/storage/backpressure test.\n\nAll2000entries/allfields are checked through real FIFO ports. No internal\nforcing, table replacement or RTL repair. This does NOT prove complete\ntransport/native/physical timing or authorize an image.\n",
+  "hardware_verified": false,
+  "programming_authorized": false,
+  "sequential_initialization_required": false,
+  "generated_hls_sha256": "53d2587920d678969f045a7ba300d821533b5efae35f09145aba3b0344a36b0c",
+  "generated_files": 138,
+  "source_sha256": {
+    "rdma/rnic/tests/probe_metadata_reset.py": "8b460cae6e0ce0f92454eca05b76a7a012ad36312a4585264d272bcf3c78fe89"
+  },
+  "selected_RTL_sha256": {
+    "rocev2_top_retrans_meta_table_0_s.v": "440bf1d6db1baa23b930103e272a8e851c916a7caa750f64c240879151370934",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_localAddr_RAM_T2P_BRAM_1R1W.v": "c108010336cb77f2e4ceddc8b9cc69a3a99648f01d5d401105f9d03e63de7bd7",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_localAddr_RAM_T2P_BRAM_1R1W_ram.v": "f82e5dea73115ba008b4c7d617abd1a86278591a7c1b16341ef6bd6cc273e195",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_lst_RAM_T2P_BRAM_1R1W.v": "15549d08d5d109640be5bd2f1799dba7bb30079a74507e67bf4baff0d52eb173",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_lst_RAM_T2P_BRAM_1R1W_ram.v": "fb97eb4a5c51879d44b387fe91355c602b9b9ba57a568c30ad7940a2e0e48977",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_next_RAM_T2P_BRAM_1R1W.v": "e808db61cd99bb4069a41500e287c1f6aff6597f28a6356e6d0cc52e3e6b4a7e",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_next_RAM_T2P_BRAM_1R1W_ram.v": "fa194b002587c1a147baef11041e4cd245f4e7fdac234ae31ec982bebeee393f",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_offs_RAM_T2P_BRAM_1R1W.v": "c64c4c9f7aa3db6548c53fdd39ea1e0ddcf2bc91d60268b7798908d055af948b",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_offs_RAM_T2P_BRAM_1R1W_ram.v": "65c8226b7e337cd0d0c68484ed3586b8b5becd41022620c0cf0a356dbb76449a",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_opCode_RAM_T2P_BRAM_1R1W.v": "790dac3fbd97e88dcffe3a1e378a38ae90686025d1be03dc5a90a4c99bf628cf",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_opCode_RAM_T2P_BRAM_1R1W_ram.v": "e02a1b047ad1d4a80bdbfcb7397cce1b0ca4aa0f986dc9822f21160c558340a1",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_psn_RAM_T2P_BRAM_1R1W.v": "c43ede88f1c3a4b8d710423698f65e0b7e0598e2fa2a54303a40e7441e5047de",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_psn_RAM_T2P_BRAM_1R1W_ram.v": "39903d138034c0629dd8312d2f5fc2f8e1a034a7e5e5d9a413e3dbdae73dd80b"
+  },
+  "generated_testbench_sha256": "7005b6361d11c56622697869a329cce070d7116e7f60c724dff8c2d3ce71aa01",
+  "inputs_unchanged": true,
+  "terminal_exit_status": 0,
+  "stdout": "METADATA_RESET_PASS checks=8024 zero=4023 data=2000 append=2001 resets=16 cycles=82254\n/tmp/as02-metadata-reset-_g8z_o0k/tb.v:140: $finish called at 329108000 (1ps)\n",
+  "stderr": "",
+  "checks": 8024,
+  "zero_checks": 4023,
+  "data_checks": 2000,
+  "append_checks": 2001,
+  "reset_checks": 16,
+  "cycles": 82254,
+  "pass_test": true
+}

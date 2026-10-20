@@ -1,0 +1,62 @@
+{
+  "scope": "Actual2000-slot lease RAM/ring RTL, not FNS/native/core/CQ integration.\n\nLocal-reset retention is NOT FPGA reconfiguration/power-loss recovery.\nKnown-signal SYNTHESIS-defined simulations are NOT physical synthesis/signoff.\n",
+  "pass_test": false,
+  "terminal_exit_status": 1,
+  "retained_directory": "rdma/rnic/build/retrans-pool-63tncqyy",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_retrans_pool.v": "6b94c34cc39e005a48d0cfa3a594264fe909b96abbf487eacef166cb4a268453",
+    "rdma/rnic/tests/retrans_pool_tb.v": "616964ab6ffeacca21adedcdaf9195274711df086d8f3ad725433a4cf4693fc9",
+    "rdma/rnic/tests/test_retrans_pool_rtl.py": "9e13b5ac1c71469feff67114bc12158d2ef74e2f08a66af205e832d67dc865eb"
+  },
+  "frozen_source_sha256": {
+    "rocev2_retrans_pool.v": "6b94c34cc39e005a48d0cfa3a594264fe909b96abbf487eacef166cb4a268453",
+    "test_retrans_pool_rtl.py": "9e13b5ac1c71469feff67114bc12158d2ef74e2f08a66af205e832d67dc865eb",
+    "retrans_pool_tb.v": "616964ab6ffeacca21adedcdaf9195274711df086d8f3ad725433a4cf4693fc9"
+  },
+  "expected_cases": [
+    "case_00_full_2000_exhaust_release_reuse",
+    "case_01_owned_leases_survive_local_reset",
+    "case_02_unconsumed_offer_survives_reset",
+    "case_03_duplicate_release_fault_retained",
+    "case_04_full_owner_mismatch",
+    "case_05_stale_generation_after_full_pool_reuse",
+    "case_06_full_index_range",
+    "case_07_full_QPN_no_alias",
+    "case_08_both_markers_and_later_work",
+    "case_09_high64_marker_mismatch",
+    "case_10_X_Z_diagnostics",
+    "case_11_generation_nonwrap",
+    "synth_case_00_full_2000_exhaust_release_reuse",
+    "synth_case_01_owned_leases_survive_local_reset",
+    "synth_case_05_stale_generation_after_full_pool_reuse",
+    "synth_case_11_generation_nonwrap"
+  ],
+  "completed_cases": [],
+  "cases": {},
+  "errors": [
+    "missing/extra expected cases"
+  ],
+  "actual_production_RTL": true,
+  "four_state_simulation": true,
+  "capacity": 2000,
+  "clock_period_ns": 4.0,
+  "actual_FNS_process_integrated": false,
+  "whole_core_drain": false,
+  "native_or_CQ_or_hardware_verified": false,
+  "physical_signoff": false,
+  "reset_retention_not_reconfiguration_powerloss_recovery": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/retrans-pool-63tncqyy/fourstate.vvp": "a698485ba48ca71c4a3d4c5e9cc14303ddf00d60932b373d211ce036c77050b6",
+    "rdma/rnic/build/retrans-pool-63tncqyy/fourstate-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/retrans-pool-63tncqyy/fourstate-nearmax-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/retrans-pool-63tncqyy/synth.vvp": "2367f85ac3f59871cde66c23cbdeb02d72dab1edb9e944b337b3e1bc13d756ec",
+    "rdma/rnic/build/retrans-pool-63tncqyy/fourstate-nearmax.vvp": "d7b2128274c9ab08bac3d0e1059218342bb0b5d721e0a4b8875ed2239d8894e2",
+    "rdma/rnic/build/retrans-pool-63tncqyy/case_00_full_2000_exhaust_release_reuse.log": "fb83ece904432312ab8cc261b7553dc95295e31815519fb8ea819f9e3ae7fb33",
+    "rdma/rnic/build/retrans-pool-63tncqyy/synth-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/retrans-pool-63tncqyy/synth-nearmax.vvp": "217b9b79c9eb16df722b3924cf173ecff76110921483912b0f05cd25835be268",
+    "rdma/rnic/build/retrans-pool-63tncqyy/synth-nearmax-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/retrans-pool-63tncqyy/inputs/rocev2_retrans_pool.v": "6b94c34cc39e005a48d0cfa3a594264fe909b96abbf487eacef166cb4a268453",
+    "rdma/rnic/build/retrans-pool-63tncqyy/inputs/test_retrans_pool_rtl.py": "9e13b5ac1c71469feff67114bc12158d2ef74e2f08a66af205e832d67dc865eb",
+    "rdma/rnic/build/retrans-pool-63tncqyy/inputs/retrans_pool_tb.v": "616964ab6ffeacca21adedcdaf9195274711df086d8f3ad725433a4cf4693fc9"
+  }
+}

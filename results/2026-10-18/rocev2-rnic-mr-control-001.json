@@ -1,0 +1,136 @@
+{
+  "scope": "Actual MR control/MR/PTE RTL, QP and parent-drain MODEL",
+  "pass_test": true,
+  "hardware_verified": false,
+  "board_integrated": false,
+  "actual_pcie_tlp_engine": false,
+  "completion_claim": false,
+  "tests": {
+    "test_epoch_duplicate_stale_sequence_zero_cookie_and_run_order": {
+      "pass_test": true,
+      "scenario": 6,
+      "cycles": 71,
+      "host_commands": 5,
+      "mr_commands": 1,
+      "page_commands": 0,
+      "qp_commands": 0,
+      "fatal": 0,
+      "building": 0,
+      "active": 0
+    },
+    "test_epoch_rechecks_parent_drain_after_seed": {
+      "pass_test": true,
+      "scenario": 5,
+      "cycles": 43,
+      "host_commands": 1,
+      "mr_commands": 1,
+      "page_commands": 0,
+      "qp_commands": 0,
+      "fatal": 0,
+      "building": 0,
+      "active": 0
+    },
+    "test_exhausted_registration_has_owned_cleanup_without_reusing_key": {
+      "pass_test": true,
+      "scenario": 9,
+      "cycles": 95,
+      "host_commands": 5,
+      "mr_commands": 4,
+      "page_commands": 2,
+      "qp_commands": 0,
+      "fatal": 0,
+      "building": 0,
+      "active": 0
+    },
+    "test_fault_retains_stalled_config_then_drains_without_proof": {
+      "pass_test": true,
+      "scenario": 7,
+      "cycles": 75,
+      "host_commands": 3,
+      "mr_commands": 2,
+      "page_commands": 0,
+      "qp_commands": 1,
+      "fatal": 1,
+      "building": 1,
+      "active": 0
+    },
+    "test_invalidation_rechecks_parent_drain_after_both_headers": {
+      "pass_test": true,
+      "scenario": 4,
+      "cycles": 176,
+      "host_commands": 7,
+      "mr_commands": 3,
+      "page_commands": 5,
+      "qp_commands": 1,
+      "fatal": 0,
+      "building": 0,
+      "active": 0
+    },
+    "test_malformed_allocated_key_quarantines_before_pte_begin": {
+      "pass_test": true,
+      "scenario": 8,
+      "cycles": 66,
+      "host_commands": 3,
+      "mr_commands": 2,
+      "page_commands": 0,
+      "qp_commands": 1,
+      "fatal": 1,
+      "building": 1,
+      "active": 0
+    },
+    "test_no_config_before_endpoint_and_real_parent_drain": {
+      "pass_test": true,
+      "scenario": 3,
+      "cycles": 131,
+      "host_commands": 4,
+      "mr_commands": 3,
+      "page_commands": 2,
+      "qp_commands": 1,
+      "fatal": 0,
+      "building": 0,
+      "active": 0
+    },
+    "test_partial_pages_duplicate_and_unsealed_failure_retain_mapping": {
+      "pass_test": true,
+      "scenario": 1,
+      "cycles": 133,
+      "host_commands": 7,
+      "mr_commands": 3,
+      "page_commands": 5,
+      "qp_commands": 1,
+      "fatal": 0,
+      "building": 0,
+      "active": 0
+    },
+    "test_publish_translate_drain_reuse_fresh_key_and_stop": {
+      "pass_test": true,
+      "scenario": 0,
+      "cycles": 321,
+      "host_commands": 14,
+      "mr_commands": 5,
+      "page_commands": 10,
+      "qp_commands": 1,
+      "fatal": 0,
+      "building": 0,
+      "active": 0
+    },
+    "test_wrong_owner_and_key_cannot_revoke_current_mapping": {
+      "pass_test": true,
+      "scenario": 2,
+      "cycles": 188,
+      "host_commands": 9,
+      "mr_commands": 3,
+      "page_commands": 5,
+      "qp_commands": 1,
+      "fatal": 0,
+      "building": 0,
+      "active": 0
+    }
+  },
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_mr_control.v": "d3a064c87f1a3da3d87c31554237e2364edc76ba347033ab72ebd71e68a89343",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/rtl/rocev2_mr_page_table.v": "7cebd68efbf32f25f2a44f933c8d90231d5e9a185348ab0ab73def4235406239",
+    "rdma/rnic/tests/test_mr_control_rtl.py": "6e426f55726162e35da0aadb9a7ee0a70e0dcd35f1442dd1a74ad567dfd8057a"
+  }
+}

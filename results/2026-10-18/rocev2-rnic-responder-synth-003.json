@@ -1,0 +1,35 @@
+{
+  "scope": "Isolated protected actual-HLS responder synthesis with mandatory epoch, captured/pipelined MR configuration and registered replay",
+  "session": 46167,
+  "terminal_exit_status": 0,
+  "source_manifest_count": 148,
+  "original_inputs_unchanged": true,
+  "period_ns": 4,
+  "luts": 35369,
+  "registers": 67782,
+  "bram_tiles": 41,
+  "post_synthesis_timing": {
+    "wns_ns": -0.097,
+    "whs_ns": 0.016,
+    "setup_failing_endpoints": 4,
+    "hold_failing_endpoints": 0,
+    "constraints_met": false
+  },
+  "new_critical_path": "admission_integrity/offset_reg[14] -> admission_integrity/bad_reg;15logic levels",
+  "placed_or_routed": false,
+  "native_board_signoff": false,
+  "completion_claim": false,
+  "next_action": "Source-frozen physical route002 is running separately; do not infer full-board signoff from synthesis.",
+  "artifact_sha256": {
+    "rdma/rnic/build/responder-synth-ZyFTnpv8/impl/original_inputs.sha256": "3f4dcc8fe498172e5133c3ba18ddee42ca7249f7fe3326dc9e7b77e0241c2fc0",
+    "rdma/rnic/build/responder-synth-ZyFTnpv8/impl/post_synth.dcp": "589b7b3cf95fb8359a20fd28ae2fb00e87ce68d94486234e10f6c653192ddee9",
+    "rdma/rnic/build/responder-synth-ZyFTnpv8/impl/utilization.rpt": "3bd8fea621c4702c749563eabd312ab07f73e7e06955e1a8d975b9b9292c57f3",
+    "rdma/rnic/build/responder-synth-ZyFTnpv8/impl/timing.rpt": "7d3c1cdaf6a07313e95120c46b74c2dacb883d4a4c10821694468432bae1cb8f",
+    "rdma/rnic/build/responder-synth-ZyFTnpv8/impl/setup_paths.rpt": "72030705bb100d665f49b84e13b31dc45f1610d8e1e85db5d33a0ce70cd48f8c",
+    "rdma/rnic/build/responder-synth-ZyFTnpv8/impl/drc.rpt": "102904c94309f663a41148a34913003ba0536a4f995d334b45774e329a5ce707",
+    "rdma/logs/rnic-responder-synth-003.log": "c4daea1c6446679341afdae83b04f33bef9354880915d7003879ad08577e9022",
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "a088ecb5dae497d68fa1ee9a5d64cc3a13b73fe24c4deeb1bba7188144ee7a58",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/rtl/responder_synth.tcl": "1e10a02ca408c9f5aa3cea19f8cdf4de8d10d8bb9a483797f88c817ff1f505c8"
+  }
+}

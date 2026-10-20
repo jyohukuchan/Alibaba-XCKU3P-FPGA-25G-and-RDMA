@@ -1,0 +1,71 @@
+{
+  "scope": "Actual AXI mailbox/Corundum AXI adapter, kernel ABI, controller MODEL",
+  "pass_test": true,
+  "hardware_verified": false,
+  "board_integrated": false,
+  "completion_claim": false,
+  "tests": {
+    "test_full_width_validation_and_partial_doorbell_denial": {
+      "pass_test": true,
+      "scenario": 2,
+      "cycles": 324,
+      "axi_writes": 28,
+      "axi_reads": 2,
+      "accepted_commands": 0,
+      "acked_responses": 0
+    },
+    "test_high_and_unaligned_addresses_never_alias_staging": {
+      "pass_test": true,
+      "scenario": 4,
+      "cycles": 355,
+      "axi_writes": 26,
+      "axi_reads": 5,
+      "accepted_commands": 0,
+      "acked_responses": 0
+    },
+    "test_kernel_abi_staging_byte_strobes_and_independent_aw_w": {
+      "pass_test": true,
+      "scenario": 0,
+      "cycles": 479,
+      "axi_writes": 22,
+      "axi_reads": 25,
+      "accepted_commands": 0,
+      "acked_responses": 0
+    },
+    "test_kernel_abi_status_and_entry_diagnostics": {
+      "pass_test": true,
+      "scenario": 5,
+      "cycles": 36,
+      "axi_writes": 0,
+      "axi_reads": 4,
+      "accepted_commands": 0,
+      "acked_responses": 0
+    },
+    "test_snapshot_stall_busy_doorbell_and_exact_reply_ack": {
+      "pass_test": true,
+      "scenario": 1,
+      "cycles": 548,
+      "axi_writes": 47,
+      "axi_reads": 5,
+      "accepted_commands": 1,
+      "acked_responses": 1
+    },
+    "test_stale_ack_and_unsafe_parser_error_clear_do_not_mutate_proof": {
+      "pass_test": true,
+      "scenario": 3,
+      "cycles": 46,
+      "axi_writes": 4,
+      "axi_reads": 1,
+      "accepted_commands": 0,
+      "acked_responses": 0
+    }
+  },
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_control_regs.v": "96097f19c74d6e7c8564d2db06ce52001c62c5413ad71f9ac5d0d44e05f93ca3",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+    "rdma/rnic/kernel/rnic_regs.h": "10032bb69d98f6d2ee527c7f6f3b86c3407deb8bd0a46e782d481f6f36be52e3",
+    "rdma/rnic/tests/test_control_regs_rtl.py": "8f05463fe7d2bc07553f451800281240870c5147c5d50ec31f027227cf6d5c17"
+  }
+}

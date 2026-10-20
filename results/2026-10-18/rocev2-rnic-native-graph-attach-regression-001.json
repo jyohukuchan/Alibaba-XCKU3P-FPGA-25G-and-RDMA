@@ -1,0 +1,33 @@
+{
+  "scope": "Actual shared-C parent validation/UBSan plus static probe scope checks.\n\nParent metadata is a MODEL. Kernel auxiliary callbacks/MMIO are NOT executed.\nNo module loaded, BAR touched, RDMA device registered or user page pinned.\n",
+  "pass_test": true,
+  "hardware_verified": false,
+  "kernel_probe_or_remove_executed": false,
+  "MMIO_executed": false,
+  "module_loaded": false,
+  "ib_device_registered": false,
+  "user_pages_pinned": false,
+  "test_names": [
+    "test_exact_alias_control_only_and_identification_precedes_MMIO",
+    "test_exact_parent_and_actual_C_ABI",
+    "test_null_identity_refused",
+    "test_unmapped_or_unreviewed_BAR_geometry_refused",
+    "test_wrong_identity_old_application_and_full_high_bits_refused"
+  ],
+  "passed_names": [
+    "test_exact_alias_control_only_and_identification_precedes_MMIO",
+    "test_exact_parent_and_actual_C_ABI",
+    "test_null_identity_refused",
+    "test_unmapped_or_unreviewed_BAR_geometry_refused",
+    "test_wrong_identity_old_application_and_full_high_bits_refused"
+  ],
+  "source_sha256": {
+    "rdma/rnic/kernel/native_attach.c": "049fb3645372df936a2bd672232fd9f1d3f018c2e393be76f415706852ca1573",
+    "rdma/rnic/kernel/native_attach.h": "c75bc0317787962e5b803f04fee05e8f556614df85fcb40ea851148fa45d923b",
+    "rdma/rnic/kernel/native_regs.h": "1958df9642bd0c865d97c584cda9902fa689d9049b3f415c75f342dddd7b0b97",
+    "rdma/rnic/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/kernel/aux_control.c": "9b8e465f7bf0c230e12b41763bd558bad52cfbc41eda372fc4ce858dcba6f63b",
+    "rdma/rnic/kernel/Makefile": "b14e7cafd7509a8173f0546ee72dd213b928b5db1fe2451fa7fdb951815260d6",
+    "rdma/rnic/tests/test_native_attach.py": "2e4be8b6059f891772da7737c4aac920cdc6cf75a7ad9ef1d6baf19f360cde79"
+  }
+}

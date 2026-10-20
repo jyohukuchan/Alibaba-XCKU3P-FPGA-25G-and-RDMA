@@ -1,0 +1,11 @@
+{
+  "scope": "Actual SQ-fetch RTL, explicit read-backend/parent-drain/host DATA MODELS.\n\nNo native pinned/coherent allocation, actual PCIe, WQE authorization, outgoing\nRDMA or CQ completion is claimed by these controller-only units.\n",
+  "pass_test": false,
+  "methods": 0,
+  "tests": {},
+  "hardware_verified": false,
+  "actual_PCIe_engine": false,
+  "real_host_queue_mapping": false,
+  "standard_verbs_implemented": false,
+  "RDMA_completion_claim": false
+}

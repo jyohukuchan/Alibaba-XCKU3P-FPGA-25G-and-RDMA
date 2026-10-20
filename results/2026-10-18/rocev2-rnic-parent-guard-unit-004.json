@@ -1,0 +1,84 @@
+{
+  "scope": "Actual parent-proof RTL with explicit engine/status/RAM/TLP input models.",
+  "pass_test": true,
+  "hardware_verified": false,
+  "actual_PCIe_engine_exercised": false,
+  "tests": {
+    "test_RAM_pending_counter_never_wraps": {
+      "pass_test": true,
+      "scenario": 10,
+      "fault": 1,
+      "fault_code": 3
+    },
+    "test_current_TLP_offer_blocks_proof": {
+      "pass_test": true,
+      "scenario": 4,
+      "fault": 0,
+      "fault_code": 0
+    },
+    "test_current_and_sticky_engine_error_blocks_proof": {
+      "pass_test": true,
+      "scenario": 5,
+      "fault": 1,
+      "fault_code": 1
+    },
+    "test_descriptor_counter_never_wraps": {
+      "pass_test": true,
+      "scenario": 7,
+      "fault": 1,
+      "fault_code": 2
+    },
+    "test_each_segment_response_and_stalls_required": {
+      "pass_test": true,
+      "scenario": 3,
+      "fault": 0,
+      "fault_code": 0
+    },
+    "test_each_segment_write_done_required": {
+      "pass_test": true,
+      "scenario": 2,
+      "fault": 0,
+      "fault_code": 0
+    },
+    "test_read_status_and_actual_busy_both_required": {
+      "pass_test": true,
+      "scenario": 0,
+      "fault": 0,
+      "fault_code": 0
+    },
+    "test_real_error_completion_never_release_proof": {
+      "pass_test": true,
+      "scenario": 11,
+      "fault": 1,
+      "fault_code": 1
+    },
+    "test_unowned_status_faults_before_release": {
+      "pass_test": true,
+      "scenario": 6,
+      "fault": 1,
+      "fault_code": 2
+    },
+    "test_unsolicited_RAM_read_response_faults": {
+      "pass_test": true,
+      "scenario": 9,
+      "fault": 1,
+      "fault_code": 3
+    },
+    "test_unsolicited_RAM_write_done_faults": {
+      "pass_test": true,
+      "scenario": 8,
+      "fault": 1,
+      "fault_code": 3
+    },
+    "test_write_status_and_actual_busy_both_required": {
+      "pass_test": true,
+      "scenario": 1,
+      "fault": 0,
+      "fault_code": 0
+    }
+  },
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_pcie_parent_guard.v": "dd4e1ae98ef2525122fdc95274db860f3be83a703e73a097c3cd4b013da26ce6",
+    "rdma/rnic/tests/test_pcie_parent_guard_rtl.py": "52dbca4cc1a25f0e75027d52392771624c281d5de581aba455d8cf8b81613abd"
+  }
+}

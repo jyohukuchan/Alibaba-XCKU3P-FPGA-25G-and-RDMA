@@ -1,0 +1,127 @@
+{
+  "scope": "Actual kernel CQ/SQ/MR consumes exact whole generated-HLS/native CQ bytes.\n\nRequire successful current-source native CQ evidence (two RECVs, or separate\nREAD/WRITE/SEND requester runs). Software WQE\nencoding and full-owner matching are real C; Linux primitives, physical page\npins/DMA/MMIO and teardown controller are explicit models. Not a registered\nib_device, loaded kernel driver, live physical host or hardware assertion.\n",
+  "pass_test": true,
+  "hardware_verified": false,
+  "requester_CQ": true,
+  "source_sha256": {
+    "rdma/rnic/kernel/mr.c": "fafe25e2d81236cd155436dd4a5d723662ac6cd4872824655ecf438b1c43feab",
+    "rdma/rnic/kernel/mr_contract.c": "fba5388020b03409654f46dfce12aed7a9f4776dc22c32a964a3aecf69da6adf",
+    "rdma/rnic/kernel/wqe.c": "9b5913e193de67aec3ce2880004819250da766677f54495b28c1050cb31541db",
+    "rdma/rnic/kernel/verbs_wqe.c": "f10dac55c02c367a8b077df8353ad0900f9bdcdbc3d845a2823e919481650b50",
+    "rdma/rnic/kernel/sq.c": "1ea277303ef8e426ca8874bae46623624a9262e41254ab946aa4a016d3bbab11",
+    "rdma/rnic/kernel/sq_io.c": "d8184a73e256141b62d8465a14632bab4a535cadcdf000db2141436b1a176db6",
+    "rdma/rnic/kernel/sq_hw.c": "868e0095a0e7e382b6064aff5f86d5067db096e77195902ef9dec2377140803d",
+    "rdma/rnic/kernel/cq_io.c": "19a7267238af0ba0f51a9ce958647a88cb9b08b676b2ba47ae8ed9e03243de2e",
+    "rdma/rnic/kernel/cq_hw.c": "62727e3661de59f10456deffcc864920746a196fc80ec9226498b6945684fe33",
+    "rdma/rnic/kernel/cq.c": "9dd2c1f8b547ac6c86b42bd48a583a99b8c3d42e99a677ab93cd26a0f09785bb",
+    "rdma/rnic/tests/kernel_queue_model.c": "040e9a6c3ec021996f8af51f50d180043cf440933f13d116bbdb04f0b92ce240",
+    "rdma/rnic/tests/kernel_native_request_cq.c": "963f14911ec08d1de1f28eb9fe891917e18bd90ddabc8460c74427643ebb0901",
+    "rdma/rnic/kernel/rnic_regs.h": "ac8eb5d6e53b62748ada3bc140e04ac9d8f00cfcf626cae2db7091036749ad4f",
+    "rdma/rnic/kernel/qp_hw.h": "79744b42f6e83c02e0ce1acc9d7e1f34a470c1dba95241f504278c3aa21cd9b2",
+    "rdma/rnic/kernel/rnic_hw.h": "87f084df23fa172ddc76fbcffb30338a5d9a28e68fd08ec3f54157317f9960f7",
+    "rdma/rnic/kernel/cq_regs.h": "e0fa968451328e83a3b6b3d21942ca78393c7c4b8fad142228c26306a6a11a80",
+    "rdma/rnic/kernel/sq.h": "e4819c7c81f370f7aa0c20ad8fedefc247dce40276f17a6850bef64c6b8a0260",
+    "rdma/rnic/kernel/sq_io.h": "62d24ec34b1951b0d95457b2b70d281878dd0df3b20bed23b0e4895a46a5af11",
+    "rdma/rnic/kernel/mqnic_graph.h": "c7e78ac4f98d8841fbc1e9f7a531cffa9f675be00710295da7183fd22864dc2b",
+    "rdma/rnic/kernel/cq_hw.h": "9cfbf94b2a7ebcfcc4465b761fb6ccf4c93844b7dd67d8e3f7e81983e5e0e673",
+    "rdma/rnic/kernel/native_attach.h": "c75bc0317787962e5b803f04fee05e8f556614df85fcb40ea851148fa45d923b",
+    "rdma/rnic/kernel/retry_io.h": "aad5018d4cb7292ef0240f09f1495453030f5211c98999fa0edec5b0fbee9167",
+    "rdma/rnic/kernel/cq.h": "8fa35025b2c276de11d026dcb1cf9d324637dba1fb3e743c0261f447447a44a4",
+    "rdma/rnic/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/kernel/wqe.h": "60c14ee73ac4af3b458ad8f584d99ab20abff76984e2e7bf08e17d639193b90a",
+    "rdma/rnic/kernel/native_regs.h": "1958df9642bd0c865d97c584cda9902fa689d9049b3f415c75f342dddd7b0b97",
+    "rdma/rnic/kernel/device.h": "830ced5f865bb1af7f7e73ed3e952fa1f745934f1500d4e2f2090e2511274f41",
+    "rdma/rnic/kernel/verbs.h": "9f2623733d2dd8c326c62489130ca427a46790e2b63284ee3022ab0ca3c341e6",
+    "rdma/rnic/kernel/sq_regs.h": "fcd382943783b06aab4d95e1e78a30d028b1f9dadf110d094343d11acea10264",
+    "rdma/rnic/kernel/rnic_io.h": "92999a3752af6fce6c8556c9c2724ce85918949966f35d2420695e8671d0ffc3",
+    "rdma/rnic/kernel/mr.h": "427c947b5e8491e4444cf1fd0e726cfbcdfdae00113020ec67b7e7f314c5cfc3",
+    "rdma/rnic/kernel/sq_hw.h": "4280c3c0ba5e532fbce85f012697b538d79be4590eb468f86d45badec0602162",
+    "rdma/rnic/kernel/cq_io.h": "63e9fb53011dc9c113007223d1c8dc63d6e27f035afdd60bf4985f6efe9eb27f",
+    "rdma/rnic/kernel/native_graph.h": "d2d0d4722d0e336fcc9649c3d0dc6b758c587a6398555424da1d16d773b39555",
+    "rdma/rnic/tests/kernel_cq_cases.c": "5e602b67eaf02e4d349e6ecceb66db78fb95e779403a0235d00c89c7c4c4480e",
+    "rdma/rnic/tests/kernel_cq_model.h": "24c0bf4342d2f4034070ecfebf4caf6132ba99b8f5b2ad0e8f83da95bb13fb57",
+    "rdma/rnic/tests/kernel_sq_hw_cases.c": "437c7b48ee11f834177c4ee8364c6ca877bf5b05ac68f3223a5f0507194454c0",
+    "rdma/rnic/tests/kernel_queue_model.h": "dd81495969b0c84686d205c80b96d730eeaedc4371287935903efe1f3d85bea7",
+    "rdma/rnic/tests/kernel_sq_hw_model.h": "3e4db9a8dfb956b8c748912fa99ba8ded276bf10529463198f398a077d65c771",
+    "rdma/rnic/build/native-retry-main-2teilm1p/READ-event.hex": "061cae5d25dd47b2553e0633ada50ef75caebba95528921420a232e60b3626ef",
+    "rdma/rnic/build/native-retry-main-2teilm1p/READ-records.hex": "492084ee778542b560856f46748d0eabb9674a79f4767024ad5789041553019e",
+    "rdma/rnic/build/native-retry-main-2teilm1p/WRITE-event.hex": "88abd11f823c9a071ca5c4182aa64bfd3f020dd3a85a65dfab34834e911beeba",
+    "rdma/rnic/build/native-retry-main-2teilm1p/WRITE-records.hex": "a91940fe4138fa24b8fbdb9743ab305ff30cb6760783d2ff2d6d066188851bc9",
+    "rdma/rnic/build/native-retry-main-2teilm1p/SEND-event.hex": "745fbb8bef63530941dbfe1734664358a9fcfabbd860a4bac8361901c9549223",
+    "rdma/rnic/build/native-retry-main-2teilm1p/SEND-records.hex": "014a3e2d78c448be9a08e07d4f4654cbf46bfa5cb29700e3e7c64effac7e3858",
+    "results/2026-10-18/rocev2-rnic-recv-cancel-READ-WRITE-regression-001.json": "924d1501f80d577b36ea86972b3d33e7cfa9667601cc21cbd9e6ecec7659e152",
+    "rdma/rnic/tests/probe_kernel_native_receive_cq.py": "5e57421b22667b016a7eb42e38fe5abcabc24cedece3fa86647064b9521855ef"
+  },
+  "native_report": "results/2026-10-18/rocev2-rnic-recv-cancel-READ-WRITE-regression-001.json",
+  "native_CQ_snapshots_unedited": true,
+  "real_Linux_kernel_primitives": false,
+  "ib_device_registered": false,
+  "simulation_limit_seconds": 10,
+  "compile_seconds": 3.8427249619853683,
+  "tests": {
+    "READ": {
+      "simulation_seconds": 0.012687399983406067,
+      "output": "KERNEL_NATIVE_REQUEST_CQ_RESULT {\"pass_test\":true,\"opcode\":2,\"native_CQ_snapshots_unedited\":true,\"software_native_WQE_bytes_identical\":true,\"actual_CQ_and_MR_release\":true,\"hardware_verified\":false}\n",
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "native_CQ_snapshots_unedited": true,
+        "software_native_WQE_bytes_identical": true,
+        "actual_CQ_and_MR_release": true,
+        "hardware_verified": false
+      }
+    },
+    "WRITE": {
+      "simulation_seconds": 0.012134137010434642,
+      "output": "KERNEL_NATIVE_REQUEST_CQ_RESULT {\"pass_test\":true,\"opcode\":1,\"native_CQ_snapshots_unedited\":true,\"software_native_WQE_bytes_identical\":true,\"actual_CQ_and_MR_release\":true,\"hardware_verified\":false}\n",
+      "summary": {
+        "pass_test": true,
+        "opcode": 1,
+        "native_CQ_snapshots_unedited": true,
+        "software_native_WQE_bytes_identical": true,
+        "actual_CQ_and_MR_release": true,
+        "hardware_verified": false
+      }
+    },
+    "SEND": {
+      "simulation_seconds": 0.011784034984884784,
+      "output": "KERNEL_NATIVE_REQUEST_CQ_RESULT {\"pass_test\":true,\"opcode\":3,\"native_CQ_snapshots_unedited\":true,\"software_native_WQE_bytes_identical\":true,\"actual_CQ_and_MR_release\":true,\"hardware_verified\":false}\n",
+      "summary": {
+        "pass_test": true,
+        "opcode": 3,
+        "native_CQ_snapshots_unedited": true,
+        "software_native_WQE_bytes_identical": true,
+        "actual_CQ_and_MR_release": true,
+        "hardware_verified": false
+      }
+    }
+  },
+  "source_unchanged": true,
+  "simulation_seconds": 0.03660557197872549,
+  "summary": {
+    "READ": {
+      "pass_test": true,
+      "opcode": 2,
+      "native_CQ_snapshots_unedited": true,
+      "software_native_WQE_bytes_identical": true,
+      "actual_CQ_and_MR_release": true,
+      "hardware_verified": false
+    },
+    "WRITE": {
+      "pass_test": true,
+      "opcode": 1,
+      "native_CQ_snapshots_unedited": true,
+      "software_native_WQE_bytes_identical": true,
+      "actual_CQ_and_MR_release": true,
+      "hardware_verified": false
+    },
+    "SEND": {
+      "pass_test": true,
+      "opcode": 3,
+      "native_CQ_snapshots_unedited": true,
+      "software_native_WQE_bytes_identical": true,
+      "actual_CQ_and_MR_release": true,
+      "hardware_verified": false
+    }
+  }
+}

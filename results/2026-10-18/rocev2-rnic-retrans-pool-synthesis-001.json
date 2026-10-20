@@ -1,0 +1,36 @@
+{
+  "scope": "Isolated actual Vivado synthesis/BRAM/generation-reset wiring checks.\n\nNot placement/routing/full-board timing/CDC, post-synthesis functional replay,\nactual FNS integration, hard reconfiguration/power-loss recovery or hardware.\n",
+  "pass_test": false,
+  "terminal_exit_status": 1,
+  "retained_directory": "rdma/rnic/build/retrans-pool-synth-nckj9mkk",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_retrans_pool.v": "d8e85255df334e8423e7d7bb5509884c962cba6c4e08593a516f528a4b0d2d92",
+    "rdma/rnic/fpga/retrans_pool_synth.tcl": "0e581c373b875b8f15ce99b4dbaeadc8ccf8912e9043e69f831203fe8bba9f9f",
+    "rdma/rnic/tests/probe_retrans_pool_synthesis.py": "0d720facb44701ed31dbde3b189652148fc21a65f035ab50120222fdcaf71f1a",
+    "results/2026-10-18/rocev2-rnic-retrans-pool-unit-002.json": "3821e7777ae38ea276adf06e0920ebcd170ae17e728e16847c348cb3ba04ba24"
+  },
+  "frozen_source_sha256": {
+    "rocev2_retrans_pool.v": "d8e85255df334e8423e7d7bb5509884c962cba6c4e08593a516f528a4b0d2d92",
+    "probe_retrans_pool_synthesis.py": "0d720facb44701ed31dbde3b189652148fc21a65f035ab50120222fdcaf71f1a",
+    "retrans_pool_synth.tcl": "0e581c373b875b8f15ce99b4dbaeadc8ccf8912e9043e69f831203fe8bba9f9f",
+    "rocev2-rnic-retrans-pool-unit-002.json": "3821e7777ae38ea276adf06e0920ebcd170ae17e728e16847c348cb3ba04ba24"
+  },
+  "capacity": 2000,
+  "clock_period_ns": 4.0,
+  "actual_isolated_synthesis": true,
+  "physical_signoff": false,
+  "actual_FNS_process_integrated": false,
+  "hardware_verified": false,
+  "construction_seconds": 7.781327345990576,
+  "error": "pool synthesis/retention checks failed; retain /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/retrans-pool-synth-nckj9mkk",
+  "error_type": "RuntimeError",
+  "artifact_sha256": {
+    "rdma/rnic/build/retrans-pool-synth-nckj9mkk/synthesis.log": "3bb09f5b528b41453aa9ae9c1ee190fcc30a656b080090f06f0822b24efe3b1a",
+    "rdma/rnic/build/retrans-pool-synth-nckj9mkk/command.json": "f9c353938d4ac6bf438fa6777bb0b5f1f89bb685625beede534e89d29ef65f22",
+    "rdma/rnic/build/retrans-pool-synth-nckj9mkk/inputs/rocev2_retrans_pool.v": "d8e85255df334e8423e7d7bb5509884c962cba6c4e08593a516f528a4b0d2d92",
+    "rdma/rnic/build/retrans-pool-synth-nckj9mkk/inputs/inputs.sha256": "5961d0882ce94f229b23616e5091180f86921e04a33689cea3e57a8dbe63671c",
+    "rdma/rnic/build/retrans-pool-synth-nckj9mkk/inputs/probe_retrans_pool_synthesis.py": "0d720facb44701ed31dbde3b189652148fc21a65f035ab50120222fdcaf71f1a",
+    "rdma/rnic/build/retrans-pool-synth-nckj9mkk/inputs/retrans_pool_synth.tcl": "0e581c373b875b8f15ce99b4dbaeadc8ccf8912e9043e69f831203fe8bba9f9f",
+    "rdma/rnic/build/retrans-pool-synth-nckj9mkk/inputs/rocev2-rnic-retrans-pool-unit-002.json": "3821e7777ae38ea276adf06e0920ebcd170ae17e728e16847c348cb3ba04ba24"
+  }
+}

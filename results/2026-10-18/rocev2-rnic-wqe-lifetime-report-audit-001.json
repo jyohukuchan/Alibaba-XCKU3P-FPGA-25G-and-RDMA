@@ -1,0 +1,13 @@
+{
+  "scope": "Immutable failed test report audit, never a passing validation.",
+  "report": "results/2026-10-18/rocev2-rnic-wqe-lifetime-unit-001.json",
+  "terminal_exit_status": 1,
+  "session": 46564,
+  "log": "rdma/logs/rnic-wqe-lifetime-unit-001.log",
+  "recorded_pass_test": true,
+  "recorded_methods": 9,
+  "recorded_simulations": 61,
+  "expected_simulations_at_that_revision": 67,
+  "report_pass_flag_is_invalid": true,
+  "reason": "Positive-method READ permutations appended records before WRITE stimulus import failed. Original criterion counted method keys only and incorrectly emitted pass_test=true despite terminal ImportError. Process/log and incomplete simulation count prove FAILURE. Preserved immutable; report criteria now require complete method AND simulation counts and terminal0."
+}

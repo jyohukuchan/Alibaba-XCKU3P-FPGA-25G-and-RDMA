@@ -1,0 +1,386 @@
+{
+  "scope": "Candidate wire Atomic -> real MR -> exclusive arbiter -> paged RAM/DMA.\n\nPhysical descriptor engine, host storage and visibility ordering are MODELS.\nIntegrity/peer admission is an explicit upstream contract, NOT exercised here.\nThis is not native/shared-HLS QP integration, requester, standard verbs, timing\nor physical atomicity evidence. All simulations <=30s; no device is opened.\n",
+  "pass_test": true,
+  "run": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic-responder-18b45ayp",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_atomic_responder.v": "0fb93c5a7d17a546e4b1edf2064a6f4cce5355a85a25df9cc3dc9f1ba57235ae",
+    "rdma/rnic/rtl/rocev2_atomic_memory_bridge.v": "5d088b5090b58ba18b8dd62dee8cfbe4c64cc58bbdefe8e9c609710e868eb1b4",
+    "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "1c1f0b98d23d9a9cd9400c10545a1d4ce4202812cc400a1ae28e6505760e4e09",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/rtl/rocev2_paged_memory_backend.v": "268d72371e5717fc13e009a5e881b34b91c459a1193afc42d760246d8e4e3bd6",
+    "rdma/rnic/rtl/rocev2_page_dma_engine.v": "a8801822361c399716c6336c4887612804d019701d2f357d1964788e9d6c9b24",
+    "rdma/rnic/rtl/rocev2_mr_page_table.v": "7cebd68efbf32f25f2a44f933c8d90231d5e9a185348ab0ab73def4235406239",
+    "rdma/rnic/rtl/rocev2_corundum_dma_backend.v": "f713c19873b8a52f4f038ab22bcc816dfc0d65b7fca72a75c73e2499cd2dd943",
+    "external/corundum/fpga/lib/pcie/rtl/dma_client_axis_sink.v": "a1e03efa7a8810a967b1e4a6b68fc75b0cbfc6f6a2ac137b9aa7321001029dd5",
+    "external/corundum/fpga/lib/pcie/rtl/dma_client_axis_source.v": "e2dc4b2ab3ed88e2d6256e3ebcb7470fe0b11249a1616bbd1746460399ba5044",
+    "external/corundum/fpga/lib/pcie/rtl/dma_psdpram.v": "5d06400fe8c45ff27a0eaabb33206b684b2f2c5adf59353fcabe891e9ac29513",
+    "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c910018a2e8a9d77e649437f9a7727f5cf2fd9c02cb20ab92016b5209a3a189e",
+    "rdma/rnic/tests/test_paged_memory_backend_rtl.py": "860ebddc40c0bbff2f8eed74da2a1339b0c7b982bbcfa4b00fa73913e2d63ba2"
+  },
+  "simulation_limit_seconds": 30,
+  "hardware_verified": false,
+  "native_integrated": false,
+  "standard_verbs": false,
+  "shared_HLS_QP_table": false,
+  "integrity_peer_admission_model": true,
+  "physical_descriptor_host_visibility_model": true,
+  "atomic_capability_advertised": false,
+  "bench_sha256": "fa215ba535f315dfb03936d391b01984cd97c76485454b89f8295a62ed504ad7",
+  "compile_seconds": 0.07697460800409317,
+  "actual_elaborated_module_counts": {
+    "rocev2_atomic_responder": 1,
+    "rocev2_atomic_memory_bridge": 1,
+    "rocev2_memory_client_arbiter": 1,
+    "rocev2_mr_table": 1,
+    "rocev2_mr_page_table": 1,
+    "rocev2_paged_memory_backend": 1,
+    "rocev2_corundum_dma_backend": 1,
+    "dma_psdpram": 1
+  },
+  "tests": {
+    "0": {
+      "seconds": 0.20038444898091257,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "cycles": 690,
+        "executed": 4,
+        "replayed": 2,
+        "dropped": 0,
+        "commands": 7,
+        "physical_reads": 7,
+        "physical_writes": 3,
+        "fences": 3
+      },
+      "independent_wire_replies": [
+        {
+          "wire_hex": "1200ffff00f1234500fffffe1ffffffff123456789abcdef",
+          "bytes": 24,
+          "wire_oracle_pass": true
+        },
+        {
+          "wire_hex": "1200ffff00f1234500fffffe1ffffffff123456789abcdef",
+          "bytes": 24,
+          "wire_oracle_pass": true
+        },
+        {
+          "wire_hex": "1200ffff00f1234500ffffff1f0000008123456789abcdef",
+          "bytes": 24,
+          "wire_oracle_pass": true
+        },
+        {
+          "wire_hex": "1200ffff00f12345000000001f0000018123456789abcdef",
+          "bytes": 24,
+          "wire_oracle_pass": true
+        },
+        {
+          "wire_hex": "1200ffff00f12346001234561fffffff0000000000000000",
+          "bytes": 24,
+          "wire_oracle_pass": true
+        },
+        {
+          "wire_hex": "1200ffff00f12346001234561fffffff0000000000000000",
+          "bytes": 24,
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "1": {
+      "seconds": 0.14090320601826534,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "cycles": 262,
+        "executed": 1,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 3,
+        "physical_reads": 3,
+        "physical_writes": 1,
+        "fences": 1
+      },
+      "independent_wire_replies": [
+        {
+          "wire_hex": "1200ffff00f1234500fffffe1ffffffff123456789abcdef",
+          "bytes": 24,
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "2": {
+      "seconds": 0.11130356398643926,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "cycles": 70,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      },
+      "independent_wire_replies": [
+        {
+          "wire_hex": "1100ffff00f1234500fffffe62fffffe",
+          "bytes": 16,
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "3": {
+      "seconds": 0.1115116239816416,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "cycles": 70,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      },
+      "independent_wire_replies": [
+        {
+          "wire_hex": "1100ffff00f123470034567862fffffe",
+          "bytes": 16,
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "4": {
+      "seconds": 0.1098425299860537,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "cycles": 70,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      },
+      "independent_wire_replies": [
+        {
+          "wire_hex": "1100ffff00f1234500fffffe62fffffe",
+          "bytes": 16,
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "5": {
+      "seconds": 0.10863481400883757,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "cycles": 70,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      },
+      "independent_wire_replies": [
+        {
+          "wire_hex": "1100ffff00f1234500fffffe62fffffe",
+          "bytes": 16,
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "6": {
+      "seconds": 0.10731772502185777,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "cycles": 65,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      },
+      "independent_wire_replies": [
+        {
+          "wire_hex": "1100ffff00f1234500fffffe61fffffe",
+          "bytes": 16,
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "7": {
+      "seconds": 0.14363209099974483,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "cycles": 264,
+        "executed": 1,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 2,
+        "physical_reads": 2,
+        "physical_writes": 1,
+        "fences": 1
+      },
+      "independent_wire_replies": [
+        {
+          "wire_hex": "1100ffff00f1234500fffffe60fffffe",
+          "bytes": 16,
+          "wire_oracle_pass": true
+        },
+        {
+          "wire_hex": "1200ffff00f1234500fffffe1ffffffff123456789abcdef",
+          "bytes": 24,
+          "wire_oracle_pass": true
+        },
+        {
+          "wire_hex": "1100ffff00f1234500fffffe61ffffff",
+          "bytes": 16,
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "8": {
+      "seconds": 0.14887523298966698,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "cycles": 253,
+        "executed": 1,
+        "replayed": 0,
+        "dropped": 2,
+        "commands": 2,
+        "physical_reads": 2,
+        "physical_writes": 1,
+        "fences": 1
+      },
+      "independent_wire_replies": [
+        {
+          "wire_hex": "1200ffff00f1234500fffffe1ffffffff123456789abcdef",
+          "bytes": 24,
+          "wire_oracle_pass": true
+        }
+      ]
+    },
+    "9": {
+      "seconds": 0.17978519102325663,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "cycles": 746,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 1,
+        "physical_reads": 1,
+        "physical_writes": 0,
+        "fences": 0
+      },
+      "independent_wire_replies": []
+    },
+    "10": {
+      "seconds": 0.17915807600365952,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "cycles": 746,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 2,
+        "physical_reads": 1,
+        "physical_writes": 1,
+        "fences": 0
+      },
+      "independent_wire_replies": []
+    },
+    "11": {
+      "seconds": 0.18118204100755975,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "cycles": 746,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 2,
+        "physical_reads": 2,
+        "physical_writes": 1,
+        "fences": 1
+      },
+      "independent_wire_replies": []
+    },
+    "12": {
+      "seconds": 0.17983771400758997,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "cycles": 746,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 1,
+        "physical_reads": 1,
+        "physical_writes": 0,
+        "fences": 0
+      },
+      "independent_wire_replies": []
+    },
+    "13": {
+      "seconds": 0.17843890900257975,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "cycles": 414,
+        "executed": 2,
+        "replayed": 0,
+        "dropped": 1,
+        "commands": 4,
+        "physical_reads": 4,
+        "physical_writes": 2,
+        "fences": 2
+      },
+      "independent_wire_replies": [
+        {
+          "wire_hex": "1200ffff00f1234500fffffe1ffffffff123456789abcdef",
+          "bytes": 24,
+          "wire_oracle_pass": true
+        },
+        {
+          "wire_hex": "1200ffff00f1234500ffffff1f000000f123456789abcdf0",
+          "bytes": 24,
+          "wire_oracle_pass": true
+        }
+      ]
+    }
+  },
+  "source_unchanged": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/atomic-responder-18b45ayp/tb.v": "fa215ba535f315dfb03936d391b01984cd97c76485454b89f8295a62ed504ad7",
+    "rdma/rnic/build/atomic-responder-18b45ayp/test.vvp": "67041d20341a43c319e482ad2273c0fed03210f880737f3137eff6b2841c9960"
+  }
+}

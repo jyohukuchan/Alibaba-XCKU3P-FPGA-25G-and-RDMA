@@ -1,0 +1,96 @@
+{
+  "scope": "Real standalone registered-memory authorization RTL, not integrated RNIC/native DMA",
+  "hardware_verified": false,
+  "board_integrated": false,
+  "complete": true,
+  "tests": {
+    "test_64bit_exclusive_end_and_overflow_boundaries": {
+      "pass_test": true,
+      "management_commands": 6,
+      "queries": 10,
+      "stalled_cycles": 48,
+      "cycles": 122
+    },
+    "test_all_slots_full_keys_domains_and_invalidation": {
+      "pass_test": true,
+      "management_commands": 24,
+      "queries": 48,
+      "stalled_cycles": 216,
+      "cycles": 532
+    },
+    "test_atomic_permissions_virtual_and_dma_alignment": {
+      "pass_test": true,
+      "management_commands": 3,
+      "queries": 8,
+      "stalled_cycles": 33,
+      "cycles": 84
+    },
+    "test_deterministic_randomized_management_and_query_scoreboard": {
+      "pass_test": true,
+      "management_commands": 82,
+      "queries": 318,
+      "stalled_cycles": 1200,
+      "cycles": 2886
+    },
+    "test_epoch_invalid_seed_double_seed_and_generation_exhaustion": {
+      "pass_test": true,
+      "management_commands": 8,
+      "queries": 1,
+      "stalled_cycles": 27,
+      "cycles": 75
+    },
+    "test_explicit_epoch_required_before_registration_or_lookup": {
+      "pass_test": true,
+      "management_commands": 4,
+      "queries": 2,
+      "stalled_cycles": 18,
+      "cycles": 56
+    },
+    "test_failed_management_never_changes_active_region": {
+      "pass_test": true,
+      "management_commands": 7,
+      "queries": 6,
+      "stalled_cycles": 39,
+      "cycles": 102
+    },
+    "test_generation_exhaustion_refuses_reuse": {
+      "pass_test": true,
+      "management_commands": 5,
+      "queries": 5,
+      "stalled_cycles": 30,
+      "cycles": 79
+    },
+    "test_management_payload_is_captured_and_lost_quiescence_aborts": {
+      "pass_test": true,
+      "management_commands": 3,
+      "queries": 3,
+      "stalled_cycles": 12,
+      "cycles": 43
+    },
+    "test_new_epoch_rejects_pre_reset_key": {
+      "pass_test": true,
+      "management_commands": 5,
+      "queries": 3,
+      "stalled_cycles": 24,
+      "cycles": 70
+    },
+    "test_permission_matrix_and_unknown_operations": {
+      "pass_test": true,
+      "management_commands": 26,
+      "queries": 240,
+      "stalled_cycles": 798,
+      "cycles": 1892
+    },
+    "test_reconfiguration_waits_for_result_and_external_quiescence": {
+      "pass_test": true,
+      "management_commands": 2,
+      "queries": 2,
+      "stalled_cycles": 6,
+      "cycles": 37
+    }
+  },
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/tests/test_mr_table_rtl.py": "d73ea8a0c6c9dbf96f99cef0a2c426983fc7d4dae0e20ab031416a9d314fb77c"
+  }
+}

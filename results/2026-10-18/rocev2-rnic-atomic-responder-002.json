@@ -1,0 +1,262 @@
+{
+  "scope": "Candidate wire Atomic -> real MR -> exclusive arbiter -> paged RAM/DMA.\n\nPhysical descriptor engine, host storage and visibility ordering are MODELS.\nIntegrity/peer admission is an explicit upstream contract, NOT exercised here.\nThis is not native/shared-HLS QP integration, requester, standard verbs, timing\nor physical atomicity evidence. All simulations <=30s; no device is opened.\n",
+  "pass_test": true,
+  "run": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/atomic-responder-dumujzo1",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_atomic_responder.v": "952054f56c886ede6ad685ed9793a5b56fd12b60b867dfc9edd422411479ff04",
+    "rdma/rnic/rtl/rocev2_atomic_memory_bridge.v": "5d088b5090b58ba18b8dd62dee8cfbe4c64cc58bbdefe8e9c609710e868eb1b4",
+    "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "1c1f0b98d23d9a9cd9400c10545a1d4ce4202812cc400a1ae28e6505760e4e09",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/rtl/rocev2_paged_memory_backend.v": "268d72371e5717fc13e009a5e881b34b91c459a1193afc42d760246d8e4e3bd6",
+    "rdma/rnic/rtl/rocev2_page_dma_engine.v": "a8801822361c399716c6336c4887612804d019701d2f357d1964788e9d6c9b24",
+    "rdma/rnic/rtl/rocev2_mr_page_table.v": "7cebd68efbf32f25f2a44f933c8d90231d5e9a185348ab0ab73def4235406239",
+    "rdma/rnic/rtl/rocev2_corundum_dma_backend.v": "f713c19873b8a52f4f038ab22bcc816dfc0d65b7fca72a75c73e2499cd2dd943",
+    "external/corundum/fpga/lib/pcie/rtl/dma_client_axis_sink.v": "a1e03efa7a8810a967b1e4a6b68fc75b0cbfc6f6a2ac137b9aa7321001029dd5",
+    "external/corundum/fpga/lib/pcie/rtl/dma_client_axis_source.v": "e2dc4b2ab3ed88e2d6256e3ebcb7470fe0b11249a1616bbd1746460399ba5044",
+    "external/corundum/fpga/lib/pcie/rtl/dma_psdpram.v": "5d06400fe8c45ff27a0eaabb33206b684b2f2c5adf59353fcabe891e9ac29513",
+    "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c5a1b6a0f507e080bb7b69adba900a0262a6f652e7b3246d831c99d7d1a9a1c0",
+    "rdma/rnic/tests/test_paged_memory_backend_rtl.py": "860ebddc40c0bbff2f8eed74da2a1339b0c7b982bbcfa4b00fa73913e2d63ba2"
+  },
+  "simulation_limit_seconds": 30,
+  "hardware_verified": false,
+  "native_integrated": false,
+  "standard_verbs": false,
+  "shared_HLS_QP_table": false,
+  "integrity_peer_admission_model": true,
+  "physical_descriptor_host_visibility_model": true,
+  "atomic_capability_advertised": false,
+  "bench_sha256": "9fe9ba7b2d18b3df7ea8bcf3a480b703f068214d38fe7879ff91c37dd87b001f",
+  "compile_seconds": 0.07872148702153936,
+  "tests": {
+    "0": {
+      "seconds": 0.20038027199916542,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "cycles": 690,
+        "executed": 4,
+        "replayed": 2,
+        "dropped": 0,
+        "commands": 7,
+        "physical_reads": 7,
+        "physical_writes": 3,
+        "fences": 3
+      }
+    },
+    "1": {
+      "seconds": 0.1359147149778437,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "cycles": 262,
+        "executed": 1,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 3,
+        "physical_reads": 3,
+        "physical_writes": 1,
+        "fences": 1
+      }
+    },
+    "2": {
+      "seconds": 0.10827476700069383,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "cycles": 70,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      }
+    },
+    "3": {
+      "seconds": 0.10853129799943417,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "cycles": 70,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      }
+    },
+    "4": {
+      "seconds": 0.10888239499763586,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "cycles": 70,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      }
+    },
+    "5": {
+      "seconds": 0.10994260097504593,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "cycles": 70,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      }
+    },
+    "6": {
+      "seconds": 0.1087609389796853,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "cycles": 65,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 0,
+        "physical_reads": 0,
+        "physical_writes": 0,
+        "fences": 0
+      }
+    },
+    "7": {
+      "seconds": 0.14008004099014215,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "cycles": 264,
+        "executed": 1,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 2,
+        "physical_reads": 2,
+        "physical_writes": 1,
+        "fences": 1
+      }
+    },
+    "8": {
+      "seconds": 0.13984313601395115,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "cycles": 253,
+        "executed": 1,
+        "replayed": 0,
+        "dropped": 2,
+        "commands": 2,
+        "physical_reads": 2,
+        "physical_writes": 1,
+        "fences": 1
+      }
+    },
+    "9": {
+      "seconds": 0.16192000699811615,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "cycles": 746,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 1,
+        "physical_reads": 1,
+        "physical_writes": 0,
+        "fences": 0
+      }
+    },
+    "10": {
+      "seconds": 0.16117884099367075,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "cycles": 746,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 2,
+        "physical_reads": 1,
+        "physical_writes": 1,
+        "fences": 0
+      }
+    },
+    "11": {
+      "seconds": 0.16158420700230636,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "cycles": 746,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 2,
+        "physical_reads": 2,
+        "physical_writes": 1,
+        "fences": 1
+      }
+    },
+    "12": {
+      "seconds": 0.16521921902312897,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "cycles": 746,
+        "executed": 0,
+        "replayed": 0,
+        "dropped": 0,
+        "commands": 1,
+        "physical_reads": 1,
+        "physical_writes": 0,
+        "fences": 0
+      }
+    },
+    "13": {
+      "seconds": 0.1605453719967045,
+      "exit_code": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "cycles": 414,
+        "executed": 2,
+        "replayed": 0,
+        "dropped": 1,
+        "commands": 4,
+        "physical_reads": 4,
+        "physical_writes": 2,
+        "fences": 2
+      }
+    }
+  },
+  "source_unchanged": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/atomic-responder-dumujzo1/tb.v": "9fe9ba7b2d18b3df7ea8bcf3a480b703f068214d38fe7879ff91c37dd87b001f",
+    "rdma/rnic/build/atomic-responder-dumujzo1/test.vvp": "c2aa149762b12308063049d3318226229905b04f15ee86b637fba4b780121322"
+  }
+}

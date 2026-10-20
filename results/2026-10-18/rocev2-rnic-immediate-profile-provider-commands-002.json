@@ -1,0 +1,60 @@
+{
+  "scope": "Real public ibv APIs/provider/installed libibverbs command serialization.\n\nOnly fake-fd ioctl/write replies model the kernel. Library ABI initialization\nenumerates RDMA devices read-only, but opens NO real NIC context. No provider\ninstallation, kernel load, FPGA, network or hardware runtime test occurs.\n",
+  "pass_test": true,
+  "source_sha256": {
+    "rdma/rnic/tests/provider_commands.c": "88665c39dd254735da8fdb07a4d54097fe15a68814cd4bf06e3b2579012c0dd8",
+    "rdma/rnic/provider/as02.c": "377c4b056e45a1d9031689d6e795176177eab60649b3a9ac9208738e9df106e3",
+    "rdma/rnic/tests/probe_provider_commands.py": "cb1ab6bcf540e427c00f1e042a91673ce81b2e32fd64dc7634a7297f9959f8ec"
+  },
+  "rdma_core_commit": "bc6b4bc134532e952fe7f8efc251e1f89b912098",
+  "provider_PABI": 34,
+  "hardware_verified": false,
+  "provider_installed": false,
+  "kernel_loaded": false,
+  "real_NIC_opened": false,
+  "simulation_limit_seconds": 10,
+  "compile_seconds": 0.8010648940107785,
+  "command": [
+    "cc",
+    "-std=gnu11",
+    "-D_GNU_SOURCE",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-O1",
+    "-g",
+    "-fsanitize=address,undefined",
+    "-fno-sanitize-recover=undefined",
+    "-isystem",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0/build/include",
+    "-isystem",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/provider_commands.c",
+    "-pthread",
+    "-Wl,-export-dynamic",
+    "-libverbs",
+    "-o",
+    "/tmp/as02-provider-commands-u9cfqzkz/cases"
+  ],
+  "simulation_seconds": 0.01800621600705199,
+  "output": "PROVIDER_IMMEDIATE_RESULT {\"pass_test\":true,\"profile1023\":true,\"real_libibverbs_SEND_WRITE_IMM_and_WC_serialization\":true,\"kernel_syscall_boundary_modeled\":true,\"hardware_verified\":false}\nPROVIDER_COMMANDS_RESULT {\"pass_test\":true,\"real_public_libibverbs_and_command_marshalling\":true,\"SEND_READ_WRITE_RECV\":true,\"full64bit_VA_remote_address_keys\":true,\"bad_WR_pointer_and_busy_destroy_retained\":true,\"kernel_syscall_boundary_modeled\":true,\"read_only_device_enumeration\":true,\"real_NIC_opened\":false,\"hardware_verified\":false}\n",
+  "source_unchanged": true,
+  "summary": {
+    "pass_test": true,
+    "real_public_libibverbs_and_command_marshalling": true,
+    "SEND_READ_WRITE_RECV": true,
+    "full64bit_VA_remote_address_keys": true,
+    "bad_WR_pointer_and_busy_destroy_retained": true,
+    "kernel_syscall_boundary_modeled": true,
+    "read_only_device_enumeration": true,
+    "real_NIC_opened": false,
+    "hardware_verified": false
+  },
+  "immediate_summary": {
+    "pass_test": true,
+    "profile1023": true,
+    "real_libibverbs_SEND_WRITE_IMM_and_WC_serialization": true,
+    "kernel_syscall_boundary_modeled": true,
+    "hardware_verified": false
+  }
+}

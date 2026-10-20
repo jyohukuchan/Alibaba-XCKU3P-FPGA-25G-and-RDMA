@@ -1,0 +1,19 @@
+{
+  "scope": "Actual native AXI/SQC1/SQ fetch/shared-MR/router/RAM/mux/generic PCIe.\n\nExplicit HLS transport STUB, physical MAC/host/root/link and downstream\nexecutor/CQ guards are MODELS. No constant drain/descriptor/RAM engine agents,\nlocal payload execution, actual kernel pins/board/verbs or completion claim.\n",
+  "pass_test": false,
+  "methods": 0,
+  "tests": {},
+  "actual_C_UBSan_codec": true,
+  "actual_SQC1_native_decode_and_SQ_fetch": true,
+  "actual_single_MR_PTE_and_shared_router_PCIe_parent_guard": true,
+  "HLS_transport_stub": true,
+  "actual_HLS_wire": false,
+  "constant_parent_proof_or_RAM_agents": false,
+  "actual_kernel_pins": false,
+  "local_payload_executor": false,
+  "native_CQ": false,
+  "standard_verbs": false,
+  "hardware_verified": false,
+  "board_integrated": false,
+  "completion_claim": false
+}

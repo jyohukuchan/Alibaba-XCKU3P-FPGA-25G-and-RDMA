@@ -1,0 +1,41 @@
+{
+  "scope": "Actual new per-WR metadata RTL: all2000entries/13fields/reset/append.\n\nPreserves the earlier all-entry test's assertions, randomized backpressure,\n16resets including interrupted sweeps,250000cycle bound and short wall bound.\nOnly the independently reviewed NEW generated C-struct packing is changed;\nan unexpected generated port width is rejected, never inferred into a pass.\nNo warm-reset/RTL result is claimed until this runs on completed new HLS.\n",
+  "hardware_verified": false,
+  "programming_authorized": false,
+  "directory": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/wrkey-metadata-rtl-pomhsanw",
+  "metadata_entries": 2000,
+  "metadata_fields": 13,
+  "sequential_initialization_required": true,
+  "four_state_simulation": true,
+  "source_sha256": {
+    "rdma/rnic/tests/probe_wrkey_metadata_reset.py": "a121a6ed12901869c233eb7f97f29b4a80cf79f40367ff363931cbbeb3314e84",
+    "rdma/rnic/tests/probe_metadata_reset.py": "8b460cae6e0ce0f92454eca05b76a7a012ad36312a4585264d272bcf3c78fe89"
+  },
+  "generated_hls_sha256": "716f5d9262ac414f88406600f5d88fe83a9bf2fa122b49eec2fd1aa8584a8f2a",
+  "generated_files": 138,
+  "selected_RTL_sha256": {
+    "rocev2_top_retrans_meta_table_0_s.v": "25fbf83d6d7126b152a48128d4664d58b4172afd7eb0f612f55a400989ba303f",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_localAddr_RAM_T2P_BRAM_1R1W.v": "091d0264f22f1b312f15b4a46b53c99b14fe68f5be55555a2fd1f59cd6c4b812",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_next_RAM_T2P_BRAM_1R1W.v": "578cb75a5b17e4d08db37a329c57cfa882c647176ea5b87bfe325b6576cc86d1",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_offs_RAM_T2P_BRAM_1R1W.v": "0a2716841c0cd310ccee0fbc36b9f9f65d8968b59f180a8b1b6f960796c658c4",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_psn_RAM_T2P_BRAM_1R1W.v": "06bfad35f870fcd26117a0d21c38790ab5cb5d4a8093de3ef1f8548a6a83b01f",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_rkey_RAM_T2P_BRAM_1R1W.v": "24cae8ba232fba9235c3663016c73c34b227170be0dde62885a4d0592328442d",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_rkey_valid_RAM_T2P_BRAM_1R1W.v": "983dba99bf20c922d355cdce161d3d8988f0a552bc1cf8676632a26ce036f855"
+  },
+  "generated_testbench_sha256": "5a892c806ee2b216670c5f7e981bb7c6a98214ba7be7398000d7ad48629afa42",
+  "original_testbench_assertions_and_deadlines_preserved": true,
+  "terminal_exit_status": 0,
+  "inputs_unchanged": true,
+  "checks": 8024,
+  "zero_checks": 4023,
+  "data_checks": 2000,
+  "append_checks": 2001,
+  "reset_checks": 16,
+  "cycles": 100235,
+  "pass_test": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/wrkey-metadata-rtl-pomhsanw/tb.v": "5a892c806ee2b216670c5f7e981bb7c6a98214ba7be7398000d7ad48629afa42",
+    "rdma/rnic/build/wrkey-metadata-rtl-pomhsanw/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/wrkey-metadata-rtl-pomhsanw/simulation.log": "a2ebdf87da8bd074e368c9eab66d116a3da4e889926445de5bd6cd44a08ea90e"
+  }
+}

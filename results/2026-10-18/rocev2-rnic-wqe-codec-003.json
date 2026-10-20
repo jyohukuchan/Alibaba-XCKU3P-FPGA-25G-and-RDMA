@@ -1,0 +1,23 @@
+{
+  "scope": "Actual shared C WQE encode/decode/validation under UBSan and independent Python struct.pack,1000seeded random records plus fixed/boundary/error/alias cases. One kernel-adapter check is STATIC, not a kernel callback execution.",
+  "pass_test": true,
+  "terminal_exit_status": 0,
+  "seconds": 0.21418547999928705,
+  "methods": 7,
+  "stdout": "test_exact_little_endian_keys_full_widths_and_round_trip (test_wqe_codec.WQECodecTests.test_exact_little_endian_keys_full_widths_and_round_trip) ... ok\ntest_invalid_scalars_refuse_without_narrowing_and_zero_output (test_wqe_codec.WQECodecTests.test_invalid_scalars_refuse_without_narrowing_and_zero_output) ... ok\ntest_kernel_adapter_is_truthfully_separate_and_refuses_extra_features (test_wqe_codec.WQECodecTests.test_kernel_adapter_is_truthfully_separate_and_refuses_extra_features) ... ok\ntest_null_and_exact_alias_buffers_are_safe_and_fail_closed (test_wqe_codec.WQECodecTests.test_null_and_exact_alias_buffers_are_safe_and_fail_closed) ... ok\ntest_seeded_random_actual_C_against_independent_oracle (test_wqe_codec.WQECodecTests.test_seeded_random_actual_C_against_independent_oracle) ... ok\ntest_top_byte_nonwrapping_ranges_and_opaque_identifiers (test_wqe_codec.WQECodecTests.test_top_byte_nonwrapping_ranges_and_opaque_identifiers) ... ok\ntest_untrusted_wire_reserved_opcode_flags_and_lengths_refused (test_wqe_codec.WQECodecTests.test_untrusted_wire_reserved_opcode_flags_and_lengths_refused) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.214s\n\nOK\n",
+  "source_sha256": {
+    "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+    "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f",
+    "rdma/rnic/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/kernel/verbs_wqe.c": "de51a57efd0c9685d4978195199ed83ffd51b9db7b5317573c78b6c49d6919bb",
+    "rdma/rnic/kernel/Makefile": "9360523dfe0135373cb24c7851ba88656da7c8f4c222938a01fa1eae91fe4302",
+    "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2"
+  },
+  "source_sha256_before_after_equal": true,
+  "hardware_verified": false,
+  "standard_verbs_implemented": false,
+  "actual_C_test_methods": 6,
+  "static_kernel_adapter_methods": 1,
+  "seeded_random_records": 1000,
+  "kernel_WR_callback_executed": false
+}

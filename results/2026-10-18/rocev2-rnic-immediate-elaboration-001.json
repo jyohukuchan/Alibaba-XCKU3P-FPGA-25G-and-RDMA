@@ -1,0 +1,32 @@
+{
+  "schema": "rocev2-rnic-elaboration-v1",
+  "scope": "Actual complete generated Immediate HLS top elaboration only. Not native graph integration, RTL runtime, timing/DRC/CDC or Linux/physical Immediate support.",
+  "pass_test": true,
+  "compiler": "iverilog -g2012 -s rocev2_native_immediate_top",
+  "compile_timeout_seconds": 60,
+  "compiler_exit_code": 0,
+  "hardware_verified": false,
+  "simulation_run": false,
+  "native_integration": false,
+  "input_manifest_report": "results/2026-10-18/rocev2-rnic-immediate-hls-001.json",
+  "input_manifest_report_sha256": "7772973e8efc32aeee0ee49411fa68b3131f398c2e5239c960482b22979c298b",
+  "source_and_generated_hash_maps_reverified": true,
+  "HLS_top": "rocev2_native_immediate_top",
+  "top_module_count": 1,
+  "directory": "rdma/rnic/build/native-immediate-hls-968i6tro",
+  "output_sha256": "9aaad189c5cc764e4efea70f5d77e038cd059d527844c49bee8a1c3d1b150236",
+  "output": "rdma/rnic/build/native-immediate-hls-968i6tro/raw-elaboration.vvp",
+  "compiler_log": "rdma/rnic/build/native-immediate-hls-968i6tro/raw-elaboration.log",
+  "compiler_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "typed_ports_checked_by_actual_synthesis": {
+    "s_axis_sq_meta_TDATA": 280,
+    "m_axis_qp_apply_TDATA": 80,
+    "s_axis_rnr_event_TDATA": 56,
+    "s_axis_recv_owner_TDATA": 680,
+    "m_axis_recv_done_TDATA": 752,
+    "s_axis_request_owner_TDATA": 624,
+    "m_axis_request_done_TDATA": 688,
+    "m_axis_mem_read_cmd_TDATA": 96,
+    "m_axis_mem_write_cmd_TDATA": 96
+  }
+}

@@ -18,7 +18,7 @@ Alibaba AS02MC04（XCKU3P）向けの、**Corundumベースの25GbE移植・検�
 
 ## まだできていないこと・注意点
 
-- 実装範囲は、有限パターンのWRITEと、相手メモリをFPGA内の保護された256KiB RAMへ取り込むREADです。相手からのSEND/WRITE受付、READ要求への応答、任意のホストメモリDMA、FPGA側の汎用verbsプロバイダー、ネイティブInfiniBandは未実装です。
+- 実機で適用・確認済みの範囲は、有限パターンのWRITEと、相手メモリをFPGA内の保護された256KiB RAMへ取り込むREADです。相手からのSEND/WRITE受付、READ要求への応答、任意のホストメモリDMA、汎用verbsなどの追加実装は別の開発中構成であり、実機対応済みという意味ではありません。ネイティブInfiniBandは未実装です。
 - READは1回最大64KiB、最大4,096回、64B単位の格納領域の合計が256KiB以内です。実機確認したREAD同時発行枠は1と2。今回の統合版試験は短い機能確認で、持続帯域・長時間安定性を測定していません。
 - キュー転送・端数・PSN折り返し・限定したACK欠落/復旧は確認済みです。任意の障害・輻輳条件や、生産運用の信頼性は保証しません。
 - 試験済み生成物はSHA256で特定しています。別設定や再ビルドした生成物が、自動的に実機検証済みになるわけではありません。
@@ -28,6 +28,16 @@ Alibaba AS02MC04（XCKU3P）向けの、**Corundumベースの25GbE移植・検�
 
 最新の[実機WRITE記録](results/2026-10-18/rocev2-native-003.json)、[再送・復旧記録](results/2026-10-18/rocev2-native-retry-recovery-003.json)、[開発進捗・制限事項](docs/ROCEV2_PROGRESS.md)を参照してください。
 新しい統合版の[READ/WRITE実機記録](results/2026-10-18/rocev2-rw-native-001.json)と[READの結果・使用手順](docs/ROCEV2_READ_RESULTS.md)は別に記録しています。WRITE003の帯域・再送結果を統合版へ転用してはいません。
+
+## RNIC開発中ソースの進捗（2026-10-20）
+
+[RNIC開発ソース](rdma/rnic/README.md)には、ホストメモリ保護・キュー・DMA・カーネル／プロバイダー、SEND/RECV/Immediate、Atomic（CAS／加算）の受信側を追加しています。
+Atomicの要求識別子と共通PSN／MSNの更新確認を含む[生成RTL試験](results/2026-10-18/rocev2-rnic-atomic-owned-generated-002.json)は短時間4ケースが成功し、無応答で破棄した後の次要求も処理できました。ただし、この試験の物理ホストメモリ順序や応答MAC完了の境界はモデルです。
+
+これは**開発途中のソース公開**です。Atomic送信側・完全な実RNIC経路への統合・標準APIの実機動作は未完了で、ドライバーのAtomic対応申告も無効のままです。
+HLS見積りは13.568nsで元の4ns条件を満たしておらず、新しいイメージの実機適用・保証はしていません。
+また、44バイトSEND対応のTXパディング変更に対し、`bash scripts/check.sh`は過去の記録のSHA不一致を検出します。古い試験記録の書き換えやチェックの緩和はせず、この未解消事項を保持しています。[開発範囲・制限事項](docs/ROCEV2_RNIC_PROGRESS.md)を参照してください。
+Atomic単体のRTL試験12項目は成功しています。一方、RNIC全体の試験では既存のMAC寿命・QP-TXケースにエラー／失敗があり、全体実行は途中で終了しています。全テストが成功したリリースとしての公開ではありません。
 
 ## 取得とビルド
 

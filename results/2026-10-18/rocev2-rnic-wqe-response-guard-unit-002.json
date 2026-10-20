@@ -1,0 +1,844 @@
+{
+  "scope": "Actual whole-packet integrity/trusted-WQE response protection and replay.\n\nExpected issued peer/PSN/WQE and downstream executor/HLS/wire/CQ are MODELS.\nThis is a real receive protection component, not native placement or CQ proof.\n",
+  "pass_test": false,
+  "methods": 8,
+  "simulations": 30,
+  "tests": {
+    "test_READ_ONLY_M0_M1_and_payload_boundaries_require_token_before_any_HLS_byte": [
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 1,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 1,
+          "events": 1,
+          "fault": 0,
+          "cycles": 64
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "3452e00d23ca6177b2ddc346ed50020a792fefc23c0b155c0ee78c3115996743",
+        "packet_sha256": [
+          "4d88d23864cf63389fce451b8da5c1360779226c6c3cffe56d82fbde8c8076a8"
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 1,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 1,
+          "events": 1,
+          "fault": 0,
+          "cycles": 64
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "3452e00d23ca6177b2ddc346ed50020a792fefc23c0b155c0ee78c3115996743",
+        "packet_sha256": [
+          "5048a419a3f89f6acb5f0af0580c40fbf751c3af7b04b996217878098ebaa0d8"
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 1,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 1,
+          "events": 1,
+          "fault": 0,
+          "cycles": 75
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "6e9e9799f3ecdf7cfa52cb4751f8f8645f3d27f5f35a68c8157503f88a6ce2be",
+        "packet_sha256": [
+          "9502dc8c62571f0073f9867c4ad4c321264d488cc5040d180dd408e001b63e41"
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 1,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 1,
+          "events": 1,
+          "fault": 0,
+          "cycles": 75
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "6e9e9799f3ecdf7cfa52cb4751f8f8645f3d27f5f35a68c8157503f88a6ce2be",
+        "packet_sha256": [
+          "7e33889a72e786844bd59d7f19c73de449ed54e63c604794d6f5ff5531466ad3"
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 1,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 1,
+          "events": 1,
+          "fault": 0,
+          "cycles": 82
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "b6460dae9a6218a8dbf7fbd4488e269a780882d6a9870c7080639213f97ec7d3",
+        "packet_sha256": [
+          "9be49eac182978fc67b893a409d03ee2d2eba3f9b5edd8d6c977f807e0f4515d"
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 1,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 1,
+          "events": 1,
+          "fault": 0,
+          "cycles": 82
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "b6460dae9a6218a8dbf7fbd4488e269a780882d6a9870c7080639213f97ec7d3",
+        "packet_sha256": [
+          "80c8cfef4f27fd2b22993fd259464f973eb32e8d7db6972e9101da342dcec841"
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 1,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 1,
+          "events": 1,
+          "fault": 0,
+          "cycles": 1274
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "92fa7208a7b6ebb3fa35845bf13f7dbc01b0cbb74627bb652ade970df7d14a9a",
+        "packet_sha256": [
+          "234a7e8577f2b010fcdf51591cfeddfefd77cd6d211ff12d2e5986cb55eb4a7b"
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 1,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 1,
+          "events": 1,
+          "fault": 0,
+          "cycles": 1274
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "92fa7208a7b6ebb3fa35845bf13f7dbc01b0cbb74627bb652ade970df7d14a9a",
+        "packet_sha256": [
+          "d0a86c9d95d99c5e69b64c66a85e343c8733ba8d1b033d2afba79bc03a13d239"
+        ]
+      }
+    ],
+    "test_WRITE_ACK_M0_M1_and_credit_bits_do_not_grant_READ_placement": [
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 1,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 1,
+          "fault": 0,
+          "cycles": 43
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "30081036ae75686e1e7a3455ab7e7dddc0d489a313b5b483e4566ffdc3d67b39",
+        "packet_sha256": [
+          "8133164cb2be6996de39e61b5b40df3db2e57f7e9ec54c73caaff2b0d569c705"
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 1,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 1,
+          "fault": 0,
+          "cycles": 43
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "099b964b00b7c2802bd066f07bf2f64961a15ef267f9b4ca7bb2ee90da8abde7",
+        "packet_sha256": [
+          "7256c45906c5372e80ffd27e7e0febd361ba713146b05d5e1dfc99161e62d1ae"
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 1,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 1,
+          "fault": 0,
+          "cycles": 43
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "30081036ae75686e1e7a3455ab7e7dddc0d489a313b5b483e4566ffdc3d67b39",
+        "packet_sha256": [
+          "94d1a8b83757f796ba3bb1ae7257f131dfcec49b5d3138978c4c85df9a1e6d61"
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 1,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 1,
+          "fault": 0,
+          "cycles": 43
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "099b964b00b7c2802bd066f07bf2f64961a15ef267f9b4ca7bb2ee90da8abde7",
+        "packet_sha256": [
+          "e4b58c2842e740dbc02b3b630e034a7a6ac7edebb27fb5ff6c73abdecc9a9aa0"
+        ]
+      }
+    ],
+    "test_bad_ICRC_IP_checksum_and_error_sideband_drop_whole_frame_without_token": [
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 1,
+          "rejected": 0,
+          "ICRC_drops": 3,
+          "unowned_drops": 0,
+          "tokens": 1,
+          "events": 1,
+          "fault": 0,
+          "cycles": 115
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "d989e20ea66824812cad848e254e0865db112df35020ed3d67aa2ef1dba5c917",
+        "packet_sha256": [
+          "eb479aefde58f352ac4188cc5e2104bc20a1b96e3567f61efb62d8bfccb492b2",
+          "f4b8bee557c957c3cd2135a6695e286ba5e5bcf08b95d879413f3e63c15245fa",
+          "9be49eac182978fc67b893a409d03ee2d2eba3f9b5edd8d6c977f807e0f4515d",
+          "9be49eac182978fc67b893a409d03ee2d2eba3f9b5edd8d6c977f807e0f4515d"
+        ]
+      }
+    ],
+    "test_invalid_unknown_or_overflowed_expectation_never_authorizes_RX": [
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 0,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "642771f021c7c73b4e99773245ec305f643246b2385a13cac279c2890a286ba4",
+        "packet_sha256": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 0,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "2c63b61ddc55388ebff92700d42eb1c04fbfde557c62e192807ed0e922cb6e27",
+        "packet_sha256": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 0,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "5bcf761aefe9dd8cf5f379e9e3afafb05c2160d1629c3fec403841c8958e52df",
+        "packet_sha256": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 0,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "eb39fe177c8f1d8d85b783af64ca3a7a966ac46b6d51077130fa6dfd747464a9",
+        "packet_sha256": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 0,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "bd854327f7aa761322943fc655df015a7680d6515b699149243b773f00af348e",
+        "packet_sha256": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 0,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "b6197c281ca015f19a58bd24178843d02ddb3277ee5cc153c7534e09cc1b0de4",
+        "packet_sha256": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 0,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "5cf90345f821185cd9f99f0739555b54c796a00a49b1c6a2001d5874cdace2c3",
+        "packet_sha256": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 0,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "94f9cbd745a100195a5300d11cc32b9229983fcbce170aa284f640d378b85b81",
+        "packet_sha256": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 0,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "d59a7ce2ed15892bfec761c9a0a24d37be721c5560e310c0f12e2e2e7c8e9613",
+        "packet_sha256": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 0,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "f01d7ec94045f3cfb11d168251099fbd8cd4025838205bd30409e9ff5c59be11",
+        "packet_sha256": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 0,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "85ed69dd8b4cd781df5d318d7d11841172b99f814ee7daf7fa350acc0cb36dd8",
+        "packet_sha256": []
+      }
+    ],
+    "test_lost_guard_never_retracts_already_offered_HLS_beat_or_fakes_event": [
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 1,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 1,
+          "events": 0,
+          "fault": 1,
+          "cycles": 48
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "d2c8dd436ba03f2b488d844ce9f830c895841ff21708dabe73ae5faa1a126057",
+        "packet_sha256": [
+          "9be49eac182978fc67b893a409d03ee2d2eba3f9b5edd8d6c977f807e0f4515d"
+        ]
+      }
+    ],
+    "test_unknown_RX_meaningful_bytes_or_shape_fault_closed": [
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 0,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "b4c64e49c3e41294bb6f10228600eda1dfcd4342a057d07c71305f0191ff3227",
+        "packet_sha256": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 0,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "f88a90517dd18a4b959e1765e755b661582b027725def8fb8acda3ab937f7b35",
+        "packet_sha256": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 0,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 0,
+          "tokens": 0,
+          "events": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "4bf99953a4e0c0f2971407736f8ab6f59ad759c9ea5729dbe52e8427dfb3927a",
+        "packet_sha256": []
+      }
+    ],
+    "test_unowned_SOP_coincident_with_expectation_capture_keeps_its_tail_discarded": [
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 1,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 1,
+          "tokens": 1,
+          "events": 1,
+          "fault": 0,
+          "cycles": 104
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "20d87ebab68060b70d6e1ae80b1927ca7859ea3e22983be1aadb25e7e4da87b3",
+        "packet_sha256": [
+          "9be49eac182978fc67b893a409d03ee2d2eba3f9b5edd8d6c977f807e0f4515d"
+        ]
+      }
+    ],
+    "test_unowned_frames_are_drained_not_saved_for_a_future_WQE": [
+      {
+        "summary": {
+          "pass_test": true,
+          "accepted": 1,
+          "rejected": 0,
+          "ICRC_drops": 0,
+          "unowned_drops": 1,
+          "tokens": 1,
+          "events": 1,
+          "fault": 0,
+          "cycles": 97
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e4a29dd69c7e09ad3b55d14eff6aac9e5618e404262261bc0ae5b74c4d3b94c9",
+          "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+          "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+          "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+          "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "eb676de4009b9a67d361e26da9522a1ea4ca7d17535620bc3a1f0dfda0aaec03",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "75e60ec1880f3d60e02ccd23d622b89428b590124e551b6d1f76039778ca6c91",
+        "packet_sha256": [
+          "9be49eac182978fc67b893a409d03ee2d2eba3f9b5edd8d6c977f807e0f4515d"
+        ]
+      }
+    ]
+  },
+  "actual_integrity_peer_PSN_QP_opcode_AETH_length_guard": true,
+  "issued_context_downstream_HLS_executor_CQ_models": true,
+  "actual_native_READ_placement": false,
+  "actual_WR_completion": false,
+  "hardware_verified": false
+}

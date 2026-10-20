@@ -1,0 +1,13 @@
+{
+  "scope": "Actual C WQE + SQ-result bridge + original frontend + ONE actual MR table.\n\nSQ-result/queue context is an EXPLICIT source model here, not DMA evidence.\nWork handoff is not execution/CQ completion or a downstream lease release.\n",
+  "pass_test": false,
+  "methods": 0,
+  "simulations": 0,
+  "tests": {},
+  "actual_C_UBSan": true,
+  "actual_MR_table": true,
+  "SQ_result_source_model": true,
+  "actual_SQ_DMA_or_native_execution": false,
+  "hardware_verified": false,
+  "completion_claim": false
+}

@@ -1,0 +1,219 @@
+--- a/hls/ib_transport_protocol/ib_transport_protocol.hpp
++++ b/hls/ib_transport_protocol/ib_transport_protocol.hpp
+@@ -241,7 +241,9 @@
+ 	bool hasPayload;
+ };
+ 
+-// Probably rkey should be installed as part of the params in this structure - this comes from externally and carries all other relevant information 
++// RNIC candidate ABI: params[191:160] is the full per-WR remote key.
++// rkey_valid is a separate appended bit: key zero remains an exact key.
++// Legacy constructors leave it clear and retain the QP-table key policy.
+ struct txMeta
+ {
+ 	ibOpCode 	 op_code; // 32
+@@ -250,10 +252,13 @@
+ 	ap_uint<1>   lst;
+ 	ap_uint<4>   offs;
+ 	ap_uint<192> params;
++	ap_uint<1> rkey_valid;
+ 	txMeta()
+-		:op_code(RC_RDMA_WRITE_ONLY) {}
++		:op_code(RC_RDMA_WRITE_ONLY), rkey_valid(0) {}
+ 	txMeta(ibOpCode op, ap_uint<10> qp, ap_uint<1> host, ap_uint<1> lst, ap_uint<4> offs, ap_uint<192> params)
+-				:op_code(op), qpn(qp), host(host), lst(lst), offs(offs), params(params) {}
++				:op_code(op), qpn(qp), host(host), lst(lst), offs(offs), params(params), rkey_valid(0) {}
++	txMeta(ibOpCode op, ap_uint<10> qp, ap_uint<1> host, ap_uint<1> lst, ap_uint<4> offs, ap_uint<192> params, ap_uint<1> rkey_valid)
++		:op_code(op), qpn(qp), host(host), lst(lst), offs(offs), params(params), rkey_valid(rkey_valid) {}
+ };
+ 
+ /* ACK meta */
+@@ -287,6 +292,8 @@
+ //TODO event for writes addr + len, no psn
+ struct event
+ {
++	ap_uint<32> rkey = 0;
++	ap_uint<1> rkey_valid = 0;
+ 	ibOpCode 	op_code;
+ 	ap_uint<24> qpn;
+ 	ap_uint<64> addr;
+@@ -341,6 +348,9 @@
+ 
+ struct retransEvent
+ {
++	ap_uint<32> rkey = 0;
++	ap_uint<1> rkey_valid = 0;
++	ap_uint<1> host = PKG_INT;
+ 	ibOpCode 	op_code;
+ 	ap_uint<24> qpn;
+ 	ap_uint<64> localAddr;
+@@ -353,8 +363,8 @@
+ 	bool		isNak; //TODO remove?
+ 	retransEvent()
+ 		:op_code(RC_ACK), validPsn(false), isNak(false) {}
+-	retransEvent(ibOpCode op, ap_uint<24> qp, ap_uint<64> laddr, ap_uint<64> raddr, ap_uint<32> len, ap_uint<24> psn, ap_uint<1> lst, ap_uint<4> offs)
+-		:op_code(op), qpn(qp), localAddr(laddr), remoteAddr(raddr),length(len), psn(psn), lst(lst), offs(offs), validPsn(true), isNak(false) {}
++	retransEvent(ibOpCode op, ap_uint<24> qp, ap_uint<64> laddr, ap_uint<64> raddr, ap_uint<32> len, ap_uint<24> psn, ap_uint<1> lst, ap_uint<4> offs, ap_uint<32> rkey = 0, ap_uint<1> rkey_valid = 0, ap_uint<1> host = PKG_INT)
++		:rkey(rkey), rkey_valid(rkey_valid), host(host), op_code(op), qpn(qp), localAddr(laddr), remoteAddr(raddr),length(len), psn(psn), lst(lst), offs(offs), validPsn(true), isNak(false) {}
+ };
+ 
+ struct memMeta
+--- a/hls/ib_transport_protocol/ib_transport_protocol.cpp
++++ b/hls/ib_transport_protocol/ib_transport_protocol.cpp
+@@ -1258,7 +1258,10 @@
+ 	if (!retransEventFifo.empty())
+ 	{
+ 		retransEventFifo.read(rev);
+-		tx_localTxMeta.write(event(rev.op_code, rev.qpn, rev.remoteAddr, rev.length, rev.psn));
++		ev = event(rev.op_code, rev.qpn, rev.remoteAddr, rev.length, rev.psn);
++		ev.rkey = rev.rkey;
++		ev.rkey_valid = rev.rkey_valid;
++		tx_localTxMeta.write(ev);
+ 
+         retransCount++;
+         regRetransCount = retransCount;        
+@@ -1267,7 +1270,7 @@
+ 		if (rev.op_code != RC_RDMA_READ_REQUEST)
+ 		{
+ 			std::cout << "[LOCAL REQ HANDLER " << INSTID << "]: retranmission writing into memCmd with lengh " << rev.length << std::endl;
+-			tx_local_memCmdFifo.write(memCmdInternal(rev.op_code, rev.qpn, rev.localAddr, rev.length, PKG_INT, rev.offs));
++			tx_local_memCmdFifo.write(memCmdInternal(rev.op_code, rev.qpn, rev.localAddr, rev.length, rev.host, rev.offs));
+ 		} 
+ 
+ 	}
+@@ -1292,7 +1295,10 @@
+ 		// In case of a READ_REQUEST: Generate output to the meta merger
+ 		if(meta.op_code == RC_RDMA_READ_REQUEST)
+ 		{
+-			tx_localTxMeta.write(event(meta.op_code, meta.qpn, raddr, length));
++			ev = event(meta.op_code, meta.qpn, raddr, length);
++			ev.rkey = meta.params(191,160);
++			ev.rkey_valid = meta.rkey_valid;
++			tx_localTxMeta.write(ev);
+ 			//tx_localReadAddrFifo.write(mqInsertReq<ap_uint<64> >(meta.qpn, laddr));
+ 		}
+ 
+@@ -1301,11 +1307,14 @@
+ 			meta.op_code == RC_RDMA_WRITE_LAST || meta.op_code == RC_RDMA_WRITE_ONLY || meta.op_code == RC_SEND_ONLY ||
+             meta.op_code == RC_SEND_FIRST || meta.op_code == RC_SEND_MIDDLE || meta.op_code == RC_SEND_LAST)
+ 		{
+-			tx_localTxMeta.write(event(meta.op_code, meta.qpn, raddr, length));
++			ev = event(meta.op_code, meta.qpn, raddr, length);
++			ev.rkey = meta.params(191,160);
++			ev.rkey_valid = meta.rkey_valid;
++			tx_localTxMeta.write(ev);
+ 			tx_local_memCmdFifo.write(memCmdInternal(meta.op_code, meta.qpn, laddr, length, meta.host));	
+ 		}
+ #ifdef RETRANS_EN
+-		tx2retrans_insertAddrLen.write(retransAddrLen(laddr, raddr, length, lst, offs));
++		tx2retrans_insertAddrLen.write(retransAddrLen(laddr, raddr, length, lst, offs, meta.params(191,160), meta.rkey_valid, meta.host));
+ #endif
+ 	}
+ }
+@@ -1846,7 +1855,7 @@
+ 				// Construct the RDMA Extended Header with the vaddr, the length of the packet and the remote key as read from the msn-table
+ 				rdmaHeader.setVirtualAddress(meta.addr);
+ 				rdmaHeader.setLength(meta.length); //TODO Move up??
+-				rdmaHeader.setRemoteKey(msnMeta.r_key);
++				rdmaHeader.setRemoteKey(meta.rkey_valid ? meta.rkey : msnMeta.r_key);
+ 				ap_uint<8> remainingLength = rdmaHeader.consumeWord(sendWord.data);
+ 				sendWord.keep = ~0;
+ 				sendWord.last = (remainingLength == 0);
+@@ -1907,7 +1916,7 @@
+ 				// [BTH][RETH]
+ 				rdmaHeader.setVirtualAddress(meta.addr);
+ 				rdmaHeader.setLength(meta.length); //TODO Move up??
+-				rdmaHeader.setRemoteKey(msnMeta.r_key);
++				rdmaHeader.setRemoteKey(meta.rkey_valid ? meta.rkey : msnMeta.r_key);
+ 				ap_uint<8> remainingLength = rdmaHeader.consumeWord(sendWord.data);
+ 				sendWord.keep = ~0;
+ 				// A READ request has only a 16-byte RETH and no payload.
+--- a/hls/ib_transport_protocol/retransmitter/retransmitter.hpp
++++ b/hls/ib_transport_protocol/retransmitter/retransmitter.hpp
+@@ -79,18 +79,24 @@
+ 
+ struct retransAddrLen
+ {
++	ap_uint<32> rkey = 0;
++	ap_uint<1> rkey_valid = 0;
++	ap_uint<1> host = PKG_INT;
+ 	ap_uint<64> localAddr;
+ 	ap_uint<64> remoteAddr;
+ 	ap_uint<32> length;
+     ap_uint<1>  lst;
+     ap_uint<4>  offs;
+ 	retransAddrLen() {}
+-	retransAddrLen(ap_uint<64> laddr, ap_uint<64> raddr, ap_uint<32> len, ap_uint<1> lst, ap_uint<4> offs)
+-		:localAddr(laddr), remoteAddr(raddr), length(len), lst(lst), offs(offs) {}
++	retransAddrLen(ap_uint<64> laddr, ap_uint<64> raddr, ap_uint<32> len, ap_uint<1> lst, ap_uint<4> offs, ap_uint<32> rkey = 0, ap_uint<1> rkey_valid = 0, ap_uint<1> host = PKG_INT)
++		:rkey(rkey), rkey_valid(rkey_valid), host(host), localAddr(laddr), remoteAddr(raddr), length(len), lst(lst), offs(offs) {}
+ };
+ 
+ struct retransEntry
+ {
++	ap_uint<32> rkey = 0;
++	ap_uint<1> rkey_valid = 0;
++	ap_uint<1> host = PKG_INT;
+ 	ap_uint<16> qpn;
+ 	ap_uint<24> psn;
+ 	ibOpCode	opCode;
+@@ -100,10 +106,10 @@
+     ap_uint<1>  lst;
+     ap_uint<4>  offs;
+ 	retransEntry() {}
+-	retransEntry(ap_uint<16> qpn, ap_uint<24> psn, ibOpCode op, ap_uint<64> laddr, ap_uint<64> raddr, ap_uint<32> len, ap_uint<1> lst, ap_uint<4> offs)
+-		:qpn(qpn), psn(psn), opCode(op), localAddr(laddr), remoteAddr(raddr), length(len), lst(lst), offs(offs) {}
++	retransEntry(ap_uint<16> qpn, ap_uint<24> psn, ibOpCode op, ap_uint<64> laddr, ap_uint<64> raddr, ap_uint<32> len, ap_uint<1> lst, ap_uint<4> offs, ap_uint<32> rkey = 0, ap_uint<1> rkey_valid = 0, ap_uint<1> host = PKG_INT)
++		:rkey(rkey), rkey_valid(rkey_valid), host(host), qpn(qpn), psn(psn), opCode(op), localAddr(laddr), remoteAddr(raddr), length(len), lst(lst), offs(offs) {}
+ 	retransEntry(retransMeta meta, retransAddrLen addrlen)
+-		:qpn(meta.qpn), psn(meta.psn), opCode(meta.opCode), localAddr(addrlen.localAddr), remoteAddr(addrlen.remoteAddr), length(addrlen.length), lst(addrlen.lst), offs(addrlen.offs) {}
++		:rkey(addrlen.rkey), rkey_valid(addrlen.rkey_valid), host(addrlen.host), qpn(meta.qpn), psn(meta.psn), opCode(meta.opCode), localAddr(addrlen.localAddr), remoteAddr(addrlen.remoteAddr), length(addrlen.length), lst(addrlen.lst), offs(addrlen.offs) {}
+ };
+ 
+ struct retransPointerEntry
+@@ -137,6 +143,9 @@
+ 
+ struct retransMetaEntry
+ {
++	ap_uint<32> rkey = 0;
++	ap_uint<1> rkey_valid = 0;
++	ap_uint<1> host = PKG_INT;
+ 	ap_uint<24> psn;
+ 	ap_uint<16> next;
+ 	ibOpCode	opCode;
+@@ -149,7 +158,7 @@
+ 	bool isTail;
+ 	retransMetaEntry() {}
+ 	retransMetaEntry(retransEntry& e)
+-		:psn(e.psn), next(0), opCode(e.opCode), localAddr(e.localAddr), remoteAddr(e.remoteAddr), length(e.length), lst(e.lst), offs(e.offs), valid(true), isTail(true) {}
++		:rkey(e.rkey), rkey_valid(e.rkey_valid), host(e.host), psn(e.psn), next(0), opCode(e.opCode), localAddr(e.localAddr), remoteAddr(e.remoteAddr), length(e.length), lst(e.lst), offs(e.offs), valid(true), isTail(true) {}
+ 	retransMetaEntry(ap_uint<16> next)
+ 		:next(next) {}
+ };
+@@ -272,6 +281,9 @@
+ 	if (!clear_complete)
+ 	{
+ 		retransMetaEntry zero;
++		zero.rkey = 0;
++		zero.rkey_valid = 0;
++		zero.host = PKG_INT;
+ 		zero.psn = 0;
+ 		zero.next = 0;
+ 		zero.opCode = static_cast<ibOpCode>(0);
+@@ -518,7 +530,7 @@
+ 				if (meta.psn == retrans.psn)
+ 				{
+ 					std::cout << std::hex << "[PROCESS RETRANSMISSION " << INSTID << "]: retransmitting psn " << meta.psn << std::endl;
+-					retrans2event.write(retransEvent(meta.opCode, retrans.qpn, meta.localAddr, meta.remoteAddr, meta.length, meta.psn, meta.lst, meta.offs));
++					retrans2event.write(retransEvent(meta.opCode, retrans.qpn, meta.localAddr, meta.remoteAddr, meta.length, meta.psn, meta.lst, meta.offs, meta.rkey, meta.rkey_valid, meta.host));
+ 					if (!meta.isTail)
+ 					{
+ 						rt_state = RETRANS_2;
+@@ -547,7 +559,7 @@
+ 					rt_state = RETRANS_2;
+ 				}
+ 				std::cout << std::hex << "[PROCESS RETRANSMISSION " << INSTID << "]: retransmitting psn " << meta.psn << std::endl;
+-				retrans2event.write(retransEvent(meta.opCode, retrans.qpn, meta.localAddr, meta.remoteAddr, meta.length, meta.psn, meta.lst, meta.offs));
++				retrans2event.write(retransEvent(meta.opCode, retrans.qpn, meta.localAddr, meta.remoteAddr, meta.length, meta.psn, meta.lst, meta.offs, meta.rkey, meta.rkey_valid, meta.host));
+ 			}
+ 		}
+ 		break;

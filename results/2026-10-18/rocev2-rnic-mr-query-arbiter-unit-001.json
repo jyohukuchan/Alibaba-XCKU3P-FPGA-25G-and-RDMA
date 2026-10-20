@@ -1,0 +1,15 @@
+{
+  "scope": "Actual four-state two-client query arbiter. Validator response is an explicit external model; separate shared-responder checks use actual MR table.",
+  "pass_test": true,
+  "methods": 6,
+  "elapsed_seconds": 0.15351871500024572,
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_mr_query_arbiter.v": "abeb223c0d54652bbac141187f660e136dc99055a66e83eaa72deb30d3aa96cc",
+    "rdma/rnic/tests/test_mr_query_arbiter_rtl.py": "6812e87773ca9b9327721f0bf9ebe5200c65671fbca980dc4c195fc2362c4e18"
+  },
+  "source_sha256_before_after_equal": true,
+  "test_log": "test_continuously_offered_clients_alternate_without_starvation (test_mr_query_arbiter_rtl.MRQueryArbiterRTLTests.test_continuously_offered_clients_alternate_without_starvation) ... ok\ntest_full_tuples_same_cookie_response_stalls_and_denial_zeroing (test_mr_query_arbiter_rtl.MRQueryArbiterRTLTests.test_full_tuples_same_cookie_response_stalls_and_denial_zeroing) ... ok\ntest_pending_query_is_registered_and_not_replaced_by_competing_client (test_mr_query_arbiter_rtl.MRQueryArbiterRTLTests.test_pending_query_is_registered_and_not_replaced_by_competing_client) ... ok\ntest_protocol_fault_does_not_withdraw_already_offered_query (test_mr_query_arbiter_rtl.MRQueryArbiterRTLTests.test_protocol_fault_does_not_withdraw_already_offered_query) ... ok\ntest_unexpected_response_does_not_accept_a_new_owner (test_mr_query_arbiter_rtl.MRQueryArbiterRTLTests.test_unexpected_response_does_not_accept_a_new_owner) ... ok\ntest_wrong_tag_length_unknown_error_retains_owner_without_fake_response (test_mr_query_arbiter_rtl.MRQueryArbiterRTLTests.test_wrong_tag_length_unknown_error_retains_owner_without_fake_response) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.143s\n\nOK\n",
+  "hardware_verified": false,
+  "native_host_queue_DMA": false,
+  "standard_verbs_implemented": false
+}

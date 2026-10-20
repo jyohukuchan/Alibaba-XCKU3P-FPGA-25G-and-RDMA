@@ -1,0 +1,48 @@
+{
+  "scope": "Actual FULL frozen META board synthesis stage only; driver11803still live. Not the separate per-WR HLS and not placed/routed/native signoff.",
+  "driver_session": 11803,
+  "driver_terminal_exit_status": null,
+  "driver_live": true,
+  "full_board_synthesis_stage_completed": true,
+  "selected_hls_sha256": "60c9a20e6671f223444c9a115d6295fdff456672d6354ed240e2317529cdbc19",
+  "directory": "rdma/rnic/build/full-board-meta-analysis-001",
+  "frozen_files_verified": 1070,
+  "original_files_verified": 1069,
+  "frozen_and_original_inputs_unchanged": true,
+  "resources": {
+    "LUT": 138205,
+    "LUT_percent": 84.93,
+    "LUT_available": 162720,
+    "LUT_as_logic": 109513,
+    "LUT_as_memory": 28692,
+    "FF": 213008,
+    "BRAM_tiles": 264,
+    "URAM": 39,
+    "DSP": 3
+  },
+  "comparison_to_STATE": {
+    "LUT_delta": -50432,
+    "FF_delta": -38146,
+    "BRAM_tile_delta": 0
+  },
+  "synthesis_errors": 0,
+  "synthesis_critical_warnings": 0,
+  "synthesis_warnings": 363,
+  "synthesized_estimate_within_device_capacity": true,
+  "resource_error_waived": false,
+  "original_clocks_and_constraints_retained": true,
+  "full_board_physical_signoff": false,
+  "placement_or_route_pass_claimed": false,
+  "CDC_reviewed": false,
+  "hardware_verified": false,
+  "standard_verbs_or_provider_implemented": false,
+  "programming_authorized": false,
+  "images_written": 0,
+  "artifact_sha256": {
+    "rdma/rnic/build/full-board-meta-analysis-001/analysis-inputs.json": "3a79832ffab1fbfaed0b0a80bc31f4a2f7de6e758859888552cab4aa88225dfd",
+    "rdma/rnic/build/full-board-meta-analysis-001/inputs/inputs.sha256": "75840c365a47ead1aaa4b05bd13f5ba87100c8efdf82e94d30648b8d0867c596",
+    "rdma/rnic/build/full-board-meta-analysis-001/project/as02mc04_rnic_analysis.runs/synth_1/fpga_utilization_synth.rpt": "e9063385379dfb36ff463a471eb14c5e984bb44674381fce6579ec3d20bd0dcc",
+    "rdma/rnic/build/full-board-meta-analysis-001/project/as02mc04_rnic_analysis.runs/synth_1/fpga.dcp": "e96705811dc586d5528b7587b98bfe671608a3d5465a3774656c319a43eb70fd",
+    "rdma/rnic/build/full-board-meta-analysis-001/project/as02mc04_rnic_analysis.runs/synth_1/runme.log": "a313deebe3d3f061ac6adb71b73eecb7f0bfc089414725cb8d56371e2abff11e"
+  }
+}

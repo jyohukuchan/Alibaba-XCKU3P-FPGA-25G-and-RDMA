@@ -1,0 +1,10 @@
+{
+  "scope": "Production full-WQE READ wire-pad adapter; token/HLS/executor are MODELS.\n\nChecks original96-bit padded ABI, normalized payload-only command/data and\ncontinuous owner guards. Not actual HLS, native DMA, protected RX or CQ proof.\n",
+  "pass_test": false,
+  "methods": 0,
+  "simulations": 0,
+  "tests": {},
+  "real_HLS_RX_token_executor_or_DMA": false,
+  "actual_WR_completion": false,
+  "hardware_verified": false
+}

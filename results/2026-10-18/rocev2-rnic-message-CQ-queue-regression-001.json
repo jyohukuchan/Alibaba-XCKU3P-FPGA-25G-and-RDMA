@@ -1,0 +1,212 @@
+{
+  "scope": "Execute actual kernel MR/SQ/WR C with explicit userspace primitive models.\n\nModel pthread locks/refcounts/umem/coherent DMA/HW/CQ are NOT native kernel\nprimitives, page pins, physical DMA, registered post_send/CQ or bus/provider.\nThe separate frozen running-kernel-header compile/link must also pass.\n",
+  "pass_test": true,
+  "methods": 10,
+  "tests": {
+    "test_MR_four_threads_hold_real_C_references_across_concurrent_close": {
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "heap_live": 0,
+        "umem_live": 0,
+        "module_refs": 0,
+        "dma_allocs": 0,
+        "dma_frees": 0,
+        "producer_callbacks": 0,
+        "CQ_callbacks_committed": 0,
+        "barriers": 0
+      },
+      "ownership_intentionally_retained": false
+    },
+    "test_MR_owned_fast_refs_full_authorization_stop_new_gets_and_block_close": {
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "heap_live": 0,
+        "umem_live": 0,
+        "module_refs": 0,
+        "dma_allocs": 0,
+        "dma_frees": 0,
+        "producer_callbacks": 0,
+        "CQ_callbacks_committed": 0,
+        "barriers": 0
+      },
+      "ownership_intentionally_retained": false
+    },
+    "test_MR_unpublished_and_ambiguous_publication_never_release_without_revoke_proof": {
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "heap_live": 0,
+        "umem_live": 0,
+        "module_refs": 0,
+        "dma_allocs": 0,
+        "dma_frees": 0,
+        "producer_callbacks": 0,
+        "CQ_callbacks_committed": 0,
+        "barriers": 0
+      },
+      "ownership_intentionally_retained": false
+    },
+    "test_SQ_coherent_ring_post_barrier_CQ_backpressure_completion_and_ring_reuse": {
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "heap_live": 0,
+        "umem_live": 0,
+        "module_refs": 0,
+        "dma_allocs": 1,
+        "dma_frees": 1,
+        "producer_callbacks": 3,
+        "CQ_callbacks_committed": 3,
+        "barriers": 4
+      },
+      "ownership_intentionally_retained": false
+    },
+    "test_SQ_local_READ_destination_WRITE_source_permissions_and_unsignaled_completion": {
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "heap_live": 0,
+        "umem_live": 0,
+        "module_refs": 0,
+        "dma_allocs": 1,
+        "dma_frees": 1,
+        "producer_callbacks": 1,
+        "CQ_callbacks_committed": 0,
+        "barriers": 2
+      },
+      "ownership_intentionally_retained": false
+    },
+    "test_ambiguous_allocation_retire_all_drain_flags_full_handle_and_epoch": {
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "heap_live": 0,
+        "umem_live": 0,
+        "module_refs": 0,
+        "dma_allocs": 2,
+        "dma_frees": 2,
+        "producer_callbacks": 0,
+        "CQ_callbacks_committed": 0,
+        "barriers": 2
+      },
+      "ownership_intentionally_retained": false
+    },
+    "test_ambiguous_producer_doorbell_retains_ring_and_MR_refs_without_rollback": {
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "heap_live": 3,
+        "umem_live": 1,
+        "module_refs": 2,
+        "dma_allocs": 1,
+        "dma_frees": 0,
+        "producer_callbacks": 1,
+        "CQ_callbacks_committed": 0,
+        "barriers": 2
+      },
+      "ownership_intentionally_retained": true
+    },
+    "test_bad_or_fetch_only_completion_cannot_release_MR_or_queue_lifetime": {
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "heap_live": 3,
+        "umem_live": 1,
+        "module_refs": 2,
+        "dma_allocs": 1,
+        "dma_frees": 0,
+        "producer_callbacks": 1,
+        "CQ_callbacks_committed": 0,
+        "barriers": 2
+      },
+      "ownership_intentionally_retained": true
+    },
+    "test_pool_device_module_teardown_keeps_owners_until_CQ_and_drain": {
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "heap_live": 0,
+        "umem_live": 0,
+        "module_refs": 0,
+        "dma_allocs": 1,
+        "dma_frees": 1,
+        "producer_callbacks": 1,
+        "CQ_callbacks_committed": 1,
+        "barriers": 2
+      },
+      "ownership_intentionally_retained": false
+    },
+    "test_two_threads_post_sixteen_owned_WRs_then_source_matched_CQ_retirement": {
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "heap_live": 0,
+        "umem_live": 0,
+        "module_refs": 0,
+        "dma_allocs": 1,
+        "dma_frees": 1,
+        "producer_callbacks": 16,
+        "CQ_callbacks_committed": 16,
+        "barriers": 17
+      },
+      "ownership_intentionally_retained": false
+    }
+  },
+  "source_sha256": {
+    "rdma/rnic/kernel/mr.c": "84cbde00b1163f9aff8389f8fafaf93215bd87ea62d2ead155c96815fbc5efe8",
+    "rdma/rnic/kernel/mr_contract.c": "fba5388020b03409654f46dfce12aed7a9f4776dc22c32a964a3aecf69da6adf",
+    "rdma/rnic/kernel/wqe.c": "9b5913e193de67aec3ce2880004819250da766677f54495b28c1050cb31541db",
+    "rdma/rnic/kernel/verbs_wqe.c": "f10dac55c02c367a8b077df8353ad0900f9bdcdbc3d845a2823e919481650b50",
+    "rdma/rnic/kernel/sq.c": "08591a2de25e7c0531a642abc56a1af1974bc0de23a959fed329d2503431f52c",
+    "rdma/rnic/tests/kernel_queue_model.c": "040e9a6c3ec021996f8af51f50d180043cf440933f13d116bbdb04f0b92ce240",
+    "rdma/rnic/tests/kernel_queue_cases.c": "5e134ce4e8809e9dbe17bb4d39e88b4d8b31ee7bd72d2368663e3b3f9169c633",
+    "rdma/rnic/kernel/mr.h": "427c947b5e8491e4444cf1fd0e726cfbcdfdae00113020ec67b7e7f314c5cfc3",
+    "rdma/rnic/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/kernel/wqe.h": "60c14ee73ac4af3b458ad8f584d99ab20abff76984e2e7bf08e17d639193b90a",
+    "rdma/rnic/kernel/sq.h": "db7999bf9a2f035a0ad7badbe5d1d30757dbb281212f7ed44a1344102e957046",
+    "rdma/rnic/tests/kernel_queue_model.h": "211809a0d8a2fa0565509fecf57afb89512a2fa8352fa3066011dc6e3c63651a",
+    "rdma/rnic/tests/test_kernel_queue_lifecycle.py": "e93700d7567d51a66f86cd324cf66642d602ab239b4b32bedbab81ed17ca983f"
+  },
+  "source_sha256_before_after_equal": true,
+  "compiler_command": [
+    "cc",
+    "-std=c11",
+    "-D_GNU_SOURCE",
+    "-D__KERNEL__",
+    "-O1",
+    "-g",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pthread",
+    "-fsanitize=address,undefined",
+    "-fno-sanitize-recover=undefined",
+    "-I",
+    "/tmp/as02-kernel-queue-model-963encns/include",
+    "-I",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests",
+    "-I",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/kernel",
+    "-include",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/kernel_queue_model.h",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/kernel/mr.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/kernel/mr_contract.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/kernel/wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/kernel/verbs_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/kernel/sq.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/kernel_queue_model.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/kernel_queue_cases.c",
+    "-o",
+    "/tmp/as02-kernel-queue-model-963encns/cases"
+  ],
+  "actual_kernel_C_implementation_executed": true,
+  "userspace_primitive_and_DMA_HWCQ_models": true,
+  "sanitizer": "address,undefined",
+  "hardware_verified": false,
+  "native_kernel_functions_executed": false,
+  "registered_provider_or_verbs_executed": false,
+  "real_coherent_DMA_or_page_pins": false,
+  "quarantine_tests_do_not_fake_cleanup": true
+}

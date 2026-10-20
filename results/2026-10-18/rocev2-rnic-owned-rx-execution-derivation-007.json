@@ -1,0 +1,31 @@
+{
+  "scope": "Exact actual RX FSM derivation/ownership source invariants, NOT RTL proof.",
+  "pass_test": true,
+  "methods": 11,
+  "terminal_exit_status": 0,
+  "retained_directory": "rdma/rnic/build/owned-rx-execution-unit-hhvkna6q",
+  "source_sha256": {
+    "rdma/rnic/tests/test_owned_rx_execution_derivation.py": "466b0eb6d63e1df1d9a4571e5384b1a70777f503a2da9f3d851f3dc8b2e8751b",
+    "rdma/rnic/hls/owned_rx_execution_profile.py": "7ece7c6c36f35a78e5c0f7549d8787b1d3b896d9a76a9f4f2ab1e7251f824171",
+    "rdma/rnic/hls/owned_wire_tx_profile.py": "2b6dc023cf0adadd6e3a302627d4c26338d8a9ceeb467800cbc5f3fa34e4310e",
+    "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/ib_transport_protocol.cpp": "ee67cd84f078b876a87b92859c6297f8601f72289e46b338ad1d8052e4d61d52",
+    "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/ib_transport_protocol.hpp": "9e9fb3cbb48bcacfdc2a81f49431d04294d5feb5d2b625ef31687a16b8f4c44e",
+    "rdma/rnic/hls/test_owned_rx_execution.cpp": "7d85b6a9df9c4dfff726ffff0eb2287ae5d76c7079b2771413e8aa10820001a1",
+    "rdma/rnic/tests/probe_owned_rx_execution.py": "da6b416cd097d6128329a501ee7fdbc71b8ded4f9f6e6be364a150e6313c2236"
+  },
+  "frozen_source_sha256": {
+    "rdma/rnic/hls/test_owned_rx_execution.cpp": "7d85b6a9df9c4dfff726ffff0eb2287ae5d76c7079b2771413e8aa10820001a1",
+    "rdma/rnic/hls/owned_rx_execution_profile.py": "7ece7c6c36f35a78e5c0f7549d8787b1d3b896d9a76a9f4f2ab1e7251f824171",
+    "rdma/rnic/hls/owned_wire_tx_profile.py": "2b6dc023cf0adadd6e3a302627d4c26338d8a9ceeb467800cbc5f3fa34e4310e",
+    "rdma/rnic/tests/test_owned_rx_execution_derivation.py": "466b0eb6d63e1df1d9a4571e5384b1a70777f503a2da9f3d851f3dc8b2e8751b",
+    "rdma/rnic/tests/probe_owned_rx_execution.py": "da6b416cd097d6128329a501ee7fdbc71b8ded4f9f6e6be364a150e6313c2236",
+    "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/ib_transport_protocol.hpp": "9e9fb3cbb48bcacfdc2a81f49431d04294d5feb5d2b625ef31687a16b8f4c44e",
+    "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/ib_transport_protocol.cpp": "ee67cd84f078b876a87b92859c6297f8601f72289e46b338ad1d8052e4d61d52"
+  },
+  "artifact_sha256": {
+    "rdma/rnic/build/owned-rx-execution-unit-hhvkna6q/unittest.log": "ae8db4ae7f2f81c760614bfd263d891fe4df8e0ca82e80fc848ea2c11a03a109"
+  },
+  "RTL_tested": false,
+  "hardware_verified": false,
+  "native_DMA_CQ": false
+}

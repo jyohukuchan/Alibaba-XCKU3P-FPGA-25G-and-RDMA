@@ -1,0 +1,60 @@
+{
+  "scope": "Actual Ethernet CSR/Corundum AXI and kernel ABI; whole-path safe input MODEL, reduced epoch limit3 for finite exhaustion proof",
+  "pass_test": true,
+  "hardware_verified": false,
+  "board_integrated": false,
+  "completion_claim": false,
+  "tests": {
+    "test_actual_axi_and_kernel_abi_atomic_snapshot_byte_strobes": {
+      "pass_test": true,
+      "scenario": 0,
+      "cycles": 176,
+      "axi_writes": 8,
+      "axi_reads": 9
+    },
+    "test_epoch_exhaustion_and_clear_never_reuse_or_reset": {
+      "pass_test": true,
+      "scenario": 4,
+      "cycles": 136,
+      "axi_writes": 13,
+      "axi_reads": 0
+    },
+    "test_full_width_mac_ip_enable_validation_before_narrowing": {
+      "pass_test": true,
+      "scenario": 2,
+      "cycles": 404,
+      "axi_writes": 38,
+      "axi_reads": 0
+    },
+    "test_partial_unknown_unaligned_and_readonly_accesses_do_not_alias": {
+      "pass_test": true,
+      "scenario": 3,
+      "cycles": 176,
+      "axi_writes": 15,
+      "axi_reads": 2
+    },
+    "test_staging_during_live_work_and_atomic_enable_disable": {
+      "pass_test": true,
+      "scenario": 5,
+      "cycles": 106,
+      "axi_writes": 10,
+      "axi_reads": 0
+    },
+    "test_unsafe_and_sticky_error_cannot_mutate_active_config": {
+      "pass_test": true,
+      "scenario": 1,
+      "cycles": 136,
+      "axi_writes": 13,
+      "axi_reads": 0
+    }
+  },
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_ethernet_config_regs.v": "78116b1045c48d4b997a16f3f2f1053359c93301e99640e05b4014d19359bb84",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+    "rdma/rnic/kernel/native_regs.h": "7f24028d184f6a8223a1d334e6c5e129483dea191991313d4be733de1801fd28",
+    "rdma/rnic/tests/test_ethernet_config_rtl.py": "36e5bfd3429b058549774921e908e77af99311dc915594bc01e051d0b0e7c849",
+    "rdma/rnic/tests/test_control_regs_rtl.py": "8f05463fe7d2bc07553f451800281240870c5147c5d50ec31f027227cf6d5c17"
+  }
+}

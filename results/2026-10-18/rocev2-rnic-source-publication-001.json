@@ -1,0 +1,59 @@
+{
+  "scope": "Work-in-progress source publication, not a hardware-qualified RNIC release",
+  "date_utc": "2026-10-20",
+  "base_commit": "8f3d2d8c85ea4d86c0b6a1ce41a231c0f51cd6f1",
+  "hardware_changed": false,
+  "FPGA_programmed": false,
+  "modules_or_provider_installed_or_loaded": false,
+  "Atomic_advertised": false,
+  "latest_functional_evidence": "results/2026-10-18/rocev2-rnic-atomic-owned-generated-002.json",
+  "latest_functional_evidence_scope": "Actual generated HLS/Atomic/MR/PTE/RAM/IP/ICRC; physical host ordering and positive MAC boundary remain models",
+  "publication_excludes": [
+    "Build/generated/vendor/binary artifacts and credentials",
+    "Internal agent goal checkpoints",
+    "Terminal database/cache/storage/history administration records"
+  ],
+  "checks": {
+    "focused_Atomic_RTL": {
+      "pass_test": true,
+      "methods": 12,
+      "internal_simulations": 48,
+      "command": "python3 -m unittest discover -s rdma/rnic/tests -p 'test_atomic*_rtl.py' -v"
+    },
+    "recorded_source_check": {
+      "pass_test": false,
+      "command": "bash scripts/check.sh",
+      "reason": "Historical rocev2-transport-rx-rtl.json records an older rocev2_tx_padding.v SHA; current44-byte SEND support changed that source",
+      "historical_evidence_or_strict_check_rewritten": false
+    },
+    "full_RNIC_suite": {
+      "pass_test": false,
+      "complete": false,
+      "command": "make -C rdma/rnic check",
+      "observed": [
+        "test_actual_native_MAC_role_receipt_and_tail_join_protected_DMA_until_CQ_commit: ERROR",
+        "test_native_QP_TX_waits_for_apply_preserves_route_then_READ_uses_new_PSN: FAIL"
+      ],
+      "remaining_execution_interrupted": true,
+      "diagnosed_or_fixed_in_this_publication": false
+    },
+    "staged_whitespace": {
+      "pass_test": false,
+      "reason": "Five pre-existing new blank lines at EOF; proof-bound source contents preserved instead of changing historical hashes for formatting"
+    },
+    "staged_binary_and_secret_pattern_scan": {
+      "findings": 0,
+      "not_a_general_security_audit": true
+    }
+  },
+  "all_checks_passed": false,
+  "timing_target_ns": 4.0,
+  "latest_HLS_estimate_ns": 13.568,
+  "board_timing_or_standard_API_runtime_proven": false,
+  "remaining": [
+    "Full ordinary/Atomic native integration and genuine positive MAC ownership join",
+    "Atomic requester and matched standard API runtime",
+    "Required zero/large/multi-SGE, bounded protocol recovery and physical qualification",
+    "Current-source provenance/legacy test reconciliation and original timing/DRC/CDC gates"
+  ]
+}

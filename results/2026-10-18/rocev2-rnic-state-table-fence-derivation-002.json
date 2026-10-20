@@ -1,0 +1,36 @@
+{
+  "scope": "Exact state-table derivative invariants; not actual RTL/physical proof.",
+  "pass_test": false,
+  "methods": 3,
+  "tests": {
+    "test_all_original_ordinary_table_actions_and_types_are_exact": {
+      "source_sha256": {
+        "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/state_table.hpp": "a0d587fdfb975fd09531c4562cc280db5952801f05be3926ef67ace8653470a8",
+        "rdma/rnic/hls/state_table_fence_profile.py": "cb73b71d39904d5cbd4387dc290980ecf075f3b540dc6bce73095c272611d046",
+        "rdma/rnic/tests/test_state_table_fence_derivation.py": "dddf0d65c7f95054181f7d668ac43d9f0c99f01e67a43d3133b4c6a714529fd7"
+      },
+      "original_RX_TX_QPI_actions_copies": 3,
+      "original_license_types_and_forward_declaration": true
+    },
+    "test_changed_source_anchors_rejected_original_untouched": {
+      "source_sha256": {
+        "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/state_table.hpp": "a0d587fdfb975fd09531c4562cc280db5952801f05be3926ef67ace8653470a8",
+        "rdma/rnic/hls/state_table_fence_profile.py": "cb73b71d39904d5cbd4387dc290980ecf075f3b540dc6bce73095c272611d046",
+        "rdma/rnic/tests/test_state_table_fence_derivation.py": "dddf0d65c7f95054181f7d668ac43d9f0c99f01e67a43d3133b4c6a714529fd7"
+      },
+      "changed_anchors_rejected": 6,
+      "original_unchanged": true
+    },
+    "test_real_BRAM_and_initialized_bitmap_not_zero_snapshot_fabrication": {
+      "source_sha256": {
+        "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/state_table.hpp": "a0d587fdfb975fd09531c4562cc280db5952801f05be3926ef67ace8653470a8",
+        "rdma/rnic/hls/state_table_fence_profile.py": "cb73b71d39904d5cbd4387dc290980ecf075f3b540dc6bce73095c272611d046",
+        "rdma/rnic/tests/test_state_table_fence_derivation.py": "dddf0d65c7f95054181f7d668ac43d9f0c99f01e67a43d3133b4c6a714529fd7"
+      },
+      "original_BRAM_capacity_preserved": true,
+      "uninitialized_snapshot_denied": true,
+      "full16bit_range_checked_on_all_three": true
+    }
+  },
+  "hardware_verified": false
+}

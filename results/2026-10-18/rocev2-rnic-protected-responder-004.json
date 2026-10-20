@@ -1,0 +1,272 @@
+{
+  "scope": "Offline protected actual-HLS responder, single QP/single outstanding/<=4096B prototype",
+  "hardware_verified": false,
+  "board_integrated": false,
+  "pci_dma_implemented": false,
+  "completion_claim": false,
+  "cases": [
+    {
+      "name": "wrong_write_key",
+      "operation": "write",
+      "key": 2147483656,
+      "address": "0xfedcba9876543210",
+      "expected_error": 1,
+      "psn": 9991764
+    },
+    {
+      "name": "wrong_read_key",
+      "operation": "read",
+      "key": 2147483656,
+      "address": "0xfedcba9876543210",
+      "expected_error": 1,
+      "psn": 9991764
+    },
+    {
+      "name": "wrong_pd",
+      "operation": "write",
+      "key": 9,
+      "address": "0xfedcba9876543210",
+      "expected_error": 2,
+      "psn": 9991764
+    },
+    {
+      "name": "read_only_write",
+      "operation": "write",
+      "key": 10,
+      "address": "0xfedcba9876543210",
+      "expected_error": 3,
+      "psn": 9991764
+    },
+    {
+      "name": "below_mr",
+      "operation": "write",
+      "key": 8,
+      "address": "0xfedcba9876542fff",
+      "expected_error": 4,
+      "psn": 9991764
+    },
+    {
+      "name": "past_mr_end",
+      "operation": "read",
+      "key": 8,
+      "address": "0xfedcba9876543fff",
+      "expected_error": 4,
+      "psn": 9991764
+    },
+    {
+      "name": "overflow_va",
+      "operation": "read",
+      "key": 8,
+      "address": "0xffffffffffffffe0",
+      "expected_error": 4,
+      "psn": 9991764
+    },
+    {
+      "name": "wrong_qp",
+      "operation": "write",
+      "key": 8,
+      "address": "0xfedcba9876543210",
+      "expected_error": 17,
+      "psn": 9991764
+    },
+    {
+      "name": "wrong_peer",
+      "operation": "write",
+      "key": 8,
+      "address": "0xfedcba9876543210",
+      "expected_error": 17,
+      "psn": 9991764
+    },
+    {
+      "name": "unexpected_psn",
+      "operation": "write",
+      "key": 8,
+      "address": "0xfedcba9876543210",
+      "expected_error": 18,
+      "psn": 9991765
+    },
+    {
+      "name": "length_mismatch",
+      "operation": "write",
+      "key": 8,
+      "address": "0xfedcba9876543210",
+      "expected_error": 16,
+      "psn": 9991764
+    },
+    {
+      "name": "unsupported_first",
+      "operation": "write",
+      "key": 8,
+      "address": "0xfedcba9876543210",
+      "expected_error": 19,
+      "psn": 9991764
+    },
+    {
+      "name": "valid_high_va_write",
+      "operation": "write",
+      "key": 8,
+      "address": "0xfedcba9876543210",
+      "expected_error": 0,
+      "psn": 9991764
+    },
+    {
+      "name": "read_after_write",
+      "operation": "read",
+      "key": 8,
+      "address": "0xfedcba9876543210",
+      "expected_error": 0,
+      "psn": 9991765
+    },
+    {
+      "name": "valid_second_write",
+      "operation": "write",
+      "key": 8,
+      "address": "0xfedcba9876543210",
+      "expected_error": 0,
+      "psn": 9991766
+    },
+    {
+      "name": "stale_key_after_reuse",
+      "operation": "read",
+      "key": 8,
+      "address": "0xfedcba9876543210",
+      "expected_error": 1,
+      "psn": 9991767
+    },
+    {
+      "name": "fresh_key_read",
+      "operation": "read",
+      "key": 16,
+      "address": "0xfedcba9876543210",
+      "expected_error": 0,
+      "psn": 9991767
+    },
+    {
+      "name": "bad_icrc",
+      "expected_integrity_drop": true
+    },
+    {
+      "name": "after_bad_icrc_read",
+      "operation": "read",
+      "key": 16,
+      "address": "0xfedcba9876543210",
+      "expected_error": 0,
+      "psn": 9991768
+    }
+  ],
+  "summary": {
+    "pass_test": true,
+    "cycles": 7065,
+    "commands": 5,
+    "write_frames": 2,
+    "read_frames": 3,
+    "tx_frames": 5,
+    "statuses": 5,
+    "accepted": 5,
+    "rejected": 13,
+    "completed": 5,
+    "rx_good": 18,
+    "rx_bad": 1,
+    "deferred_tx_cycles": 1005
+  },
+  "memory_commands": [
+    {
+      "write": true,
+      "address": "0x8123456789abc210",
+      "length": 65,
+      "tag": 1
+    },
+    {
+      "write": false,
+      "address": "0x8123456789abc210",
+      "length": 65,
+      "tag": 2
+    },
+    {
+      "write": true,
+      "address": "0x8123456789abc210",
+      "length": 65,
+      "tag": 3
+    },
+    {
+      "write": false,
+      "address": "0x8123456789abc210",
+      "length": 65,
+      "tag": 4
+    },
+    {
+      "write": false,
+      "address": "0x8123456789abc210",
+      "length": 65,
+      "tag": 5
+    }
+  ],
+  "responses": [
+    {
+      "case": "valid_high_va_write",
+      "ipv4_hex": "450200300000400064117493c6120b02c6120b0112b712b7001c00001140ffff000000c40098765400000001e7c75759",
+      "wire_checksums_verified": true,
+      "payload_bytes_verified": 0
+    },
+    {
+      "case": "read_after_write",
+      "ipv4_hex": "45020074000040006411744fc6120b02c6120b0112b712b7006000001070ffff000000c40098765500000002d360b5ca1face1364b982d62b7c419aee330459a2f7cb1c61ba8fd324794297eb3c015aaff0c41962b788dc217a4f90e4390257a8fdc11a6fb085d92277489de13000000613ef8cd",
+      "wire_checksums_verified": true,
+      "payload_bytes_verified": 65
+    },
+    {
+      "case": "valid_second_write",
+      "ipv4_hex": "450200300000400064117493c6120b02c6120b0112b712b7001c00001140ffff000000c40098765600000003abf599cd",
+      "wire_checksums_verified": true,
+      "payload_bytes_verified": 0
+    },
+    {
+      "case": "fresh_key_read",
+      "ipv4_hex": "45020074000040006411744fc6120b02c6120b0112b712b7006000001070ffff000000c40098765700000004d360b5ca1face1364b982d62b7c419aee330459a2f7cb1c61ba8fd324794297eb3c015aaff0c41962b788dc217a4f90e4390257a8fdc11a6fb085d92277489de13000000f7839d6a",
+      "wire_checksums_verified": true,
+      "payload_bytes_verified": 65
+    },
+    {
+      "case": "after_bad_icrc_read",
+      "ipv4_hex": "45020074000040006411744fc6120b02c6120b0112b712b7006000001070ffff000000c40098765800000005d360b5ca1face1364b982d62b7c419aee330459a2f7cb1c61ba8fd324794297eb3c015aaff0c41962b788dc217a4f90e4390257a8fdc11a6fb085d92277489de130000001698c8c6",
+      "wire_checksums_verified": true,
+      "payload_bytes_verified": 65
+    }
+  ],
+  "write_payload_bytes_verified": 130,
+  "write_payload_sha256": "e852cb4077f9643878660f5c4b423f163acf40a7100e522bc963f5b735dfec87",
+  "expected_payload_sha256": "e852cb4077f9643878660f5c4b423f163acf40a7100e522bc963f5b735dfec87",
+  "generated_hls_sha256": "7bcfddc9cb856060ccc3fbe4c8599538a03bf16105176b44f737c22fb0be55ff",
+  "generated_files": 138,
+  "source_sha256": {
+    "rdma/rtl/rocev2_write_engine.v": "0698f421ea45f316dd12f46e0b5003e3138c86b7a7ae8d5999e4e5f2aae658f7",
+    "rdma/rtl/rocev2_pattern_source.v": "95dcfd5c8f772c227a13943fac3ccfb0a10056caeb179e39b26f1c3acd7b8f9e",
+    "rdma/rtl/rocev2_ethernet_tx.v": "8a74d989f9ce93a9c1dca712b459de9d1fa2664791839a4fcc613581eb5ba46c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rtl/rocev2_tx_padding.v": "0eb7cb8288f7bc63a62d32e439cbba3dd87f1db829437806fb1392497a87162a",
+    "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b",
+    "rdma/rtl/rocev2_tx_guard.v": "1d00bf7018a16f4e29d611c02072db17a57261c1d1fee31e50eb7ddae9a7ec4d",
+    "rdma/read/rtl/rocev2_read_engine.v": "cabf0b52017e5b411c0e64abb1b74c9d67fea685cf0fbd4a372e4ca58bdbb4e5",
+    "rdma/read/rtl/rocev2_read_buffer.v": "efd936002c9132a69a3c049d361495cbe145acd29b0d7906398067c0cdee6112",
+    "rdma/read/rtl/rocev2_rw_control.v": "b053823980a3c169d46291363793446c0f08c99b9199dedff48ed10c9824c164",
+    "rdma/read/rtl/rocev2_rw_ethernet_rx.v": "d80c2bf6d95389baf251657c9ace4c26944a2f1c937c0df2e681ab71bbfed687",
+    "rdma/read/rtl/rocev2_rw_endpoint.v": "39bf36d7860ffc728ab8240012ef1575c24dd0e9dd119035833503c7f367afd6",
+    "rdma/read/fpga/mqnic_app_block.v": "93d62ddd343e712e89c47cba2615eb7debcca7636019a487c771ecb4d4d86b25",
+    "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+    "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+    "external/corundum/fpga/lib/axis/rtl/axis_adapter.v": "4b9b6649f12e374c24d36f2d42680ecf1f38cca8ae4fda7fd68dbf722b6c8140",
+    "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+    "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+    "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+    "external/corundum/fpga/lib/eth/rtl/eth_axis_rx.v": "4fb3ab7e0ccafdc85a46f37e533b7fb6e74a7101cfc18757126175ed01354d59",
+    "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+    "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "a088ecb5dae497d68fa1ee9a5d64cc3a13b73fe24c4deeb1bba7188144ee7a58",
+    "rdma/rnic/tests/probe_protected_responder.py": "45908371b011a0785598a0800acb9e970cbc71d60160ce5788d3cf333639bf3f",
+    "rdma/rnic/tests/protected_sim.py": "b718a5ce78468b98058d9f51194f157fff7872062955a1db51d78d5ce6d1488e",
+    "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c",
+    "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+    "rdma/tests/test_icrc_rtl.py": "669d93c43d83a9609eeff9ed659f8de1920b41f2a43ea54f73033ca68af83b02"
+  }
+}

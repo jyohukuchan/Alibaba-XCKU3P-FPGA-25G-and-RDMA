@@ -1,0 +1,28 @@
+{
+  "scope": "Actual native AXI crossbar/Ethernet CSR, old/new control and datapath MODELS",
+  "pass_test": false,
+  "hardware_verified": false,
+  "board_integrated": false,
+  "completion_claim": false,
+  "tests": {},
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_native_endpoint.v": "5ed515fc0e3ed56513592f9b4fcd85948a22381c28825ec9ef49d410555b4d2d",
+    "rdma/rnic/rtl/rocev2_ethernet_config_regs.v": "78116b1045c48d4b997a16f3f2f1053359c93301e99640e05b4014d19359bb84",
+    "external/corundum/fpga/lib/axi/rtl/axil_crossbar.v": "f48acdb965988038196bc0742f2f18174a1ecd35386a061f634bc64ccf6adb27",
+    "external/corundum/fpga/lib/axi/rtl/axil_crossbar_rd.v": "b43f1a86164949e78e01e29864c9a2cad5bd442be8356231d2993beaeb3d4e99",
+    "external/corundum/fpga/lib/axi/rtl/axil_crossbar_wr.v": "6b415d4d265a6694810913b67f62f93bd01128c59afe962d2784d45b9f310663",
+    "external/corundum/fpga/lib/axi/rtl/axil_crossbar_addr.v": "a687cef2780b571b1a1b85746e4e093d0d7131d77bf9d6c610f333b0e27480c0",
+    "external/corundum/fpga/lib/axi/rtl/axil_register_rd.v": "ae1a35af8be25b3fa0f2245ce0ca33287f566279ea5bcf04d822d417ffa5f463",
+    "external/corundum/fpga/lib/axi/rtl/axil_register_wr.v": "af7fd3bc697c3e2d8e921105bf33fab62199a211e4aca031ba28bf08054b6563",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+    "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+    "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+    "rdma/rnic/rtl/rocev2_dual_ethernet_endpoint.v": "af383f3ae5cb8e03b7d24fab76c3d23dfa3b876a0695e4dfe4d18ef0631d363c",
+    "rdma/rnic/kernel/native_regs.h": "7f24028d184f6a8223a1d334e6c5e129483dea191991313d4be733de1801fd28",
+    "rdma/rnic/tests/test_native_decode_rtl.py": "98639060eb85b1a7ebaa486b85f53d239ba12c65fc7374779d7581617b39346f",
+    "rdma/rnic/tests/probe_native_control.py": "de0ea93eaa31326cd6c5b4b817af2b2b570b32647b95762fdffbe398ad5691eb",
+    "rdma/rnic/tests/test_control_regs_rtl.py": "8f05463fe7d2bc07553f451800281240870c5147c5d50ec31f027227cf6d5c17"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "scope": "Isolated actual Corundum DMA backend/clients/RAM physical probe; NOT native board signoff",
+  "session": 76164,
+  "terminal_exit_status": 0,
+  "period_ns": 4,
+  "ram_address_width": 15,
+  "ram_segment_address_width": 9,
+  "original_input_count": 6,
+  "source_unchanged": true,
+  "luts": 3981,
+  "registers": 3029,
+  "bram_tiles": 8,
+  "dsp": 0,
+  "uram": 0,
+  "wns_ns": 0.027,
+  "whs_ns": 0.012,
+  "setup_failing_endpoints": 0,
+  "hold_failing_endpoints": 0,
+  "pulse_failing_endpoints": 0,
+  "drc": {
+    "errors": 0,
+    "critical_warnings": 0,
+    "warnings": 1,
+    "warning": "RTSTAT-10 no routable output loads in isolated OOC context; not a blanket board waiver"
+  },
+  "validated_ingress_skid": true,
+  "full_board_signoff": false,
+  "native_dma_verified": false,
+  "hardware_changed": false,
+  "completion_claim": false,
+  "artifact_sha256": {
+    "rdma/rnic/build/dma-ooc-obPQcKuZ/impl/original_inputs.sha256": "9519e07e5ae70b7b1f2e1cef4deb5da5b0c1038fe99cacd9f537c48a091b83ea",
+    "rdma/rnic/build/dma-ooc-obPQcKuZ/impl/routed.dcp": "3d242416236ebb1acbb29acc79b55184a5b5fae9fc4931bb46a0e19bc22dd67a",
+    "rdma/rnic/build/dma-ooc-obPQcKuZ/impl/timing.rpt": "cee49287eb49c9e1ef1e754d60259079b543c997262038c46b840f9e3fc0dc2d",
+    "rdma/rnic/build/dma-ooc-obPQcKuZ/impl/utilization.rpt": "babaff416f8256dcfe8f4f625c2f85e620439d96ce221bf273addbbd9d795138",
+    "rdma/rnic/build/dma-ooc-obPQcKuZ/impl/setup_paths.rpt": "caff152d28674a4fbcf1834d3ac778da8d8fdcc3731689001bf1f7b46ebd594e",
+    "rdma/rnic/build/dma-ooc-obPQcKuZ/impl/drc.rpt": "f067c642158de252f5dcc9392fefabd89c8bd204f860b6c0b60ef94d9e8acd98",
+    "rdma/logs/rnic-dma-ooc-002.log": "eb0275b8d8c6f6108279891e3453319a5151b0336e7dccd955a16b4f6aa8798e",
+    "rdma/rnic/rtl/rocev2_corundum_dma_backend.v": "1b9b7f652d545504c5cc6a7c47e08f5300c2878b1a2d93030ac3792ef6591f1f",
+    "rdma/rnic/rtl/dma_backend_ooc.tcl": "05315a7e823f526bf2d176a171fc843a17414aee87d7785962a15d347ee547e2"
+  }
+}

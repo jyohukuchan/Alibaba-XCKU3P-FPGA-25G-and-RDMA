@@ -1,0 +1,55 @@
+{
+  "scope": "Owned FNS derivation invariants, not functional/physical/native proof.",
+  "pass_test": true,
+  "methods": 4,
+  "tests": {
+    "test_changed_unique_anchors_rejected_and_original_file_unchanged": {
+      "source_sha256": {
+        "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/retransmitter/retransmitter.hpp": "290c476d45672c15b864e258a8944117ee6ce479fc55dfb3588027eb00b50732",
+        "rdma/rnic/hls/owned_retrans_profile.py": "28aafc3d0667efd78d7ab1c8ed1e02fe20015c7e3c4a9593811b365b5712e500",
+        "rdma/rnic/tests/test_owned_retrans_derivation.py": "d38844b4a40a00d4340fb7e4fe3f8e47accafa019deac23ec0c18fa7dd342bbd",
+        "rdma/rnic/hls/owned_retrans_top.cpp": "e77b946294a3909f5112b02ab1dd0409372f38ee08b2ac4029e2c30d0821f4a7",
+        "rdma/rnic/rtl/rocev2_owned_retrans.v": "42450615bedfc4cfc3feef2ed9591ab800f10603202ffb188de2bb64fdfb13c7"
+      },
+      "changed_anchors_rejected": 4,
+      "original_unchanged": true
+    },
+    "test_complete_original_prefix_original_capacities_and_table_actions_retained": {
+      "source_sha256": {
+        "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/retransmitter/retransmitter.hpp": "290c476d45672c15b864e258a8944117ee6ce479fc55dfb3588027eb00b50732",
+        "rdma/rnic/hls/owned_retrans_profile.py": "28aafc3d0667efd78d7ab1c8ed1e02fe20015c7e3c4a9593811b365b5712e500",
+        "rdma/rnic/tests/test_owned_retrans_derivation.py": "d38844b4a40a00d4340fb7e4fe3f8e47accafa019deac23ec0c18fa7dd342bbd",
+        "rdma/rnic/hls/owned_retrans_top.cpp": "e77b946294a3909f5112b02ab1dd0409372f38ee08b2ac4029e2c30d0821f4a7",
+        "rdma/rnic/rtl/rocev2_owned_retrans.v": "42450615bedfc4cfc3feef2ed9591ab800f10603202ffb188de2bb64fdfb13c7"
+      },
+      "licensed_original_unchanged": true,
+      "actual2000metadata_and8pointer_geometry": true,
+      "real_dependencies_not_waived": true
+    },
+    "test_full_pool_ACK_liveness_and_full_context_before_side_effects": {
+      "source_sha256": {
+        "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/retransmitter/retransmitter.hpp": "290c476d45672c15b864e258a8944117ee6ce479fc55dfb3588027eb00b50732",
+        "rdma/rnic/hls/owned_retrans_profile.py": "28aafc3d0667efd78d7ab1c8ed1e02fe20015c7e3c4a9593811b365b5712e500",
+        "rdma/rnic/tests/test_owned_retrans_derivation.py": "d38844b4a40a00d4340fb7e4fe3f8e47accafa019deac23ec0c18fa7dd342bbd",
+        "rdma/rnic/hls/owned_retrans_top.cpp": "e77b946294a3909f5112b02ab1dd0409372f38ee08b2ac4029e2c30d0821f4a7",
+        "rdma/rnic/rtl/rocev2_owned_retrans.v": "42450615bedfc4cfc3feef2ed9591ab800f10603202ffb188de2bb64fdfb13c7"
+      },
+      "fullQPN_and_WR_context_guards": true,
+      "credit0_does_not_hide_ACK": true,
+      "whole_core_drain": false
+    },
+    "test_real_pool_full_immutable_lease_not_bare_indices_or_mutable_PSN": {
+      "source_sha256": {
+        "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/retransmitter/retransmitter.hpp": "290c476d45672c15b864e258a8944117ee6ce479fc55dfb3588027eb00b50732",
+        "rdma/rnic/hls/owned_retrans_profile.py": "28aafc3d0667efd78d7ab1c8ed1e02fe20015c7e3c4a9593811b365b5712e500",
+        "rdma/rnic/tests/test_owned_retrans_derivation.py": "d38844b4a40a00d4340fb7e4fe3f8e47accafa019deac23ec0c18fa7dd342bbd",
+        "rdma/rnic/hls/owned_retrans_top.cpp": "e77b946294a3909f5112b02ab1dd0409372f38ee08b2ac4029e2c30d0821f4a7",
+        "rdma/rnic/rtl/rocev2_owned_retrans.v": "42450615bedfc4cfc3feef2ed9591ab800f10603202ffb188de2bb64fdfb13c7"
+      },
+      "full248immutable_lease_on_metadata_event_RDinit": true,
+      "actual_external_offer_and_exact_return_ack": true,
+      "mutable_protocol_PSN_not_used_for_return": true
+    }
+  },
+  "hardware_verified": false
+}

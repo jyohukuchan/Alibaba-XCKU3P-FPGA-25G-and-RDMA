@@ -1,0 +1,29 @@
+{
+  "scope": "Compile/link-only actual ib_umem registered-page library and portable MR contract; not a registered RDMA device or loaded bus driver",
+  "session": 81735,
+  "terminal_exit_status": 0,
+  "command": "make -C rdma/rnic/kernel CC=x86_64-linux-gnu-gcc-13 module",
+  "kernel_release": "6.17.0-1033-oem",
+  "kernel_W_level": 1,
+  "vermagic": "6.17.0-1033-oem SMP preempt mod_unload modversions",
+  "btf_generated": false,
+  "btf_skip_reason": "vmlinux unavailable",
+  "module_loaded": false,
+  "rdma_device_registered": false,
+  "runtime_user_pages_pinned": false,
+  "native_dma_verified": false,
+  "hardware_callbacks_implemented": false,
+  "persistent_host_epoch_watermark_implemented": false,
+  "completion_claim": false,
+  "source_snapshot_captured_after_compile": true,
+  "artifact_sha256": {
+    "rdma/rnic/kernel/mr.c": "fae22c3d780136a4cf0395b7605b94ed3f51e46180781d36f6c2879f79f01e3c",
+    "rdma/rnic/kernel/mr.h": "b780f4685f874870099709708e8c33a67983b9992125c78b522f8909fb934f3b",
+    "rdma/rnic/kernel/mr_contract.c": "fba5388020b03409654f46dfce12aed7a9f4776dc22c32a964a3aecf69da6adf",
+    "rdma/rnic/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/kernel/Makefile": "7382347ba2cd31d4dd0f3a8f71eaeaafedfecb44344a19cbe36a52a31406c089",
+    "rdma/rnic/kernel/.gitignore": "949d2519d867ddd416fd2926f3b175f2d30f72c81272844cce31b3753827fd17",
+    "rdma/rnic/kernel/as02_mr_support.ko": "3a65fb32fb422fae0de054e3d55a6dd448fefb53810ad0ce4a9377a1fd230aa2",
+    "rdma/logs/rnic-kernel-mr-build-002.log": "c447ed5fc2e049b33be81a9b94c859b2a4167398293127abb1f852a61ded2f91"
+  }
+}

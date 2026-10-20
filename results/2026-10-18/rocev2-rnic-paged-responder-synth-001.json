@@ -1,0 +1,31 @@
+{
+  "scope": "Actual combined generated-HLS paged responder synthesis ONLY, no controller/CSR in this frozen top",
+  "session": 51850,
+  "terminal_exit_status": 0,
+  "source_manifest_count": 156,
+  "original_inputs_unchanged_at_terminal": true,
+  "luts": 44265,
+  "registers": 74026,
+  "bram_tiles": 53,
+  "period_ns": 4,
+  "post_synthesis_wns_ns": -1.253,
+  "post_synthesis_whs_ns": 0.016,
+  "setup_failing_endpoints": 4200,
+  "hold_failing_endpoints": 0,
+  "constraints_met": false,
+  "critical_path": "rst input -> guard/HLS FIFO full_n register;17logic levels/high fanout",
+  "placed_or_routed": false,
+  "native_board_signoff": false,
+  "native_dma_verified": false,
+  "completion_claim": false,
+  "next_action": "Read source-frozen physical route001 session93891; do not infer physical timing from synthesis.",
+  "artifact_sha256": {
+    "rdma/rnic/build/paged-responder-synth-uZNe1mHJ/impl/original_inputs.sha256": "484adf03ca3a8eef0163f562576b698da0574ba67187e07026546befaacff5b1",
+    "rdma/rnic/build/paged-responder-synth-uZNe1mHJ/impl/post_synth.dcp": "f6a2a7fe65d09d0d2b2b71b68f37eb75ef74eef6df475e7d26723fe9172c3c73",
+    "rdma/rnic/build/paged-responder-synth-uZNe1mHJ/impl/utilization.rpt": "0f14f1a1a44548dc035a38fff9bbf4eaa4301f61985ecb5afc2f182ff654a12f",
+    "rdma/rnic/build/paged-responder-synth-uZNe1mHJ/impl/timing.rpt": "2c21f116d7f8228121e98b5675cd97d998e7dc2364a23d9b163f138fb2597e2e",
+    "rdma/rnic/build/paged-responder-synth-uZNe1mHJ/impl/setup_paths.rpt": "e96b688542a5b4c4faee0199cabf2e6c3dd47ed55302b9eb0d72838f2623dbbe",
+    "rdma/rnic/build/paged-responder-synth-uZNe1mHJ/impl/drc.rpt": "45f5402d4c9f4196fc35e5d04efa781dc17406af470dca42f6ba50efca1a2d2c",
+    "rdma/logs/rnic-paged-responder-synth-001.log": "4f33c77ea86365d8f7777f764163f2e2e085afa133fe37e64b814671c100ed60"
+  }
+}

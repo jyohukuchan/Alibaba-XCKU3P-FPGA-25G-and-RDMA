@@ -1,0 +1,32 @@
+{
+  "scope": "Finite actual generated metadata-table RTL reset/storage/backpressure test.\n\nAll2000entries/allfields are checked through real FIFO ports. No internal\nforcing, table replacement or RTL repair. This does NOT prove complete\ntransport/native/physical timing or authorize an image.\n",
+  "hardware_verified": false,
+  "programming_authorized": false,
+  "sequential_initialization_required": true,
+  "generated_hls_sha256": "60c9a20e6671f223444c9a115d6295fdff456672d6354ed240e2317529cdbc19",
+  "generated_files": 138,
+  "source_sha256": {
+    "rdma/rnic/tests/probe_metadata_reset.py": "8b460cae6e0ce0f92454eca05b76a7a012ad36312a4585264d272bcf3c78fe89"
+  },
+  "selected_RTL_sha256": {
+    "rocev2_top_retrans_meta_table_0_s.v": "da4ce0086889bc5ccebc23cca0432f47ccdc1f25ac6927d2defb2e1bc46ba440",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_localAddr_RAM_T2P_BRAM_1R1W.v": "091d0264f22f1b312f15b4a46b53c99b14fe68f5be55555a2fd1f59cd6c4b812",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_lst_RAM_T2P_BRAM_1R1W.v": "f75c032d6996b5bb24eb48fbdbdab68b1d25e58801dde5ace7204c354b54d24b",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_next_RAM_T2P_BRAM_1R1W.v": "578cb75a5b17e4d08db37a329c57cfa882c647176ea5b87bfe325b6576cc86d1",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_offs_RAM_T2P_BRAM_1R1W.v": "0a2716841c0cd310ccee0fbc36b9f9f65d8968b59f180a8b1b6f960796c658c4",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_opCode_RAM_T2P_BRAM_1R1W.v": "1d0a29d3c14a2d544be7a42589034342157f7286e2646e5a7744f7b30b9feca0",
+    "rocev2_top_retrans_meta_table_0_s_meta_table_psn_RAM_T2P_BRAM_1R1W.v": "06bfad35f870fcd26117a0d21c38790ab5cb5d4a8093de3ef1f8548a6a83b01f"
+  },
+  "generated_testbench_sha256": "814fab5b90ee4fa821eaa955c27a6d4462a409afaa62585b3c29311f21f32cab",
+  "inputs_unchanged": true,
+  "terminal_exit_status": 0,
+  "stdout": "METADATA_RESET_PASS checks=8024 zero=4023 data=2000 append=2001 resets=16 cycles=100235\n/tmp/as02-metadata-reset-dqh6u57n/tb.v:140: $finish called at 401032000 (1ps)\n",
+  "stderr": "",
+  "checks": 8024,
+  "zero_checks": 4023,
+  "data_checks": 2000,
+  "append_checks": 2001,
+  "reset_checks": 16,
+  "cycles": 100235,
+  "pass_test": true
+}

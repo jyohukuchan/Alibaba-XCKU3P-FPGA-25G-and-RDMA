@@ -22,3 +22,5 @@ jobs:
         run: make -C rdma check
       - name: Compile READ peer and run offline protected READ and version2 host tests
         run: make -C rdma/read check
+      - name: Check incremental MR and responder admission/backend RTL (no hardware)
+        run: make -C rdma/rnic check

@@ -1,0 +1,518 @@
+{
+  "scope": "Actual memory arbiter RTL; authorized clients/backend are EXPLICIT MODELS.\n\nNot MR authorization, page translation, PCIe DMA, a local transport executor,\nCQ publication, drain/reset safety or native runtime evidence.\n",
+  "pass_test": true,
+  "methods": 8,
+  "simulations": 35,
+  "tests": {
+    "test_all_known_backend_errors_return_exact_error_without_safe_release": [
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 1,
+          "cycles": 22,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "67f77208d123fd9fa00a4ed5cf16f7abed3fd2959978154dd3b030ef3fd905e9"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 1,
+          "cycles": 22,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "52b1edd3e38f7505744720e2d7622b86796da33b31b22ea3966300a33e4fb2b2"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 1,
+          "cycles": 22,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "7fb7b223d98ac7b58a8cef0f7c01998c154acfa6cdaa60dcf69917d8c77757f1"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 1,
+          "cycles": 22,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "48212b39f22a496f769937b33b48a7fe5646e065dbf46ffe7ae5432787f6f4d5"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 1,
+          "cycles": 22,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "fac1ff470f5b680be412a2fc2271a4191158116b39c1c7000d4d6c56643aa498"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 1,
+          "cycles": 22,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "65b83e0bec1da5be4455d94997044093b204bc4839668a548413764317168f07"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 1,
+          "cycles": 22,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "1e638c90f14a793c3597f786c77815adc70a2f839b8b9c8065537cfce8b92c99"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 1,
+          "cycles": 22,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "4ac1177bf536090da1c7cd5d78c8f6596a7b3794f30e7f08e15cc6cb04cb7442"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 1,
+          "cycles": 22,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "6845a9640f00325619675348818fd46a7dd063a2fae28c582214770025831160"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 1,
+          "cycles": 22,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "94e44684ac2c254f49b932f5189d320a00349018408466592cf4c50717a5d83d"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 1,
+          "cycles": 22,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "d74de9120ddc824e697684d43498b14909180cac8f2fed242a59b212cb609d92"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 1,
+          "cycles": 22,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "d7130c5238f03c499a17620a3d0f94531cbade5bf5f62bf7adf89f7e98b8ade3"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 1,
+          "cycles": 22,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "7d575b9a9f0a4447c3c4d0e725d2a919b8466e3aa4741950dd382049c160ac66"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 1,
+          "cycles": 22,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "6b19bb0373591205a8d5839c39b0af4cf6d7b050a8e025c9163d834924901db3"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 1,
+          "cycles": 22,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "df7c4c4a04e3d9ad29770c5b2bc3299e32a13a531c3ec849c124a76cef865231"
+      }
+    ],
+    "test_backend_success_waits_for_actual_last_data_handoff": [
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 1,
+          "cycles": 20,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "14e09aa20e7ae0b36471d3a75fd9ca014544596c8f17c89bc9d8baeb9c202e44"
+      }
+    ],
+    "test_both_clients_full_key_offset_tag_and_registered_data_status_ownership": [
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 2,
+          "statuses": 2,
+          "cycles": 66,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "24f779cacf7110175616b47c4f777e5ad77c02ddaadefa2a37c89f1f2824d622"
+      }
+    ],
+    "test_continuously_offered_competitor_keeps_full_tuple_and_round_robin": [
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 2,
+          "statuses": 2,
+          "cycles": 50,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "52a3f57c88613269f2b3ae6b548d251ca176bbd2f8a3a8a4b5d3b84a49a7f1b2"
+      }
+    ],
+    "test_fault_and_disable_do_not_retract_already_offered_backend_command": [
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 0,
+          "cycles": 16,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "ada1880b01b47a870ac07e4affb13079cea71b20824a337565442b0ad0dca954"
+      }
+    ],
+    "test_invalid_full_width_and_unknown_command_never_reaches_backend": [
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 0,
+          "statuses": 0,
+          "cycles": 11,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "5fafc18840c35dc1f692a1e2cc5ef8f53b6ec42ab8e56869201892251ece5c7d"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 0,
+          "statuses": 0,
+          "cycles": 11,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "b55f2d542e1bce069fe4b96fe6c09da2d43b1f9f722e1632d2bfee1c0317285e"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 0,
+          "statuses": 0,
+          "cycles": 11,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "6ac03354740de3539d8f36d3b9fb4ea529254db1734953e97cfb56d607cc9251"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 0,
+          "statuses": 0,
+          "cycles": 11,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "ab5bfdd23fb149dfb10c1d616b383a3107b548e3de9c17974fac782ce8379bd4"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 0,
+          "statuses": 0,
+          "cycles": 11,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "83bb24729aa5094777ca1dafdeaa6aa748df11d96ea499bd4d8eb11f1b976d9f"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 0,
+          "statuses": 0,
+          "cycles": 11,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "8ca28fa6b86a048f8ef01f19e1b8a57e3e5418e1cdf63da4023b5f11891e6759"
+      }
+    ],
+    "test_malformed_owned_data_does_not_reach_other_client_or_backend": [
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 0,
+          "cycles": 16,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "e6f273b06ca6213db8ddae58e03576fac9b85668580d2808b1119761fa9cdff3"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 0,
+          "cycles": 16,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "f9118cf9157164177f4b9a31cd1909a2aa1e6c654e599edcb685f7b94678e05a"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 0,
+          "cycles": 16,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "f6f03cd375d3432bd7022cac57dc5b5332c6fe16ffd1c78386125681a00a341b"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 0,
+          "cycles": 16,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "55fb58e65a56461c342c4f283e1c5c787dca8b42ccba4aa1a1f9a407ce0d2262"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 0,
+          "cycles": 16,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "33505d1f882677e218086ff1647ba1158be8e9c3b9316e23d2415915e5652fe4"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 0,
+          "cycles": 16,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "5b1b50ee3d82bc77861a6c258c1a7e04a52dc33bea38c5386ffca359056bb2d0"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 0,
+          "cycles": 16,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "b46e28471015b83d048e321a86c3b6af155780132d323af91d7427d48bfb0892"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 0,
+          "cycles": 16,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "01c3fbe2bf20d61a59a4e9212d072d8540a1e371d1e5eadce17fdf32bf1c0bb9"
+      }
+    ],
+    "test_wrong_or_unknown_status_retains_already_offered_read_beat": [
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 0,
+          "cycles": 18,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "c5ac34be41d4323259bf20dd6b6c64765fd70df20f21b75ef302e2c9b2c5c7aa"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "commands": 1,
+          "statuses": 0,
+          "cycles": 18,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "ba0144cf25c803a307142dc4a10a69689080fa347e5c55881c14974f20dcb671",
+          "rdma/rnic/tests/test_memory_client_arbiter_rtl.py": "d1122b756342e1a47dd2808d9a54370e995352bce869f8836662bc22840fb7b4"
+        },
+        "bench_sha256": "38adc745b8257c746aabb317e5ceed2088181eaf7960bf2b615cd1a7da16dd7e"
+      }
+    ]
+  },
+  "actual_MR_PTE_PCIe": false,
+  "actual_local_executor_CQ": false,
+  "hardware_verified": false,
+  "completion_claim": false
+}

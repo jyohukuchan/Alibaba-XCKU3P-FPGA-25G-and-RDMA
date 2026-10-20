@@ -1,0 +1,10 @@
+{
+  "scope": "Actual native SQ/MR/RX/executor/PCIe/fence + production issued/lifetime join.\n\nTX is a replay of retained actual-HLS READ bytes, NOT a live HLS core here.\nHLS extraction/commands, physical host/link, MAC proof/transport drain and\nfinal CQ publication/commit are MODELS. No real kernel/provider/board CQ.\n",
+  "pass_test": false,
+  "methods": 0,
+  "tests": {},
+  "actual_native_MR_RX_memory_fence_lifetime_proof_join": true,
+  "HLS_MAC_transport_drain_CQ_are_models": true,
+  "actual_native_WR_CQ_runtime": false,
+  "hardware_verified": false
+}

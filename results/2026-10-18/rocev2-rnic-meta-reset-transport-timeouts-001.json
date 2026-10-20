@@ -1,0 +1,28 @@
+{
+  "scope": "Outer wall bounds of finite new-HLS Icarus transport probes; no protocol outcome. Not a success, not an observed assertion failure.",
+  "observed_at": "2026-10-19 00:07:25 UTC",
+  "generated_hls_sha256": "60c9a20e6671f223444c9a115d6295fdff456672d6354ed240e2317529cdbc19",
+  "terminal_exit_status": 124,
+  "wall_limit_seconds": 60,
+  "pass_test": false,
+  "protocol_assertion_failure_observed": false,
+  "protocol_success_verified": false,
+  "hardware_verified": false,
+  "cases": [
+    {
+      "session": 20832,
+      "case": "native-control",
+      "log": "rdma/logs/rnic-meta-reset-native-control-001.log"
+    },
+    {
+      "session": 26349,
+      "case": "legacy-read",
+      "log": "rdma/logs/rnic-meta-reset-legacy-read-001.log"
+    },
+    {
+      "session": 58176,
+      "case": "legacy-write",
+      "log": "rdma/logs/rnic-meta-reset-legacy-write-001.log"
+    }
+  ]
+}

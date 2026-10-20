@@ -1,0 +1,33 @@
+{
+  "scope": "Isolated routed actual-HLS protected responder, FAILED timing; not board/native signoff",
+  "session": 10878,
+  "terminal_exit_status": 1,
+  "period_ns": 4,
+  "wns_ns": -0.704,
+  "whs_ns": 0.024,
+  "luts": 31994,
+  "registers": 67071,
+  "bram_tiles": 41,
+  "original_inputs_unchanged": true,
+  "completion_claim": false,
+  "full_board_signoff": false,
+  "critical_paths": [
+    "async replay frame RAM -> second RX integrity bad flag,14logic levels",
+    "cfg VA input -> MR registration clock enables through65bit end arithmetic,14logic levels/8CARRY8"
+  ],
+  "next_action": "Register replayed frame AXIS boundary. Pipeline trusted MR management capture/sum/apply, preserving response ownership and all in-flight memory leases. Add mandatory explicit post-reset MR generation epoch before host memory exposure.",
+  "artifact_sha256": {
+    "rdma/rnic/build/responder-route-odcgsomu/impl/route_inputs.sha256": "5bf5e83cb061a34aaae9c8cdc310bcc898c565c79c6d4db853eaf0c5a8dab1ac",
+    "rdma/rnic/build/responder-route-odcgsomu/impl/synthesis_inputs.sha256": "7bc0a45266f05fd8322eb46e6474fdf04977be08e9b260401b3b4f873fcd28fe",
+    "rdma/rnic/build/responder-route-odcgsomu/impl/routed.dcp": "d2b74b7669845e85cf0334c61697ba9e2c82127f20d0c7593a52e108132b07b4",
+    "rdma/rnic/build/responder-route-odcgsomu/impl/timing.rpt": "b57c016f502cb675c7977d2ec129c690a2b193cbce6a2890bf1c0f66531c897f",
+    "rdma/rnic/build/responder-route-odcgsomu/impl/setup_paths.rpt": "a40061b61f7194f6ea9b9c14e8bcb9a6e74ae60a3c16e100c83d41211f2b1381",
+    "rdma/rnic/build/responder-route-odcgsomu/impl/utilization.rpt": "501897e23815af598af7afcb7e7082db001d966111abff41ac125812eed2cc84",
+    "rdma/rnic/build/responder-route-odcgsomu/impl/routing.rpt": "b4d697ca662dcf5f892c5ff68d8c1bd4971e8e9e27a39ef92707f646b91229e0",
+    "rdma/rnic/build/responder-route-odcgsomu/impl/drc.rpt": "475b5a2a1a54b5cc969e032f400d137e6ac32942361384e63456a9dee9ea17ba",
+    "rdma/logs/rnic-responder-route-001.log": "23d669092e591c249b43c31cd1f83540f67fc16ec82ea7949ae82490cf9f24a8",
+    "rdma/rnic/rtl/responder_route.tcl": "d8afaa8c77bd9d1bfc34c3283655d2dd5fea9e603bb5d6c838654b91df076631",
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "ebf7f9a27d447f804e9730edc5f1ba4c6d8f1309f91007d7c6bdf81d0d85733d",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "f4e7f417f67c649dfa98bdaf11b86d80989daeeed8f0573e2c92cd13a979275b"
+  }
+}

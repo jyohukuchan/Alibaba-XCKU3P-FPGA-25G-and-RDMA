@@ -1,0 +1,11 @@
+{
+  "scope": "Actual memory arbiter RTL; authorized clients/backend are EXPLICIT MODELS.\n\nNot MR authorization, page translation, PCIe DMA, a local transport executor,\nCQ publication, drain/reset safety or native runtime evidence.\n",
+  "pass_test": false,
+  "methods": 0,
+  "simulations": 0,
+  "tests": {},
+  "actual_MR_PTE_PCIe": false,
+  "actual_local_executor_CQ": false,
+  "hardware_verified": false,
+  "completion_claim": false
+}

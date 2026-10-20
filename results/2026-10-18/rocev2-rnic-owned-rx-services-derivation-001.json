@@ -1,0 +1,37 @@
+{
+  "scope": "Actual owned state/MSN derivation invariants, not HLS/RTL/native proof.",
+  "pass_test": false,
+  "terminal_exit_status": 1,
+  "methods": 10,
+  "retained_directory": "rdma/rnic/build/owned-rx-services-unit-5rspr2ft",
+  "source_sha256": {
+    "rdma/rnic/tests/test_owned_rx_services_derivation.py": "62afdef7b7dbb6f9bf7b141274767fe13a4d4cd925c905a84cc1da228f4e90a6",
+    "rdma/rnic/hls/owned_rx_services_profile.py": "c1b0a527c302feb288a26fbe61832c6ae4e8d7fb165bc3a7952ddbdf402a364f",
+    "rdma/rnic/hls/owned_rx_execution_profile.py": "949ba2d250ad533a3bf24aa5b6fedc7374d03a7924979da5b68b16ed941d6e14",
+    "rdma/rnic/hls/state_table_fence_profile.py": "f72e9fd2281ce914746fa65594cafe2b60c5569cc3111c06b5a4e8a77a305d08",
+    "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/state_table.hpp": "a0d587fdfb975fd09531c4562cc280db5952801f05be3926ef67ace8653470a8",
+    "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/msn_table.hpp": "fef872d1a7d87788f3e568602b04f8850597ad8a82a9cf6ce27f47e58cac5f59",
+    "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/ib_transport_protocol.cpp": "ee67cd84f078b876a87b92859c6297f8601f72289e46b338ad1d8052e4d61d52",
+    "rdma/rnic/hls/test_owned_rx_services.cpp": "188c730998414a90344a52e6670a6f065085d4e37f918d30f83ffa96d4200c2b",
+    "rdma/rnic/hls/test_owned_rx_execution.cpp": "9867204d1bc67e0b12d943c029b94a3199e9226dcd2e7d7595de685f5dcdeecf",
+    "rdma/rnic/tests/probe_owned_rx_services.py": "fd18dc27fb23b7fe489665646cefea1d23f1367496f82a591a9ae0cdc63ff569"
+  },
+  "frozen_source_sha256": {
+    "rdma/rnic/hls/owned_rx_services_profile.py": "c1b0a527c302feb288a26fbe61832c6ae4e8d7fb165bc3a7952ddbdf402a364f",
+    "rdma/rnic/hls/test_owned_rx_execution.cpp": "9867204d1bc67e0b12d943c029b94a3199e9226dcd2e7d7595de685f5dcdeecf",
+    "rdma/rnic/hls/owned_rx_execution_profile.py": "949ba2d250ad533a3bf24aa5b6fedc7374d03a7924979da5b68b16ed941d6e14",
+    "rdma/rnic/hls/test_owned_rx_services.cpp": "188c730998414a90344a52e6670a6f065085d4e37f918d30f83ffa96d4200c2b",
+    "rdma/rnic/hls/state_table_fence_profile.py": "f72e9fd2281ce914746fa65594cafe2b60c5569cc3111c06b5a4e8a77a305d08",
+    "rdma/rnic/tests/test_owned_rx_services_derivation.py": "62afdef7b7dbb6f9bf7b141274767fe13a4d4cd925c905a84cc1da228f4e90a6",
+    "rdma/rnic/tests/probe_owned_rx_services.py": "fd18dc27fb23b7fe489665646cefea1d23f1367496f82a591a9ae0cdc63ff569",
+    "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/msn_table.hpp": "fef872d1a7d87788f3e568602b04f8850597ad8a82a9cf6ce27f47e58cac5f59",
+    "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/state_table.hpp": "a0d587fdfb975fd09531c4562cc280db5952801f05be3926ef67ace8653470a8",
+    "rdma/rnic/build/wrkey-hls-p037tedt/inputs/fns/hls/ib_transport_protocol/ib_transport_protocol.cpp": "ee67cd84f078b876a87b92859c6297f8601f72289e46b338ad1d8052e4d61d52"
+  },
+  "artifact_sha256": {
+    "rdma/rnic/build/owned-rx-services-unit-5rspr2ft/unittest.log": "3ed5c5fb2afcefc6cf218f0007e3917b3d604c70f6a14dea4ac810a202585f8e"
+  },
+  "RTL_tested": false,
+  "hardware_verified": false,
+  "native_DMA_CQ": false
+}

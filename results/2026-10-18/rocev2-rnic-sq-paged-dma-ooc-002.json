@@ -1,0 +1,112 @@
+{
+  "scope": "Actual13-input frozen registered-response shared SQ/paged/router/RAM isolated4ns implementation. RAM loops removed, but TERMINAL FAILURE on negative setup. NOT CSR/full native parent/PCIe engine/HLS/board release.",
+  "session": 12328,
+  "terminal_exit_status": 1,
+  "analysis_reports_completed": true,
+  "pass_test": false,
+  "timing_constraints_met": false,
+  "hardware_verified": false,
+  "image_written": false,
+  "physical_release_authorized": false,
+  "original_clock_ns": 4,
+  "original_and_frozen_inputs_unchanged_at_terminal_observation": true,
+  "input_sha256": {
+    "original_inputs.sha256": {
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_sq_paged_dma.v": "089c61692f327aec8ffa293163058faf6a8720bdd721dcad7af1d5701257067a",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_dma_client_router.v": "220b872bfcc4ac062cc9e022504399be05d3239ec51f28d24c23cdf063ae613a",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_sq_dma_fetch.v": "e9b167370a4c21ce55277fa7a5609c12825350013d9646ad01b9acbd8d3e1964",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_sq_fetch.v": "507e3a65737b93779b2b2e760019c44254f4ce92b6b13f964e3084c3f373c661",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_paged_memory_backend.v": "268d72371e5717fc13e009a5e881b34b91c459a1193afc42d760246d8e4e3bd6",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_page_dma_engine.v": "a8801822361c399716c6336c4887612804d019701d2f357d1964788e9d6c9b24",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_mr_page_table.v": "7cebd68efbf32f25f2a44f933c8d90231d5e9a185348ab0ab73def4235406239",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_corundum_dma_backend.v": "f713c19873b8a52f4f038ab22bcc816dfc0d65b7fca72a75c73e2499cd2dd943",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/external/corundum/fpga/lib/pcie/rtl/dma_psdpram.v": "5d06400fe8c45ff27a0eaabb33206b684b2f2c5adf59353fcabe891e9ac29513",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/external/corundum/fpga/lib/pcie/rtl/dma_client_axis_source.v": "e2dc4b2ab3ed88e2d6256e3ebcb7470fe0b11249a1616bbd1746460399ba5044",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/external/corundum/fpga/lib/pcie/rtl/dma_client_axis_sink.v": "a1e03efa7a8810a967b1e4a6b68fc75b0cbfc6f6a2ac137b9aa7321001029dd5",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/sq_paged_dma_ooc.tcl": "84d92b3cc916f12caa5db5c989426476ac11f5b821a6f3025dee957575df63f8"
+    },
+    "frozen_inputs.sha256": {
+      "rocev2_sq_paged_dma.v": "089c61692f327aec8ffa293163058faf6a8720bdd721dcad7af1d5701257067a",
+      "rocev2_dma_client_router.v": "220b872bfcc4ac062cc9e022504399be05d3239ec51f28d24c23cdf063ae613a",
+      "rocev2_sq_dma_fetch.v": "e9b167370a4c21ce55277fa7a5609c12825350013d9646ad01b9acbd8d3e1964",
+      "rocev2_sq_fetch.v": "507e3a65737b93779b2b2e760019c44254f4ce92b6b13f964e3084c3f373c661",
+      "rocev2_paged_memory_backend.v": "268d72371e5717fc13e009a5e881b34b91c459a1193afc42d760246d8e4e3bd6",
+      "rocev2_page_dma_engine.v": "a8801822361c399716c6336c4887612804d019701d2f357d1964788e9d6c9b24",
+      "rocev2_mr_page_table.v": "7cebd68efbf32f25f2a44f933c8d90231d5e9a185348ab0ab73def4235406239",
+      "rocev2_corundum_dma_backend.v": "f713c19873b8a52f4f038ab22bcc816dfc0d65b7fca72a75c73e2499cd2dd943",
+      "dma_psdpram.v": "5d06400fe8c45ff27a0eaabb33206b684b2f2c5adf59353fcabe891e9ac29513",
+      "dma_client_axis_source.v": "e2dc4b2ab3ed88e2d6256e3ebcb7470fe0b11249a1616bbd1746460399ba5044",
+      "dma_client_axis_sink.v": "a1e03efa7a8810a967b1e4a6b68fc75b0cbfc6f6a2ac137b9aa7321001029dd5",
+      "axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+      "sq_paged_dma_ooc.tcl": "84d92b3cc916f12caa5db5c989426476ac11f5b821a6f3025dee957575df63f8"
+    }
+  },
+  "timing": {
+    "WNS_ns": -2.524,
+    "TNS_ns": -9878.554,
+    "setup_failures": 8529,
+    "setup_endpoints": 50018,
+    "WHS_ns": 0.034,
+    "THS_ns": 0,
+    "hold_failures": 0,
+    "hold_endpoints": 50018,
+    "WPWS_ns": 1.427,
+    "TPWS_ns": 0,
+    "pulse_failures": 0,
+    "pulse_endpoints": 14534
+  },
+  "check_timing": {
+    "no_clock": 0,
+    "constant_clock": 0,
+    "pulse_width_clock": 0,
+    "unconstrained_internal_endpoints": 0,
+    "no_input_delay": 0,
+    "no_output_delay": 0,
+    "multiple_clock": 0,
+    "generated_clocks": 0,
+    "loops": 0,
+    "partial_input_delay": 0,
+    "partial_output_delay": 0,
+    "latch_loops": 0
+  },
+  "routing": {
+    "routable_nets": 23893,
+    "fully_routed_nets": 23893,
+    "routing_errors": 0
+  },
+  "DRC": {
+    "errors": 0,
+    "critical_warnings": 0,
+    "warnings": 1
+  },
+  "resources": {
+    "CLB LUTs": 18053,
+    "CLB Registers": 12492,
+    "Block RAM Tile": 20,
+    "DSPs": 0
+  },
+  "worst_setup_path": {
+    "Source": "rst",
+    "Destination": "sq/fetch/producer_table_reg[4][52]/CE",
+    "Data Path Delay": "5.971ns  (logic 1.971ns (33.007%)  route 4.000ns (66.993%))",
+    "Logic Levels": "29  (CARRY8=8 LUT2=1 LUT3=5 LUT4=3 LUT5=4 LUT6=8)",
+    "Requirement": "4.000ns  (clk rise@4.000ns - clk rise@0.000ns)"
+  },
+  "physical_RAM_router_loop_removal_verified": true,
+  "remaining_diagnosis": "Actual worst rst-to-SQ-producer CE path runs through request arbitration/full64-bit descriptor-span validation/live-fault/completion/backend-drain/config decision. Needs a registered authorization/configuration boundary with current-offer/lifetime ownership retained, NOT slower clocks/false paths/guard bypass.",
+  "loop_waiver_or_original_clock_or_gate_relaxation": false,
+  "artifact_sha256": {
+    "rdma/rnic/build/sq-paged-dma-ooc-002/original_inputs.sha256": "7d392fd12706558092a82ebd815ca0f8c3c3915bea2b31de76fc8ebf49f49b8a",
+    "rdma/rnic/build/sq-paged-dma-ooc-002/frozen_inputs.sha256": "0d0841afefbdc0dc100b530c256c7e7e39953b6765d4e360fc1c06134c9b27da",
+    "rdma/rnic/build/sq-paged-dma-ooc-002/utilization.rpt": "294675c8a51843fedf96324b0608359eacaf848d0d0150a03106ebbd46be1fc8",
+    "rdma/rnic/build/sq-paged-dma-ooc-002/timing.rpt": "f5541aaaeb3dda68a9c427b126581ac609fd8b7a69c016d3d3f03f4af167e114",
+    "rdma/rnic/build/sq-paged-dma-ooc-002/setup_paths.rpt": "6a0473ed14031de6b53b40552ca0b2ca2fbaefdb46a95ed9092a4af10aaefd36",
+    "rdma/rnic/build/sq-paged-dma-ooc-002/hold_paths.rpt": "95f353146a7824da8123ccc352f0e6ed0156d93a31a79ce3fd0707590bdad31a",
+    "rdma/rnic/build/sq-paged-dma-ooc-002/routing.rpt": "a4ed53cf94e476fa3a25c0d1ec4ab4836589fcd85fc28820f00f089b8849235d",
+    "rdma/rnic/build/sq-paged-dma-ooc-002/drc.rpt": "e630f3bf49a3630ec3a1e7973ddafb0fa6d556fc7b86ca128065f8b12e240d6d",
+    "rdma/rnic/build/sq-paged-dma-ooc-002/check_timing.rpt": "500816e7b6ab8616e643fa0abc29c31b22453c4cc1226ec5b7adf891694c3ec5",
+    "rdma/rnic/build/sq-paged-dma-ooc-002/routed.dcp": "97ebcc01824ab2a2d4805d5e29edbce75d165108b44b48b8b695382712d52705",
+    "rdma/logs/rnic-sq-paged-dma-ooc-002.log": "ac4b140f8d5fdbd4057621e74207ad6907ed49f45fde4474877ffc4dca1340e6"
+  }
+}

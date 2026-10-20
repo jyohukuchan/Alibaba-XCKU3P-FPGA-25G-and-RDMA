@@ -1,0 +1,46 @@
+{
+  "scope": "Exact checked responder derivation, NOT HLS/runtime/physical qualification.",
+  "pass_test": true,
+  "methods": 4,
+  "tests": {
+    "test_all_local_ports_are_exact_and_guard_does_not_depend_on_idle": {
+      "source_sha256": {
+        "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+        "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+        "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+        "rdma/rnic/tests/test_shared_responder_derivation.py": "056fd028dfa9d88522b785fabba41abf65aca1927a90d8f89ff00d460c94b617"
+      },
+      "local_ports": 44,
+      "real_core_drain_still_required": true
+    },
+    "test_every_noninterface_protection_byte_roundtrips_exactly": {
+      "source_sha256": {
+        "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+        "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+        "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+        "rdma/rnic/tests/test_shared_responder_derivation.py": "056fd028dfa9d88522b785fabba41abf65aca1927a90d8f89ff00d460c94b617"
+      },
+      "all_noninterface_original_bytes_equal": true
+    },
+    "test_missing_or_ambiguous_derivation_anchors_are_rejected": {
+      "source_sha256": {
+        "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+        "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+        "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+        "rdma/rnic/tests/test_shared_responder_derivation.py": "056fd028dfa9d88522b785fabba41abf65aca1927a90d8f89ff00d460c94b617"
+      },
+      "rejected_changed_anchors": 7
+    },
+    "test_same_single_MR_and_single_HLS_boundary_not_extra_transport": {
+      "source_sha256": {
+        "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+        "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+        "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+        "rdma/rnic/tests/test_shared_responder_derivation.py": "056fd028dfa9d88522b785fabba41abf65aca1927a90d8f89ff00d460c94b617"
+      },
+      "single_MR_and_core_boundary": true
+    }
+  },
+  "actual_HLS_behavior": false,
+  "hardware_verified": false
+}

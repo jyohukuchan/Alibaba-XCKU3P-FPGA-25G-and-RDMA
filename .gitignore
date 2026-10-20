@@ -44,3 +44,10 @@ __pycache__/
 # Vivado working-directory debug output; retained locally, not source.
 /clockInfo.txt
 /tight_setup_hold_pins.txt
+# Local agent/checkpoint and build-cache administration; not public test evidence.
+/results/*/rocev2-rnic-progress-[0-9]*.json
+/results/*/rocev2-rnic-terminal-db-*.json
+/results/*/rocev2-rnic-cache-archive-*.json
+/results/*/rocev2-rnic-storage-audit-*.json
+/results/*/rocev2-rnic-*history-audit-*.json
+/results/*/rocev2-rnic-push-*.json

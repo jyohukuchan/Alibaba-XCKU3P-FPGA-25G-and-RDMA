@@ -1,0 +1,39 @@
+{
+  "scope": "Short FOUR-STATE test of actual generated timer-state fence RTL.\n\nAll eight entries, full tokens, FIFO ordering/backpressure, real1ms timeout,\nfull-width range/encoding fault. Timer-state OK while timeout remains HELD\nproves this is NOT whole-core drain/MR/CQ permission. No hardware/board access.\n",
+  "pass_test": false,
+  "terminal_exit_status": 1,
+  "retained_directory": "rdma/rnic/build/timer-fence-RTL-ig5ugm1w",
+  "source_record": "results/2026-10-18/rocev2-rnic-timer-fence-csim-002.json",
+  "source_sha256": {
+    "rdma/rnic/build/timer-state-fence-_lkg56_g/project/solution1/syn/verilog/as02_timer_fence_top_sparsemux_17_3_4_1_1.v": "1a4cb25b732b92679f85634fbe7570a988f0e6c3128f9309209b3f2cedd6445c",
+    "rdma/rnic/build/timer-state-fence-_lkg56_g/project/solution1/syn/verilog/as02_timer_fence_top_fifo_w238_d2_S.v": "6f2b0e3aa2f464772d0b3926afaa96e410fa27be6f498f63203b1f34597601c9",
+    "rdma/rnic/build/timer-state-fence-_lkg56_g/project/solution1/syn/verilog/as02_timer_fence_top.v": "fbf3c964468c6d79eeda0b2bf8c23dac8f911d06a5fb963bbb3df7399ac2d459",
+    "rdma/rnic/build/timer-state-fence-_lkg56_g/project/solution1/syn/verilog/as02_timer_fence_top_timer_fence_encode.v": "2085810b8838f7ab1790558869b68deb6c39f551b3a03c21b68a8cbae26b1578",
+    "rdma/rnic/build/timer-state-fence-_lkg56_g/project/solution1/syn/verilog/as02_timer_fence_top_fifo_w171_d2_S.v": "82aa1f46b33f1c348aeb18b0ad9abede3673fcfc319dee22b3729ae89988931d",
+    "rdma/rnic/build/timer-state-fence-_lkg56_g/project/solution1/syn/verilog/as02_timer_fence_top_as02_timer_state_fence_consumer_42_s.v": "6dbd2cd5c02df5c42f974bbe8ad5166b77b2d73f62c940348e1ad91cc23d15fc",
+    "rdma/rnic/build/timer-state-fence-_lkg56_g/project/solution1/syn/verilog/as02_timer_fence_top_timer_timeout_encode.v": "a9dae9d99ca9675f233fd9698da2909a3e3d8ee81e32fe2343e1d233c251ad26",
+    "rdma/rnic/build/timer-state-fence-_lkg56_g/project/solution1/syn/verilog/as02_timer_fence_top_fifo_w40_d2_S.v": "e7df93477a79a67b0f7e48d4871f0a110791609462a2bbf524a8fdb29ec7c64a",
+    "rdma/rnic/build/timer-state-fence-_lkg56_g/project/solution1/syn/verilog/as02_timer_fence_top_sparsemux_9_3_3_1_1.v": "6f998e5f9d8384357d49c3aa15fa890476a1e31f47be08dc0f6e18e4f6af73c4",
+    "rdma/rnic/build/timer-state-fence-_lkg56_g/project/solution1/syn/verilog/as02_timer_fence_top_timer_fence_decode.v": "04929a7a7d8da1e5325342273c99a402bb07e0165e1d08dc9bbef15878c03839",
+    "rdma/rnic/build/timer-state-fence-_lkg56_g/project/solution1/syn/verilog/as02_timer_fence_top_sparsemux_17_3_1_1_1.v": "43026e9e2c122492344d89624e5f00028c4ff2f180c8142158638ea5035b569c",
+    "rdma/rnic/build/timer-state-fence-_lkg56_g/project/solution1/syn/verilog/as02_timer_fence_top_sparsemux_17_3_32_1_1.v": "e47e61295a7fee0edf7effddee3f7e1798dca49edac47b8bc6a789d2f39f676c",
+    "rdma/rnic/build/timer-state-fence-_lkg56_g/project/solution1/syn/verilog/as02_timer_fence_top_regslice_both.v": "7ebf665e5e4344f7b1a731e996fd2f840de433241919fa7fc4889adb4570523a",
+    "rdma/rnic/tests/probe_timer_state_fence_rtl.py": "24d2d8f557461850334a344e7f6bbc7a23fe83d58f608231e6b8973fb97739c3",
+    "results/2026-10-18/rocev2-rnic-timer-fence-csim-002.json": "171d4d640724361cf08b48f514cdb90424d6df896b94ebe292e5f73d547bc0c3"
+  },
+  "bench_sha256": "8fa8a6b0ee85ff9a692c4e65df04039099c1caa6965aec3944c8c098632e267c",
+  "actual_generated_HLS": true,
+  "four_state_simulation": true,
+  "whole_core_drain": false,
+  "hardware_verified": false,
+  "physical_signoff": false,
+  "simulation_seconds": 0.24553479300811887,
+  "error": "actual timer RTL failed; retain /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/timer-fence-RTL-ig5ugm1w",
+  "error_type": "RuntimeError",
+  "artifact_sha256": {
+    "rdma/rnic/build/timer-fence-RTL-ig5ugm1w/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/timer-fence-RTL-ig5ugm1w/test.vvp": "472145b1ba440ff4b9ceb9bd4d28f3fdbab2f43028d7fb5fb6371f94cf650abe",
+    "rdma/rnic/build/timer-fence-RTL-ig5ugm1w/tb.v": "8fa8a6b0ee85ff9a692c4e65df04039099c1caa6965aec3944c8c098632e267c",
+    "rdma/rnic/build/timer-fence-RTL-ig5ugm1w/simulation.log": "27a17415895e4f7d74b7af31d21c8f9fd7dd769bf22d659d7d7a529ef58a1592"
+  }
+}

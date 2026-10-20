@@ -1,0 +1,684 @@
+{
+  "scope": "Production full-WQE READ wire-pad adapter; token/HLS/executor are MODELS.\n\nChecks original96-bit padded ABI, normalized payload-only command/data and\ncontinuous owner guards. Not actual HLS, native DMA, protected RX or CQ proof.\n",
+  "pass_test": true,
+  "methods": 5,
+  "simulations": 39,
+  "tests": {
+    "test_all96_raw_bits_including_padded_length_route_and_high_padding_are_checked": [
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "ca92f29582ae967f9d015143f6b5070f954831a75273e52f669c1d7d8c67f637"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "661ac522c11ef1f73ae69ec0964b12878c2d25feac8505576885013c5974b8e2"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "7bb34580758f0149680a60e531016a4fce1fd3b718a15615d49565728b4564ae"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "56b43fae98dc350f81bf9f2ad990ec616eb361b7662ddd56362058c1d960ed31"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "4686fdf122368d637c9b6183c7e7ce06f544e843985c5414894ec86726aa2422"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "64a2103fecd9cbd17b84e2532a77eb56f14711270da8a49a9d38b6c2d0fddefc"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "2d6829e262d01e3048e49540a579f85efb140e9c741e8f5430daf39535bf0edb"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "aad4f96646a980168248082ed2ff2b85c6f1b7e2c894119d3bcc0df5f14ccb9c"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "a4f194a913ffefbda10882e3db223ce3bb7affb073ab4bec69b073fc77fa8ae2"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "fbe8d7a856ed1763f1d3d4ada9e8a7a66ac1c19c4d0a561b3129a5f5d8efcc26"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "fca95201da849552a7f18249f997d5d1dc36ab2175b2ebbef3d1a9311c76c6ba"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "9f4ab904af02edd81ce36e28a98dbe9f7f07c0e3dfa094cf4eafe62262f29dd8"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "1f7f9cb643b5685e2df76e24686c0d6d3cc78efa47cd78574a738cdbe778be58"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 9
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "8418e42e4ecb76235267b34821b2ae30386b38ef12774eaf9919693fc1dfb4b4"
+      }
+    ],
+    "test_all_pad_lengths_and_64byte_PMTU_boundaries_do_not_store_pad": [
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 3,
+          "fault": 0,
+          "cycles": 26
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "9b3d6fd4043faac9f8959724205ea6bb9a0bbba07ab46cc55814bdece49819e7"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 2,
+          "fault": 0,
+          "cycles": 26
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "b82803e25699aecb291194c385aacfd548dd4b518ebbacb964c918456802f164"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 1,
+          "fault": 0,
+          "cycles": 26
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "f272166eb42b65aadd33799188b8fdcd4b35dae1b32f5c83843925ddb3137238"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 0,
+          "fault": 0,
+          "cycles": 26
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "dbe53f66e8979d14942a16d1d4a2448c400fcbd8ad8b1c56b951987c2dd0a733"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 1,
+          "fault": 0,
+          "cycles": 26
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "4f135f3595474207876af9d108c4a380871f56886fc2cf00a3034189f189237b"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 0,
+          "fault": 0,
+          "cycles": 26
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "835b240fff6568f38d224f0fdc25b2f7471ca31dce33fa7482a9052496541da6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 3,
+          "fault": 0,
+          "cycles": 35
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "9313d5f49fc0b07e73e2f0a3025ddacfadfc1ce61edceb23191d7e8666d8abb6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 1,
+          "fault": 0,
+          "cycles": 593
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "99f2feb081d39edddd8c8df26aba066cf95f42212fd5bb6a417ac20e7fbeba6b"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 0,
+          "fault": 0,
+          "cycles": 593
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "5e373140a3ced62d2738ae3306d1d522be6f7a34fc5a85d38d5230214e8fbfc5"
+      }
+    ],
+    "test_lost_guard_retains_already_offered_command_and_data": [
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 11
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "b9aa79c1bad6ec8f107787741dac26e600c7e60568db5de40daf4d543048ce6f"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 25
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "565b73c1e8a90391e93db3c141d02442a5fbd93dbd96a2e87cb6ef976d1c0da2"
+      }
+    ],
+    "test_malformed_keep_last_or_unknown_wire_pad_never_reaches_executor": [
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 24
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "ed86bcb5665055cdbbdab08d346a62af6fde86df5ef0e7f44bc05f7192ab23c5"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 24
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "ed0fc99bf401fdc0635a54118a20ab24a5dcd797687e5ae101e2784d2281fcb4"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 1,
+          "commands": 1,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 24
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "223902d54cc3e1f38a25a56d4462facc40bd0b499c5bf00708e6fe5e9e9de4cd"
+      }
+    ],
+    "test_missing_guard_invalid_or_unknown_context_cannot_authorize_unpadding": [
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 0,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "c7859acfd1c2bfc078fdc23220c9e7bdd8b52086256bf413d6a6dcaba35e806d"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 0,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "5092a9431ba4fa004881d503149a8f7b31732f30ee51ede4855cb3bd97cf0099"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 0,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "b24bb2940d37e2e7bcf0d53d8fb5d64539f17edf5fc211e00ca142182e4eaeb2"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 0,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "4e4a794a6f94f2331bcd18ece362c6496e311d08020eb5c5a9ab2d4e90400c65"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 0,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "392e7a414cbf52aa02f65c1ee8dd23e0531a3aeea141738635359494862d5a91"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 0,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "1ac38d01ef4859d815047193b673d6cc0078f86df2b156567f77c3616a5f737b"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 0,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "1425fa487e0bdee79b717549471b0e369a46f1643910fc4f3620f4702e82b218"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 0,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "af6767be59e5e153f223636dc9c0e2171af22cc658097d036b131eee9407ada5"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 0,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "b49204bf6561754643784f1d4ed8e081ee6dbb00282a54553bf1a6c68184cb2e"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 0,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "5950d081474c424b75caf206129dd682a092c555c67e2d42ca0cacf0a1c0cd2f"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "contexts": 0,
+          "commands": 0,
+          "padding_bytes": 0,
+          "fault": 1,
+          "cycles": 7
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+          "rdma/rnic/tests/test_wqe_read_unpad_rtl.py": "45ca9c748558b3053ffa1cafc3d54d8559a10fa3ad476ee0f0960d48c61d2f1b",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_memory_executor_rtl.py": "2183f0e8dbc0a532a1da12e3041361db6150ac49601a995dbfd7a9d394e894e4"
+        },
+        "bench_sha256": "ec9982972fca3d2bd5760186baedb5599aa39d5f90d809e95db3b7f52a01c6d4"
+      }
+    ]
+  },
+  "real_HLS_RX_token_executor_or_DMA": false,
+  "actual_WR_completion": false,
+  "hardware_verified": false
+}

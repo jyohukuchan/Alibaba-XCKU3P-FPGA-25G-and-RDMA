@@ -1,0 +1,35 @@
+{
+  "scope": "Actual fatal-admission/AXIS ownership RTL, source/sink ready-valid models.",
+  "pass_test": true,
+  "hardware_verified": false,
+  "tests": {
+    "test_accepted_frame_drains_across_fault_and_gap": {
+      "pass_test": true,
+      "scenario": 2
+    },
+    "test_fault_before_offer_blocks_entire_new_frame": {
+      "pass_test": true,
+      "scenario": 3
+    },
+    "test_first_offered_beat_retained_even_before_acceptance": {
+      "pass_test": true,
+      "scenario": 1
+    },
+    "test_later_admission_owns_frame_through_next_fault": {
+      "pass_test": true,
+      "scenario": 5
+    },
+    "test_normal_multibeat_gaps_and_backpressure": {
+      "pass_test": true,
+      "scenario": 0
+    },
+    "test_stalled_single_last_beat_not_withdrawn": {
+      "pass_test": true,
+      "scenario": 4
+    }
+  },
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_parent_rx_admission.v": "02315cd80cb92f1433f8901a42d35d3b22b830247693c24e84003220d019676c",
+    "rdma/rnic/tests/test_parent_rx_admission_rtl.py": "36a6db9d95ee2dbd7d78c25c736b0d5ecd27c045bca391421c9ddb5c61371ea7"
+  }
+}

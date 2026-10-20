@@ -1,0 +1,80 @@
+/* SPDX-License-Identifier: GPL-2.0 OR BSD-2-Clause-Views */
+/* Region-relative prototype ABI. No old ROC2 BAR compatibility is implied. */
+#ifndef AS02_RNIC_REGS_H
+#define AS02_RNIC_REGS_H
+#define AS02_CTL_ID_VALUE 0x524e4331U
+#define AS02_CTL_ABI_VALUE 0x00010000U
+#define AS02_CTL_ID 0x00U
+#define AS02_CTL_ABI 0x04U
+#define AS02_CTL_FEATURES 0x08U
+#define AS02_CTL_STATUS 0x0cU
+#define AS02_CTL_DOORBELL 0x10U
+#define AS02_CTL_REPLY_ACK 0x14U
+#define AS02_CTL_CLEAR_MMIO_ERROR 0x18U
+#define AS02_CTL_LAST_QUEUED 0x1cU
+#define AS02_CTL_STAGE 0x20U
+#define AS02_CTL_STAGE_WORDS 21U
+#define AS02_CTL_REPLY_SEQ 0x80U
+#define AS02_CTL_REPLY_OP 0x84U
+#define AS02_CTL_REPLY_COOKIE_LO 0x88U
+#define AS02_CTL_REPLY_COOKIE_HI 0x8cU
+#define AS02_CTL_REPLY_SLOT 0x90U
+#define AS02_CTL_REPLY_KEY 0x94U
+#define AS02_CTL_REPLY_ERROR 0x98U
+#define AS02_CTL_REPLY_FLAGS 0x9cU
+#define AS02_CTL_ENTRY_STATE 0xa0U
+#define AS02_CTL_LAST_SEQUENCE 0xa4U
+#define AS02_CTL_FATAL_CODE 0xa8U
+
+#define AS02_ST_READY (1U << 0)
+#define AS02_ST_BUSY (1U << 1)
+#define AS02_ST_REPLY (1U << 2)
+#define AS02_ST_PAUSED (1U << 3)
+#define AS02_ST_FATAL (1U << 4)
+#define AS02_ST_EPOCH (1U << 5)
+#define AS02_ST_QP (1U << 6)
+#define AS02_ST_RUN (1U << 7)
+#define AS02_ST_MMIO_ERROR (1U << 8)
+#define AS02_ST_PARENT_DRAINED (1U << 9)
+#define AS02_ST_ENDPOINT_QUIET (1U << 10)
+#define AS02_ST_ENDPOINT_FAULT (1U << 11)
+
+#define AS02_CMD_EPOCH 1U
+#define AS02_CMD_BEGIN 2U
+#define AS02_CMD_PAGE 3U
+#define AS02_CMD_SEAL 4U
+#define AS02_CMD_INVALIDATE 5U
+#define AS02_CMD_QP 6U
+#define AS02_CMD_RUN 7U
+#define AS02_CMD_STOP 8U
+#define AS02_CMD_QP_TX 9U
+#define AS02_CTL_FEATURE_QP_TX 2U
+#define AS02_CTL_FEATURE_SEND 4U
+#define AS02_CTL_FEATURE_RECV 8U
+#define AS02_CTL_FEATURE_RNR 16U
+#define AS02_CTL_FEATURE_RECV_RETIRE 32U
+#define AS02_CTL_FEATURE_RECV_CQ 64U
+#define AS02_CTL_FEATURE_REQUEST_CQ 128U
+#define AS02_CTL_FEATURE_SEPARATE_RQ 256U
+#define AS02_CTL_FEATURE_IMMEDIATE 512U
+#define AS02_CTL_FULL_NATIVE_FEATURES 511U
+#define AS02_CTL_IMMEDIATE_NATIVE_FEATURES (AS02_CTL_FULL_NATIVE_FEATURES|AS02_CTL_FEATURE_IMMEDIATE)
+/* QP_TX carries only owner PD/QPN and new TX PSN. It preserves live RX/MSN
+ * and requires the opt-in same-state-table readback HLS core (feature bit1).
+ * Legacy feature1 firmware MUST reject it before any MMIO write.
+ */
+#define AS02_PROOF_INVALIDATED 1U
+#define AS02_PROOF_DMA_DRAINED 2U
+#define AS02_PROOF_QPS_CLOSED 4U
+#define AS02_PROOF_TABLE_INVALID 8U
+#define AS02_PROOF_PUBLISHED 16U
+
+/* Staging word indices; a doorbell snapshots ALL words before execution. */
+enum as02_ctl_word {
+    AS02_W_SEQUENCE, AS02_W_OP, AS02_W_COOKIE_LO, AS02_W_COOKIE_HI,
+    AS02_W_SLOT, AS02_W_KEY, AS02_W_PD, AS02_W_ACCESS, AS02_W_VA_LO,
+    AS02_W_VA_HI, AS02_W_LENGTH, AS02_W_FIRST, AS02_W_PAGE_INDEX,
+    AS02_W_DMA_LO, AS02_W_DMA_HI, AS02_W_QP, AS02_W_PEER_QP,
+    AS02_W_LOCAL_IP, AS02_W_PEER_IP, AS02_W_RX_PSN, AS02_W_TX_PSN
+};
+#endif

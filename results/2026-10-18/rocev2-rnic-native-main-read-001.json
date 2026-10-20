@@ -1,0 +1,14 @@
+{
+  "scope": "Short new-main-parent READ/WRITE with LIVE existing generated shared HLS.\n\nReal coherent SQ/SAME MR/PTE, HLS, executor, issued PSN/protected Ethernet RX,\nREAD unpadding, DMA/RAM/fence and MAC/lifetime join. Host/link/MAC pins and\npeer are models. Two-state simulation only; not X/Z, timing, board, kernel,\nstandard verbs, CQ publication or internal-core-drain qualification.\n",
+  "pass_test": false,
+  "operation": "READ",
+  "hardware_verified": false,
+  "full_board_selected_or_built": false,
+  "standard_verbs": false,
+  "actual_CQ_commit": false,
+  "core_internal_drain_proved": false,
+  "local_role_and_MR_retained": true,
+  "output_directory": "rdma/rnic/build/native-rnic-live-read-l_1tufbl",
+  "error_type": "RuntimeError",
+  "error": "Compiled native executor assertions failed; retain /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/native-rnic-live-read-l_1tufbl"
+}

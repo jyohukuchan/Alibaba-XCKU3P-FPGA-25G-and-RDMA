@@ -1,0 +1,114 @@
+{
+  "scope": "Actual duplex RTL/derivation with explicitly controlled HLS-port models.\n\nThis tests packet/command routing and independent lifetime handshakes, not\nactual HLS receipts, memory authorization, native DMA or physical operation.\n",
+  "pass_test": false,
+  "methods": 3,
+  "simulations": 7,
+  "tests": {
+    "test_remote_requests_continue_while_local_owner_is_held": [
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "1fde8810405394cb02865cfc9ca9774b40517b18e47bc37a2f27957a0cf14170",
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "398baf6ad88581237baae3e374dcec06aded745713a9f6c76f888e51c7d248c8",
+          "rdma/rnic/rtl/rocev2_duplex_rx_mux.v": "97cf1769991205f13b23fb1da3ad8ce95eeea131acc74e54f6878608514003c3",
+          "rdma/rnic/rtl/rocev2_duplex_tx_router.v": "75fd83dc14feaf807d331b908ea7a78d2a3e2b7b3a650a39739d8da297b61260",
+          "rdma/rnic/fpga/derive_duplex_transport.py": "ff81dfb2ba41ffc59d482bee177fc106537a22a786bf11d588880c3990c85a53",
+          "rdma/rnic/tests/test_native_duplex_rtl.py": "79172b2204ef994d485577ba3142ee36da69af2fc1914e170573377c7689806b",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "2c11a30b9b4b1c24a038ad62bd2dac539b3bdc55ab874ee82b1b1c31c32e12ae",
+          "rdma/rnic/fpga/derive_qp_tx_bridge.py": "51afb390ce130f69e8b55cbfb2af2055e7fa3746004790b5b509f4f6273d28a7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "output": "SHARED_ROLE_UNIT {\"pass_test\":true,\"local_active\":1,\"fault\":0}\n/tmp/as02-duplex-rtl-na7w7t23/tb.v:168: $finish called at 92000 (1ps)\n"
+      }
+    ],
+    "test_retiring_either_direction_does_not_cancel_the_other": [
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "1fde8810405394cb02865cfc9ca9774b40517b18e47bc37a2f27957a0cf14170",
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "398baf6ad88581237baae3e374dcec06aded745713a9f6c76f888e51c7d248c8",
+          "rdma/rnic/rtl/rocev2_duplex_rx_mux.v": "97cf1769991205f13b23fb1da3ad8ce95eeea131acc74e54f6878608514003c3",
+          "rdma/rnic/rtl/rocev2_duplex_tx_router.v": "75fd83dc14feaf807d331b908ea7a78d2a3e2b7b3a650a39739d8da297b61260",
+          "rdma/rnic/fpga/derive_duplex_transport.py": "ff81dfb2ba41ffc59d482bee177fc106537a22a786bf11d588880c3990c85a53",
+          "rdma/rnic/tests/test_native_duplex_rtl.py": "79172b2204ef994d485577ba3142ee36da69af2fc1914e170573377c7689806b",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "2c11a30b9b4b1c24a038ad62bd2dac539b3bdc55ab874ee82b1b1c31c32e12ae",
+          "rdma/rnic/fpga/derive_qp_tx_bridge.py": "51afb390ce130f69e8b55cbfb2af2055e7fa3746004790b5b509f4f6273d28a7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "output": "SHARED_ROLE_UNIT {\"pass_test\":true,\"local_active\":0,\"fault\":0}\n/tmp/as02-duplex-rtl-m03imn0d/tb.v:177: $finish called at 100000 (1ps)\n"
+      },
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "1fde8810405394cb02865cfc9ca9774b40517b18e47bc37a2f27957a0cf14170",
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "398baf6ad88581237baae3e374dcec06aded745713a9f6c76f888e51c7d248c8",
+          "rdma/rnic/rtl/rocev2_duplex_rx_mux.v": "97cf1769991205f13b23fb1da3ad8ce95eeea131acc74e54f6878608514003c3",
+          "rdma/rnic/rtl/rocev2_duplex_tx_router.v": "75fd83dc14feaf807d331b908ea7a78d2a3e2b7b3a650a39739d8da297b61260",
+          "rdma/rnic/fpga/derive_duplex_transport.py": "ff81dfb2ba41ffc59d482bee177fc106537a22a786bf11d588880c3990c85a53",
+          "rdma/rnic/tests/test_native_duplex_rtl.py": "79172b2204ef994d485577ba3142ee36da69af2fc1914e170573377c7689806b",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "2c11a30b9b4b1c24a038ad62bd2dac539b3bdc55ab874ee82b1b1c31c32e12ae",
+          "rdma/rnic/fpga/derive_qp_tx_bridge.py": "51afb390ce130f69e8b55cbfb2af2055e7fa3746004790b5b509f4f6273d28a7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "output": "SHARED_ROLE_UNIT {\"pass_test\":true,\"local_active\":0,\"fault\":0}\n/tmp/as02-duplex-rtl-zt269npg/tb.v:177: $finish called at 100000 (1ps)\n"
+      }
+    ],
+    "test_transmit_packet_direction_preserves_all_words_under_stall": [
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "1fde8810405394cb02865cfc9ca9774b40517b18e47bc37a2f27957a0cf14170",
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "398baf6ad88581237baae3e374dcec06aded745713a9f6c76f888e51c7d248c8",
+          "rdma/rnic/rtl/rocev2_duplex_rx_mux.v": "97cf1769991205f13b23fb1da3ad8ce95eeea131acc74e54f6878608514003c3",
+          "rdma/rnic/rtl/rocev2_duplex_tx_router.v": "75fd83dc14feaf807d331b908ea7a78d2a3e2b7b3a650a39739d8da297b61260",
+          "rdma/rnic/fpga/derive_duplex_transport.py": "ff81dfb2ba41ffc59d482bee177fc106537a22a786bf11d588880c3990c85a53",
+          "rdma/rnic/tests/test_native_duplex_rtl.py": "79172b2204ef994d485577ba3142ee36da69af2fc1914e170573377c7689806b",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "2c11a30b9b4b1c24a038ad62bd2dac539b3bdc55ab874ee82b1b1c31c32e12ae",
+          "rdma/rnic/fpga/derive_qp_tx_bridge.py": "51afb390ce130f69e8b55cbfb2af2055e7fa3746004790b5b509f4f6273d28a7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "output": "SHARED_ROLE_UNIT {\"pass_test\":true,\"local_active\":1,\"fault\":0}\n/tmp/as02-duplex-rtl-6r2z5g4w/tb.v:173: $finish called at 160000 (1ps)\n"
+      },
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "1fde8810405394cb02865cfc9ca9774b40517b18e47bc37a2f27957a0cf14170",
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "398baf6ad88581237baae3e374dcec06aded745713a9f6c76f888e51c7d248c8",
+          "rdma/rnic/rtl/rocev2_duplex_rx_mux.v": "97cf1769991205f13b23fb1da3ad8ce95eeea131acc74e54f6878608514003c3",
+          "rdma/rnic/rtl/rocev2_duplex_tx_router.v": "75fd83dc14feaf807d331b908ea7a78d2a3e2b7b3a650a39739d8da297b61260",
+          "rdma/rnic/fpga/derive_duplex_transport.py": "ff81dfb2ba41ffc59d482bee177fc106537a22a786bf11d588880c3990c85a53",
+          "rdma/rnic/tests/test_native_duplex_rtl.py": "79172b2204ef994d485577ba3142ee36da69af2fc1914e170573377c7689806b",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "2c11a30b9b4b1c24a038ad62bd2dac539b3bdc55ab874ee82b1b1c31c32e12ae",
+          "rdma/rnic/fpga/derive_qp_tx_bridge.py": "51afb390ce130f69e8b55cbfb2af2055e7fa3746004790b5b509f4f6273d28a7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "output": "SHARED_ROLE_UNIT {\"pass_test\":true,\"local_active\":1,\"fault\":0}\n/tmp/as02-duplex-rtl-p4eiiwdk/tb.v:173: $finish called at 160000 (1ps)\n"
+      },
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "1fde8810405394cb02865cfc9ca9774b40517b18e47bc37a2f27957a0cf14170",
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "398baf6ad88581237baae3e374dcec06aded745713a9f6c76f888e51c7d248c8",
+          "rdma/rnic/rtl/rocev2_duplex_rx_mux.v": "97cf1769991205f13b23fb1da3ad8ce95eeea131acc74e54f6878608514003c3",
+          "rdma/rnic/rtl/rocev2_duplex_tx_router.v": "75fd83dc14feaf807d331b908ea7a78d2a3e2b7b3a650a39739d8da297b61260",
+          "rdma/rnic/fpga/derive_duplex_transport.py": "ff81dfb2ba41ffc59d482bee177fc106537a22a786bf11d588880c3990c85a53",
+          "rdma/rnic/tests/test_native_duplex_rtl.py": "79172b2204ef994d485577ba3142ee36da69af2fc1914e170573377c7689806b",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "2c11a30b9b4b1c24a038ad62bd2dac539b3bdc55ab874ee82b1b1c31c32e12ae",
+          "rdma/rnic/fpga/derive_qp_tx_bridge.py": "51afb390ce130f69e8b55cbfb2af2055e7fa3746004790b5b509f4f6273d28a7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "output": "SHARED_ROLE_UNIT {\"pass_test\":true,\"local_active\":1,\"fault\":0}\n/tmp/as02-duplex-rtl-flww253h/tb.v:173: $finish called at 160000 (1ps)\n"
+      },
+      {
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "1fde8810405394cb02865cfc9ca9774b40517b18e47bc37a2f27957a0cf14170",
+          "rdma/rnic/rtl/rocev2_memory_origin_router.v": "398baf6ad88581237baae3e374dcec06aded745713a9f6c76f888e51c7d248c8",
+          "rdma/rnic/rtl/rocev2_duplex_rx_mux.v": "97cf1769991205f13b23fb1da3ad8ce95eeea131acc74e54f6878608514003c3",
+          "rdma/rnic/rtl/rocev2_duplex_tx_router.v": "75fd83dc14feaf807d331b908ea7a78d2a3e2b7b3a650a39739d8da297b61260",
+          "rdma/rnic/fpga/derive_duplex_transport.py": "ff81dfb2ba41ffc59d482bee177fc106537a22a786bf11d588880c3990c85a53",
+          "rdma/rnic/tests/test_native_duplex_rtl.py": "79172b2204ef994d485577ba3142ee36da69af2fc1914e170573377c7689806b",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "2c11a30b9b4b1c24a038ad62bd2dac539b3bdc55ab874ee82b1b1c31c32e12ae",
+          "rdma/rnic/fpga/derive_qp_tx_bridge.py": "51afb390ce130f69e8b55cbfb2af2055e7fa3746004790b5b509f4f6273d28a7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305"
+        },
+        "output": "SHARED_ROLE_UNIT {\"pass_test\":true,\"local_active\":1,\"fault\":0}\n/tmp/as02-duplex-rtl-59m05ufb/tb.v:173: $finish called at 160000 (1ps)\n"
+      }
+    ]
+  },
+  "actual_HLS": false,
+  "hardware_verified": false
+}

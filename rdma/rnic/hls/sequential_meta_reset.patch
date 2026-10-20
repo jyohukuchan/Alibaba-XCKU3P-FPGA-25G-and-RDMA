@@ -1,0 +1,47 @@
+--- a/hls/ib_transport_protocol/retransmitter/retransmitter.hpp
++++ b/hls/ib_transport_protocol/retransmitter/retransmitter.hpp
+@@ -252,6 +252,16 @@
+ #pragma HLS INLINE off
+ 
+ 	static retransMetaEntry meta_table[META_TABLE_SIZE];
++	// Offline RNIC candidate: preserve full zero-after-reset semantics without
++	// one asynchronously readable reset bitmap for every struct field. The
++	// array is inaccessible until ALL 2000 entries have been cleared. Reset
++	// restarts the sweep, including when it interrupts a previous sweep.
++	// No request is consumed or response emitted during initialization.
++	#pragma HLS reset variable=meta_table off
++	static ap_uint<16> clear_index = 0;
++	static bool clear_complete = false;
++	#pragma HLS reset variable=clear_index
++	#pragma HLS reset variable=clear_complete
+ #if defined( __VITIS_HLS__)
+ 	#pragma HLS bind_storage variable=meta_table type=RAM_T2P impl=BRAM
+ #else
+@@ -259,6 +269,27 @@
+ #endif
+ 	#pragma HLS DEPENDENCE variable=meta_table inter false
+ 
++	if (!clear_complete)
++	{
++		retransMetaEntry zero;
++		zero.psn = 0;
++		zero.next = 0;
++		zero.opCode = static_cast<ibOpCode>(0);
++		zero.localAddr = 0;
++		zero.remoteAddr = 0;
++		zero.length = 0;
++		zero.lst = 0;
++		zero.offs = 0;
++		zero.valid = false;
++		zero.isTail = false;
++		meta_table[clear_index] = zero;
++		if (clear_index == META_TABLE_SIZE - 1)
++			clear_complete = true;
++		else
++			clear_index = clear_index + 1;
++		return;
++	}
++
+ 	retransMetaReq req;
+ 
+     if (!meta_upd_req.empty())

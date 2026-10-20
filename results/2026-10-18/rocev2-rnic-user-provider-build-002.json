@@ -1,0 +1,51 @@
+{
+  "scope": "Build actual pinned-rdma-core50/PABI34 AS02 provider, never install/open NIC.\n\nUses real installed libibverbs private34 symbols with upstream50.0 headers.\nNo kernel module, driver config, network, FPGA or /dev/infiniband is changed.\n",
+  "pass_test": true,
+  "source_sha256": {
+    "rdma/rnic/provider/build_frozen.py": "31246f2c8121002a93f505002a50b36d25dc0abe2f67da865ddde0ea97c53dfb",
+    "rdma/rnic/provider/as02.c": "49ccbfb777afa11a8823a545c53962ad63a79ba5384ea7e84aa72ca97e20f99d",
+    "rdma/rnic/provider/as02.driver": "bde66cb9998ca8086a62453af3e95001ee83688c1c1645a78d7fc0d5566e1002"
+  },
+  "frozen_sha256": {
+    "as02.c": "49ccbfb777afa11a8823a545c53962ad63a79ba5384ea7e84aa72ca97e20f99d",
+    "as02.driver": "bde66cb9998ca8086a62453af3e95001ee83688c1c1645a78d7fc0d5566e1002",
+    "build_frozen.py": "31246f2c8121002a93f505002a50b36d25dc0abe2f67da865ddde0ea97c53dfb"
+  },
+  "directory": "rdma/rnic/build/provider-frozen-mfhq8oxp",
+  "rdma_core_commit": "bc6b4bc134532e952fe7f8efc251e1f89b912098",
+  "rdma_core": "/home/user/fpga-rocev2-research/rdma-core-v50.0",
+  "provider_PABI": 34,
+  "command": [
+    "cc",
+    "-std=gnu11",
+    "-D_GNU_SOURCE",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-O2",
+    "-fPIC",
+    "-shared",
+    "-isystem",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0/build/include",
+    "-isystem",
+    "/home/user/fpga-rocev2-research/rdma-core-v50.0",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/provider-frozen-mfhq8oxp/as02.c",
+    "-pthread",
+    "-Wl,-z,defs",
+    "-libverbs",
+    "-o",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/provider-frozen-mfhq8oxp/libas02-rdmav34.so"
+  ],
+  "installed": false,
+  "NIC_opened": false,
+  "hardware_verified": false,
+  "bus_driver_wired": false,
+  "compile_seconds": 0.15609714199672453,
+  "source_unchanged": true,
+  "binary_sha256": "46051a4750b6f15a73d41d710c5529b61661e937981c7f07439c59bb29fce080",
+  "upstream_headers_sha256": {
+    "build/include/config.h": "25ec47917ae7388ab95c9322322ec22c3a299153a96eb8ffb293076d7df3a3a7",
+    "libibverbs/driver.h": "74d0a29cf20c6510dc9f32b7479648ded56c48a32e200a956f31bc2426036add",
+    "libibverbs/verbs.h": "fab5bd6f7d17b23f9afac2b4e4ad06315f964a69d695d0ea06402e8858adb8f2"
+  }
+}

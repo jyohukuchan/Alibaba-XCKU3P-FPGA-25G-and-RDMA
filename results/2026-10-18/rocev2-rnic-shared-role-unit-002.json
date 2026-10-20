@@ -1,0 +1,757 @@
+{
+  "scope": "Four-state shared-role ownership; HLS is an EXPLICIT controllable model.\n\ncore.STUB_* assignments change ONLY test-model outputs, never production\nstate. Actual-HLS one-core evidence is a separate bounded probe.\n",
+  "pass_test": true,
+  "methods": 5,
+  "simulations": 46,
+  "tests": {
+    "test_full_SQ_fields_and_explicit_zero_high_allone_keys": [
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "2a1cb11d70d113807dd8abf228671aa0060fd500f8206a3b21abf1e4c93a2f56"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "4af5f0a406adf150b1ec196c714071688ec2161bf4d1c44f1314a5b3c60989db"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "1640baf39d2220323995947dc1b1dbefce7d4f542bd3bf34c3c5e9920a4814e7"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "f75a6e085c0821b9822fe2df6445e304f7600353987205dc4043b589a0f487af"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "1494baf142c040b800ab8504c3845914a20aa0b0fa451d0bb17713b8fff7c978"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "052db6f411485fa1179a2598349ff0673a6d058e2f916fdd5a077b171e6fb9ef"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "b6661c1a0c4bd7af02842a9923c9a563da90d5c8ce36b84e6bbdbb2c0297b381"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "6efa5bf11e7d8aa73a841966cbd11d051872b9d2e91b04f13c7ab2e8ad8ee5e3"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "6806624387aefbfec6cdcfaa26e40ac875a5328c26f459859a030058b03d31d2"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "2e0605c9fc3ae68841c43a757095723b833a9960a3195da30a05103ea7501b07"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "9c041d31558cdfb0abef1bcf201d03e8308af8bfa654fb725aa86772548d634f"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "1e390bf452212754a2ef7b200373f8aa0973bf55288735f3d6b7a1b5f36d1e7f"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "eefbea4e276b5eb49c746892eba2cd012bb366281de3d3af537db393209e58e3"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "3f703590eb89dd0c0688bc48895718a0d78684387dfbed6a283430abd29fb4a6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "9cc7246be5f0b9ab04da95bfb5f2739aad2759d32e4e6300acaa2fb216c459ae"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "ee19eb5b28ebabaec15f11a095fd8721e17351c040e7453e439b11337f782e60"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "1f7108b15127f4fc742e879d10f8fbc21db8243665cb4e1cdb9fda172b8f1c89"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "4fd7ce500fd3c1202b900837c0cceade21482bce54fbb1d15aeb1b6fd1087aba"
+      }
+    ],
+    "test_invalid_full_owner_never_aliases_trusted_QPN_range": [
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "56a00f20c8b64fe46ef1561c089475086384bb337bdc7737657021668821d31d"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "cd5c227dc717cb67563909a62e95796572b400029b51bc80da1980536acb051d"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "db0e15169502c09e0acc2d8c79ca05a0d83aa3360221053a3944fe4eb415a531"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "b5c72a09583052dd8f6879173b24faeb19998d940b92c51d6178540475a973c0"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "f69c573b7479257a0f1974d875d1dd77502b21f1ca986890cc854f41946122c7"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "c12c95082611fdabfd167fae3c4f4406e104abe8b6857f2989b9a68707f47a17"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "507c835ca4e9091dc2958e330a71e99f7b6cca955a1404ef73233b8da0e9c7c5"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "55ada23eee939c9ecb384064b9838e53177ec5e813d27c3829cd63812bd1fdf8"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "749e364a1fba2dc02d5a6457991a0c9914769c634ee288932623d779287a6727"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "c3d2f7750f53528124e615bc877077894353f79e44804cbbbb3a93f8501679b2"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "b532512275e032cc009f4415250fbb0449868eef1c3dfa095086ef9f8da69eef"
+      }
+    ],
+    "test_remote_then_local_route_the_SAME_core_ports": [
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "bf110e99512b5dbe2b52c12afc85eeccf25445380e325534f3d79e6087acd986"
+      }
+    ],
+    "test_retire_needs_full_owner_and_real_core_drain_not_idle": [
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "b1c542dd3c18b452f5869304039d13ca6cffc47dabf89b033f85b4f17562421d"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "1ea77a2e87df0cb3168323b401353ce0f0df1fb2f173f52322c14b37eb52919a"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "0468aaa8e6a11232a6f3344d36a409da1869ca179ddc7aa317f3d2e4fe41f5b4"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 0,
+          "fault": 0
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "be646505d12655334ad84314c855511ea726212f1af3038044d30a9b0fecdceb"
+      }
+    ],
+    "test_stale_retire_unowned_HLS_inflight_config_quarantine": [
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "b769b923399f391a593cc88a087c22122c64cd3d6adc415c2cc18534a495030b"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "a1a52f8a63180de98519dd5470738dade198bae9e03d6e60c1bc27c2eb8e4962"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "4b73dd4448ba746985dfda3dc80acf49e7364df6dc9446c9eed5098e6f9d99bd"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "7d7c02c126ef30f9d8d34da92f3387ea03869d1670f5336f8018fd6c112e05c1"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "54b7d4c5c22a171dc45e913bb3a0ced4c663ad058f366eee2d803b4aff9e79ac"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "3afab92f94a325db36e03a066af5a6abfd099d788c5cb1dc2682129ff3acdde7"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "29d82d6a9700e50b0c5a0558a969aa1abc33525191a9aacb3b37618ea38dc167"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "2cbf1c4c66fdea05536510d6f7b4cad8ae05a46afcd1c30a85bd4e513f6b5840"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "a6d253c9650451cf7635e70f6be8d04021f992957bf4a5ab9f00cd47b6442bd8"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "4140f6808f23394439140f24e5a7a26055df7e4a1e7fd6792637a50e99aacfe0"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 0,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "24b2621f98cf98ba973e452b5cfb14aac01a416241eb34dd4bebdd3f38eebafc"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_active": 1,
+          "fault": 1
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "e15ad260045643e181932a98e42a2dfc9f848efda9bb5148d41b6dd762d43738",
+          "rdma/rnic/tests/test_shared_hls_roles_rtl.py": "bff871f25a685eab2149d66b6568b0f8c5dcd7bd5eb1f2cecec7c635b389f58e",
+          "rdma/rnic/tests/probe_shared_hls_roles.py": "fd17f86525fb86d20f219843d78f8702540f2c140cac3d95826eb8860409a2e6",
+          "rdma/rnic/fpga/derive_shared_responder.py": "9c995112f54c9deb0bc1bd63bc918505837d6f9d6ff386898dd65c4ecc85eac7",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rtl/rocev2_integrity_transport.v": "37433c032cf27685a2359bee24386682b82bd3413c1b32feae0e6ad78fc8322b"
+        },
+        "bench_sha256": "14066d659940cf975458c7ec6f1b88407004da27c2031e51c3d8f4959cfa2889"
+      }
+    ]
+  },
+  "actual_HLS": false,
+  "actual_core_drain_certificate": false,
+  "hardware_verified": false
+}

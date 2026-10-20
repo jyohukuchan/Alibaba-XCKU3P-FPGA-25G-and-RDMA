@@ -95,6 +95,13 @@ are evidence of this experiment, not a grant of rights to vendor IP.
   notices and substitutes the protected READ/WRITE endpoint.
 - The READ test peer links the installed OpenSSL libcrypto SHAKE256 API;
   OpenSSL code is not copied or vendored into this repository.
+- `rdma/rnic/hls/` contains checked source-derivation scripts for the same
+  pinned ETH transport, not a vendored replacement. Derived source retains
+  upstream notices; generated HLS/vendor outputs stay local and ignored.
+  New RNIC kernel sources carry their own `GPL-2.0 OR BSD-2-Clause-Views`
+  SPDX headers; those terms and any GPL-only exported-symbol requirements
+  are not overridden by the repository's default license. The experimental
+  provider uses the installed rdma-core API without vendoring rdma-core.
 
 No affiliation with or endorsement by Alibaba, AMD, NVIDIA, Dell or the
 upstream projects is implied. Future third-party RDMA code keeps its own

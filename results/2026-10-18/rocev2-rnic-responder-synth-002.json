@@ -1,0 +1,35 @@
+{
+  "scope": "Isolated protected actual-HLS responder synthesis only, parallel keep comparison version",
+  "session": 12642,
+  "terminal_exit_status": 0,
+  "source_manifest_count": 148,
+  "original_inputs_unchanged": true,
+  "period_ns": 4,
+  "luts": 35234,
+  "registers": 67078,
+  "bram_tiles": 41,
+  "post_synthesis_timing": {
+    "wns_ns": -0.376,
+    "whs_ns": 0.016,
+    "setup_failing_endpoints": 5,
+    "hold_failing_endpoints": 0,
+    "constraints_met": false
+  },
+  "replaced_mask_path_slack_ns": 0.218,
+  "new_critical_path": "forward_index -> asynchronous frame_keep RAM -> second RX ICRC bad_reg,15logic levels",
+  "placed_or_routed": false,
+  "native_board_signoff": false,
+  "completion_claim": false,
+  "next_action": "Register replayed frame data/keep/last before unchanged second integrity gate, then revalidate real HLS/lease tests and full physical timing. First confirm no simulation still compiling these inputs before editing.",
+  "artifact_sha256": {
+    "rdma/rnic/build/responder-synth-gASoEmuF/impl/original_inputs.sha256": "7bc0a45266f05fd8322eb46e6474fdf04977be08e9b260401b3b4f873fcd28fe",
+    "rdma/rnic/build/responder-synth-gASoEmuF/impl/post_synth.dcp": "7ce67ce87632be2329a8fa04f79029a22c11f16c84a2c89bc27dba3476303a51",
+    "rdma/rnic/build/responder-synth-gASoEmuF/impl/utilization.rpt": "34d08720fad67d7c190589d5dee499eaf0827c538900e8df79d83653f62b5575",
+    "rdma/rnic/build/responder-synth-gASoEmuF/impl/timing.rpt": "dcce96655ef9f686375b6b5590c08b1e201893caf973f18291db602a734ba851",
+    "rdma/rnic/build/responder-synth-gASoEmuF/impl/setup_paths.rpt": "61a84b3dafa8c003d834a9151459a0ddd36572a5428faabed2ad776081ac9c1e",
+    "rdma/rnic/build/responder-synth-gASoEmuF/impl/drc.rpt": "294901e863dd164bfc14bdb0ee1b7d75c1754e25cfbd1d5d01bf80971a0f52e0",
+    "rdma/logs/rnic-responder-synth-002.log": "07e15d15d51c2e90d1e34420dfd412f45dd55bfad6bdf6e4376dacbabc46c652",
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "ebf7f9a27d447f804e9730edc5f1ba4c6d8f1309f91007d7c6bdf81d0d85733d",
+    "rdma/rnic/rtl/responder_synth.tcl": "1e10a02ca408c9f5aa3cea19f8cdf4de8d10d8bb9a483797f88c817ff1f505c8"
+  }
+}

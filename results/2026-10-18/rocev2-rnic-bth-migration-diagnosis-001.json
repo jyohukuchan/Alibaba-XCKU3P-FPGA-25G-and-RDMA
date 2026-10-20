@@ -1,0 +1,51 @@
+{
+  "scope": "Read-only source/packet diagnosis. The new leaf validator incorrectly treated BTH MigReq as reserved; actual existing protected RX parser has the same0xcfmask and deterministically rejects M1before MR. Not runtime/hardware/path-migration support.",
+  "recorded_UTC": "2026-10-19 07:47 UTC",
+  "observed": [
+    {
+      "operation": "write",
+      "record": "results/2026-10-18/rocev2-rnic-wqe-hls-wire-write-002.json",
+      "record_sha256": "40a2373b81c246a551990ae9058489d4b05b15687ec54247d82f28a4204d2403",
+      "IP_packet_sha256": "c99cefbbd868d003c6637dca08e36a170c919e4687c68b1c397bf18cfde13df4",
+      "BTH_flags_hex": "70",
+      "MigReq": 1,
+      "pad": 3,
+      "TVers": 0,
+      "old_0xcf_mask_result": 64,
+      "valid_ICRC_verified_by_original_probe": true
+    },
+    {
+      "operation": "read",
+      "record": "results/2026-10-18/rocev2-rnic-wqe-hls-wire-read-002.json",
+      "record_sha256": "6aa42fd55fab81a1533c899edf95c9acf4327bda41853d1cc5e503b78fa57416",
+      "IP_packet_sha256": "77919a0a2f7d9e4df528f3fb919f8d381202fc0f2877b46e244da7f754d4c025",
+      "BTH_flags_hex": "40",
+      "MigReq": 1,
+      "pad": 0,
+      "TVers": 0,
+      "old_0xcf_mask_result": 64,
+      "valid_ICRC_verified_by_original_probe": true
+    }
+  ],
+  "protected_source_sha256": "4f3716c2d2c95b10d69e7cf09a74ee02ac5f495b5812ea5e7252d3ed15b07395",
+  "protected_expression": "(header[29*8+:8]&8'hcf)!=0",
+  "installed_primary_header": "/usr/src/linux-headers-6.17.0-1033-oem/include/rdma/ib_hdrs.h",
+  "installed_header_sha256": "94fcef8ace5613409a919e82cbba5c7a20f4bcfaf706477c87d9c7f97f280f08",
+  "installed_definition": "IB_BTH_MIG_REQ BIT(22)",
+  "primary_sources": [
+    "https://github.com/torvalds/linux/blob/v6.17/drivers/infiniband/sw/rxe/rxe_hdr.h",
+    "https://github.com/torvalds/linux/blob/v6.17/include/rdma/ib_hdrs.h"
+  ],
+  "primary_field_layout": {
+    "SE": "0x80",
+    "MigReq": "0x40",
+    "Pad": "0x30",
+    "TVers": "0x0f"
+  },
+  "planned_correction": "Treat MigReq as a real BTH flag, not transport-version/reserved bits. Keep SE/current-op policy, Tver, PKey, pad/length, ICRC, peer/QP/PSN/PD/key/VA/range gates; M cannot reconfigure/migrate trusted peer context.",
+  "new_leaf_strong_check_failed_records": [
+    "results/2026-10-18/rocev2-rnic-wqe-hls-wire-write-003.json",
+    "results/2026-10-18/rocev2-rnic-wqe-hls-wire-read-003.json"
+  ],
+  "hardware_actions": false
+}

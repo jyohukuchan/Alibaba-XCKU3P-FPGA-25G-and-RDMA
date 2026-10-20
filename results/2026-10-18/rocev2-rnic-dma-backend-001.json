@@ -1,0 +1,108 @@
+{
+  "scope": "Actual Corundum RAM/source/sink/backend RTL with DESCRIPTOR ENGINE MODEL, not PCIe/native DMA",
+  "hardware_verified": false,
+  "board_integrated": false,
+  "actual_pcie_tlp_engine": false,
+  "completion_claim": false,
+  "pass_test": false,
+  "tests": {
+    "test_disable_only_stops_new_work_not_stalled_descriptor": {
+      "pass_test": true,
+      "scenario": 9,
+      "cycles": 100,
+      "commands": 1,
+      "fences": 1,
+      "completions": 1,
+      "dma_reads": 1,
+      "dma_writes": 1,
+      "read_bytes": 0,
+      "fault": 0,
+      "fault_code": 0
+    },
+    "test_exact_data_boundaries_guards_unaligned_addresses_and_fences": {
+      "pass_test": true,
+      "scenario": 0,
+      "cycles": 2393,
+      "commands": 16,
+      "fences": 8,
+      "completions": 16,
+      "dma_reads": 16,
+      "dma_writes": 8,
+      "read_bytes": 8447,
+      "fault": 0,
+      "fault_code": 0
+    },
+    "test_failed_fence_never_successfully_completes": {
+      "pass_test": true,
+      "scenario": 3,
+      "cycles": 85,
+      "commands": 1,
+      "fences": 1,
+      "completions": 1,
+      "dma_reads": 1,
+      "dma_writes": 1,
+      "read_bytes": 0,
+      "fault": 1,
+      "fault_code": 6
+    },
+    "test_failed_read_drains_zero_not_stale_ram": {
+      "pass_test": true,
+      "scenario": 1,
+      "cycles": 159,
+      "commands": 3,
+      "fences": 1,
+      "completions": 3,
+      "dma_reads": 3,
+      "dma_writes": 1,
+      "read_bytes": 130,
+      "fault": 1,
+      "fault_code": 6
+    },
+    "test_failed_write_has_error_without_fence_or_success": {
+      "pass_test": true,
+      "scenario": 2,
+      "cycles": 49,
+      "commands": 1,
+      "fences": 0,
+      "completions": 1,
+      "dma_reads": 0,
+      "dma_writes": 1,
+      "read_bytes": 0,
+      "fault": 1,
+      "fault_code": 6
+    },
+    "test_invalid_command_never_issues_dma": {
+      "pass_test": true,
+      "scenario": 7,
+      "cycles": 7,
+      "commands": 0,
+      "fences": 0,
+      "completions": 0,
+      "dma_reads": 0,
+      "dma_writes": 0,
+      "read_bytes": 0,
+      "fault": 1,
+      "fault_code": 1
+    },
+    "test_wrong_status_tag_retains_and_later_drains_dma": {
+      "pass_test": true,
+      "scenario": 4,
+      "cycles": 33,
+      "commands": 1,
+      "fences": 0,
+      "completions": 0,
+      "dma_reads": 1,
+      "dma_writes": 0,
+      "read_bytes": 0,
+      "fault": 1,
+      "fault_code": 4
+    }
+  },
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_corundum_dma_backend.v": "3fd531bc1a38d1031887664f5b7d746b9b098badd23e4390df4a32a03d6088e4",
+    "external/corundum/fpga/lib/pcie/rtl/dma_client_axis_sink.v": "a1e03efa7a8810a967b1e4a6b68fc75b0cbfc6f6a2ac137b9aa7321001029dd5",
+    "external/corundum/fpga/lib/pcie/rtl/dma_client_axis_source.v": "e2dc4b2ab3ed88e2d6256e3ebcb7470fe0b11249a1616bbd1746460399ba5044",
+    "external/corundum/fpga/lib/pcie/rtl/dma_psdpram.v": "5d06400fe8c45ff27a0eaabb33206b684b2f2c5adf59353fcabe891e9ac29513",
+    "rdma/rnic/tests/test_corundum_dma_backend_rtl.py": "9ff06304a0ddabb02066ca36a77d2fc2d87374e7bd94b58288574f110f4ba883"
+  }
+}

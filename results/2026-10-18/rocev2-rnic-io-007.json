@@ -1,0 +1,47 @@
+{
+  "scope": "Actual shared C MMIO client/UBSan and logical detach, MMIO/controller-reply MODEL only",
+  "pass_test": true,
+  "kernel_readl_writel_executed": false,
+  "hardware_verified": false,
+  "board_integrated": false,
+  "completion_claim": false,
+  "test_names": [
+    "test_ack_error_never_becomes_success_and_lost_ack_is_not_guessed",
+    "test_all_commands_actual_full64_metadata_snapshot_and_flags",
+    "test_ambiguous_doorbell_failure_retains_then_matches_real_reply",
+    "test_bad_response_identity_key_and_proof_never_ack_or_publish",
+    "test_detach_ambiguous_command_preserves_full_owner_and_pin_uncertainty",
+    "test_detach_completed_history_keeps_sequence_and_invalid_objects_rejected",
+    "test_detach_forbids_even_a_valid_late_drain_reply_from_becoming_proof",
+    "test_detach_idle_is_terminal_without_transport_access_or_reinitialization",
+    "test_error_response_is_transport_completion_not_memory_proof",
+    "test_fatal_after_reply_read_forbids_ack_and_release",
+    "test_old_device_abi_live_state_and_missing_transport_rejected_without_writes",
+    "test_staging_failure_or_readback_mismatch_never_rings_doorbell",
+    "test_timeout_keeps_expected_owner_and_late_reply_can_only_resynchronize",
+    "test_validation_and_sequence_exhaustion_prevent_truncation_and_reuse"
+  ],
+  "passed_names": [
+    "test_ack_error_never_becomes_success_and_lost_ack_is_not_guessed",
+    "test_all_commands_actual_full64_metadata_snapshot_and_flags",
+    "test_ambiguous_doorbell_failure_retains_then_matches_real_reply",
+    "test_bad_response_identity_key_and_proof_never_ack_or_publish",
+    "test_detach_ambiguous_command_preserves_full_owner_and_pin_uncertainty",
+    "test_detach_completed_history_keeps_sequence_and_invalid_objects_rejected",
+    "test_detach_forbids_even_a_valid_late_drain_reply_from_becoming_proof",
+    "test_detach_idle_is_terminal_without_transport_access_or_reinitialization",
+    "test_error_response_is_transport_completion_not_memory_proof",
+    "test_fatal_after_reply_read_forbids_ack_and_release",
+    "test_old_device_abi_live_state_and_missing_transport_rejected_without_writes",
+    "test_staging_failure_or_readback_mismatch_never_rings_doorbell",
+    "test_timeout_keeps_expected_owner_and_late_reply_can_only_resynchronize",
+    "test_validation_and_sequence_exhaustion_prevent_truncation_and_reuse"
+  ],
+  "source_sha256": {
+    "rdma/rnic/kernel/rnic_io.c": "0c588282317c357322c0137c3183f95cc519eb65f3e5022e057664d2aa54414d",
+    "rdma/rnic/kernel/rnic_io.h": "83ea795746120920808c467044cbf5e822a91c6553642e6d0ab25d868697355c",
+    "rdma/rnic/kernel/rnic_regs.h": "10032bb69d98f6d2ee527c7f6f3b86c3407deb8bd0a46e782d481f6f36be52e3",
+    "rdma/rnic/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/tests/test_rnic_io.py": "20cb2e720adf3026c2f74e7d46f1cc9a4151f8a43a742d1a6ff6e5348936d905"
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "scope": "Execute the EXACT current isolated Tcl report-gate body under tclsh with generated report fixtures and the retained actual failed001reports; not synthesis/route/native proof.",
+  "pass_test": true,
+  "terminal_exit_status": 0,
+  "cases": 18,
+  "tests": [
+    {
+      "case": "synthetic_all0_positive_setup_hold_warning_only",
+      "expected_rejection": false,
+      "exit_status": 0,
+      "stderr": ""
+    },
+    {
+      "case": "reject_no_clock",
+      "expected_rejection": true,
+      "exit_status": 1,
+      "stderr": "Isolated check_timing failure: no_clock\n"
+    },
+    {
+      "case": "reject_constant_clock",
+      "expected_rejection": true,
+      "exit_status": 1,
+      "stderr": "Isolated check_timing failure: constant_clock\n"
+    },
+    {
+      "case": "reject_pulse_width_clock",
+      "expected_rejection": true,
+      "exit_status": 1,
+      "stderr": "Isolated check_timing failure: pulse_width_clock\n"
+    },
+    {
+      "case": "reject_unconstrained_internal_endpoints",
+      "expected_rejection": true,
+      "exit_status": 1,
+      "stderr": "Isolated check_timing failure: unconstrained_internal_endpoints\n"
+    },
+    {
+      "case": "reject_no_input_delay",
+      "expected_rejection": true,
+      "exit_status": 1,
+      "stderr": "Isolated check_timing failure: no_input_delay\n"
+    },
+    {
+      "case": "reject_no_output_delay",
+      "expected_rejection": true,
+      "exit_status": 1,
+      "stderr": "Isolated check_timing failure: no_output_delay\n"
+    },
+    {
+      "case": "reject_multiple_clock",
+      "expected_rejection": true,
+      "exit_status": 1,
+      "stderr": "Isolated check_timing failure: multiple_clock\n"
+    },
+    {
+      "case": "reject_generated_clocks",
+      "expected_rejection": true,
+      "exit_status": 1,
+      "stderr": "Isolated check_timing failure: generated_clocks\n"
+    },
+    {
+      "case": "reject_loops",
+      "expected_rejection": true,
+      "exit_status": 1,
+      "stderr": "Isolated check_timing failure: loops\n"
+    },
+    {
+      "case": "reject_partial_input_delay",
+      "expected_rejection": true,
+      "exit_status": 1,
+      "stderr": "Isolated check_timing failure: partial_input_delay\n"
+    },
+    {
+      "case": "reject_partial_output_delay",
+      "expected_rejection": true,
+      "exit_status": 1,
+      "stderr": "Isolated check_timing failure: partial_output_delay\n"
+    },
+    {
+      "case": "reject_latch_loops",
+      "expected_rejection": true,
+      "exit_status": 1,
+      "stderr": "Isolated check_timing failure: latch_loops\n"
+    },
+    {
+      "case": "reject_DRC_Error",
+      "expected_rejection": true,
+      "exit_status": 1,
+      "stderr": "Isolated DRC error/critical warning\n"
+    },
+    {
+      "case": "reject_DRC_Critical Warning",
+      "expected_rejection": true,
+      "exit_status": 1,
+      "stderr": "Isolated DRC error/critical warning\n"
+    },
+    {
+      "case": "reject_negative_setup",
+      "expected_rejection": true,
+      "exit_status": 1,
+      "stderr": "Shared DMA does not meet isolated4ns timing\n"
+    },
+    {
+      "case": "reject_negative_hold",
+      "expected_rejection": true,
+      "exit_status": 1,
+      "stderr": "Shared DMA does not meet isolated4ns timing\n"
+    },
+    {
+      "case": "reject_actual_old_4loop_report",
+      "expected_rejection": true,
+      "exit_status": 1,
+      "stderr": "Isolated check_timing failure: loops\n"
+    }
+  ],
+  "source_sha256": {
+    "rdma/rnic/rtl/sq_paged_dma_ooc.tcl": "84d92b3cc916f12caa5db5c989426476ac11f5b821a6f3025dee957575df63f8"
+  },
+  "actual_failed_report_sha256": {
+    "rdma/rnic/build/sq-paged-dma-ooc-001/check_timing.rpt": "f0afbde9d897236ba51bf246f4a7fb721e31299b83de50873498c5932e78e792",
+    "rdma/rnic/build/sq-paged-dma-ooc-001/drc.rpt": "57047a7b606ba76bb38fc5523fa28843751f0864bcc62ce775c0bc9978f80141"
+  },
+  "hardware_verified": false,
+  "physical_signoff": false
+}

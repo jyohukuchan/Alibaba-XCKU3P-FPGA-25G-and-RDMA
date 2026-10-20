@@ -1,0 +1,11 @@
+{
+  "scope": "Retained native replay + actual MAC/framer/tag/lifetime composition.\n\nConfig/authorized control and HLS/memory/core-drain inputs are explicit test\nmodels. MAC bytes/receipts/EOF/tail and retained replay are real production\nRTL. No kernel, real HLS drain, native board or error-CQ release proof.\n",
+  "pass_test": false,
+  "methods": 0,
+  "tests": {},
+  "actual_MAC_and_cached_replay": true,
+  "HLS_memory_core_drain_models": true,
+  "hardware_verified": false,
+  "actual_native_main": false,
+  "kernel_or_error_CQ_release": false
+}

@@ -1,0 +1,344 @@
+{
+  "scope": "Actual C WQE + SQ-result bridge + original frontend + ONE actual MR table.\n\nSQ-result/queue context is an EXPLICIT source model here, not DMA evidence.\nWork handoff is not execution/CQ completion or a downstream lease release.\n",
+  "pass_test": true,
+  "methods": 5,
+  "simulations": 16,
+  "tests": {
+    "test_actual_C_full_namespace_context_and_capacity": [
+      {
+        "summary": {
+          "checked": 11,
+          "queries": 11,
+          "results": 11,
+          "fault": 0,
+          "cycles": 196
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "9ae41e4f19f111712047277a34dce83d08b179521257bbadcc85233bd0c4e581",
+          "rdma/rnic/rtl/rocev2_wqe_admission.v": "dd5e4e348c276173dd552fca81196fe65df3c52f1ee8008ad68f1c784852644c",
+          "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+          "rdma/rnic/tests/test_sq_wqe_admission_rtl.py": "3649c22a64d1cbb79b82a210adb5dac7b180655b64c853ec597fb05944c7c154",
+          "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+          "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2",
+          "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+          "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f"
+        },
+        "bench_sha256": "a962c68aecb04c66b3a982cae878add429704e153d4bcf4685e8188b3d7006b9"
+      }
+    ],
+    "test_all_known_DMA_errors_preserve_status_not_stale_success_authority": [
+      {
+        "summary": {
+          "checked": 16,
+          "queries": 1,
+          "results": 16,
+          "fault": 0,
+          "cycles": 245
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "9ae41e4f19f111712047277a34dce83d08b179521257bbadcc85233bd0c4e581",
+          "rdma/rnic/rtl/rocev2_wqe_admission.v": "dd5e4e348c276173dd552fca81196fe65df3c52f1ee8008ad68f1c784852644c",
+          "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+          "rdma/rnic/tests/test_sq_wqe_admission_rtl.py": "3649c22a64d1cbb79b82a210adb5dac7b180655b64c853ec597fb05944c7c154",
+          "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+          "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2",
+          "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+          "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f"
+        },
+        "bench_sha256": "2b8eed340776bb87549dcca47adcb09f650b1ab5ca891485e4edbd773b607f63"
+      }
+    ],
+    "test_invalid_or_unknown_trusted_context_faults_without_alias_or_completion": [
+      {
+        "summary": {
+          "checked": 1,
+          "queries": 0,
+          "results": 0,
+          "fault": 1,
+          "cycles": 31
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "9ae41e4f19f111712047277a34dce83d08b179521257bbadcc85233bd0c4e581",
+          "rdma/rnic/rtl/rocev2_wqe_admission.v": "dd5e4e348c276173dd552fca81196fe65df3c52f1ee8008ad68f1c784852644c",
+          "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+          "rdma/rnic/tests/test_sq_wqe_admission_rtl.py": "3649c22a64d1cbb79b82a210adb5dac7b180655b64c853ec597fb05944c7c154",
+          "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+          "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2",
+          "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+          "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f"
+        },
+        "bench_sha256": "19ba752c2b7bba59962922b820dff328984b60d98498b6d2b1e0063d1ec6a36b"
+      },
+      {
+        "summary": {
+          "checked": 1,
+          "queries": 0,
+          "results": 0,
+          "fault": 1,
+          "cycles": 31
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "9ae41e4f19f111712047277a34dce83d08b179521257bbadcc85233bd0c4e581",
+          "rdma/rnic/rtl/rocev2_wqe_admission.v": "dd5e4e348c276173dd552fca81196fe65df3c52f1ee8008ad68f1c784852644c",
+          "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+          "rdma/rnic/tests/test_sq_wqe_admission_rtl.py": "3649c22a64d1cbb79b82a210adb5dac7b180655b64c853ec597fb05944c7c154",
+          "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+          "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2",
+          "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+          "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f"
+        },
+        "bench_sha256": "73e9fe79001e5a1f9745c3dc7333c776a912ad0e61be25f7e6237eb8187a206f"
+      },
+      {
+        "summary": {
+          "checked": 1,
+          "queries": 0,
+          "results": 0,
+          "fault": 1,
+          "cycles": 31
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "9ae41e4f19f111712047277a34dce83d08b179521257bbadcc85233bd0c4e581",
+          "rdma/rnic/rtl/rocev2_wqe_admission.v": "dd5e4e348c276173dd552fca81196fe65df3c52f1ee8008ad68f1c784852644c",
+          "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+          "rdma/rnic/tests/test_sq_wqe_admission_rtl.py": "3649c22a64d1cbb79b82a210adb5dac7b180655b64c853ec597fb05944c7c154",
+          "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+          "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2",
+          "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+          "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f"
+        },
+        "bench_sha256": "9d595ad599e8f653d573b118af01435043739d7097ae56875ac13e75ad0e5642"
+      },
+      {
+        "summary": {
+          "checked": 1,
+          "queries": 0,
+          "results": 0,
+          "fault": 1,
+          "cycles": 31
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "9ae41e4f19f111712047277a34dce83d08b179521257bbadcc85233bd0c4e581",
+          "rdma/rnic/rtl/rocev2_wqe_admission.v": "dd5e4e348c276173dd552fca81196fe65df3c52f1ee8008ad68f1c784852644c",
+          "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+          "rdma/rnic/tests/test_sq_wqe_admission_rtl.py": "3649c22a64d1cbb79b82a210adb5dac7b180655b64c853ec597fb05944c7c154",
+          "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+          "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2",
+          "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+          "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f"
+        },
+        "bench_sha256": "68e805aa011941dd4e94a3f03de068c3e76bcb42c3226a92a433a43929b1d62e"
+      },
+      {
+        "summary": {
+          "checked": 1,
+          "queries": 0,
+          "results": 0,
+          "fault": 1,
+          "cycles": 31
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "9ae41e4f19f111712047277a34dce83d08b179521257bbadcc85233bd0c4e581",
+          "rdma/rnic/rtl/rocev2_wqe_admission.v": "dd5e4e348c276173dd552fca81196fe65df3c52f1ee8008ad68f1c784852644c",
+          "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+          "rdma/rnic/tests/test_sq_wqe_admission_rtl.py": "3649c22a64d1cbb79b82a210adb5dac7b180655b64c853ec597fb05944c7c154",
+          "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+          "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2",
+          "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+          "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f"
+        },
+        "bench_sha256": "0abf69ffdcd42f85d11928bb6974357ca3710f32af57523174f8a6e5e90ce3ba"
+      },
+      {
+        "summary": {
+          "checked": 1,
+          "queries": 0,
+          "results": 0,
+          "fault": 1,
+          "cycles": 31
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "9ae41e4f19f111712047277a34dce83d08b179521257bbadcc85233bd0c4e581",
+          "rdma/rnic/rtl/rocev2_wqe_admission.v": "dd5e4e348c276173dd552fca81196fe65df3c52f1ee8008ad68f1c784852644c",
+          "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+          "rdma/rnic/tests/test_sq_wqe_admission_rtl.py": "3649c22a64d1cbb79b82a210adb5dac7b180655b64c853ec597fb05944c7c154",
+          "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+          "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2",
+          "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+          "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f"
+        },
+        "bench_sha256": "a8f71836861de6d5a724be459b853ed6be80e0fdb76607c3ef30dc7afc6eb572"
+      },
+      {
+        "summary": {
+          "checked": 1,
+          "queries": 0,
+          "results": 0,
+          "fault": 1,
+          "cycles": 31
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "9ae41e4f19f111712047277a34dce83d08b179521257bbadcc85233bd0c4e581",
+          "rdma/rnic/rtl/rocev2_wqe_admission.v": "dd5e4e348c276173dd552fca81196fe65df3c52f1ee8008ad68f1c784852644c",
+          "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+          "rdma/rnic/tests/test_sq_wqe_admission_rtl.py": "3649c22a64d1cbb79b82a210adb5dac7b180655b64c853ec597fb05944c7c154",
+          "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+          "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2",
+          "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+          "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f"
+        },
+        "bench_sha256": "b68d4e49c7685206abcb0762eb8160a41491eb48e114a16fa2123a9501dcc290"
+      },
+      {
+        "summary": {
+          "checked": 1,
+          "queries": 0,
+          "results": 0,
+          "fault": 1,
+          "cycles": 31
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "9ae41e4f19f111712047277a34dce83d08b179521257bbadcc85233bd0c4e581",
+          "rdma/rnic/rtl/rocev2_wqe_admission.v": "dd5e4e348c276173dd552fca81196fe65df3c52f1ee8008ad68f1c784852644c",
+          "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+          "rdma/rnic/tests/test_sq_wqe_admission_rtl.py": "3649c22a64d1cbb79b82a210adb5dac7b180655b64c853ec597fb05944c7c154",
+          "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+          "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2",
+          "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+          "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f"
+        },
+        "bench_sha256": "fecb862848e49e7e4fb0a74932863f030c42358b4d1c12778857e861c110005a"
+      }
+    ],
+    "test_pending_raw_fetched_record_does_not_deadlock_MR_management": [
+      {
+        "summary": {
+          "checked": 1,
+          "queries": 1,
+          "results": 1,
+          "fault": 0,
+          "cycles": 44
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "9ae41e4f19f111712047277a34dce83d08b179521257bbadcc85233bd0c4e581",
+          "rdma/rnic/rtl/rocev2_wqe_admission.v": "dd5e4e348c276173dd552fca81196fe65df3c52f1ee8008ad68f1c784852644c",
+          "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+          "rdma/rnic/tests/test_sq_wqe_admission_rtl.py": "3649c22a64d1cbb79b82a210adb5dac7b180655b64c853ec597fb05944c7c154",
+          "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+          "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2",
+          "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+          "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f"
+        },
+        "bench_sha256": "ef7dfea2245950d61ed98d6dcb2679672fb97274fe5fd5ca8be26aa544bb1a59"
+      }
+    ],
+    "test_unknown_descriptor_bytes_including_remote_key_and_WR_ID_never_query_MR": [
+      {
+        "summary": {
+          "checked": 1,
+          "queries": 0,
+          "results": 1,
+          "fault": 0,
+          "cycles": 31
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "9ae41e4f19f111712047277a34dce83d08b179521257bbadcc85233bd0c4e581",
+          "rdma/rnic/rtl/rocev2_wqe_admission.v": "dd5e4e348c276173dd552fca81196fe65df3c52f1ee8008ad68f1c784852644c",
+          "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+          "rdma/rnic/tests/test_sq_wqe_admission_rtl.py": "3649c22a64d1cbb79b82a210adb5dac7b180655b64c853ec597fb05944c7c154",
+          "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+          "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2",
+          "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+          "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f"
+        },
+        "bench_sha256": "6fbb8dafa95f8770f95aaa7541a2bcd62e84110ff1bb7570006db868ee284bd6"
+      },
+      {
+        "summary": {
+          "checked": 1,
+          "queries": 0,
+          "results": 1,
+          "fault": 0,
+          "cycles": 31
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "9ae41e4f19f111712047277a34dce83d08b179521257bbadcc85233bd0c4e581",
+          "rdma/rnic/rtl/rocev2_wqe_admission.v": "dd5e4e348c276173dd552fca81196fe65df3c52f1ee8008ad68f1c784852644c",
+          "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+          "rdma/rnic/tests/test_sq_wqe_admission_rtl.py": "3649c22a64d1cbb79b82a210adb5dac7b180655b64c853ec597fb05944c7c154",
+          "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+          "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2",
+          "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+          "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f"
+        },
+        "bench_sha256": "ef94a3f203e385ef102ad5fec3323bc5d31bb7d511dc4085ed2524d70a1dfa5e"
+      },
+      {
+        "summary": {
+          "checked": 1,
+          "queries": 0,
+          "results": 1,
+          "fault": 0,
+          "cycles": 31
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "9ae41e4f19f111712047277a34dce83d08b179521257bbadcc85233bd0c4e581",
+          "rdma/rnic/rtl/rocev2_wqe_admission.v": "dd5e4e348c276173dd552fca81196fe65df3c52f1ee8008ad68f1c784852644c",
+          "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+          "rdma/rnic/tests/test_sq_wqe_admission_rtl.py": "3649c22a64d1cbb79b82a210adb5dac7b180655b64c853ec597fb05944c7c154",
+          "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+          "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2",
+          "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+          "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f"
+        },
+        "bench_sha256": "3e4f11a93d5ba3754441b0705b924759e2a6eb157d48beee33086abdf9024944"
+      },
+      {
+        "summary": {
+          "checked": 1,
+          "queries": 0,
+          "results": 1,
+          "fault": 0,
+          "cycles": 31
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "9ae41e4f19f111712047277a34dce83d08b179521257bbadcc85233bd0c4e581",
+          "rdma/rnic/rtl/rocev2_wqe_admission.v": "dd5e4e348c276173dd552fca81196fe65df3c52f1ee8008ad68f1c784852644c",
+          "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+          "rdma/rnic/tests/test_sq_wqe_admission_rtl.py": "3649c22a64d1cbb79b82a210adb5dac7b180655b64c853ec597fb05944c7c154",
+          "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+          "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2",
+          "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+          "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f"
+        },
+        "bench_sha256": "1c69b163f32cc6b54ed7e7e9d4180e0ca05d59ace60c1b0225d7a1bd40d4e360"
+      },
+      {
+        "summary": {
+          "checked": 1,
+          "queries": 0,
+          "results": 1,
+          "fault": 0,
+          "cycles": 31
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "9ae41e4f19f111712047277a34dce83d08b179521257bbadcc85233bd0c4e581",
+          "rdma/rnic/rtl/rocev2_wqe_admission.v": "dd5e4e348c276173dd552fca81196fe65df3c52f1ee8008ad68f1c784852644c",
+          "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+          "rdma/rnic/tests/test_sq_wqe_admission_rtl.py": "3649c22a64d1cbb79b82a210adb5dac7b180655b64c853ec597fb05944c7c154",
+          "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+          "rdma/rnic/tests/test_wqe_codec.py": "8d0252f222173f60ac6ab1e4781447e2964af62d585b568c56d923da9ec265d2",
+          "rdma/rnic/kernel/wqe.c": "962d2bf9ad1c54601019d9223acc918b814e6b5005ef5e69889f84c2daeaf8e1",
+          "rdma/rnic/kernel/wqe.h": "6c5717be3e6357b95d28c89323d9ce1fb2f2ae664483a968d83ddcca1184416f"
+        },
+        "bench_sha256": "a0cc6e8330f078973ee69fec0c6d4a1bbeb2ad50aec27e864b3c3040f14e5966"
+      }
+    ]
+  },
+  "actual_C_UBSan": true,
+  "actual_MR_table": true,
+  "SQ_result_source_model": true,
+  "actual_SQ_DMA_or_native_execution": false,
+  "hardware_verified": false,
+  "completion_claim": false
+}

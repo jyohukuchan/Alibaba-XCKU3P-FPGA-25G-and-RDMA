@@ -48,7 +48,7 @@ wire [5:0] padded_bytes={1'b0,byte_count}+{4'd0,pad};
 wire [16:0] padded_keep=(17'd1<<padded_bytes)-17'd1;
 wire bad_now=bad || s_axis_tuser || byte_count==0 || s_axis_tkeep!=dense_keep[15:0] ||
     (!s_axis_tlast && byte_count!=16) || adjusted_ip[16] ||
-    (first && (s_axis_tdata[7:0]!=8'h45 || packet_length<48)) ||
+    (first && (s_axis_tdata[7:0]!=8'h45 || packet_length<44)) ||
     (offset==16 && (adjusted_udp[16] || s_axis_tdata[109:108]!=0)) ||
     (s_axis_tlast && ({1'b0,offset}+{12'd0,byte_count}!={1'b0,packet_length}-17'd4 ||
         padded_bytes>16 || padded_bytes[1:0]!=0));

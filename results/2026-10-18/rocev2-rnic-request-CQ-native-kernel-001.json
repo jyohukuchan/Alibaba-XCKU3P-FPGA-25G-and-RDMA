@@ -1,0 +1,124 @@
+{
+  "scope": "Actual kernel CQ/SQ/MR consumes exact whole generated-HLS/native CQ bytes.\n\nRequire successful current-source native CQ evidence (two RECVs, or separate\nREAD/WRITE/SEND requester runs). Software WQE\nencoding and full-owner matching are real C; Linux primitives, physical page\npins/DMA/MMIO and teardown controller are explicit models. Not a registered\nib_device, loaded kernel driver, live physical host or hardware assertion.\n",
+  "pass_test": true,
+  "hardware_verified": false,
+  "requester_CQ": true,
+  "source_sha256": {
+    "rdma/rnic/kernel/mr.c": "84cbde00b1163f9aff8389f8fafaf93215bd87ea62d2ead155c96815fbc5efe8",
+    "rdma/rnic/kernel/mr_contract.c": "fba5388020b03409654f46dfce12aed7a9f4776dc22c32a964a3aecf69da6adf",
+    "rdma/rnic/kernel/wqe.c": "9b5913e193de67aec3ce2880004819250da766677f54495b28c1050cb31541db",
+    "rdma/rnic/kernel/verbs_wqe.c": "f10dac55c02c367a8b077df8353ad0900f9bdcdbc3d845a2823e919481650b50",
+    "rdma/rnic/kernel/sq.c": "08591a2de25e7c0531a642abc56a1af1974bc0de23a959fed329d2503431f52c",
+    "rdma/rnic/kernel/sq_io.c": "bfb77b787674a8d0b78854f2aab8d33852a29d6335fe5d1626cffa51376c2485",
+    "rdma/rnic/kernel/sq_hw.c": "439b77b34e631e7bb215a7a2c1a4407b9dea3cd02cb45153b4a1b38c02062ea0",
+    "rdma/rnic/kernel/cq_io.c": "19a7267238af0ba0f51a9ce958647a88cb9b08b676b2ba47ae8ed9e03243de2e",
+    "rdma/rnic/kernel/cq_hw.c": "62727e3661de59f10456deffcc864920746a196fc80ec9226498b6945684fe33",
+    "rdma/rnic/kernel/cq.c": "18cbe808d5e2c8a42aa51aa0e17f2cdecff5ddd70fc7b5fa7b321b8ae05cc294",
+    "rdma/rnic/tests/kernel_queue_model.c": "040e9a6c3ec021996f8af51f50d180043cf440933f13d116bbdb04f0b92ce240",
+    "rdma/rnic/tests/kernel_native_request_cq.c": "963f14911ec08d1de1f28eb9fe891917e18bd90ddabc8460c74427643ebb0901",
+    "rdma/rnic/kernel/rnic_regs.h": "eac784752909f51342e85ca2f8ddfff31d10286df41f81699652a308a7d8d84e",
+    "rdma/rnic/kernel/qp_hw.h": "79744b42f6e83c02e0ce1acc9d7e1f34a470c1dba95241f504278c3aa21cd9b2",
+    "rdma/rnic/kernel/rnic_hw.h": "87f084df23fa172ddc76fbcffb30338a5d9a28e68fd08ec3f54157317f9960f7",
+    "rdma/rnic/kernel/cq_regs.h": "e0fa968451328e83a3b6b3d21942ca78393c7c4b8fad142228c26306a6a11a80",
+    "rdma/rnic/kernel/sq.h": "db7999bf9a2f035a0ad7badbe5d1d30757dbb281212f7ed44a1344102e957046",
+    "rdma/rnic/kernel/sq_io.h": "6c29891841940756254c774ca0be1ea2702e5f8c255bda53f6fff2fed069d0ca",
+    "rdma/rnic/kernel/cq_hw.h": "9cfbf94b2a7ebcfcc4465b761fb6ccf4c93844b7dd67d8e3f7e81983e5e0e673",
+    "rdma/rnic/kernel/native_attach.h": "c75bc0317787962e5b803f04fee05e8f556614df85fcb40ea851148fa45d923b",
+    "rdma/rnic/kernel/retry_io.h": "aad5018d4cb7292ef0240f09f1495453030f5211c98999fa0edec5b0fbee9167",
+    "rdma/rnic/kernel/cq.h": "41926f9f8ffd9fe54b77fcd25f6005dd1c817cba7a7a32707130d4b2cf0bceb2",
+    "rdma/rnic/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/kernel/wqe.h": "60c14ee73ac4af3b458ad8f584d99ab20abff76984e2e7bf08e17d639193b90a",
+    "rdma/rnic/kernel/native_regs.h": "18274c1390479f2530dcc2f1256ecf7945f0d9d7b7c60fc30ddc94f1819b841b",
+    "rdma/rnic/kernel/verbs.h": "19d7b521bfca24cf11338119fd869d960975625b5679b165fceb5a986dd85671",
+    "rdma/rnic/kernel/sq_regs.h": "1044f34c5bb9ca835ace7cb2cc1149120b3d9b8f5c210324989a8c187a67c96b",
+    "rdma/rnic/kernel/rnic_io.h": "92999a3752af6fce6c8556c9c2724ce85918949966f35d2420695e8671d0ffc3",
+    "rdma/rnic/kernel/mr.h": "427c947b5e8491e4444cf1fd0e726cfbcdfdae00113020ec67b7e7f314c5cfc3",
+    "rdma/rnic/kernel/sq_hw.h": "4866aced617bd9c4bc65b1da57ebdaeba8ddfb5deedb9f35a0f44e05983adf3e",
+    "rdma/rnic/kernel/cq_io.h": "63e9fb53011dc9c113007223d1c8dc63d6e27f035afdd60bf4985f6efe9eb27f",
+    "rdma/rnic/tests/kernel_cq_cases.c": "f412c56ab7f441f69d7106c23c7b98c98457ea978a72b6865e3d100674f1ae90",
+    "rdma/rnic/tests/kernel_cq_model.h": "24c0bf4342d2f4034070ecfebf4caf6132ba99b8f5b2ad0e8f83da95bb13fb57",
+    "rdma/rnic/tests/kernel_sq_hw_cases.c": "fa4454d0906e7aa9693151de258e4df86abe31abc973c6f5ce882ac9ec5b2785",
+    "rdma/rnic/tests/kernel_queue_model.h": "211809a0d8a2fa0565509fecf57afb89512a2fa8352fa3066011dc6e3c63651a",
+    "rdma/rnic/tests/kernel_sq_hw_model.h": "3e4db9a8dfb956b8c748912fa99ba8ded276bf10529463198f398a077d65c771",
+    "rdma/rnic/build/native-retry-main-spgnb4jq/READ-event.hex": "061cae5d25dd47b2553e0633ada50ef75caebba95528921420a232e60b3626ef",
+    "rdma/rnic/build/native-retry-main-spgnb4jq/READ-records.hex": "492084ee778542b560856f46748d0eabb9674a79f4767024ad5789041553019e",
+    "rdma/rnic/build/native-retry-main-spgnb4jq/WRITE-event.hex": "88abd11f823c9a071ca5c4182aa64bfd3f020dd3a85a65dfab34834e911beeba",
+    "rdma/rnic/build/native-retry-main-spgnb4jq/WRITE-records.hex": "a91940fe4138fa24b8fbdb9743ab305ff30cb6760783d2ff2d6d066188851bc9",
+    "rdma/rnic/build/native-retry-main-spgnb4jq/SEND-event.hex": "745fbb8bef63530941dbfe1734664358a9fcfabbd860a4bac8361901c9549223",
+    "rdma/rnic/build/native-retry-main-spgnb4jq/SEND-records.hex": "014a3e2d78c448be9a08e07d4f4654cbf46bfa5cb29700e3e7c64effac7e3858",
+    "results/2026-10-18/rocev2-rnic-request-CQ-generated-003.json": "609ab3bc790f817ab0cdf6216eff65218131ceb47d2acc605080c78de3e529a4",
+    "rdma/rnic/tests/probe_kernel_native_receive_cq.py": "5e57421b22667b016a7eb42e38fe5abcabc24cedece3fa86647064b9521855ef"
+  },
+  "native_report": "results/2026-10-18/rocev2-rnic-request-CQ-generated-003.json",
+  "native_CQ_snapshots_unedited": true,
+  "real_Linux_kernel_primitives": false,
+  "ib_device_registered": false,
+  "simulation_limit_seconds": 10,
+  "compile_seconds": 3.0237851470010355,
+  "tests": {
+    "READ": {
+      "simulation_seconds": 0.011916816991288215,
+      "output": "KERNEL_NATIVE_REQUEST_CQ_RESULT {\"pass_test\":true,\"opcode\":2,\"native_CQ_snapshots_unedited\":true,\"software_native_WQE_bytes_identical\":true,\"actual_CQ_and_MR_release\":true,\"hardware_verified\":false}\n",
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "native_CQ_snapshots_unedited": true,
+        "software_native_WQE_bytes_identical": true,
+        "actual_CQ_and_MR_release": true,
+        "hardware_verified": false
+      }
+    },
+    "WRITE": {
+      "simulation_seconds": 0.011122246010927483,
+      "output": "KERNEL_NATIVE_REQUEST_CQ_RESULT {\"pass_test\":true,\"opcode\":1,\"native_CQ_snapshots_unedited\":true,\"software_native_WQE_bytes_identical\":true,\"actual_CQ_and_MR_release\":true,\"hardware_verified\":false}\n",
+      "summary": {
+        "pass_test": true,
+        "opcode": 1,
+        "native_CQ_snapshots_unedited": true,
+        "software_native_WQE_bytes_identical": true,
+        "actual_CQ_and_MR_release": true,
+        "hardware_verified": false
+      }
+    },
+    "SEND": {
+      "simulation_seconds": 0.011036483017960563,
+      "output": "KERNEL_NATIVE_REQUEST_CQ_RESULT {\"pass_test\":true,\"opcode\":3,\"native_CQ_snapshots_unedited\":true,\"software_native_WQE_bytes_identical\":true,\"actual_CQ_and_MR_release\":true,\"hardware_verified\":false}\n",
+      "summary": {
+        "pass_test": true,
+        "opcode": 3,
+        "native_CQ_snapshots_unedited": true,
+        "software_native_WQE_bytes_identical": true,
+        "actual_CQ_and_MR_release": true,
+        "hardware_verified": false
+      }
+    }
+  },
+  "source_unchanged": true,
+  "simulation_seconds": 0.03407554602017626,
+  "summary": {
+    "READ": {
+      "pass_test": true,
+      "opcode": 2,
+      "native_CQ_snapshots_unedited": true,
+      "software_native_WQE_bytes_identical": true,
+      "actual_CQ_and_MR_release": true,
+      "hardware_verified": false
+    },
+    "WRITE": {
+      "pass_test": true,
+      "opcode": 1,
+      "native_CQ_snapshots_unedited": true,
+      "software_native_WQE_bytes_identical": true,
+      "actual_CQ_and_MR_release": true,
+      "hardware_verified": false
+    },
+    "SEND": {
+      "pass_test": true,
+      "opcode": 3,
+      "native_CQ_snapshots_unedited": true,
+      "software_native_WQE_bytes_identical": true,
+      "actual_CQ_and_MR_release": true,
+      "hardware_verified": false
+    }
+  }
+}

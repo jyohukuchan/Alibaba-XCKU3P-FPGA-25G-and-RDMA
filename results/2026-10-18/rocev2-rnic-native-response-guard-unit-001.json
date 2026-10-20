@@ -1,0 +1,11 @@
+{
+  "scope": "Actual native coherent READ WQE/MR -> protected wire response -> executor DMA.\n\nActual packet integrity/peer/QP/PSN/length gate generates the placement token;\nnot a copied authorized context. HLS extraction/commands, expected issued PSN/\nconnection, physical host/link and final wire/CQ remain EXPLICIT MODELS.\nNo actual HLS READ/peer completion/kernel pins/board/standard verbs is proven.\n",
+  "pass_test": false,
+  "methods": 0,
+  "tests": {},
+  "actual_native_SQ_MR_RX_integrity_response_guard_executor_PTE_generic_PCIe_fence": true,
+  "HLS_extraction_expected_issued_context_physical_host_link_and_CQ_models": true,
+  "actual_HLS_READ_response": false,
+  "actual_WR_completion": false,
+  "hardware_verified": false
+}

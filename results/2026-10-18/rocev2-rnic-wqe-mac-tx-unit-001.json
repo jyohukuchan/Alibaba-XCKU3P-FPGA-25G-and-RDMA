@@ -1,0 +1,1077 @@
+{
+  "scope": "Real WQE Ethernet framer/role arbiter/tag-to-owner mapper, modeled MAC pins.\n\nNo HLS/native DMA/actual MAC hardware/CQ/Linux runtime or recovery proof.\nFinite four-state tests preserve full owner identity and ordinary native traffic.\n",
+  "pass_test": true,
+  "methods": 8,
+  "simulations": 33,
+  "tests": {
+    "test_SFD_before_output_EOF_and_late_SFD_each_keep_full_tail": [
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 1,
+          "local_bytes": 74,
+          "native_frames": 0,
+          "receipts": 1,
+          "proofs": 1,
+          "fault": 0,
+          "cycles": 2162
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "98b5ce50ef463a4b62b3a6e9c9d30095a49126a989e436b3e3eb946e39819abe",
+        "frames": [
+          {
+            "tag": 8193,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          }
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 1,
+          "local_bytes": 74,
+          "native_frames": 0,
+          "receipts": 1,
+          "proofs": 1,
+          "fault": 0,
+          "cycles": 2160
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "57af491017c0c0b9664c81168394b4ebd124812e5c6af482a9f0ee2ee0e22df2",
+        "frames": [
+          {
+            "tag": 8193,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          }
+        ]
+      }
+    ],
+    "test_actual_framing_role_arbitration_and_full_owner_receipt": [
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 1,
+          "local_bytes": 74,
+          "native_frames": 4,
+          "receipts": 1,
+          "proofs": 1,
+          "fault": 0,
+          "cycles": 1157
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "640cc7dbbc106398f259d624a34feced9a2f1cee82d9c419261849a0029c60d8",
+        "frames": [
+          {
+            "tag": 32769,
+            "user": 0,
+            "hex": "1032547698badcfeefcdab8967452301d4c3b2a1"
+          },
+          {
+            "tag": 8193,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          },
+          {
+            "tag": 0,
+            "user": 0,
+            "hex": "1032547698badcfeefcdab8967452301d4c3b2a1"
+          },
+          {
+            "tag": 16384,
+            "user": 0,
+            "hex": "1032547698badcfeefcdab8967452301d4c3b2a1"
+          },
+          {
+            "tag": 65535,
+            "user": 0,
+            "hex": "1032547698badcfeefcdab8967452301d4c3b2a1"
+          }
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 1,
+          "local_bytes": 142,
+          "native_frames": 4,
+          "receipts": 1,
+          "proofs": 1,
+          "fault": 0,
+          "cycles": 1157
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "1064b6cbe7b37be528ee0b8f73637281254277404e9ed669ad0db479605951b7",
+        "frames": [
+          {
+            "tag": 32769,
+            "user": 0,
+            "hex": "1032547698badcfeefcdab8967452301d4c3b2a1"
+          },
+          {
+            "tag": 8193,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb975310800450000800000400040119845c6120b02c6120b01c00012b7006c00000a70ffff000000c480fffffee23456789abcdef000000000000000415a5b58595e5f5c5d52535051565754554a4b48494e4f4c4d42434041464744457a7b78797e7f7c7d72737071767774756a6b68696e6f6c6d62636061666764651a0000006fe4bcb0"
+          },
+          {
+            "tag": 0,
+            "user": 0,
+            "hex": "1032547698badcfeefcdab8967452301d4c3b2a1"
+          },
+          {
+            "tag": 16384,
+            "user": 0,
+            "hex": "1032547698badcfeefcdab8967452301d4c3b2a1"
+          },
+          {
+            "tag": 65535,
+            "user": 0,
+            "hex": "1032547698badcfeefcdab8967452301d4c3b2a1"
+          }
+        ]
+      }
+    ],
+    "test_full_owner_errors_never_narrow_or_authorize_a_MAC_tag": [
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 0,
+          "local_bytes": 0,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 21
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "5a1946c013e38a9abaa6e1ab93c7d38476a43870b55cfd8cab8c842a278a1565",
+        "frames": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 0,
+          "local_bytes": 0,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 21
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "6bd79630309516dd6122f9e2d9d6c73a4ce758b6945913a27d0cc93d07c0c09e",
+        "frames": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 0,
+          "local_bytes": 0,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 21
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "6d7a84ac0c10a2104e963404e7b8004247e14ea69ca035946eed116bfe4f9a23",
+        "frames": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 0,
+          "local_bytes": 0,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 21
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "c4d392877466c6a5bf15cdffe378cfd9f726fe6abb1d28fd6fce0134376b3b36",
+        "frames": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 0,
+          "local_bytes": 0,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 21
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "c817778e65d8d235074f296f5a97de75d3585242edb25d0369382e0a5a075b25",
+        "frames": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 0,
+          "local_bytes": 0,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 21
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "35c3cdefd63e3748004eb3c8ed809203c0e02fa36303988adfc38dc6e4e2caf5",
+        "frames": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 0,
+          "local_bytes": 0,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 21
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "83d395c82871d47cd451a0ff92b1a869d1db07a3d51cf75b902ae52421e70e89",
+        "frames": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 0,
+          "local_bytes": 0,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 21
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "048ad481a47769df23c885764f2fb39e0b01f47bcabfdc649a73a0b9017d3494",
+        "frames": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 0,
+          "local_bytes": 0,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 21
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "7b8675b0bdd277e63573bf1fd4c9a4f751e35d60037152eb596441db7b5ebcb5",
+        "frames": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 0,
+          "local_bytes": 0,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 21
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "4b988af27e1cc39009049a1dccacde8c83390b3251c03e6c8084585603817eb2",
+        "frames": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 0,
+          "local_bytes": 0,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 21
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "f134538e3f9f520126889f5a899f4f0f1a3ff835cc5f20e60e6d04bfb1ede32a",
+        "frames": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 0,
+          "local_bytes": 0,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 21
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "57cd0896cd47d8d6b294dd91915ae8e70b187f769a2ee40f0a2fe9febcabead6",
+        "frames": []
+      }
+    ],
+    "test_malformed_IP_and_reserved_native_tags_fail_closed": [
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 1,
+          "local_bytes": 29,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 25
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "25a181f1a2dfd344e73c57002f896eea32851afba780162e01de26685803e856",
+        "frames": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 1,
+          "local_bytes": 14,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 25
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "63d395b2b3f4be5b0a1404df0f1eb158a1a03c6dd1a4bfcf16c5db68030c1363",
+        "frames": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 1,
+          "local_bytes": 30,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 25
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "0a16ce2aa577c0bc27767fc3552de2ad91433771d39c36f68ab284b4cd68ccc9",
+        "frames": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 0,
+          "local_bytes": 0,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 23
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "5cea58cde19c10912aeb6db368b3116622f4fc8e0a6e23455c32425494ec379a",
+        "frames": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 0,
+          "local_bytes": 0,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 23
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "8f946010e2ab7d9364ab60d9729b06993a5eaed5fbb70dd71c8f4cb64f5245d7",
+        "frames": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 0,
+          "local_bytes": 0,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 23
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "fc9ad3689404a9d8ec7861990ceebb37649bc807e307ab26e292f0cc1df3d7b9",
+        "frames": []
+      }
+    ],
+    "test_native_completions_preserve_every_tag_timestamp_and_backpressure": [
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 0,
+          "local_bytes": 0,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 0,
+          "cycles": 52
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "6eef07f58694f2911065018649da8e437be9ba0a2b972c5216e68a7605522654",
+        "frames": []
+      }
+    ],
+    "test_nonreused_tags_preserve_distinct_full_epochs_until_exhaustion": [
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 7,
+          "local_bytes": 518,
+          "native_frames": 1,
+          "receipts": 7,
+          "proofs": 7,
+          "fault": 0,
+          "cycles": 7461
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "f4e6286712cdfbeb201b902656a9e61f0428e0fc9366b0c2480b3daeeb233d36",
+        "frames": [
+          {
+            "tag": 8193,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          },
+          {
+            "tag": 8194,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          },
+          {
+            "tag": 8195,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          },
+          {
+            "tag": 8196,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          },
+          {
+            "tag": 8197,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          },
+          {
+            "tag": 8198,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          },
+          {
+            "tag": 8199,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          },
+          {
+            "tag": 65535,
+            "user": 0,
+            "hex": "1032547698badcfeefcdab8967452301d4c3b2a1"
+          }
+        ]
+      }
+    ],
+    "test_offered_proof_survives_fault_but_cannot_release_owner": [
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 1,
+          "local_bytes": 74,
+          "native_frames": 1,
+          "receipts": 1,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 1135
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "fc7c6b62b6540605a3594e9330294edda4e51b0d21166f10aa0c159673807506",
+        "frames": [
+          {
+            "tag": 8193,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          },
+          {
+            "tag": 32769,
+            "user": 0,
+            "hex": "1032547698badcfeefcdab8967452301d4c3b2a1"
+          }
+        ]
+      }
+    ],
+    "test_unissued_wrong_stale_unknown_and_duplicate_receipts_quarantine": [
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 0,
+          "local_bytes": 0,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 24
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "18c6ff6b563f1a5178e81e516ed6737c53fa6bb648a4b5fc9cd99ee68c459b4f",
+        "frames": []
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 1,
+          "local_bytes": 74,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 37
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "632c36ecb32e0056fa7fc151b0aeffd817098d53fc33ed9f16a587251e2ab62d",
+        "frames": [
+          {
+            "tag": 8193,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          }
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 1,
+          "local_bytes": 74,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 37
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "0e6c49d542d3236498fb864662de25465688f14d844904d587daa8fc1611f1b4",
+        "frames": [
+          {
+            "tag": 8193,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          }
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 1,
+          "local_bytes": 74,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 37
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "dd729844a4a6e338d6d9d870e5a9c5157135f1073fcf4791ac80edc7992c959a",
+        "frames": [
+          {
+            "tag": 8193,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          }
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 1,
+          "local_bytes": 74,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 37
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "61cdea74d1f7c3de40bd45e250fd007b1ff2e4f9b9c059a130ad40427bec7bb0",
+        "frames": [
+          {
+            "tag": 8193,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          }
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 1,
+          "local_bytes": 74,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 37
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "bfa4e87a08cac41384d818ba199b10e8aab74fb2ba8f0aeb8d400885ed9d9748",
+        "frames": [
+          {
+            "tag": 8193,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          }
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 1,
+          "local_bytes": 74,
+          "native_frames": 0,
+          "receipts": 1,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 39
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "82abbeaa0ca704f1ac009ae63137eba706512616c280c53671cc0fbd3a651b95",
+        "frames": [
+          {
+            "tag": 8193,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          }
+        ]
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "local_frames": 1,
+          "local_bytes": 74,
+          "native_frames": 0,
+          "receipts": 0,
+          "proofs": 0,
+          "fault": 1,
+          "cycles": 37
+        },
+        "source_sha256": {
+          "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "e4b09e9b85b0af651afab3aa19dd54ea8218e0d210b3bd1f8856b4293ba92cfd",
+          "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+          "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+          "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+          "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+          "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+          "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+          "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "b5ee1360438389a702ac903c92925cc59ed30f88c0e4319b3eb66915f2fac305",
+          "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "6472ec93156a5550e721395e3644c566d8c7df400205030219426ccaa36b0412",
+          "rdma/read/host/read_wire.py": "434946523ac4de9efcca9efdb3c96149ee8b61f0f8ac81d1e4377bede6fad15a",
+          "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+        },
+        "bench_sha256": "adf3cc11b736c101b9db10ce422d66530a9641b260d51875e9f63e44cbccbfb3",
+        "frames": [
+          {
+            "tag": 8193,
+            "user": 0,
+            "hex": "b8830367c5d08af3fbb9753108004500003c0000400040119889c6120b02c6120b01c00012b7002800000c00ffff000000c480fffffee23456789abcdef0000000000000004143202f37"
+          }
+        ]
+      }
+    ]
+  },
+  "real_framer_arbiter_tag_mapper_RTL": true,
+  "physical_MAC_pins_are_model": true,
+  "actual_native_WR_CQ_runtime": false,
+  "hardware_verified": false
+}

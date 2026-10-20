@@ -15,6 +15,50 @@ remaining run was interrupted). No all-suite or release-pass claim is made.
 
 ## Latest functional milestone (2026-10-20)
 
+Publication snapshot090 also includes an opt-in full native normal/Atomic
+integration candidate. [Full-graph elaboration001](../../results/2026-10-18/rocev2-rnic-atomic-native-full-elaboration-001.json)
+PASSES with actual generated HLS, one shared MR/PTE domain and actual Atomic
+memory/MAC components. This is structural verification ONLY: the integrated
+candidate has no functional runtime result, no hardware/timing qualification
+and no standard Atomic verbs capability. The new mixed FADD/duplicate/WRITE
+fixture passes Python generation only; its launcher and simulation remain
+unfinished. Default RTL and `IB_ATOMIC_NONE` are unchanged. The verified
+functional milestones below retain their narrower, separate test scopes.
+
+Progress089 adds privileged RX route binding to the actual SQC owner epoch/
+cookie/PD table, without a second namespace or packet/current-head authority.
+Seven methods/13 four-state cases PASS, including stale same-QPN recreation,
+held-lease protection and legal producer updates. Checked native authority
+and service-only owned HLS bridge elaborations pass separately; this does NOT
+prove a full native Atomic datapath. The actual owned-core native READ/
+SEND_IMM runtime001 now PASSES both cases in11.44/11.39s, with full native
+SQ/MR/DMA/replay/core-owner/PSN/CQ and wire/ICRC checks. Host/root/MAC/peer
+remain models;630source/45artifact hashes match. Atomic RX remains rejected/disabled, not
+advertised; its real dispatch/shared memory/MAC lifetime integration remains.
+
+Unchanged SQC regression on the new lookup derivative:9 methods/36 cases PASS.
+Combined Atomic RTL:33 methods/96 simulations PASS. These do not replace
+full native/API/runtime/physical or known broader CI qualifications.
+
+Progress087 adds real downstream MAC reservation before Atomic HLS ownership
+and new-admission gating on available nonwrapping MAC tags. A packet already
+accepted by the real packet guard drains under later admission disable;
+neither its MAC reservation nor its offered HLS owner is canceled/retracted.
+Five new four-state reservation methods/10 simulations pass, for26 Atomic
+methods/83 simulations in total. Full generated composition is recorded
+separately. Production tag width13 is unchanged; its bounded test uses4 to
+reach exhaustion without a long stress run. Ordinary/native QP/MR/normal
+memory integration and requester/API/physical qualification remain open.
+
+The [reserved MAC generated composition002](../../results/2026-10-18/rocev2-rnic-atomic-reserved-MAC-generated-002.json)
+now PASSES7 cases <=10.99s. It connects the actual full owned HLS/Atomic/MR/
+DMA/RAM/IP/ICRC and real MAC/XGMII/SFD/CDC path. The15-tag boundary case
+retires15 operations then holds a16th packet outside admission, without new
+side effects. Both disable-after-admission points drain and re-enable normally.
+Independent every-byte/FCS/ICRC/core/owner oracles and223source/23artifact
+hash audits pass. Pending upstream input is not safe unpin/configuration
+proof. No physical/native/Linux/timing claim or automatic push follows.
+
 Progress086 adds Atomic MAC lifetime and automatic guarded-packet retirement.
 The actual144-bit owner/392-bit service reply/224-bit consumed-core receipt
 must match the generated IP response before Ethernet transmission. Fresh

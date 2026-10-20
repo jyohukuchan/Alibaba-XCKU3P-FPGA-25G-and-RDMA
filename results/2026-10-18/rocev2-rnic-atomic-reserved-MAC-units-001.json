@@ -1,0 +1,46 @@
+{
+  "scope": "Four-state Atomic owner reservation before actual MAC/HLS composition; reservation unit endpoints modeled. Existing MAC unit retains real XGMII/SFD/CDC in one case. Not full native/board/standard API or physical timing proof.",
+  "pass_test": true,
+  "source_unchanged_within_each_simulation": true,
+  "hardware_verified": false,
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_atomic_mac_tx.v": "f10b53946fb8d9ab354e3ca3f40c577c962b8955193c21ee4429bb70a1f9f0a5",
+    "rdma/rnic/tests/test_atomic_mac_tx_rtl.py": "7dfab2dcabf6b3689823e4323ae903a5f250603fa91b28db0dba163a91e49cdc",
+    "rdma/rnic/tests/atomic_mac_wire_fixture.py": "8e17dcb56ccb2bbbaac04f4f96f080e855355f4f8bba2f5c9a83513c71a1977d",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c910018a2e8a9d77e649437f9a7727f5cf2fd9c02cb20ab92016b5209a3a189e",
+    "external/corundum/fpga/lib/eth/rtl/eth_axis_tx.v": "5f17bd77f979ca97218bd161d421e4230190c7f0f47d1556c4e3e0ad7166aa3e",
+    "external/corundum/fpga/lib/eth/rtl/axis_xgmii_tx_64.v": "097750af9f48497c3c5743c37e743eef22a314de139c2088756346c167915f7b",
+    "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+    "external/corundum/fpga/lib/axis/rtl/axis_arb_mux.v": "2e71c10f54a03375e7b9e2f6ae559a0c122715297d6db75a764c0db70701108b",
+    "external/corundum/fpga/lib/axis/rtl/arbiter.v": "d54d337db4812f927b2e9b5788dfa39f9bd578ad01b7846c5fa7f2610b0923fa",
+    "external/corundum/fpga/lib/axis/rtl/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+    "external/corundum/fpga/lib/axis/rtl/axis_async_fifo_adapter.v": "9dc661b88d459a318e40722df277720fe64ef4309230462e8538b1a44da1d57c",
+    "external/corundum/fpga/lib/axis/rtl/axis_async_fifo.v": "faeeaeadcba90268689f9fd227b1c8088d856ec8290ef6ab10b6d25e018858d4",
+    "external/corundum/fpga/lib/axis/rtl/axis_adapter.v": "4b9b6649f12e374c24d36f2d42680ecf1f38cca8ae4fda7fd68dbf722b6c8140",
+    "rdma/rnic/rtl/rocev2_atomic_owner_reservation.v": "eccb782acd0cc5c948ccdb7086e15ee831796fb29d3c8d44584402a50939d987",
+    "rdma/rnic/tests/test_atomic_owner_reservation_rtl.py": "3760c0b1503d261345c838b59b4648e0b6c8c2ba08f37f153f87fcf8ea0a26da"
+  },
+  "command": "python3 -m unittest discover -s rdma/rnic/tests -p 'test_atomic*_rtl.py' -v",
+  "combined_Atomic": {
+    "methods": 26,
+    "internal_simulations": 83,
+    "seconds": 8.409,
+    "terminal_exit": 0
+  },
+  "new_reservation": {
+    "methods": 5,
+    "internal_simulations": 10,
+    "per_simulation_limit_seconds": 10,
+    "cases": [
+      "MAC backpressure prevents HLS ownership",
+      "HLS backpressure preserves exact owner and blocks next owner",
+      "late parent fault preserves MAC offer and lease",
+      "late parent fault preserves HLS offer without duplicate transfer or lease release",
+      "six invalid or unknown owner/valid cases acquire no downstream authority"
+    ]
+  },
+  "production_MAC_tag_width": 13,
+  "native_integrated": false,
+  "IB_ATOMIC_NONE_unchanged": true,
+  "both_global_HLS_drains_zero": true
+}

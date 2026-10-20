@@ -5,6 +5,139 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+## Full native integration candidate (090; publication snapshot)
+
+The opt-in checked `derive_atomic_native.py` / `derive_atomic_native_rx.py`
+candidate now connects ordinary and Atomic RX in ONE complete native graph:
+accepted raw-frame/context references, post-integrity Atomic dispatch, actual
+SQC-backed QP binding, the same owned HLS and MR/PTE tables, normal/Atomic
+memory exclusion, ordered MAC reservation and automatic hardware retirement.
+The original protected responder and default native image are not replaced.
+
+The [full native elaboration001](../results/2026-10-18/rocev2-rnic-atomic-native-full-elaboration-001.json)
+PASSES structural compilation with the actual generated HLS. Module-count
+checks verify one shared HLS/QP binding/MR/PTE domain and the real Atomic
+execution/MAC components. This is NOT functional simulation, a timing pass,
+standard verbs support or hardware validation. Unlike stage089, this candidate
+selects Atomic RX, but its behavior is still unverified.
+
+`atomic_native_full_fixture.py` is an in-progress mixed FADD/duplicate/ordinary
+WRITE fixture using actual MAC RTL after bootstrap. Python syntax and fixture
+generation pass; it has NOT been compiled or simulated in this snapshot, and
+there is not yet a full-native functional probe/launcher. Its assertions and
+planned cases must not be read as successful test evidence. Atomic requester,
+kernel/provider capability, integrated runtime and original full-board timing
+qualification remain open. Both global drain constants remain zero and the
+driver continues to advertise `IB_ATOMIC_NONE`; no hardware is programmed.
+
+## Native QP authority and common-core integration (089)
+
+`rocev2_atomic_qp_binding.v` binds the SAME accepted privileged RX route to a
+read-only query of the actual SQC owner epoch/cookie/PD arrays, not a packet,
+CQ/current-head inference or another QP table. The checked
+`derive_atomic_owner_lookup.py` adds that query without changing existing
+mailbox/owner mutation/CQ/retry interfaces. Full-width aliases/unknowns and
+busy/doorbell/fault conditions do not acquire new Atomic admission authority.
+An already held lease survives a temporarily unavailable query during a legal
+producer update; query validity is not a cancellation/retirement certificate.
+
+Seven four-state methods/13 cases pass against the actual SQC mailbox and
+fetch controller/owner arrays: accepted route snapshots, denied aliases/PD,
+same QPN recreated with a new epoch (old route remains unauthorized), blocked
+retirement/reconfiguration while held, producer update while held, TX-only
+preservation/tombstone and deliberate fault containment. Physical DMA, network
+configuration source and lease assertion are models, not complete native
+Atomic execution or unpin proof. Current evidence is QP-binding002. Diagnostic
+001's final generic test assertion rejected an intentionally faulted parent;
+the exact pre-fix test is preserved.002 permits that expected parent-fault
+status only; other unexpected SQC fatal states still fail. No RTL was relaxed.
+
+The unchanged SQC regression suite also passes on the NEW lookup derivative:
+9 methods/36 cases in2.58s, using original assertions and actual CSR/fetch.
+The combined Atomic RTL suite passes33 methods/96 internal simulations in9.43s.
+These are scoped offline component checks, not the broader legacy RNIC/CI
+suite or a standard Linux/host-memory release qualification.
+
+`derive_atomic_native_authority.py` connects that lookup through the actual
+native/SQ/network/dual/control hierarchy and accepted route handshake, with
+lease guards feeding actual SQ/RQ retirement and MR/configuration protection.
+The explicit top lease input still needs actual Atomic packet/core/MAC owners;
+it is not a software drain. The complete authority graph and service-only
+`derive_atomic_native_bridge.py` both elaborate with real generated HLS.
+The authority graph retains one native MR/PTE namespace; the bridge adds no
+external MR namespace. These are TWO SEPARATE elaborations, not full
+Atomic native datapath proof. Default/rollback sources are unchanged.
+
+The new owned-core native stage selects the actual full owned HLS for ordinary
+READ/WRITE/SEND/Immediate, with actual SQC route binding. Atomic packet dispatch,
+service/exclusive memory/MAC is still NOT selected; normal protected admission
+rejects Atomic opcodes, its Atomic input channels stay inactive, and unexpected
+Atomic service/done offers fault. Its actual READ/SEND_IMM runtime composition
+001 now PASSES both cases in11.44/11.39s after417.30s of feature-required
+compilation (36 byte-identical compiler inputs reused, both cases rerun).
+The real owned HLS is selected in the complete native graph, with actual
+coherent SQ, same MR/PTE/native DMA/replay and CQ, not a behavioral HLS stub.
+The test creates SQC before RX route
+open, like the actual kernel verbs path; it does not repeat the unrelated old
+unsafe Ethernet re-COMMIT case. All WR/MR/DMA/HLS/MAC/CQ assertions remain.
+Both65-byte requests and byte-identical replay match an independent complete
+wire/ICRC oracle with fresh native MAC tags0x2001/0x2002. Real HLS request
+receipts retain the whole WR owner and next PSN; actual CQ commit succeeds.
+Current630source/45artifact hashes match. Physical host/root/MAC pins and
+peer remain modeled in this native-stage test (unlike the isolated Atomic
+branch's actual XGMII/SFD test). This does NOT select Atomic native packet
+execution; real dispatch/MR arbitration/exclusive memory/outer MAC lifetime
+and requester/API/physical/timing qualification remain incomplete.
+
+## Ordered MAC reservation before execution (087)
+
+The new checked `derive_atomic_reserved_mac_bridge.py` retains086 unchanged
+and replaces its independent owner fanout with
+`rocev2_atomic_owner_reservation.v`. An admitted immutable328-bit owner/context
+first handshakes with the actual MAC lifetime, and ONLY THEN offers its144-bit
+owner to HLS. Neither FIFO readiness nor a quiet period constitutes reservation.
+Both offered transfers remain stable under backpressure or late fault; fault
+retains the configuration/queue guard, without duplicating a consumed offer.
+
+New post-ICRC packet admission additionally requires actual MAC availability
+and a remaining nonwrapping MAC tag. Disabling new admission after a packet's
+first accepted beat does not cancel the remaining packet, its MAC reservation
+or HLS owner: the packet guard drains its accepted packet and the MAC accepts
+already-admitted owners independently of the new-admission enable. This is
+not a reset/unpin or tag-reuse mechanism. Default hardware tag width stays13.
+The short generated test uses width4 to reach its last tag in15 requests.
+
+Five four-state reservation methods/10 simulations pass; the combined Atomic
+suite passes26 methods/83 internal simulations. Endpoints in the reservation
+unit are models; actual generated HLS/Atomic/MR/MAC composition is recorded
+separately. Full ordinary/Atomic native admission, trusted QP epoch/PD/peer
+references, shared normal-memory exclusion, standard API and requester remain
+incomplete. Pending input upstream of the packet guard is NOT proof of safe
+cancellation or configuration/unpin; real native integration must retain its
+own accepted RX/context references. Neither global drain nor Atomic capability
+advertisement is enabled. Original4ns/1.08ns and board gates are unchanged.
+
+The current [reserved MAC generated composition002](../results/2026-10-18/rocev2-rnic-atomic-reserved-MAC-generated-002.json)
+PASSES all7 cases, each3.17..10.99seconds, after770.27seconds of feature-required
+compilation. Actual generated owned HLS, Atomic/MR/PTE/paged DMA/RAM/IP/ICRC,
+Ethernet/XGMII/FCS/SFD and receipt CDC remain connected; no test-produced MAC
+receipt or test-driven retirement. Every actual MAC reservation precedes its
+matching HLS owner delivery, with independent full-byte/FCS/ICRC/common-state
+and immutable-owner oracles. Source223/artifact23 SHA audit passes.
+
+Case4 consumes15 real test tags:7 executions,6 cached replays and1 no-packet
+drop yield15 consumed-core receipts/automatic retirements,14 Atomic Ethernet
+frames and one unrelated native frame. The16th valid post-ICRC packet stays
+upstream of admission; no16th owner/service/DMA/retirement occurs. This pending
+input is NOT an unpin/configuration certificate. Cases5/6 disable new admission
+after the actual first packet beat / while its owner is offered for MAC
+reservation, respectively: each admitted request genuinely completes, then
+re-enable permits its cached duplicate (2 retirements,1 execution,1 replay).
+The other four cases retain positive/drop, MR-denial, failed-fence and corrupt
+returned-nonce checks. Hardware default tag width13 and all older evidence
+remain unchanged. PHY/PTP input and physical host descriptors/order remain
+models; full native/Linux/physical/timing qualification is still incomplete.
+
 ## Atomic MAC lifetime and automatic retirement (086)
 
 `rocev2_atomic_mac_tx.v` adds an unposted Atomic packet lifetime, not a fake

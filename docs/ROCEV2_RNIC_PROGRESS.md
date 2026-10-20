@@ -32,6 +32,62 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+Publication snapshot090 (2026-10-20) includes the opt-in complete normal/Atomic
+native integration candidate. Actual raw RX/context references, Atomic dispatch,
+shared owned HLS/MR/PTE, exclusive memory arbitration and outer MAC lifetime are
+connected in one graph. Full-native elaboration001 PASSES with actual generated
+HLS and module-count checks; functional execution of this integrated candidate
+has NOT been tested. The mixed FADD/duplicate/WRITE fixture only passes Python
+syntax/generation; no full-native runtime launcher/result exists yet. Earlier
+087--089 runtime results below apply to their own explicitly scoped graphs.
+
+All11 requirements remain open; requester/API, integrated runtime, hardware,
+original timing and known broader legacy-CI limitations are not resolved by
+structural compilation. Default/rollback RTL, both global zero drains and
+`IB_ATOMIC_NONE` remain unchanged. This snapshot is committed/pushed only at
+the user's explicit request; no further automatic publication is implied.
+
+Progress089 adds real SQC-backed Atomic route epoch/cookie/PD binding:7methods/
+13 four-state cases PASS against actual SQC/mailbox/fetch, including stale
+same-QPN recreation, held-lease retirement/config denial and legal producer
+updates. The checked full native authority graph and normal/Atomic service-only
+bridge elaborate with real HLS, as TWO separate graphs, not full Atomic native
+execution. New owned-core native READ/SEND_IMM runtime001 PASSES11.44/11.39s; Atomic
+RX remains disabled until real dispatch/MR/memory/MAC ownership is integrated.
+All11 requirements, default/rollback bytes and original timing/drain gates
+remain. The selected Immediate graph uses independent duplex routing, not the
+old exclusive REMOTE role; actual integration must preserve that concurrency.
+
+The unchanged SQC regression also passes on the new lookup derivative:
+9methods/36cases2.58s. Combined Atomic33methods/96simulations9.43s PASS.
+Native owned stage session26967 is terminal0:417.30s compile,36 identical
+compiler inputs reused, both fresh cases run. Full wire/ICRC/replay/native
+HLS request-owner/PSN/CQ checks and630source/45artifact hashes pass. Physical
+host/root/MAC/peer remain models; no Atomic packet execution or hardware
+change is claimed from this normal-operation native staging milestone.
+
+Progress087 adds a checked ordered-reservation Atomic branch, retaining086
+sources/evidence. It gates new packet admission on real MAC availability and
+finite tags, then reserves the immutable admitted MAC owner BEFORE releasing
+the HLS owner. Already-admitted packets/owners drain after new-admission
+disable; offered words survive backpressure/late fault, with faulted leases
+retained. Five new four-state methods/10 simulations pass; combined Atomic
+26 methods/83 simulations pass. The generated composition's bounded4-bit
+tag test leaves the hardware default13 unchanged. This remains an Atomic-only
+branch, not full native QP/MR/normal-payload integration or requester. All11
+requirements and known physical/timing/API/legacy-CI limitations remain.
+
+Progress088 finishes the actual reserved MAC generated build:002 PASSES7
+cases, each<=10.99s;770.27s compilation, fresh translation and16 byte-identical
+compiler inputs reused, all cases rerun. The15-tag boundary case genuinely
+retires15 operations (7exec/6replay/1drop), emits14 Atomic plus1native frames,
+then holds a16th post-ICRC packet outside admission without more side effects.
+Both admitted-packet disable points complete and re-enable successfully.
+All actual MAC-before-HLS events and full wire/core/owner oracles pass;
+223 source/23 artifact hashes match. This proves the isolated reserved branch,
+not full native admission/QP/MR/ordinary-memory references or safe unpin of
+pending upstream input. No hardware or HLS/board timing changes occurred.
+
 Progress086 adds operation-owned Atomic MAC lifetime and a checked new branch
 composition with automatic packet retirement. It joins actual owner/service/
 consumed-core/wire identity, real Ethernet framing/native frame mux and fresh

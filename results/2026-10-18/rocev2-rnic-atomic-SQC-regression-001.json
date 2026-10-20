@@ -1,0 +1,767 @@
+{
+  "scope": "Run unchanged36 SQC regression cases on the new read-only lookup derivative.\n\nActual CSR/mailbox/fetch, physical backend/guard sources modeled as before.\nNo original source edit, weakened old assertion, hardware or native proof.\n",
+  "pass_test": true,
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_sq_control_regs.v": "e3f0ddee0a3c0b442294dc37359e02b17b7bddba567f7b9228d197355743583f",
+    "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+    "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+    "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+    "rdma/rnic/fpga/derive_atomic_owner_lookup.py": "10f497b1ae2c5358e960ae8695903bf4655896c99b977bd26ffba287d270b453",
+    "rdma/rnic/tests/check_atomic_sqc_regression.py": "ac34761082818ca3ecde67e2b36d4d3f0d37648c4a32858e64fd9aea1e7cac8b",
+    "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981"
+  },
+  "directory": "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka",
+  "hardware_verified": false,
+  "native_integrated": false,
+  "seconds": 2.5834574680193327,
+  "methods": 9,
+  "simulations": 36,
+  "tests": {
+    "test_AXI_strobes_sequence_unknown_addresses_and_ACK_errors_no_side_effects": [
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 360
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      }
+    ],
+    "test_DMA64_ring_bounds_exclusive_end_and_full_shape": [
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 0,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 274
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 0,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 274
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 0,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 274
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 0,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 274
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 274
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      }
+    ],
+    "test_actual_fetch_allocation_post_result_and_owned_retirement": [
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 3,
+          "fetches": 1,
+          "results": 1,
+          "cycles": 1142
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      }
+    ],
+    "test_actual_ring_full_and_cancelled_unfetched_tail_are_NOT_WR_completion": [
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 5,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 1353
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      }
+    ],
+    "test_bad_response_context_unknown_error_unsolicited_response_or_parent_fault": [
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 270
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 270
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 270
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 0,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 5
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 270
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      }
+    ],
+    "test_control_sequence_exhaustion_never_wraps": [
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 425
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "0019df25b8847f0d280d2a75721bf928b9f1254a37a89a084f8fb968a1d77b58"
+      }
+    ],
+    "test_full_owner_reserved_fields_producer_and_unknown_values_before_mutation": [
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 546
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 546
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 546
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 546
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 546
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 546
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 546
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 546
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 546
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 546
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 546
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 546
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 546
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      }
+    ],
+    "test_immutable_stalled_snapshot_and_exact_owned_reply_ACK": [
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 321
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      }
+    ],
+    "test_parent_work_wire_and_completion_guards_block_retirement": [
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 546
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 546
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 546
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 1,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 546
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 2,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 553
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 2,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 553
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 2,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 553
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      },
+      {
+        "summary": {
+          "pass_test": true,
+          "configs": 2,
+          "fetches": 0,
+          "results": 0,
+          "cycles": 553
+        },
+        "source_sha256": {
+          "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+          "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+          "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+          "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+          "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+          "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d"
+        },
+        "bench_sha256": "920f7831a58112b3ad0585b03f3559143708d6f19adeafe453a3dd657a43c8e6"
+      }
+    ]
+  },
+  "source_unchanged": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/rocev2_sq_control_regs.v": "6e1abf7651fed47d471eddd18555f1a828af9e7ddf5b5c5e3787a5aef25a1981",
+    "rdma/rnic/build/atomic-sqc-regression-zy9zt0ka/tests.log": "70478842031854de8b52d8e3a81942c2ebd4b652b6970b9750e553ac3d41abf8"
+  }
+}

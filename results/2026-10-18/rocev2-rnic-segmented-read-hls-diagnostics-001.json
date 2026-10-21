@@ -1,0 +1,31 @@
+{
+  "scope": "Diagnostic of unchanged failed READ HLS001 timer consumer, not a corrected transport or full suite pass",
+  "pass_test": true,
+  "failed_batch": "results/2026-10-18/rocev2-rnic-segmented-read-hls-001.json",
+  "failed_batch_sha256": "e4d04745049449306dc0c38b7a4a55bad5060bba69555e334c2370283e2815eb",
+  "failed_batch_bindings_verified_before_fix": 302,
+  "failed_batch_remains_failed": true,
+  "authoring_preimages_sha256": {
+    "rdma/rnic/build/segmented-read-hls-3r_la06q/derive-before-first-runtime-fix.py": "4c69dc28eefdef5124eaad9d9892193d2c828d447a1ec0c5c8f82a41f868781c",
+    "rdma/rnic/build/segmented-read-hls-3r_la06q/cases-before-first-runtime-fix.cpp": "43a8bd06d047c119117802a88e0c58eaa10dbdb9638aaf080918888c585fd676",
+    "rdma/rnic/build/segmented-read-hls-3r_la06q/probe-before-first-runtime-fix.py": "84ab5db667b12e98b6f495b261dbb73677261091122819cf822a1dae1a026625"
+  },
+  "source_sha256": {
+    "rdma/rnic/build/segmented-read-hls-3r_la06q/timer-first-diagnostic.cpp": "e397cf00e2e56aca2b92f3961bdf5c0c8137eef6bba5d847c2fa0d039995dd2d",
+    "/dev/shm/as02-read-first-timer-diagnostic-001": "5b984cfb2600d4181e9c92218d5181e03b0908e0fe0626b2837bdeb1062f3c00"
+  },
+  "command": [
+    "/dev/shm/as02-read-first-timer-diagnostic-001"
+  ],
+  "runtime_limit_seconds": 10,
+  "runtime_seconds": 0.003855372022371739,
+  "exit": 0,
+  "stdout": "UNCHANGED_TIMER_FIRST_DIAGNOSTIC {\"pass_test\":true,\"nonterminal_owned_update_faults\":true,\"terminal_owned_update_passes\":true}\nWARNING [HLS SIM]: hls::stream 'hls::stream<as02ReqStep, 0>0' contains leftover data, which may result in RTL simulation hanging.\nINFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 1\n",
+  "stderr": "",
+  "observations": {
+    "legitimate_nonterminal_owned_update_faults": true,
+    "terminal_owned_update_passes": true,
+    "combined_endpoint_fault_not_yet_individually_logged": true
+  },
+  "hardware_verified": false
+}

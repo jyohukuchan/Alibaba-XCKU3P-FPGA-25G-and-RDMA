@@ -1,0 +1,46 @@
+{
+  "scope": "Immutable READ001 failure plus new guarded-progress002/003 actual C++ and owned-service compatibility evidence audit; not HLS synthesis/native/Linux/physical qualification",
+  "pass_test": true,
+  "reports": [
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-read-hls-001.json",
+      "report_sha256": "e4d04745049449306dc0c38b7a4a55bad5060bba69555e334c2370283e2815eb",
+      "pass_test": false,
+      "bindings_verified": 302,
+      "historical_authoring_preimage_overrides": {
+        "rdma/rnic/hls/segmented_read_transport.py": "rdma/rnic/build/segmented-read-hls-3r_la06q/derive-before-first-runtime-fix.py",
+        "rdma/rnic/tests/probe_segmented_read_hls.py": "rdma/rnic/build/segmented-read-hls-3r_la06q/probe-before-first-runtime-fix.py",
+        "rdma/rnic/hls/test_segmented_read.cpp": "rdma/rnic/build/segmented-read-hls-3r_la06q/cases-before-first-runtime-fix.cpp"
+      }
+    },
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-read-hls-002.json",
+      "report_sha256": "844926f46bcd29912ea742bf69fbe6ecc8571810de02e2ebf9afdc6f441e542b",
+      "pass_test": true,
+      "bindings_verified": 311,
+      "historical_authoring_preimage_overrides": {
+        "rdma/rnic/hls/segmented_read_transport.py": "rdma/rnic/build/segmented-read-hls-g_xgn2dx/derive-before-metadata-extension.py",
+        "rdma/rnic/tests/probe_segmented_read_hls.py": "rdma/rnic/build/segmented-read-hls-g_xgn2dx/probe-before-metadata-extension.py"
+      }
+    },
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-read-hls-003.json",
+      "report_sha256": "d7a0690d483a06ca6a65bc406c0acd981d2218789955fa85885e11283d3d0c35",
+      "pass_test": true,
+      "bindings_verified": 311,
+      "historical_authoring_preimage_overrides": {}
+    },
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-read-compat-001.json",
+      "report_sha256": "d859b984a6ffd6ac643c6ea4b594a3c1bab41969a639e023a79e9ae21483b50d",
+      "pass_test": true,
+      "bindings_verified": 310,
+      "historical_authoring_preimage_overrides": {}
+    }
+  ],
+  "source002_and003_hardware_body_hashes_identical": true,
+  "default_graph_READ_cap_bytes": 4096,
+  "failed001_remains_failed": true,
+  "all_original_timing_and_global_drain_gates_unchanged": true,
+  "hardware_actions": []
+}

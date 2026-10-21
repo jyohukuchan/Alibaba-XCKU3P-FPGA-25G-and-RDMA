@@ -15,7 +15,70 @@ remaining run was interrupted). No all-suite or release-pass claim is made.
 
 ## Latest functional milestone (2026-10-21)
 
-Publication checkpoint (2026-10-21): protected segmented READ RX
+Publication checkpoint131: expected-remote-MSN RTL, genuine accepted-QP/SQC
+lookup wiring derivation and a test fixture are included as UNVALIDATED WIP.
+[Attempt003](../../results/2026-10-18/rocev2-rnic-expected-remote-msn-003.json)
+compiles six cases, but all stop at time zero on the mandatory128-byte SQ
+profile assertion. This proves no MSN behavior. Earlier001/002 derivation
+startup failures remain separate; no failed report is relabeled. All50
+current003 source bindings match. No new complete-native elaboration/runtime
+or hardware qualification is claimed for this extra derivation. READ admission
+stays4096; kernel/provider/defaults and the passing130 cohort are unchanged.
+
+Progress130: new private native READ memory selector and external-unpad route
+are wired to the actual common MR/PTE/physical nonce/backend and exact new
+generated HLS. Stable large-READ role uses the bounded internal unpad;
+source/Atomic/zero/small READ keep the unchanged legacy paths. Actual full
+token fanout and genuine CQ readiness joins remain, with no second MR table.
+[Mux003](../../results/2026-10-18/rocev2-rnic-segmented-read-memory-mux-003.json)
+PASSES9 methods/17 four-state cases, retaining all11 prior cases;299 bindings
+verified. First failed fixture batches and an actual unknown-READY diagnostic
+remain separate; READY now requires known-zero refusal under route faults.
+[Complete native elaboration001](../../results/2026-10-18/rocev2-rnic-segmented-read-memory-native-elaboration-001.json)
+PASSES3.459s/1400 bindings, one native MR/PTE/nonce/HLS PSN/MSN domain and
+both global drains still0. This is NOT native runtime: READ admission stays
+4096 until protected RX/expected remote MSN/whole-WR lifetime integration.
+RNC8191/CQC31/default/kernel/provider unchanged; no large READ capability
+advertised or hardware applied. [Details](../../docs/ROCEV2_ATOMIC.md).
+
+Progress129 (historical): NEW retained whole-owner READ memory controller reuses the exact
+bounded executor/unpad children, derives every subrange only from saved748
+authority, retains one protected placement lease, uses fresh nonwrapping
+child tags and joins all real data/status handshakes before one aggregate
+event. Only identical genuine CQ retirement releases the whole owner.
+[Executor002](../../results/2026-10-18/rocev2-rnic-segmented-read-executor-002.json)
+PASSES14 methods/35 four-state cases, including1MiB/256 fragments15.942s,
+tail padding, queued next data/commands, early/delayed/stale statuses and
+late faults. First33 cases and unchanged RTL are retained;319 bindings checked.
+[Actual C++-snapshot integration001](../../results/2026-10-18/rocev2-rnic-segmented-read-dma-hls-001.json)
+PASSES four READs/278 real destination commands and1126403 payload bytes
+through the actual origin router/controller/unpad/executor, runtime12.775s.
+Two corrupt-copy controls PASS; all338 historical bindings reverified.
+CPP and RTL are SEPARATE executions, not live/generated-HLS runtime; protected
+RX, backend/fence/visibility/CQ endpoints are models. Actual native MR/PTE/
+nonce/DMA/CQ integration, trusted remote MSN and mid-READ recovery remain.
+Default READ4096 and hardware unchanged; original timing still fails13.885ns.
+[Exact scope/provenance](../../docs/ROCEV2_ATOMIC.md).
+
+Progress128 (historical): actual true READ HLS [C++003](../../results/2026-10-18/rocev2-rnic-segmented-read-hls-003.json)
+PASSES all11 modes: four READs4097..1MiB/278 response packets/four stored
+replays, all prior regressions/291 independent wire checks, nine negative
+controls. Each request emits one complete READ and one final whole-owner
+receipt after actual payload/pointer/pool/timer/common-state consumers.
+READ4.801s/prior8.028s/negatives<0.072s; all311 bindings reverified.
+[Compatibility001](../../results/2026-10-18/rocev2-rnic-segmented-read-compat-001.json)
+also PASSES actual owned Atomic RTL-service/Immediate TX/RX0.964s/310 bindings.
+The first failed run remains immutable; nonterminal READ timer progress now
+has a distinct trusted class, never a final release. New guarded-source003
+[HLS generation001](../../results/2026-10-18/rocev2-rnic-segmented-read-generated-hls-001.json)
+PASSES365.89s,171 generated files/15 checked port widths. Exact generated-RTL
+elaboration001 PASS1.732s/705 bindings, but estimate13.885ns FAILS original
+4ns/default1.08ns. No generated-RTL runtime/native/physical or board-fit claim.
+Default READ stays4096; trusted remote MSN, mid-READ retry, native DMA/CQ and
+Linux/provider/physical integration remain incomplete. No hardware/default/
+install/load/reboot or automatic publication. [Details](../../docs/ROCEV2_ATOMIC.md).
+
+Publication checkpoint (2026-10-21, historical): protected segmented READ RX
 [component002](../../results/2026-10-18/rocev2-rnic-segmented-read-response-002.json)
 PASSES all17 methods/60 cases:59 four-state cases plus one explicit two-state
 1MiB/256-packet case. All8500 source/artifact/RAM bindings were reverified.

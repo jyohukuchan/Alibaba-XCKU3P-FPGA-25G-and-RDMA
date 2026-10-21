@@ -17,6 +17,7 @@ import segmented_request_transport as base
 
 ROOT=base.ROOT;CPP=base.CPP;HPP=base.HPP;TOP=base.TOP
 JOIN=base.JOIN;RETRANS=base.RETRANS;once=base.once;change=base.change
+TIMER='hls/ib_transport_protocol/transport_timer.hpp'
 NAME='rocev2_native_segmented_read_top'
 PARENT=ROOT/'rdma/rnic/build/native-segmented-request-transport-003'
 
@@ -138,6 +139,11 @@ struct as02ReqReclaim {''')
         a=t.index('            if(isResponse) {');b=t.index('\n\t\t\t//ap_uint<24> oldest_outstanding_psn',a)
         return t[:a]+RX_BIND+t[b:]
     t=change(t,'void rx_ibh_fsm(',ibh)
+    t=once(t,'u.request_token=meta.request_token;u.request_psn=meta.psn;rxClearTimer_req.write(u);',
+        'u.request_token=meta.request_token;u.request_psn=meta.psn;\n'
+        '                    u.request_opcode=ap_uint<8>(meta.op_code);\n'
+        '                    u.request_read_progress=meta.request_owned && meta.op_code==RC_RDMA_READ_RESP_FIRST;\n'
+        '                    rxClearTimer_req.write(u);')
     def exh(t):
         marker='static bool request_fault=false;regRequestExhFault=request_fault;if(request_fault)return;'
         t=once(t,marker,marker+'\n    static bool read_active=false;static as02ReqToken read_token=0;\n    static ap_uint<64> read_base=0;static ap_uint<32> read_left=0,read_offset=0;')
@@ -185,6 +191,18 @@ struct as02ReqReclaim {''')
         'pointerUpdate p(update.qpn,ptrMeta);p.request_release=meta.request_owned &&\n'
         '                update.op_code!=RC_RDMA_READ_RESP_FIRST && update.op_code!=RC_RDMA_READ_RESP_MIDDLE;')
     out[RETRANS]=t
+    t=out[TIMER]
+    t=once(t,'struct rxTimerUpdate\n{','struct rxTimerUpdate\n{\n'
+        '    bool request_read_progress=false;ap_uint<8> request_opcode=0;')
+    t=once(t,'if(!as02_req_token_valid(r.request_token) || r.request_token(23,0)!=r.qpn || !r.stop)',
+        'bool progress=r.request_read_progress;\n'
+        '            bool terminal=r.request_opcode==RC_ACK || r.request_opcode==RC_ATOMIC_ACK ||\n'
+        '                r.request_opcode==RC_RDMA_READ_RESP_ONLY || r.request_opcode==RC_RDMA_READ_RESP_LAST;\n'
+        '            if(!as02_req_token_valid(r.request_token) || r.request_token(23,0)!=r.qpn ||\n'
+        '               (progress ? (r.stop || r.request_opcode!=RC_RDMA_READ_RESP_FIRST):(!r.stop || !terminal)))')
+    t=once(t,'rx_done.write(as02ReqStep(r.request_token,r.request_psn,0));',
+        'rx_done.write(as02ReqStep(r.request_token,r.request_psn,r.request_opcode));')
+    out[TIMER]=t
     t=out[JOIN]
     t=once(t,'PACKET,POINTER,','PACKET,READ_RX_TIMER,POINTER,')
     t=once(t,'static ap_uint<32> segment_offset=0;static ap_uint<24> first_psn=0;',
@@ -208,14 +226,19 @@ struct as02ReqReclaim {''')
     marker='    } else if(phase==POINTER && !pointer_released.empty()) {'
     t=once(t,marker,'''    } else if(phase==READ_RX_TIMER && !rx_timer_consumed.empty()) {
         as02ReqStep r=rx_timer_consumed.read();
-        if(r.token!=issued_step.token || r.psn!=issued_step.psn){fault=true;return;}
+        if(r.token!=issued_step.token || r.psn!=issued_step.psn ||
+           r.opcode!=RC_RDMA_READ_RESP_FIRST){fault=true;return;}
         phase=PACKET;
 '''+marker)
     old='!as02_req_step_equal(r.step,issued_step)'
     if t.count(old)!=2:raise ValueError('actual pointer AND pool receipt joins required')
     t=t.replace(old,'!as02_req_step_equal(r.step,as02_read_release_step(owner,issued_step))')
     t=once(t,'if(r.token!=issued_step.token || r.psn!=issued_step.psn){fault=true;return;}phase=QUERY;',
-        'if(r.token!=issued_step.token || r.psn!=as02_read_release_step(owner,issued_step).psn){fault=true;return;}phase=QUERY;')
+        'ap_uint<8> expected=(owner(339,324)==7 || owner(339,324)==8) ? ap_uint<8>(RC_ATOMIC_ACK):\n'
+        '            owner(339,324)==2 ? (as02_read_response_span(owner)==1 ? ap_uint<8>(RC_RDMA_READ_RESP_ONLY):\n'
+        '                ap_uint<8>(RC_RDMA_READ_RESP_LAST)):ap_uint<8>(RC_ACK);\n'
+        '        if(r.token!=issued_step.token || r.psn!=as02_read_release_step(owner,issued_step).psn ||\n'
+        '           r.opcode!=expected){fault=true;return;}phase=QUERY;')
     t=once(t,'ap_uint<24> next=ap_uint<25>(issued_step.psn)+1;',
         'ap_uint<24> next=ap_uint<24>(issued_step.psn+as02_read_response_span(owner));')
     t=once(t,'r.next=ap_uint<24>(issued_step.psn+1);','r.next=ap_uint<24>(issued_step.psn+as02_read_response_span(owner));')
@@ -235,10 +258,15 @@ def main():
     for n,t in files.items():(a.output/'fns'/n).write_text(t)
     if any(hashlib.sha256((PARENT/n).read_bytes()).hexdigest()!=h for n,h in before.items()):raise ValueError('parent changed')
     result=dict(scope=__doc__,HLS_top=NAME,source_only=True,parent_source=str(PARENT),parent_tree_sha256=before,
+        source_base=info['source_base'],source_sha256=info['source_sha256'],
         generator_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         derived_sources={n:hashlib.sha256(t.encode()).hexdigest()for n,t in files.items()},original_unchanged=True,
         large_READ_max_bytes=1048576,large_WRITE_SEND_max_bytes=1048576,Immediate_max_bytes=4096,
         packet_payload_bytes=4096,whole_WR_owner_bits=748,request_done_bits=816,SQ_bits=408,MAX_QPS=8,metadata_entries=2000,
+        request_context_bits=748,receive_context_bits=620,shared_PSN_MSN=True,
+        zero_length_requester=True,zero_RQ_SEND_and_Immediate=True,
+        normal_zero_responder_WRITE_READ=True,zero_service_owner_bits=344,zero_service_done_bits=400,
+        atomic_requester=True,atomic_service_request_bits=512,atomic_core_done_bits=224,
         trusted_REMOTE_MSN_source_implemented=False,mid_READ_retry_recovery_qualified=False,
         actual_CPP_runtime=False,generated_HLS=False,native_integration=False,hardware_verified=False,full_board_timing=False)
     (a.output/'source.json').write_text(json.dumps(result,indent=2)+'\n')

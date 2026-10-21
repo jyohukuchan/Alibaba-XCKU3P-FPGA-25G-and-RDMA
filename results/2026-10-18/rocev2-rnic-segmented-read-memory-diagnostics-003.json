@@ -1,0 +1,100 @@
+{
+  "scope": "READ native memory route audit; failed001/002 immutable, actual mux003 runtime and full graph compile are separate scopes",
+  "pass_test": true,
+  "reports": [
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-read-memory-mux-001.json",
+      "sha256": "392c27bb1c3a12d587172572cddc3a9fe21d24a2cd067111e89d533c809a1ee9",
+      "pass_test": false,
+      "bindings_verified": 269,
+      "historical_authoring_preimage_overrides": {
+        "rdma/rnic/fpga/derive_segmented_read_memory_native.py": "rdma/rnic/build/segmented-read-memory-mux-lk9rmfdn/derive-before-declarations-fix.py",
+        "rdma/rnic/tests/test_segmented_read_memory_mux_rtl.py": "rdma/rnic/build/segmented-read-memory-mux-lk9rmfdn/test-before-declarations-fix.py"
+      }
+    },
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-read-memory-mux-002.json",
+      "sha256": "b711a759162b5254be067eb9cb387c3d630e26e5aff1fdffb86081a12da9e98d",
+      "pass_test": false,
+      "bindings_verified": 299,
+      "historical_authoring_preimage_overrides": {
+        "rdma/rnic/fpga/derive_segmented_read_memory_native.py": "rdma/rnic/build/segmented-read-memory-mux-ztji5zh1/derive-before-lifetime-ready-fix.py",
+        "rdma/rnic/tests/test_segmented_read_memory_mux_rtl.py": "rdma/rnic/build/segmented-read-memory-mux-ztji5zh1/test-before-lifetime-ready-fix.py"
+      }
+    },
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-read-memory-mux-003.json",
+      "sha256": "005f16116b4ade573e41e55cad3306bb2e9c287d4e751bf270307698803058f5",
+      "pass_test": true,
+      "bindings_verified": 299,
+      "historical_authoring_preimage_overrides": {}
+    },
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-read-memory-native-elaboration-001.json",
+      "sha256": "4d23329deefe91c94a63088e6fa4a956dfa541eecb05dddae83690ee32f3f28b",
+      "pass_test": true,
+      "bindings_verified": 1400,
+      "historical_authoring_preimage_overrides": {}
+    }
+  ],
+  "failed_reports_remain_failed": true,
+  "all11_original_cases_retained": true,
+  "all17_fresh_cases_within_original10s": true,
+  "actual_native_module_counts": {
+    "rocev2_top": 1,
+    "rocev2_native_rnic_endpoint": 1,
+    "rocev2_native_sq_endpoint": 1,
+    "rocev2_mr_table": 1,
+    "rocev2_mr_page_table": 1,
+    "rocev2_shared_hls_transport": 1,
+    "rocev2_shared_protected_responder": 1,
+    "rocev2_atomic_request_integrity_transport": 1,
+    "rocev2_wqe_memory_executor": 1,
+    "rocev2_wqe_response_guard": 1,
+    "rocev2_wqe_tx_lifetime": 1,
+    "rocev2_wqe_replay": 1,
+    "rocev2_receive_queue": 1,
+    "rocev2_receive_ack_tx": 1,
+    "rocev2_cq_mmio": 1,
+    "rocev2_duplex_rx_mux": 1,
+    "rocev2_duplex_tx_router": 1,
+    "rocev2_memory_origin_router": 2,
+    "rocev2_sq_control_regs": 2,
+    "rocev2_sq_dma_fetch": 1,
+    "rocev2_sq_fetch": 1,
+    "rocev2_queue_cfg_arbiter": 1,
+    "rocev2_wqe_admission": 2,
+    "rocev2_native_atomic_request_top": 0,
+    "rocev2_native_zero_request_top": 0,
+    "rocev2_zero_ipv4_icrc": 3,
+    "rocev2_zero_rx_padding": 1,
+    "rocev2_native_zero_rq_top": 0,
+    "rocev2_zero_service_owner": 1,
+    "rocev2_zero_service_mac": 1,
+    "rocev2_memory_command_nonce": 1,
+    "rocev2_native_zero_service_top": 0,
+    "rocev2_paged_memory_backend": 1,
+    "rocev2_segmented_source_executor": 1,
+    "rocev2_segmented_executor_mux": 1,
+    "rocev2_segmented_child_executor": 2,
+    "rocev2_native_segmented_read_top": 1,
+    "rocev2_segmented_read_executor_mux": 1,
+    "rocev2_segmented_read_unpad_route": 1,
+    "rocev2_segmented_read_executor": 1,
+    "rocev2_segmented_read_child_unpad": 1,
+    "rocev2_wqe_read_unpad": 1,
+    "rocev2_native_segmented_request_top": 0
+  },
+  "HLS_domain_counts": {
+    "state_table_0_U0": 1,
+    "msn_table_0_U0": 1,
+    "rx_ibh_fsm_0_U0": 1,
+    "rx_exh_fsm_512_0_U0": 1,
+    "atomic_commit_U": 1
+  },
+  "both_original_global_drains_zero": true,
+  "large_READ_admission_open": false,
+  "READ_admission_limit": 4096,
+  "native_runtime": false,
+  "hardware_actions": []
+}

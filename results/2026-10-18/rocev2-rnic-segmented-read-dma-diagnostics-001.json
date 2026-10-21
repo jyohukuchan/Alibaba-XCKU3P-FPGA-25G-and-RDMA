@@ -1,0 +1,25 @@
+{
+  "scope": "Pre-extension READ DMA evidence audit: no source or failed-result correction",
+  "pass_test": true,
+  "reports": [
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-read-executor-001.json",
+      "sha256": "6660d6284e8e1bf0af52221bcfb458f939e8a4c27c5ea0965e1ce6a91f3d4645",
+      "bindings": 307,
+      "pass_test": true
+    },
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-read-dma-hls-001.json",
+      "sha256": "66bead2f109a74d93eee9860fb5040c3e29bce48c4f184cc8fa8a138061486d6",
+      "bindings": 338,
+      "pass_test": true
+    }
+  ],
+  "actual_child_and_unpad_bytes_identical_between_unit_and_CPP_snapshot_tests": true,
+  "CPP_instrumentation_only_command_owner_trace_original_assertions_unchanged": true,
+  "protected_RX_and_backend_CQ_still_models": true,
+  "source_sha256": {
+    "rdma/rnic/tests/test_segmented_read_executor_rtl.py": "3269bb82b819350bf398f3cd9c7ed908137ead78b2e839eb87b3106c535a052a"
+  },
+  "preimage_directory": "rdma/rnic/build/segmented-read-executor-dt0_2usr"
+}

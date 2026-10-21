@@ -1,0 +1,6 @@
+{
+  "failed_report": "results/2026-10-18/rocev2-rnic-expected-remote-msn-002.json",
+  "bindings_verified_before_fix": 50,
+  "cases": 0,
+  "cause": "New observer and old RX guard both have s_expect_valid; checked single-pin anchor correctly refuses two occurrences. Use exact adjacent guard valid/ready pair, do not remove uniqueness check."
+}

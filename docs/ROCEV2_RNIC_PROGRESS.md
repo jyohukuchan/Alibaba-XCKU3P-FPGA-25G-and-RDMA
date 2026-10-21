@@ -32,7 +32,89 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
-Publication checkpoint (2026-10-21): corrected protected segmented READ RX
+Publication checkpoint131 (2026-10-21): user explicitly requested a progress
+commit/push. Include current expected-remote-MSN predictor/native derivation
+and its failed tests as WIP, not a completed feature. The route observer covers
+genuine accepted TX-only configuration; a dedicated SQC lookup is intended
+to supply real cookie/epoch/PD without a mailbox-busy gap. These are source
+changes, not verified native behavior. Attempts001/002 failed during checked
+derivation startup. Attempt003 compiles six cases, but ALL stop at time zero:
+the reused fixture has not selected the mandatory128-byte SQ profile. All50
+source bindings match; no logical MSN operation, lease, epoch transition or
+native runtime has passed this batch. Original reports/logs/models remain.
+The passing130 cohort is unchanged. Large READ admission remains4096;
+protected RX/MSN/whole-WR lifecycle, mid-READ recovery and original board
+timing remain open. No hardware/module/network/fan/BIOS/flash/reboot changes.
+This publication request does not authorize future automatic commits/pushes.
+[Exact evidence and limitations](ROCEV2_ATOMIC.md).
+
+Progress130: actual native READ memory selector/external-unpad bypass and
+exact new generated HLS are wired into the full parent hierarchy. Legacy
+source/READ/Atomic/zero paths are unchanged; one full-owner READ role retains
+token/unpad/DMA/CQ ownership. Same common MR/PTE/physical nonce/backend ports,
+not a new memory table or bypass. Mux003 PASS9 methods/17 four-state cases,
+all11 old cases retained, original10s runtime bounds,299 bindings verified.
+Failed001/002/preimages are preserved; actual unchanged unknown-route READY
+was X despite quarantine, now explicitly gated and asserted known-zero.
+Legacy short-READ fixture respects its existing outer CQ lifetime rather
+than inventing the retained READ-only extra barrier; memory/status checks stay.
+Complete native elaboration001 PASS3.459s/1400 bindings, original module/domain/
+port/clock/drain checks; one MR/PTE/nonce/new HLS PSN/MSN/RX and both drains0.
+COMPILE ONLY: large READ admission remains4096. Protected segmented RX,
+trusted expected REMOTE MSN and actual final-response/whole-WR lifetime/CQ
+are still needed before opening a new distinct capability profile/runtime.
+Current RNC8191/CQC31/default/kernel/provider and hardware remain unchanged.
+All11 scope retained, timing13.885ns still fails original4ns/default1.08ns.
+No hardware/install/load/network/fan/BIOS/program/flash/reboot/automatic Git.
+[Evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress129 (historical): actual retained READ fragment controller + unchanged bounded
+unpad/executor children now exist. Every saved full748 owner supplies full64
+VA/relative offset/key authority; one protected placement lease, fresh A001..
+Afff nonwrapping child tags, checked actual padded raw commands and exact
+unpadded DMA bytes, all fragment data/status joins, one aggregate memory
+event and identical CQ retirement retain the owner through the whole WR.
+Executor001 PASS12/33; unchanged RTL plus two new lifetime cases in002 PASS
+14 methods/35 cases, ALL four-state, including1MiB/256 fragments15.942s.
+Actual HLS C++ output-snapshot integration001 PASS:4 full owners/278 commands/
+1126403 payload bytes/9 removed pad bytes through actual origin router/new
+controller/unpad/executor. CPP4.830s, RTL12.775s; two corrupt copies<0.134s.
+All307 historical unit/338 snapshot/319 current unit bindings verified with
+exact old fixture preimage; no report relabeling/changed original assertions.
+CPP and RTL execute separately. Protected RX/placement, backend statuses/
+visibility/fences and CQ are MODELS, not actual native MR/PTE/physical nonce/
+DMA/CQ/Linux/API integration or generated-RTL runtime. Default READ4096;
+trusted remote MSN, mid-READ recovery, large RX/Immediate/multi-SGE remain.
+Original timing13.885ns fails4ns/default1.08ns; full-board fit/timing unproven.
+All11 requirements retained; no hardware/default/install/load/fan/BIOS/network/
+program/flash/reboot/automatic Git writes. [Evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress128 (historical): true segmented READ HLS C++003 PASSES all11 modes: prior complete
+regressions/291 wire-replay oracles, four READs4097..1MiB/278 response packets/
+four stored request replays and nine actual negative controls. READ runtime
+4.801s; prior8.028s; negatives<0.072s each, original30s bounds unchanged.
+The failed001 real timer rejects nonterminal owned updates; corrected002/003
+distinguish trusted READ_FIRST progress from terminal ACK/Atomic/READ_ONLY/
+READ_LAST, and joins validate response opcode/token/PSN as well. No final
+certificate was relaxed. Failed001 and all authoring preimages remain.
+New owned-service/Immediate compatibility001 PASS0.964s with actual Atomic
+RTL, unchanged runner/oracles and original30s bound. All311 C++003 and310
+compatibility bindings reverified;003 hardware bodies equal passing002.
+New HLS generation001 PASSES365.89s on exact003 under original1500MiB/4ns/
+default1.08ns/8QP/2000-entry/port/source/compatibility gates. Generated171
+files/259 frozen inputs remain exact; all15 checked port widths match.
+Exact generated-RTL elaboration001 PASS1.732s/705 total bindings. This is NOT
+RTL runtime/native/timing proof: estimate13.885ns FAILS original timing.
+Resources81862LUT/98926FF/209BRAM18K/0DSP; no board fit/closure claim.
+Default READ4096, trusted remote MSN/retry/native DMA/CQ/Linux/
+provider/physical integration and all11 original requirements remain open.
+Two inactive object caches were losslessly backed up and moved to RAM to
+retain the original space guard; restore before any reboot. No reboot needed
+or authenticated goal-restore proof; no hardware/default/install/load/fan/
+BIOS/network/program/flash/automatic commit/push changes.
+[Evidence and limits](ROCEV2_ATOMIC.md).
+
+Publication checkpoint (2026-10-21, historical): corrected protected segmented READ RX
 component002 is terminal PASS, all17 methods/60 cases. All8500 bindings/594
 unique files were reverified.59 cases are four-state; the explicit1MiB case
 is two-state,256 packets/one token/321979 cycles, runtime1.423s. Failed001 and

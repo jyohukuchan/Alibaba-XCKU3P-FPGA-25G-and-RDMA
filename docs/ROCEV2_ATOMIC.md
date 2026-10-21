@@ -5,7 +5,276 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
-## Publication checkpoint: segmented READ HLS candidate is NOT passing
+## Publication checkpoint131: expected remote MSN is unvalidated WIP
+
+`rtl/rocev2_expected_remote_msn.v`,
+`fpga/derive_expected_remote_msn_native.py` and
+`tests/test_expected_remote_msn_rtl.py` are included at the user's explicit
+progress-publication request, not as a qualified feature. The intended
+source is genuine accepted outgoing-QP configuration (including TX-only)
+plus a dedicated read-only SQC cookie/epoch/PD lookup, not received AETH,
+local incoming-request MSN, per-packet counts or posted sequence numbers.
+It assumes a freshly established remote RC QP, not takeover of an existing
+peer QP. Genuine WR/TX/CQ joins and separate configuration/queue guards are
+authored in the derivation but have not passed complete-native checks.
+
+[Attempt001](../results/2026-10-18/rocev2-rnic-expected-remote-msn-001.json)
+failed before compilation because the fault-code anchor had changed to the
+zero-service prefix. [Attempt002](../results/2026-10-18/rocev2-rnic-expected-remote-msn-002.json)
+also failed before compilation: a single-pin expectation anchor matched both
+the new observer and the old RX guard. Exact preimages and separate
+[diagnostic001](../results/2026-10-18/rocev2-rnic-expected-remote-msn-diagnostics-001.json)/
+[diagnostic002](../results/2026-10-18/rocev2-rnic-expected-remote-msn-diagnostics-002.json)
+remain; checked uniqueness was retained by using the adjacent valid/ready pair.
+
+[Attempt003](../results/2026-10-18/rocev2-rnic-expected-remote-msn-003.json)
+reaches compilation for six cases, but ALL terminate at simulation time zero
+on `matched128-byte Immediate-header profile required`. The reused fixture
+does not select the derived SQC's required profile. This is a fixture-startup
+failure, NOT a runtime MSN/lease/epoch pass or evidence against the FPGA's
+capacity. All50 current source bindings were reverified before publication.
+No tests or source gates were relaxed and no failed report was rewritten.
+No new native elaboration/runtime/physical/timing claim accompanies this WIP.
+
+The passing130 READ memory cohort below is unchanged. Protected segmented RX,
+trusted expected-MSN qualification, final-response/whole-WR lifetime joins
+and mid-READ recovery remain incomplete; READ admission remains4096. Default
+kernel/provider/Atomic capability, original timing/drain gates and hardware
+remain unchanged. This explicit push does not authorize future automatic
+publication. No device, module, network, fan, BIOS, flash or reboot changes.
+
+## Actual native READ memory routing; admission remains closed (130)
+
+NEW `fpga/derive_segmented_read_memory_native.py` keeps the full passing8191
+parent and adds a separately named executor selector/external-unpad route.
+A stable large-READ role selects the new retained controller and its actual
+bounded unpad/executor, without double-unpadding through the old external
+stage. Ordinary source, Atomic, zero and small READ still use the unchanged
+source/legacy executor; small READ still uses its original external unpad.
+Full response-token fanout remains an atomic two-consumer handshake. Actual
+memory command/data/status ports connect to the parent's SAME common physical
+nonce/MR/PTE/backend path; no new memory authority/table or fabricated receipt.
+Whole READ role/guards persist until identical genuine CQ readiness/commit.
+The original full-owner CQ offer join remains, including refusal of foreign,
+unknown or non-atomic retire offers. Faults force the extra READY known-zero.
+
+[Mux001](../results/2026-10-18/rocev2-rnic-segmented-read-memory-mux-001.json)
+FAILED before new READ runtime because fixture alias pins lacked explicit
+wire/reg widths; all11 old cases passed. All269 bindings were verified and
+exact test/generator preimages saved BEFORE fixing only fixture declarations.
+[Mux002](../results/2026-10-18/rocev2-rnic-segmented-read-memory-mux-002.json)
+FAILED the short-READ fixture: its reused standalone assertion incorrectly
+required the retained READ-specific CQ barrier on a legacy path whose outer
+TX/lifetime actually owns CQ. The genuine no-memory-event-before-status check
+remains; only that extra-ready assertion is conditional on the retained role.
+
+[Diagnostic002](../results/2026-10-18/rocev2-rnic-segmented-read-memory-diagnostics-002.json)
+also executes the UNCHANGED unknown-route case: real fault/quarantine assert,
+but READY is X. Its earlier `if(signal)` predicate did not reject X, so this
+was NOT proof of known-zero READY. All299 bindings and exact preimages were
+preserved before adding the real fault/foreign-offer READY gate and strict
+four-state assertions. No failed report was relabeled or original legacy
+CQ responsibility changed. [Initial diagnostic001](../results/2026-10-18/rocev2-rnic-segmented-read-memory-diagnostics-001.json)
+records the earlier fixture-declaration error separately.
+
+[Fresh Mux003](../results/2026-10-18/rocev2-rnic-segmented-read-memory-mux-003.json)
+PASSES ALL9 methods/17 four-state cases, retaining all11 prior same-instance
+legacy/source/replay/Atomic/zero cases. New large READ uses real unpad bypass,
+internal bounded children and the actual common physical nonce: A001/A002
+logical child tags become genuine1/2 backend identities, one aggregate event
+and exact CQ retirement; external unpad never captures that READ twice.
+Small READ still captures the original unpad once. Wrong direction/foreign
+or non-atomic CQ and unknown route refuse DMA/release. Each case retains
+its original10s runtime limit.299 bindings reverified.
+
+[Complete native elaboration001](../results/2026-10-18/rocev2-rnic-segmented-read-memory-native-elaboration-001.json)
+PASSES3.459s with1400 source/artifact/RAM bindings verified. The real hierarchy
+selects exact generated READ HLS instead of the old request core, while all
+parent source/profile/HLS gates remain mandatory. Counts prove one new READ
+selector/controller/unpad route, unchanged source/legacy path, two bounded
+executor instances and one actual MR table/page table/physical nonce/backend.
+Each actual native HLS state-table/MSN/RX/Atomic-commit domain occurs once;
+all checked ports/748-owner/408-SQ/816-receipt and original clocks/capacity
+match. Both global HLS drain certificates stay0. No HLS stub is selected.
+[Audit003](../results/2026-10-18/rocev2-rnic-segmented-read-memory-diagnostics-003.json)
+reverifies269/299 failed,299 fresh mux and1400 full-graph bindings, using only
+exact historical authoring preimages where needed.
+
+This is component RUNTIME plus full-native COMPILE evidence, NOT full-native
+large READ runtime or Linux/API/physical qualification. Large READ admission
+intentionally remains4096: protected segmented RX, trusted expected REMOTE
+MSN and final-response/whole-WR PSN/lifetime/CQ joins are not yet selected.
+RNC8191/CQC31 and kernel/provider/default capabilities are unchanged. The
+new memory role must become reachable through the genuine checked SQ/MR/RX
+pipeline before runtime support can be claimed; source wiring alone is not
+that proof. No register poke, modeled MR success or relaxed validator is used
+to open it. Native tests must eventually exercise the newly admitted path.
+
+For the next MSN integration, Linux6.17 RXE initializes/resets responder MSN
+to0. Its responder advances MSN before READ replies, advances Atomic only
+outside replay, advances SEND/WRITE on message end, and writes responder MSN
+into AETH. This motivates a trusted per-QP/epoch logical-message predictor,
+NOT the local incoming-request counter, per-packet count or RX-learned value.
+That predictor and its genuine accepted-QP initialization are still unproved
+here; no constant-MSN success path is installed. [RXE responder](https://raw.githubusercontent.com/torvalds/linux/v6.17/drivers/infiniband/sw/rxe/rxe_resp.c),
+[QP initialization/reset](https://raw.githubusercontent.com/torvalds/linux/v6.17/drivers/infiniband/sw/rxe/rxe_qp.c).
+
+All11 original requirements and large RX/Immediate/multi-SGE/recovery remain.
+HLS13.885ns still fails original4ns/default1.08ns; full-board fit/CDC/routing/
+DRC/timing/drain gates are unchanged. No hardware/default/install/load/network/
+fan/BIOS/program/flash/reboot/automatic Git changes accompany this wiring.
+
+## Retained READ fragment memory controller and actual C++ snapshot integration (129, historical)
+
+NEW `rtl/rocev2_segmented_read_executor.v` and checked child-source helper
+`fpga/derive_segmented_read_executor.py` add real large-READ memory staging,
+not a length-limit-only change. The outer controller keeps the full748-bit
+authorized WR and one identical protected placement token. Each bounded
+context derives full64 VA/relative offset, key and length ONLY from that
+saved owner. Original post-origin-router96-bit commands must match every
+field, including exact padded count/address and per-fragment whole-WR ctl.
+Only AFTER this check is ctl normalized to1 for a complete bounded child.
+
+The unchanged private <=4096 executor and unpad are reused; only the unpad
+module name changes. Actual unpad removes0..3 wire bytes before actual child
+placement, never copies them beyond the authorized MR subrange. A001..Afff
+logical child tags never wrap. Physical identity MUST still use the shared
+nonreusing command-nonce domain (or an explicitly reserved namespace); this
+standalone component does not implement or replace that native translator.
+Queued next-packet commands/data wait for the previous actual child status,
+without confusing them with extra bytes of the completed unpad transaction.
+An early correct status cannot bypass data transfer. One aggregate memory
+event follows ALL fragments; its consumption does not free the outer lease.
+Only identical genuine whole-WR CQ retirement can do so. Backend error,
+unknown metadata, stale tags, lost downstream lease or foreign retirement
+quarantine the owner/all queue guards. Already-offered command/data/event
+remain stable under stalls and late faults. Reset is NOT cancellation/unpin.
+
+[Executor001](../results/2026-10-18/rocev2-rnic-segmented-read-executor-001.json)
+initially PASSES12 methods/33 four-state cases. No RTL correction was needed.
+[Executor002](../results/2026-10-18/rocev2-rnic-segmented-read-executor-002.json)
+retains ALL33 and adds two actual lifetime controls: pending early correct
+status waits for genuine data, and a late parent fault retains the pending
+whole event without permitting CQ release. All14 methods/35 cases PASS,
+each<30s. Full1MiB is four-state here:256 fragments,1048576 exact destination
+bytes, one memory event/CQ release, runtime15.942s. This is a MEMORY COMPONENT
+test, not a four-state full1MiB RX/HLS/native graph claim. Tails4097..12289,
+all pad counts, command/data stalls, withheld statuses, stale/unknown status,
+bad placement/command/keep/TLAST/owner, overflow, tag exhaustion, backend
+errors and lost/unknown lease are also covered.319 bindings reverified.
+
+[C++-snapshot integration001](../results/2026-10-18/rocev2-rnic-segmented-read-dma-hls-001.json)
+freezes the passing source003 fixture and adds ONLY command/owner tracing
+to its copy; original assertions and HLS body remain byte-identical. Actual
+memCmd fields (including origin2) and actual padded destination bytes from
+four READs4097/8193/65537/1MiB are recorded, not reconstructed as success
+inputs from the WR. Independent request/PSN/every-byte oracles still run.
+Compile60.067s/C++ execution4.830s PASS. The frozen unmodified snapshots then
+drive real four-state `rocev2_memory_origin_router`, new READ controller,
+unchanged bounded unpad and executor. The real router validates origin and
+ordered byte credits, removes ONLY origin bits and preserves the lower94.
+The controller then validates all96 post-router bits, not an assumed origin.
+Runtime12.775s PASS:4 exact full owners,278 actual commands,1126403 placed
+payload bytes,9 pad bytes removed and4 whole-owner memory/CQ releases.
+Child tags remain nonreusing across all four WRs in the SAME controller.
+Two explicit corrupt-copy controls (origin0, wrong routed address) PASS
+<0.134s with no DMA/event. The actual snapshot files remain unchanged.
+
+This is SEPARATE actual C++ and RTL executions, NOT cycle-coupled HLS, actual
+generated-HLS RTL runtime, protected RX/native MR/PTE/DMA/physical nonce/
+visibility/fence/CQ/Linux/provider or physical qualification. Placement,
+backend statuses/visibility/fences and CQ are MODELS; neither a modeled
+status nor component memory event proves physical host visibility/unpin.
+
+[Audit001](../results/2026-10-18/rocev2-rnic-segmented-read-dma-diagnostics-001.json)
+verified first307 unit/338 snapshot bindings BEFORE adding the two new unit
+methods and preserved the exact old fixture. [Audit002](../results/2026-10-18/rocev2-rnic-segmented-read-dma-diagnostics-002.json)
+reverifies307/338/319 bindings, resolving historical fixture hashes only to
+that exact preimage. Every snapshot file regenerates byte-identically from
+the genuine C++ log, tracing is the only fixture change, and actual bounded
+children match between both unit batches and snapshot test. No historical
+report is relabeled as execution of the expanded current fixture.
+
+Next is actual native executor/unpad routing and whole-WR lifetime integration
+with the common MR/PTE/nonce/backend/CQ, strict protected segmented RX and
+trusted expected REMOTE MSN source; simply widening the old executor/unpad
+is not sufficient. Mid-READ retry, Linux/provider/API/physical integration,
+large receive/Immediate/multi-SGE/recovery and original board timing remain
+open. Default READ stays4096 and Atomic_NONE remains. New HLS13.885ns fails
+original4ns/default1.08ns; no fit/CDC/routing/DRC/timing/drain gate is waived.
+All11 requirements remain; no hardware/default/install/load/network/fan/BIOS/
+program/flash/reboot/automatic Git writes accompany this component advance.
+
+## True segmented READ HLS C++, compatibility and generation PASS (128, historical)
+
+[Unchanged-timer diagnostic001](../results/2026-10-18/rocev2-rnic-segmented-read-hls-diagnostics-001.json)
+executes the failed cohort's real timer: an owned nonterminal update faults,
+while a terminal update passes. Failed001's302 bindings and all three authoring
+preimages were verified before correction. The new private source adds a
+trusted response opcode/progress bit AFTER issued READ-plan/common-PSN/class
+validation. The actual timer only accepts nonterminal READ_FIRST progress or
+terminal ACK/Atomic_ACK/READ_ONLY/READ_LAST with the opposite stop semantics.
+The whole-WR join separately checks the FIRST and final receipt classes,
+token and exact PSN. No arbitrary `stop=false` update becomes a release.
+
+[Corrected C++002](../results/2026-10-18/rocev2-rnic-segmented-read-hls-002.json)
+PASSES all11 modes after compile60.489s; READ4.816s, prior7.949s, negatives
+<0.071s. A fresh source003 adds only provenance/feature manifest fields,
+with all derived hardware bytes IDENTICAL to002. [C++003](../results/2026-10-18/rocev2-rnic-segmented-read-hls-003.json)
+also PASSES all11 modes after compile60.752s; READ4.801s, prior8.028s,
+negatives<0.072s. Each mode retains its original30s runtime limit.
+
+The new positive workload executes four whole READs4097/8193/65537/1048576
+bytes,278 FIRST/MIDDLE/LAST response packets, four actual stored request
+replays before FIRST, and one genuine final748-bit-owner/816-bit receipt per
+WR. Independent wire/RETH/PSN and every destination-byte/pad/order oracle
+passes. Actual payload, pointer/pool release, timers and common-state queries
+must all complete; withholding payload/timers/final state blocks completion.
+All old Atomic/zero/RQ/service/WRITE/SEND cases and291 independent wire/replay
+oracles remain. Four original negative controls cover bad first PSN/class/
+length/keep; five new controls cover missing progress class, false terminal
+stop, wrong progress opcode/token and a corrupt copy of the actual timer
+receipt. Each retains the request without whole-WR success.
+
+[Compatibility001](../results/2026-10-18/rocev2-rnic-segmented-read-compat-001.json)
+PASSES after compile25.488s/runtime0.964s with the unchanged30s runner/oracles:
+real owned Atomic/MR/paged-memory RTL supplies nine replies/receipts and11
+wire packets; Immediate TX/RX each has eight cases/receipts. Only the fixture's
+internal RX descriptor type/continuation ports adapt to the actual new core.
+Peer, connection, normal payload/host boundaries remain MODELS, not native DMA.
+
+[Binding/provenance audit002](../results/2026-10-18/rocev2-rnic-segmented-read-hls-diagnostics-002.json)
+reverifies all302 failed001,311 corrected002,311 fresh003 and310 compatibility
+bindings. Historical generator/probe/test hashes resolve ONLY to their exact
+saved preimages; reports are not rewritten or labeled as current-source runs.
+
+`build_native_segmented_read.py` synthesizes exact003 while
+retaining the unchanged parent builder's1500MiB guard,4ns/default1.08ns,
+8QP/2000 metadata entries, source/frozen-input/compatibility/port-width gates.
+The wrapper's report view only flattens actual prior summaries/hashes verbatim
+and separately requires every new READ mode/oracle.
+[Generated HLS001](../results/2026-10-18/rocev2-rnic-segmented-read-generated-hls-001.json)
+PASSES365.892s, with259 frozen inputs/171 generated files and all15 checked
+port widths exact. Resources are81862LUT/98926FF/209BRAM18K/0DSP; this is not
+a placed/routed fit report. Estimate13.885ns FAILS original4ns/default1.08ns.
+[Exact generated-RTL elaboration001](../results/2026-10-18/rocev2-rnic-segmented-read-hls-elaboration-001.json)
+PASSES1.732s with all703 input/source/frozen/generated/report bindings plus
+the compile log/RAM model (705 total) verified. It is compile-only, NOT actual
+generated-RTL runtime/native/physical or board-timing qualification.
+Two inactive object caches were losslessly moved
+to RAM with persistent compressed backups and every original/archive/RAM
+file hash matched; both must be restored before any reboot. No reboot needed.
+
+Default READ remains4096. Trusted expected REMOTE MSN wiring, mid-response
+retry recovery, native per-fragment unpadding/fresh command nonce/status/
+visibility aggregation, whole-WR CQ, actual Linux/provider and physical proof
+remain incomplete. The inspected native executor/unpad currently accept only
+one bounded response token/command: they cannot be made large-READ-safe merely
+by raising a length limit. A new retained-owner fragment controller and actual
+native integration are next. All11 original requirements remain; no hardware,
+default, module, network, fan, BIOS, flash, reboot or automatic Git writes.
+
+## Publication checkpoint: segmented READ HLS candidate was NOT passing (historical)
 
 NEW `hls/segmented_read_transport.py`, `hls/test_segmented_read.cpp` and
 `tests/probe_segmented_read_hls.py` add a separate, unselected true READ

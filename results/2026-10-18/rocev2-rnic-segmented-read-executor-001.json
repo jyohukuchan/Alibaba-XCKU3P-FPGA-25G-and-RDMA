@@ -1,0 +1,1473 @@
+{
+  "scope": "Actual retained READ controller + unchanged bounded executor/unpad children.\n\nProtected placement, HLS command/payload, backend statuses/visibility and CQ\nare explicit MODELS. Full saved authority, exact padded raw/data, nonwrapping\ntags, all-fragment memory event and retained CQ lease run in four-state RTL.\nNOT actual RX/HLS/MR/PTE/DMA/native/Linux/physical/timing qualification.\n",
+  "pass_test": true,
+  "methods": 12,
+  "cases": 33,
+  "seconds": 28.457162437960505,
+  "source_unchanged": true,
+  "source_sha256": {
+    "rdma/rnic/fpga/derive_segmented_source.py": "138c80829c920c6d8d32a7a7ac29cb05e33bec051028dd741558979b5314ad62",
+    "rdma/rnic/fpga/prepare_native.py": "6c9688901171652c8805218cb716932daff8bbfbc405aeba1079f63efcf5ea0a",
+    "rdma/rnic/fpga/derive_atomic_native_authority.py": "0b881da1ad4a9d72f43c90e54492c3299b43b3109d0529eb81851319a4f88451",
+    "rdma/rnic/fpga/derive_atomic128_lifetime.py": "09148e2f11eb3c2ea9bd72fc28cf357e8991de64acef1af9ad79b17dfebc90cb",
+    "rdma/rnic/fpga/derive_atomic_native_bridge.py": "332a5064cb3adfbadd2e2196eb950885e9945a9af528ccd45776944631db331c",
+    "rdma/rnic/fpga/derive_shared_responder.py": "3d97aec6c1f5efe8f1d1b3d0c830a684ed4045dacdd3bcaa4923cf751e1fd477",
+    "rdma/rnic/fpga/prepare_board.py": "92c5c485e1e5349dbe5deacb0f8c2e514af87b17b696317b9258804c967a0573",
+    "rdma/rnic/fpga/derive_immediate_bridge.py": "a9758360ee8466e011819fe3ebf79b80fd175ee7f59c91af4fa949047a4b0667",
+    "rdma/rnic/fpga/derive_atomic128_fetch.py": "4123c117771f568fc4a002a614ade421f6c94eb08dd17b27dff2a6a8d9dbe433",
+    "rdma/rnic/fpga/derive_atomic_bridge.py": "1b3b1adc2f187b7718e4045973768c50e45186859f587992a56ad485bd230bdb",
+    "rdma/rnic/fpga/derive_atomic128_response.py": "eaa3439ece1fd0fad5ff30e81aab0d14346c3739058c1272a4fdc4b8e431063e",
+    "rdma/rnic/fpga/derive_zero_service_native.py": "0f92353804e547ef8df2ee70ff294e356447667f4668450d11020cc302a84b86",
+    "rdma/rnic/fpga/derive_immediate_native.py": "9281857caf2714945f280e126eb39553e8f9324c8416b5b71bbd79c5ed6fdac4",
+    "rdma/rnic/fpga/derive_atomic_request_bridge.py": "a626d9f3d20ecfc7c477100c63472fa8547792fafacb612d28846f6f6f0a4463",
+    "rdma/rnic/fpga/derive_atomic_owner_lookup.py": "10f497b1ae2c5358e960ae8695903bf4655896c99b977bd26ffba287d270b453",
+    "rdma/rnic/fpga/derive_segmented_profile.py": "2eeb93fba67c67ff6dd907fc1bf46741371af9548b3c0908c38d3c4d466fbd55",
+    "rdma/rnic/fpga/derive_duplex_transport.py": "ff81dfb2ba41ffc59d482bee177fc106537a22a786bf11d588880c3990c85a53",
+    "rdma/rnic/fpga/derive_segmented_executor.py": "a2340b3346215f952ff882fca09a6c8ba886c46a29215ff676e998119252497c",
+    "rdma/rnic/fpga/derive_segmented_wire.py": "94bba46ee3e380bcd6f2578f25f4ef00eda0407a22eefa90c1824003a2aa8386",
+    "rdma/rnic/fpga/derive_recv_responder.py": "467fae2223a3b9a3e40b2a43334b154bb81aea9608792debf03d2461bd14d6c7",
+    "rdma/rnic/fpga/derive_atomic_native_rx.py": "9f9e8db656cffc70f59761ba0c42e402f4dd9d392c065d0a7a79abb6b752fec0",
+    "rdma/rnic/fpga/derive_zero_rq_native.py": "92ed231ada071d15feab574127c7974d4d17516f48db5d8f4e6a79f118d225f8",
+    "rdma/rnic/fpga/derive_atomic_mac_bridge.py": "4a0ef7c4604415fccbd5c582ae5ca248bc4ba1fa7a226e98115b749e6a65e3af",
+    "rdma/rnic/fpga/derive_atomic_native.py": "b3758f15718303cf12b95af02052dcad8bc6d1e806ef64075ff75e3e6856c90e",
+    "rdma/rnic/fpga/derive_segmented_padding.py": "ac8d48a5918a095e6f712853ae7d55ab9510c11edbdf74888e68dfe137119ae8",
+    "rdma/rnic/fpga/derive_atomic128_admission.py": "da4e91e41d7bb9861534cfe2b98e7690076850d192c401cc1290d1942b8d83e3",
+    "rdma/rnic/fpga/derive_atomic_access_native.py": "ab42d555c459c2e7b7da71686539c3d75a31e075a3a8c11c66e09a59e6e903ee",
+    "rdma/rnic/fpga/derive_atomic128_native.py": "9be2756604ed23cc9b41b2fd8d1a3b8db9bf2e2176663878463c12abc03b20ad",
+    "rdma/rnic/fpga/prepare_wrkey_transport.py": "11aff17a0d9eb097abc4a5eec097409171b997d59c451ffb6e8fad3d4984e8c3",
+    "rdma/rnic/fpga/derive_atomic_native_owned_stage.py": "aa9869c3c51c2fe25b5dfa53429bd62b7180fcfde20140e1e4397d76b5463576",
+    "rdma/rnic/fpga/derive_qp_tx_bridge.py": "51afb390ce130f69e8b55cbfb2af2055e7fa3746004790b5b509f4f6273d28a7",
+    "rdma/rnic/fpga/derive_atomic_owned_bridge.py": "6a80483c2cd4ebc9a6344532be3df607d6839e5991e78dec52d682b340b8a632",
+    "rdma/rnic/fpga/derive_segmented_native.py": "78f20feaa504ef5ab12cdee9ce420b5f3a8ec5a4f6eeca209d3dbd4cb70682a2",
+    "rdma/rnic/fpga/derive_atomic_reserved_mac_bridge.py": "cbb8dd301369630dcc37c28d0ee5c7fa2293c5223829be29305d6c5f677741a8",
+    "rdma/rnic/fpga/derive_segmented_read_executor.py": "a7e261df5ad7bf7e4f182b4a34a4673f2e3f4241b40cab01c921721129c7d19c",
+    "rdma/rnic/fpga/derive_atomic128_executor.py": "bc01f0d68fc39c78e6a3ff5d96d93a2e82396f4b9db67a7e03bee35cf114b004",
+    "rdma/rnic/fpga/derive_segmented_read_response.py": "623ad265109287439858a9ec0b899c110bbfca926ce3405b2a8d027699847271",
+    "rdma/rnic/fpga/derive_zero_native.py": "d652f5e0a805b96d2a963f33d9112d8121f1170a15b111e3e400c81eface97a7",
+    "rdma/rnic/rtl/rocev2_native_rx_refs.v": "64e37e154052bdbf1ee90ae464e89216109f635b485dd26b588d1c0dfa98b18d",
+    "rdma/rnic/rtl/rocev2_atomic_qp_binding.v": "21666b9b9a6168a2fd6f914b6ab759e85b1f4d154b4d29dfc06dcee6c42b0f11",
+    "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e0d2780a1bc6a0b4a5855a72ac8759b47cff86f734387420e7ddc26cfe3d25a2",
+    "rdma/rnic/rtl/rocev2_zero_service_mac.v": "d3082ba0190aea6941965126fdfa853d1194d2c2fc487c5dc04c8f44023754b0",
+    "rdma/rnic/rtl/rocev2_retrans_pool.v": "d8e85255df334e8423e7d7bb5509884c962cba6c4e08593a516f528a4b0d2d92",
+    "rdma/rnic/rtl/rocev2_cq_mmio.v": "8f71ae4440734e68ddee0cf5c815a6813744c4ce3a9b76bb6ede40a2c8dd9154",
+    "rdma/rnic/rtl/rocev2_paged_memory_backend.v": "268d72371e5717fc13e009a5e881b34b91c459a1193afc42d760246d8e4e3bd6",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4",
+    "rdma/rnic/rtl/rocev2_atomic_owner_reservation.v": "eccb782acd0cc5c948ccdb7086e15ee831796fb29d3c8d44584402a50939d987",
+    "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "1c1f0b98d23d9a9cd9400c10545a1d4ce4202812cc400a1ae28e6505760e4e09",
+    "rdma/rnic/rtl/rocev2_sq_control_regs.v": "e3f0ddee0a3c0b442294dc37359e02b17b7bddba567f7b9228d197355743583f",
+    "rdma/rnic/rtl/rocev2_dual_ethernet_endpoint.v": "34884c95f736263f25c5360c8581e67af5796d67bd49de9e990dea7497703868",
+    "rdma/rnic/rtl/rocev2_ethernet_config_regs.v": "78116b1045c48d4b997a16f3f2f1053359c93301e99640e05b4014d19359bb84",
+    "rdma/rnic/rtl/rocev2_wqe_replay.v": "e5039d76ae682c982bb9597f3cd217a12adac1d230e6d875cd22cc89f0723008",
+    "rdma/rnic/rtl/rocev2_mr_control.v": "f671dffc66a0281a20530e610600def9f8ab0bb76ed3ac0ab269e2216ba89ee2",
+    "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+    "rdma/rnic/rtl/rocev2_native_sq_endpoint.v": "0eca6b755b5420c6c11f51bf64859aaaa90d53532c4d3817dd71faa741fe7661",
+    "rdma/rnic/rtl/rocev2_owned_retrans.v": "42450615bedfc4cfc3feef2ed9591ab800f10603202ffb188de2bb64fdfb13c7",
+    "rdma/rnic/rtl/rocev2_segmented_tx_padding.v": "4c0c1f0d72de2e06900b691995729eb0109a8f1d865ad254ca209b050b1ea3af",
+    "rdma/rnic/rtl/rocev2_wqe_lifetime.v": "cdde69a02513bfe3a41cc4784cb3b931640d6a16216245b28b4f6cb8e609248d",
+    "rdma/rnic/rtl/rocev2_corundum_dma_backend.v": "f713c19873b8a52f4f038ab22bcc816dfc0d65b7fca72a75c73e2499cd2dd943",
+    "rdma/rnic/rtl/rocev2_segmented_source_executor.v": "8cb1125d8d3d2375a7352fb82101c492835e3ae900901334702a6e954f784e10",
+    "rdma/rnic/rtl/rocev2_parent_rx_admission.v": "02315cd80cb92f1433f8901a42d35d3b22b830247693c24e84003220d019676c",
+    "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+    "rdma/rnic/rtl/rocev2_memory_origin_router.v": "398baf6ad88581237baae3e374dcec06aded745713a9f6c76f888e51c7d248c8",
+    "rdma/rnic/rtl/rocev2_pcie_parent_guard.v": "dd4e1ae98ef2525122fdc95274db860f3be83a703e73a097c3cd4b013da26ce6",
+    "rdma/rnic/rtl/rocev2_receive_ack_tx.v": "10da4a247b29956e3695ebefecc4540c9d8917c4cf8bef2ca1fe5485091e0702",
+    "rdma/rnic/rtl/rocev2_controlled_responder.v": "80a5add0502e97d809268f87088b5abe274ab87b3a9275a6027bb693024b9ef4",
+    "rdma/rnic/rtl/rocev2_atomic_responder.v": "34df53f431c2fec7f0938b760c733553b6f50a388afb469eae795b5aed450c38",
+    "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64",
+    "rdma/rnic/rtl/rocev2_memory_command_nonce.v": "f61b5d9d62a6ca82548d883a83b4ddea2ff74ce10005cf70aef5c7ea7eeeb439",
+    "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "a696169c573ccbfaca9c9ee3dd67bada68993ae692293dffff1e11c44b271494",
+    "rdma/rnic/rtl/rocev2_atomic_owned_service_adapter.v": "598f4f934c1bc665e7b38939bfd217df908b1bcd301e651e23ce1deafb85d5c8",
+    "rdma/rnic/rtl/rocev2_sq_dma_fetch.v": "f6b79cb4352b60be7d0002494311e0ef79a09cc16a1bde0a0259499386ff88b3",
+    "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+    "rdma/rnic/rtl/rocev2_owned_rx_lookup.v": "f4be078ee86136836f4d5be70af9ed1381f99342c29e2e5cd3d7a35ebd809309",
+    "rdma/rnic/rtl/rocev2_control_regs.v": "478de9ce6f416e2b9e76e0ea7c862d8ed8f31ec6ee31a7a0171c1aa8864788bf",
+    "rdma/rnic/rtl/rocev2_wqe_admission.v": "6ae0a43038a1f34998b0474d3385a54510bddd9e3502867e9d2fe4712b53ec84",
+    "rdma/rnic/rtl/rocev2_mr_page_table.v": "7cebd68efbf32f25f2a44f933c8d90231d5e9a185348ab0ab73def4235406239",
+    "rdma/rnic/rtl/rocev2_atomic_service_adapter.v": "cbe7fe31520ccd0a04e75fbc71c5bc05e6be47f396a63d57b108f30e08e92f6c",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/rtl/rocev2_atomic_mac_tx.v": "f10b53946fb8d9ab354e3ca3f40c577c962b8955193c21ee4429bb70a1f9f0a5",
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rnic/rtl/rocev2_sq_paged_dma.v": "089c61692f327aec8ffa293163058faf6a8720bdd721dcad7af1d5701257067a",
+    "rdma/rnic/rtl/rocev2_sq_controlled_dma.v": "809aeb1aef38241c632a69989f9b029e9f7d07955925df0e93b7981ffdded945",
+    "rdma/rnic/rtl/rocev2_zero_rx_padding.v": "d292473098725df210bfa51eb9d8ed63f81e454aced2467e8fd6b7305c86a5fe",
+    "rdma/rnic/rtl/rocev2_duplex_tx_router.v": "75fd83dc14feaf807d331b908ea7a78d2a3e2b7b3a650a39739d8da297b61260",
+    "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "fcb802395ddd34e33491b7c4dd5136a5b5810a52d903e02863dcc88365a4c20b",
+    "rdma/rnic/rtl/rocev2_paged_responder.v": "b09899668429f56f3b3a25484f97e9a6361603128c7fda9cf7c203f9e843f3f4",
+    "rdma/rnic/rtl/rocev2_owned_retrans_fenced.v": "4b713a218da3eb408cafa83618c5bca08e89d0e0e79ebf4b1e025e217feeec9d",
+    "rdma/rnic/rtl/rocev2_page_dma_engine.v": "a8801822361c399716c6336c4887612804d019701d2f357d1964788e9d6c9b24",
+    "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "4c3cbd9a10f7b36daf7d4f968538941725808a389680a42e21ad914384711f0b",
+    "rdma/rnic/rtl/rocev2_queue_cfg_arbiter.v": "12e206c2e645f63a47cab01aaffaef58205f474f1859ccc1b10a58bfd2339023",
+    "rdma/rnic/rtl/rocev2_receive_queue.v": "0a61c59c719fdb489430e15ac0fb7ca7feed4092d6063fdc29332ccad04a53c1",
+    "rdma/rnic/rtl/rocev2_wqe_memory_executor.v": "3118235f95cfdf6baf2158acf51cc432452f5309ec4155b48f3f51fc338a6c42",
+    "rdma/rnic/rtl/rocev2_owned_wire_rx.v": "4c0d516181d0665346c71845530085ed86e661abc3299a619a019ac4e407b1cc",
+    "rdma/rnic/rtl/rocev2_duplex_rx_mux.v": "97cf1769991205f13b23fb1da3ad8ce95eeea131acc74e54f6878608514003c3",
+    "rdma/rnic/rtl/rocev2_mr_query_arbiter.v": "abeb223c0d54652bbac141187f660e136dc99055a66e83eaa72deb30d3aa96cc",
+    "rdma/rnic/rtl/rocev2_owned_timer_retrans.v": "c0f7f230e6aa30989dfb6246a64df028a5335de3b8e7ce4265749fc9f2341ff0",
+    "rdma/rnic/rtl/rocev2_zero_service_owner.v": "56732fc20484dbe54bb40a473d8cbfe8cd2bc6d4ba54b41beebf82a90dcd5fd6",
+    "rdma/rnic/rtl/rocev2_wrkey_sq_adapter.v": "9d7df0577d515ca814fe2b688b69603c411b12d0957242a49e4bdd10d7e2eab9",
+    "rdma/rnic/rtl/rocev2_segmented_read_executor.v": "ca8897cc84f5429b755e263991cdc910171c338f1de7bfbfcd1a5c93692ecf8f",
+    "rdma/rnic/rtl/rocev2_retry_mmio.v": "45e3b07ea5d3460dfb08c8bd29e0b2df637140f5705004989362e509e159428a",
+    "rdma/rnic/rtl/rocev2_wqe_tx_lifetime.v": "a0b8543fca05cf433f70ab670dafb4be768f3cbd3849efdb1766f9ceb85ed172",
+    "rdma/rnic/rtl/rocev2_atomic_packet_guard.v": "6959371ff29a89c2a450a4029ba84a857a613ff713965163a37c1aec969cc403",
+    "rdma/rnic/rtl/rocev2_native_rnic_endpoint.v": "72ea385f940c2b5ef10a82668fa9fd8a3304ed3f2c9cb5375613bc83c7f79f28",
+    "rdma/rnic/rtl/rocev2_atomic_memory_bridge.v": "5d088b5090b58ba18b8dd62dee8cfbe4c64cc58bbdefe8e9c609710e868eb1b4",
+    "rdma/rnic/rtl/rocev2_native_endpoint.v": "d5b90b20e313128c3c9425d5d0dad255bcbb0e34f4af9888b6bd3a4bcdf39a53",
+    "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "1fde8810405394cb02865cfc9ca9774b40517b18e47bc37a2f27957a0cf14170",
+    "rdma/rnic/tests/test_segmented_read_executor_rtl.py": "3269bb82b819350bf398f3cd9c7ed908137ead78b2e839eb87b3106c535a052a",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c910018a2e8a9d77e649437f9a7727f5cf2fd9c02cb20ab92016b5209a3a189e"
+  },
+  "tests": {
+    "test_actual_child_error_is_not_whole_success_or_release": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-dt0_2usr",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-zf_55424/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-dt0_2usr/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-dt0_2usr/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-dt0_2usr/unpad.v"
+        ],
+        "compile_seconds": 0.02999885001918301,
+        "seconds": 0.02485417597927153,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-dt0_2usr/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-dt0_2usr/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-dt0_2usr/tb.v": "248aeb6480d87bf3b61f739c9521f7e3e3566062bfe3eb5143550f8bb1628fb1",
+          "rdma/rnic/build/segmented-read-executor-dt0_2usr/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-dt0_2usr/simulation.log": "79800a115c2eaec0c10609c188931a05028929656f3935e4dd8cf47caee78045"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-zf_55424/test": "180bdc74a7e414be5dfe6266d35ea40ca873ffb8f710fe7dfa24f8a82b49af35"
+        }
+      }
+    ],
+    "test_bad_payload_keep_TLAST_or_unknown_never_creates_success": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-seycd8qu",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-lybwrtv0/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-seycd8qu/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-seycd8qu/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-seycd8qu/unpad.v"
+        ],
+        "compile_seconds": 0.028294039948377758,
+        "seconds": 0.024561740981880575,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-seycd8qu/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-seycd8qu/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-seycd8qu/tb.v": "b5b742b42281e3505e8a73beb052b4b1c94f7bc49abe510bd4568509b84def53",
+          "rdma/rnic/build/segmented-read-executor-seycd8qu/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-seycd8qu/simulation.log": "ee4c7a60688db1b24151c6ec37c69ee3eac563421f647e013229e7b459f3bf59"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-lybwrtv0/test": "6255f79e85f6258643eb2559ccb2bd5250285c2521b65d63a8f96f74d2376aa6"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-q9qq4oun",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-5whg247y/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-q9qq4oun/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-q9qq4oun/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-q9qq4oun/unpad.v"
+        ],
+        "compile_seconds": 0.02781952201621607,
+        "seconds": 0.024188077019061893,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-q9qq4oun/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-q9qq4oun/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-q9qq4oun/tb.v": "23495a4feef44d547775c1b0a3af35cedf45bf1bc31a587e50f8f8e07488e3fc",
+          "rdma/rnic/build/segmented-read-executor-q9qq4oun/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-q9qq4oun/simulation.log": "cf2364a0b661b19f108fb167d022e0c2ea03266fd0c812434632a5a583116da8"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-5whg247y/test": "c8422cd5567be3e8e7b969ad271e69ebf0bbb3a45f8b6d84eed57fe4bdbcdcea"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-pcuci7v7",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-vakieu9k/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-pcuci7v7/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-pcuci7v7/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-pcuci7v7/unpad.v"
+        ],
+        "compile_seconds": 0.030034190975129604,
+        "seconds": 0.024435463012196124,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-pcuci7v7/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-pcuci7v7/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-pcuci7v7/tb.v": "74caecdc2261230f0f43ba9f536a11768f108043cbf741e129ccecabc41afda3",
+          "rdma/rnic/build/segmented-read-executor-pcuci7v7/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-pcuci7v7/simulation.log": "83090ef7d0f8faba81b879f546aa042ebdeb659e6d3268f28da5e173d13b3da0"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-vakieu9k/test": "6a85a13410639b7fef9055bcb7f8e18440cb71cf85206243f0777b9db084bf49"
+        }
+      }
+    ],
+    "test_full_1MiB_256_fragments_four_state": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-px5wxoxe",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 1048576,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-deo355ci/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-px5wxoxe/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-px5wxoxe/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-px5wxoxe/unpad.v"
+        ],
+        "compile_seconds": 0.02790766500402242,
+        "seconds": 16.097187556966674,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 256,
+          "bytes": 1048576,
+          "events": 1,
+          "retired": 1,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-px5wxoxe/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-px5wxoxe/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-px5wxoxe/tb.v": "d04203fcc25a67adacbb274c03026f50b2a5aef7a82d24b246e47ed9b7fd23c4",
+          "rdma/rnic/build/segmented-read-executor-px5wxoxe/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-px5wxoxe/simulation.log": "9f3ae02ed064c1a38c07c6436116edd4b3f629da0114c5d29104879ae61ffb78"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-deo355ci/test": "74152255e108bf450b4a5796c63c2d11f8f0c01824731eedbce112faba181a22"
+        }
+      }
+    ],
+    "test_lost_downstream_lease_and_foreign_CQ_quarantine": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-9lfb_ms2",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-3_y_reti/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-9lfb_ms2/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-9lfb_ms2/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-9lfb_ms2/unpad.v"
+        ],
+        "compile_seconds": 0.03023107600165531,
+        "seconds": 0.024010600987821817,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-9lfb_ms2/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-9lfb_ms2/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-9lfb_ms2/tb.v": "400c362e36a2425d16565beeb4a1ba57f86fd52a6220565184ded3e9c9fa7b20",
+          "rdma/rnic/build/segmented-read-executor-9lfb_ms2/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-9lfb_ms2/simulation.log": "43927c09b580cc2350b9ff7e73c1db1de960fc8d73ab76a39c1c61b6aae18023"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-3_y_reti/test": "b2dc3b213bd5e068d40a9f1a75462fc01fdec2236652c8611dcd97bff059aaea"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-4ssimq3w",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-e8konzuz/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-4ssimq3w/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-4ssimq3w/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-4ssimq3w/unpad.v"
+        ],
+        "compile_seconds": 0.028844680986367166,
+        "seconds": 0.023818181012757123,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-4ssimq3w/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-4ssimq3w/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-4ssimq3w/tb.v": "2c4929204e346f81a411eec2d4358b3f6543b5916f657fce91e330a99eeea488",
+          "rdma/rnic/build/segmented-read-executor-4ssimq3w/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-4ssimq3w/simulation.log": "42cea8e69237b86f62f474fbfd7119cdda44f6844d8e78ff170e83acb6a8db41"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-e8konzuz/test": "801202f4f59b13ec1d372b1b2b369f26de226685976b4624c43ea7d520666b39"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-zb2id6tw",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-t0_gh_1g/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-zb2id6tw/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-zb2id6tw/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-zb2id6tw/unpad.v"
+        ],
+        "compile_seconds": 0.028706529992632568,
+        "seconds": 0.022862582991365343,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-zb2id6tw/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-zb2id6tw/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-zb2id6tw/tb.v": "c7c42b0654211d4a0a3aa9ca5982450e39ef971b98cf7e85bf4c7ff61d278201",
+          "rdma/rnic/build/segmented-read-executor-zb2id6tw/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-zb2id6tw/simulation.log": "798ef816ec1e7d99a69ca4ab5a75df68fdc7bef1940fd841b6b7a6120e2f79fe"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-t0_gh_1g/test": "166aaf2353166178a1fc67d8477c343fb61e62a6de50b9389a028b26e52d4ff7"
+        }
+      }
+    ],
+    "test_missing_wrong_duplicate_or_unknown_protected_token_fail_closed": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-097jzctw",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-3s3idvqj/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-097jzctw/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-097jzctw/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-097jzctw/unpad.v"
+        ],
+        "compile_seconds": 0.02784040098777041,
+        "seconds": 0.02295833796961233,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-097jzctw/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-097jzctw/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-097jzctw/tb.v": "711beecfa113c2a6ae8f322a0a23e6fcd5c857f0489048f75810130b4bb5057e",
+          "rdma/rnic/build/segmented-read-executor-097jzctw/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-097jzctw/simulation.log": "a4ed7f5455c781805585493d18eae7ad312800567db613bb0c3c249c04ac9ecf"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-3s3idvqj/test": "4eca2f936302ace37229f0b1290f460916a22f2abbfb51bbbd5b74206d07f4c8"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-e796_qql",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-hm963zaf/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-e796_qql/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-e796_qql/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-e796_qql/unpad.v"
+        ],
+        "compile_seconds": 0.0282104320358485,
+        "seconds": 0.02286670298781246,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-e796_qql/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-e796_qql/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-e796_qql/tb.v": "132f4fc5c6e9767fbbea75da72b9b003e563a2dda9988a581556431506dfbed6",
+          "rdma/rnic/build/segmented-read-executor-e796_qql/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-e796_qql/simulation.log": "0d7dd5e8e40a6319f68deb8e76bd72dad0a5f33e0e20051967040f8d734295ed"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-hm963zaf/test": "c0acb962baa0b71878f8898b4f2511280000a6f4fc94a595badee1132818442c"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-waxxihfj",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-u9za0vjw/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-waxxihfj/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-waxxihfj/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-waxxihfj/unpad.v"
+        ],
+        "compile_seconds": 0.02908689802279696,
+        "seconds": 0.023811477003619075,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-waxxihfj/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-waxxihfj/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-waxxihfj/tb.v": "8f7004c148e0e103050eecedd776bbb4f03e4f9d9c0e304cc10468158990fcad",
+          "rdma/rnic/build/segmented-read-executor-waxxihfj/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-waxxihfj/simulation.log": "7d5c1208c55a731aa9f6a26ef3f4c8ebdb337d157509c3b101e7bc42d9fac5c2"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-u9za0vjw/test": "114d1b6143df91815dfa5417d39fd9023c9e69e2fd6fa14f47463f9e0356b195"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-0cmhjkbo",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-hh6z3524/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-0cmhjkbo/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-0cmhjkbo/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-0cmhjkbo/unpad.v"
+        ],
+        "compile_seconds": 0.02791199099738151,
+        "seconds": 0.023026714974548668,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-0cmhjkbo/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-0cmhjkbo/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-0cmhjkbo/tb.v": "dad74b4eca70cd1e3b46442a6281d1a031702443852aaa9479251207c482bf85",
+          "rdma/rnic/build/segmented-read-executor-0cmhjkbo/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-0cmhjkbo/simulation.log": "ed7ebbce3c777069506f59abd72b5c2838ec9d423902ea67d15cb88c01adba4c"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-hh6z3524/test": "a6c8494a52d70649bb11ddc5661bd58339993f2419ba0bc1ca7985bbaed265da"
+        }
+      }
+    ],
+    "test_next_command_and_data_wait_for_real_previous_status": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-_ottp_ye",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 4097,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-9th5z5od/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-_ottp_ye/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-_ottp_ye/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-_ottp_ye/unpad.v"
+        ],
+        "compile_seconds": 0.027905074995942414,
+        "seconds": 0.09068658901378512,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 2,
+          "bytes": 4097,
+          "events": 1,
+          "retired": 1,
+          "padding": 3
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-_ottp_ye/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-_ottp_ye/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-_ottp_ye/tb.v": "c4a9464b71e58622ca6e455704afb00b78441fae6242424bb4c203c3a2e135d0",
+          "rdma/rnic/build/segmented-read-executor-_ottp_ye/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-_ottp_ye/simulation.log": "465349e11367aded7d08dd2a1d030bdabad0e0a918d72f295de8f43bca609d70"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-9th5z5od/test": "b32d26f543bc0c861a146903417c21edf2e83c60a817384a956f38668d7c3e4a"
+        }
+      }
+    ],
+    "test_noncanonical_unknown_overflow_and_unsupported_owner_refused": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-hvvzu12w",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-pyl4_rae/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-hvvzu12w/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-hvvzu12w/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-hvvzu12w/unpad.v"
+        ],
+        "compile_seconds": 0.028187104035168886,
+        "seconds": 0.023496900976169854,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-hvvzu12w/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-hvvzu12w/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-hvvzu12w/tb.v": "9a1e6ecddcb1f5929b825e905d43bf3d62628c783f50eee544f8893cffc7a219",
+          "rdma/rnic/build/segmented-read-executor-hvvzu12w/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-hvvzu12w/simulation.log": "1d8a87ac6819d1d46b95ed1d2f1a8c3d8fc0b0de11e49b03ea530cf9cb83dd31"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-pyl4_rae/test": "f814fe7c07a8bd6475defb514cfbef3d43fdc65aa9875406752f7bbbc2e9f9be"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-oncnwvdp",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-2c5eh8ly/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-oncnwvdp/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-oncnwvdp/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-oncnwvdp/unpad.v"
+        ],
+        "compile_seconds": 0.027900954999495298,
+        "seconds": 0.023007088049780577,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-oncnwvdp/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-oncnwvdp/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-oncnwvdp/tb.v": "f3cf218fc5e44b961f138d1b2455012043472e8b243b58ffabe1c7a4693e1d18",
+          "rdma/rnic/build/segmented-read-executor-oncnwvdp/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-oncnwvdp/simulation.log": "8cd45335eaab92c545f0b01085d79680655fb7ea773a05c42900f10a9b57156c"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-2c5eh8ly/test": "7de332a2bdecf057cfe280ab26ba296f006dec6b01abb0e9a12644b6f57235cc"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-aha067d5",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-zl2hcimf/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-aha067d5/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-aha067d5/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-aha067d5/unpad.v"
+        ],
+        "compile_seconds": 0.02743586600990966,
+        "seconds": 0.023119885998312384,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-aha067d5/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-aha067d5/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-aha067d5/tb.v": "0ae7be2aa88796b13aecd2ed036c8e54791974d51935fa6b93d45b9eaf2b21b0",
+          "rdma/rnic/build/segmented-read-executor-aha067d5/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-aha067d5/simulation.log": "2f0df403985998c87e173df92cb69d7c62ae38f77e449e60f4eb5d56d46227d1"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-zl2hcimf/test": "ee7189686c83f11280b502f1a48564dca0d5ffba9ecc8ee88c3266df2f7b654d"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-cd17no50",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-q7vm6o71/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-cd17no50/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-cd17no50/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-cd17no50/unpad.v"
+        ],
+        "compile_seconds": 0.028585071966517717,
+        "seconds": 0.02375532203586772,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-cd17no50/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-cd17no50/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-cd17no50/tb.v": "b0bfb021ca7cfb600dbc831e58e837bd602bbeb89e7298ab2190c543b9bd0eed",
+          "rdma/rnic/build/segmented-read-executor-cd17no50/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-cd17no50/simulation.log": "8c474488288ce5863438a0451faa82b56fb931035d77dcdb06603ae124b9d021"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-q7vm6o71/test": "9331b29324279b0cd57de13547e8cf9d66ee6f40e7922d68ac64ae9a8cc06bc1"
+        }
+      }
+    ],
+    "test_nonwrapping_child_tag_exhaustion_blocks_fourth_DMA": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-vu8a1dnu",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 12289,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-hfpxq33t/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-vu8a1dnu/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-vu8a1dnu/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-vu8a1dnu/unpad.v"
+        ],
+        "compile_seconds": 0.027443828992545605,
+        "seconds": 0.21478638995904475,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 3,
+          "bytes": 12288,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-vu8a1dnu/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-vu8a1dnu/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-vu8a1dnu/tb.v": "2bfa2e09fa5384f693300bf9dbe2fba30da6af217586b936b3cb7f717a1173bf",
+          "rdma/rnic/build/segmented-read-executor-vu8a1dnu/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-vu8a1dnu/simulation.log": "187458e6fac2871953fcb9681b38f4a8281344c62aff46ba89d4175e26c9fb37"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-hfpxq33t/test": "476c04e1acae7c89f329cc96a4140605d99c67ee3d640f7b33c17208f813e961"
+        }
+      }
+    ],
+    "test_parent_fault_keeps_already_offered_command_and_whole_owner": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-io2eu5d1",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-jdcb0nsz/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-io2eu5d1/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-io2eu5d1/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-io2eu5d1/unpad.v"
+        ],
+        "compile_seconds": 0.0288668199791573,
+        "seconds": 0.023893053003121167,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-io2eu5d1/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-io2eu5d1/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-io2eu5d1/tb.v": "13aef8701cf1bfd67773abc6bd1e481f9758a2a8607d22a48dc363f335ccdf51",
+          "rdma/rnic/build/segmented-read-executor-io2eu5d1/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-io2eu5d1/simulation.log": "bc36056f925913cf4e098d00256b64cc95b5bb49bff0cff854c7e1271df5190a"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-jdcb0nsz/test": "78d81ba6923c9ead3e5590527f90e2891489163c8424579b7613976e57b2d160"
+        }
+      }
+    ],
+    "test_stale_or_unknown_backend_status_never_completes_next_fragment": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-w9jhkgt8",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-essbjyf8/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-w9jhkgt8/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-w9jhkgt8/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-w9jhkgt8/unpad.v"
+        ],
+        "compile_seconds": 0.028317081974819303,
+        "seconds": 0.08842847601044923,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 1,
+          "bytes": 4096,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-w9jhkgt8/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-w9jhkgt8/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-w9jhkgt8/tb.v": "85af3efb6d11294ca265d12c996d62fc7e32321b936ea463e04b2b9c083c151d",
+          "rdma/rnic/build/segmented-read-executor-w9jhkgt8/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-w9jhkgt8/simulation.log": "e55623126871493aac7f8fcad631e1fb8c48b49f1801ecb9e5cc0685738b086a"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-essbjyf8/test": "e5095963834acdcb8d21af01c84aea396f1da7c3e496acc857a478e4f41f8418"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-g2uvll6y",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-tpe1kv2h/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-g2uvll6y/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-g2uvll6y/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-g2uvll6y/unpad.v"
+        ],
+        "compile_seconds": 0.027544612006749958,
+        "seconds": 0.08831882098456845,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 1,
+          "bytes": 4096,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-g2uvll6y/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-g2uvll6y/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-g2uvll6y/tb.v": "8f582b535966a121a25d5a76ade16758cb3e6177b3cab441415769348c6333a8",
+          "rdma/rnic/build/segmented-read-executor-g2uvll6y/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-g2uvll6y/simulation.log": "06063a4437d1c43e6917658976dfc69502bbb4a42209def5f83817755fbd76fc"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-tpe1kv2h/test": "b180c8e388c1a602d7da44273aafa939f51cc4d25c40101e6e6ddebac5ad5343"
+        }
+      }
+    ],
+    "test_tails_one_token_fresh_tags_every_status_and_CQ_lease": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-gu5_eoxj",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 4097,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-3g98h_9i/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-gu5_eoxj/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-gu5_eoxj/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-gu5_eoxj/unpad.v"
+        ],
+        "compile_seconds": 0.0280656450195238,
+        "seconds": 0.08878823899431154,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 2,
+          "bytes": 4097,
+          "events": 1,
+          "retired": 1,
+          "padding": 3
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-gu5_eoxj/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-gu5_eoxj/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-gu5_eoxj/tb.v": "657bc0ca1fbad98eebcc7651399eef3a538f43eec0b14e9a238c716c373886ab",
+          "rdma/rnic/build/segmented-read-executor-gu5_eoxj/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-gu5_eoxj/simulation.log": "ce335c77e099dc050a0dfa3b102697e61d3b53d788b0d02a34f5a1b43d3df9db"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-3g98h_9i/test": "81cc02678a5b926376cf9f7d153f0be4331aa96317cfa34265cea7499e11a3d0"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-4not57vu",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 4098,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-286yyqz2/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-4not57vu/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-4not57vu/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-4not57vu/unpad.v"
+        ],
+        "compile_seconds": 0.028481703018769622,
+        "seconds": 0.08946264797123149,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 2,
+          "bytes": 4098,
+          "events": 1,
+          "retired": 1,
+          "padding": 2
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-4not57vu/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-4not57vu/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-4not57vu/tb.v": "fc638dfa2ce6c028271c9e06f456bc546dad32f32141688b349c43414d06f3d4",
+          "rdma/rnic/build/segmented-read-executor-4not57vu/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-4not57vu/simulation.log": "cdcb5fd4dc197f1ffac98698e4c9763acbc5c1a41c4f29e5f186323c0f832d9a"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-286yyqz2/test": "3aa6e4585281b7c4f0691f2b5bbc0f85e4df3bc9c2e1643563cc47fa85435ba5"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-j68h6ksv",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 4099,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-nb0pj990/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-j68h6ksv/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-j68h6ksv/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-j68h6ksv/unpad.v"
+        ],
+        "compile_seconds": 0.027648120012599975,
+        "seconds": 0.08824290003394708,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 2,
+          "bytes": 4099,
+          "events": 1,
+          "retired": 1,
+          "padding": 1
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-j68h6ksv/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-j68h6ksv/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-j68h6ksv/tb.v": "b73839ffc769ed9c18f00db237c8c8c0e3754216a0dacba4e3685bebba4a230e",
+          "rdma/rnic/build/segmented-read-executor-j68h6ksv/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-j68h6ksv/simulation.log": "97835f9982307e902fe88630e2e766bf9f426ef476e246bd7be03a5bbe7b7ebd"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-nb0pj990/test": "927a06a2082c9a455863a9c1f24a75e2c1fe60a79c3f8bc698117bb6d88d3d26"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-mx0cohpn",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 4100,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-b64vs8t7/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-mx0cohpn/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-mx0cohpn/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-mx0cohpn/unpad.v"
+        ],
+        "compile_seconds": 0.027879651985131204,
+        "seconds": 0.08854050299851224,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 2,
+          "bytes": 4100,
+          "events": 1,
+          "retired": 1,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-mx0cohpn/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-mx0cohpn/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-mx0cohpn/tb.v": "1a33582b668c5994852c46b2539f74f397b0f5856747739689e7c038dd274076",
+          "rdma/rnic/build/segmented-read-executor-mx0cohpn/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-mx0cohpn/simulation.log": "51f2f4fe4ec536185ac9211739d0d5afac9305eb07723ac4361399a69b9808bd"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-b64vs8t7/test": "d224543dc14d67e9abc860bf42edf7ccd107e852e9587b905d2d53f5efed1c62"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-f5ohm4jj",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8192,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-tsw8ooh3/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-f5ohm4jj/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-f5ohm4jj/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-f5ohm4jj/unpad.v"
+        ],
+        "compile_seconds": 0.027538394962903112,
+        "seconds": 0.15100527298636734,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 2,
+          "bytes": 8192,
+          "events": 1,
+          "retired": 1,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-f5ohm4jj/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-f5ohm4jj/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-f5ohm4jj/tb.v": "22822255cce5f790d004ffa2a711ae3bc54f4008a8ade2e7131fe76cc6abaac6",
+          "rdma/rnic/build/segmented-read-executor-f5ohm4jj/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-f5ohm4jj/simulation.log": "3c29aeb7fff526bd2c90e746f02031b40bc9a2f4278b1955bfd1bdc1dae9c299"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-tsw8ooh3/test": "999632d4ab8d646e254863c7ad2551aaa5c8564bf7d0c289b517104d597fb60a"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-vf9f661f",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-tfhkuqr0/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-vf9f661f/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-vf9f661f/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-vf9f661f/unpad.v"
+        ],
+        "compile_seconds": 0.027362949040252715,
+        "seconds": 0.15234934102045372,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 3,
+          "bytes": 8193,
+          "events": 1,
+          "retired": 1,
+          "padding": 3
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-vf9f661f/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-vf9f661f/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-vf9f661f/tb.v": "534096e5c0f7a67f6447befcc71e9dc6002ceba46932a553e0fcacfef142e5b1",
+          "rdma/rnic/build/segmented-read-executor-vf9f661f/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-vf9f661f/simulation.log": "792002663779deec484fca539beaadf44c67d8893f2ff54acfcdf961449f7fd6"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-tfhkuqr0/test": "171f32aaf406b4a4973fff9024a5a3bc0b14985be8acb7c254f70c9367f05f49"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-7xym1u7f",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 12289,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-c_ky5h4l/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-7xym1u7f/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-7xym1u7f/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-7xym1u7f/unpad.v"
+        ],
+        "compile_seconds": 0.02874103095382452,
+        "seconds": 0.21392402396304533,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 4,
+          "bytes": 12289,
+          "events": 1,
+          "retired": 1,
+          "padding": 3
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-7xym1u7f/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-7xym1u7f/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-7xym1u7f/tb.v": "47d6d742fcce2555c94ba59da355fd71be64bc78c88baf11217ace69091d10eb",
+          "rdma/rnic/build/segmented-read-executor-7xym1u7f/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-7xym1u7f/simulation.log": "2ec60645a4fd81bfd560f47995236c5b5788a56e9993fbd1913866d33c2d4689"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-c_ky5h4l/test": "d93c7db55fffcb0c0bb5dd3a5f610770b5f639ef78cc206c70d73097ce449199"
+        }
+      }
+    ],
+    "test_wrong_raw_order_pad_length_ctl_reserved_and_address_refused": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-6a69tf14",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-417cxr28/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-6a69tf14/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-6a69tf14/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-6a69tf14/unpad.v"
+        ],
+        "compile_seconds": 0.027971914038062096,
+        "seconds": 0.023725986015051603,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-6a69tf14/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-6a69tf14/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-6a69tf14/tb.v": "913bf5314f772021b77cf0187feea78336e24ea7513bc615a81190c6f6245a78",
+          "rdma/rnic/build/segmented-read-executor-6a69tf14/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-6a69tf14/simulation.log": "a185b85e323ff5da26dec26275973127cf3099db59c83dd6b726148afdd5c388"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-417cxr28/test": "47346391e098594bdbb717ac970aa764400797ebdf9148842a35d0b5984e271c"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-w49iuhk_",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-bk5wntp4/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-w49iuhk_/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-w49iuhk_/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-w49iuhk_/unpad.v"
+        ],
+        "compile_seconds": 0.02710054599447176,
+        "seconds": 0.023120302997995168,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-w49iuhk_/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-w49iuhk_/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-w49iuhk_/tb.v": "60a58aedda83dd24385c9e61de747dd450c0ece518861bb43c559812455983e1",
+          "rdma/rnic/build/segmented-read-executor-w49iuhk_/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-w49iuhk_/simulation.log": "4dcb433832e50da5c553dcece9a6fc3c283934f3cfb39b02bb46d77cb8b2d1ff"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-bk5wntp4/test": "ef1f5a70c461788edd7903630f2069da063841705b3b1fa0515cdc0e10d8b6d0"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-3ny208sq",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-ci5bqx63/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-3ny208sq/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-3ny208sq/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-3ny208sq/unpad.v"
+        ],
+        "compile_seconds": 0.02798539400100708,
+        "seconds": 0.023577010026201606,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-3ny208sq/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-3ny208sq/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-3ny208sq/tb.v": "032713f7ce245d59c043556238e70b03ede6e8e530292524df42cc6967db6517",
+          "rdma/rnic/build/segmented-read-executor-3ny208sq/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-3ny208sq/simulation.log": "78625021ec1c4b94212d61b9bde0cfafae6add85e8c177a209088c11b676aec5"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-ci5bqx63/test": "ec44c9374d0a41aa7bd60ddd67d31e575a75fa97f216119d2e231681853e6361"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-fo4aiu8a",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 8193,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-3sn8e987/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-fo4aiu8a/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-fo4aiu8a/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-fo4aiu8a/unpad.v"
+        ],
+        "compile_seconds": 0.02731964597478509,
+        "seconds": 0.02326697501121089,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 0,
+          "bytes": 0,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-fo4aiu8a/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-fo4aiu8a/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-fo4aiu8a/tb.v": "78ec7c98a45ff4f4139d572a73199d8e594a2166103f0ece7256dee5c6b95d29",
+          "rdma/rnic/build/segmented-read-executor-fo4aiu8a/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-fo4aiu8a/simulation.log": "ae59bd8be5fe591b649af3963da37182547f4de25dcbd2ae60786784989ff5c7"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-3sn8e987/test": "6c937ded2eebfa002a66341c2360509ec10bcfb20703027be81a94ab3a07797b"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-executor-m4ljk5wr",
+        "pass_test": true,
+        "four_state": true,
+        "READ_bytes": 4097,
+        "runtime_limit_seconds": 30,
+        "compile_command": [
+          "iverilog",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/dev/shm/as02-read-executor-40as__1l/test",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-m4ljk5wr/tb.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_segmented_read_executor.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-m4ljk5wr/child.v",
+          "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-executor-m4ljk5wr/unpad.v"
+        ],
+        "compile_seconds": 0.026982230017893016,
+        "seconds": 0.08745429303962737,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "fragments": 1,
+          "bytes": 4096,
+          "events": 0,
+          "retired": 0,
+          "padding": 0
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-executor-m4ljk5wr/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-executor-m4ljk5wr/child.v": "096671f5bb8dff87bd5d476f1f18245d45151e84c3dc7647da3580f68644a419",
+          "rdma/rnic/build/segmented-read-executor-m4ljk5wr/tb.v": "d231657033b3065eb9f1103749918c19169550b736ce3b6f9c75ef23e33f3f25",
+          "rdma/rnic/build/segmented-read-executor-m4ljk5wr/unpad.v": "cdd9e4453b901911d5600b5fe9fd27d63ab862fdf2bd96baefd0e875a675073a",
+          "rdma/rnic/build/segmented-read-executor-m4ljk5wr/simulation.log": "9cfc9c45be91e260f748a67979409b8e6a1500712e80b8eed61089cef002bd50"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-read-executor-40as__1l/test": "5a23f4fd887b470f9f6afb9ebe89b7d1c5a85f1cf9765304fdbab5303324d6f2"
+        }
+      }
+    ]
+  },
+  "hardware_verified": false,
+  "native_integration": false,
+  "actual_HLS": false,
+  "MR_PTE_DMA_visibility_modeled": true,
+  "protected_RX_placement_modeled": true,
+  "CQ_retirement_modeled": true,
+  "full_board_timing": false,
+  "default_graph_changed": false
+}

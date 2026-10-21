@@ -1,0 +1,14 @@
+{
+  "scope": "Preserve first READ native memory selection failure before fixture declaration correction",
+  "failed_report": "results/2026-10-18/rocev2-rnic-segmented-read-memory-mux-001.json",
+  "failed_report_sha256": "392c27bb1c3a12d587172572cddc3a9fe21d24a2cd067111e89d533c809a1ee9",
+  "bindings_verified_before_fix": 269,
+  "methods": 9,
+  "attempted_cases": 15,
+  "all11_prior_cases_passed": true,
+  "new_cases_failed_compile_before_runtime": true,
+  "cause": "Fixture aliases suppressed generic declarations: mapped memory data/keep became implicit scalar wires and ready was not a procedural reg; actual port-width guard correctly failed.",
+  "RTL_changed_for_correction": false,
+  "preimage_directory": "rdma/rnic/build/segmented-read-memory-mux-lk9rmfdn",
+  "hardware_actions": []
+}

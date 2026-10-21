@@ -20,6 +20,11 @@ import probe_segmented_request_hls as old
 ROOT=old.ROOT;once=old.once;digest=old.digest
 
 
+def harness():
+    return once(old.harness(),'hls::stream<as02ReqToken> rx_owners,state_req,segment_continue;',
+        'hls::stream<as02ReqRxOwner> rx_owners;hls::stream<as02ReqToken> state_req,segment_continue;')
+
+
 def verify_read(output):
     requests=[];packets=[]
     for line in output.splitlines():
@@ -51,9 +56,7 @@ def main():
         if digest(source/'fns'/n)!=h:raise ValueError('derived source changed:'+n)
     run=Path(tempfile.mkdtemp(prefix='segmented-read-hls-',dir=ROOT/'rdma/rnic/build'))
     ram=Path(tempfile.mkdtemp(prefix='as02-segmented-read-hls-',dir='/dev/shm'));hls=ROOT/'rdma/rnic/hls'
-    t=once(old.harness(),'hls::stream<as02ReqToken> rx_owners,state_req,segment_continue;',
-        'hls::stream<as02ReqRxOwner> rx_owners;hls::stream<as02ReqToken> state_req,segment_continue;')
-    (run/'atomic_request_base.hpp').write_text(t)
+    (run/'atomic_request_base.hpp').write_text(harness())
     t=(hls/'test_immediate_receive.cpp').read_text();t=t[t.index('template<int I> struct Endpoint {'):t.index('static ap_uint<620> request_owner(')]
     t=once(t,'void tick(bool retire=true)','void tick(bool retire=true,bool payload=true,bool tables=true)')
     (run/'zero_rq_endpoint.hpp').write_text(once(t,'        h.tick();','        h.tick(true,payload,tables);'))
@@ -76,13 +79,15 @@ def main():
         str(source/'fns/hls/rocev2/rocev2.cpp'),'-o',str(ram/'test')]
     report=dict(scope=__doc__,pass_test=False,directory=str(run.relative_to(ROOT)),source_sha256=before,compile_command=command,
         runtime_limit_seconds=30,compile_limit_seconds=600,generated_HLS=False,native_integration=False,hardware_verified=False,
+        full_top_CPP_compiled=False,
         trusted_REMOTE_MSN_source_implemented=False,mid_READ_retry_recovery_qualified=False,tests={})
     try:
         start=time.monotonic();env=os.environ.copy();env['TMPDIR']=str(ram)
         c=subprocess.run(command,capture_output=True,text=True,timeout=600,env=env);report['compile_seconds']=time.monotonic()-start
         (run/'compile.log').write_text(c.stdout+c.stderr)
         if c.returncode:raise ValueError('actual new HLS C++ compile failed:'+str(run/'compile.log'))
-        for mode in ['prior','read','bad0','bad1','bad2','bad3']:
+        report['full_top_CPP_compiled']=True
+        for mode in ['prior','read',*['bad'+str(i)for i in range(9)]]:
             start=time.monotonic();r=subprocess.run([str(ram/'test'),mode],capture_output=True,text=True,timeout=30,preexec_fn=old.no_core)
             (run/(mode+'.log')).write_text(r.stdout+r.stderr);item=dict(seconds=time.monotonic()-start,exit=r.returncode);report['tests'][mode]=item
             if r.returncode:raise ValueError(mode+' actual HLS consumer failed:'+str(run/(mode+'.log')))

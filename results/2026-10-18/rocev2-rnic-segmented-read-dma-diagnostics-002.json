@@ -1,0 +1,56 @@
+{
+  "scope": "Exact READ-controller and actual CPP-snapshot/origin-router/unpad/executor provenance audit; not live native/HLS-RTL/DMA/Linux/physical qualification",
+  "pass_test": true,
+  "reports": [
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-read-executor-001.json",
+      "sha256": "6660d6284e8e1bf0af52221bcfb458f939e8a4c27c5ea0965e1ce6a91f3d4645",
+      "pass_test": true,
+      "bindings_verified": 307,
+      "historical_preimage_overrides": {
+        "rdma/rnic/tests/test_segmented_read_executor_rtl.py": "rdma/rnic/build/segmented-read-executor-dt0_2usr/unit-before-additional-lifetime-tests.py"
+      }
+    },
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-read-dma-hls-001.json",
+      "sha256": "66bead2f109a74d93eee9860fb5040c3e29bce48c4f184cc8fa8a138061486d6",
+      "pass_test": true,
+      "bindings_verified": 338,
+      "historical_preimage_overrides": {
+        "rdma/rnic/tests/test_segmented_read_executor_rtl.py": "rdma/rnic/build/segmented-read-executor-dt0_2usr/unit-before-additional-lifetime-tests.py"
+      }
+    },
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-read-executor-002.json",
+      "sha256": "37e0a7a23154c8e5034a0f7c98bbdfc8f13ce5619671ad1ff96be537e89aeb4d",
+      "pass_test": true,
+      "bindings_verified": 319,
+      "historical_preimage_overrides": {}
+    }
+  ],
+  "original_33_cases_retained_with_two_new_lifetime_cases": true,
+  "all_35_cases_four_state": true,
+  "full_1MiB": {
+    "pass_test": true,
+    "fragments": 256,
+    "bytes": 1048576,
+    "events": 1,
+    "retired": 1,
+    "padding": 0
+  },
+  "full_1MiB_seconds": 15.941864138003439,
+  "actual_CPP_snapshot_owners": 4,
+  "actual_CPP_commands": 278,
+  "payload_bytes": 1126403,
+  "CPP_snapshot_words": 17603,
+  "all_snapshot_files_regenerated_from_actual_CPP_log_byte_identical": true,
+  "CPP_fixture_only_trace_added_original_assertions_and_HLS_body_unchanged": true,
+  "unit_and_snapshot_actual_bounded_children_byte_identical": true,
+  "new_RTL_body_changed_since_first_passing_batch": false,
+  "source_sha256": {
+    "rdma/rnic/build/segmented-read-executor-dt0_2usr/unit-before-additional-lifetime-tests.py": "3269bb82b819350bf398f3cd9c7ed908137ead78b2e839eb87b3106c535a052a"
+  },
+  "protected_RX_backend_visibility_CQ_are_models": true,
+  "default_graph_READ_limit": 4096,
+  "hardware_actions": []
+}

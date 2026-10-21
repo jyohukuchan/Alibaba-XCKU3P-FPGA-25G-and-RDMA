@@ -6,6 +6,14 @@
 static unsigned char read_byte(unsigned off) {return ((off*37)^0xc3)&255;}
 
 template<int I> struct ReadEndpoint:RequestEndpoint<I> {
+    void clean() {
+        auto& h=this->h;
+        if(h.af || h.rf || h.ef || h.mf || h.tf || h.ff || h.jf || h.recv_fault || h.pf || h.psn_drops)
+            std::cerr<<"SEGMENTED_READ_FAULT "<<I<<" bind="<<h.af<<" rx="<<h.rf<<" exh="<<h.ef
+                <<" merge="<<h.mf<<" retrans="<<h.tf<<" timer="<<h.ff<<" join="<<h.jf
+                <<" recv="<<h.recv_fault<<" payload="<<h.pf<<" drops="<<h.psn_drops<<std::endl;
+        RequestEndpoint<I>::clean();assert(!h.pf);
+    }
     void request_wire(ap_uint<748> n,unsigned psn,bool replay=false) {
         auto& h=this->h;
         assert(h.source_cmd.empty() && h.source_info.empty() && h.headers.size()==1 && !this->tx_assembled.empty());
@@ -102,6 +110,28 @@ template<int I> static void read_bad(unsigned kind) {
     std::cout<<"SEGMENTED_READ_NEGATIVE "<<kind<<std::endl;
 }
 
+template<int I> static void read_timer_bad(unsigned kind) {
+    ReadEndpoint<I> e;e.h.init();auto n=atomic_owner(1,2);n(307,276)=8193;e.post(n);e.request_wire(n,0xfffffe);
+    e.packet(e.response_bytes(8193,0,0xfffffe));e.ticks(220,false,true);e.clean();
+    assert(e.h.rx_timer.size()==1 && e.h.done.empty());auto u=e.h.rx_timer.read();
+    assert(u.request_read_progress && !u.stop && u.request_opcode==RC_RDMA_READ_RESP_FIRST);
+    if(kind==4)u.request_read_progress=false; // FIRST cannot become a final certificate.
+    if(kind==5)u.stop=true; // A progress certificate cannot release a request.
+    if(kind==6)u.request_opcode=RC_RDMA_READ_RESP_ONLY;
+    if(kind==7)u.request_token(87,24)=0;
+    e.h.rx_timer.write(u);
+    if(kind==8) {
+        // Corrupt an explicit copy of the actual consumer's receipt, not the
+        // original packet or trusted request. The whole-WR join must refuse it.
+        as02_native_external_replay_timer<I>(e.h.rx_timer,e.h.tx_timer,e.h.rx_timer_done,e.h.tx_timer_done,e.h.ff);
+        assert(!e.h.ff && e.h.rx_timer_done.size()==1);auto r=e.h.rx_timer_done.read();
+        r.opcode=RC_RDMA_READ_RESP_ONLY;e.h.rx_timer_done.write(r);
+    }
+    e.ticks(100);
+    assert((kind==8 ? bool(e.h.jf):bool(e.h.ff)) && e.h.done.empty());
+    std::cout<<"SEGMENTED_READ_NEGATIVE "<<kind<<std::endl;
+}
+
 int main(int argc,char **argv) {
     static_assert(MAX_QPS==8 && META_TABLE_SIZE==2000,"original geometry");
     assert(argc==2);
@@ -111,6 +141,11 @@ int main(int argc,char **argv) {
     else if(std::string(argv[1])=="bad1")read_bad<1703>(1);
     else if(std::string(argv[1])=="bad2")read_bad<1704>(2);
     else if(std::string(argv[1])=="bad3")read_bad<1705>(3);
+    else if(std::string(argv[1])=="bad4")read_timer_bad<1706>(4);
+    else if(std::string(argv[1])=="bad5")read_timer_bad<1707>(5);
+    else if(std::string(argv[1])=="bad6")read_timer_bad<1708>(6);
+    else if(std::string(argv[1])=="bad7")read_timer_bad<1709>(7);
+    else if(std::string(argv[1])=="bad8")read_timer_bad<1710>(8);
     else assert(false);
     return 0;
 }

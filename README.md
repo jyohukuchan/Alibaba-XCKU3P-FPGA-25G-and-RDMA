@@ -65,15 +65,41 @@ A new private protected segmented READ-response RX candidate now passes
 [all17 methods/60 component cases](results/2026-10-18/rocev2-rnic-segmented-read-response-002.json),
 including59 four-state cases and an explicit1MiB/256-packet two-state case.
 The first failed suite and its diagnostic evidence are preserved separately.
-A separate true segmented READ HLS candidate compiles and passes its prior
-regressions, but its new READ runtime FAILS after the first4096-byte response;
-it is not a working large-READ implementation. Neither candidate is selected
-in the native/kernel/provider path: incremental RNIC READ remains4096 bytes,
-and native large READ DMA/whole-WR completion remains unimplemented. See
+A separate true segmented READ HLS candidate now passes its
+[actual C++ consumer tests](results/2026-10-18/rocev2-rnic-segmented-read-hls-003.json):
+four whole READs4097 bytes..1MiB,278 response packets, stored replays, prior
+regressions and nine negative cases. Its first failed run is preserved; the
+correction distinguishes validated nonterminal READ timer progress from final
+completion. Actual owned Atomic RTL-service/Immediate compatibility also
+passes. [New HLS generation](results/2026-10-18/rocev2-rnic-segmented-read-generated-hls-001.json)
+and exact generated-RTL elaboration pass, but its13.885ns estimate fails the
+original4ns/default1.08ns conditions; no generated-RTL runtime pass is claimed.
+The complete large-READ path is not enabled in native/kernel/provider
+admission: incremental RNIC READ remains4096 bytes, and end-to-end native
+large READ DMA/whole-WR completion remains unverified. See
 [exact evidence and limits](docs/ROCEV2_ATOMIC.md).
 
+A new retained-owner READ memory controller passes35 four-state component
+cases, including1MiB/256 fragments. A separate
+[actual HLS C++ output-snapshot integration test](results/2026-10-18/rocev2-rnic-segmented-read-dma-hls-001.json)
+passes four whole READs/278 fragments through the real origin router, bounded
+unpad and executor RTL. Placement, backend visibility/status and CQ are models;
+this is not live HLS/native DMA, generated-RTL runtime or physical proof.
+The new READ memory selection is now wired into a separate complete native
+hierarchy with the actual new HLS and common MR/PTE/physical-nonce/backend
+ports. New/old route tests pass17 cases and whole-graph elaboration passes.
+This is still compile-only native evidence: large READ admission remains
+4096 pending protected RX/MSN/whole-WR lifetime integration.
+
+An experimental expected-remote-MSN tracker and native derivation are also
+included as **unvalidated work in progress**. Its latest
+[six-case attempt](results/2026-10-18/rocev2-rnic-expected-remote-msn-003.json)
+fails at simulation time zero: the fixture does not select the required
+128-byte SQ profile. No MSN behavior or complete native integration pass
+is claimed; the earlier derivation failures are retained too.
+
 This is a **work-in-progress source snapshot**, separate from the earlier
-hardware-tested READ/WRITE images. Its latest HLS estimate11.180ns misses the original
+hardware-tested READ/WRITE images. Its latest HLS estimate13.885ns misses the original
 4ns target; no new FPGA image, installation or hardware claim is published.
 The recorded-data part of `bash scripts/check.sh` currently detects a stale
 historical `rocev2_tx_padding.v` SHA after adding44-byte SEND support. The old

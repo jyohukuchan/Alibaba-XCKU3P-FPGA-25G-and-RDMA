@@ -1,0 +1,10 @@
+{
+  "scope": "Preserved failed expected-MSN001 startup before correction",
+  "failed_report": "results/2026-10-18/rocev2-rnic-expected-remote-msn-001.json",
+  "bindings_verified_before_fix": 50,
+  "methods": 6,
+  "attempted_runtime_cases": 0,
+  "cause": "Checked native fault-code derivation anchor assumed old prefix; actual parent already prefixes zero-service faults. No RTL compiled/executed.",
+  "preimage_directory": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/expected-msn-startup-preimages-pMOduA",
+  "hardware_actions": []
+}

@@ -16,6 +16,52 @@ passes; this does not relabel the old suite or qualify a hardware release.
 
 ## Latest functional milestone (2026-10-21)
 
+Publication after progress151: actual full-native003 compiled697.994s but
+FAILED the original packet1 (second packet) deadline after a genuine first
+packet DMA/fence/ACK-MAC release; no whole CQ completed. Read-only archived
+DUT inspection003 verifies1913 bindings and identifies raw-reference
+admission closed by whole-CQ pending despite a known retained receive group.
+The separate continuation deriver changes only that entrance, not ownership
+or MR/HLS/MAC/CQ proof requirements. Reference gate001 passes nine current
+cases plus an unchanged old-gate expected-failure control; complete native
+elaboration002 with actual generated HLS passes4.865s without leaf/width
+waivers. The corrected full-native34-case runner is included but NOT run.
+New large incoming runtime remains unverified; all11 requirements and the
+15.571ns-versus4ns timing failure remain. No live build or hardware/default/
+install/load/network/fan/BIOS/flash/reboot change at publication.
+[Original failure](../../results/2026-10-18/rocev2-rnic-segmented-receive-native-full-003.json),
+[read-only diagnosis](../../results/2026-10-18/rocev2-rnic-segmented-receive-native-fatal-diagnostics-003.json),
+[fixed graph compile](../../results/2026-10-18/rocev2-rnic-segmented-receive-native-elaboration-002.json).
+The following numbered entries retain their historical build states.
+
+Progress150: fresh new-core compatibility001 ALL32 exact old native cases
+PASS, compile642.135s/runtime4.476..6.831s; all old data/owner/MR/PTE/DMA/
+nonce/fence/boardMAC/CQ oracles retained. Original004 HLS job times out at
+7200s; children exit naturally, no restart or substitution of007 success.
+New actual8193 incoming SEND/Immediate on one8194-byte RQ plus all32 old
+cases (34 required) now builds003/session62988 after real full bench
+elaboration. Three real packet/MR/fence/ACK-MAC lives, distinct whole776
+receipt, one CQ, all host bytes/sentinels and withheld final1100-cycle MAC
+receipt are required; no new incoming runtime success inferred yet.
+001 strict anchor/002 observer-name failures and preimages remain.
+[Native regression/failure audit](../../results/2026-10-18/rocev2-rnic-segmented-receive-native-regressions-diagnostics-001.json)
+verifies6408 bindings. All11 requirements/original4ns timing remain;
+15.571ns is a timing FAIL, no installed or hardware change or auto push.
+
+Progress149: source007 actual HLS generation002 PASSES399.510s, real776-bit
+whole output; estimate15.571ns FAILS unchanged4ns/default1.08ns timing.
+Complete actual new-HLS native elaboration001 PASSES4.750s, no missing leaves
+or stub, original shared MR/PTE/PSN/MSN/domain/drain multiplicities retained.
+Additional real C128/PCIe/RAM/MR/messageRQ posting001 ALL4 PASS (max0.367s),
+15 fetched records/10 real full-range MR queries/7 posted owners. Physical
+host/root/link/config/error sink are models; no payload/HLS/MAC/CQ runtime
+is inferred. Fresh new-graph ALL32 old native regression build79723 is live;
+actual new incoming large transfer and matched software remain unproved.
+[Generated/connection audit](../../results/2026-10-18/rocev2-rnic-segmented-receive-generated-diagnostics-001.json)
+checks4672 fresh/3661 historical bindings; original padding gate still fails.
+Original source004 job74092 remains live, not restarted. All11 requirements,
+profile6/default incoming4096/oneSGE/Atomic_NONE and hardware settings remain.
+
 Publication after progress147 includes the separate 1 MiB RECV C128 codec,
 typed standard RECV adapter and actual full-range MR-to-message-RQ posting
 tests: 37 codec methods, 78 MR/staging cases, four handoff/denial cases and

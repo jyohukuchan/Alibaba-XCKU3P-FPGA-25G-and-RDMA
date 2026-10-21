@@ -1,0 +1,265 @@
+{
+  "scope": "Exact new receive-HLS generation/native elaboration and real PCIe posting.\n\nCompile-only native evidence is not payload runtime or a hardware/timing\nqualification. Keep all failed/rejected variants and exact preimages; no\ngreen CPP result is substituted for missing generated RTL/native operation.\n",
+  "audit_passed": true,
+  "overall_goal_complete": false,
+  "hardware_verified": false,
+  "successful": {
+    "segmented-receive-hls-007": {
+      "bindings_verified": 355,
+      "report_sha256": "bb119681797f91eccb27553972dc0f96cc10c5dd15e7c2e22b48ad44fef15b5c",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-receive-compat-003": {
+      "bindings_verified": 315,
+      "report_sha256": "ee704f56e2b4f216fba5d304f99019e186f56abd7183f066797632fb62be7f14",
+      "exact_preimage_resolutions": []
+    },
+    "receive-extent-conformance-003": {
+      "bindings_verified": 523,
+      "report_sha256": "80f2a52cab23d40b18289c0b793f79fc5c4c58679637112d1372d521c87e61b2",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-receive-generated-hls-002": {
+      "bindings_verified": 722,
+      "report_sha256": "691c192fb8b44c6f9e6d8599045605742a3b6a11ae2539269a3d3201316cc3d0",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-receive-native-elaboration-001": {
+      "bindings_verified": 1807,
+      "report_sha256": "4fd561778e9b4904ac70d0b0b11ded638af316591910b7abc9db37744d9bcda4",
+      "exact_preimage_resolutions": []
+    },
+    "receive-pcie-post-001": {
+      "bindings_verified": 132,
+      "report_sha256": "a858e63b272c1309628604302727eb831adca26059c4566f4114b826cdb9f532",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-receive-wqe-001": {
+      "bindings_verified": 20,
+      "report_sha256": "7037f852b586a7a88a436896beebd8ecca4c96aaa5e21e632d285aca749583f2",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-receive-verbs-adapter-001": {
+      "bindings_verified": 119,
+      "report_sha256": "7ca2b46b5fec01c476fe41beb5d6f777d9d5fbe8fcd6daa731d4e6659c3e62ce",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-receive-admission-001": {
+      "bindings_verified": 141,
+      "report_sha256": "a0967c4b658dcfe1f39b0ce7c9aa210b4210b2d123fbc8eb93d3e25331699ec0",
+      "exact_preimage_resolutions": []
+    },
+    "receive-mr-post-001": {
+      "bindings_verified": 81,
+      "report_sha256": "da7d12618b6f834b908df4f5c0d05055473fff12bd7aa337aa4971f04b67a6bc",
+      "exact_preimage_resolutions": []
+    },
+    "receive-message-queue-003": {
+      "bindings_verified": 54,
+      "report_sha256": "07071de8ec45595ee90b589050a48410429c7cfeed23fef9c5044f3da6d44bc8",
+      "exact_preimage_resolutions": []
+    },
+    "receive-message-ack-001": {
+      "bindings_verified": 56,
+      "report_sha256": "40c9120d58b3fd02b2b8f579c5b345814cdaaf41b54e5cda8166dd40ea19a513",
+      "exact_preimage_resolutions": []
+    },
+    "receive-message-cq-001": {
+      "bindings_verified": 65,
+      "report_sha256": "6fd85bb7e7e45bb3c944f2bce95873983a4dbc00f33f892ff957169a426dec7b",
+      "exact_preimage_resolutions": []
+    },
+    "receive-message-join-003": {
+      "bindings_verified": 282,
+      "report_sha256": "9a7dea20ecf514cb81d4047d00ae5e2dbbb89d0587ccbadac1e80b862720e632",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "historical": {
+    "segmented-receive-source-startup-001": {
+      "bindings_verified": 1,
+      "report_sha256": "fec312e3f278e6e292b66c0d7c45259246acdd4105d1038cd5cb13e05cb1a8f2",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_transport.py"
+      ]
+    },
+    "segmented-receive-source-startup-002": {
+      "bindings_verified": 1,
+      "report_sha256": "d96ff39131e228097a3a471b216c8894708152214eddc86a7b0bb6491edf10b2",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_transport.py"
+      ]
+    },
+    "segmented-receive-hls-001": {
+      "bindings_verified": 308,
+      "report_sha256": "4fd2be8b6d195debd349e5b4f4f5a412d176b9d59942172a289e1af4fabc8889",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_transport.py",
+        "rdma/rnic/hls/test_segmented_receive.cpp"
+      ]
+    },
+    "segmented-receive-hls-002": {
+      "bindings_verified": 308,
+      "report_sha256": "5d7230aa1879a2c4a3386f89ff81ee4ac2db3eda6146d0f36787725d50d60867",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_transport.py",
+        "rdma/rnic/hls/test_segmented_receive.cpp"
+      ]
+    },
+    "segmented-receive-hls-003": {
+      "bindings_verified": 331,
+      "report_sha256": "1d05cc3f843ba36f2145a83cc2338948595851faa77aaf311c307efbf3980776",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_transport.py",
+        "rdma/rnic/hls/test_segmented_receive.cpp"
+      ]
+    },
+    "receive-message-join-001": {
+      "bindings_verified": 263,
+      "report_sha256": "444009d024884a1cab4c99647cc1b6879c183c4db0ea9812ad029726f0107110",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/test_receive_message_join.cpp"
+      ]
+    },
+    "receive-message-join-002": {
+      "bindings_verified": 263,
+      "report_sha256": "261239bdf320ab72d645dc33584cd591a2f59598c02032c90b4946b57e21d5f8",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/test_receive_message_join.cpp"
+      ]
+    },
+    "receive-message-queue-001": {
+      "bindings_verified": 5,
+      "report_sha256": "74f860b892406c087c939eab91a54f386eec194f1361bb7e52802c9a34a62d96",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_receive_message_queue.py"
+      ]
+    },
+    "receive-message-queue-002": {
+      "bindings_verified": 7,
+      "report_sha256": "07c63f442e7110a8c0e25e7fad4d9544aba739fc36f63667487fa1d37281ad68",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_receive_message_queue.py"
+      ]
+    },
+    "receive-message-graph-syntax-001": {
+      "bindings_verified": 153,
+      "report_sha256": "95b6d550d629f94c7b90138b3bc90ee9d30195086ba0e402b040073bcd7ef489",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/check_receive_message_graph.py"
+      ]
+    },
+    "receive-extent-conformance-001": {
+      "bindings_verified": 523,
+      "report_sha256": "b9324a8386a8c3657a5ef6968dcb0b8062452c7076fbf400c17b5e6d8de62a99",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_receive_extent_conformance.py"
+      ]
+    },
+    "receive-extent-conformance-002": {
+      "bindings_verified": 521,
+      "report_sha256": "912d233c89f8f17b8a1fb3a99127f65f2700bda54925def5a398bf3fc36f0f02",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-receive-hls-006": {
+      "bindings_verified": 310,
+      "report_sha256": "0c349749420aae4dbeecad8f8cf54a0c9b65968adcc5179497c628f553aea93c",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_prefix_transport.py"
+      ]
+    },
+    "segmented-receive-compat-002": {
+      "bindings_verified": 313,
+      "report_sha256": "3e5accd630d4fc5f8445d61838b267a432e7cd74b1bece8529fa39b055fea0a5",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_prefix_transport.py"
+      ]
+    },
+    "segmented-receive-hls-005": {
+      "bindings_verified": 354,
+      "report_sha256": "8d3ef5fd8020c6868a3d7fe5879c60d5f7999972da22ac7925fa33c07d0ea956",
+      "exact_preimage_resolutions": [],
+      "disposition": "Rejected by actual extent-conformance001 short nonfinal KEEP1/length65 counterexample; normal44 pass is not semantic equivalence."
+    }
+  },
+  "successful_bindings_verified": 4672,
+  "historical_bindings_verified": 3661,
+  "auditor_source_sha256": {
+    "rdma/rnic/tests/audit_segmented_receive_generated.py": "e4ac67a6506ab1975b2b529fafae1f706a6f734f592eed5135490b45a06c01de"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "actual_generated_receive_HLS": {
+    "directory": "rdma/rnic/build/native-zero-service-hls-96cyjt2x",
+    "source": "rdma/rnic/build/native-segmented-receive-transport-007",
+    "seconds": 399.51007845497224,
+    "whole_AXIS_port_bits": 776,
+    "target_ns": 4,
+    "uncertainty_ns": 1.08,
+    "estimated_period_ns": 15.571,
+    "original_effective_period_met": false,
+    "resources": {
+      "LUT": "101682",
+      "FF": "128313",
+      "BRAM_18K": "245",
+      "DSP": "0"
+    },
+    "full_board_timing": false
+  },
+  "actual_native_elaboration": {
+    "full_app_native_graph": true,
+    "unknown_leaves_ignored": false,
+    "seconds": 4.750466534984298,
+    "one_MR_PTE_shared_HLS_message_RQ": true,
+    "whole_join_count": 1,
+    "original_domain_multiplicities_retained": true,
+    "both_global_HLS_drains_zero": true,
+    "native_payload_runtime": false,
+    "physical_or_live_API": false
+  },
+  "real_C_PCIe_MR_RQ_posting": {
+    "cases": 4,
+    "total_records": 15,
+    "real_MR_queries": 10,
+    "actual_posted_owners": 7,
+    "maximum_case_seconds": 0.3665632199845277,
+    "full128_bytes_full620_owner_and_full_capacity_MR": true,
+    "permission_range_key_parse_and_PCIe_UR_checked": true,
+    "same_QPN_SQ_RQ_banks_independent": true,
+    "guard_handoff_blocks_MR_revoke": true,
+    "descriptor_status_RAM_MR_agents": false,
+    "physical_host_root_link_config_and_error_sink_modeled": true,
+    "received_payload_HLS_MAC_CQ_and_installed_Linux": false
+  },
+  "original_CPP_and_finite_regression": {
+    "all44_modes": true,
+    "all21_old_retained": true,
+    "finite_comparisons": 103665,
+    "formal_equivalence": false,
+    "actual_RX_seconds": [
+      4.646468119986821,
+      4.690051846962888
+    ]
+  },
+  "inherited_source_check": {
+    "exit": 1,
+    "stdout": "Tcl completeness checks passed: 28 files (not Vivado elaboration).\nLFC source allowlist tests passed: 14 cases; no hardware/Vivado access.\nSource check passed: 122 HDL, 12 constraints, 3 IP generators.\n",
+    "stderr": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v\n",
+    "overall_suite_passed": false,
+    "original_gate_unchanged": true
+  },
+  "remaining": [
+    "All11 original requirements retained; goal incomplete.",
+    "Fresh same new graph old32-case native build/runtime is a separate live job; no pass inferred here.",
+    "Actual full-native new8193/1MiB incoming data/MR/PTE/DMA/fence/ACK-MAC/whole-CQ runtime still required.",
+    "New codec/adapter source is not integrated into matched registered kernel/provider/profile; old/default profile6 incoming4096 remains.",
+    "Segmented WRITE Immediate independent remote MR/late notification RQ, multi-SGE and real peer MSN/recovery/RNR/congestion remain.",
+    "Original-clock whole-board fit/setup/hold/CDC/DRC/routing and short thermally supervised physical qualification remain.",
+    "No reboot needed; restore all archived RAM caches and prove exact authenticated same-thread/goal revival before any necessary reboot."
+  ],
+  "hardware_install_load_network_fan_BIOS_flash_reboot_actions": [],
+  "commit_or_push": false
+}

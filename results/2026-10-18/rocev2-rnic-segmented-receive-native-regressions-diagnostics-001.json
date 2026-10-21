@@ -1,0 +1,190 @@
+{
+  "scope": "Audit actual new-core ALL32 old native executions, not new large RX yet.\n\nPreserve the original004 HLS timeout and exact new-payload fixture startup/\nelaboration failures. New003 whole-payload build/runtime is separate: neither\nall32 compatibility nor generated-RTL/elaboration proves new large receive.\n",
+  "audit_passed": true,
+  "overall_goal_complete": false,
+  "hardware_verified": false,
+  "created_UTC": "2026-10-21T10:03:19.700873+00:00",
+  "actual_new_core_native_old32": {
+    "bindings_verified": 2067,
+    "report_sha256": "a3ae8aaa14923dd6ca423625a16c467d0fbe2afaf4578e7f8c892e7466dda4b0",
+    "exact_preimage_resolutions": []
+  },
+  "prior_actual_Immediate_native_old32": {
+    "bindings_verified": 1862,
+    "report_sha256": "fb24f22bed309d479948b5c00be4cb9910d8434800587cef2c3da9dadd3edbb1",
+    "exact_preimage_resolutions": []
+  },
+  "generated_and_component_audit": {
+    "bindings_verified": 4,
+    "report_sha256": "11cbdfb06e2d9c7b0218c068d6d62b4b32184c533364393c72da225008571b6c",
+    "exact_preimage_resolutions": []
+  },
+  "original004_HLS_timeout": {
+    "bindings_verified": 535,
+    "report_sha256": "63b3ceb3bb7a739f073b6db78fa338b7d151bfe3f35b04d5ed6fff5f0c0088ee",
+    "exact_preimage_resolutions": []
+  },
+  "historical_new_fixture_failures": {
+    "segmented-receive-native-full-001": {
+      "bindings_verified": 40,
+      "report_sha256": "b234a3377c42f0160318ce4a56ed0751f49d9c5fb50305096e5ee3932928d218",
+      "exact_preimage_resolutions": [],
+      "error": "source derivation anchor changed: !(runtime_rq && hold_rq_mac && link_m_cpl_tag[15:13]==3'b011);",
+      "stage": "strict fixture source anchor before compile",
+      "exact_failed_stage_preimage_sha256": {
+        "rdma/rnic/build/segmented-receive-native-full-001-preimages-JoDWgkOc/rdma/rnic/tests/segmented_receive_payload_native_fixture.py": "23e8b07e9c76ae6ae205eb98b0957b8fe2e82027854731aa71f275187d2b24fb",
+        "rdma/rnic/build/segmented-receive-native-full-001-preimages-JoDWgkOc/rdma/rnic/tests/probe_segmented_receive_native_full.py": "25a33f45ef5cc3ac3d682d15e4c0ef958c9231f3db00fd087b82b920785fe6ae"
+      }
+    },
+    "segmented-receive-native-full-002": {
+      "bindings_verified": 1900,
+      "report_sha256": "f085d6bfb315bc205556f9e7d9dc5ce6242f9a6539e387529515827b97d7edac",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/segmented_receive_payload_native_fixture.py"
+      ],
+      "error": "complete zero bench elaboration/width mismatch: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-receive-native-full-98hme3d_/elaborate.log",
+      "stage": "actual full bench Icarus elaboration; unresolved observer port name",
+      "exact_failed_stage_preimage_sha256": {
+        "rdma/rnic/build/segmented-receive-native-full-002-preimages-nxQgKska/rdma/rnic/tests/segmented_receive_payload_native_fixture.py": "0330edeb48e3211fc178740867169f060c76d7324bc070f167c1d3326cd3c560",
+        "rdma/rnic/build/segmented-receive-native-full-002-preimages-nxQgKska/rdma/rnic/tests/probe_segmented_receive_native_full.py": "25a33f45ef5cc3ac3d682d15e4c0ef958c9231f3db00fd087b82b920785fe6ae"
+      }
+    }
+  },
+  "verified_bindings": 6408,
+  "actual_native_old_function_execution": {
+    "cases": 32,
+    "all_exact_prior_case_names": [
+      "ATOMIC_MIXED",
+      "CAS",
+      "CAS_NO_RX_ATOMIC",
+      "FADD",
+      "LARGE_READ",
+      "LARGE_SEND",
+      "LARGE_SEND_IMM",
+      "LARGE_WRITE",
+      "LARGE_WRITE_IMM",
+      "MR_DENIED",
+      "QP_DENIED",
+      "READ",
+      "RX_3_CAP0",
+      "RX_3_CAP128",
+      "RX_5_CAP0",
+      "RX_5_CAP128",
+      "RX_6_CAP0",
+      "RX_6_CAP128",
+      "RX_RNR_3",
+      "RX_RNR_6",
+      "SEND",
+      "SEND_IMM",
+      "SERVICE_AFTER_WRITE",
+      "SERVICE_MIXED",
+      "SERVICE_READ",
+      "SERVICE_WRITE",
+      "WRITE",
+      "ZERO_READ",
+      "ZERO_SEND",
+      "ZERO_SEND_IMM",
+      "ZERO_WRITE",
+      "ZERO_WRITE_IMM"
+    ],
+    "seconds": {
+      "LARGE_SEND_IMM": 6.730180916027166,
+      "LARGE_WRITE_IMM": 6.780082509969361,
+      "LARGE_READ": 6.579782048997004,
+      "LARGE_WRITE": 6.830372004013043,
+      "LARGE_SEND": 6.730197944038082,
+      "WRITE": 5.577939760987647,
+      "SEND": 5.577957463043276,
+      "SERVICE_AFTER_WRITE": 5.527691870986018,
+      "SERVICE_WRITE": 5.026897754985839,
+      "SERVICE_READ": 5.077108830038924,
+      "SERVICE_MIXED": 5.077325621037744,
+      "RX_3_CAP128": 5.828314676007722,
+      "RX_5_CAP128": 5.778391393017955,
+      "RX_6_CAP128": 5.8285221960395575,
+      "RX_3_CAP0": 5.828316339990124,
+      "RX_5_CAP0": 5.828579825989436,
+      "RX_6_CAP0": 5.778497845982201,
+      "RX_RNR_3": 6.179176100005861,
+      "RX_RNR_6": 6.179090243997052,
+      "CAS": 5.578359199978877,
+      "FADD": 5.427818677038886,
+      "READ": 5.528013383038342,
+      "SEND_IMM": 5.578243755036965,
+      "ATOMIC_MIXED": 5.528154394996818,
+      "CAS_NO_RX_ATOMIC": 5.5781815919908695,
+      "QP_DENIED": 4.476228945015464,
+      "MR_DENIED": 4.4764273870387115,
+      "ZERO_WRITE": 5.528026587970089,
+      "ZERO_READ": 5.528112073952798,
+      "ZERO_SEND": 5.4277555150329135,
+      "ZERO_SEND_IMM": 5.477964096004143,
+      "ZERO_WRITE_IMM": 5.528085862984881
+    },
+    "maximum_case_seconds": 6.830372004013043,
+    "compile_seconds": 642.134654310008,
+    "actual_new_generated_HLS": true,
+    "complete_native_graph": true,
+    "one_shared_MR_PTE_PSN_MSN_domain": true,
+    "both_global_HLS_drains_zero": true,
+    "full_bytes_sentinels_CQ_owner_nonce_status_fence_boardMAC_oracles": true,
+    "physical_host_root_peer_PHY_PTP_models": true,
+    "live_Linux_or_physical": false
+  },
+  "new_large_RX_runtime_verified": false,
+  "native_1MiB_receive_runtime_verified": false,
+  "original004_timeout": {
+    "pass_test": false,
+    "error_type": "TimeoutExpired",
+    "finished_at": "2026-10-21T09:45:40.007233+00:00",
+    "original_timeout_seconds": 7200,
+    "manual_kill_or_restart": false,
+    "child_processes2872461_and2872554_observed_naturally_missing_after_wrapper_exit": true,
+    "original_frozen_inputs_and_all_raw_outputs_preserved": true,
+    "new007_success_not_substituted_for_failed004": true
+  },
+  "new_payload_fixture": {
+    "bytes": 8193,
+    "posted_capacity": 8194,
+    "operations": [
+      "SEND",
+      "SEND_WITH_IMMEDIATE"
+    ],
+    "required_real_packet_lifetimes": 3,
+    "required_whole_CQ": 1,
+    "actual_final_MAC_withholding_cycles": 1100,
+    "all32_old_regressions_still_mandatory": true,
+    "original_build_limit_seconds": 1200,
+    "original_case_limit_seconds": 30,
+    "current_run_pending": "results/2026-10-18/rocev2-rnic-segmented-receive-native-full-003.json",
+    "failed_attempts_retained": true,
+    "observer_ready_corrected_to_actual_s_cq_commit_ready": true,
+    "no_MR_status_owner_receipt_or_retire_injection": true,
+    "no_full_payload_pass_inferred": true
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "auditor_source_sha256": {
+    "rdma/rnic/tests/audit_segmented_receive_native_regressions.py": "45adc80c95227bd1f3b9649cea4544a52d196ec122d3d1d99bee320ed5ac6d4e"
+  },
+  "inherited_source_check": {
+    "exit": 1,
+    "stdout": "Tcl completeness checks passed: 28 files (not Vivado elaboration).\nLFC source allowlist tests passed: 14 cases; no hardware/Vivado access.\nSource check passed: 122 HDL, 12 constraints, 3 IP generators.\n",
+    "stderr": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v\n",
+    "overall_suite_passed": false,
+    "original_gate_unchanged": true
+  },
+  "remaining": [
+    "All11 original requirements remain; compatibility is not a narrower completion target.",
+    "Actual new large receive MR/PTE/DMA/fence/ACK-MAC/HLS/whole-CQ runtime and native1MiB operation remain unproved.",
+    "Matched registered driver/provider/profile, actual lifetime refs, segmented WRITE Immediate remote MR/late RQ and multiSGE remain.",
+    "Real-peer nonterminal MSN/interoperability/recovery/RNR/congestion, original full-board fit/timing/CDC/DRC/routing and short supervised physical work remain.",
+    "Actual new HLS estimate15.571ns misses original4ns/default1.08ns; no timing waiver or hardware programming.",
+    "No reboot needed; restore ALL persistent-archived RAM caches and prove authenticated exact-thread/goal revival before any necessary reboot."
+  ],
+  "hardware_install_load_network_fan_BIOS_flash_reboot_actions": [],
+  "commit_or_push": false
+}

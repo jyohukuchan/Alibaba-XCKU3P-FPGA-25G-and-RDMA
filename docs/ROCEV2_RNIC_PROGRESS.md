@@ -32,6 +32,166 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+Publication after progress151 (explicit user request): commit/push the
+current source-development checkpoint, including successful and failed
+reports. No new long build is started merely to publish this snapshot.
+This is not a release or completion of the original eleven requirements;
+no further automatic commit/push is authorized by this publication.
+
+[Actual full-native003](../results/2026-10-18/rocev2-rnic-segmented-receive-native-full-003.json)
+compiles697.994s with all leaves present, but LARGE_RX_SEND FAILS10.237s
+at the unchanged10000-cycle deadline for packet1 (the second/MIDDLE packet).
+FIRST genuinely performs4096-byte DMA, its real fence, core/placement and
+board ACK-MAC release; MID receives no new MR query/command, and whole CQ
+never completes. All original fixture assertions, inputs, clocks and limits
+remain; the failure is retained, not relabeled by earlier old32 passes.
+
+[Read-only diagnosis003](../results/2026-10-18/rocev2-rnic-segmented-receive-native-fatal-diagnostics-003.json)
+verifies1913 original bindings, relinks only a diagnostic main against the
+unchanged archived DUT objects, and stops at the SAME original fatal.
+Actual state shows pending=1/group_active=1/offset4096, valid stable trusted
+context, no raw reference grant/frame, and a queued second frame. The raw
+reference entrance still requires !recv_completion_pending, preventing a
+known held group's continuation. Normal checked-ready is already1; neither
+that later gate nor the correctly encoded input hex is the root cause.
+Diagnostic001's criterion error and002's unsupported GDB nested-array read
+are retained with exact script/GDB preimages; diagnostic success is not a
+native pass or an assertion/timeout waiver.
+
+`derive_segmented_receive_continuation.py` retains the old complete graph
+and changes only the raw reference enable to admit a known pending held
+group. QP readiness/pause/MR-idle/config/trusted-context/ref/fault checks
+remain; pending is never cleared, and no owner/MR/HLS/MAC/CQ authority is
+fabricated. [Gate001](../results/2026-10-18/rocev2-rnic-receive-continuation-gate-001.json)
+passes nine current reference-RTL cases, plus the SAME continuation oracle
+rejecting the old expression as expected. Metadata/checker are modeled;
+this unit result is not full payload/native proof.
+
+[Complete native elaboration002](../results/2026-10-18/rocev2-rnic-segmented-receive-native-elaboration-002.json)
+PASSES4.865s with the corrected entrance and actual source007 generated HLS,
+no missing-leaf/width waiver, all shared-MR/PTE/domain/whole-join/profile
+checks and both global drains0 retained. The separate corrected full runner
+preserves ALL34 cases, the original8193-byte/8194-capacity fixture and all
+data/MR/PTE/nonce/fence/MAC/owner/CQ oracles; it has NOT been launched.
+No build remains live at this publication. New incoming full-native runtime,
+matched registered driver/provider, multiSGE/WRITE Immediate/recovery/interop,
+original-clock board timing and short supervised physical work remain open.
+HLS15.571ns still FAILS original4ns/default1.08ns. No hardware/install/load/
+default/network/fan/BIOS/flash/reboot action. Earlier numbered entries below
+retain the state observed at their checkpoint, not the publication's state.
+
+Progress150: previous149 was PROGRESS (actual007 HLS/full native compile,
+real PCIe-to-MR-to-RQ descriptor execution). [Fresh new-core native compatibility001](../results/2026-10-18/rocev2-rnic-segmented-receive-native-compat-001.json)
+now PASSES ALL32 exact old case names, compile642.135s, runtimes4.476..6.831s
+under original1200s/30s gates. Actual new HLS, MR/PTE/scattered DMA/physical
+nonce/status/fences/board FIFO/FCS/SFD/CDC/MAC/CQ and all full-data/sentinel/
+owner oracles execute. This is OLD-function regression, not new large RX.
+Original source004 [HLS001](../results/2026-10-18/rocev2-rnic-segmented-receive-generated-hls-001.json)
+actually times out at the original7200s limit09:45:40Z; final report remains
+FAILED. Its original children2872461/2872554 subsequently naturally vanish
+from `/proc`; no manual signals or restart occur. New007's actual generation
+success is not substituted for failed004, whose frozen inputs/raw output stay.
+
+New `segmented_receive_payload_native_fixture.py` adds actual incoming8193
+SEND/SEND_IMM on one8194-byte C128 coherent RQ owner: exact FIRST/MID/LAST
+PSN/MSN/notification, actual full-capacity post query plus three independent
+saved-VA/key per-packet MR queries, three actual PTE/DMA/nonce/status/readback
+fences, three packet ACK-MAC/tail releases, one real whole776 HLS output,
+one whole CQ/retire and exact host ACK. Actual data/capacity differ by1;
+all16384 modeled host bytes and padding/sentinels and complete CQ AXI owner
+are independent oracles. Two early packet releases must retain the SAME RQ;
+the final actual MAC receipt is withheld1100 cycles and must prevent CQ.
+The actual three scattered pages include DMA64 and low-DMA32 headers; all
+old PCIe format/address/byte-enable/TC/attribute/nonce/status/200-cycle fence/
+64-cycle TX-ACK guards remain. No internal owner/MR/status/core/MAC receipt/
+retirement/drain is driven. Physical host/root/peer/PHY/PTP remain models.
+
+New `probe_segmented_receive_native_full.py` preserves ALL32 exact old cases
+and adds the two incoming cases (34 total), all required, original1200s
+build/30s runtime and4ns clocks. [Failed001](../results/2026-10-18/rocev2-rnic-segmented-receive-native-full-001.json)
+is a strict fixture-anchor mismatch (existing service MAC predicate also
+follows the RQ predicate); exact preimageJoDWgkOc retained. The corrected
+anchor preserves both predicates and adds only final new-RX withholding.
+[Failed002](../results/2026-10-18/rocev2-rnic-segmented-receive-native-full-002.json)
+is actual Icarus observer binding to nonexistent`dut.cq_commit_ready`;
+exact preimagenxQgKska retained. It observes actual`s_cq_commit_ready` now;
+no completion is injected and no assertion/clock/timeout is relaxed.
+Fresh003 passes full actual bench elaboration (empty diagnostic log, no
+missing-leaf or width waiver) and is LIVE in Verilator build62988, run
+`segmented-receive-native-full-7t4ynzje`, objects
+`/dev/shm/as02-segmented-receive-native-full-obj-p6iwsj9s` at10:04:13Z.
+No new8193 receive pass, native1MiB operation, matched software or physical
+timing proof is inferred from merely building it.
+
+[Native regression audit001](../results/2026-10-18/rocev2-rnic-segmented-receive-native-regressions-diagnostics-001.json)
+verifies6408 current/prior/failed bindings and exact preimages. The unchanged
+source gate still stops on historical TX-padding SHA mismatch; no overall
+suite green. All11 requirements remain, especially actual new large RX,
+registered driver/provider/profile/ref lifetimes, segmented WRITE Immediate
+independent remote MR/late notification RQ, multiSGE, real-peer/nonterminal
+MSN/recovery/RNR/congestion and original full-board fit/timing/CDC/DRC/routing/
+short supervised physical work. Current HLS estimate15.571ns still FAILS
+original4ns/default1.08ns. No hardware/default/install/load/network/fan/BIOS/
+flash/reboot or Git action. No reboot needed; authenticated same-thread/goal
+revival unproved and ALL archived RAM caches must be restored first.
+
+Progress149: previous explicit publication148 was PROGRESS: main/origin/main
+and independent remote main were verified at9de05e83febfc48ec220a75d00a34dea8594b9c7.
+No new commit/push is made or authorized automatically in this goal turn.
+[Actual generation002](../results/2026-10-18/rocev2-rnic-segmented-receive-generated-hls-002.json)
+PASSES399.510s from frozen source007, all44 C++/old compatibility and original
+1500MiB/4ns/default1.08ns/8QP/2000 gates retained. Real whole output776 and
+all inherited generated ports checked. Resources101682LUT/128313FF/245BRAM18K/
+0DSP; estimated15.571ns FAILS the original4ns/effective2.92ns target. This is
+actual RTL generation, not full-board placement/timing or physical success.
+Original source004's SAME live scheduling job74092/PID2872554 is not killed
+or restarted; at09:40:49Z elapsed01:55:07/CPU01:51:48, original7200s limit.
+
+[Complete native elaboration001](../results/2026-10-18/rocev2-rnic-segmented-receive-native-elaboration-001.json)
+PASSES4.750s with actual new generated HLS, no `-i`, no stub/missing leaves,
+all11 complete-profile switches, one MR/table/sharedPSN-MSN domain/new whole
+join/messageRQ and original legacy core retained. All inherited source,
+component, port-width, module-count and both-global-drains0 gates remain.
+`segmented_receive_native_sources.py` replaces exactly15 reviewed bodies,
+adds one actual messageRQ and removes the old active Immediate HLS cohort.
+This is actual application-native compile ONLY, not new payload execution.
+
+[Actual C128/PCIe/MR/RQ001](../results/2026-10-18/rocev2-rnic-receive-pcie-post-001.json)
+ALL4 PASS, maximum0.367s/original10s runtime. Actual Corundum client/backend/
+RAM/mux/genericPCIe and actual new fetch/admission/MR/messageRQ execute:
+15 coherent128-byte records,10 real full-capacity local-write MR queries,
+7 actual posted owners. Full620 identities are independently reconstructed,
+same-QPN SQ/RQ banks stay separate, posted/held RQ prevents real MR revoke,
+and read-only/range/stale-generation/sequence/epoch/reserved/remote-field/
+PCIeUR denials cannot post authority. Real failed-PCIe parent-drain waiting
+and halted queue are checked. No HLS/MAC/CQ proof or retire is invented;
+all descriptors/rings remain byte-identical. Physical host/root/link and
+privileged configuration/error sink are models. No payload PTE/DMA/native
+completion, installed Linux or physical proof is inferred from this test.
+
+Fresh `probe_segmented_receive_native_compat.py` is now building the SAME new
+generated-HLS graph for ALL32 old cases, with original1200s build/30s runtime,
+4ns clocks, physical-nonce/status/fence/boardMAC/CQ/full-byte/sentinel checks.
+Only expected exact RNC65535/RQC31/CQC255 identities change. Build79723 in
+`segmented-receive-native-compat-gpxp6d5c`, RAM objects
+`/dev/shm/as02-segmented-receive-native-obj-cfqqqck0`, is authoritatively live
+in Verilator/C++ compilation at09:40:49Z. No old32 pass or new large RX native
+runtime is claimed yet. [Generated audit001](../results/2026-10-18/rocev2-rnic-segmented-receive-generated-diagnostics-001.json)
+checks4672 fresh/3661 historical bindings with exact preimages, retaining
+rejected005/compile-failed006 and the unchanged failing historical padding
+source gate. Existing whole component, C/API and old evidence remain.
+
+One explicit terminal zero-request HLS scratch DB (1482 files) was losslessly
+archived, compared against original/RAM manifests and relocated to RAM after
+two exact-target process/cwd/FD/maps audits; unrelated source004 job untouched.
+Persistent archive and manifest remain. Restore this AND ALL earlier cache
+archives before ANY reboot. No reboot needed; exact authenticated thread/
+active-goal revival still unproved. All11 original requirements remain,
+including new native large RX, matched actual driver/provider lifetimes,
+segmented WRITE Immediate, multi-SGE, real-peer MSN/recovery/RNR/congestion,
+original full-board clocks/fit/CDC/DRC/routing and short physical work. No
+program/install/load/default/network/fan/BIOS/flash/reboot or new Git action.
+
 Publication checkpoint (2026-10-21, after progress147): the user explicitly
 requested commit/push of progress145..147, including successful and failed
 public reports. This is a source-development checkpoint, not a release or

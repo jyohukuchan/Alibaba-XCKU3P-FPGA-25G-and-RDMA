@@ -202,6 +202,42 @@ syntax check ignores missing leaves and is NOT complete native elaboration.
 Existing native/software profile6 incoming RQ4096/defaults are unchanged;
 actual new generated-HLS/MR/PTE/DMA/native/standard API/timing work remains.
 
+Progress149 subsequently generates actual source007 RTL in 399.510 seconds
+and passes complete application-native elaboration with every leaf present,
+one shared MR/PTE/HLS/message-RQ and the actual 776-bit whole output. Four
+additional actual PCIe-DMA-to-MR-to-RQ cases pass (maximum 0.367 seconds),
+with no descriptor/status/RAM/MR substitute. Physical host/root/link/config
+and the error sink remain models; no received-payload/HLS/MAC/CQ runtime is
+inferred from descriptor posting. The HLS estimate is 15.571 ns: original
+4 ns timing is NOT met. A fresh new-graph build for all 32 old native cases
+is running; new large incoming native transfer and matched software remain
+unproved. [Generated/native-connection audit](results/2026-10-18/rocev2-rnic-segmented-receive-generated-diagnostics-001.json).
+
+Progress150 completes all 32 exact old native cases on that new graph
+(4.476..6.831 seconds each, fresh compile642.135s). The separate original
+source004 HLS run times out at its unchanged7200s limit; its child processes
+subsequently exit naturally. Failures/logs stay intact. New whole-native
+8193-byte incoming SEND/Immediate tests on one8194-byte RQ, with genuine
+three packet/fence/ACK-MAC lives and one whole CQ, are now building003.
+Its actual full bench elaborates without width/missing-leaf waivers, but
+no new incoming payload/runtime pass is claimed yet. Failed001 anchor and
+002 observer-port binding attempts are retained with exact preimages.
+[Native old32/timeout/failure audit](results/2026-10-18/rocev2-rnic-segmented-receive-native-regressions-diagnostics-001.json).
+
+Publication after progress151 records that full-native003 compiled but
+FAILED at the original second-packet deadline. Read-only inspection of the
+unchanged DUT objects identified the raw reference entrance blocking a held
+receive group's continuation. A separate derived fix changes only that
+entrance; pending ownership, MR, HLS, MAC and whole-CQ checks stay intact.
+[Reference gate tests](results/2026-10-18/rocev2-rnic-receive-continuation-gate-001.json)
+pass nine current cases plus the expected old-gate negative control.
+[Complete native elaboration002](results/2026-10-18/rocev2-rnic-segmented-receive-native-elaboration-002.json)
+passes with actual generated HLS and no missing-leaf/width waivers.
+The corrected full-native34-case run has NOT started; new incoming8193
+runtime, matched software, original4ns timing and physical proof remain
+unverified. No hardware or installed/default profile is changed. Earlier
+progress149/150 build-state descriptions above are historical snapshots.
+
 The current source checkpoint also adds a 1 MiB posted-RECV codec and a
 correctly typed `ib_recv_wr` adapter: 37 codec methods, 78 admission/staging
 cases, four actual MR-to-message-RQ handoff cases, and a real-kernel-header

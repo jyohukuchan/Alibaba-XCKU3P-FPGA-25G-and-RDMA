@@ -5,6 +5,29 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+Publication after progress151: full-native003 fails at the second incoming
+SEND packet; it is NOT an Atomic or large receive pass. Read-only original
+object diagnosis identifies a held-group raw-reference admission stall.
+A separate narrow continuation fix passes nine gate cases/old-gate negative
+control and complete actual-HLS native elaboration002. Its full34-case
+runtime, including Atomic regressions, has NOT run. Prior all32 compatibility
+results apply to the prior uncorrected graph only. Original4ns timing,
+IB_ATOMIC_NONE, installed/default profile and all11 requirements remain.
+[Fixed-graph compile only](../results/2026-10-18/rocev2-rnic-segmented-receive-native-elaboration-002.json).
+The following progress entries are historical snapshots.
+
+Progress150 passes ALL32 exact old native cases on the new receive core,
+including Atomic compatibility, not new large incoming runtime. New actual
+8193-byte receive plus all32 old cases (34 total) is now building003 after
+full bench elaboration; no pass inferred yet. Original004 HLS7200s timeout
+and new fixture001/002 failures remain. [Native regression audit](../results/2026-10-18/rocev2-rnic-segmented-receive-native-regressions-diagnostics-001.json).
+
+Progress149 produces actual new receiver HLS and passes complete native
+elaboration plus real descriptor-PCIe/MR/RQ posting tests. HLS estimate15.571ns
+misses original4ns; fresh all32 old native regression build is live, not yet
+passed. No large incoming native payload or Atomic hardware qualification is
+inferred. [Current audit](../results/2026-10-18/rocev2-rnic-segmented-receive-generated-diagnostics-001.json).
+
 The progress147 publication additionally includes the 1 MiB posted-RECV
 codec/typed adapter and real MR-to-RQ component tests, plus a separately
 regressed KEEP checker. These do not enable native Atomic or qualify a new

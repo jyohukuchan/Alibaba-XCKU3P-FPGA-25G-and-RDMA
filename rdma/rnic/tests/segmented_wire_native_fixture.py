@@ -1,8 +1,9 @@
 # SPDX-License-Identifier: BSD-2-Clause-Views
 """Actual8193-byte ordinary WRITE/SEND on generated HLS/MR/PTE/PCIe/MAC/CQ.
 
-All prior27 cases remain unchanged when SEGMENTED is absent. Physical
-host/root/peer/PHY/PTP are models, never internal owner/core/CQ receipts.
+All prior27 stimuli/oracles remain when SEGMENTED is absent; every real MAC
+case now uses the actual board synchronous TX queue and cut-through CDC.
+Physical host/root/peer/PHY/PTP are models, never internal owner/core/CQ receipts.
 """
 import ctypes as C
 import hashlib
@@ -13,12 +14,17 @@ import test_segmented_wqe as codec
 import segmented_executor_native_fixture as old
 import zero_rq_native_fixture as prior
 import test_wqe_response_guard_rtl as packet_tool
+import segmented_board_tx_fixture as board
+import segmented_pcie_request_fixture as pcie_request
 
 ROOT=old.ROOT;once=prior.once
 variant=old.variant;prelude=old.prelude;verify=old.verify
 verify_nonce=old.verify_nonce;verify_executor=old.verify_executor
 CODEC_REPORT=ROOT/'results/2026-10-18/rocev2-rnic-segmented-wqe-002.json'
 LENGTH=8193;FIRST=0xfffffe
+BOARD_TX_SOURCES=board.SOURCES;BOARD_FIFO_INPUTS=[*board.INPUTS,*pcie_request.INPUTS]
+BOARD_FIFO_REPORT=ROOT/'results/2026-10-18/rocev2-rnic-segmented-board-tx-001.json'
+PCIE_REQUEST_REPORT=ROOT/'results/2026-10-18/rocev2-rnic-segmented-pcie-request-001.json'
 
 
 def large_variant(opcode):
@@ -56,7 +62,15 @@ def large_variant(opcode):
 
 
 def bench():
-    t=old.bench()
+    for report,cases in [(BOARD_FIFO_REPORT,4),(PCIE_REQUEST_REPORT,14)]:
+        proof=json.loads(report.read_text())
+        if not proof.get('pass_test')or proof.get('methods')!=4 or len(proof.get('tests',{}))!=cases:
+            raise ValueError('matched actual FIFO/MAC and strict PCIe request component evidence required:'+str(report))
+        for mapping in [proof['source_sha256'],*[case['artifact_sha256']for case in proof['tests'].values()]]:
+            for n,h in mapping.items():
+                if hashlib.sha256((ROOT/n).read_bytes()).hexdigest()!=h:
+                    raise ValueError('FIFO/PCIe request component evidence changed:'+n)
+    t=pcie_request.apply(board.replace_link(old.bench()))
     cq_start=t.index('check_ring();request_event_file=');cq_end=t.index('\nend\n if($test$plusargs("ATOMIC_ONLY"))',cq_start)
     cq=t[cq_start:cq_end]
     t=once(t,'module tb;','module tb;\n'+DECLARATIONS+'\n'+MONITOR+'\n'+TASKS.replace('// CQ_SNAPSHOT',cq))
@@ -160,11 +174,12 @@ task run_segmented_native;
   sq_command(2,1,0,0,0);
   for(big_packet=0;big_packet<3;big_packet=big_packet+1)begin
    big_deadline=cycle+10000;
-   while(!dut.tx_response_admission_ready || dut.tx_frame_count!=big_packet+1 ||
+   while(!dut.tx_response_admission_ready || dut.tx_frame_count!=big_packet+1 || board_wire_eofs<big_packet+1 ||
     dut.wire_lifetime.m_expect_psn!==((24'hfffffe+big_packet)&24'hffffff))begin
     if(cycle>big_deadline)$fatal(1,"large actual packet issue deadline packet%0d flags%h fault%h",big_packet,local_proof_flags,fc);
     @(negedge clk);
    end
+   $display("SEGMENTED_PEER_ACK {\"packet\":%0d,\"actual_wire_EOFs\":%0d}",big_packet+1,board_wire_eofs);
    big_ack(big_packet);
   end
   big_deadline=cycle+5000;
@@ -188,7 +203,7 @@ task run_segmented_native;
    big_core_receipts!=1 || dut.rx_accepted_count!=3 || dut.tx_frame_count!=3 || dut.tx_receipt_count!=3 ||
    dut.tx_mac_proof_count!=3 || dut.native_retry_count || dut.native_rnr_count ||
    router_descriptor_count!=6 || pcie_physical_reads!=6 || read_tlps!=68 || write_tlps || fences ||
-   actual_native_SFD_count!=3 || actual_SFD_count!=3 || actual_Atomic_SFD_count)
+   actual_native_SFD_count!=3 || actual_SFD_count!=3 || actual_Atomic_SFD_count || board_wire_eofs!=3)
    $fatal(1,"large actual memory/packet/PSN/CQ cardinality");
   for(big_i=0;big_i<16384;big_i=big_i+1)begin
    if(pcie_posted_valid[big_i] || pcie_host[big_i]!==(((big_i*37)^8'h5a)&255))$fatal(1,"large source/sentinel byte altered");
@@ -212,6 +227,13 @@ def verify_large(output,records,frames,opcode,run):
     if summary!=expected:raise ValueError('large full-native cardinality/authority:'+str(summary))
     actual=prior.link.frames(output)
     if actual!=[(0x2001+i,f)for i,f in enumerate(frames)]:raise ValueError('actual large XGMII/FCS/SFD/CDC/ICRC/full payload bytes')
+    acks=[json.loads(l.split(' ',1)[1])for l in output.splitlines()if l.startswith('SEGMENTED_PEER_ACK ')]
+    if acks!=[dict(packet=i,actual_wire_EOFs=i)for i in [1,2,3]]:
+        raise ValueError('peer ACK must follow each actual XGMII TERM')
+    headers=[int(l.split()[1],16)for l in output.splitlines()if l.startswith('TLP_READ ')]
+    formats={'3DW':sum(h>>125==0 for h in headers),'4DW':sum(h>>125==1 for h in headers)}
+    if formats!={'3DW':33,'4DW':35}or len(headers)!=68:
+        raise ValueError('actual low sealed-page 3DW/high-page 4DW PCIe reads:'+str(formats))
     r=records[0];get=lambda n,w:int.from_bytes(r[n:n+w],'little');owner=0
     for bits,value in [(64,get(0,8)),(64,get(8,8)),(64,get(56,8)),(24,2),(16,17),(16,1),(16,opcode),(16,get(46,2)),
         (32,8193),(32,get(36,4)),(64,get(16,8)),(64,0x210),(64,get(24,8)),(32,get(40,4)),(20,3)]:owner=(owner<<bits)|value
@@ -229,4 +251,5 @@ def verify_large(output,records,frames,opcode,run):
     if core!=dict(opcode=opcode,PSN=FIRST,next_PSN=1,full_owner_match=True):raise ValueError('large real HLS first/next common-PSN receipt')
     return dict(summary=summary,full748_bit_CQ_owner=f'{owner:0187x}',actual_source_and_atomic_CQ=source,
         actual_common_nonce_backend=nonce,actual_HLS_request_receipt=core,
-        actual_XGMII_frames=[dict(tag=t,frame_hex=f.hex())for t,f in actual],physical_MAC_receipt_model=False)
+        actual_XGMII_frames=[dict(tag=t,frame_hex=f.hex())for t,f in actual],peer_ACK_after_actual_wire_EOF=acks,
+        actual_board_TX_FIFO_parameters=board.parameters(),actual_PCIe_read_formats=formats,physical_MAC_receipt_model=False)

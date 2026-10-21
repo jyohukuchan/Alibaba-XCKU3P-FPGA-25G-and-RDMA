@@ -1,0 +1,923 @@
+{
+  "scope": "Actual matched large SQ/MR/CQ/standard callback C, not Linux execution.\n\nRequire real running-header cohort build; explicit primitive/MMIO/pin/DMA/\ncompletion models, ASan/UBSan <=10s each. Retain all47 original cases.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/segmented-kernel-post-aukcwgud",
+  "source_sha256": {
+    "rdma/rnic/tests/probe_kernel_segmented_post.py": "0529b7fa37d887bebc051af97130f8ad9c3091d96e5f7f9bca329070b678946d",
+    "rdma/rnic/tests/segmented_kernel_models.py": "4398157c359978b82189054871784f203010c08286152d8e004572d31d323038",
+    "rdma/rnic/tests/test_kernel_verbs.py": "0ee8ea79e8c26a8d80fb388beccbbbf7ba101d7317e8703605e18b800b7e9b00",
+    "rdma/rnic/tests/kernel_atomic128_post.c": "b4bb7d9b8f9aaa99786dcbd43dc461fe459945924171b883ee805731e2a2424c",
+    "rdma/rnic/tests/kernel_atomic_access_post.c": "b13ec26be0ac274d8be3394bb0bb721d7d1a2fc5befb4659d5c2ae33fcdff056",
+    "rdma/rnic/tests/kernel_zero_post.c": "e6af1e3b2035fb1ec2fd92fc524db30858a19badc3a565cc25e86f2ad52c6cd3",
+    "rdma/rnic/tests/atomic_access_kernel_models.py": "bf2cab7bd570e8535822241a2ff7aa5ddd0e0d8079dcb2e206b61c3169c343b9",
+    "rdma/rnic/tests/atomic128_kernel_models.py": "f3ecb9d09300aad83770f77e532210f3d5065805c306c61f7ac600e07df9cef7",
+    "rdma/rnic/tests/kernel_sq_hw_cases.c": "86f4f6f8f7a5f0bb663f61d04b1b746b0d6694d79f82449f97776ad30157f798",
+    "rdma/rnic/tests/kernel_verbs_cases.c": "525d56e92d9f152d6bfc340579ef2a4aacf552f55731629985cd4bb5039fad07",
+    "results/2026-10-18/rocev2-rnic-segmented-kernel-001.json": "3115c8e9401ac5f0b3cae3acd455cf318655fa29e12a9af4a1cd6869d676fa0b",
+    "rdma/rnic/tests/kernel_verbs_model.h": "035149fed01b1b6e8b195bc8be290879932496cb8d383130574d6da95b5d7b7a",
+    "rdma/rnic/tests/kernel_cq_model.h": "7a97b34bdb70fab41fc3f1ac926ae96aed15dce09f230733bac487cd3bd64615",
+    "rdma/rnic/tests/kernel_sq_hw_model.h": "3e4db9a8dfb956b8c748912fa99ba8ded276bf10529463198f398a077d65c771",
+    "rdma/rnic/tests/kernel_queue_model.h": "fa79e208e46cefa0180ad8356b7a6f8437c15ff63073f2831cba8cf06ff5bc14",
+    "rdma/rnic/tests/kernel_segmented_post.c": "1cea9848d5bc1166e549ec39a33c76848479a8b52f399727b3aaa2707ab4bd70",
+    "rdma/rnic/tests/zero_kernel_models.py": "a98c01cb7aa2ba5cb168c8f6a7aa10ffac67b851e1f5b10b0b31652b3b8d09d7",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/mr.c": "fafe25e2d81236cd155436dd4a5d723662ac6cd4872824655ecf438b1c43feab",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/mr_contract.c": "fba5388020b03409654f46dfce12aed7a9f4776dc22c32a964a3aecf69da6adf",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/wqe.c": "4b3618b01a20876084cd56c5c14c27c3cb8d2c6390aa328bdbf795cd64104211",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/verbs_wqe.c": "82ccb5072a8955058abab1edfd7bca9f2fd26f60329ebd5ee59608d626ae49ba",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/sq.c": "15e08e59000de9de6ebcad740de77ab87ff856a4a0572bedb6bf8c8b6add3052",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/sq_io.c": "1ccaf912ba5fa4f4b41643d7b404119726a2320c1c29e1cad4c244262d5870cb",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/sq_hw.c": "868e0095a0e7e382b6064aff5f86d5067db096e77195902ef9dec2377140803d",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/cq_io.c": "4c5626823ebac00fa26b30a1b77338dcf9493aae015bafa1331be70b428e759e",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/cq_hw.c": "62727e3661de59f10456deffcc864920746a196fc80ec9226498b6945684fe33",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/cq.c": "3fea3dd751d491b6241f8a55db4b65fa92a7c2ff72263d948ad45f1d912404c5",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/rnic_io.c": "5e65f4df0bad98ce9b47f549ffa66ae7f31d30eab9f4d44cd018d3abf511b04a",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/qp_hw.c": "8ff457cc943af987a4fe02c1530323e23d12dd99e792d236334e3191bb25e1db",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/retry_io.c": "9455b9bb7cd157d6fbbf667144612a8034e4c72d24dad979529b440f7b8eb489",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/verbs.c": "dba130e1ce8cefe0ada152649b6b3f83b34fe06f66ea281f5acbc33e6a9a90f3",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/wqe_atomic.c": "965050dda10092921a48d9caa6e9557562c9704c0d39f9289b54f997c6046f72",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/verbs_atomic_wqe.c": "93a0b279add531f5de82006c8435fd1ed13cd2c7450f0bed2c58fbe1d6971ec7",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/wqe_zero.c": "dbeb8076d21f809253fd96871c0861e316559b34478c02c7352d20e681352348",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/verbs_zero_wqe.c": "b12d5f111360932a0b0a1ae30117b468deedaa5727a541b9a70eb20987d80b66",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/wqe_segmented.c": "5d5d67ecb00a70b988ddb16c780febcd4b3180815dc5c8bf8368f5fef0938d61",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/verbs_segmented_wqe.c": "b3cfab36d45a28124169ce98e9a601d3b5ef3979cd8809ddcd2a95e0ccdcbcb4",
+    "rdma/rnic/tests/kernel_queue_model.c": "040e9a6c3ec021996f8af51f50d180043cf440933f13d116bbdb04f0b92ce240",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/models/kernel_segmented_post.c": "1cea9848d5bc1166e549ec39a33c76848479a8b52f399727b3aaa2707ab4bd70",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/rnic_regs.h": "9ab2b821477ec5308b3be2858c6a423fea0c691bfa809bd491e0788456b7aac2",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/verbs_segmented_wqe.h": "74270ba9c7a1661af95523c1115ee9f1c5bda1d6448849a9bbe01b5f48d625f7",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/qp_hw.h": "8ba44af36588003ed00ebe8e51737b070f99a33b4140d842e6bb966e9265f474",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/wqe_atomic.h": "f971b72123b3b3a24c78c28a2c1a856d5c9a9597977fae0a09f654b13f952f68",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/wqe_zero.h": "70087a973c4eee08b25c93c8d5aab60ff2e9d9a0e9888363201bf4d375697f9b",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/atomic_profile.h": "9651f78b827a926120349e814e4834f5e473d58c3b6dac65db0fa4f039664d49",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/rnic_hw.h": "87f084df23fa172ddc76fbcffb30338a5d9a28e68fd08ec3f54157317f9960f7",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/cq_regs.h": "d8b0c553cde7baee136c919837d0bcc8d8308de1a2ac2155207a7cb771c20033",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/sq.h": "98bdd9260c2a40853ef4a12102eb64dfec66d19a8560c858f83c0ad74c23c242",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/sq_io.h": "9ab44b2186598290b57ac0999b861f01b212ef7e6ed7e890870bbdc1d9731d60",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/mqnic_graph.h": "c7e78ac4f98d8841fbc1e9f7a531cffa9f675be00710295da7183fd22864dc2b",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/cq_hw.h": "9cfbf94b2a7ebcfcc4465b761fb6ccf4c93844b7dd67d8e3f7e81983e5e0e673",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/native_attach.h": "c75bc0317787962e5b803f04fee05e8f556614df85fcb40ea851148fa45d923b",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/wqe_segmented.h": "78d950a46d3978fe1929716c4595ba1e9dec61ffa7d9574ef06419d7914a9c5a",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/retry_io.h": "aad5018d4cb7292ef0240f09f1495453030f5211c98999fa0edec5b0fbee9167",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/cq.h": "8fa35025b2c276de11d026dcb1cf9d324637dba1fb3e743c0261f447447a44a4",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/wqe.h": "646e0f6c09f85af72cd9d93016f1368ee7378b6f0cc1f869e4ace0e8e68e8a2a",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/native_regs.h": "1958df9642bd0c865d97c584cda9902fa689d9049b3f415c75f342dddd7b0b97",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/device.h": "830ced5f865bb1af7f7e73ed3e952fa1f745934f1500d4e2f2090e2511274f41",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/verbs.h": "9f2623733d2dd8c326c62489130ca427a46790e2b63284ee3022ab0ca3c341e6",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/rnic_io.h": "92999a3752af6fce6c8556c9c2724ce85918949966f35d2420695e8671d0ffc3",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/mr.h": "427c947b5e8491e4444cf1fd0e726cfbcdfdae00113020ec67b7e7f314c5cfc3",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/sq_hw.h": "3b314f585820e35d33e17dc362c92b070b14171d29e59cbedb25699863d50fd8",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/cq_io.h": "a9b6b1d48df34e00ffe33d839c05ab06cb9a3be7308f1ba6164a434756009d04",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/native_graph.h": "d2d0d4722d0e336fcc9649c3d0dc6b758c587a6398555424da1d16d773b39555",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/models/kernel_sq_hw_cases.c": "16c8b4b11557aef456792ddf996d9679e0fe38a1bad06ef4d5975888c8af96ea",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/models/kernel_cq_model.h": "7a97b34bdb70fab41fc3f1ac926ae96aed15dce09f230733bac487cd3bd64615",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/models/kernel_queue_model.h": "fa79e208e46cefa0180ad8356b7a6f8437c15ff63073f2831cba8cf06ff5bc14",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/models/kernel_zero_post.c": "28061d602fcb3dbf4c1f5f1f8c1efab13b1a9d1f6acef6e1d27ecff0d5585328",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/models/kernel_atomic128_model.h": "a14dedef503777dc1c1cb74fb441cdd336affea8f6fdd183740dd268578b1f86",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/models/kernel_verbs_cases.c": "4e342cc97d57da457e56fe017b5ce115c47c1f9535943b7115f42d29ee56160f",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/models/kernel_sq_hw_model.h": "3e4db9a8dfb956b8c748912fa99ba8ded276bf10529463198f398a077d65c771",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/models/kernel_atomic_access_post.c": "baac431b2e44595ff8f3c4caed4cfe2515af890703f3851dd61f3f6d3cbb1348",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/models/kernel_atomic128_post.c": "e829391206ea0defcff154223b984e70b915d8947e9dc2e957a210a1a04d4449",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/models/kernel_verbs_model.h": "035149fed01b1b6e8b195bc8be290879932496cb8d383130574d6da95b5d7b7a"
+  },
+  "actual_standard_callbacks_and_CSR_C_bodies": true,
+  "actual_running_kernel_callback_execution": false,
+  "Linux_MMIO_DMA_pins_hardware_completion_models": true,
+  "actual_RTL_executed": false,
+  "hardware_verified": false,
+  "atomic_cap_advertised": false,
+  "simulation_limit_seconds": 10,
+  "tests": {
+    "Large0": {
+      "seconds": 0.015436568995937705,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "bytes": 8193,
+        "actual_standard_callbacks_and_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Large1": {
+      "seconds": 0.013761179987341166,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "bytes": 8193,
+        "actual_standard_callbacks_and_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Large2": {
+      "seconds": 0.013605855987407267,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "bytes": 1048576,
+        "actual_standard_callbacks_and_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Large3": {
+      "seconds": 0.01463075599167496,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "bytes": 1048576,
+        "actual_standard_callbacks_and_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Large4": {
+      "seconds": 0.014334495004732162,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "Large5": {
+      "seconds": 0.014619163004681468,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "Large6": {
+      "seconds": 0.012239717994816601,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "rejected_before_queues": true
+      }
+    },
+    "Large7": {
+      "seconds": 0.011778286017943174,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "rejected_before_queues": true
+      }
+    },
+    "Large8": {
+      "seconds": 0.01172485901042819,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "rejected_before_queues": true
+      }
+    },
+    "Large9": {
+      "seconds": 0.012273451022338122,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "rejected_before_queues": true
+      }
+    },
+    "Large10": {
+      "seconds": 0.012193833012133837,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "rejected_before_queues": true
+      }
+    },
+    "Large11": {
+      "seconds": 0.011734077997971326,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "rejected_before_queues": true
+      }
+    },
+    "Large12": {
+      "seconds": 0.013195547042414546,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "Large13": {
+      "seconds": 0.013430557970423251,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "Large14": {
+      "seconds": 0.013801687047816813,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 14,
+        "bytes": 8193,
+        "actual_standard_callbacks_and_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Large15": {
+      "seconds": 0.01376620796509087,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 15,
+        "ambiguous_producer_retains_full_MR_queue": true
+      }
+    },
+    "Large16": {
+      "seconds": 0.013640078017488122,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 16,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "Large17": {
+      "seconds": 0.014301112038083375,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 17,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "Zero0": {
+      "seconds": 0.014064983988646418,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero1": {
+      "seconds": 0.014305581978987902,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero2": {
+      "seconds": 0.014346367970574647,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero3": {
+      "seconds": 0.013955614995211363,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero4": {
+      "seconds": 0.014236090995837003,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero5": {
+      "seconds": 0.014216395968105644,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "legacy_zero_refused_before_post": true
+      }
+    },
+    "Zero6": {
+      "seconds": 0.012976668018382043,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "mismatched_offset_retains_queue_and_CQ": true
+      }
+    },
+    "Zero7": {
+      "seconds": 0.014731186034623533,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "actual_RECV_zero_length_WC": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero8": {
+      "seconds": 0.014846771024167538,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "actual_RECV_zero_length_WC": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero9": {
+      "seconds": 0.014231063018087298,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access0": {
+      "seconds": 0.013454094005282968,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 14,
+        "MR_access": 15,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access1": {
+      "seconds": 0.014493032998871058,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 15,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access2": {
+      "seconds": 0.014447636029217392,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access3": {
+      "seconds": 0.014472290000412613,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access4": {
+      "seconds": 0.014607919030822814,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access5": {
+      "seconds": 0.014368787000421435,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access6": {
+      "seconds": 0.013638750999234617,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access7": {
+      "seconds": 0.01425606501288712,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Atomic0": {
+      "seconds": 0.014164226013235748,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "actual_standard_callbacks": true,
+        "two_128_byte_rings": true,
+        "full_operands_and_result_permissions": true,
+        "exact_bad_WR_tail": true,
+        "actual_CQ_MR_ref_lifecycle": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "Atomic1": {
+      "seconds": 0.014274362998548895,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "actual_standard_callbacks": true,
+        "two_128_byte_rings": true,
+        "full_operands_and_result_permissions": true,
+        "exact_bad_WR_tail": true,
+        "actual_CQ_MR_ref_lifecycle": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "Atomic2": {
+      "seconds": 0.014446099987253547,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "result_LOCAL_WRITE_required": true
+      }
+    },
+    "Atomic3": {
+      "seconds": 0.013504030008334666,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "operand_mismatch_retains_owners": true,
+        "owners_intentionally_retained": true
+      }
+    },
+    "Atomic4": {
+      "seconds": 0.013835071003995836,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "operand_mismatch_retains_owners": true,
+        "owners_intentionally_retained": true
+      }
+    },
+    "Atomic5": {
+      "seconds": 0.01371068600565195,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "actual_standard_callbacks": true,
+        "two_128_byte_rings": true,
+        "full_operands_and_result_permissions": true,
+        "exact_bad_WR_tail": true,
+        "actual_CQ_MR_ref_lifecycle": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "Atomic6": {
+      "seconds": 0.013830601004883647,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "actual_standard_callbacks": true,
+        "two_128_byte_rings": true,
+        "full_operands_and_result_permissions": true,
+        "exact_bad_WR_tail": true,
+        "actual_CQ_MR_ref_lifecycle": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "Atomic7": {
+      "seconds": 0.01429978501982987,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "actual_standard_callbacks": true,
+        "two_128_byte_rings": true,
+        "full_operands_and_result_permissions": true,
+        "exact_bad_WR_tail": true,
+        "actual_CQ_MR_ref_lifecycle": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "Atomic8": {
+      "seconds": 0.014598210982512683,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "normal_READ_SEND_IMM_preserved": true
+      }
+    },
+    "Atomic9": {
+      "seconds": 0.01398857799358666,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "legacy_still_refuses_Atomic": true
+      }
+    },
+    "Atomic10": {
+      "seconds": 0.011878716002684087,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "rejected_before_queues": true
+      }
+    },
+    "Atomic11": {
+      "seconds": 0.012216041970532387,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "rejected_before_queues": true
+      }
+    },
+    "Atomic12": {
+      "seconds": 0.012009455997031182,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "rejected_before_queues": true
+      }
+    },
+    "Atomic13": {
+      "seconds": 0.011543344997335225,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "rejected_before_queues": true
+      }
+    },
+    "Legacy0": {
+      "seconds": 0.01271679502679035,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "completed_WRs": 2,
+        "notifications": 1,
+        "TX_PSN": 0,
+        "payload_CPU_copy": false,
+        "retry_policy_actual_transport": false
+      }
+    },
+    "Legacy1": {
+      "seconds": 0.012287698977161199,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "completed_WRs": 1,
+        "notifications": 1,
+        "TX_PSN": 0,
+        "payload_CPU_copy": false,
+        "retry_policy_actual_transport": false
+      }
+    },
+    "Legacy2": {
+      "seconds": 0.012315496045630425,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "failed_MR_retained_until_real_cleanup_model": true
+      }
+    },
+    "Legacy3": {
+      "seconds": 0.007499895989894867,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "unknown_QP_close_retains_SQ_PD_CQ": true
+      }
+    },
+    "Legacy4": {
+      "seconds": 0.012311095022596419,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "failed_QP_creation_owns_cleanup_handle_and_PD": true
+      }
+    },
+    "Legacy5": {
+      "seconds": 0.01266476500313729,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "completed_WRs": 2,
+        "notifications": 1,
+        "TX_PSN": 9022413,
+        "payload_CPU_copy": false,
+        "retry_policy_actual_transport": false
+      }
+    },
+    "Legacy6": {
+      "seconds": 0.012430450995452702,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "completed_WRs": 2,
+        "notifications": 1,
+        "TX_PSN": 9022413,
+        "payload_CPU_copy": false,
+        "retry_policy_actual_transport": true
+      }
+    },
+    "Legacy7": {
+      "seconds": 0.0073878029943443835,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "retry_bad_epoch_retains_full_SQ_PD_CQ_owner": true
+      }
+    },
+    "Legacy8": {
+      "seconds": 0.012628099007997662,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "SEND_base_WR_no_overread": true,
+        "real_SQ_and_CQ_path": true,
+        "modeled_core_completion": true
+      }
+    },
+    "Legacy9": {
+      "seconds": 0.007772131008096039,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "real_post_recv_coherent_WQEs": true,
+        "exact_bad_wr": true,
+        "receive_quota": true,
+        "CQ_unproved_references_retained": true
+      }
+    },
+    "Legacy10": {
+      "seconds": 0.007648445025552064,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "real_post_recv_coherent_WQEs": true,
+        "exact_bad_wr": true,
+        "receive_quota": true,
+        "CQ_unproved_references_retained": true
+      }
+    },
+    "Legacy11": {
+      "seconds": 0.007440322020556778,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "real_post_recv_coherent_WQEs": true,
+        "exact_bad_wr": true,
+        "receive_quota": true,
+        "CQ_unproved_references_retained": true
+      }
+    },
+    "Legacy12": {
+      "seconds": 0.012781606987118721,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "RECV_completions": 3,
+        "SEND_completions": 1,
+        "distinct_recv_cq": true,
+        "posted_capacity": 128,
+        "received_bytes": 65,
+        "receive_quota_reused": true,
+        "hardware_completion_producer_modeled": true
+      }
+    },
+    "Legacy13": {
+      "seconds": 0.012429125024937093,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "RECV_completions": 3,
+        "SEND_completions": 1,
+        "distinct_recv_cq": true,
+        "posted_capacity": 128,
+        "received_bytes": 65,
+        "receive_quota_reused": true,
+        "hardware_completion_producer_modeled": true
+      }
+    },
+    "Legacy14": {
+      "seconds": 0.015461852017324418,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "independent_physical_queues": true,
+        "SEND_before_RECV_same_WQE_sequence": true,
+        "SEND_completions": 2,
+        "RECV_completions": 2,
+        "hardware_completion_producer_modeled": true
+      }
+    }
+  },
+  "compiler_command": [
+    "cc",
+    "-std=c11",
+    "-D_GNU_SOURCE",
+    "-D__KERNEL__",
+    "-O1",
+    "-g",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pthread",
+    "-fsanitize=address,undefined",
+    "-fno-sanitize-recover=undefined",
+    "-I",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/include",
+    "-I",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/models",
+    "-I",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel",
+    "-include",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/models/kernel_atomic128_model.h",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/mr.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/mr_contract.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/verbs_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/sq.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/sq_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/sq_hw.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/cq_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/cq_hw.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/cq.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/rnic_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/qp_hw.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/retry_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/verbs.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/wqe_atomic.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/verbs_atomic_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/wqe_zero.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/verbs_zero_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/wqe_segmented.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/kernel/verbs_segmented_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/kernel_queue_model.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/models/kernel_segmented_post.c",
+    "-o",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-kernel-post-aukcwgud/cases"
+  ],
+  "compile_seconds": 7.57893936597975,
+  "source_unchanged": true,
+  "large_cases": 18,
+  "zero_cases": 10,
+  "access_permission_cases": 8,
+  "Atomic_and_geometry_cases": 14,
+  "legacy_cases": 15,
+  "artifact_sha256": {
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Legacy10.log": "8682d02b9925aa37262e842af1993870ca0eebaaad54289e097c8808438d8228",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large1.log": "1cdcfc7073fead3fe66b699e75b09308e33b21f6668afdc1e2c80c45d406b557",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Atomic12.log": "72b04569d6a3920da7205d39faaa95aeb3079e2c0d33988d1302f01917ecd219",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Legacy14.log": "a9e4f20c09bbad668c3ccdd346043fe9da42ac285b6f80fba1839fc78f4611d2",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Zero6.log": "292d4ff0fdc7d4816075f4edcfdbe10ec68fdc0023c3968f5a69c034100dce49",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Legacy6.log": "0ddec3b6c2173276c47373f6ec6c45396348ca53ff0b685290efe1008f1a280e",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large6.log": "6b1373db49968e460d652ac4db97d92b764a82e2b83bce9b693115163469bad6",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Legacy8.log": "c9cf0c1215796c485fcdab16c08fe5b937a4b530ffe90a69467163b87ddeffdd",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Legacy2.log": "6936972f5bedefb8e706b510839c43ce1e40c3834ccbf4090a649fcf40ce9d4e",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Legacy7.log": "062d94f71e6a42d2b447c20d756af039395a989f320774bba022ef76b9b1fff9",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Atomic9.log": "fea6e9cae43e7864b321c646b0a883932f2dea9a519c9787a86ac78cf55f20ee",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large13.log": "6bdc309bcf93d33d2b6bd8d095f4abc3cfab87b85b94290c70c606a68237199b",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Atomic8.log": "359eddba8aed10da1da80e157b81a3fa215f95a4eb17c9613800b71598a92c6a",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Atomic10.log": "c64d383af4377774dcb6eb901f1f3c81318fd5e92bf2d7d4fdad8336eb73b742",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Zero1.log": "33dd9b04c5b3a0573cc694859fb98d311db013f2304afcfebe8455bc5e7a2199",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Atomic5.log": "62b77f8d71ecdc5357687794f9c7201e463864c67ef394a189a7965b88336026",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Legacy13.log": "567b92a639a0d071281111b4c721d4f01525d6755c9123574f47574521fe60bf",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Atomic1.log": "e13d41cba55b3d7061c17e0dc7d77d67b2da04a9a81a39c228d34a51cfc47efe",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large8.log": "240fac5456b3cbc7516cafd58348b84cc4d85cfdfc513fd1204473593a2d34a4",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large2.log": "c8f4d68e7665125e91a9dcf13bb2becee31981644ed82944fdbe47c4678f6f5d",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Atomic6.log": "609204219f8b03e0b2522ab8edbf77c008b778f651d1f21026c58f0e8b6f8c4e",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Legacy12.log": "567b92a639a0d071281111b4c721d4f01525d6755c9123574f47574521fe60bf",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large7.log": "27f359f9a5b1e3d9737b1e57adf1284ac16a11498a019de0773a460aeda205f5",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Atomic4.log": "b4ef23ec78f4ae0bb4845453b976ed9202cae58c13a63ef43a64018f0cce26fa",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Zero8.log": "23961173ff416fb69a0d41583f7c8d95a7c8e7d1a59d819b6d98184a3b03e777",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Legacy3.log": "1c564adbf80a9274c6a8bba7702acfecd1e24b0fdabf21b88eb3c0f3810585e6",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large15.log": "028433c850b482b016790ce73f0ea5f6b6b28c8163422cd5d9f6f990d9ee2cc5",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large11.log": "fda79041271b361257533686c4df9a4a72a58b44f16f020d6fc12ad8c2ba3052",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large16.log": "ad9c4cd5a209713e205cad1b2d5623a353434b7d206db0a406ee3c96cbed3567",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Access7.log": "5cc887b94f9f20d499d9f475ef4940352ae7fee3e4ec61c50082dd85cadf6088",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Legacy5.log": "709e7425bdbda732f8ce0d5e1c47bcb6e0f158fbcb17da4567f5fa378c758a91",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Atomic0.log": "24126c36daecacc399126656ba692a3a61570188a8f4067ed69b1d890092ff58",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large0.log": "0022204bf321f44aa1f92df1fcfc948121375fdd93537054206b546fd77d4e9e",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Access3.log": "90a904d748fd7ca613c52e25f91139d29b92ba8022a19de49dd8fd401325b990",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Atomic13.log": "7f983718f6332d72aa13baa61cedabc08c6ce7e664ac5c766adcd762428c08c9",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Legacy11.log": "8682d02b9925aa37262e842af1993870ca0eebaaad54289e097c8808438d8228",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Zero3.log": "ae50d93dbdf457b302191b85afb48c166e591e6e28eb492bc6dc1de62543ba60",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Zero4.log": "2b0837574497fee4661e0658094286c1b341cca907c49059c80dd473ce56a510",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Zero5.log": "e2e98b52c891e71027ddf8ab208c9f7dd1d0b15a4a1e3c45a94457cc88c46ea4",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Legacy1.log": "d3ee11ca1a0d2e35037c3d05602bb26ee5bb472ab202f1246093bd3baf3db05e",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large4.log": "f172b09909f62ab1e195d568a5d965c9cd563d72c34f509df8cce783bc37c91a",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Atomic3.log": "7c811a80d267d88419b75413e12f14ce715f16f6127b65c0dd56a682d091e972",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Access4.log": "f8ef985da191788f94a7106dc82d69001796a525ec00aaf3a7a8c5fe40f0f1d9",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Access5.log": "811a0910b1806b74c915909f09f5a8b61c85cc3bc879383820b79b3d7610e670",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large9.log": "b4599ae2cfb1a4ce35317845d6e9b8ad7960c557acffb827472c1f0d8a9d8b67",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/cases": "ce10c9a5fa51efe516a06e53d5583f28e26ea73763084eef90c42b01097e148b",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Zero2.log": "33b53cd83c11e6efc579f0ec386cdc9de66b57cd7a90559c58d8357627afe59e",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Legacy9.log": "8682d02b9925aa37262e842af1993870ca0eebaaad54289e097c8808438d8228",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Atomic11.log": "5ebe987529a9e7c92ac5b6fc564ff7793342bae8fbee4feb950540132c7ea6f5",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Atomic2.log": "374b266169843c052653ba651f3ff27b9faed157d738eaf42784ed711a063962",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Legacy0.log": "9e9f28a1f3422fc7923bee8b9a3d14202f48135f96727dd9883d65d0b8423617",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large3.log": "c4b310aa4a09108bc31ad9f88dba22e371a662c901c574520a56ace44200c4b2",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Access0.log": "79d6c6a56cd60263098838c219435cec4489bb98d9d385594975b84d6115643a",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large14.log": "a040d2f0f8e8a5b1b41f8c1ca0d0fd40b72902d4f50b1e0bf1fa89df76237586",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Zero0.log": "a962615821b192bee86b70d599a332a5365257647f0ad6b5e31dc5620692a53f",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Legacy4.log": "0ea1d252507ed42c16a8408b0140fa3ef43da1d61975bb73e16ea626ace42386",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Atomic7.log": "30e397d5aa168b8ae1b139ba69b9d2ce11d6c29c6be28ee1e323d18bfb8a7bf7",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Access6.log": "a621de8376d95705c9def3086e0de89961cda7825fd0f647fc065486513c131a",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Zero9.log": "6dafbb4d024bee9d1ee25446fd7287e04873e88c07534431ac334b0b372a17cc",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Access1.log": "a2e5ee526826bafd9421d25656cc537ad653f6223f1bff972ac0dff1ec3b8224",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large12.log": "97528b14e3c229aba22ba92d7348650b2ea3c881f0b71e41a638f9f047e29499",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Access2.log": "e354192268caf9b8b9f068e56bda63c495a06564fe8a14364411b746f2455d8d",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Zero7.log": "7550f7d65addab0ae6505daf50755008eb76c3c24ac88c0a9d46b4e8c1f7cf3a",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large10.log": "a3c962e432ae5f3c4cd2da8a8d246c0adba78249cdae71a22226d36ed3b02086",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large17.log": "c96a42cdef2cf3ef163a2c6a551cb3fd59534f4553976b2f7987c243f6362d7f",
+    "rdma/rnic/build/segmented-kernel-post-aukcwgud/Large5.log": "8565aad3ccd20120fcecdbc1b972c2b19801773a1868b9c309b660bc1b68500f"
+  }
+}

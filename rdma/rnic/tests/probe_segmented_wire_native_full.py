@@ -40,7 +40,10 @@ build<=1200s, original global drains0. Not Linux/hardware/timing signoff.
         'actual_shared_physical_command_nonce=True,large_native_admission=True')
     t=once(t,'large_native_wire_CQ=False,planned_cases=27',
         'large_native_wire_CQ=False,planned_cases=29,large_source_runtime_verified=False')
+    t=once(t,'[*src,*fixture.link.SOURCES]', '[*src,*fixture.link.SOURCES,*service.BOARD_TX_SOURCES]')
     t=once(t,"'wqe_zero.c','wqe_zero.h']]]","'wqe_zero.c','wqe_zero.h','wqe_segmented.c','wqe_segmented.h']],service.CODEC_REPORT]")
+    t=once(t,'service.CODEC_REPORT]', 'service.CODEC_REPORT,service.BOARD_FIFO_REPORT,service.PCIE_REQUEST_REPORT,*service.BOARD_FIFO_INPUTS]')
+    t=once(t,"report['source_sha256']=before", "report['source_sha256']=before;report['actual_board_TX_FIFO_parameters']=service.board.parameters()")
     t=once(t,"        cases=[('WRITE',1,0,['+WRITE'],False,None),",
         "        cases=[('LARGE_WRITE',1,0,['+WRITE','+SEGMENTED'],False,None),\n"
         "            ('LARGE_SEND',3,0,['+SEND','+SEGMENTED'],False,None),\n"

@@ -1,0 +1,88 @@
+{
+  "scope": "Original native003 last-frame failure isolated in unchanged frozen model; pre-padded HLS LAST met a legacy unpadded-only normalizer. No native pass or waiver.",
+  "diagnostic_completed": true,
+  "native_runtime_pass": false,
+  "failed_native_bindings_reverified": 1290,
+  "actual_complete_MAC_frames": [
+    {
+      "tag": 8193,
+      "bytes": 4170,
+      "sha256": "59e10b431f77eca5e70a49f4a325533407dc1e9bcf4798b40154178e6b929e29",
+      "independent_bytes_and_FCS_match": true
+    },
+    {
+      "tag": 8194,
+      "bytes": 4154,
+      "sha256": "bf81e9176971a653cbdd0f57e3bec996f84d8f9c9baf7a756550c31d284dad12",
+      "independent_bytes_and_FCS_match": true
+    }
+  ],
+  "actual_fault": {
+    "core_TX_bad": 1,
+    "core_RX_bad": 0,
+    "core_overflow": 0,
+    "guard_error": 35,
+    "source_commands": 3,
+    "source_next_offset": 8193,
+    "actual_MAC_SFD": 2,
+    "CQ_commits": 0
+  },
+  "actual_HLS_last_BTH": "0870ffff000000c480000000",
+  "actual_HLS_pad": 3,
+  "actual_after_legacy_padding_BTH": "0840ffff000000c480000000",
+  "actual_after_legacy_padding_pad": 0,
+  "rejected_after_legacy_IP": "450200300000400064110000c6120b02c6120b0112b712b7001c00000840ffff000000c480000000cb0000006094b42b",
+  "cause": "Actual HLS already supplies aligned LAST padding; unchanged legacy rocev2_tx_padding rejects nonzero BTH pad and overwrites it with alignment-derived0. Its bad user reaches unchanged ICRC, which drops the frame. HLS synchronization-write strobes in generic fault inspection are not fault-data values.",
+  "correction": "New named private LAST-aware normalizer only in matched atomic-request/segmented-HLS wrapper. LAST requires aligned complete lengths, nonempty payload and literal zero declared pad bytes; never re-pad or erase BTH count. Legacy ordinary normalization unchanged. No checksum/ICRC, ownership, drain, tail or deadline relaxation.",
+  "private_parent_RTL_files": 35,
+  "changed_private_parent_RTL": [
+    "rocev2_integrity_transport.v"
+  ],
+  "new_leaf": "rdma/rnic/rtl/rocev2_segmented_tx_padding.v",
+  "original_default_padding_unchanged": true,
+  "component002_pass": true,
+  "component_methods": 6,
+  "all_original_three_padding_tests_retained": true,
+  "four_state_methods": 5,
+  "two_state_capacity_methods": 1,
+  "max_component_runtime_seconds": 17.668146051990334,
+  "failed_component001": "Four regular methods passed; unchanged32-frame capacity workload timed out in Icarus30s; small new negative batch did not force required input stalls. Kept all cases/assertions/deadlines: capacity now same RTL/scoreboard in explicit2state Verilator; negative batch gets same8-frame FIFO-pressure prefix as retained old negative test. No RTL change between failed001/pass002.",
+  "failed_raw_inspection": "Consumed width-adapter shifter had keep0 at fatal; first raw-packet observer correctly failed rather than prove bytes. Its log/script preimage remain. Subsequent unchanged-model inspection reads the retained actual HLS BTH register and proves pad3.",
+  "new_native_runtime": "compiling all29 cases; not yet verified",
+  "source_sha256": {
+    "results/2026-10-18/rocev2-rnic-segmented-wire-native-full-003.json": "097513553a195a5310b725e30a8f7ad5ac32b43eac12e000618e1d3009c87946",
+    "results/2026-10-18/rocev2-rnic-segmented-native-fault-diagnostic-001.json": "300a838438e8f6b7d519bf49f542151c7b612e487e102db61cfe31b0481a509b",
+    "results/2026-10-18/rocev2-rnic-segmented-padding-001.json": "378e5c6342f64136a9140fa747c505c921440b2dd4ea66cf66a96ed58dad1e2d",
+    "results/2026-10-18/rocev2-rnic-segmented-padding-002.json": "58b3cd06483b234a264e51b6f8ec6e876d6676e4546ff69d955dcccc05861917",
+    "results/2026-10-18/rocev2-rnic-segmented-padding-native-elaboration-001.json": "ebefb1290befa0b1e98757bfe214718b11c877e1b21bbcc4452ef17f3f0210a9",
+    "rdma/rnic/tests/segmented_native_debug_fault.gdb": "00a1e2e9fa4487e99b93cef3b2407d1e42eab21991154e1d75fbbea95ba58f68",
+    "rdma/rnic/tests/segmented_native_debug_integrity.gdb": "ce897cddfaf5873f4437b215adc2c63c7fe59ab0a51aefe99fb5bc34b9b4c7f3",
+    "rdma/rnic/tests/segmented_native_debug_packet.gdb": "8b5b3f7b8bee60ee9bf9f88db8a2197def3f9cf1b185afa41676a0dbc9ffd043",
+    "rdma/rnic/tests/segmented_native_debug_raw_padding.gdb": "ac77f903d3d754479f8f484ee386e1aa409e45054a08ef6c723d1d6d5e5c86a9",
+    "rdma/rnic/rtl/rocev2_segmented_tx_padding.v": "4c0c1f0d72de2e06900b691995729eb0109a8f1d865ad254ca209b050b1ea3af",
+    "rdma/rnic/fpga/derive_segmented_padding.py": "ac8d48a5918a095e6f712853ae7d55ab9510c11edbdf74888e68dfe137119ae8",
+    "rdma/rtl/rocev2_tx_padding.v": "9a24e003e08ee4b05140521ab1bf0f65e53f7eef1f503f48e5d57528083271d4"
+  },
+  "artifact_sha256": {
+    "rdma/rnic/build/segmented-native-fault-diagnostic-c33st7z7/integrity-fatal-inspection.log": "ae5b3d0e9f70ee26078ab72506eeb7d05f97bf58d6e79df44e33b6f1fd2d6f19",
+    "rdma/rnic/build/segmented-native-fault-diagnostic-c33st7z7/rejected-packet-inspection.log": "552883005efa2fe34cc13a63e46940cca18dc1091b1df7fedb6117f545355683",
+    "rdma/rnic/build/segmented-native-fault-diagnostic-c33st7z7/raw-HLS-padding-inspection.log": "46b943966884ebd3346761c2319d29dfa349b8d9a1a0c41af9975706f95b832e",
+    "rdma/rnic/build/segmented-native-fault-diagnostic-c33st7z7/raw-HLS-BTH-inspection.log": "d76b563101c1f46e6af886672b18afe403b98537eb7574cd597d983c3435cc7e",
+    "rdma/rnic/build/segmented-native-fault-diagnostic-c33st7z7/raw-script-before-consumed-buffer-observation.gdb": "da452cf2d8511ce80a49691dc4e8e0296d62eca2d7918dc7fa747ae99ff802ac",
+    "rdma/rnic/build/segmented-padding-de5p_wxb/padding-before-runtime-backpressure-fixture-fix.v": "4c0c1f0d72de2e06900b691995729eb0109a8f1d865ad254ca209b050b1ea3af",
+    "rdma/rnic/build/segmented-padding-de5p_wxb/test-before-runtime-backpressure-fixture-fix.py": "f93b083d76c6a2f48b80d47c430a2950b129c359c4106eacfc5c046862b5e805",
+    "rdma/rnic/build/segmented-padding-r8zgtfe0/expected.hex": "aa95e94d87ea52552b64082e166acd5d24f55c7faa5f09cfe40499839e5a5e00",
+    "rdma/rnic/build/segmented-padding-r8zgtfe0/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/segmented-padding-r8zgtfe0/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+    "rdma/rnic/build/segmented-padding-r8zgtfe0/tb.v": "f6c57284cd9b967ac1ce278d2775bb949310e6fdd0f4c00beca79781bca9da96",
+    "rdma/rnic/build/segmented-padding-r8zgtfe0/input.hex": "22c850cb9d8ac92acf2030fcf3c30aab13db702be130206fe9b2b698934acfad",
+    "rdma/rnic/build/segmented-padding-r8zgtfe0/test": "854f884b66bddd3d78415f2f3fa8c370dd1a42cf60112449406929215a320adf",
+    "rdma/rnic/build/segmented-padding-de5p_wxb/expected.hex": "fc17c2dc17136c98c7c260576bfb26bdccb6342fdb0d0edda68a01d562f25bf4",
+    "rdma/rnic/build/segmented-padding-de5p_wxb/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/segmented-padding-de5p_wxb/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+    "rdma/rnic/build/segmented-padding-de5p_wxb/tb.v": "dad7b788419f1585cd6e154c5adf1d91e9199220b14d51bee715c367aaecb5f3",
+    "rdma/rnic/build/segmented-padding-de5p_wxb/simulation.log": "ea7138775f82730acf9bf7d891c474ee3668f4390ac25a9f293c46fc7aa7abbf",
+    "rdma/rnic/build/segmented-padding-de5p_wxb/input.hex": "8886b1c5355e42cbc5a1fc55544d722960b23f090f4093dee5a8c1308e760e5a",
+    "rdma/rnic/build/segmented-padding-de5p_wxb/test": "e7427165a5124777dc215e95f48eeda746bf803f37cc1c1931f51b11b273f2f9"
+  }
+}

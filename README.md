@@ -26,7 +26,7 @@ inbound SEND/WRITE target, READ responder, native InfiniBand or production-relia
 | Incremental RNIC source | Offline native queue/MR/DMA/kernel/provider development, SEND/RECV/Immediate and Atomic responder candidates; not a new hardware-qualified image |
 | Persistence | SRAM programming only; flash was not modified |
 
-### RNIC development snapshot (2026-10-20)
+### RNIC development snapshot (2026-10-21)
 
 The new [incremental RNIC sources](rdma/rnic/README.md) include protected host
 memory/queues, kernel/provider work, SEND/RECV/Immediate and Atomic candidates.
@@ -37,15 +37,23 @@ actual generated HLS, MR/PTE/DMA and XGMII/FCS/SFD/CDC/MAC/CQ RTL for the new
 ordinary source cases; physical host/root/peer/PHY/PTP endpoints remain
 models, and ordinary READ/SEND_IMM retain prior MAC-receipt models.
 
-Ordinary WRITE/SEND up to1MiB pass segmented HLS and focused packet-owner
-tests with true FIRST/MIDDLE/LAST and one final WR receipt. A private C128
-codec passes15 real-C/UBSan methods without changing installed capabilities.
-However, the [new large-wire native29-case candidate](results/2026-10-18/rocev2-rnic-segmented-wire-native-full-001.json)
-FAILED its first8193-byte WRITE at a MAC/FIFO assertion; the remaining28 cases
-were not run. Its small-packet test FIFO differs from the board TX path;
-diagnosis/alignment remain. The prior27-case pass is NOT a pass for this new
-graph. Native large-transfer runtime/CQ, multi-SGE and standard API runtime
-remain incomplete; the driver still advertises `IB_ATOMIC_NONE`.
+The [new large-wire native regression](results/2026-10-18/rocev2-rnic-segmented-padding-native-full-001.json)
+now passes all29 simulated cases, including8193-byte WRITE/SEND and all27
+prior cases, each in18.15..27.12s. The new cases exercise actual generated
+HLS, scattered-page MR/PTE/DMA, board-faithful TX FIFO/CDC, XGMII/FCS/SFD/MAC
+and one final whole-WR CQ, with independent wire/data/owner checks. Physical
+host/root/peer/PHY/PTP endpoints remain models. Earlier failed runs and their
+FIFO, PCIe3DW-model and pre-padded-LAST diagnoses are retained separately.
+Up to1MiB remains HLS/component evidence, not this full-native runtime test.
+
+A separate private RNC8191/CQC31/profile4 Linux source cohort builds against
+the running kernel headers. Its [actual C posting/MR/SQ/CQ tests](results/2026-10-18/rocev2-rnic-segmented-kernel-post-003.json)
+pass65 ASan/UBSan cases, including8193-byte/1MiB WRITE/SEND and all47 prior
+cases, under explicit Linux/MMIO/DMA/completion models. This is not execution
+inside Linux or a matched8191 native graph. Its RTL identity helper is not
+runtime-qualified; matching standard-provider support, physical runtime,
+large receive/READ/Immediate and multi-SGE remain incomplete. No module is
+installed/loaded; defaults and `IB_ATOMIC_NONE` are unchanged.
 
 This is a **work-in-progress source snapshot**, separate from the earlier
 hardware-tested READ/WRITE images. Its latest HLS estimate11.180ns misses the original

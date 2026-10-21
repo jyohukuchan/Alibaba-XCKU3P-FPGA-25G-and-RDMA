@@ -1,0 +1,125 @@
+{
+  "scope": "Four-state real board TX FIFO/CDC/MAC checks, <=30s per simulation.\n\nByte-exact XGMII/FCS/tags, slow producer and retained completions; genuine\nbad-frame and oversize FIFO errors must remain fatal. Not native RNIC proof.\n",
+  "pass_test": true,
+  "methods": 4,
+  "seconds": 17.211724145978224,
+  "source_sha256": {
+    "rdma/rnic/tests/test_segmented_board_tx_rtl.py": "d7490e58746d626bf14c69e4fe7892a934f992627fc8151f8ebed9ab6bb3efe5",
+    "rdma/rnic/tests/segmented_board_tx_fixture.py": "327df0db8cb2198c5ce6f1af2d1284f5aa6f06d09d4b0242eb63608d92298937",
+    "rdma/rnic/tests/atomic_mac_wire_fixture.py": "8e17dcb56ccb2bbbaac04f4f96f080e855355f4f8bba2f5c9a83513c71a1977d",
+    "external/corundum/fpga/lib/eth/rtl/axis_xgmii_tx_64.v": "097750af9f48497c3c5743c37e743eef22a314de139c2088756346c167915f7b",
+    "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+    "external/corundum/fpga/lib/axis/rtl/axis_async_fifo_adapter.v": "9dc661b88d459a318e40722df277720fe64ef4309230462e8538b1a44da1d57c",
+    "external/corundum/fpga/lib/axis/rtl/axis_async_fifo.v": "faeeaeadcba90268689f9fd227b1c8088d856ec8290ef6ab10b6d25e018858d4",
+    "external/corundum/fpga/lib/axis/rtl/axis_adapter.v": "4b9b6649f12e374c24d36f2d42680ecf1f38cca8ae4fda7fd68dbf722b6c8140",
+    "fpga/config_25g.tcl": "6125aea101659836701591c892c68b734d1897136418e8b81074f833c9f50d83",
+    "fpga/fpga_as02mc04_25g_cdc.v": "c437ba26ac31e2ffb9c91cde79993abec1a6056bbdccd654c74fc159917d1ae4",
+    "external/corundum/fpga/common/rtl/mqnic_core_pcie_us.v": "643270d8005e2c544b1bd14b1a2e16da0e36a765bfcd72139a6e714ad145cd2b",
+    "external/corundum/fpga/common/rtl/mqnic_core_pcie.v": "3380da8e7e584096416b7663ea25e77f349ce63db740b1ea997aa886ac1cd848",
+    "external/corundum/fpga/common/rtl/mqnic_core.v": "655cbf64fdf6b49caf305488880cd85e53250d86d47ba91666fde037eb1d0275",
+    "external/corundum/fpga/common/rtl/mqnic_interface.v": "8ae3f00a5d2709dee03d56aaf1618256aa8f41f4bd1ee4124f592601f8914f2b",
+    "external/corundum/fpga/common/rtl/mqnic_port_tx.v": "bed4ef829b9f391b2747c8f8db3121c6f1887a440afad9120d5423318297122b",
+    "external/corundum/fpga/common/rtl/tx_fifo.v": "55c59ff85289afa911f1e10ed4eda2b736627221dc0622982585ad0bbd84acd6",
+    "external/corundum/fpga/lib/axis/rtl/axis_fifo_adapter.v": "7662fbf53def5dfb353a590a3ae7309b4f9519847288c90a42ed63df57c95d00",
+    "external/corundum/fpga/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+    "external/corundum/fpga/lib/axis/rtl/axis_demux.v": "b3ec5e59baa6b29f9d2bd077c262b8f3e57ea1de1162e19614f93dc866d5ba38"
+  },
+  "tests": {
+    "test_bad_frame_still_fails_closed_at_actual_board_FIFO": {
+      "pass_test": true,
+      "seconds": 3.152050271979533,
+      "expected_fatal": "bad",
+      "process_exit": 1,
+      "lengths": [
+        4170
+      ],
+      "source_gap": 1,
+      "directory": "rdma/rnic/build/segmented-board-tx-l5dcuhn0",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-board-tx-l5dcuhn0/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-board-tx-l5dcuhn0/tb.v": "363b125fba73cf75f59d0cd365b56b8011fd5e12370b9b2043f7f83d5e324944",
+        "rdma/rnic/build/segmented-board-tx-l5dcuhn0/simulation.log": "baeb73b269d09ff180d7db1fc0fb040c85d41216255a120c3ea01c0f01eecede",
+        "rdma/rnic/build/segmented-board-tx-l5dcuhn0/input.hex": "ab9cd96acbfc08c9191276232efe2d38e87ff557ef676194edc249764e6b793e",
+        "rdma/rnic/build/segmented-board-tx-l5dcuhn0/test": "6a53cc02627813a78c8e45ab49b368628d96926b51bcaf35a5cc5c3f2aae4be1"
+      }
+    },
+    "test_oversize_frame_still_fails_closed_at_actual_board_FIFO": {
+      "pass_test": true,
+      "seconds": 3.6077123270370066,
+      "expected_fatal": "oversize",
+      "process_exit": 1,
+      "lengths": [
+        32769
+      ],
+      "source_gap": 0,
+      "directory": "rdma/rnic/build/segmented-board-tx-woybcv6o",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-board-tx-woybcv6o/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-board-tx-woybcv6o/tb.v": "7a38430a403efbaf84a4494a219e3431e572bac611fe06bf26eaeed4e05dce33",
+        "rdma/rnic/build/segmented-board-tx-woybcv6o/simulation.log": "06625a950cfff2eb4b7c4c492ccc684ceaab11a66f272ab0d2eff266d27ea0e4",
+        "rdma/rnic/build/segmented-board-tx-woybcv6o/input.hex": "d0038da6819af87a3e4d05e4383937e7818f7a6291f9be0a5ec4a66c145cfc05",
+        "rdma/rnic/build/segmented-board-tx-woybcv6o/test": "3df681f3244c47ba8f00432a57a4e98f995d0f3c21c547c7123a5df8daa0c782"
+      }
+    },
+    "test_small_and_jumbo_frames_keep_tags_and_FCS": {
+      "pass_test": true,
+      "seconds": 5.1492796409875154,
+      "expected_fatal": null,
+      "process_exit": 0,
+      "lengths": [
+        60,
+        79,
+        9214,
+        62
+      ],
+      "source_gap": 0,
+      "directory": "rdma/rnic/build/segmented-board-tx-h_morswd",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-board-tx-h_morswd/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-board-tx-h_morswd/tb.v": "1eef4eb7a8dd6ad0dd1444a076d77d318305403e342564038c8f783253413a92",
+        "rdma/rnic/build/segmented-board-tx-h_morswd/simulation.log": "e4a9cabb9cda52cb35119404634e17629035b7dedd717f494b1a31f4511c56db",
+        "rdma/rnic/build/segmented-board-tx-h_morswd/input.hex": "dfba1f38a564af3635739ee61131c62fa74c4137ed6e5465540fdbb9c2cc03c5",
+        "rdma/rnic/build/segmented-board-tx-h_morswd/test": "4d503d0890e46ba4f44509dcb668b5966b8ee71d590eb0196ea418c06fff8723"
+      }
+    },
+    "test_three_large_frames_slow_source_actual_MAC_and_held_receipts": {
+      "pass_test": true,
+      "seconds": 4.933780963998288,
+      "expected_fatal": null,
+      "process_exit": 0,
+      "lengths": [
+        4170,
+        4154,
+        62
+      ],
+      "source_gap": 1,
+      "directory": "rdma/rnic/build/segmented-board-tx-1rvz35rp",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-board-tx-1rvz35rp/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-board-tx-1rvz35rp/tb.v": "ac16003f4077ddab6697c95032da30b9dcb619d2a3a4ff728d4d84e3965c84a7",
+        "rdma/rnic/build/segmented-board-tx-1rvz35rp/simulation.log": "af4befe793dd046b3d221c11a1162e5f04c40f511587f6a8348fee37c54ddc0f",
+        "rdma/rnic/build/segmented-board-tx-1rvz35rp/input.hex": "96d8d00c350f5baf7930169596c55afa377f8850497a91acefefaf1165b361d0",
+        "rdma/rnic/build/segmented-board-tx-1rvz35rp/test": "3b5b073a0fcbfe35d3062493ae5c75ff5c481c199ecac6747733d215a69d683a"
+      }
+    }
+  },
+  "four_state": true,
+  "simulation_limit_seconds": 30,
+  "actual_board_parameters": {
+    "synchronous_FIFO_bytes": 32768,
+    "synchronous_data_bits": 128,
+    "synchronous_RAM_pipeline": 2,
+    "CDC_FIFO_bytes": 512,
+    "CDC_data_in_bits": 128,
+    "CDC_data_out_bits": 64,
+    "CDC_RAM_pipeline": 0,
+    "CDC_drop_oversize": false,
+    "CDC_drop_bad_frame": false,
+    "board_MAX_TX_SIZE": 9214,
+    "core_period_ns": 4,
+    "MAC_period_ns": 2.56,
+    "physical_endpoints_modeled": true
+  },
+  "native_RNIC_runtime": false,
+  "hardware_verified": false
+}

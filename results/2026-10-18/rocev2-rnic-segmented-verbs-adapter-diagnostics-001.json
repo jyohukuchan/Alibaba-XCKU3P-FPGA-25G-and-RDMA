@@ -1,0 +1,33 @@
+{
+  "scope": "Preserve two failed adapter fixtures and source preimages; actual kernel adapter/codec leaves unchanged across both failures and successful003. No Linux post/runtime claim.",
+  "diagnostic_completed": true,
+  "actual_adapter_and_codec_C_unchanged_files": 8,
+  "actual_kernel_headers_linked_all_three": true,
+  "failed001": "Kernel header build passed; user boundary stub of linux/errno.h recursively intercepted glibc errno.h and hid EINVAL/EMSGSIZE/etc. Removed only this stub, retained real errno UAPI.",
+  "failed002": "Kernel/model builds passed; independent expected byte oracle had sequence/epoch offsets reversed. Original O1 GDB could not recover optimized locals; same failed C relinked O0 shows real output sequence at8 and epoch at56, matching documented C128 format. Fixed only expected offset mapping.",
+  "successful003": {
+    "pass_test": true,
+    "positive_cases": 54,
+    "negative_cases": 14,
+    "base_SEND_ASan_guarded": true,
+    "Linux_WR_types_modeled": true,
+    "actual_posting": false
+  },
+  "actual_Linux_callbacks_or_posting": false,
+  "installed_or_loaded": false,
+  "source_sha256": {
+    "results/2026-10-18/rocev2-rnic-segmented-verbs-adapter-001.json": "7df648a130b0f0e98b2e0bf3d5e65cfdeb80f2aac2fb2f79d2ce723bdf6438e0",
+    "results/2026-10-18/rocev2-rnic-segmented-verbs-adapter-002.json": "74c1b6b1ffc3bc379f19fec569bd11f84514f3834cf01a2e176ad1971a305fd0",
+    "results/2026-10-18/rocev2-rnic-segmented-verbs-adapter-003.json": "a3376c9813b109c024ef7fc1fa20791381ae82c9dfd1dc6d348b3844449476ed"
+  },
+  "artifact_sha256": {
+    "rdma/rnic/build/segmented-verbs-adapter-udlqzola/probe-before-errno-fixture-fix.py": "c625f8e6114cfb869a8d91ce478945e4d1092f05953aded5da9cae1ff9d66d74",
+    "rdma/rnic/build/segmented-verbs-adapter-udlqzola/kernel_segmented_wqe.c": "8cf3d6b76db1a27ed72b79cbf9befb5f4dc182647537e29630463d0b275270af",
+    "rdma/rnic/build/segmented-verbs-adapter-yxw37nyb/kernel-segmented-wqe-before-oracle-offset-fix.c": "8cf3d6b76db1a27ed72b79cbf9befb5f4dc182647537e29630463d0b275270af",
+    "rdma/rnic/build/segmented-verbs-adapter-yxw37nyb/probe-before-oracle-offset-fix.py": "e3b7d09503106c4bfb8ff2e6640471453dede89099556cfc66e86bd8e5a128b0",
+    "rdma/rnic/build/segmented-verbs-adapter-yxw37nyb/oracle-debug-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/segmented-verbs-adapter-yxw37nyb/oracle-offset-debug.log": "1239d8858cb7821fd5530dffde916bc137003fa39e06a8c35d2b8bc929542c56",
+    "rdma/rnic/build/segmented-verbs-adapter-yxw37nyb/oracle-offset-debug-O0.log": "631fe067eefeaa01f9c173c6c19976f6484426ed29e9c41f1137ed27ff43e364",
+    "rdma/rnic/build/segmented-verbs-adapter-yxw37nyb/cases-oracle-debug-O0": "9899f27291c788e3a361d04b6e51f8ce377331a67547d4bf970417ce07d93c3a"
+  }
+}

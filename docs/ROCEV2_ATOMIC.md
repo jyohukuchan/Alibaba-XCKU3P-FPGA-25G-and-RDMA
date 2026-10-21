@@ -5,7 +5,235 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
-## Publication checkpoint: large-source native failure preserved (2026-10-20)
+## Publication checkpoint: large native29 and private kernel65 (2026-10-21)
+
+[Padding-native-full001](../results/2026-10-18/rocev2-rnic-segmented-padding-native-full-001.json)
+is terminal PASS: compilation431.52s, ALL29 runtimes18.15..27.12s. Both8193-byte
+ordinary WRITE/SEND and ALL27 old cases ran; no case/deadline/oracle was waived.
+All1438 source/artifact/RAM records were reverified. Each large case has one
+whole8721-byte registered range at offset528, three real source commands,
+six read descriptors,68 actual PCIe requests (33three-DW/35four-DW), three
+complete independently checked wire frames and one final full748-bit CQ.
+Actual generated HLS/MR/PTE/DMA/shared-nonce/board-TX-FIFO/CDC/XGMII/FCS/SFD/
+MAC/owner retirement paths execute. Three ACKs follow actual wire EOFs;
+PSNs wrap fffffe/ffffff/0. Final genuine MAC receipt is withheld beyond the
+original1024-cycle tail. Source/HLS/dispatcher retire exactly once with no
+remaining owners/fault and no host source/sentinel changes.
+
+This is TWO-STATE simulation with modeled physical host/root/peer/PHY/PTP,
+not actual Linux/physical/timing qualification. Ordinary READ/SEND_IMM retain
+their previous MAC-receipt models. Runtime identity is still RNC4095/CQC15
+with the explicitly private large simulator codec; it does NOT qualify the
+new8191 Linux cohort. Up to1MiB remains separate HLS/component evidence.
+Earlier native001/002/003 failures remain unchanged, with their diagnoses.
+
+NEW `kernel/derive_segmented_kernel.py` and `build_segmented.py` freeze a
+private matched RNC8191/CQC31/profile4 cohort, still128-byte SQ/RQ/full748-bit
+owners. Only ordinary WRITE/SEND gain up to1MiB. Exact identity and geometry
+must be reread before queue binding; mixed old/new tuples fail closed.
+Actual standard post_send/MR/PD/full-range/full-key/ref/coherent-ring/producer/
+CQ/full-owner/backpressure/quarantine code remains, selecting the typed large
+adapter only in profile4. READ/RQ/Immediate remain<=4096, old profiles retain
+their limits and `IB_ATOMIC_NONE` remains unchanged. No default file is replaced.
+
+[Actual running-header kernel build001](../results/2026-10-18/rocev2-rnic-segmented-kernel-001.json)
+PASSES9.59s, GCC13/W=1, both modules link with matching6.17.0-1033-oem vermagic
+and required real symbols;122 source/frozen/artifact hashes reverified.
+[Actual C post003](../results/2026-10-18/rocev2-rnic-segmented-kernel-post-003.json)
+PASSES all65 ASan/UBSan cases, each<0.016s,143 hashes reverified:18 new large
+and ALL47 old cases. New coverage includes8193/1MiB WRITE/SEND, ASan base-only
+SEND, wrong range/key/old profile/large READ refusal, mixed identity/four
+geometry failures, corrupt full CQ owner, CQ backpressure and ambiguous
+producer timeout retaining MR/queue refs. Linux primitives/MMIO/pins/DMA/
+completion are explicit MODELS, not actual kernel callback execution.
+Failed post001 is model compilation (indentation and nonexistent macro);
+post002's first15 new cases pass before a fixture improperly tries to return
+an errno from void MMIO write. Their frozen inputs/logs/preimages are retained.
+Post003 instead withholds real ACK visibility and requires exact timeout/
+uncertain/quarantine behavior. Actual derived kernel bodies are unchanged.
+
+NEW `fpga/derive_segmented_profile.py` is an UNQUALIFIED private RTL identity
+helper for8191/31. It is not selected in the passing29-case graph, independently
+RTL-read-tested, or standard-provider/physical-qualified. No module installation,
+load, hardware/network/fan/BIOS/reboot/program/flash operation was performed.
+All11 original requirements remain: real Linux/provider/API/physical integration,
+large RX/READ/Immediate/multi-SGE/recovery and original full-board timing are
+still open. HLS11.180ns still fails original4ns/default1.08ns. `scripts/check.sh`
+still stops at the historical TX-padding SHA mismatch; no historical evidence
+or strict gate was rewritten to obtain a green release.
+
+## Actual pre-padded LAST integration and fresh all29 native build (122, historical)
+
+[Native003](../results/2026-10-18/rocev2-rnic-segmented-wire-native-full-003.json)
+compiled421.59s, then FAILED first large WRITE24.16s; the other28 cases were
+NOT RUN. Both first4170-byte and middle4154-byte actual MAC frames match their
+complete independent RETH/PSN/payload/ICRC/FCS/SFD/tag/EOF oracles. Three source
+commands were accepted and the retained source reached offset8193, but the
+last frame was dropped and no HLS whole-WR receipt or CQ committed.
+
+[Frozen-model owner inspection001](../results/2026-10-18/rocev2-rnic-segmented-native-fault-diagnostic-001.json)
+and [padding diagnosis001](../results/2026-10-18/rocev2-rnic-segmented-native-padding-diagnostics-001.json)
+isolate the ACTUAL cause without DUT rebuild/state writes: core TX bad1,
+RX bad0/overflow0 and guard ERR_UNEXPECTED35. The retained actual HLS BTH is
+`0870ffff000000c480000000` (WRITE_LAST, pad3, PSN0). The old unpadded-only
+normalizer overwrote that pad with0 and marked the second beat bad. Its
+rejected FIFO frame retains IP length48/UDP28/payload1/three zero pad bytes,
+but BTH `0840...`. Unchanged ICRC correctly discarded the bad-user frame.
+Generic HLS ap_sync write strobes are NOT fault-data values; this is not an
+HLS receive-fault diagnosis. All1290 failed bindings were reverified and all
+original models/logs/binaries/preimages remain. A failed observer of a consumed
+width-adapter shifter is preserved separately; it is not byte evidence.
+
+NEW `rtl/rocev2_segmented_tx_padding.v` handles the matched HLS LAST contract
+under a NEW module name. LAST opcodes02/08 must already have aligned complete
+lengths, nonempty payload and literal-zero declared pad bytes. The adapter
+preserves BTH pad count and never adds their padding twice or heals invalid
+LAST input. Other ordinary packets retain existing unpadded normalization.
+`fpga/derive_segmented_padding.py` selects it ONLY inside the new private
+atomic-request/segmented-HLS integrity wrapper. The original/default
+`rocev2_tx_padding.v`, old initiator paths, checksum/ICRC, HLS generation,
+owner/lifetime/drain/tail/clock gates and capability declarations are unchanged.
+
+[Padding/integrity component002](../results/2026-10-18/rocev2-rnic-segmented-padding-002.json)
+PASSES six methods, all51 bound records reverified. ALL three old padding
+tests and exact workloads/oracles remain. New LAST WRITE/SEND cover every
+pad count and many payload tails; zero SEND44 and ordinary normalization
+remain compatible. Nonzero pad bytes, wrong class/length/UDP/masks/user/error
+and unpadded LAST are refused, with real FIFO backpressure and recovery.
+Five methods use four-state Icarus, each<=17.67s. The unchanged32-frame
+capacity workload uses explicit TWO-STATE Verilator0.071s to remain within
+the SAME30s runtime bound; its original byte/stall/cycle/rate checks remain.
+This is not an all-four-state or hardware/timing claim. Failed component001
+timed out that unchanged workload in Icarus and lacked actual backpressure
+in a small new negative batch. Only simulation engine/pressure prefix changed;
+RTL is identical between failed001/pass002. No assertion/case/deadline waiver.
+
+[Complete new-graph elaboration001](../results/2026-10-18/rocev2-rnic-segmented-padding-native-elaboration-001.json)
+PASSES3.20s, all1216 records reverified/no width warnings and exactly one
+new padding instance. Among35 private parent RTL files ONLY the integrity
+wrapper's module selection changes; one new leaf is added. All previous
+MR/PTE/HLS/source/nonce/CQ domains and exact root fanout remain singular.
+This is COMPILE-ONLY. Fresh padding-native-full001 is COMPILING the two8193
+cases FIRST plus ALL27 prior cases with identical fixtures/oracles and
+1200s build/30s per-case bounds; inputs remain frozen while live. No new
+native runtime pass yet.
+
+Linux large-profile/geometry negotiation and real SQ/MR/CQ lifetimes still
+must be integrated before selecting the private typed large adapter; old
+4095 alone is not authority to enable it. All11 requirements, large RX/READ/
+Immediate/multi-SGE/Linux/provider/API/physical/recovery/full-board timing
+remain open. HLS11.180ns still fails original4ns/default1.08ns. No hardware,
+installation/network/fan/BIOS/reboot/flash or automatic Git publication changes.
+
+## Large native first-frame proof, full64 PCIe model and verbs adapter (121, historical)
+
+The [board-faithful native002](../results/2026-10-18/rocev2-rnic-segmented-wire-native-full-002.json)
+compiled426.98s, then FAILED its first large WRITE after20.55s. It does NOT
+pass29 cases: the other28 were NOT RUN. Its first4170-byte MAC frame now
+matches the independent complete FIRST/RETH/payload/ICRC oracle, real FCS,
+SFD/tag2001 and actual XGMII TERM; the peer ACK follows that real EOF.
+The next actual DMA descriptor reaches sealed third page0000000012345000,
+where Corundum correctly emits a3DW MemRd. The inherited root model incorrectly
+required every read to be4DW and decoded every address as64-bit-in-header.
+[Diagnostics001](../results/2026-10-18/rocev2-rnic-segmented-native-dma3dw-diagnostics-001.json)
+preserves the failed1288 bindings/model/binary/log and exact fixture/probe
+preimages; all1288 were reverified using those preimages after correction.
+
+NEW `tests/segmented_pcie_request_fixture.py` adds real3DW low-page decoding
+ONLY for new large-source reads to the exact sealed third page. All prior
+scenarios still require4DW; type/requester/TC/attributes/unused-DW/PH/range
+checks remain. No page is substituted and no hardware force-64bit parameter
+changes. An additional independent observer joins EVERY enabled TLP byte to
+the actual accepted full64-bit physical descriptor in order, requires exact
+length before status and rejects high-address truncation/reorder/excess/
+missing bytes. Repeated test payload patterns cannot hide a wrong DMA page.
+[Four-state PCIe-request001](../results/2026-10-18/rocev2-rnic-segmented-pcie-request-001.json)
+PASSES four methods/14 cases in1.64s: actual top64-bit last-byte/low/high
+address decoding and all negative header/range controls. These are root-model
+component checks, NOT native-DMA/Linux/physical qualification.
+
+Fresh native-full003 has passed complete bench/width elaboration and is
+COMPILING the two8193-byte cases FIRST plus ALL27 regressions. All35 private
+generated RNIC RTL files remain byte-identical to failed002. The new wire
+oracle also requires exactly33 actual3DW and35 actual4DW read requests,
+besides all prior host/wire/owner/CQ/tag/nonces/ACK/EOF checks. Same1200s build,
+30s per-case limits, original clocks/tails/global drains0. No runtime pass yet.
+
+NEW `kernel/verbs_segmented_wqe.c/.h` adds a PRIVATE correctly typed Linux WR
+adapter for ordinary WRITE/SEND up to1MiB. Base SEND is never cast as an
+extended RDMA WR. Exactly one SGE, full address/range/key/sequence/epoch and
+signaled flag serialization are checked; zero/Atomic/READ/Immediate/small
+operations delegate unchanged old adapters. It does not post, read payloads,
+pin/register memory, acquire MR/PD/SQ refs or advertise capabilities, and is
+NOT selected by the default Makefile/callbacks. Matched large-profile
+negotiation and actual full-range posting/lifetime integration remain required.
+
+[Adapter003](../results/2026-10-18/rocev2-rnic-segmented-verbs-adapter-003.json)
+PASSES real running-kernel-header module compile/link3.68s, matching vermagic
+and actual adapter/codec symbols, plus actual C under explicit Linux WR type
+models/ASan/UBSan0.012s:54 positive and14 negative cases. Independent128-byte
+oracles cover large lengths/keys/flags, top64-bit ranges, malformed/unsupported
+requests, null/zeroed errors, zero/small/Atomic delegation and ASan-guarded
+base-only SEND allocation. No module is installed/loaded and no real Linux
+callback/SQ/CQ/standard API/native DMA is executed by this test.
+[Adapter diagnostics001](../results/2026-10-18/rocev2-rnic-segmented-verbs-adapter-diagnostics-001.json)
+preserves two failed user fixtures: recursive errno stubbing, then swapped
+expected sequence/epoch offsets. Real header builds passed all three; all8
+actual adapter/codec C leaves are identical across failures and successful003.
+Read-only O0 debug relink confirms actual sequence at8/epoch at56; no C gate
+or negative test was removed.
+
+All11 requirements remain open: large RX/READ/Immediate/multi-SGE, real host/
+Linux/provider/API/recovery/physical and full-board timing. HLS11.180ns still
+fails original4ns/default1.08ns. No hardware/install/network/fan/BIOS/reboot/
+flash, default capability or automatic Git publication changes.
+
+## Board-faithful large-source MAC path and new native build (120, historical)
+
+[Frozen-model diagnostic001](../results/2026-10-18/rocev2-rnic-segmented-native-fifo-diagnostic-001.json)
+isolates the previous fatal without rebuilding or changing DUT state. The
+actual inherited1KiB whole-frame TX FIFO overflow bit is1; bad-frame,
+MAC-underflow, timestamp-overflow and DUT fault are0. There is one full MR
+query/grant and source command, one framer frame, no MAC SFD/CQ and no packet
+advance. All1276 original bindings were checked BEFORE correction. The
+original model/log/binary and both changed Python preimages remain preserved.
+This diagnostic is not a successful native run.
+
+NEW `tests/segmented_board_tx_fixture.py` follows the real board parameter
+chain and instantiates unchanged Corundum `tx_fifo`:32768-byte synchronous
+frame queue,128-bit input/output, RAM pipeline2. It feeds the actual512-byte
+128-to64-bit CDC with `mqnic_port_tx`'s cut-through/no-oversize-drop policy,
+RAM pipeline0 and the same250MHz/390.625MHz clocks. This is NOT simply an
+arbitrary larger FIFO. Real board config/width/port/pipeline propagation and
+all new RTL inputs are checked/hash-bound. Old shared fixtures are untouched.
+Overflow/bad-frame/underflow assertions remain; synchronous queue errors
+and malformed actual XGMII START/TERM now have additional fatal observers.
+
+[Four-state board-TX component001](../results/2026-10-18/rocev2-rnic-segmented-board-tx-001.json)
+PASSES four methods in17.21s, each simulation<=5.15s; all39 bound records
+reverified. Slow-source4170/4154/62-byte frames, small frames and9214-byte
+jumbo retain exact wire bytes/FCS/SFD/tags and withheld genuine completions.
+The synchronous queue cannot emit an incomplete frame. Bad frames and
+32769-byte oversize frames still fail closed at the REAL FIFO with their
+expected separate fatal flags and no MAC SFD. These are component tests,
+not native RNIC/Linux/physical qualification.
+
+The new large native fixture additionally waits for actual observed XGMII
+TERM before injecting each peer ACK, rather than acknowledging a frame only
+accepted by the upstream framer. Full actual wire/FCS and per-ACK EOF oracles
+remain independent. All35 private generated RNIC RTL files are byte-identical
+to failed001; no transport/range/identity/drain/tail/clock/deadline gate changed.
+Fresh native-full002 has passed bench/width elaboration and is COMPILING both
+8193-byte cases FIRST plus ALL27 regressions on this same board-faithful path.
+No runtime pass yet. Same1200s build/30s per-case limits and global drains0.
+Inputs remain frozen while live; no automatic commit/push or hardware changes.
+
+All11 requirements, large RX/READ/Immediate/multi-SGE/Linux/API/physical/
+recovery/full-board timing remain open. HLS11.180ns still fails the original
+4ns/default1.08ns clocks. Exact authenticated thread/goal restoration is still
+unproven; no reboot is required or attempted.
+
+## Publication checkpoint: large-source native failure preserved (2026-10-20, historical)
 
 The [new 29-case native run001](../results/2026-10-18/rocev2-rnic-segmented-wire-native-full-001.json)
 has finished, NOT passed. Compilation succeeded in424.65s. The first

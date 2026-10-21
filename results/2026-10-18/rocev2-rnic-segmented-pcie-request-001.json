@@ -1,0 +1,201 @@
+{
+  "scope": "Exact private root-model 3DW/4DW guards and full64 descriptor byte joins.\n\nFour-state component only; actual generated native DMA is a separate gate.\nEach bad request must genuinely fatal, never suppress an assertion.\n",
+  "pass_test": true,
+  "methods": 4,
+  "cases": 14,
+  "seconds": 1.6385184159735218,
+  "source_sha256": {
+    "rdma/rnic/tests/test_segmented_pcie_request_rtl.py": "b6e1c74a4ae510d9803dc6ab31dc68ec1a2afe99582d2de96c4e8a68f12c6796",
+    "rdma/rnic/tests/segmented_pcie_request_fixture.py": "17e4eeea823f1bcbfd44575ae47922577de75ee60a2778a54ed7fa18819de562",
+    "rdma/rnic/tests/zero_rq_native_fixture.py": "1492b3bf08e9e25684c836e607446d2a56f7a66c8d55a0f73b239b01709c6e04",
+    "external/corundum/fpga/lib/pcie/rtl/dma_if_pcie.v": "5255c2291f3d431df000d88995c9ea29490634b194437d0ecf71e39bf124d8f3",
+    "external/corundum/fpga/lib/pcie/rtl/dma_if_pcie_rd.v": "83af3d4529193eba24d67d90b217eddd0abdf10efa1b205114b62a7dd9aa02f8"
+  },
+  "tests": {
+    "requester": {
+      "pass_test": true,
+      "expected_fatal": "not exact sealed low-page 3DW",
+      "process_exit": 1,
+      "seconds": 0.005690305028110743,
+      "directory": "rdma/rnic/build/segmented-pcie-request-dqlxhvw1",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-pcie-request-dqlxhvw1/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-pcie-request-dqlxhvw1/tb.v": "757f6b17d5bbe8b0bda8c1589e944bc41e9ec6d965bd686e72784ce190c19621",
+        "rdma/rnic/build/segmented-pcie-request-dqlxhvw1/simulation.log": "47bdc215957f21c97271a2abc3bbde4e3c0c270be777d4d3866dc09f814814ad",
+        "rdma/rnic/build/segmented-pcie-request-dqlxhvw1/test": "af13f2ec301aced2a1941b8296332a20849ae1d52ba0a13f5b93514ec18f3291"
+      }
+    },
+    "type": {
+      "pass_test": true,
+      "expected_fatal": "not exact sealed low-page 3DW",
+      "process_exit": 1,
+      "seconds": 0.004731502034701407,
+      "directory": "rdma/rnic/build/segmented-pcie-request-q_d7_bo2",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-pcie-request-q_d7_bo2/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-pcie-request-q_d7_bo2/tb.v": "d748e1b8aaa59f8ad2165165cd89c5286c01076b189680893ea5c64bb777a33d",
+        "rdma/rnic/build/segmented-pcie-request-q_d7_bo2/simulation.log": "5027b2da305339c59780531fb9ff5eb701e090a8a86234ab688c0a3a71b0b005",
+        "rdma/rnic/build/segmented-pcie-request-q_d7_bo2/test": "30aa2b99d8fb485dcfc464c1d15c42e2cef50da30ff9172a517cc229dc0bae1b"
+      }
+    },
+    "attributes": {
+      "pass_test": true,
+      "expected_fatal": "not exact sealed low-page 3DW",
+      "process_exit": 1,
+      "seconds": 0.00520873797358945,
+      "directory": "rdma/rnic/build/segmented-pcie-request-97gz8x0_",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-pcie-request-97gz8x0_/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-pcie-request-97gz8x0_/tb.v": "4768a177ccb622eb043cd045e466d3c32913f5a5bd90ad9304e46bb6ce0e0fc6",
+        "rdma/rnic/build/segmented-pcie-request-97gz8x0_/simulation.log": "f8ceb7c9e0febdf36845699775645ac5316f67c3dc1942ffe42756a0c52a3c96",
+        "rdma/rnic/build/segmented-pcie-request-97gz8x0_/test": "5a109264eb8f7c016b45b5f6dbecaf7635b9971df92fd5288daacd9201535868"
+      }
+    },
+    "unused_DW3": {
+      "pass_test": true,
+      "expected_fatal": "not exact sealed low-page 3DW",
+      "process_exit": 1,
+      "seconds": 0.0049958580057136714,
+      "directory": "rdma/rnic/build/segmented-pcie-request-i8l2dt7a",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-pcie-request-i8l2dt7a/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-pcie-request-i8l2dt7a/tb.v": "e4a06b40f303d1e8be5b7ca13b5f93cf16742b1ec62f4788534eff0890ff4db9",
+        "rdma/rnic/build/segmented-pcie-request-i8l2dt7a/simulation.log": "7a37a51575f8c5525d7bc56e7b00ed776e70e5d18bbe88c7535b75b1c831c840",
+        "rdma/rnic/build/segmented-pcie-request-i8l2dt7a/test": "4ef2856f802668d1df4ada16732c7d855ae0475eecd383872b670ff58752f949"
+      }
+    },
+    "PH": {
+      "pass_test": true,
+      "expected_fatal": "not exact sealed low-page 3DW",
+      "process_exit": 1,
+      "seconds": 0.004985521023627371,
+      "directory": "rdma/rnic/build/segmented-pcie-request-5czcts_6",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-pcie-request-5czcts_6/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-pcie-request-5czcts_6/tb.v": "0f99720ac563df42aae97b8dfc0963ee9559206a947ae1c26a95c3bb61b024be",
+        "rdma/rnic/build/segmented-pcie-request-5czcts_6/simulation.log": "255cc863bd65982d45caaf68d1b287e8d1cc46872675a94ad84c314323e4e3ee",
+        "rdma/rnic/build/segmented-pcie-request-5czcts_6/test": "1d692d1e70acfae362b65908ccebb5ed7d872c5ee084978de991a21f2d241bde"
+      }
+    },
+    "page": {
+      "pass_test": true,
+      "expected_fatal": "not exact sealed low-page 3DW",
+      "process_exit": 1,
+      "seconds": 0.005122622998896986,
+      "directory": "rdma/rnic/build/segmented-pcie-request-rim86cn0",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-pcie-request-rim86cn0/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-pcie-request-rim86cn0/tb.v": "8627c12954e4fd470046ca5c7a9a60b8c17e902ed7caae6401ae2c0b2cae028b",
+        "rdma/rnic/build/segmented-pcie-request-rim86cn0/simulation.log": "9d2809b4106bca0ab93cd4ae9d4e760880b413a10248be0d75e36ff10072a413",
+        "rdma/rnic/build/segmented-pcie-request-rim86cn0/test": "b2c45450733250da6f51fa86d229fba43ce6bdbc4968f6fa5f7dccf336b3b7a8"
+      }
+    },
+    "high_truncation": {
+      "pass_test": true,
+      "expected_fatal": "full64 descriptor/TLP byte range",
+      "process_exit": 1,
+      "seconds": 0.005097410001326352,
+      "directory": "rdma/rnic/build/segmented-pcie-request-w6uo4a64",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-pcie-request-w6uo4a64/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-pcie-request-w6uo4a64/tb.v": "726a7b12e4726d5b6aad60b700c6aef6d1e9d4286907777da565760ba15bcb88",
+        "rdma/rnic/build/segmented-pcie-request-w6uo4a64/simulation.log": "78dcbcaa88aed4cb75970154c3675b01f7d5c28904df1323a0de83efdbfa2113",
+        "rdma/rnic/build/segmented-pcie-request-w6uo4a64/test": "9ee9b6cf37a392e5459c29f17ec8408987dfeeefc958cda08b4e76c335d4bfb0"
+      }
+    },
+    "reorder": {
+      "pass_test": true,
+      "expected_fatal": "full64 descriptor/TLP byte range",
+      "process_exit": 1,
+      "seconds": 0.004803369985893369,
+      "directory": "rdma/rnic/build/segmented-pcie-request-5myxroyh",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-pcie-request-5myxroyh/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-pcie-request-5myxroyh/tb.v": "29c848778725d5810dcc2bb078cbd56da765837351d324d426ba3ae326b629cf",
+        "rdma/rnic/build/segmented-pcie-request-5myxroyh/simulation.log": "2258ddf0b1a6c2f7351f58e91bbe8d53d7d85241e3d654682334e811a88d81e0",
+        "rdma/rnic/build/segmented-pcie-request-5myxroyh/test": "69e791fabd3d94d5285eec9b06e8296e58772b1b62f3d898a1b03f06e799260c"
+      }
+    },
+    "excess": {
+      "pass_test": true,
+      "expected_fatal": "full64 descriptor/TLP byte range",
+      "process_exit": 1,
+      "seconds": 0.005703574977815151,
+      "directory": "rdma/rnic/build/segmented-pcie-request-4ns47smt",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-pcie-request-4ns47smt/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-pcie-request-4ns47smt/tb.v": "91423c4c12ff37da9e44854fdb0fb8100086f507c392aa5f0adbcfa8edce1d22",
+        "rdma/rnic/build/segmented-pcie-request-4ns47smt/simulation.log": "69a47bbd6d56c51c4ae6b5e4c8b4e1bd49981d15656e0d6cd4cddb6b0f465d32",
+        "rdma/rnic/build/segmented-pcie-request-4ns47smt/test": "64b30ec2eac677e757321a421ec164563503d5eb542fb7c70fc6ca66b4ed8ca1"
+      }
+    },
+    "missing": {
+      "pass_test": true,
+      "expected_fatal": "physical descriptor completed before exact TLP bytes",
+      "process_exit": 1,
+      "seconds": 0.005802262981887907,
+      "directory": "rdma/rnic/build/segmented-pcie-request-87jlwp8l",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-pcie-request-87jlwp8l/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-pcie-request-87jlwp8l/tb.v": "634cd7df5ababa8b04e3508a55075798062477c63d09768b37f6bca79f7c9d91",
+        "rdma/rnic/build/segmented-pcie-request-87jlwp8l/simulation.log": "cd6b4eda6a909a4054c9fb4cf012d72130c02bf6933d329613c3c3444bf15f14",
+        "rdma/rnic/build/segmented-pcie-request-87jlwp8l/test": "03cb576429adf35d46e772d395edba31ede670c5d29fd1cc1db57e5fb9f9ac15"
+      }
+    },
+    "low": {
+      "pass_test": true,
+      "expected_fatal": null,
+      "process_exit": 0,
+      "seconds": 0.00537419697502628,
+      "directory": "rdma/rnic/build/segmented-pcie-request-2udm9ukv",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-pcie-request-2udm9ukv/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-pcie-request-2udm9ukv/tb.v": "19d0cabbdc3ad71f0b72724db45c4696b24275a0a49a2a618bf961a1790d6cd8",
+        "rdma/rnic/build/segmented-pcie-request-2udm9ukv/simulation.log": "09f6bb6ca5e624b6d6121abfa520d650738b83b0d66236a70d7a4350bfa34e41",
+        "rdma/rnic/build/segmented-pcie-request-2udm9ukv/test": "4cb412fe80f5877865ba15250ee8b30c74489f6aaac1288a4c02b63168957655"
+      }
+    },
+    "high": {
+      "pass_test": true,
+      "expected_fatal": null,
+      "process_exit": 0,
+      "seconds": 0.005103975010570139,
+      "directory": "rdma/rnic/build/segmented-pcie-request-1vlgdtvd",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-pcie-request-1vlgdtvd/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-pcie-request-1vlgdtvd/tb.v": "635c717c2ab78e99d09ff1efeb3bd889b0f5a4e5294a24f4527e1954400fec56",
+        "rdma/rnic/build/segmented-pcie-request-1vlgdtvd/simulation.log": "1478b2a585adc5481cdd79894369607064c45fcac477535d4a540bd574c72585",
+        "rdma/rnic/build/segmented-pcie-request-1vlgdtvd/test": "2abee2bafe03540bb436d9eb38a5900068eeaa07767bd575f316ea5574f2c6c9"
+      }
+    },
+    "top": {
+      "pass_test": true,
+      "expected_fatal": null,
+      "process_exit": 0,
+      "seconds": 0.005059973045717925,
+      "directory": "rdma/rnic/build/segmented-pcie-request-bsw9xnv_",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-pcie-request-bsw9xnv_/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-pcie-request-bsw9xnv_/tb.v": "94af118b67ad22268246a30208f64664cd3846eb07eaafe5fb7f2d59c9509c84",
+        "rdma/rnic/build/segmented-pcie-request-bsw9xnv_/simulation.log": "cfcc44bd98b6ebeb3c6f48bc7476fb3be32f1dbc1d6a9a635806bf9873825806",
+        "rdma/rnic/build/segmented-pcie-request-bsw9xnv_/test": "d32087ba283b1e0028b224c022dddd0b8101b1a5daf5bd17b1fa25c21d188a74"
+      }
+    },
+    "old_profile": {
+      "pass_test": true,
+      "expected_fatal": "not ordinary DMA64",
+      "process_exit": 1,
+      "seconds": 0.004682473023422062,
+      "directory": "rdma/rnic/build/segmented-pcie-request-i09gqmci",
+      "artifact_sha256": {
+        "rdma/rnic/build/segmented-pcie-request-i09gqmci/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rdma/rnic/build/segmented-pcie-request-i09gqmci/tb.v": "4fe4f0625ddbb89e23591c8737069b65c062f6750d0598540b89f1b82816727c",
+        "rdma/rnic/build/segmented-pcie-request-i09gqmci/simulation.log": "efc8c4aa4e503fba371f7d12f238c9694fd00f88886c90f98002e0400c8d19c3",
+        "rdma/rnic/build/segmented-pcie-request-i09gqmci/test": "c61dbf8fdc467a0342054aa181d0e0d409aaaea53569ec56974ff6af324a9b6a"
+      }
+    }
+  },
+  "four_state": true,
+  "native_RTL_runtime": false,
+  "hardware_verified": false
+}

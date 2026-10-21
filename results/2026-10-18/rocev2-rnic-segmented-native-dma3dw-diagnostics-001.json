@@ -1,0 +1,36 @@
+{
+  "scope": "Preserved terminal native002: first complete actual MAC frame verified, then inherited root model rejected legitimate low-page 3DW MemRd. Not a native pass.",
+  "diagnostic_completed": true,
+  "native_runtime_pass": false,
+  "failed_bindings_verified_before_correction": 1288,
+  "failed_bindings_reverified_with_exact_preimages": 1288,
+  "first_actual_MAC_frame": {
+    "tag": 8193,
+    "Ethernet_bytes": 4170,
+    "frame_sha256": "59e10b431f77eca5e70a49f4a325533407dc1e9bcf4798b40154178e6b929e29",
+    "full_bytes_match_independent_oracle": true,
+    "FCS_SFD_validated": true,
+    "peer_ACK_after_actual_wire_EOF": true
+  },
+  "failed_raw_PCIe_header": "00000020820003ff1234500000000000",
+  "actual_format": "3DW MemRd",
+  "actual_low_address": "0000000012345000",
+  "sealed_third_page": "0000000012345000",
+  "cause": "Corundum actual engine default emits 3DW below4GiB; inherited check_request and base decode assumed every request 4DW.",
+  "correction": "Only new large-source fixture adds strict sealed-low-page 3DW decode; prior 4DW requester/TC/type/attribute/PH guards remain. New independent full64 physical-descriptor/TLP range/order/byte joins reject truncation/reorder/excess/missing data; no forced-64bit hardware setting or page substitution.",
+  "private_generated_RTL_unchanged_files": 35,
+  "other28_cases_not_run": true,
+  "next_native_run": "results/2026-10-18/rocev2-rnic-segmented-wire-native-full-003.json",
+  "source_sha256": {
+    "results/2026-10-18/rocev2-rnic-segmented-wire-native-full-002.json": "02e76d6fd7c287cea6fee2f9b6be8d52abb3899787fcf89f42102db7f79c3603",
+    "rdma/rnic/tests/segmented_pcie_request_fixture.py": "17e4eeea823f1bcbfd44575ae47922577de75ee60a2778a54ed7fa18819de562",
+    "rdma/rnic/tests/test_segmented_pcie_request_rtl.py": "b6e1c74a4ae510d9803dc6ab31dc68ec1a2afe99582d2de96c4e8a68f12c6796",
+    "results/2026-10-18/rocev2-rnic-segmented-pcie-request-001.json": "3879f8999fbc094cdc530a93675dc7f124824953f92f6ffada56ac173096bf11",
+    "external/corundum/fpga/lib/pcie/rtl/dma_if_pcie_rd.v": "83af3d4529193eba24d67d90b217eddd0abdf10efa1b205114b62a7dd9aa02f8"
+  },
+  "artifact_sha256": {
+    "rdma/rnic/build/segmented-wire-native-full-yh4_k5qz/fixture-before-3DW-root-model-fix.py": "dab03bc7aa0b3cf3dc3c4615870a4c438eae3c5af5a2a7db92504375dc490c19",
+    "rdma/rnic/build/segmented-wire-native-full-yh4_k5qz/probe-before-3DW-root-model-fix.py": "32b5015a8da50dcaca70fd7e97cf306b6e3008f1ca1502f3456bd64de0fbbd8e",
+    "rdma/rnic/build/segmented-wire-native-full-yh4_k5qz/LARGE_WRITE.log": "c352f12ba88b32e9fdfd6cd7168f598a5933019fb4cbc8a8f8eea43701d907e7"
+  }
+}

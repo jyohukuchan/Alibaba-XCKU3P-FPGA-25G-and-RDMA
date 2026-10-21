@@ -13,9 +13,62 @@ Publication checks: focused Atomic RTL12 methods PASS; the full RNIC suite
 is not green (native MAC-lifetime ERROR and QP-TX FAIL observed before the
 remaining run was interrupted). No all-suite or release-pass claim is made.
 
-## Latest functional milestone (2026-10-20)
+## Latest functional milestone (2026-10-21)
 
-Publication checkpoint: the new29-case large-wire native run has finished
+Publication checkpoint: [padding-native-full001](../../results/2026-10-18/rocev2-rnic-segmented-padding-native-full-001.json)
+PASSES ALL29 simulated cases:8193-byte WRITE/SEND and ALL27 prior cases,
+each18.15..27.12s.1438 source/artifact/RAM hashes reverified. Real generated
+HLS/MR/PTE/DMA/nonce/board-TX/CDC/XGMII/FCS/SFD/MAC paths reach one full748-bit
+whole-WR CQ, retaining real owner/tail/receipt gates. Physical endpoints remain
+models; up to1MiB remains separate HLS/component evidence. This passing graph
+still has RNC4095/CQC15 and an explicitly private large simulator codec.
+
+A separate private RNC8191/CQC31/profile4 Linux cohort PASSES running-header
+build9.59s and [actual C post/MR/SQ/CQ tests](../../results/2026-10-18/rocev2-rnic-segmented-kernel-post-003.json):
+ALL65 ASan/UBSan cases (18new+ALL47old), including8193/1MiB WRITE/SEND and
+failure lifetimes, under explicit Linux/MMIO/DMA/completion models. This is
+not actual Linux execution or matched8191 native/standard-provider runtime.
+Its new RTL identity helper remains unqualified. No module install/load,
+default/IB_ATOMIC_NONE/hardware changes. All11 requirements and large RX/READ/
+Immediate/multi-SGE/recovery/physical/original timing remain open. Historical
+scripts/check.sh SHA mismatch remains. [Evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Progress122 (historical): native003 proves exact first/middle large WRITE MAC frames, then
+FAILED24.16s: the legacy normalizer rejects/erases correctly pre-padded LAST
+metadata.28 later cases NOT RUN; no full-WR/CQ pass.1290 failed bindings/models
+preserved. New named private LAST-aware adapter keeps legacy/default paths
+and all real CRC/owner/drain/tail gates. Six component methods PASS, all3old
+tests retained (5four-state methods,1explicit2state capacity method, each<30s).
+New whole-native elaboration PASS3.20s/1216 records/one new leaf; all29-case
+runtime is COMPILING, NOT passed. Linux large-profile/SQ/MR/CQ integration and
+all11 functional/API/physical/multi-SGE/recovery/original-timing requirements
+remain open. No hardware/install/reboot/default/automatic publication changes.
+[Evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Progress121 (historical): native002 proves the first real4170-byte large WRITE frame's
+complete bytes/FCS/SFD/tag/EOF, then FAILED on a genuine low-page3DW PCIe read
+rejected by the old root model;28 later cases NOT RUN. New strict3DW decoder
+and full64 actual-descriptor/TLP range/order checks PASS14 component cases.
+All35 private RNIC RTL files are unchanged. Native003 is COMPILING all29 after
+bench/width checks, NOT runtime-passed. A new PRIVATE correctly typed Linux
+large WRITE/SEND adapter passes real-header link and68 C/ASan/UBSan cases,
+but performs no actual Linux posting/MR/SQ/CQ and is not selected by defaults.
+All11 Linux/API/physical/multi-SGE/recovery/original-timing requirements remain
+open; no hardware, installation or automatic publication changes.
+[Evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Progress120 (historical): frozen failed-model inspection proves inherited1KiB TX frame
+FIFO overflow, not MAC-underflow/DUT fault. New actual board32KiB synchronous
+frame queue plus512-byte cut-through CDC PASSES four component methods,
+including slow large/jumbo wire/FCS/tags/held receipts and genuine bad/oversize
+fatal controls. Peer ACKs now follow actual XGMII TERM; all35 private RNIC RTL
+files are unchanged. New29-case native-full002 is COMPILING after bench/width
+checks, NOT runtime-passed. Physical endpoints remain models; all11 functional/
+Linux/API/physical/multi-SGE/recovery/original-timing requirements remain open.
+No hardware or automatic publication changes.
+[Evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Publication checkpoint (historical): the new29-case large-wire native run has finished
 FAILED. Compilation passed in424.65s; its first8193-byte WRITE stopped at a
 MAC/FIFO assertion after19.60s. The other28 cases were NOT RUN. Failed evidence
 is retained and its1276 bound records were reverified. The inherited1KiB

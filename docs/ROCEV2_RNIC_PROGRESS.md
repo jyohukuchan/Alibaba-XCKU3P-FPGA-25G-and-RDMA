@@ -32,7 +32,70 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
-Publication checkpoint (2026-10-20): new large-wire native-full001 is terminal
+Publication checkpoint (2026-10-21): new padding-native-full001 PASSES ALL29
+simulated cases, including8193-byte WRITE/SEND plus ALL27 prior cases.
+Compile431.52s; runtimes18.15..27.12s;1438 bound hashes reverified. Large cases
+join real HLS/MR/PTE/DMA/nonce/board-TX/CDC/XGMII/FCS/SFD/MAC to one full748-bit
+whole-WR CQ with real withheld final receipt; physical endpoints remain models.
+This RNC4095/CQC15 private simulator graph does not qualify the new matched
+RNC8191/CQC31/profile4 kernel cohort. That separate cohort PASSES running-header
+build9.59s and actual C/ASan/UBSan65 cases (18new+ALL47old) under explicit
+Linux/MMIO/DMA/completion models.122/143 kernel hashes reverified. No modules
+installed/loaded. New RTL identity helper is not independently runtime-qualified;
+matching provider/native/physical/API integration, large RX/READ/Immediate,
+multi-SGE/recovery/full-board timing remain OPEN. Up to1MiB remains HLS/component
+and C evidence, not full-native runtime. HLS11.180ns still fails original clocks;
+historical SHA mismatch still stops scripts/check.sh. No hardware/default/
+reboot changes; this publication is explicitly user-requested, not a release.
+[Evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress122 (historical): native003 compiled421.59s then FAILED first large WRITE24.16s;
+28 cases NOT RUN. Actual first/middle MAC frames match independent full bytes/
+FCS/ICRC/tag/EOF, three source commands reach offset8193, but no final receipt/
+CQ. Frozen-model inspection proves old unpadded-only normalizer overwrites
+actual HLS LAST pad3 with0 and marks it bad; TX bad1/RX bad0/overflow0.1290
+original bindings and failed models/preimages preserved. New named private
+LAST-aware normalizer retains exact aligned lengths/zero pad and original
+legacy normalization; no checksum/ICRC/owner/drain/tail gate relaxed. Component002
+PASSES six methods: all3 old tests retained,5four-state methods<=17.67s and
+same maximal capacity case in explicit2state Verilator0.071s.51 records verified.
+New whole-graph elaboration001 PASS3.20s/1216 records/no width warnings/one new
+leaf; only1of35 parent files changes module selection. Fresh all29 padding-native
+full001 is COMPILING, NO runtime pass yet. Linux large capability negotiation/
+SQ/MR/CQ integration and all11 requirements remain; large RX/READ/Immediate/
+multi-SGE/recovery/physical/original timing still OPEN. HLS11.180ns still fails.
+No hardware/default/reboot/automatic publication. [Evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress121 (historical): native002 compiled426.98s and proves its first real4170-byte
+MAC frame exactly (payload/RETH/ICRC/FCS/SFD/tag/EOF) before FAILED first large
+WRITE20.55s: inherited root model refused genuine low-page3DW MemRd;28 cases
+NOT RUN.1288 bindings/model/preimages preserved. New strict low-page decoder
+retains old4DW guards and adds actual full64 descriptor/TLP byte/order/status
+joins; component001 PASSES14 cases1.64s. All35 private RNIC RTL files unchanged.
+Fresh native003 is COMPILING all29 after bench/width checks; NO runtime pass.
+New PRIVATE typed Linux large WRITE/SEND adapter PASSES real running-header
+link3.68s and actual C/ASan/UBSan54 positive+14 negative cases0.012s, not actual
+Linux posting.8 real C leaves unchanged across preserved fixture failures.
+Matched large capability/SQ/MR/CQ lifetime integration remains. All11 functional/
+Linux/API/physical/multi-SGE/recovery/original timing requirements remain OPEN;
+HLS11.180ns still fails. No hardware/reboot/default/automatic publication.
+[Evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress120 (historical): unchanged failed-model inspection isolates the inherited1KiB
+whole-frame TX FIFO overflow; MAC/bad-frame/timestamp/DUT fault0, no SFD/CQ.
+Its1276 original bindings/preimages are preserved. New board-faithful path
+uses the actual32768-byte synchronous tx_fifo plus512-byte cut-through CDC,
+with real config/width/pipeline propagation bound and all error gates retained.
+Four-state board-TX component001 PASSES four methods, each<=5.15s,39 records
+verified, including slow large/jumbo frames, held receipts and genuine expected
+bad/oversize fatal controls. Peer ACKs now wait for actual XGMII TERM. All35
+private RNIC RTL files are identical to failed001. Fresh native-full002 is
+COMPILING both8193-byte cases plus ALL27 prior cases after bench/width checks;
+NO runtime pass yet. All11 requirements and Linux/API/physical/multi-SGE/
+recovery/original timing remain OPEN; HLS11.180ns still fails. No hardware,
+reboot or automatic publication. [Evidence and limits](ROCEV2_ATOMIC.md).
+
+Publication checkpoint (2026-10-20, historical): new large-wire native-full001 is terminal
 FAILED, not compiling. Compilation succeeded in424.65s; the first8193-byte
 WRITE hit `real MAC/FIFO error` after19.60s and the remaining28 cases were NOT
 RUN. All1276 bound records were reverified; failed evidence is preserved.

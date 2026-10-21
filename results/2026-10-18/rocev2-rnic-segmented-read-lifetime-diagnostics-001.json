@@ -1,0 +1,46 @@
+{
+  "scope": "Preserved segmented READ lifetime001 before Python helper-export correction",
+  "failed_report": "results/2026-10-18/rocev2-rnic-segmented-read-lifetime-001.json",
+  "report_sha256": "7699df7f6775a3c51e8d02eb3b26bab9eaddcc6330d2db7023cafd72db3c12ee",
+  "bindings_verified_before_fix": 222,
+  "methods": 10,
+  "completed_cases": 19,
+  "passed_READ_cases": 19,
+  "inherited_methods_startup_errors": 5,
+  "cause": "Inherited unmodified segmented WRITE/SEND fixture expects candidate.helpers. New module omitted this Python helper export; all five inherited methods error before compilation. New READ cases pass; whole suite FAIL is preserved.",
+  "preimage_directory": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-lifetime-001-preimages-h761hy_o",
+  "uncompiled_inherited_fixture_artifacts": {
+    "rdma/rnic/build/segmented-wire-unit-uhejil9z": {
+      "rdma/rnic/build/segmented-wire-unit-uhejil9z/rocev2_wqe_replay.v": "c3cf496283bba0001c8718a4653548ddd46a0b834b35c9fdeaf4f60df9d91955",
+      "rdma/rnic/build/segmented-wire-unit-uhejil9z/rocev2_wqe_lifetime.v": "50f150918d75463732260397afe7c62b9a7c9f76270cc34e76165a12ce8ef4c0",
+      "rdma/rnic/build/segmented-wire-unit-uhejil9z/rocev2_wqe_mac_tx.v": "e0e975d999501c33b727bee5f2c6918b6aea4d861edfd2ffe652af7e9b0747a5",
+      "rdma/rnic/build/segmented-wire-unit-uhejil9z/rocev2_wqe_tx_lifetime.v": "9b967d649010f86112b968d4fe1745851bfd836d36a4675a1eb48f02ea2401b2"
+    },
+    "rdma/rnic/build/segmented-wire-unit-2n48h8h4": {
+      "rdma/rnic/build/segmented-wire-unit-2n48h8h4/rocev2_wqe_replay.v": "c3cf496283bba0001c8718a4653548ddd46a0b834b35c9fdeaf4f60df9d91955",
+      "rdma/rnic/build/segmented-wire-unit-2n48h8h4/rocev2_wqe_lifetime.v": "50f150918d75463732260397afe7c62b9a7c9f76270cc34e76165a12ce8ef4c0",
+      "rdma/rnic/build/segmented-wire-unit-2n48h8h4/rocev2_wqe_mac_tx.v": "e0e975d999501c33b727bee5f2c6918b6aea4d861edfd2ffe652af7e9b0747a5",
+      "rdma/rnic/build/segmented-wire-unit-2n48h8h4/rocev2_wqe_tx_lifetime.v": "9b967d649010f86112b968d4fe1745851bfd836d36a4675a1eb48f02ea2401b2"
+    },
+    "rdma/rnic/build/segmented-wire-unit-by6yhm1g": {
+      "rdma/rnic/build/segmented-wire-unit-by6yhm1g/rocev2_wqe_replay.v": "c3cf496283bba0001c8718a4653548ddd46a0b834b35c9fdeaf4f60df9d91955",
+      "rdma/rnic/build/segmented-wire-unit-by6yhm1g/rocev2_wqe_lifetime.v": "50f150918d75463732260397afe7c62b9a7c9f76270cc34e76165a12ce8ef4c0",
+      "rdma/rnic/build/segmented-wire-unit-by6yhm1g/rocev2_wqe_mac_tx.v": "e0e975d999501c33b727bee5f2c6918b6aea4d861edfd2ffe652af7e9b0747a5",
+      "rdma/rnic/build/segmented-wire-unit-by6yhm1g/rocev2_wqe_tx_lifetime.v": "9b967d649010f86112b968d4fe1745851bfd836d36a4675a1eb48f02ea2401b2"
+    },
+    "rdma/rnic/build/segmented-wire-unit-zrnafzqh": {
+      "rdma/rnic/build/segmented-wire-unit-zrnafzqh/rocev2_wqe_replay.v": "c3cf496283bba0001c8718a4653548ddd46a0b834b35c9fdeaf4f60df9d91955",
+      "rdma/rnic/build/segmented-wire-unit-zrnafzqh/rocev2_wqe_lifetime.v": "50f150918d75463732260397afe7c62b9a7c9f76270cc34e76165a12ce8ef4c0",
+      "rdma/rnic/build/segmented-wire-unit-zrnafzqh/rocev2_wqe_mac_tx.v": "e0e975d999501c33b727bee5f2c6918b6aea4d861edfd2ffe652af7e9b0747a5",
+      "rdma/rnic/build/segmented-wire-unit-zrnafzqh/rocev2_wqe_tx_lifetime.v": "9b967d649010f86112b968d4fe1745851bfd836d36a4675a1eb48f02ea2401b2"
+    },
+    "rdma/rnic/build/segmented-wire-unit-xfr0qgt0": {
+      "rdma/rnic/build/segmented-wire-unit-xfr0qgt0/rocev2_wqe_replay.v": "c3cf496283bba0001c8718a4653548ddd46a0b834b35c9fdeaf4f60df9d91955",
+      "rdma/rnic/build/segmented-wire-unit-xfr0qgt0/rocev2_wqe_lifetime.v": "50f150918d75463732260397afe7c62b9a7c9f76270cc34e76165a12ce8ef4c0",
+      "rdma/rnic/build/segmented-wire-unit-xfr0qgt0/rocev2_wqe_mac_tx.v": "e0e975d999501c33b727bee5f2c6918b6aea4d861edfd2ffe652af7e9b0747a5",
+      "rdma/rnic/build/segmented-wire-unit-xfr0qgt0/rocev2_wqe_tx_lifetime.v": "9b967d649010f86112b968d4fe1745851bfd836d36a4675a1eb48f02ea2401b2"
+    }
+  },
+  "fix": "Export existing checked derive_segmented_wire.helpers; no hardware body/gate/oracle changes.",
+  "hardware_actions": []
+}

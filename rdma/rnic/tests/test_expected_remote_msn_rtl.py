@@ -23,17 +23,17 @@ sys.path.insert(0,str(ROOT/'rdma/rnic/fpga'))
 import derive_expected_remote_msn_native as source
 
 TASKS=r'''
-reg [747:0] expected=0;reg [63:0] wanted_epoch=64'h9123456700000001;
+reg [747:0] expected=0;reg [63:0] wanted_epoch=64'h9123456700000001;reg [23:0] wanted_qpn=7;
 task route;
  begin
-  @(negedge clk);p_route_qpn=7;p_route_peer_qpn=196;p_route_local_ip=32'hc6120b02;p_route_peer_ip=32'hc6120b01;p_route_valid=1;
+  @(negedge clk);p_route_qpn=wanted_qpn;p_route_peer_qpn=189+wanted_qpn;p_route_local_ip=32'hc6120b02;p_route_peer_ip=32'hc6120b01;p_route_valid=1;
   repeat(5)@(negedge clk);
  end
 endtask
 task make_owner;input integer op;input [63:0] seq;
  begin
   expected=0;expected[587:524]=64'hfedcba9876543210+seq;expected[523:460]=seq;expected[459:396]=wanted_epoch;
-  expected[395:372]=7;expected[371:356]=17;expected[355:340]=9;expected[339:324]=op;expected[323:308]=1;
+  expected[395:372]=wanted_qpn;expected[371:356]=17;expected[355:340]=9;expected[339:324]=op;expected[323:308]=1;
   expected[307:276]=(op==7 || op==8) ? 8:8193;expected[275:244]=8;expected[243:180]=64'hfedcba9876543210;
   expected[179:116]=64'h1234567800000210;expected[19:0]=3;
   if(op!=3 && op!=5)begin expected[115:52]=64'he23456789abcdef0;expected[51:20]=32'h81234567;end
@@ -42,11 +42,11 @@ task make_owner;input integer op;input [63:0] seq;
 endtask
 task capture;input integer op;input [63:0] seq;input [23:0] msn;
  begin
-  make_owner(op,seq);@(negedge clk);p_s_owner_context=expected;#1;
+  make_owner(op,seq);@(negedge clk);p_s_owner_context=expected;repeat(5)@(negedge clk);#1;
   if(p_owner_eligible!==1'b1 || msn_query_cookie!==64'hfedcba9889abcdef && wanted_epoch==64'h9123456700000001 ||
    msn_query_epoch!==wanted_epoch || msn_query_pd!==17)$fatal(1,"real SQC owner not bound to eligible logical request");
-  p_s_owner_fire=1;@(posedge clk);@(negedge clk);p_s_owner_fire=0;
-  if(p_expected_msn!==msn || !p_busy || !p_configuration_guard || wire_queue_guard!==128 || p_fault)$fatal(1,"expected logical MSN/lease not captured");
+  p_s_owner_fire=1;@(posedge clk);@(negedge clk);p_s_owner_fire=0;#1;
+  if(p_expected_msn!==msn || !p_busy || !p_configuration_guard || wire_queue_guard!==(8'd1<<wanted_qpn) || p_fault)$fatal(1,"expected logical MSN/lease not captured");
  end
 endtask
 task expectation;input [23:0] msn;
@@ -60,7 +60,7 @@ endtask
 task retire;
  begin
   p_s_retire_context=expected;p_s_retire_offer_valid=1;
-  repeat(10)begin @(negedge clk);if(!p_busy || !p_configuration_guard || wire_queue_guard!==128)$fatal(1,"uncommitted CQ released expected MSN lease");end
+  repeat(10)begin @(negedge clk);if(!p_busy || !p_configuration_guard || wire_queue_guard!==(8'd1<<wanted_qpn))$fatal(1,"uncommitted CQ released expected MSN lease");end
   p_s_retire_fire=1;@(posedge clk);if(p_retire_eligible!==1'b1)$fatal(1,"exact accepted CQ identity missing");
   @(negedge clk);p_s_retire_fire=0;p_s_retire_offer_valid=0;#1;
   if(p_busy || p_configuration_guard || wire_queue_guard || p_fault)$fatal(1,"exact CQ failed to release expected MSN owner");
@@ -88,7 +88,9 @@ class ExpectedMSN(unittest.TestCase):
 
     def simulate(self,body):
         run=Path(tempfile.mkdtemp(prefix='expected-msn-',dir=ROOT/'rdma/rnic/build'));ram=Path(tempfile.mkdtemp(prefix='as02-expected-msn-',dir='/dev/shm'))
-        sq=run/'rocev2_sq_control_regs.v';sq.write_text(source.derive()[source.RTL/'rocev2_sq_control_regs.v'])
+        derived=source.derive()
+        sq=run/'rocev2_sq_control_regs.v';sq.write_text(derived[source.RTL/sq.name])
+        fetch=run/'rocev2_sq_fetch.v';fetch.write_text(derived[source.RTL/fetch.name])
         io=re.findall(r'\b(input|output)\s+(?:wire|reg)\s+(?:\[([^]]+)\]\s+)?(\w+)',sq.read_text().split('\n);',1)[0])
         driven={'cfg_ready','cfg_response_error','cfg_response_qpn','cfg_response_epoch','cfg_response_consumer','cfg_response_valid','fetch_queue_guard','wire_queue_guard','msn_query_qpn'}
         decl='\n'.join(legacy.pcie.declaration(n,legacy.pcie.width(w,dict(ADDR_WIDTH=12,MAX_QPS=8)),'reg'if d=='input'and n not in driven else'wire')for d,w,n in io)
@@ -96,12 +98,25 @@ class ExpectedMSN(unittest.TestCase):
         pred=helper.instance(source.PRED,'predictor','p_',dict(clk='clk',rst='rst',m_query_qpn='msn_query_qpn',s_query_cookie='msn_query_cookie',s_query_epoch='msn_query_epoch',s_query_pd='msn_query_pd',s_query_valid='msn_query_valid',queue_guard='wire_queue_guard'))
         # These are direct wires from the genuine new SQC lookup, not a model.
         prefix=legacy.TB[:legacy.TB.index('initial begin\n scenario=0;')]
+        prefix=source.once(prefix,'#(.INITIAL_SEQUENCE(INITIAL_SEQUENCE_VALUE)) dut',
+            '#(.IMMEDIATE_ENABLE(1),.INITIAL_SEQUENCE(INITIAL_SEQUENCE_VALUE)) dut')
+        prefix=source.once(prefix,'wire [511:0] result_data;','wire [1023:0] result_data;')
+        prefix=source.once(prefix,"result_data!==512'hdeadbeef","result_data!==1024'hdeadbeef")
+        prefix=source.once(prefix,'.clk(clk),.rst(rst),.enable(fetch_enable),',
+            ".clk(clk),.rst(rst),.enable(fetch_enable),\n .cfg_receive(1'b0),.admission_available(2'b01),.receive_downstream_guard(8'd0),")
+        # Configuration/ownership only: no producer is published. Do not keep
+        # the old64-byte DMA backend model in a matched128-byte fixture.
+        start=prefix.index('initial begin: backend_model')
+        end=prefix.index('task write_reg;',start)
+        prefix=prefix[:start]+prefix[end:]
+        prefix=source.once(prefix,'if(fetch_fault)$fatal',
+            'if(command_valid)$fatal(1,"unexpected DMA in configuration-only MSN fixture");\n if(fetch_fault)$fatal')
         tb=prefix.replace('// ABI',macros).replace('// DECLARATIONS',decl+'\n'+pred).replace('INITIAL_SEQUENCE_VALUE','0')+TASKS+END.replace('// BODY',body)
         if 'force 'in tb:raise ValueError('no internal state/lookup override')
         (run/'tb.v').write_text(tb);item=dict(directory=str(run.relative_to(ROOT)),pass_test=False,runtime_limit_seconds=10)
         self.reports.setdefault(self._testMethodName,[]).append(item)
         try:
-            cmd=['iverilog','-g2012','-s','tb','-o',str(ram/'test'),str(run/'tb.v'),str(sq),str(source.PRED),*map(str,legacy.SOURCES[1:])]
+            cmd=['iverilog','-g2012','-s','tb','-o',str(ram/'test'),str(run/'tb.v'),str(sq),str(fetch),str(source.PRED),*map(str,legacy.SOURCES[2:])]
             c=subprocess.run(cmd,capture_output=True,text=True,timeout=30);(run/'compile.log').write_text(c.stdout+c.stderr)
             self.assertEqual(c.returncode,0,c.stdout+c.stderr);self.assertFalse(any('expects'in l and 'bits'in l for l in c.stderr.splitlines()),c.stderr)
             start=time.monotonic();r=subprocess.run(['vvp',str(ram/'test')],capture_output=True,text=True,timeout=10)
@@ -135,6 +150,19 @@ allocate();route();capture(2,1,1);p_s_expect_context=expected;p_s_expect_valid=1
 defaults(3,0,64'h8123456789abcdef);stage_words();bell();reply(35,0);ack();
 if(owner_active!==128 || fetch_active!==128 || p_fault || p_expect_eligible!==1 || p_message_count!=1)$fatal(1,"held MSN lease/query did not protect real SQC");
 p_s_expect_valid=0;retire();
+''')
+
+    def test_two_actual_SQCs_interleave_without_route_reconfiguration(self):
+        self.simulate(r'''
+allocate();route();capture(2,1,1);expectation(1);retire();
+defaults(1,0,0);words[2]=6;stage_words();bell();reply(0,7);ack();
+wanted_qpn=6;route();capture(1,1,1);expectation(1);retire();
+// The latest accepted route stays QP6. Neither QP may need reconfiguration
+// to select its existing trusted identity or lose its logical MSN history.
+wanted_qpn=7;capture(2,2,2);expectation(2);retire();
+wanted_qpn=6;capture(3,2,2);expectation(2);retire();
+if(owner_active!==192 || fetch_active!==192 || configs!=2 || p_message_count!=4 || p_retired_count!=4)
+ $fatal(1,"two genuine SQ owners/history did not survive interleaving");
 ''')
 
     def test_new_actual_SQC_epoch_reinitializes_not_same_route_reapply(self):

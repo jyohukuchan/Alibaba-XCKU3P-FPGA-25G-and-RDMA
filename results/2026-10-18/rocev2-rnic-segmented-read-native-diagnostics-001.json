@@ -1,0 +1,12 @@
+{
+  "scope": "Preserved complete native READ001 bench elaboration failure before observer correction",
+  "failed_report": "results/2026-10-18/rocev2-rnic-segmented-read-native-full-001.json",
+  "report_sha256": "276f2ac7a4da32f5708809c2e53fa7d146c0ebca94db9b42e06dc1d0495a9f88",
+  "bindings_verified_before_fix": 1492,
+  "preimage_directory": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/read-native-full-001-preimages-l3fgf0w0",
+  "directory": "rdma/rnic/build/segmented-read-native-full-zii_5jg8",
+  "runtime_cases": 0,
+  "cause": "New read-only test observer referenced nonexistent root alias ex_m_memory_event_ready. Actual executor.m_memory_event_ready is connected to tx_s_memory_ready in unchanged real root.",
+  "correction": "Observe actual executor output/input handshake pins; no MR/data/status/CQ logic or assertion predicate is weakened.",
+  "hardware_actions": []
+}

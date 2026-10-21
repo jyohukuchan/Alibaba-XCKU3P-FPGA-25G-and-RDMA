@@ -1,0 +1,27 @@
+{
+  "scope": "Preserved passing single-selected-QP MSN unit and complete graph before two-QP extension",
+  "checks": {
+    "results/2026-10-18/rocev2-rnic-expected-remote-msn-005.json": {
+      "bindings": 116,
+      "sha256": "1054f682b529dab32a8bdc4f2ac350415e0578d4a124da039e58479fa1c29fb7"
+    },
+    "results/2026-10-18/rocev2-rnic-expected-remote-msn-native-elaboration-001.json": {
+      "bindings": 1404,
+      "sha256": "5091c248c9b2d2c3a0daa8569fb4c86f0660cc471a28beffb78ecfe807c7c864"
+    }
+  },
+  "preimage_directory": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/expected-msn-005-preimages-hiy3fp4a",
+  "MSN_unit": {
+    "methods": 6,
+    "cases": 11,
+    "pass_test": true
+  },
+  "native": {
+    "compile_only": true,
+    "runtime": false,
+    "expected_MSN_connected_to_RX": false,
+    "large_READ_admission_open": false
+  },
+  "reason": "Current route/query selects only the most recently configured QP. Extend with a short actual-SQC two-QP case; preserve passing evidence unchanged before modifying tested source.",
+  "hardware_actions": []
+}

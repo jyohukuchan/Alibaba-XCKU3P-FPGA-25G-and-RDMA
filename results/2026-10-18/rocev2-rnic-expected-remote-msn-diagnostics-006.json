@@ -1,0 +1,13 @@
+{
+  "scope": "Verified expected-MSN006 real two-SQC selection failure before RTL extension",
+  "failed_report": "results/2026-10-18/rocev2-rnic-expected-remote-msn-006.json",
+  "report_sha256": "caa38e5743c4a902b0b40a367c1904a8c63b2b78d25b73b216e67d3ef3fe27c9",
+  "bindings_verified_before_fix": 122,
+  "methods": 7,
+  "cases": 12,
+  "passed_cases": 11,
+  "cause": "QP7 and QP6 are genuinely allocated/configured, each first message succeeds. Returning to QP7 without route reconfiguration fails eligibility because the old route/query uses only the latest QP6. Existing six methods/all11 cases still pass.",
+  "preimage_directory": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/expected-msn-006-preimages-fjcg_fad",
+  "fix_required": "Preserve accepted per-QP route snapshots and query actual SQC for the offered/held full owner; retain per-QP MSN/epoch/history, not reconfigure or reset remote MSN.",
+  "hardware_actions": []
+}

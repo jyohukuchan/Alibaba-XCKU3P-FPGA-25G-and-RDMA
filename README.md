@@ -74,9 +74,10 @@ completion. Actual owned Atomic RTL-service/Immediate compatibility also
 passes. [New HLS generation](results/2026-10-18/rocev2-rnic-segmented-read-generated-hls-001.json)
 and exact generated-RTL elaboration pass, but its13.885ns estimate fails the
 original4ns/default1.08ns conditions; no generated-RTL runtime pass is claimed.
-The complete large-READ path is not enabled in native/kernel/provider
-admission: incremental RNIC READ remains4096 bytes, and end-to-end native
-large READ DMA/whole-WR completion remains unverified. See
+The previous/default8191/31 profile keeps READ4096. A separately named
+experimental16383/63 candidate below now admits larger READs, but actual
+end-to-end native DMA/whole-WR completion and kernel/provider support for
+that profile remain unverified. See
 [exact evidence and limits](docs/ROCEV2_ATOMIC.md).
 
 A new retained-owner READ memory controller passes35 four-state component
@@ -88,15 +89,45 @@ this is not live HLS/native DMA, generated-RTL runtime or physical proof.
 The new READ memory selection is now wired into a separate complete native
 hierarchy with the actual new HLS and common MR/PTE/physical-nonce/backend
 ports. New/old route tests pass17 cases and whole-graph elaboration passes.
-This is still compile-only native evidence: large READ admission remains
-4096 pending protected RX/MSN/whole-WR lifetime integration.
+This is still compile-only native evidence; that earlier memory-only cohort
+keeps READ4096 pending the separate profile/runtime work below.
 
-An experimental expected-remote-MSN tracker and native derivation are also
-included as **unvalidated work in progress**. Its latest
-[six-case attempt](results/2026-10-18/rocev2-rnic-expected-remote-msn-003.json)
-fails at simulation time zero: the fixture does not select the required
-128-byte SQ profile. No MSN behavior or complete native integration pass
-is claimed; the earlier derivation failures are retained too.
+The experimental expected-remote-MSN tracker now passes
+[12 component cases](results/2026-10-18/rocev2-rnic-expected-remote-msn-007.json)
+using genuine SQC cookie/epoch/PD lookups. Two genuinely allocated QPs retain
+independent MSN history without route reconfiguration. Accepted-QP/SQC/MSN
+wiring also passes [complete-native elaboration](results/2026-10-18/rocev2-rnic-expected-remote-msn-native-elaboration-002.json).
+The component's route/WR/TX/CQ endpoints remain models; native evidence is
+compile-only, not wire/MSN interoperability. Fresh remote RC peers are required;
+its original8191/31 cohort keeps READ4096 and failed evidence is preserved.
+
+The separate READ RX/MSN/memory/whole-WR lifetime graph is now connected and
+passes [complete-native elaboration](results/2026-10-18/rocev2-rnic-segmented-read-lifetime-native-elaboration-001.json).
+[Lifetime component tests](results/2026-10-18/rocev2-rnic-segmented-read-lifetime-002.json)
+pass29 cases, including19 READ controls and all10 original WRITE/SEND cases.
+One READ request retains its replay cache through FIRST/MIDDLE and joins
+LAST, final HLS ACK/whole receipt, aggregate memory and actual MAC ownership
+before CQ. RX/HLS/memory/CQ/MAC-pin endpoints are modeled in these component
+tests;1MiB READ means256 modeled response events, not actual native payload
+runtime. That original8191/31 cohort keeps READ4096; defaults are unchanged.
+
+A distinct experimental RNC16383/CQC63 source profile now opens READ admission
+up to1MiB through checked SQ/MR/HLS-SQ/CQ gates. Its actual C128 codec passes20
+methods; real local-MR admission26 cases, HLS-SQ staging21 cases and register/
+CQ27 cases pass. [Complete-native elaboration](results/2026-10-18/rocev2-rnic-segmented-read-profile-native-elaboration-001.json)
+passes with the exact RX/MSN/memory/lifetime/HLS graph. These are component
+runtime plus native COMPILE results, not execution of a genuinely fetched
+large READ through native RX/DMA/host visibility/CQ. No installed/default
+driver/provider selects this profile.
+
+The [first full-runtime attempt](results/2026-10-18/rocev2-rnic-segmented-read-native-full-002.json)
+now compiles the actual new graph successfully, but **fails during QP setup,
+before a fetched READ/data transfer** (`main native RNIC fault 00`). The new
+runner plans one8193-byte READ plus all29 previous cases; only the first READ
+case was attempted, and none passed in this batch. The failure, exact hashes
+and [audit](results/2026-10-18/rocev2-rnic-segmented-read-native-diagnostics-002.json)
+are retained. The root cause is not yet confirmed; no native large-READ,
+regression-suite, Linux or hardware success is claimed.
 
 This is a **work-in-progress source snapshot**, separate from the earlier
 hardware-tested READ/WRITE images. Its latest HLS estimate13.885ns misses the original

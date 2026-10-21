@@ -15,7 +15,70 @@ remaining run was interrupted). No all-suite or release-pass claim is made.
 
 ## Latest functional milestone (2026-10-21)
 
-Publication checkpoint131: expected-remote-MSN RTL, genuine accepted-QP/SQC
+Publication checkpoint135: new full-native runner adds an actual8193-byte
+READ fixture ahead of ALL29 prior bounded cases. The actual connected graph
+compiles, but [runtime002](../../results/2026-10-18/rocev2-rnic-segmented-read-native-full-002.json)
+FAILS during QP setup before SQ fetch/READ data (`main native RNIC fault 00`).
+Only LARGE_READ was attempted,16.398s; the29 old cases were NOT run in this
+batch. No large-READ native runtime, CQ/host visibility, regression or physical
+pass is claimed. Root cause remains unconfirmed. Exact source/artifact/binary
+hashes and the failure log are preserved; [audit002](../../results/2026-10-18/rocev2-rnic-segmented-read-native-diagnostics-002.json)
+verifies all1503 recorded bindings. This publication includes failed evidence,
+not a green release. No hardware/default/fan/BIOS/network setting is changed.
+[Evidence and limitations](../../docs/ROCEV2_ATOMIC.md).
+
+Progress134 (historical): NEW separate RNC16383/CQC63 source profile admits READ<=1MiB
+through actual SQ/local-MR/HLS-SQ/CQ gates, on the fully connected133 graph.
+New private C128 READ codec passes20 methods (all15 prior unchanged), actual
+MR admission11 methods/26 cases (all8 old Atomic methods), HLS-SQ8 methods/
+21 cases (all5 old), register/CQ27 cases including12 genuine publications.
+Old codecs still reject large READ; old8191/31/kernel/provider/default READ
+remains4096. This is not new driver/provider support. Real MR rejects bad
+key/PD/read-only/out-of-range work; no modeled MR grant supplies authority.
+Complete native profile001 PASS3.448s/1415 bindings, same exact HLS/RX/MSN/
+memory/lifetime/domain/clock/drain graph. All52 MR leaf copies,21 HLS-SQ and
+2 register/CQ bodies equal actual native bytes. This is COMPILE ONLY, NOT
+actual fetched large READ RX/HLS/DMA/host visibility/CQ runtime. That new
+runtime plus old29 native cases are next; no old binary is relabeled.
+Fixture startup failures/preimages remain. Original HLS13.885ns still fails
+4ns/default1.08ns; no hardware/default/install/load/reboot/Git changes.
+[Evidence and limitations](../../docs/ROCEV2_ATOMIC.md).
+
+Progress133 (historical): new `derive_segmented_read_lifetime.py` connects actual trusted
+MSN to the exact protected segmented RX and READ memory/lifetime path. One
+whole READ request retains its cache through FIRST/MIDDLE, validates every
+response PSN/class and uses LAST PSN for final HLS ACK; whole HLS receipt must
+retain first PSN and advance next PSN by the full response span. Only LAST
+ACKs replay; memory/MAC/producer/CQ joins remain real separate consumers.
+[Lifetime002](../../results/2026-10-18/rocev2-rnic-segmented-read-lifetime-002.json)
+PASSES10 methods/29 four-state cases:19 READ plus all10 original WRITE/SEND.
+READ cases<0.123s, largest old WRITE28.919s under original30s bounds.1MiB READ
+uses256 modeled response events, not real RX payload/HLS/native DMA proof.
+Failed001's five inherited fixture helper-export errors and19 READ passes
+are preserved, not relabeled. New native elaboration001 PASS3.508s/1409
+bindings; all116 unit leaf copies and60 protected RX guards match exact
+selected native bytes. One HLS/MR/PTE/nonce/PSN/MSN domain; both drains0.
+This is COMPILE only: large READ admission stays4096 until distinct matched
+profile/genuine SQ/MR/RX/DMA/CQ runtime. Defaults/kernel/provider/hardware
+unchanged; mid-READ recovery/timing/physical qualification remain incomplete.
+[Evidence and limitations](../../docs/ROCEV2_ATOMIC.md).
+
+Progress132 (historical): expected-remote-MSN component007 PASSES7 methods/12 four-state
+cases, including two genuinely allocated SQC owners interleaved WITHOUT
+route reconfiguration; both QPs independently advance MSN1->2. Real128-byte
+SQC/fetch profile, genuine64-bit cookie/epoch/PD lookup, all7 logical operations,
+packet/replay non-recount, exact CQ lease, real guarded SQC retirement,
+new-epoch-only reset and stale/unknown/foreign quarantine are checked. Each
+case runs0.0293..0.0389s under the unchanged10s bound. Route/WR/TX/CQ are
+MODELS, not native protocol/physical proof. Original failures/preimages remain.
+Complete native elaboration002 PASS3.447s/1404 bindings with exactly one MSN
+predictor, unchanged shared HLS domains/MR/PTE/nonce and both drains0. Actual
+accepted TX-only QP route and SQC owner ports are wired, but expected MSN is
+NOT yet connected to protected segmented RX. No native runtime pass claimed;
+large READ admission stays4096 and default/kernel/provider/hardware unchanged.
+[Evidence and limitations](../../docs/ROCEV2_ATOMIC.md).
+
+Publication checkpoint131 (historical): expected-remote-MSN RTL, genuine accepted-QP/SQC
 lookup wiring derivation and a test fixture are included as UNVALIDATED WIP.
 [Attempt003](../../results/2026-10-18/rocev2-rnic-expected-remote-msn-003.json)
 compiles six cases, but all stop at time zero on the mandatory128-byte SQ

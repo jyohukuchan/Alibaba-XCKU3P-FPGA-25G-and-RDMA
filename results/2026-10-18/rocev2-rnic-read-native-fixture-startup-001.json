@@ -1,0 +1,10 @@
+{
+  "scope": "Preserved large READ native fixture import failure before correction",
+  "source_sha256": "b3eb7609676e9eba9b7fc369de36545aedb19119150ca7541d06ee9bc27a2684",
+  "preimage_directory": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/read-native-fixture-startup-j_fae5eb",
+  "compiled_cases": 0,
+  "runtime_cases": 0,
+  "error": "Checked oracle clone expected31 source anchor, but inspect.getsource of a previously generated clone resolves original15 source. No RTL/native execution occurred.",
+  "correction": "Clone original checked oracle functions directly from15 to63, preserving all independent expected data/owner checks. Never normalize observed output.",
+  "hardware_actions": []
+}

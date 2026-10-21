@@ -1,0 +1,70 @@
+{
+  "scope": "Explicit READ codec/MR/HLS-SQ/profile and complete-native provenance audit",
+  "checks": {
+    "rocev2-rnic-segmented-read-wqe-001.json": {
+      "pass_test": true,
+      "bindings": 14,
+      "report_sha256": "19c0da0a1282a27225c1f4e2c2f657404ee7172728b13ff05e4bd0de4328701f"
+    },
+    "rocev2-rnic-segmented-read-admission-001.json": {
+      "pass_test": true,
+      "bindings": 218,
+      "report_sha256": "c8bcf81b776975baca3e380036587da423046374f923ba271633013f35974eda"
+    },
+    "rocev2-rnic-segmented-read-hls-sq-001.json": {
+      "pass_test": true,
+      "bindings": 150,
+      "report_sha256": "e731cb3c8573171bce05d055788ed3590f067a0b8c2d5f996b5c91b0570a982f"
+    },
+    "rocev2-rnic-segmented-read-profile-001.json": {
+      "pass_test": false,
+      "bindings": 133,
+      "report_sha256": "2f11f93d8243ceda9861545cc968e2b2c3e5408234a186fc124b21679e1e0665"
+    },
+    "rocev2-rnic-segmented-read-profile-002.json": {
+      "pass_test": true,
+      "bindings": 241,
+      "report_sha256": "f503905499bc4310c0aaf992951360c3af7cfd9d9b67ebf28984932b7049a40c"
+    },
+    "rocev2-rnic-segmented-read-profile-native-elaboration-001.json": {
+      "pass_test": true,
+      "bindings": 1415,
+      "report_sha256": "96d0d909dbb2e58d9bab42d8b9c4693347219ca7181008e50a3d78f430ed3b89"
+    }
+  },
+  "historical_resolutions": [
+    {
+      "report": "rocev2-rnic-segmented-read-profile-001.json",
+      "source": "rdma/rnic/tests/probe_segmented_read_profile_rtl.py",
+      "preimage": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/read-profile-001-preimages-h6l6bj3a/probe_segmented_read_profile_rtl.py",
+      "sha256": "513e61903693c7de22028395dd62ffd1ec19fd64a97169ca0f05608bc740e76b"
+    }
+  ],
+  "startup_preimages": [
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-read-admission-startup-001.json",
+      "preimage": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/read-admission-startup-aiqjopr1/test_segmented_read_admission_rtl.py",
+      "sha256": "0683fb0c0c7bf16b5a861a2fc5d4c2ffa5e68aed34dbd11a75dc8ad236465ca8"
+    },
+    {
+      "report": "results/2026-10-18/rocev2-rnic-segmented-read-admission-startup-002.json",
+      "preimage": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/read-admission-startup2-2uod8s1u/test_segmented_read_admission_rtl.py",
+      "sha256": "8a06241e5316d87719e373b01c0e8f6261f499729fb312abd7cd523f117503ed"
+    }
+  ],
+  "component_to_native_byte_matches": {
+    "MR": 52,
+    "HLS_SQ": 21,
+    "RNC_CQC": 2
+  },
+  "native_directory": "rdma/rnic/build/read-profile-native-aa5d10k4",
+  "RNC_features": 16383,
+  "CQC_features": 63,
+  "READ_admission_limit": 1048576,
+  "native_runtime": false,
+  "limitations": "C128 codec/MR/HLS-SQ/RNC/CQC are component executions with modeled endpoints; native result is compile-only, not actual fetched large READ/generated-HLS/DMA/visibility/CQ or Linux/provider/API/physical proof.",
+  "failed_reports_rewritten": false,
+  "gate_relaxed": false,
+  "hardware_actions": [],
+  "default_kernel_provider_changed": false
+}

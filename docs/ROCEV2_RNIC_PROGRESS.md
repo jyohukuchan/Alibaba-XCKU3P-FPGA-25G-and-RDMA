@@ -32,7 +32,115 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
-Publication checkpoint131 (2026-10-21): user explicitly requested a progress
+Publication checkpoint135 (2026-10-21): user explicitly requested a current
+progress commit/push. Include132..134 source/component work plus the NEW
+30-case native runner and failed full-runtime evidence, without claiming a
+completed feature or all-suite pass. The8193-byte READ fixture uses the actual
+C128 SQ record, connected MR/PTE/MSN/HLS/DMA/nonce/lifetime/MAC/CQ graph;
+physical host/root/peer/PHY/PTP remain models. Expected payload, page-fragment/
+fence descriptors, wrapped PSNs and whole-owner/CQ checks are independent
+test expectations, NOT observed successful transfers.
+
+Fixture startup001 and full-native001's wrong observation hierarchy are kept
+as separate failed reports/preimages. The observation-only correction changes
+no production RTL or assertion. Fresh full-native002 passes Icarus elaboration
+and actual Verilator/C++ compilation436.743s. Its first LARGE_READ runtime
+FAILS after16.398s during QP setup, before SQ fetch/READ data, with
+`main native RNIC fault 00`. The remaining29 cases were NOT attempted in this
+batch. Root cause remains unconfirmed; configuration-route observation is a
+candidate for diagnosis, not a proved fix. All1437 source/64 artifact/2 RAM
+bindings are reverified unchanged, including the failed binary and bench;
+[audit002](../results/2026-10-18/rocev2-rnic-segmented-read-native-diagnostics-002.json)
+preserves the terminal failure excerpt. Original1200s build/30s runtime bounds
+and all clocks/drains/timing gates remain. New large READ native execution,
+matched kernel/provider/API/physical qualification and original timing gates
+are still open. Source syntax/JSON parsing and diff whitespace checks pass;
+`bash scripts/check.sh` still FAILS the historical TX-padding SHA check, not
+waived or rewritten. No hardware/default/module/network/fan/BIOS/program/
+flash/reboot changes; this user-authorized publication does not authorize
+future automatic pushes. All11 original requirements remain in scope; the
+overall goal is not complete.
+
+Progress134 (historical): NEW explicit private READ-capable RNC16383/CQC63 profile opens
+actual READ<=1MiB admission/HLS-SQ/CQ length gates on the connected133 graph.
+Only four leaves change; original8191/31/kernel/provider/default keep READ4KiB.
+New wqe_segmented_read.c/.h are serialization-only, not a post/MR authority or
+installed driver/provider selection. C/UBSan codec20 methods PASS with all15
+old codec methods unchanged. Actual full-range MR/SQ admission11 methods/
+26 cases PASS, retaining all8 prior Atomic methods. Actual748-owner/408-SQ
+staging8 methods/21 cases PASS, retaining all5 old; real RNC/CQ27 cases PASS,
+including12 genuine publications/ACKs and original dependency/owner refusals.
+Two fixture import failures (method indentation/literal multiline text) have
+separate startup records and exact preimages, zero compiled/runtime cases;
+the exact inherited method is compiled inside a temporary Python class, only
+codec entry point changed. Profile001's absent negative-fixture ABI-anchor
+failure preserves133 bindings/preimage; original reject fixture reused intact,
+positive case still explicitly checks63/12 publications. Fresh002 all27 PASS.
+Complete READ-profile native001 PASS3.448s/1415 bindings, original one shared
+HLS/PSN/MSN/RX/Atomic/MR/PTE/nonce graph and both global drains0. All52 actual
+MR admission leaf copies/21 HLS-SQ/2 RNC-CQ bodies equal selected native bytes.
+Audit reverified14 codec/218 MR/150 HLS-SQ/133 failed/241 fresh profile/1415
+native bindings, exact historical preimage only. Native COMPILE only: actual
+fetched large READ RX/HLS/DMA/status/host visibility/CQ execution remains
+unverified. Next fresh native runtime must add large READ and retain all29
+old cases/oracles/<=30s limits, not reuse an old binary or normalize snapshots.
+All11 scope retained, kernel/provider/API/physical/mid-READ recovery/large RX/
+Immediate/multiSGE and original timing13.885ns>4ns/default1.08ns remain open.
+No hardware/default/module/install/network/fan/BIOS/flash/reboot/automatic Git.
+[Evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress133 (historical): actual private READ RX/MSN/memory/whole-WR lifetime is connected.
+One complete READ request, independent per-response PSN/class counter, only
+LAST marks RX complete/ACKs retained replay, final HLS ACK uses LAST PSN and
+full producer receipt checks first->next response-span PSNs. Original actual
+MAC/EOF/tail/replay/memory/CQ joins/global drains unchanged. New lifetime002
+PASS10 methods/29 four-state cases:19 READ controls plus all10 original
+WRITE/SEND. READ65/4097/8193/1MiB (1/2/3/256 modeled response events), absent
+LAST/ACK/memory/producer, wrong PSN/class/syndrome/full-owner/unknown and bad
+first/next/opcode receipt controls. READ runtimes<0.123s; largest old1MiB
+WRITE28.919s, original30s limits retained. RX/HLS/memory/CQ/MAC pins modeled;
+1MiB READ is not actual RX payload/HLS/native DMA/runtime qualification.
+Failed001 preserves19 READ passes but five inherited Python helper-export
+startup errors. All222 bindings and20 uncompiled hardware leaves preserved;
+only existing helper export added, hardware bytes unchanged. Complete native
+elaboration001 PASS3.508s/1409 bindings, exact old60 protected RX guards and
+all116 fresh unit leaf copies equal selected native bytes. Actual expected
+MSN connected; one actual generated HLS/shared MR/PTE/nonce/PSN/MSN domain,
+both global drains0. Fresh unit462/native1409 bindings verified; historical
+changed generator resolves only to exact saved preimage. COMPILE ONLY: READ
+admission4096/RNC8191/CQC31/default/kernel/provider unchanged. Next distinct
+matched capability/admission and genuine native SQ/MR/RX/data/status/CQ runtime
+remain, alongside mid-READ recovery/API/physical and all11 original scope.
+HLS13.885ns still fails original4ns/default1.08ns/full-board timing. No hardware,
+install/load/network/fan/BIOS/program/flash/reboot/automatic commit/push.
+[Evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress132 (historical): genuine-SQC expected-remote-MSN component now PASSES7 methods/
+12 four-state cases. The reused fixture now selects the actual128-byte SQC
+and actual matching fetch; the production profile assertion is unchanged.
+004's unchanged RTL diagnostic proves a fixture delta-cycle sampling race:
+guardff before combinational settling, guard80 after #1, exact assertion and
+foreign-expectation quarantine then pass. Corrected005 passes all11 cases.
+New two-genuine-SQC case006 exposes latest-configured-QP-only selection;
+all11 prior cases still pass. The real RTL now retains per-QP accepted routes
+and selects actual SQC identity by offered/held full owner. Fresh007 passes
+all12, independent per-QP1->2 MSN history without route reconfiguration.
+Same route/epoch does not reset; newer genuine SQC epoch does. Each case
+0.0293..0.0389s, original10s bounds; route/WR/TX/CQ endpoints remain MODELS.
+Actual accepted-QP/SQC/owner/CQ/config/queue joins are wired into the complete
+native graph; elaboration002 PASS3.447s/1404 bindings, one extra MSN predictor,
+all previous common HLS/MR/PTE/nonce domains and both global drains0 retained.
+All116 historical005/122 failed006/122 fresh007/1404 old-native/1404 fresh-native
+bindings reverified, changed historical sources resolve ONLY to saved exact
+preimages. This is component runtime plus native COMPILE, not native wire/
+protocol or physical qualification. The expected-MSN output is not yet
+connected to segmented RX; actual READ final-response/lifetime/CQ/retry joins
+remain. READ admission4096 and kernel/provider/defaults unchanged. All11 scope
+retained; original timing13.885ns still fails4ns/default1.08ns. No hardware,
+install/load/network/fan/BIOS/program/flash/reboot/automatic commit/push.
+[Evidence and limits](ROCEV2_ATOMIC.md).
+
+Publication checkpoint131 (2026-10-21, historical): user explicitly requested a progress
 commit/push. Include current expected-remote-MSN predictor/native derivation
 and its failed tests as WIP, not a completed feature. The route observer covers
 genuine accepted TX-only configuration; a dedicated SQC lookup is intended

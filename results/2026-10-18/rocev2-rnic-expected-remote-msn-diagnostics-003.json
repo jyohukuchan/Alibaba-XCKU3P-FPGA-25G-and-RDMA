@@ -1,0 +1,12 @@
+{
+  "scope": "Preserved expected-MSN003 fixture-startup failure before correction",
+  "failed_report": "results/2026-10-18/rocev2-rnic-expected-remote-msn-003.json",
+  "failed_report_sha256": "d36c95092b85e5ac7e46c9bb81cba3ba099c70c8b1068883f696a32ef09246d4",
+  "bindings_verified_before_fix": 80,
+  "source_bindings": 50,
+  "compiled_cases": 6,
+  "MSN_runtime_cases_passed": 0,
+  "cause": "All six cases terminate at time zero on mandatory IMMEDIATE_ENABLE matched128-byte SQ profile. Reused fixture does not set required profile and selects old64-byte fetch. Preserve production assertion; use actual derived128-byte SQC/fetch fixture without DMA work.",
+  "preimage_directory": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/expected-msn-003-preimages-bi6pt8wn",
+  "hardware_actions": []
+}

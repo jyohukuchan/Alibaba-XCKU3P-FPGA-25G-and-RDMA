@@ -1,0 +1,38 @@
+{
+  "scope": "Whole-READ lifetime failed/fresh/native bindings and exact component-to-native hardware audit",
+  "checks": {
+    "rocev2-rnic-segmented-read-lifetime-001.json": {
+      "pass_test": false,
+      "bindings": 222,
+      "report_sha256": "7699df7f6775a3c51e8d02eb3b26bab9eaddcc6330d2db7023cafd72db3c12ee"
+    },
+    "rocev2-rnic-segmented-read-lifetime-002.json": {
+      "pass_test": true,
+      "bindings": 462,
+      "report_sha256": "52ae90654369c0beceed18c34d45ec6a78bbbdd2b3cd42d982b41a3e8082c00a"
+    },
+    "rocev2-rnic-segmented-read-lifetime-native-elaboration-001.json": {
+      "pass_test": true,
+      "bindings": 1409,
+      "report_sha256": "82a8d65e54f2136478ce5a6597d40be0d7e4a73e9184bb40035787dc6b5ab3b7"
+    }
+  },
+  "historical_resolutions": [
+    {
+      "report": "rocev2-rnic-segmented-read-lifetime-001.json",
+      "path": "rdma/rnic/fpga/derive_segmented_read_lifetime.py",
+      "preimage": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-lifetime-001-preimages-h761hy_o/derive_segmented_read_lifetime.py",
+      "sha256": "c01d954a36db34e50a9839264aaf1e6f6016a7c5a0076ca40ee005cf829d84a9"
+    }
+  ],
+  "native_unit_leaf_byte_matches": 116,
+  "native_protected_RX_guard_byte_matches": 60,
+  "failed_startup_hardware_leaves_unchanged": 20,
+  "max_case_runtime_seconds": 28.918502454005647,
+  "READ_case_runtime_seconds_max": 0.12293587502790615,
+  "native_directory": "rdma/rnic/build/read-lifetime-native-y1riea57",
+  "scope_limits": "READ RX/HLS/memory/CQ/MAC-pin endpoints are models in lifetime unit. Protected RX's60 cases are separate. Complete native evidence is compile only; closed READ admission4096, no new generated-HLS runtime/native/physical qualification.",
+  "hardware_actions": [],
+  "default_changed": false,
+  "failed_reports_rewritten": false
+}

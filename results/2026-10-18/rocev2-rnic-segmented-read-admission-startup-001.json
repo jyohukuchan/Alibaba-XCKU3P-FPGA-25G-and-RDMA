@@ -1,0 +1,13 @@
+{
+  "scope": "Preserved READ admission fixture import-startup failure before correction",
+  "source_path": "rdma/rnic/tests/test_segmented_read_admission_rtl.py",
+  "source_sha256": "0683fb0c0c7bf16b5a861a2fc5d4c2ffa5e68aed34dbd11a75dc8ad236465ca8",
+  "preimage_directory": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/read-admission-startup-aiqjopr1",
+  "exit_code": 1,
+  "compiled_cases": 0,
+  "runtime_cases": 0,
+  "error_type": "IndentationError",
+  "error": "inspect.getsource(class method) retains indentation; compile(t,__file__+':entry','exec') fails at line1 'def entry': unexpected indent.",
+  "correction": "Dedent the exact inherited fixture method before changing only the C codec entry point. No RTL or MR gate changes.",
+  "hardware_actions": []
+}

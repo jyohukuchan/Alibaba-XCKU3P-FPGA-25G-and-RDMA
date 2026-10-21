@@ -1,0 +1,500 @@
+{
+  "scope": "Actual private large READ748-owner to408-SQ staging, endpoints modeled.\n\nKeep every original Atomic staging method. No actual MR grant/native fetch/\nHLS execution/DMA/CQ/API or hardware proof follows the modeled owner handoff.\n",
+  "pass_test": true,
+  "methods": 8,
+  "cases": 21,
+  "source_sha256": {
+    "rdma/rnic/tests/test_segmented_read_hls_sq_rtl.py": "18ac1164fc1a67b1192adb296005dcf61fa3553cd98a8c95bd9afd89ad74e288",
+    "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "2f092ca9eeee90d6a1ab57439227ad39b5d9b623947201e274b2654bf46c8af4",
+    "rdma/rnic/fpga/derive_atomic128_fetch.py": "4123c117771f568fc4a002a614ade421f6c94eb08dd17b27dff2a6a8d9dbe433",
+    "rdma/rnic/fpga/derive_atomic128_admission.py": "da4e91e41d7bb9861534cfe2b98e7690076850d192c401cc1290d1942b8d83e3",
+    "rdma/rnic/tests/test_atomic128_hls_sq_rtl.py": "1f672210e88699b630421c7643020024d2f5e15b3121d47bc6b8e93ec85bc798",
+    "rdma/rnic/fpga/derive_shared_responder.py": "3d97aec6c1f5efe8f1d1b3d0c830a684ed4045dacdd3bcaa4923cf751e1fd477",
+    "rdma/rnic/fpga/prepare_wrkey_transport.py": "11aff17a0d9eb097abc4a5eec097409171b997d59c451ffb6e8fad3d4984e8c3",
+    "rdma/rnic/fpga/derive_qp_tx_bridge.py": "51afb390ce130f69e8b55cbfb2af2055e7fa3746004790b5b509f4f6273d28a7",
+    "rdma/rnic/fpga/derive_duplex_transport.py": "ff81dfb2ba41ffc59d482bee177fc106537a22a786bf11d588880c3990c85a53",
+    "rdma/rnic/fpga/derive_immediate_bridge.py": "a9758360ee8466e011819fe3ebf79b80fd175ee7f59c91af4fa949047a4b0667",
+    "rdma/rnic/fpga/derive_immediate_native.py": "9281857caf2714945f280e126eb39553e8f9324c8416b5b71bbd79c5ed6fdac4",
+    "rdma/rnic/fpga/derive_atomic_owner_lookup.py": "10f497b1ae2c5358e960ae8695903bf4655896c99b977bd26ffba287d270b453",
+    "rdma/rnic/fpga/derive_atomic_native_authority.py": "0b881da1ad4a9d72f43c90e54492c3299b43b3109d0529eb81851319a4f88451",
+    "rdma/rnic/fpga/derive_atomic_native_bridge.py": "332a5064cb3adfbadd2e2196eb950885e9945a9af528ccd45776944631db331c",
+    "rdma/rnic/fpga/derive_atomic_native_owned_stage.py": "aa9869c3c51c2fe25b5dfa53429bd62b7180fcfde20140e1e4397d76b5463576",
+    "rdma/rnic/fpga/derive_atomic_native_rx.py": "9f9e8db656cffc70f59761ba0c42e402f4dd9d392c065d0a7a79abb6b752fec0",
+    "rdma/rnic/fpga/derive_atomic_native.py": "b3758f15718303cf12b95af02052dcad8bc6d1e806ef64075ff75e3e6856c90e",
+    "rdma/rnic/fpga/derive_atomic128_response.py": "eaa3439ece1fd0fad5ff30e81aab0d14346c3739058c1272a4fdc4b8e431063e",
+    "rdma/rnic/fpga/derive_atomic128_executor.py": "bc01f0d68fc39c78e6a3ff5d96d93a2e82396f4b9db67a7e03bee35cf114b004",
+    "rdma/rnic/fpga/derive_atomic128_lifetime.py": "09148e2f11eb3c2ea9bd72fc28cf357e8991de64acef1af9ad79b17dfebc90cb",
+    "rdma/rnic/fpga/derive_atomic_request_bridge.py": "a626d9f3d20ecfc7c477100c63472fa8547792fafacb612d28846f6f6f0a4463",
+    "rdma/rnic/fpga/derive_atomic128_native.py": "9be2756604ed23cc9b41b2fd8d1a3b8db9bf2e2176663878463c12abc03b20ad",
+    "rdma/rnic/fpga/derive_atomic_access_native.py": "ab42d555c459c2e7b7da71686539c3d75a31e075a3a8c11c66e09a59e6e903ee",
+    "rdma/rnic/fpga/derive_zero_native.py": "d652f5e0a805b96d2a963f33d9112d8121f1170a15b111e3e400c81eface97a7",
+    "rdma/rnic/fpga/derive_zero_rq_native.py": "92ed231ada071d15feab574127c7974d4d17516f48db5d8f4e6a79f118d225f8",
+    "rdma/rnic/fpga/derive_zero_service_native.py": "0f92353804e547ef8df2ee70ff294e356447667f4668450d11020cc302a84b86",
+    "rdma/rnic/fpga/derive_segmented_native.py": "78f20feaa504ef5ab12cdee9ce420b5f3a8ec5a4f6eeca209d3dbd4cb70682a2",
+    "rdma/rnic/fpga/derive_segmented_source.py": "138c80829c920c6d8d32a7a7ac29cb05e33bec051028dd741558979b5314ad62",
+    "rdma/rnic/fpga/derive_segmented_executor.py": "a2340b3346215f952ff882fca09a6c8ba886c46a29215ff676e998119252497c",
+    "rdma/rnic/fpga/derive_segmented_wire.py": "94bba46ee3e380bcd6f2578f25f4ef00eda0407a22eefa90c1824003a2aa8386",
+    "rdma/rnic/fpga/derive_segmented_padding.py": "ac8d48a5918a095e6f712853ae7d55ab9510c11edbdf74888e68dfe137119ae8",
+    "rdma/rnic/fpga/derive_segmented_profile.py": "2eeb93fba67c67ff6dd907fc1bf46741371af9548b3c0908c38d3c4d466fbd55",
+    "rdma/rnic/fpga/derive_segmented_read_executor.py": "a7e261df5ad7bf7e4f182b4a34a4673f2e3f4241b40cab01c921721129c7d19c",
+    "rdma/rnic/fpga/derive_segmented_read_memory_native.py": "d6aa6356c022aeb2e8f3c37c6d84a4ba9b63646bca881e065d074edb509940d1",
+    "rdma/rnic/fpga/derive_expected_remote_msn_native.py": "799f29a49803a525ed61a68d444791ff5fc23398ea9ac951c7d1175d2d67c759",
+    "rdma/rnic/fpga/derive_segmented_read_response.py": "623ad265109287439858a9ec0b899c110bbfca926ce3405b2a8d027699847271",
+    "rdma/rnic/fpga/derive_segmented_read_lifetime.py": "7149ac3d6feacb6223e6667b413bb14497158689325a67dbe53ded7e0db86057",
+    "rdma/rnic/fpga/derive_segmented_read_profile.py": "5e51f25d6d7a063c03e963fef1d71ad0a9c2655c75e960d870d325fd3e37d361",
+    "rdma/rnic/fpga/prepare_native.py": "6c9688901171652c8805218cb716932daff8bbfbc405aeba1079f63efcf5ea0a",
+    "rdma/rnic/fpga/prepare_board.py": "92c5c485e1e5349dbe5deacb0f8c2e514af87b17b696317b9258804c967a0573",
+    "rdma/rnic/fpga/derive_atomic_bridge.py": "1b3b1adc2f187b7718e4045973768c50e45186859f587992a56ad485bd230bdb",
+    "rdma/rnic/fpga/derive_recv_responder.py": "467fae2223a3b9a3e40b2a43334b154bb81aea9608792debf03d2461bd14d6c7",
+    "rdma/rnic/fpga/derive_atomic_mac_bridge.py": "4a0ef7c4604415fccbd5c582ae5ca248bc4ba1fa7a226e98115b749e6a65e3af",
+    "rdma/rnic/fpga/derive_atomic_owned_bridge.py": "6a80483c2cd4ebc9a6344532be3df607d6839e5991e78dec52d682b340b8a632",
+    "rdma/rnic/fpga/derive_atomic_reserved_mac_bridge.py": "cbb8dd301369630dcc37c28d0ee5c7fa2293c5223829be29305d6c5f677741a8"
+  },
+  "source_unchanged": true,
+  "seconds": 8.50963522004895,
+  "all_five_original_Atomic_staging_methods_retained": true,
+  "owner_bits": 748,
+  "SQ_bits": 408,
+  "HLS_and_executor_endpoints_modeled": true,
+  "native_runtime": false,
+  "hardware_verified": false,
+  "failures": [],
+  "tests": {
+    "test_CAS_FADD_full_operands_keys_and_owner_before_SQ": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-suuom1tb",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.014563072007149458,
+        "summary": {
+          "pass_test": true,
+          "owners": 16,
+          "SQ": 16,
+          "fault": 0,
+          "cycles": 400
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-suuom1tb/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-suuom1tb/test.vvp": "06a59589cd3ceb4478b5e88193d801ad56ac559b9b3c05c8ede95aa45faad755",
+          "rdma/rnic/build/segmented-read-hls-sq-suuom1tb/tb.v": "12ec7e0691188f5d45e8ef278913719d112de338a47c95c5922a9bf4f8780db9",
+          "rdma/rnic/build/segmented-read-hls-sq-suuom1tb/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-suuom1tb/simulation.log": "a07fe82b017e87fd3475192e1c853e05a8b96e615530f1ac932eb80bda025d54"
+        }
+      }
+    ],
+    "test_failed_DMA_and_denied_MR_keep_identity_but_no_HLS_SQ": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-9jp9txwe",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.013278876955155283,
+        "summary": {
+          "pass_test": true,
+          "owners": 16,
+          "SQ": 0,
+          "fault": 0,
+          "cycles": 288
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-9jp9txwe/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-9jp9txwe/test.vvp": "c8cd0670a2add301e5808e65f722ad6b92251deadafe63014075bc6a259c8fdf",
+          "rdma/rnic/build/segmented-read-hls-sq-9jp9txwe/tb.v": "5c4b0a17bbb9f0edc35625ef0921f796e55f5775b3aaa5f83d29c7c9c0a5f5e4",
+          "rdma/rnic/build/segmented-read-hls-sq-9jp9txwe/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-9jp9txwe/simulation.log": "4a813a8d77b1d079b4820ee49dc2e1f6da715c96ca1854331736f7e4439969ef"
+        }
+      }
+    ],
+    "test_large_READ_exact_guard_required_and_late_loss_retains_offered_SQ": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-5tu_x6pi",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.010255814006086439,
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 10
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-5tu_x6pi/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-5tu_x6pi/test.vvp": "4133c916b4a38b60bd06004a8a02642948d1ba3d4441152b07222032e53ade5f",
+          "rdma/rnic/build/segmented-read-hls-sq-5tu_x6pi/tb.v": "4a33fdc98ce50b3afdcdd5f88dd1144e169f9e81107da90d1dcf1fe82b0ececb",
+          "rdma/rnic/build/segmented-read-hls-sq-5tu_x6pi/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-5tu_x6pi/simulation.log": "d514b22242cd04ad605a75cf75b2717c0f6b8ce68bdf224d073ec4d807fbaabf"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-h8kkc7gc",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.009947460028342903,
+        "summary": {
+          "pass_test": true,
+          "owners": 1,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 19
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-h8kkc7gc/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-h8kkc7gc/test.vvp": "71b7085f63758fbc3e764eaf94c64832e198a6ed6309cb0878cbd555aa774956",
+          "rdma/rnic/build/segmented-read-hls-sq-h8kkc7gc/tb.v": "bd6cd22aa483d22a8ccd5d036740a23f3663d8ef62403565b48511b0889be944",
+          "rdma/rnic/build/segmented-read-hls-sq-h8kkc7gc/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-h8kkc7gc/simulation.log": "648f11c929c19c2234c638c5b91aac20567a1c7edf5c67412892a58c642a7876"
+        }
+      }
+    ],
+    "test_large_READ_full_length_keys_and_exact_owner_before_SQ": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-dgpe3_rx",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.011958643968682736,
+        "summary": {
+          "pass_test": true,
+          "owners": 8,
+          "SQ": 8,
+          "fault": 0,
+          "cycles": 200
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-dgpe3_rx/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-dgpe3_rx/test.vvp": "9d48da00965bdbc262e9be7fd5caabf6db0fead5f02af669c818a431bf0c4ab1",
+          "rdma/rnic/build/segmented-read-hls-sq-dgpe3_rx/tb.v": "3ce401072e95f01309324474b431c6eb9d1e7298005a805f67c40141ce59bec1",
+          "rdma/rnic/build/segmented-read-hls-sq-dgpe3_rx/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-dgpe3_rx/simulation.log": "3f5f9ce1ad8556416ac4ae9e435aef517e9d831211f3c5bfba109abe74501502"
+        }
+      }
+    ],
+    "test_large_READ_noncanonical_length_operands_Immediate_or_QPN_never_gets_SQ": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-dv37smsh",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.00968149898108095,
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-dv37smsh/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-dv37smsh/test.vvp": "91b588bdca6e881f9ac3a2b3a7f3a107a10b17cfc3d98c952c3f4dd39e7526ba",
+          "rdma/rnic/build/segmented-read-hls-sq-dv37smsh/tb.v": "375e741d6c464b14de58a2418e5f7f1c6a51ac6c09acd84f4cf4aefde2aa64c7",
+          "rdma/rnic/build/segmented-read-hls-sq-dv37smsh/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-dv37smsh/simulation.log": "ce5aa7f38b4859873852cd2254299e82ac4fb13c0bfc4986ae3c406129942bb2"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-sk8a9gmj",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.009959751972928643,
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-sk8a9gmj/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-sk8a9gmj/test.vvp": "947f9e2eb71f45441c484de57436d818f7d7def679c24562ea0d69f47f9466ac",
+          "rdma/rnic/build/segmented-read-hls-sq-sk8a9gmj/tb.v": "f3b1c8bacc71dca2ec4541a4703dfaca7bbe524eb2ae194a7d91c58d5e04feae",
+          "rdma/rnic/build/segmented-read-hls-sq-sk8a9gmj/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-sk8a9gmj/simulation.log": "d13857ec663035b9bd15af77d8125f5305ca8ddcfa645dbadbf726edaffd046d"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-6fu8b4zx",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.009553337993565947,
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-6fu8b4zx/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-6fu8b4zx/test.vvp": "6c61edbaa3ec0db15ca02054c5eb85bd97b1ddf75ce5bc16aed8890a0bea539b",
+          "rdma/rnic/build/segmented-read-hls-sq-6fu8b4zx/tb.v": "4408d7dbd697b99681f38731d46b7625b510777eebf14a66459f1d76283f7c70",
+          "rdma/rnic/build/segmented-read-hls-sq-6fu8b4zx/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-6fu8b4zx/simulation.log": "db12a3b7a57456b519530b02d9f92b9de2fa4e44857de60a358490e627fa8f66"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-qzdxin90",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.00934255396714434,
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-qzdxin90/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-qzdxin90/test.vvp": "12db8d58bcad43632b33937235fbd0ada7d9428de10e937f331c8d9e5d497e5f",
+          "rdma/rnic/build/segmented-read-hls-sq-qzdxin90/tb.v": "a5f539044444aa3235872da413e79f635e590f0e1b80ba393d53bc494124abf0",
+          "rdma/rnic/build/segmented-read-hls-sq-qzdxin90/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-qzdxin90/simulation.log": "81adef8eace5d9bf29e887aad0b8413f1b34830d89f0b8517dc41a53e5af3fa2"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-krhypua9",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.00965125800576061,
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-krhypua9/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-krhypua9/test.vvp": "17de4c44ea75b5e5d908d1f8035c74dbed35f638215c93322b5685acb244d457",
+          "rdma/rnic/build/segmented-read-hls-sq-krhypua9/tb.v": "8ef024bcaa27e66e8b596e9a3c4c935ff1bc9de530082b380bfb7c23f89f1140",
+          "rdma/rnic/build/segmented-read-hls-sq-krhypua9/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-krhypua9/simulation.log": "a1cc665f727e6e0dcc9c36cca50c95c9fa53a7e876374601cf97a1d4e0f33c1e"
+        }
+      }
+    ],
+    "test_noncanonical_or_unknown_operands_never_become_HLS_authority": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-o3pyee11",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.009201820997986943,
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-o3pyee11/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-o3pyee11/test.vvp": "c2fee831f1d223bb95c55739936b2a414b1721c436fb0b805319f89f492b3367",
+          "rdma/rnic/build/segmented-read-hls-sq-o3pyee11/tb.v": "ea8a0478fa723785ce00ab876e0fc05448c91f109d776997623c767b0716d211",
+          "rdma/rnic/build/segmented-read-hls-sq-o3pyee11/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-o3pyee11/simulation.log": "6b3e6868f81ca01e526d1990e926dd3587934b4c0ad697d67bda54a165c73b58"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-0gppi5bo",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.00984241598052904,
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-0gppi5bo/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-0gppi5bo/test.vvp": "1a6e48d46151c8f70f703c2ef7507f3999a37133a17b0796ae847fae6cb6197a",
+          "rdma/rnic/build/segmented-read-hls-sq-0gppi5bo/tb.v": "e1559d7eda7946fc98dcb7b5b5a8020e12a8a605fa0c41a49f8892c688b3c467",
+          "rdma/rnic/build/segmented-read-hls-sq-0gppi5bo/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-0gppi5bo/simulation.log": "216d47abcb04b7143d78a106f8820bb1c005e717f8cad8b43a849bc1c91569b4"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-4k0jh00q",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.00962499703746289,
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-4k0jh00q/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-4k0jh00q/test.vvp": "dd2ae243948fa9d5a9b488be69a885865c34563d66349f763ed15f6df44e8a4f",
+          "rdma/rnic/build/segmented-read-hls-sq-4k0jh00q/tb.v": "6550f1dcd6071af2145e977fdabcdd6802200e3730222075fdc3b9895befbe8f",
+          "rdma/rnic/build/segmented-read-hls-sq-4k0jh00q/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-4k0jh00q/simulation.log": "2e04eb65ab5ed709948ecc0cf0567fb18d6e98dc1ce2f7520b31f8c35354767e"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-10egj48i",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.009653910994529724,
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-10egj48i/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-10egj48i/test.vvp": "244f5f04aa769bb49d6ff6501924dec55d1bf78dba0b18fd96f0e40e6e1695e4",
+          "rdma/rnic/build/segmented-read-hls-sq-10egj48i/tb.v": "9968f174bf87556a78393f88fdaafcef6abe32fe80550e4d58bd35759ddbbe72",
+          "rdma/rnic/build/segmented-read-hls-sq-10egj48i/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-10egj48i/simulation.log": "bf29f70dbec5ddd2cee18342a166bb819fd5a1de8103c7c8102aa41ec7708fd3"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-aai5q4_t",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.009434327017515898,
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-aai5q4_t/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-aai5q4_t/test.vvp": "9e6e39dd9552ae453d1f0f0abf8ce509153752271c46020bbe485fac9a97b147",
+          "rdma/rnic/build/segmented-read-hls-sq-aai5q4_t/tb.v": "d13ad121c1f7158093e9e42343d517aa9eba22a75f18db5e28463c9cf0a10e95",
+          "rdma/rnic/build/segmented-read-hls-sq-aai5q4_t/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-aai5q4_t/simulation.log": "1fa82ab2aa66a272889daf61782a0f5ff85d13955c6dc4335c0fe630860bec2a"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-nz9tby0n",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.009373563982080668,
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-nz9tby0n/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-nz9tby0n/test.vvp": "7ad5c0d8d496e655fa332b37b77bb074ed0c7e4948aa0655517823114abaeab9",
+          "rdma/rnic/build/segmented-read-hls-sq-nz9tby0n/tb.v": "f35d4574502ee3a4e59131f9722d733da236a837b7c1f3f5e998afee13e61a79",
+          "rdma/rnic/build/segmented-read-hls-sq-nz9tby0n/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-nz9tby0n/simulation.log": "a96e649e1505dad6ad6b6528a7531fa8dda56dc2c6a81f1a2c98cbd135829a52"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-tjozjt2j",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.00950710300821811,
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-tjozjt2j/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-tjozjt2j/test.vvp": "b746fa3ea347001437eee5091282018dac9437d08659c8f3ce0391cf0164c12f",
+          "rdma/rnic/build/segmented-read-hls-sq-tjozjt2j/tb.v": "0734b183b48edb3633c4edf4592169f648169b370e00ea2e9637614d703d5a14",
+          "rdma/rnic/build/segmented-read-hls-sq-tjozjt2j/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-tjozjt2j/simulation.log": "11928c10a7e87ec1b371050b1b3b7f37f82f567fb04d7338af7070693ff0e10b"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-c_9evcuh",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.009761260007508099,
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 8
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-c_9evcuh/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-c_9evcuh/test.vvp": "1d1d3b30b8f641a99831318d68e88888ab93675ba4e68329cde26aeeb1c9d3ab",
+          "rdma/rnic/build/segmented-read-hls-sq-c_9evcuh/tb.v": "19d70c53088c31da4b5d5bb248851f4307e845eb4fa57936b11770d2e493f86b",
+          "rdma/rnic/build/segmented-read-hls-sq-c_9evcuh/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-c_9evcuh/simulation.log": "0e29e8cafb7c95841ec96d8073a2b7eb7d2879ee2cfc3a7eecbea979b48eac17"
+        }
+      }
+    ],
+    "test_normal_Immediate_have_zero_extension_and_exact_lower_ABI": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-kzvpvden",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.011103913013357669,
+        "summary": {
+          "pass_test": true,
+          "owners": 5,
+          "SQ": 5,
+          "fault": 0,
+          "cycles": 125
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-kzvpvden/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-kzvpvden/test.vvp": "22f63fde445ced421bfb4fb75d2fb683aa0194151024c6a96f6ee58fe44740c1",
+          "rdma/rnic/build/segmented-read-hls-sq-kzvpvden/tb.v": "9b3abb5a6dc25db89cd394fdd76daf3d09947fd88ba9096d97fa22545e3731e2",
+          "rdma/rnic/build/segmented-read-hls-sq-kzvpvden/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-kzvpvden/simulation.log": "7149f51f3e44d10f830eb6173c198a9673e56f46ea6a9ef484f956332289c6ca"
+        }
+      }
+    ],
+    "test_real_downstream_guard_required_and_late_loss_does_not_retract_SQ": [
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-y3s0h96w",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.009948507999069989,
+        "summary": {
+          "pass_test": true,
+          "owners": 0,
+          "SQ": 0,
+          "fault": 1,
+          "cycles": 10
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-y3s0h96w/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-y3s0h96w/test.vvp": "debe0002fcaa0b1a0624c6be6ae6d90f55bfbf1fe0bb96d0ca98f7e027e4cd8c",
+          "rdma/rnic/build/segmented-read-hls-sq-y3s0h96w/tb.v": "8ecfb4f7ef2420d8c73b8d257e7258444080ec5b41b45026a96ab0041fefa2db",
+          "rdma/rnic/build/segmented-read-hls-sq-y3s0h96w/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-y3s0h96w/simulation.log": "2c979c5cab089ae7206aa5a72cfe39f69cb3ad5e8e6c0e231ba327abfbb295a0"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/segmented-read-hls-sq-1efhpncl",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.009429787984117866,
+        "summary": {
+          "pass_test": true,
+          "owners": 1,
+          "SQ": 1,
+          "fault": 1,
+          "cycles": 20
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-read-hls-sq-1efhpncl/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-read-hls-sq-1efhpncl/test.vvp": "af27f5ceded468d3f0dd9d56b9d1d895b4c03f2a479295086ed368013d4d53a1",
+          "rdma/rnic/build/segmented-read-hls-sq-1efhpncl/tb.v": "32b62000192b41bcc339122e1f0e134dc0334d02fd5bf05c7649b06276a924d8",
+          "rdma/rnic/build/segmented-read-hls-sq-1efhpncl/rocev2_wqe_hls_sq.v": "c4e37ad387385f98038d09563b103b7f0d6eac5d172e306793c50c39d90e05d7",
+          "rdma/rnic/build/segmented-read-hls-sq-1efhpncl/simulation.log": "3924bdee3807f4bf9311cb083be3da4574fb88220915989b11f8773260e325bf"
+        }
+      }
+    ]
+  }
+}

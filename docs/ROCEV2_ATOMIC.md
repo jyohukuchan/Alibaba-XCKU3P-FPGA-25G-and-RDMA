@@ -5,7 +5,281 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
-## Publication checkpoint131: expected remote MSN is unvalidated WIP
+## Full native READ runtime attempt: build PASS, setup FAIL (135)
+
+The new `tests/segmented_read_native_fixture.py` and
+`tests/probe_segmented_read_native_full.py` add one8193-byte READ before ALL29
+prior native cases, keeping their original checks and30s runtime limits.
+The actual C128 descriptor, generated READ HLS, coherent SQ fetch, real
+MR/PTE/DMA/common nonce, protected RX/MSN, retained owner, MAC and CQ are
+connected. Host/root/peer/PHY/PTP are models; this is not Linux or hardware.
+The new fixture independently checks expected8193 payload bytes, full64-bit
+scattered addresses, PSN wrap, three logical placement commands, page splits,
+posted-write fences and one final whole-owner CQ. These are test expectations,
+NOT successful observed transfers.
+
+[Fixture startup001](../results/2026-10-18/rocev2-rnic-read-native-fixture-startup-001.json)
+retains an oracle-clone source-anchor failure before RTL compilation.
+[Full-native001](../results/2026-10-18/rocev2-rnic-segmented-read-native-full-001.json)
+retains an elaboration failure: a read-only observer used a nonexistent root
+alias for the executor's memory-event READY. Its1492 bindings and exact source
+preimages were preserved before changing only that observation to the actual
+executor port. Production RTL and all original assertions remain unchanged.
+
+[Full-native002](../results/2026-10-18/rocev2-rnic-segmented-read-native-full-002.json)
+passes complete Icarus elaboration and fresh Verilator/C++ compilation in
+436.743s, under the original1200s bound. The first LARGE_READ runtime then
+**FAILS** in16.398s during QP setup, before SQ fetch/READ data, with
+`main native RNIC fault 00`. None of the remaining29 cases ran in this batch.
+The cause is not confirmed; the TX-only configuration/route observer needs
+diagnosis. No data, MR grant, DMA completion, MSN or CQ success is injected or
+inferred from compilation. [Audit002](../results/2026-10-18/rocev2-rnic-segmented-read-native-diagnostics-002.json)
+verifies all1503 recorded source/artifact/RAM bindings and preserves the
+terminal excerpt. Failed reports/models/logs are unchanged, not relabeled.
+
+The new profile is still unqualified for native large-READ execution, matched
+kernel/provider APIs or physical operation. The old8191/31/default profiles
+keep READ4096. HLS13.885ns still misses original4ns/default1.08ns; no timing,
+CDC/DRC/routing gate is waived. This is a user-requested WIP source publication,
+not a green release or a hardware/default/module/fan/BIOS/network change.
+
+## Distinct READ-capable admission profile and real MR/SQ/CQ components (134)
+
+`fpga/derive_segmented_read_profile.py` creates a separately named experimental
+RNC16383/CQC63 graph from the complete133 candidate. Only actual WQE admission,
+HLS-SQ staging, CQ limit and control identity leaves change. READ/WRITE/SEND
+allow<=1MiB; Immediate/receive retain4096 and Atomic retains8-byte policies.
+Old8191/31/default/kernel/provider selection remains unchanged and cannot
+silently claim this new profile. No native runtime is inferred from opening
+the gates; kernel/provider matching and standard API execution are NOT added.
+
+New `kernel/wqe_segmented_read.c/.h` explicitly validate the real whole READ
+range/fields before bounded serialization reuse; no MR grant, PD, DMA offset
+or post operation is created. Original codecs stay unchanged and reject large
+READ. [Actual C/UBSan codec001](../results/2026-10-18/rocev2-rnic-segmented-read-wqe-001.json)
+PASSES20 methods: ALL15 original zero/Atomic/WRITE/SEND methods plus five new
+READ methods. Independent128-byte oracles cover1..1MiB, full remote keys,
+full64 local/remote ranges/top byte/overflow, epoch/sequence/flags/operands/
+Immediate/reserved bytes, overlapping buffers/nulls and zeroed error outputs.
+This is serialization, not Linux driver/device capability or authorization.
+
+[Actual MR/SQ admission001](../results/2026-10-18/rocev2-rnic-segmented-read-admission-001.json)
+PASSES11 methods/26 four-state cases, keeping all8 old Atomic admission methods.
+Actual C128 records feed the actual SQ bridge/WQE admission and REAL local MR
+table configured through its management ports. Large4097..1MiB READs query
+full range/key/PD/local-write permission; wrong key/PD/read-only/range deny,
+malformed length/epoch/sequence/operands/reserved fields refuse before query.
+Wrong/unknown external MR replies and stalled work retain original safeguards.
+Raw fetched-record source/consumer are MODELS, not actual PCIe SQ fetch/HLS/
+DMA/CQ. No software grant or internal force supplies MR success.
+
+Its two initial import attempts have separate
+[startup001](../results/2026-10-18/rocev2-rnic-segmented-read-admission-startup-001.json)/
+[startup002](../results/2026-10-18/rocev2-rnic-segmented-read-admission-startup-002.json)
+and exact preimages: a class method's indentation could not be dedented because
+its literal multiline Verilog has zero-indent lines. It is now compiled inside
+a temporary Python class, preserving every original literal/oracle; ONLY the
+C codec entry point changes. Those attempts compiled/executed ZERO RTL cases.
+
+[Actual HLS-SQ staging001](../results/2026-10-18/rocev2-rnic-segmented-read-hls-sq-001.json)
+PASSES8 methods/21 four-state cases, keeping all5 original Atomic methods.
+Full748 owner MUST hand off under the real downstream guard before the exact
+408-bit READ SQ appears. Large lengths/keys, noncanonical/unknown metadata,
+denied work, missing/late-lost guard and held-SQ stability remain checked.
+Work/executor/HLS endpoints are MODELS, not actual HLS execution or CQ proof.
+
+[Register/CQ profile001](../results/2026-10-18/rocev2-rnic-segmented-read-profile-001.json)
+FAILS before compilation because its negative-fixture builder tried to replace
+an ABI assertion already removed by the original reject fixture's initial
+block replacement. [Diagnostic001](../results/2026-10-18/rocev2-rnic-segmented-read-profile-diagnostics-001.json)
+verifies133 bindings and exact preimage BEFORE reusing the unchanged negative
+fixture directly. Positive CQ still explicitly requires ABI63 and12 real
+immutable publications/ACKs; no original invalid-owner assertion is weakened.
+[Fresh profile002](../results/2026-10-18/rocev2-rnic-segmented-read-profile-002.json)
+PASSES ALL27 cases: all6 controller scenarios, dependency-fatal controls,
+old8 CQ owners plus4 large READ owners,11 invalid owners including READ>1MiB.
+Control/ticket/commit/retire endpoints are models; real register/CQ logic runs.
+
+New `segmented_read_profile_native_sources.py` and native elaboration checker
+require ALL codec/MR/HLS-SQ/profile and prior RX/MSN/memory/lifetime/HLS gates.
+[Complete native001](../results/2026-10-18/rocev2-rnic-segmented-read-profile-native-elaboration-001.json)
+PASSES3.448s/1415 bindings with READ admission OPEN only in this distinct1MiB
+candidate. All parent module/shared HLS/PSN/MSN/RX/Atomic/MR/PTE/physical nonce
+counts match, no width mismatch/stub and both global drains0. Original clocks/
+geometry/capacity and all strict source/artifact gates remain unchanged.
+[Audit002](../results/2026-10-18/rocev2-rnic-segmented-read-profile-diagnostics-002.json)
+reverifies14 C codec/218 MR/150 HLS-SQ/133 failed/241 fresh profile/1415 native
+bindings; only the exact historical probe preimage resolves changed source.
+All52 MR leaf copies,21 HLS-SQ bodies and2 RNC/CQC bodies equal selected native
+bytes. Startup preimages are independently hash verified; no report relabeling.
+
+This is component RUNTIME plus complete-native COMPILE, NOT execution of a
+genuinely fetched large READ through native MR/RX/generated-HLS/DMA/status/
+host visibility/CQ. Next fresh native runtime must add large READ and retain
+all29 old cases/oracles/<=30s bounds; old executables or rewritten observations
+are not new-source proof. Old software profiles/defaults/Atomic_NONE remain,
+and there is no matched kernel/provider/API/physical qualification. Mid-READ
+retry, large receive/Immediate/multiSGE/recovery and all11 scope remain open.
+HLS13.885ns still fails original4ns/default1.08ns and full-board fit/CDC/routing/
+DRC/timing is unproved. No hardware/module/install/load/network/fan/BIOS/program/
+flash/reboot or automatic Git changes.
+
+## Actual protected READ RX/MSN/memory/whole-WR lifetime wiring (133, historical)
+
+New `fpga/derive_segmented_read_lifetime.py` extends the exact132 candidate,
+not any default/source RTL. The request stays one whole READ/RETH. Its actual
+post-integrity TX first PSN is retained, while an independent READ response
+index checks FIRST/MIDDLE/LAST and each consecutive/wrapping PSN. FIRST and
+MIDDLE cannot set whole-RX complete, rotate the outbound request cache or
+produce CQ. LAST alone completes RX and ACKs retained replay. Final HLS ACK
+must carry LAST PSN (READ_ONLY still uses first); the816-bit producer receipt
+must match full748 owner, first PSN, next PSN=first+response span, READ opcode
+and clear status. The actual shared-HLS consumer uses the same response span.
+Existing actual aggregate memory, replay/MAC/SFD/EOF/unchanged1024-cycle tail
+and exact CQ commit/drain joins remain separate mandatory witnesses.
+
+The exact protected segmented RX is selected and receives actual
+`expected_remote_msn` from the genuine accepted-QP/SQC observer, never a
+constant/RX-learned AETH/local incoming MSN. Its single whole placement token
+continues into the existing actual READ-memory selector/unpad/controller and
+common MR/PTE/physical nonce/backend. The outer lifetime independently checks
+packet ordering; existing READ-fragment metadata outputs are explicitly unused
+at the native boundary, not substituted for aggregate DMA/visibility/CQ proof.
+MAC owner allows a whole large READ context but still frames ONE short READ
+request. WRITE/SEND per-packet source/cache advance logic is unchanged.
+
+[Lifetime001](../results/2026-10-18/rocev2-rnic-segmented-read-lifetime-001.json)
+records19 successful new READ cases but FAILS the full suite: all five inherited
+WRITE/SEND methods error before compilation because the new Python generator
+omitted the existing `helpers` export. [Diagnostic001](../results/2026-10-18/rocev2-rnic-segmented-read-lifetime-diagnostics-001.json)
+verifies222 bindings, preserves exact generator/test preimages and all20
+uncompiled inherited hardware leaves BEFORE correction. Exporting the existing
+checked helper changes no hardware body or original test/oracle/gate.
+
+[Fresh lifetime002](../results/2026-10-18/rocev2-rnic-segmented-read-lifetime-002.json)
+PASSES10 methods/29 four-state cases: all19 READ and all10 original WRITE/SEND.
+Positive READs65/4097/8193/1MiB use one byte-exact actual framed READ request
+and1/2/3/256 MODELED response events, each with one whole CQ commit. The actual
+retained replay/lifetime/MAC composition runs; full748 identity, final ACK and
+first->next PSN wrap are checked. Withholding LAST, HLS ACK, aggregate memory
+or producer receipt prevents CQ. FIRST/MIDDLE leave cache unacknowledged even
+with memory/final ACK models supplied early. Wrong response PSN/class/syndrome,
+foreign/unknown owner and wrong full producer first/next/opcode/unknown fields
+quarantine the owner. Legacy first-PSN ACK cannot stand in for final READ ACK.
+READ runtimes0.041..0.123s; largest original1MiB WRITE28.919s. Every original
+30s runtime bound remains. RX events/HLS/memory/CQ/MAC completion pins are
+MODELS:1MiB READ here is metadata/lifetime coverage, NOT1MiB protected RX
+payload, generated-HLS, native MR/PTE/DMA/host visibility or physical runtime.
+
+New `tests/segmented_read_lifetime_native_sources.py` requires the exact new
+29 cases plus ALL60 original protected RX cases and all parent native/HLS/
+MSN/memory gates. Only six native leaves change: lifetime, TX lifetime, MAC
+owner admission, shared HLS receipt join, protected RX and root wiring. SQ
+admission/HLS-SQ/CQ capability limits intentionally stay unchanged, so a large
+READ is still rejected upstream rather than falsely advertised as working.
+
+[Complete native elaboration001](../results/2026-10-18/rocev2-rnic-segmented-read-lifetime-native-elaboration-001.json)
+PASSES3.508s/1409 bindings: one new protected RX replacing old guard, exactly
+one actual generated READ HLS/shared PSN/MSN/RX/Atomic domain, one common MR/
+PTE/physical nonce/backend, no width mismatch/stub and both global drains0.
+[Audit002](../results/2026-10-18/rocev2-rnic-segmented-read-lifetime-diagnostics-002.json)
+reverifies222 failed/462 fresh unit/1409 native bindings, with only the exact
+old generator preimage used for historical source identity. All116 unit leaf
+copies (29x4) and ALL60 tested protected RX guard bodies equal the selected
+native bytes; all20 uncompiled001 hardware leaves are also unchanged. Failed
+reports are not relabeled as current-source passes.
+
+This is component RUNTIME plus complete-native COMPILE evidence. It does NOT
+prove a genuinely admitted large READ executes through native SQ/MR/RX/HLS/
+DMA/status/visibility/CQ. Next is a distinct matched capability/admission
+profile and that runtime, retaining all original regressions; simply opening
+length limits or reusing an old native executable is not proof. READ remains
+4096, RNC8191/CQC31/kernel/provider/default/Atomic_NONE unchanged. Mid-response
+READ retry, Linux/provider/API/physical and all11 original scope remain open.
+Original HLS13.885ns still fails4ns/default1.08ns; no board fit/CDC/routing/DRC/
+timing/drain gate waived. No hardware, module, network, fan, BIOS, program,
+flash, reboot or automatic Git changes.
+
+## Genuine SQC multi-QP expected remote MSN and complete wiring (132, historical)
+
+The predictor's source is genuine accepted outgoing QP configuration,
+including TX-only, plus actual SQC cookie/epoch/PD. It is NOT received AETH,
+local incoming MSN, packet count or posted sequence number. A newly verified
+SQC epoch initializes the fresh-peer history; repeated route/epoch does not.
+Every authorized full748-bit logical owner increments its QP once, including
+READ/WRITE/SEND/Immediate/Atomic; packet expectations/replays do not recount.
+One global active full owner remains held until identical actual CQ retirement,
+with separate configuration and per-QP queue guards. This is serialized WR
+processing across up to8 route/history slots, not8 concurrent active WRs.
+Fresh remote RC QPs are required; existing-peer takeover is unsupported.
+
+[003 diagnostic](../results/2026-10-18/rocev2-rnic-expected-remote-msn-diagnostics-003.json)
+verifies80 bindings before fixture correction. The fixture now selects the
+required `IMMEDIATE_ENABLE(1)` SQC and actual matching128-byte fetch. No DMA
+producer is published, unused old64-byte backend removed, unexpected DMA is
+fatal; the production mandatory-profile assertion is not weakened.
+[004](../results/2026-10-18/rocev2-rnic-expected-remote-msn-004.json)
+then fails the immediate post-capture assertion. Its
+[unchanged-RTL diagnostic](../results/2026-10-18/rocev2-rnic-expected-remote-msn-diagnostics-004.json)
+verifies86 bindings/preimages and preserves an exact original fixture copy
+with only displays/#1 added BEFORE the unchanged strict assertion. MSN1,
+busy1, fault0 are stable; guardff becomes80 after combinational delta settling.
+The original foreign-expectation quarantine passes. This corrects fixture
+sampling, not a production RTL gate or weaker predicate.
+
+[005](../results/2026-10-18/rocev2-rnic-expected-remote-msn-005.json)
+PASSES6 methods/11 cases. [Audit005](../results/2026-10-18/rocev2-rnic-expected-remote-msn-diagnostics-005.json)
+verifies116 unit and1404 first-native bindings and saves exact preimages before
+adding two-QP coverage. [006](../results/2026-10-18/rocev2-rnic-expected-remote-msn-006.json)
+FAILS the new two-QP case while retaining all11 passes: genuine QP7 and QP6
+allocate/configure and issue their first messages, but QP7 cannot issue again
+without reapplying its route because old lookup selects only the latest QP6.
+[Audit006](../results/2026-10-18/rocev2-rnic-expected-remote-msn-diagnostics-006.json)
+verifies122 bindings and preserves exact preimages BEFORE RTL correction.
+
+The predictor now retains each accepted route independently and queries actual
+SQC using the offered/held full-owner QPN. Counters/epoch/sequence stay per QP;
+new-QP setup cannot erase another QP's route/history. Changed route during a
+held WR, stale/unknown owner, foreign expectation/CQ or parent fault quarantine
+without release. [Fresh007](../results/2026-10-18/rocev2-rnic-expected-remote-msn-007.json)
+PASSES7 methods/12 four-state cases. Two genuinely allocated/configured QPs
+interleave READ/WRITE/SEND without route reconfiguration and independently
+advance MSN1->2. All prior logical operations, retry/packet non-recount,
+actual guarded SQC retirement/mailbox lookup continuity and new-epoch reset
+remain checked. Runtimes0.0293..0.0389s, original10s bounds. Route configuration
+acceptance, WR authorization, TX expectation and CQ endpoints are MODELS in
+these unit cases; real SQC allocation/lookup is not forced or reconstructed.
+
+New `tests/expected_remote_msn_native_sources.py` and
+`tests/check_expected_remote_msn_native_elaboration.py` keep every parent
+HLS/profile/memory gate. Only actual controlled/DualEthernet/native/SQ/RNIC
+configuration/query/owner/CQ hookups and the new predictor are substituted.
+TX-only setup is observed independently of incoming Atomic binding; actual
+configuration ready/child-valid both share the separate guard. Genuine SQC
+lookup uses stored full cookie/epoch/PD and has no mailbox-IDLE gap. SQ only
+gets the real read port; the RQ instance's unused read port is explicitly
+disconnected. No second MR table/physical nonce/transport/MSN state domain.
+
+[Complete native002](../results/2026-10-18/rocev2-rnic-expected-remote-msn-native-elaboration-002.json)
+PASSES3.447s/1404 bindings: one predictor, all previous HLS/shared PSN/MSN/RX/
+Atomic domains and parent module counts unchanged, no width mismatch/stub,
+both global drains0. [Audit007](../results/2026-10-18/rocev2-rnic-expected-remote-msn-diagnostics-007.json)
+reverifies116 historical005/122 failed006/122 fresh007/1404 first-native/
+1404 fresh-native bindings. Historical changed source hashes resolve ONLY to
+saved exact preimages, never a relabeled current-source execution.
+
+This is component RUNTIME plus complete-native COMPILE evidence. The actual
+expected-MSN output is NOT yet connected to protected segmented RX; genuine
+full-native runtime, READ final-response/whole-WR lifecycle/CQ/mid-response
+recovery and Linux/provider/API/physical qualification remain. The current
+CQ publisher admits positive lifetime tickets only; future error-CQ/recovery
+must not reuse advanced MSN after uncertain/no-wire work as normal success.
+READ admission4096, RNC8191/CQC31/kernel/provider/default and Atomic_NONE stay
+unchanged. Original HLS13.885ns still fails4ns/default1.08ns; fit/CDC/routing/
+DRC/timing/drain gates are not waived. All11 scope retained. No hardware,
+module/install/load/network/fan/BIOS/program/flash/reboot/automatic Git writes.
+
+## Publication checkpoint131: expected remote MSN was unvalidated WIP (historical)
 
 `rtl/rocev2_expected_remote_msn.v`,
 `fpga/derive_expected_remote_msn_native.py` and

@@ -1,0 +1,25 @@
+{
+  "scope": "Unchanged expected-MSN004 diagnostic before fixture scheduling correction",
+  "failed_report": "results/2026-10-18/rocev2-rnic-expected-remote-msn-004.json",
+  "failed_report_sha256": "756f5977c3458b26190cc7a4d130c4d6d4e0829e5cf35e81a271ab165d2e6de9",
+  "bindings_verified_before_fix": 86,
+  "source_bindings": 50,
+  "failed_cases": 6,
+  "preimage_directory": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/expected-msn-004-diagnostic-9yna4rnc",
+  "diagnostic": "Exact original first failing fixture and unchanged RTL, adding only display/#1 before the unchanged strict capture assertion. Before delta settles: MSN1/busy1/guardff/fault0/fire0. After #1: MSN1/busy1/guard80/fault0/fire0. Original foreign-expectation quarantine then passes. No production RTL or assertion was relaxed.",
+  "diagnostic_compile_exit": 0,
+  "diagnostic_runtime_exit": 0,
+  "diagnostic_runtime_seconds_less_than": 0.04,
+  "artifact_sha256": {
+    "rdma/rnic/build/expected-msn-004-diagnostic-9yna4rnc/rocev2_expected_remote_msn.v": "7b604541fa0daa33924cd510fd6fe0f5f1100192d05d42801b075760f798161b",
+    "rdma/rnic/build/expected-msn-004-diagnostic-9yna4rnc/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/expected-msn-004-diagnostic-9yna4rnc/tb-diagnostic.v": "23f5acca426c8d54d020498b82f52d28607d8d388eb0710cad8d3ec57387708e",
+    "rdma/rnic/build/expected-msn-004-diagnostic-9yna4rnc/test_expected_remote_msn_rtl.py": "95151d24cc263a08fc26b210a1ae27bec53ac82f19c924a2cf03b5867f3651b8",
+    "rdma/rnic/build/expected-msn-004-diagnostic-9yna4rnc/simulation.log": "bba409e89eb790bc4e86130f99f595d24244e9788a0d3c2c174a0a48dadd7ed5",
+    "rdma/rnic/build/expected-msn-004-diagnostic-9yna4rnc/derive_expected_remote_msn_native.py": "799f29a49803a525ed61a68d444791ff5fc23398ea9ac951c7d1175d2d67c759"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-expected-msn-diagnostic-9gl2csw4/test": "12e4cdf5aeac4bf3881f58da77e14fa47d5e96137f856c50feda41031a412b43"
+  },
+  "hardware_actions": []
+}

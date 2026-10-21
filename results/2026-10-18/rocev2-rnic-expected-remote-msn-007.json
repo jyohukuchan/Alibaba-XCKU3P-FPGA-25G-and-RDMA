@@ -1,0 +1,371 @@
+{
+  "scope": "Real SQC/mailbox/fetch owner allocation -> actual expected-MSN predictor.\n\nRoute configuration acceptance, authorized WRs, TX expectations and CQ are\nmodels. SQC cookie/epoch/PD replies are REAL, never forced table contents.\nNo RX-learned/local-MSN source, native runtime/remote peer/physical proof.\n",
+  "pass_test": true,
+  "methods": 7,
+  "cases": 12,
+  "source_unchanged": true,
+  "seconds": 3.6329275599564426,
+  "source_sha256": {
+    "rdma/rnic/fpga/derive_segmented_source.py": "138c80829c920c6d8d32a7a7ac29cb05e33bec051028dd741558979b5314ad62",
+    "rdma/rnic/fpga/prepare_native.py": "6c9688901171652c8805218cb716932daff8bbfbc405aeba1079f63efcf5ea0a",
+    "rdma/rnic/fpga/derive_atomic_native_authority.py": "0b881da1ad4a9d72f43c90e54492c3299b43b3109d0529eb81851319a4f88451",
+    "rdma/rnic/fpga/derive_atomic128_lifetime.py": "09148e2f11eb3c2ea9bd72fc28cf357e8991de64acef1af9ad79b17dfebc90cb",
+    "rdma/rnic/fpga/derive_atomic_native_bridge.py": "332a5064cb3adfbadd2e2196eb950885e9945a9af528ccd45776944631db331c",
+    "rdma/rnic/fpga/derive_shared_responder.py": "3d97aec6c1f5efe8f1d1b3d0c830a684ed4045dacdd3bcaa4923cf751e1fd477",
+    "rdma/rnic/fpga/prepare_board.py": "92c5c485e1e5349dbe5deacb0f8c2e514af87b17b696317b9258804c967a0573",
+    "rdma/rnic/fpga/derive_immediate_bridge.py": "a9758360ee8466e011819fe3ebf79b80fd175ee7f59c91af4fa949047a4b0667",
+    "rdma/rnic/fpga/derive_atomic128_fetch.py": "4123c117771f568fc4a002a614ade421f6c94eb08dd17b27dff2a6a8d9dbe433",
+    "rdma/rnic/fpga/derive_atomic_bridge.py": "1b3b1adc2f187b7718e4045973768c50e45186859f587992a56ad485bd230bdb",
+    "rdma/rnic/fpga/derive_segmented_read_memory_native.py": "d6aa6356c022aeb2e8f3c37c6d84a4ba9b63646bca881e065d074edb509940d1",
+    "rdma/rnic/fpga/derive_atomic128_response.py": "eaa3439ece1fd0fad5ff30e81aab0d14346c3739058c1272a4fdc4b8e431063e",
+    "rdma/rnic/fpga/derive_zero_service_native.py": "0f92353804e547ef8df2ee70ff294e356447667f4668450d11020cc302a84b86",
+    "rdma/rnic/fpga/derive_immediate_native.py": "9281857caf2714945f280e126eb39553e8f9324c8416b5b71bbd79c5ed6fdac4",
+    "rdma/rnic/fpga/derive_atomic_request_bridge.py": "a626d9f3d20ecfc7c477100c63472fa8547792fafacb612d28846f6f6f0a4463",
+    "rdma/rnic/fpga/derive_atomic_owner_lookup.py": "10f497b1ae2c5358e960ae8695903bf4655896c99b977bd26ffba287d270b453",
+    "rdma/rnic/fpga/derive_segmented_profile.py": "2eeb93fba67c67ff6dd907fc1bf46741371af9548b3c0908c38d3c4d466fbd55",
+    "rdma/rnic/fpga/derive_duplex_transport.py": "ff81dfb2ba41ffc59d482bee177fc106537a22a786bf11d588880c3990c85a53",
+    "rdma/rnic/fpga/derive_segmented_executor.py": "a2340b3346215f952ff882fca09a6c8ba886c46a29215ff676e998119252497c",
+    "rdma/rnic/fpga/derive_segmented_wire.py": "94bba46ee3e380bcd6f2578f25f4ef00eda0407a22eefa90c1824003a2aa8386",
+    "rdma/rnic/fpga/derive_recv_responder.py": "467fae2223a3b9a3e40b2a43334b154bb81aea9608792debf03d2461bd14d6c7",
+    "rdma/rnic/fpga/derive_atomic_native_rx.py": "9f9e8db656cffc70f59761ba0c42e402f4dd9d392c065d0a7a79abb6b752fec0",
+    "rdma/rnic/fpga/derive_zero_rq_native.py": "92ed231ada071d15feab574127c7974d4d17516f48db5d8f4e6a79f118d225f8",
+    "rdma/rnic/fpga/derive_atomic_mac_bridge.py": "4a0ef7c4604415fccbd5c582ae5ca248bc4ba1fa7a226e98115b749e6a65e3af",
+    "rdma/rnic/fpga/derive_atomic_native.py": "b3758f15718303cf12b95af02052dcad8bc6d1e806ef64075ff75e3e6856c90e",
+    "rdma/rnic/fpga/derive_segmented_padding.py": "ac8d48a5918a095e6f712853ae7d55ab9510c11edbdf74888e68dfe137119ae8",
+    "rdma/rnic/fpga/derive_atomic128_admission.py": "da4e91e41d7bb9861534cfe2b98e7690076850d192c401cc1290d1942b8d83e3",
+    "rdma/rnic/fpga/derive_atomic_access_native.py": "ab42d555c459c2e7b7da71686539c3d75a31e075a3a8c11c66e09a59e6e903ee",
+    "rdma/rnic/fpga/derive_atomic128_native.py": "9be2756604ed23cc9b41b2fd8d1a3b8db9bf2e2176663878463c12abc03b20ad",
+    "rdma/rnic/fpga/prepare_wrkey_transport.py": "11aff17a0d9eb097abc4a5eec097409171b997d59c451ffb6e8fad3d4984e8c3",
+    "rdma/rnic/fpga/derive_atomic_native_owned_stage.py": "aa9869c3c51c2fe25b5dfa53429bd62b7180fcfde20140e1e4397d76b5463576",
+    "rdma/rnic/fpga/derive_qp_tx_bridge.py": "51afb390ce130f69e8b55cbfb2af2055e7fa3746004790b5b509f4f6273d28a7",
+    "rdma/rnic/fpga/derive_atomic_owned_bridge.py": "6a80483c2cd4ebc9a6344532be3df607d6839e5991e78dec52d682b340b8a632",
+    "rdma/rnic/fpga/derive_segmented_native.py": "78f20feaa504ef5ab12cdee9ce420b5f3a8ec5a4f6eeca209d3dbd4cb70682a2",
+    "rdma/rnic/fpga/derive_atomic_reserved_mac_bridge.py": "cbb8dd301369630dcc37c28d0ee5c7fa2293c5223829be29305d6c5f677741a8",
+    "rdma/rnic/fpga/derive_segmented_read_executor.py": "a7e261df5ad7bf7e4f182b4a34a4673f2e3f4241b40cab01c921721129c7d19c",
+    "rdma/rnic/fpga/derive_atomic128_executor.py": "bc01f0d68fc39c78e6a3ff5d96d93a2e82396f4b9db67a7e03bee35cf114b004",
+    "rdma/rnic/fpga/derive_segmented_read_response.py": "623ad265109287439858a9ec0b899c110bbfca926ce3405b2a8d027699847271",
+    "rdma/rnic/fpga/derive_zero_native.py": "d652f5e0a805b96d2a963f33d9112d8121f1170a15b111e3e400c81eface97a7",
+    "rdma/rnic/fpga/derive_expected_remote_msn_native.py": "799f29a49803a525ed61a68d444791ff5fc23398ea9ac951c7d1175d2d67c759",
+    "rdma/rnic/rtl/rocev2_expected_remote_msn.v": "1fcc95a8deb83fb4e5efb79937d837a24b92d50cf5a12d461b191947e91c90af",
+    "rdma/rnic/rtl/rocev2_sq_control_regs.v": "e3f0ddee0a3c0b442294dc37359e02b17b7bddba567f7b9228d197355743583f",
+    "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+    "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+    "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c910018a2e8a9d77e649437f9a7727f5cf2fd9c02cb20ab92016b5209a3a189e",
+    "rdma/rnic/tests/test_expected_remote_msn_rtl.py": "2b82cf20e4d0aa1ec836b83c564cd0a62213cd951dabb99275f9a987d83b4371"
+  },
+  "tests": {
+    "test_foreign_expectation_retire_or_old_sequence_quarantines": [
+      {
+        "directory": "rdma/rnic/build/expected-msn-dq3ykvv9",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.030071896966546774,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "messages": 1,
+          "retired": 0,
+          "fault": 1,
+          "actual_SQC_configs": 1
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-dq3ykvv9/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-dq3ykvv9/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-dq3ykvv9/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-dq3ykvv9/tb.v": "0125980adb9c17ca362480b2590d849aa5e428390694cc80b2c21f084d92af32",
+          "rdma/rnic/build/expected-msn-dq3ykvv9/simulation.log": "9d9eadca66274b051b04efed03f9ee584eb28bfcdd23bc3153b83b9fa3725d0c"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-vwrgwjsm/test": "cc4b0cb64294c4901057fbd80dc4f00debe6383bb3a52bd52ca85f51b0f6d1ad"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/expected-msn-otfs_t_r",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.03013929701410234,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "messages": 1,
+          "retired": 0,
+          "fault": 1,
+          "actual_SQC_configs": 1
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-otfs_t_r/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-otfs_t_r/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-otfs_t_r/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-otfs_t_r/tb.v": "576c307ca23e6d2e70024b32a05dcf7ffcc29606b15eea53b4a9bea7961483cf",
+          "rdma/rnic/build/expected-msn-otfs_t_r/simulation.log": "cddc02689e77e9c06011e89f42699e7d6507d9d3ad0c9f16c3608cf0f5238af6"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-q5ze08m9/test": "562a0fe650d0427427d0897b4c855d279dadffafc5c8234a55ee2419bc3c45c4"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/expected-msn-zk4705d_",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.030184555042069405,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "messages": 1,
+          "retired": 0,
+          "fault": 1,
+          "actual_SQC_configs": 1
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-zk4705d_/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-zk4705d_/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-zk4705d_/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-zk4705d_/tb.v": "fd53a8262b2de57947dceb7f2d35db985218a1ad8bf844999efa9cf1cfb84810",
+          "rdma/rnic/build/expected-msn-zk4705d_/simulation.log": "cc264ef66c8e934a0574ba7e1f0707a6c86e1b4440793a8166dfc93f2a539059"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-svt6ml96/test": "87b96098d2035ab8816b85e26101f8d48bd3c2e03d225bf8e59058544fdca0e3"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/expected-msn-vp6dwd6g",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.030568000045605004,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "messages": 1,
+          "retired": 1,
+          "fault": 1,
+          "actual_SQC_configs": 1
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-vp6dwd6g/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-vp6dwd6g/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-vp6dwd6g/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-vp6dwd6g/tb.v": "73ed2305ac0f013d8210ad28f1e42b7af7c9c3749b03dd2a34dab29fa5af73c5",
+          "rdma/rnic/build/expected-msn-vp6dwd6g/simulation.log": "95e073fcf3956cc43191c91e534ae87f19aebdcc3a9155109bac5e499af0f226"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-_h74hwap/test": "4ddf27f12ada34e8f486f9c0d9110ea4381e3f0e5f62c1afbe88d4ae04eedd5c"
+        }
+      }
+    ],
+    "test_genuine_SQC_lease_blocks_retirement_and_query_has_no_mailbox_gap": [
+      {
+        "directory": "rdma/rnic/build/expected-msn-uzxq9r_u",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.03337901004124433,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "messages": 1,
+          "retired": 1,
+          "fault": 0,
+          "actual_SQC_configs": 1
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-uzxq9r_u/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-uzxq9r_u/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-uzxq9r_u/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-uzxq9r_u/tb.v": "ea5156eb01f09d91ee31b99730bac5933d1b560a3aacd54465bee12d17d72e1b",
+          "rdma/rnic/build/expected-msn-uzxq9r_u/simulation.log": "bc6a742243fc7f3b3b0e9a9154f7bed20d591087810053db5ea94f14674907ce"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-k5oy68gm/test": "462cc5e19d16e6cbafe0f7e77bb7462f0d8417d8e97a4a361466424cbd18062c"
+        }
+      }
+    ],
+    "test_new_actual_SQC_epoch_reinitializes_not_same_route_reapply": [
+      {
+        "directory": "rdma/rnic/build/expected-msn-4enbspjf",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.03893489297479391,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "messages": 3,
+          "retired": 3,
+          "fault": 0,
+          "actual_SQC_configs": 3
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-4enbspjf/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-4enbspjf/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-4enbspjf/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-4enbspjf/tb.v": "2be2ea549021c7b2ed2595a5a0c3b5f6580689694d45f34345d18b61d3c4afb0",
+          "rdma/rnic/build/expected-msn-4enbspjf/simulation.log": "dfee54e1db048726f6d1b9f2050faf3b79f6db21aaadb095cdc48137509cf1bd"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-5cw536vn/test": "c8ad1c5cc643e7897097e2c2a443272120247d583160ca2b9e83375f01f18ed3"
+        }
+      }
+    ],
+    "test_real_SQC_epoch_cookie_and_all_logical_operations_no_packet_recount": [
+      {
+        "directory": "rdma/rnic/build/expected-msn-6eoifudh",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.03163633303483948,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "messages": 7,
+          "retired": 7,
+          "fault": 0,
+          "actual_SQC_configs": 1
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-6eoifudh/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-6eoifudh/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-6eoifudh/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-6eoifudh/tb.v": "fed01c4b518cbc68c95997b114967413b2b4d7c94d4de24d8c8457ea301d39ae",
+          "rdma/rnic/build/expected-msn-6eoifudh/simulation.log": "6466bdc0f75b16bdbea2bd894c10e9d1b138675756a5a6eb40d2a3aceeb823ba"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-r8c4rs6k/test": "d7fb7f4d855252e3c77a8ce531d9dc14592ebfd5be7a79180e3a2789cb898121"
+        }
+      }
+    ],
+    "test_route_before_real_SQC_allocation_waits_without_invented_binding": [
+      {
+        "directory": "rdma/rnic/build/expected-msn-vbhnuf9q",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.030891726026311517,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "messages": 1,
+          "retired": 1,
+          "fault": 0,
+          "actual_SQC_configs": 1
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-vbhnuf9q/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-vbhnuf9q/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-vbhnuf9q/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-vbhnuf9q/tb.v": "44448b8e0310d3ec7c1702ca0c55ccfeeefa2dfb14024ba71da42da80930ba40",
+          "rdma/rnic/build/expected-msn-vbhnuf9q/simulation.log": "d07d32aaa229fbba6c6bc3d205eb9d4060756ed8ea088bf999b55f43e7917005"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-q5nhdmuk/test": "45c60f9e2c04385e135a2ccada674f01ad01480def1ede1a9b4ab4dd57a5b6d6"
+        }
+      }
+    ],
+    "test_two_actual_SQCs_interleave_without_route_reconfiguration": [
+      {
+        "directory": "rdma/rnic/build/expected-msn-gkznpjeg",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.035292945976834744,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "messages": 4,
+          "retired": 4,
+          "fault": 0,
+          "actual_SQC_configs": 2
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-gkznpjeg/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-gkznpjeg/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-gkznpjeg/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-gkznpjeg/tb.v": "e6edf81b8fdfece5ec8b8892fe99fd948a0a950aea277dd142dbb6f6c92fc444",
+          "rdma/rnic/build/expected-msn-gkznpjeg/simulation.log": "04a56bb0a16ebf5a2be37e75b56e51dba00585c42308896aaf337c3d56e015ee"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-hyj49bqo/test": "ad72d800872abd788809b80df190e9743b8c7e957052d295006b231f2768fdde"
+        }
+      }
+    ],
+    "test_unknown_owner_route_or_parent_fault_does_not_release": [
+      {
+        "directory": "rdma/rnic/build/expected-msn-tof5ngdt",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.029983684013132006,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "messages": 1,
+          "retired": 0,
+          "fault": 1,
+          "actual_SQC_configs": 1
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-tof5ngdt/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-tof5ngdt/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-tof5ngdt/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-tof5ngdt/tb.v": "05f2a52f8c5984abcb9b92f38688638d976230b506f9138fd9be1384e3a6f572",
+          "rdma/rnic/build/expected-msn-tof5ngdt/simulation.log": "6a0c154b48c90f615dda9c529561107cea004ba9a37596ec71f47a5f51eb7476"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-9o_8_wow/test": "0626eff7cdd9917c28e3898b1a372a7f58d3300b59c77bfad07a32ec5ec7c9a4"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/expected-msn-7mle03z4",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.029536961985286325,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "messages": 1,
+          "retired": 0,
+          "fault": 1,
+          "actual_SQC_configs": 1
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-7mle03z4/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-7mle03z4/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-7mle03z4/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-7mle03z4/tb.v": "66c7d18ea51c58b9af7b97906c22c417945fccf1ee66b24e9dfdd253dfff2017",
+          "rdma/rnic/build/expected-msn-7mle03z4/simulation.log": "fcdca8904ca875d90d60ad40763d400dc6efbc26f5dba67dd81c1f022577d065"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-m8h5c_3_/test": "e57307f7b4e7596167fd716f20ab439ff1da364ead26ffe59c53ff1a47310317"
+        }
+      },
+      {
+        "directory": "rdma/rnic/build/expected-msn-g_ywb8k0",
+        "pass_test": true,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.029275256034452468,
+        "exit": 0,
+        "summary": {
+          "pass_test": true,
+          "messages": 0,
+          "retired": 0,
+          "fault": 1,
+          "actual_SQC_configs": 1
+        },
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-g_ywb8k0/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-g_ywb8k0/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-g_ywb8k0/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-g_ywb8k0/tb.v": "d49b0bd6a109c2c85a247dad3dd32241bdc718218d21650affb1c944be4918b9",
+          "rdma/rnic/build/expected-msn-g_ywb8k0/simulation.log": "32321a578c8cb66ce505e3906426b46b41f844b48315e52892968726e25dba6c"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-ycml46fw/test": "170c57eb3b43ffc618bb7b98a914a3363c4e1a54bb049eee5512f1de06867d65"
+        }
+      }
+    ]
+  },
+  "failures": [],
+  "actual_SQC_mailbox_and_owner_lookup": true,
+  "route_WR_TX_CQ_modeled": true,
+  "fresh_remote_peer_required": true,
+  "native_runtime": false,
+  "hardware_verified": false,
+  "READ_admission_limit": 4096
+}

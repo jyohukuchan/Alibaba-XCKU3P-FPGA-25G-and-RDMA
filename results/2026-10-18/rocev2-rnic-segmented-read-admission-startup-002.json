@@ -1,0 +1,12 @@
+{
+  "scope": "Preserved second READ admission fixture import-startup failure",
+  "source_sha256": "8a06241e5316d87719e373b01c0e8f6261f499729fb312abd7cd523f117503ed",
+  "preimage_directory": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/read-admission-startup2-2uod8s1u",
+  "exit_code": 1,
+  "compiled_cases": 0,
+  "runtime_cases": 0,
+  "error_type": "IndentationError",
+  "error": "dedent cannot remove class-method indentation when the inherited method contains literal zero-indent multiline Verilog text.",
+  "correction": "Compile the exact inherited method inside a temporary Python class, preserving all literal Verilog bytes. Only its codec entry point changes. No hardware/MR/test-oracle weakening.",
+  "hardware_actions": []
+}

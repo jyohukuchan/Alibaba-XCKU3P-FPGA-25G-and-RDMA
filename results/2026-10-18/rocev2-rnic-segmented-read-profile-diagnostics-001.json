@@ -1,0 +1,12 @@
+{
+  "scope": "Preserved READ16383/63 register fixture construction failure before correction",
+  "failed_report": "results/2026-10-18/rocev2-rnic-segmented-read-profile-001.json",
+  "report_sha256": "2f11f93d8243ceda9861545cc968e2b2c3e5408234a186fc124b21679e1e0665",
+  "bindings_verified_before_fix": 133,
+  "preimage_directory": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/read-profile-001-preimages-h6l6bj3a",
+  "compiled_cases": 0,
+  "runtime_cases": 0,
+  "cause": "Original reject_bench intentionally replaces its initial block, so it no longer has the positive-case CQC ABI assertion. New fixture erroneously tried to replace that absent assertion.",
+  "correction": "Reuse the unchanged original negative fixture directly. Positive CQ case still explicitly requires ABI63 and12 real publications; no invalid-owner assertions/gates are changed.",
+  "hardware_actions": []
+}

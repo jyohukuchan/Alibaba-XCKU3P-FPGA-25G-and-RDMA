@@ -1,0 +1,75 @@
+{
+  "scope": "Reverified original single-QP, failed two-QP and fresh multi-QP MSN evidence without report relabeling",
+  "checks": [
+    {
+      "report": "results/2026-10-18/rocev2-rnic-expected-remote-msn-005.json",
+      "bindings": 116,
+      "pass_test": true,
+      "report_sha256": "1054f682b529dab32a8bdc4f2ac350415e0578d4a124da039e58479fa1c29fb7"
+    },
+    {
+      "report": "results/2026-10-18/rocev2-rnic-expected-remote-msn-006.json",
+      "bindings": 122,
+      "pass_test": false,
+      "report_sha256": "caa38e5743c4a902b0b40a367c1904a8c63b2b78d25b73b216e67d3ef3fe27c9"
+    },
+    {
+      "report": "results/2026-10-18/rocev2-rnic-expected-remote-msn-007.json",
+      "bindings": 122,
+      "pass_test": true,
+      "report_sha256": "5a74eeb8942cd1c742fc8f6f77a0c230ec04b702273b6e7075f45edc2b5a3010"
+    },
+    {
+      "report": "results/2026-10-18/rocev2-rnic-expected-remote-msn-native-elaboration-001.json",
+      "bindings": 1404,
+      "pass_test": true,
+      "report_sha256": "5091c248c9b2d2c3a0daa8569fb4c86f0660cc471a28beffb78ecfe807c7c864"
+    },
+    {
+      "report": "results/2026-10-18/rocev2-rnic-expected-remote-msn-native-elaboration-002.json",
+      "bindings": 1404,
+      "pass_test": true,
+      "report_sha256": "b9934bc003c1d4551d9eccaac7370d47f3158c578507205551b22deaa7e553dc"
+    }
+  ],
+  "historical_source_preimages_directory": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/expected-msn-005-preimages-hiy3fp4a",
+  "failed_two_QP_preimages_directory": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/expected-msn-006-preimages-fjcg_fad",
+  "historical_preimage_resolutions": {
+    "expected-msn-005": [
+      "rocev2_expected_remote_msn.v",
+      "test_expected_remote_msn_rtl.py"
+    ],
+    "expected-msn-006": [
+      "rocev2_expected_remote_msn.v"
+    ],
+    "native-elaboration-001": [
+      "expected_remote_msn_native_sources.py",
+      "rocev2_expected_remote_msn.v"
+    ],
+    "expected-msn-007": [],
+    "native-elaboration-002": []
+  },
+  "preimages_selected_only_by_exact_consumed_SHA256": true,
+  "current_unit": {
+    "methods": 7,
+    "cases": 12,
+    "actual_SQC_mailboxes": true,
+    "actual_two_SQC_interleaving": true,
+    "runtime_seconds_min": 0.0293,
+    "runtime_seconds_max": 0.0389,
+    "per_case_original_runtime_limit_seconds": 10,
+    "route_WR_TX_CQ_modeled": true
+  },
+  "current_native": {
+    "compile_seconds": 3.4473597040050663,
+    "compile_only": true,
+    "MSN_module_instances": 1,
+    "shared_domains_unchanged": true,
+    "expected_MSN_connected_to_RX": false,
+    "large_READ_admission_open": false,
+    "READ_admission_limit": 4096
+  },
+  "hardware_actions": [],
+  "source_or_report_gate_relaxed": false,
+  "default_graph_changed": false
+}

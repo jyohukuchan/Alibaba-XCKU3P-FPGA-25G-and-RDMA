@@ -1,0 +1,62 @@
+{
+  "scope": "Read-only publication audit of failed full-native READ attempt002; no corrected model or rerun",
+  "date_UTC": "2026-10-21",
+  "audit_pass": true,
+  "native_runtime_pass": false,
+  "hardware_verified": false,
+  "root_cause_confirmed": false,
+  "failed_report": "results/2026-10-18/rocev2-rnic-segmented-read-native-full-002.json",
+  "recorded_bindings_verified": {
+    "source_sha256": 1437,
+    "artifact_sha256": 64,
+    "RAM_artifact_sha256": 2,
+    "total": 1503,
+    "missing": 0,
+    "mismatched": 0
+  },
+  "checkpoint134_authored_bindings_verified_before_documentation_update": 182,
+  "bench_elaboration_seconds": 3.8322875300073065,
+  "fresh_compilation_seconds": 436.74263476900524,
+  "compile_exit": 0,
+  "planned_cases": 30,
+  "attempted_cases": ["LARGE_READ"],
+  "previous_cases_not_executed_in_this_batch": 29,
+  "runtime_seconds": 16.39764452696545,
+  "runtime_exit": -6,
+  "failure_stage": "QP setup before SQ fetch and READ data transfer",
+  "failure_log": "rdma/rnic/build/segmented-read-native-full-cvoxqma8/LARGE_READ.log",
+  "failure_log_sha256": "cdb79a93752a05ba43e385f9fade9f756457fbc8a35768c6a57a636a48effecd",
+  "terminal_excerpt": [
+    "HOST_REPLY 8 7 0000000000000065 0 00000000 00",
+    "MAIN_PROGRESS cycle11000 flags00",
+    "[46182000] %Fatal: tb.v:1999: Assertion failed in tb: main native RNIC fault 00",
+    "%Error: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-native-full-cvoxqma8/tb.v:1999: Verilog $stop",
+    "Aborting..."
+  ],
+  "frozen_binary_path": "/dev/shm/as02-segmented-read-native-artifacts-qe6jpysj/Vtb",
+  "binary_sha256": "9dbc8e243c470f3b8d6081256790e2ed55c8a39f98ba5d21cd597091ce827916",
+  "source_sha256": {
+    "results/2026-10-18/rocev2-rnic-segmented-read-native-full-001.json": "276f2ac7a4da32f5708809c2e53fa7d146c0ebca94db9b42e06dc1d0495a9f88",
+    "results/2026-10-18/rocev2-rnic-segmented-read-native-full-002.json": "50bd5525698b78af07e86acff2667d848fada6402b151c68b7431e6ee6c477d9",
+    "rdma/rnic/tests/probe_segmented_read_native_full.py": "1276336e3ffdfc465b143121a8ff84b00ea7285698daf154321fd597b9a73347",
+    "rdma/rnic/tests/segmented_read_native_fixture.py": "50edb25cabdb4a1dd9016e921577714faa6d48206c74f64e02e449f61fc38c04",
+    "rdma/rnic/fpga/derive_expected_remote_msn_native.py": "799f29a49803a525ed61a68d444791ff5fc23398ea9ac951c7d1175d2d67c759"
+  },
+  "artifact_sha256": {
+    "rdma/rnic/build/segmented-read-native-full-cvoxqma8/tb.v": "f7ba731b145e7dffc6795fd376200751016e582063ae4df7e65832fd978d1943",
+    "rdma/rnic/build/segmented-read-native-full-cvoxqma8/rocev2_controlled_responder.v": "2cb69da5c4d4e2382620e83ca6c93d9f0bbae4a0be25bb7fbe06a4e9382aab5c",
+    "rdma/rnic/build/segmented-read-native-full-cvoxqma8/compile.log": "21f2ae30f4f5bb66811400dbed077d2b6668722bdcc0b3baa946e217c7f58436"
+  },
+  "source_or_failed_artifact_changed_during_audit": false,
+  "old_reports_relabelled": false,
+  "limits_or_oracles_relaxed": false,
+  "runtime_success_injected": false,
+  "default_or_hardware_changed": false,
+  "full_source_check": {
+    "command": "bash scripts/check.sh",
+    "exit": 1,
+    "diagnostic": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v",
+    "waived": false
+  },
+  "next_work": "Diagnose genuine QP configuration/route-observer integration before rerunning the unchanged bounded native data/CQ checks; preserve failed evidence and original timing gates"
+}

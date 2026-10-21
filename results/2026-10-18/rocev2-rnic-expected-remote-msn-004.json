@@ -1,0 +1,208 @@
+{
+  "scope": "Real SQC/mailbox/fetch owner allocation -> actual expected-MSN predictor.\n\nRoute configuration acceptance, authorized WRs, TX expectations and CQ are\nmodels. SQC cookie/epoch/PD replies are REAL, never forced table contents.\nNo RX-learned/local-MSN source, native runtime/remote peer/physical proof.\n",
+  "pass_test": false,
+  "methods": 6,
+  "cases": 6,
+  "source_unchanged": true,
+  "seconds": 1.814876866992563,
+  "source_sha256": {
+    "rdma/rnic/fpga/derive_segmented_source.py": "138c80829c920c6d8d32a7a7ac29cb05e33bec051028dd741558979b5314ad62",
+    "rdma/rnic/fpga/prepare_native.py": "6c9688901171652c8805218cb716932daff8bbfbc405aeba1079f63efcf5ea0a",
+    "rdma/rnic/fpga/derive_atomic_native_authority.py": "0b881da1ad4a9d72f43c90e54492c3299b43b3109d0529eb81851319a4f88451",
+    "rdma/rnic/fpga/derive_atomic128_lifetime.py": "09148e2f11eb3c2ea9bd72fc28cf357e8991de64acef1af9ad79b17dfebc90cb",
+    "rdma/rnic/fpga/derive_atomic_native_bridge.py": "332a5064cb3adfbadd2e2196eb950885e9945a9af528ccd45776944631db331c",
+    "rdma/rnic/fpga/derive_shared_responder.py": "3d97aec6c1f5efe8f1d1b3d0c830a684ed4045dacdd3bcaa4923cf751e1fd477",
+    "rdma/rnic/fpga/prepare_board.py": "92c5c485e1e5349dbe5deacb0f8c2e514af87b17b696317b9258804c967a0573",
+    "rdma/rnic/fpga/derive_immediate_bridge.py": "a9758360ee8466e011819fe3ebf79b80fd175ee7f59c91af4fa949047a4b0667",
+    "rdma/rnic/fpga/derive_atomic128_fetch.py": "4123c117771f568fc4a002a614ade421f6c94eb08dd17b27dff2a6a8d9dbe433",
+    "rdma/rnic/fpga/derive_atomic_bridge.py": "1b3b1adc2f187b7718e4045973768c50e45186859f587992a56ad485bd230bdb",
+    "rdma/rnic/fpga/derive_segmented_read_memory_native.py": "d6aa6356c022aeb2e8f3c37c6d84a4ba9b63646bca881e065d074edb509940d1",
+    "rdma/rnic/fpga/derive_atomic128_response.py": "eaa3439ece1fd0fad5ff30e81aab0d14346c3739058c1272a4fdc4b8e431063e",
+    "rdma/rnic/fpga/derive_zero_service_native.py": "0f92353804e547ef8df2ee70ff294e356447667f4668450d11020cc302a84b86",
+    "rdma/rnic/fpga/derive_immediate_native.py": "9281857caf2714945f280e126eb39553e8f9324c8416b5b71bbd79c5ed6fdac4",
+    "rdma/rnic/fpga/derive_atomic_request_bridge.py": "a626d9f3d20ecfc7c477100c63472fa8547792fafacb612d28846f6f6f0a4463",
+    "rdma/rnic/fpga/derive_atomic_owner_lookup.py": "10f497b1ae2c5358e960ae8695903bf4655896c99b977bd26ffba287d270b453",
+    "rdma/rnic/fpga/derive_segmented_profile.py": "2eeb93fba67c67ff6dd907fc1bf46741371af9548b3c0908c38d3c4d466fbd55",
+    "rdma/rnic/fpga/derive_duplex_transport.py": "ff81dfb2ba41ffc59d482bee177fc106537a22a786bf11d588880c3990c85a53",
+    "rdma/rnic/fpga/derive_segmented_executor.py": "a2340b3346215f952ff882fca09a6c8ba886c46a29215ff676e998119252497c",
+    "rdma/rnic/fpga/derive_segmented_wire.py": "94bba46ee3e380bcd6f2578f25f4ef00eda0407a22eefa90c1824003a2aa8386",
+    "rdma/rnic/fpga/derive_recv_responder.py": "467fae2223a3b9a3e40b2a43334b154bb81aea9608792debf03d2461bd14d6c7",
+    "rdma/rnic/fpga/derive_atomic_native_rx.py": "9f9e8db656cffc70f59761ba0c42e402f4dd9d392c065d0a7a79abb6b752fec0",
+    "rdma/rnic/fpga/derive_zero_rq_native.py": "92ed231ada071d15feab574127c7974d4d17516f48db5d8f4e6a79f118d225f8",
+    "rdma/rnic/fpga/derive_atomic_mac_bridge.py": "4a0ef7c4604415fccbd5c582ae5ca248bc4ba1fa7a226e98115b749e6a65e3af",
+    "rdma/rnic/fpga/derive_atomic_native.py": "b3758f15718303cf12b95af02052dcad8bc6d1e806ef64075ff75e3e6856c90e",
+    "rdma/rnic/fpga/derive_segmented_padding.py": "ac8d48a5918a095e6f712853ae7d55ab9510c11edbdf74888e68dfe137119ae8",
+    "rdma/rnic/fpga/derive_atomic128_admission.py": "da4e91e41d7bb9861534cfe2b98e7690076850d192c401cc1290d1942b8d83e3",
+    "rdma/rnic/fpga/derive_atomic_access_native.py": "ab42d555c459c2e7b7da71686539c3d75a31e075a3a8c11c66e09a59e6e903ee",
+    "rdma/rnic/fpga/derive_atomic128_native.py": "9be2756604ed23cc9b41b2fd8d1a3b8db9bf2e2176663878463c12abc03b20ad",
+    "rdma/rnic/fpga/prepare_wrkey_transport.py": "11aff17a0d9eb097abc4a5eec097409171b997d59c451ffb6e8fad3d4984e8c3",
+    "rdma/rnic/fpga/derive_atomic_native_owned_stage.py": "aa9869c3c51c2fe25b5dfa53429bd62b7180fcfde20140e1e4397d76b5463576",
+    "rdma/rnic/fpga/derive_qp_tx_bridge.py": "51afb390ce130f69e8b55cbfb2af2055e7fa3746004790b5b509f4f6273d28a7",
+    "rdma/rnic/fpga/derive_atomic_owned_bridge.py": "6a80483c2cd4ebc9a6344532be3df607d6839e5991e78dec52d682b340b8a632",
+    "rdma/rnic/fpga/derive_segmented_native.py": "78f20feaa504ef5ab12cdee9ce420b5f3a8ec5a4f6eeca209d3dbd4cb70682a2",
+    "rdma/rnic/fpga/derive_atomic_reserved_mac_bridge.py": "cbb8dd301369630dcc37c28d0ee5c7fa2293c5223829be29305d6c5f677741a8",
+    "rdma/rnic/fpga/derive_segmented_read_executor.py": "a7e261df5ad7bf7e4f182b4a34a4673f2e3f4241b40cab01c921721129c7d19c",
+    "rdma/rnic/fpga/derive_atomic128_executor.py": "bc01f0d68fc39c78e6a3ff5d96d93a2e82396f4b9db67a7e03bee35cf114b004",
+    "rdma/rnic/fpga/derive_segmented_read_response.py": "623ad265109287439858a9ec0b899c110bbfca926ce3405b2a8d027699847271",
+    "rdma/rnic/fpga/derive_zero_native.py": "d652f5e0a805b96d2a963f33d9112d8121f1170a15b111e3e400c81eface97a7",
+    "rdma/rnic/fpga/derive_expected_remote_msn_native.py": "799f29a49803a525ed61a68d444791ff5fc23398ea9ac951c7d1175d2d67c759",
+    "rdma/rnic/rtl/rocev2_expected_remote_msn.v": "7b604541fa0daa33924cd510fd6fe0f5f1100192d05d42801b075760f798161b",
+    "rdma/rnic/rtl/rocev2_sq_control_regs.v": "e3f0ddee0a3c0b442294dc37359e02b17b7bddba567f7b9228d197355743583f",
+    "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+    "rdma/rnic/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+    "rdma/rnic/tests/test_sq_control_regs_rtl.py": "b0945f92fa4ad54f9a2b24fa3dc92eecb5bb1a365e113bc1c7adf700ad8be37f",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c910018a2e8a9d77e649437f9a7727f5cf2fd9c02cb20ab92016b5209a3a189e",
+    "rdma/rnic/tests/test_expected_remote_msn_rtl.py": "95151d24cc263a08fc26b210a1ae27bec53ac82f19c924a2cf03b5867f3651b8"
+  },
+  "tests": {
+    "test_foreign_expectation_retire_or_old_sequence_quarantines": [
+      {
+        "directory": "rdma/rnic/build/expected-msn-sfl0b6cz",
+        "pass_test": false,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.02972264599520713,
+        "exit": 1,
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-sfl0b6cz/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-sfl0b6cz/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-sfl0b6cz/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-sfl0b6cz/tb.v": "05ccc8a2ef3a72869a07e5ac353d42052499cc16317d5e68670294271382a567",
+          "rdma/rnic/build/expected-msn-sfl0b6cz/simulation.log": "6ded9d4bdf9739e2534b6ca0ea8f58fde24668d06821fa42d6b72a934bab664f"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-909xvccx/test": "4bf036cb0aa072cab88b802bb0d63077620c7511df7b8192d2145b72aceea551"
+        }
+      }
+    ],
+    "test_genuine_SQC_lease_blocks_retirement_and_query_has_no_mailbox_gap": [
+      {
+        "directory": "rdma/rnic/build/expected-msn-yfqs5v6i",
+        "pass_test": false,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.02890923898667097,
+        "exit": 1,
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-yfqs5v6i/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-yfqs5v6i/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-yfqs5v6i/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-yfqs5v6i/tb.v": "8f128123ad20aae69419d51d167bb4c5dd840ae726a8f0142a65a214fc81bb32",
+          "rdma/rnic/build/expected-msn-yfqs5v6i/simulation.log": "458c821e03556ead8c68c0ec500ba0c67616616e4f7f13cc98494d09d95a3490"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-az8xybo9/test": "afa0a45d084cde7561166a606481340786c51a8dded4df577df22a9471708994"
+        }
+      }
+    ],
+    "test_new_actual_SQC_epoch_reinitializes_not_same_route_reapply": [
+      {
+        "directory": "rdma/rnic/build/expected-msn-j1mz76p8",
+        "pass_test": false,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.028602832986507565,
+        "exit": 1,
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-j1mz76p8/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-j1mz76p8/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-j1mz76p8/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-j1mz76p8/tb.v": "a4efd1ae1a8e8b05b7e3c6ca518a58b0d211848ff1b6d96d54db752902307f37",
+          "rdma/rnic/build/expected-msn-j1mz76p8/simulation.log": "8a0d44b37bb929c11ac6c3cb71ae8e349cde8f881c34f9a43b89ab0120faf156"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-qo6kb2xh/test": "96d94e01d4e42f32e0cab98ba9988ee0ca3e4e60ee8c1ace787914d17818bb7b"
+        }
+      }
+    ],
+    "test_real_SQC_epoch_cookie_and_all_logical_operations_no_packet_recount": [
+      {
+        "directory": "rdma/rnic/build/expected-msn-1jjcxvg1",
+        "pass_test": false,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.02926432795356959,
+        "exit": 1,
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-1jjcxvg1/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-1jjcxvg1/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-1jjcxvg1/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-1jjcxvg1/tb.v": "542b2d79b5d3751214f7677ae3f7fde116697e68d7974f911e4ce4a66fad728e",
+          "rdma/rnic/build/expected-msn-1jjcxvg1/simulation.log": "fbba28b9dd2974f8e3bcf991e9bbe79dbaf40ac19f3672af23b8458b6c75066b"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-aa4ux2zg/test": "f1561a8ca7d772f67371be966c5fb32bd5df2cc0a98bf2a63f871d3420bcd3dc"
+        }
+      }
+    ],
+    "test_route_before_real_SQC_allocation_waits_without_invented_binding": [
+      {
+        "directory": "rdma/rnic/build/expected-msn-8mype474",
+        "pass_test": false,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.029071976023260504,
+        "exit": 1,
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-8mype474/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-8mype474/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-8mype474/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-8mype474/tb.v": "b73ce1d19923ae67fb028f5754de1342ddb46efd642cad65c20acf375795653d",
+          "rdma/rnic/build/expected-msn-8mype474/simulation.log": "f50ca967e45d693bfd9eacf75957d3dabf88f8a71a90c48b40b3be835545e86c"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-g1qapvs3/test": "9ee06be2924acb3ecfa42ae44ead4a77a089b1975cb2416b197b48588c0c5c8b"
+        }
+      }
+    ],
+    "test_unknown_owner_route_or_parent_fault_does_not_release": [
+      {
+        "directory": "rdma/rnic/build/expected-msn-tif7ujlq",
+        "pass_test": false,
+        "runtime_limit_seconds": 10,
+        "seconds": 0.029161586018744856,
+        "exit": 1,
+        "artifact_sha256": {
+          "rdma/rnic/build/expected-msn-tif7ujlq/rocev2_sq_control_regs.v": "d3406957cf63906cbef4b0f39750fbc67967d48730d38165205056b6d9594c03",
+          "rdma/rnic/build/expected-msn-tif7ujlq/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/expected-msn-tif7ujlq/rocev2_sq_fetch.v": "bca49b121e12f1385a793daf551657b06073a35504febe75303be8e7d7461464",
+          "rdma/rnic/build/expected-msn-tif7ujlq/tb.v": "8f7952cbd1cfbcba25557cdb2802ff7a850cfc49d535d3ef43d0895fa9d3c1ff",
+          "rdma/rnic/build/expected-msn-tif7ujlq/simulation.log": "3431909487a9cc45236ed37d1879d4444fb8cc28f3631248057dc81eb4ae62a8"
+        },
+        "RAM_artifact_sha256": {
+          "/dev/shm/as02-expected-msn-5oungmlr/test": "f032963b2768e34e0feaaf80706ae0d2f98cfe7042d1370d1d1e7b57a8d9316d"
+        }
+      }
+    ]
+  },
+  "failures": [
+    {
+      "test": "test_foreign_expectation_retire_or_old_sequence_quarantines (__main__.ExpectedMSN.test_foreign_expectation_retire_or_old_sequence_quarantines)",
+      "trace": "Traceback (most recent call last):\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/test_expected_remote_msn_rtl.py\", line 168, in test_foreign_expectation_retire_or_old_sequence_quarantines\n    self.simulate('allocate();route();capture(2,1,1);'+mutation+'quarantine();if(p_message_count!=1 || p_retired_count)$fatal(1,\"bad proof altered logical state\");')\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/test_expected_remote_msn_rtl.py\", line 124, in simulate\n    self.assertEqual(r.returncode,0,r.stdout+r.stderr)\nAssertionError: 1 != 0 : FATAL: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/expected-msn-sfl0b6cz/tb.v:266: expected logical MSN/lease not captured\n       Time: 1160000  Scope: tb.capture\n\n"
+    },
+    {
+      "test": "test_genuine_SQC_lease_blocks_retirement_and_query_has_no_mailbox_gap (__main__.ExpectedMSN.test_genuine_SQC_lease_blocks_retirement_and_query_has_no_mailbox_gap)",
+      "trace": "Traceback (most recent call last):\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/test_expected_remote_msn_rtl.py\", line 148, in test_genuine_SQC_lease_blocks_retirement_and_query_has_no_mailbox_gap\n    self.simulate(r'''\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/test_expected_remote_msn_rtl.py\", line 124, in simulate\n    self.assertEqual(r.returncode,0,r.stdout+r.stderr)\nAssertionError: 1 != 0 : FATAL: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/expected-msn-yfqs5v6i/tb.v:266: expected logical MSN/lease not captured\n       Time: 1160000  Scope: tb.capture\n\n"
+    },
+    {
+      "test": "test_new_actual_SQC_epoch_reinitializes_not_same_route_reapply (__main__.ExpectedMSN.test_new_actual_SQC_epoch_reinitializes_not_same_route_reapply)",
+      "trace": "Traceback (most recent call last):\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/test_expected_remote_msn_rtl.py\", line 156, in test_new_actual_SQC_epoch_reinitializes_not_same_route_reapply\n    self.simulate(r'''\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/test_expected_remote_msn_rtl.py\", line 124, in simulate\n    self.assertEqual(r.returncode,0,r.stdout+r.stderr)\nAssertionError: 1 != 0 : FATAL: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/expected-msn-j1mz76p8/tb.v:266: expected logical MSN/lease not captured\n       Time: 1160000  Scope: tb.capture\n\n"
+    },
+    {
+      "test": "test_real_SQC_epoch_cookie_and_all_logical_operations_no_packet_recount (__main__.ExpectedMSN.test_real_SQC_epoch_cookie_and_all_logical_operations_no_packet_recount)",
+      "trace": "Traceback (most recent call last):\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/test_expected_remote_msn_rtl.py\", line 132, in test_real_SQC_epoch_cookie_and_all_logical_operations_no_packet_recount\n    self.simulate(r'''\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/test_expected_remote_msn_rtl.py\", line 124, in simulate\n    self.assertEqual(r.returncode,0,r.stdout+r.stderr)\nAssertionError: 1 != 0 : FATAL: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/expected-msn-1jjcxvg1/tb.v:266: expected logical MSN/lease not captured\n       Time: 1160000  Scope: tb.capture\n\n"
+    },
+    {
+      "test": "test_route_before_real_SQC_allocation_waits_without_invented_binding (__main__.ExpectedMSN.test_route_before_real_SQC_allocation_waits_without_invented_binding)",
+      "trace": "Traceback (most recent call last):\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/test_expected_remote_msn_rtl.py\", line 141, in test_route_before_real_SQC_allocation_waits_without_invented_binding\n    self.simulate(r'''\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/test_expected_remote_msn_rtl.py\", line 124, in simulate\n    self.assertEqual(r.returncode,0,r.stdout+r.stderr)\nAssertionError: 1 != 0 : FATAL: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/expected-msn-8mype474/tb.v:266: expected logical MSN/lease not captured\n       Time: 1200000  Scope: tb.capture\n\n"
+    },
+    {
+      "test": "test_unknown_owner_route_or_parent_fault_does_not_release (__main__.ExpectedMSN.test_unknown_owner_route_or_parent_fault_does_not_release)",
+      "trace": "Traceback (most recent call last):\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/test_expected_remote_msn_rtl.py\", line 176, in test_unknown_owner_route_or_parent_fault_does_not_release\n    self.simulate('allocate();route();capture(2,1,1);'+change+'quarantine();if(p_message_count!=1 || p_retired_count)$fatal(1,\"fault freed logical owner\");')\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/test_expected_remote_msn_rtl.py\", line 124, in simulate\n    self.assertEqual(r.returncode,0,r.stdout+r.stderr)\nAssertionError: 1 != 0 : FATAL: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/expected-msn-tif7ujlq/tb.v:266: expected logical MSN/lease not captured\n       Time: 1160000  Scope: tb.capture\n\n"
+    }
+  ],
+  "actual_SQC_mailbox_and_owner_lookup": true,
+  "route_WR_TX_CQ_modeled": true,
+  "fresh_remote_peer_required": true,
+  "native_runtime": false,
+  "hardware_verified": false,
+  "READ_admission_limit": 4096
+}

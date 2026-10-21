@@ -5,6 +5,37 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+Explicit publication (2026-10-21) now includes progress154–156 source and
+successful/failed records. Local/unpushed and previous-HEAD statements
+below describe earlier checkpoints, not the publication status. This is
+not a native/physical/timing-qualified release; Atomic defaults stay unchanged.
+
+Progress156 adds actual typed424 WRITE EOF/ACK-MSN/SAME-table consumers and
+a distinct456 packet receipt (87 C++ modes, every65 prior mode retained).
+Real owned Atomic service/MR/memory RTL9 jobs and8+8 Immediate consumers
+remain successful. New WRITE RTL generation PASSES497.799s under original
+clocks/gates and all old/new port checks. The15.571ns estimate still FAILS
+original4ns/default1.08ns; no timing/native/physical or Atomic advertisement
+claim follows. [1116-binding scope audit](../results/2026-10-18/rocev2-rnic-segmented-write-owned-diagnostics-001.json),
+[741-binding generation audit](../results/2026-10-18/rocev2-rnic-segmented-write-owned-generated-diagnostics-001.json).
+Native backend/MAC/CQ and safe partial-message lifetime teardown remain.
+IB_ATOMIC_NONE and all defaults/hardware settings remain unchanged.
+
+Progress155 adds checked-frame segmented-WRITE admission/replay, not an
+Atomic implementation change. Actual IPv4/ICRC/MR/RQ/replay47 cases pass;
+all448 original CRC masks match the host-only memoized copy. Backend/HLS/
+MAC/CQ/owner consumers remain modeled; actual complete native/physical
+and original timing qualification are still missing. No capability/default
+or hardware change; IB_ATOMIC_NONE stays. [Scope/failures](../results/2026-10-18/rocev2-rnic-segmented-write-rx-front-diagnostics-001.json).
+
+Progress154 adds actual remote-WRITE guard/MR-table/late-RQ component
+coupling (46 cases plus all62 prior queue modes). A read-only posted-head
+peek fixes the discovered notice/head-VALID loop without changing any old
+actual gate. Backend/HLS/MAC/proof and CQ producers remain models; this is
+not new native or Atomic qualification. Prior publication remains be16288;
+new work stays local. [Evidence/scope](../results/2026-10-18/rocev2-rnic-remote-write-mr-notice-diagnostics-001.json).
+IB_ATOMIC_NONE, original timing requirements and all eleven open items remain.
+
 Explicit publication (2026-10-21) includes progress152/153 and the unfinished
 remote-WRITE MR guard (syntax-only, not functionally/native qualified).
 Successful and failed evidence is retained; no Atomic advertisement,

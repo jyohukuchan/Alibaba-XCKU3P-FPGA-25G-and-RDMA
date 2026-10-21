@@ -1,0 +1,1393 @@
+{
+  "scope": "Actual IPv4/ICRC -> parsed-frame -> remote MR -> late-RQ -> owned replay.\n\nReplay checks every unchanged IP/BTH/RETH/payload/pad/ICRC byte against\nindependent authored input, under stalls. MR and RQ are actual RTL, not\nreply agents. Trusted management/context, posted admission, downstream\nbackend/HLS/MAC/CQ certificates remain MODELS. No full-native, payload-DMA,\ngenerated new HLS, Linux, timing or physical qualification is claimed.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/segmented-write-rx-front-uv559crg",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_segmented_write_rx_frontend.v": "ee215a74b6d2eb0d13426af2e968b857b431a88fe88882b78b210e9b6eaa85f6",
+    "rdma/rnic/rtl/rocev2_remote_write_message_guard.v": "138a27297c8f6655911f98140ae46a07db2f453a0a3d504c412ab3d199dd22ca",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "external/corundum/fpga/lib/eth/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+    "external/corundum/fpga/lib/eth/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+    "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+    "rdma/rnic/tests/probe_segmented_write_rx_frontend.py": "0d31b6b73323e29dee5f3bab9adc1087601fae4caa28102e964b40c440238eac",
+    "rdma/rnic/tests/probe_remote_write_mr_notice.py": "8f2e965d4a4efcdd1024d57c323aa442f91de95fc66b1314b6dfeeb4d6d440b4",
+    "rdma/rnic/tests/remote_write_mr_notice_tb.v": "8180bc9bede4c5ca515cd965cba9981015dcebd73024332261c05bb775b4669e",
+    "rdma/rnic/fpga/derive_write_notice_binding_queue.py": "d7e43f8871ba5003085c8ff80a36aecbc705d505b5bde8e19517bbe70c95591b",
+    "rdma/rnic/fpga/derive_write_notice_queue.py": "92a99549ab37e754f8ef410e3ebc6796174ad9c06fed18adea34719e793f4d1c",
+    "rdma/rnic/rtl/rocev2_receive_message_queue.v": "fd989c8f471342e0794c0a1bbf661d766d7335be06b2702e12cc196dd4dcd572",
+    "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+  },
+  "tests": {
+    "0": {
+      "exit": 0,
+      "seconds": 2.041995924024377,
+      "protection": {
+        "pass_test": true,
+        "mode": 0,
+        "MR_queries": 4,
+        "grants": 3,
+        "completed_packets": 3,
+        "completed_messages": 1,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 0,
+        "CRC_good": 3,
+        "CRC_bad": 0,
+        "replayed_frames": 3,
+        "replayed_bytes": 8344
+      },
+      "every_input_byte_mask_EOF_unchanged": true
+    },
+    "1": {
+      "exit": 0,
+      "seconds": 2.0516937659704126,
+      "protection": {
+        "pass_test": true,
+        "mode": 1,
+        "MR_queries": 4,
+        "grants": 3,
+        "completed_packets": 3,
+        "completed_messages": 1,
+        "cancelled_messages": 0,
+        "RQ_posted": 1,
+        "RQ_taken": 1,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 1,
+        "CRC_good": 3,
+        "CRC_bad": 0,
+        "replayed_frames": 3,
+        "replayed_bytes": 8348
+      },
+      "every_input_byte_mask_EOF_unchanged": true
+    },
+    "3": {
+      "exit": 0,
+      "seconds": 2.0277246920159087,
+      "protection": {
+        "pass_test": true,
+        "mode": 3,
+        "MR_queries": 3,
+        "grants": 2,
+        "completed_packets": 2,
+        "completed_messages": 1,
+        "cancelled_messages": 0,
+        "RQ_posted": 1,
+        "RQ_taken": 1,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 3,
+        "CRC_good": 2,
+        "CRC_bad": 0,
+        "replayed_frames": 2,
+        "replayed_bytes": 8300
+      },
+      "every_input_byte_mask_EOF_unchanged": true
+    },
+    "4": {
+      "exit": 0,
+      "seconds": 2.0769589039846323,
+      "protection": {
+        "pass_test": true,
+        "mode": 4,
+        "MR_queries": 5,
+        "grants": 3,
+        "completed_packets": 3,
+        "completed_messages": 1,
+        "cancelled_messages": 0,
+        "RQ_posted": 1,
+        "RQ_taken": 1,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 4,
+        "CRC_good": 4,
+        "CRC_bad": 0,
+        "replayed_frames": 3,
+        "replayed_bytes": 8348
+      },
+      "every_input_byte_mask_EOF_unchanged": true
+    },
+    "5": {
+      "exit": 0,
+      "seconds": 1.1015352059621364,
+      "protection": {
+        "pass_test": true,
+        "mode": 5,
+        "MR_queries": 3,
+        "grants": 2,
+        "completed_packets": 2,
+        "completed_messages": 1,
+        "cancelled_messages": 0,
+        "RQ_posted": 1,
+        "RQ_taken": 1,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 5,
+        "CRC_good": 2,
+        "CRC_bad": 0,
+        "replayed_frames": 2,
+        "replayed_bytes": 4208
+      },
+      "every_input_byte_mask_EOF_unchanged": true
+    },
+    "6": {
+      "exit": 0,
+      "seconds": 1.0337833630037494,
+      "protection": {
+        "pass_test": true,
+        "mode": 6,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 6,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "7": {
+      "exit": 0,
+      "seconds": 1.032233579957392,
+      "protection": {
+        "pass_test": true,
+        "mode": 7,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 7,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "8": {
+      "exit": 0,
+      "seconds": 1.0377715410431847,
+      "protection": {
+        "pass_test": true,
+        "mode": 8,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 8,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "9": {
+      "exit": 0,
+      "seconds": 1.0294488910003565,
+      "protection": {
+        "pass_test": true,
+        "mode": 9,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 9,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "10": {
+      "exit": 0,
+      "seconds": 1.0287172379903495,
+      "protection": {
+        "pass_test": true,
+        "mode": 10,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 10,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "11": {
+      "exit": 0,
+      "seconds": 1.0396709230262786,
+      "protection": {
+        "pass_test": true,
+        "mode": 11,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 11,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "12": {
+      "exit": 0,
+      "seconds": 1.031895952008199,
+      "protection": {
+        "pass_test": true,
+        "mode": 12,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 12,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "13": {
+      "exit": 0,
+      "seconds": 1.0304309680359438,
+      "protection": {
+        "pass_test": true,
+        "mode": 13,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 13,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "14": {
+      "exit": 0,
+      "seconds": 1.0340137439779937,
+      "protection": {
+        "pass_test": true,
+        "mode": 14,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 14,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "15": {
+      "exit": 0,
+      "seconds": 1.0397496499936096,
+      "protection": {
+        "pass_test": true,
+        "mode": 15,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 15,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "16": {
+      "exit": 0,
+      "seconds": 1.0286773800035007,
+      "protection": {
+        "pass_test": true,
+        "mode": 16,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 16,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "17": {
+      "exit": 0,
+      "seconds": 1.033693645033054,
+      "protection": {
+        "pass_test": true,
+        "mode": 17,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 17,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "18": {
+      "exit": 0,
+      "seconds": 1.0365145230316557,
+      "protection": {
+        "pass_test": true,
+        "mode": 18,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 18,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "19": {
+      "exit": 0,
+      "seconds": 1.0286296229460277,
+      "protection": {
+        "pass_test": true,
+        "mode": 19,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 19,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "20": {
+      "exit": 0,
+      "seconds": 1.0378455530153587,
+      "protection": {
+        "pass_test": true,
+        "mode": 20,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 20,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "21": {
+      "exit": 0,
+      "seconds": 1.0313384020118974,
+      "protection": {
+        "pass_test": true,
+        "mode": 21,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 21,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "22": {
+      "exit": 0,
+      "seconds": 2.0123192640021443,
+      "protection": {
+        "pass_test": true,
+        "mode": 22,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 1
+      },
+      "replay": {
+        "mode": 22,
+        "CRC_good": 2,
+        "CRC_bad": 0,
+        "replayed_frames": 1,
+        "replayed_bytes": 4156
+      }
+    },
+    "23": {
+      "exit": 0,
+      "seconds": 1.072832239966374,
+      "protection": {
+        "pass_test": true,
+        "mode": 23,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 1
+      },
+      "replay": {
+        "mode": 23,
+        "CRC_good": 2,
+        "CRC_bad": 0,
+        "replayed_frames": 1,
+        "replayed_bytes": 4156
+      }
+    },
+    "24": {
+      "exit": 0,
+      "seconds": 2.0020002399687655,
+      "protection": {
+        "pass_test": true,
+        "mode": 24,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 1
+      },
+      "replay": {
+        "mode": 24,
+        "CRC_good": 2,
+        "CRC_bad": 0,
+        "replayed_frames": 1,
+        "replayed_bytes": 4156
+      }
+    },
+    "25": {
+      "exit": 0,
+      "seconds": 2.002472124993801,
+      "protection": {
+        "pass_test": true,
+        "mode": 25,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 1
+      },
+      "replay": {
+        "mode": 25,
+        "CRC_good": 2,
+        "CRC_bad": 0,
+        "replayed_frames": 1,
+        "replayed_bytes": 4156
+      }
+    },
+    "27": {
+      "exit": 0,
+      "seconds": 1.0488805880304426,
+      "protection": {
+        "pass_test": true,
+        "mode": 27,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 1
+      },
+      "replay": {
+        "mode": 27,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 1,
+        "replayed_bytes": 4156
+      }
+    },
+    "28": {
+      "exit": 0,
+      "seconds": 1.0549677480012178,
+      "protection": {
+        "pass_test": true,
+        "mode": 28,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 1
+      },
+      "replay": {
+        "mode": 28,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 1,
+        "replayed_bytes": 4156
+      }
+    },
+    "29": {
+      "exit": 0,
+      "seconds": 1.049827242968604,
+      "protection": {
+        "pass_test": true,
+        "mode": 29,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 1
+      },
+      "replay": {
+        "mode": 29,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 1,
+        "replayed_bytes": 4156
+      }
+    },
+    "30": {
+      "exit": 0,
+      "seconds": 2.045614144008141,
+      "protection": {
+        "pass_test": true,
+        "mode": 30,
+        "MR_queries": 3,
+        "grants": 2,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 1
+      },
+      "replay": {
+        "mode": 30,
+        "CRC_good": 2,
+        "CRC_bad": 0,
+        "replayed_frames": 2,
+        "replayed_bytes": 8296
+      }
+    },
+    "31": {
+      "exit": 0,
+      "seconds": 1.0389836999820545,
+      "protection": {
+        "pass_test": true,
+        "mode": 31,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 31,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "32": {
+      "exit": 0,
+      "seconds": 2.0069884789991193,
+      "protection": {
+        "pass_test": true,
+        "mode": 32,
+        "MR_queries": 3,
+        "grants": 1,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 1
+      },
+      "replay": {
+        "mode": 32,
+        "CRC_good": 2,
+        "CRC_bad": 0,
+        "replayed_frames": 1,
+        "replayed_bytes": 4156
+      }
+    },
+    "33": {
+      "exit": 0,
+      "seconds": 2.0426193510065787,
+      "protection": {
+        "pass_test": true,
+        "mode": 33,
+        "MR_queries": 4,
+        "grants": 2,
+        "completed_packets": 2,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 1,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 1
+      },
+      "replay": {
+        "mode": 33,
+        "CRC_good": 3,
+        "CRC_bad": 0,
+        "replayed_frames": 2,
+        "replayed_bytes": 8296
+      }
+    },
+    "34": {
+      "exit": 0,
+      "seconds": 1.052786690008361,
+      "protection": {
+        "pass_test": true,
+        "mode": 34,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 1,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 34,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 1,
+        "replayed_bytes": 4156
+      }
+    },
+    "35": {
+      "exit": 0,
+      "seconds": 1.0490564169595018,
+      "protection": {
+        "pass_test": true,
+        "mode": 35,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 1
+      },
+      "replay": {
+        "mode": 35,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 1,
+        "replayed_bytes": 4156
+      }
+    },
+    "36": {
+      "exit": 0,
+      "seconds": 2.0422892100177705,
+      "protection": {
+        "pass_test": true,
+        "mode": 36,
+        "MR_queries": 4,
+        "grants": 3,
+        "completed_packets": 3,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 1,
+        "RQ_taken": 1,
+        "fault": 1,
+        "message_active": 1
+      },
+      "replay": {
+        "mode": 36,
+        "CRC_good": 3,
+        "CRC_bad": 0,
+        "replayed_frames": 3,
+        "replayed_bytes": 8348
+      }
+    },
+    "37": {
+      "exit": 0,
+      "seconds": 1.0301371869863942,
+      "protection": {
+        "pass_test": true,
+        "mode": 37,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 37,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "38": {
+      "exit": 0,
+      "seconds": 2.0568425249657594,
+      "protection": {
+        "pass_test": true,
+        "mode": 38,
+        "MR_queries": 4,
+        "grants": 3,
+        "completed_packets": 3,
+        "completed_messages": 1,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 38,
+        "CRC_good": 3,
+        "CRC_bad": 0,
+        "replayed_frames": 3,
+        "replayed_bytes": 8344
+      },
+      "every_input_byte_mask_EOF_unchanged": true
+    },
+    "39": {
+      "exit": 0,
+      "seconds": 0.08089142199605703,
+      "protection": {
+        "pass_test": true,
+        "mode": 39,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 39,
+        "CRC_good": 0,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "40": {
+      "exit": 0,
+      "seconds": 1.0564913859707303,
+      "protection": {
+        "pass_test": true,
+        "mode": 40,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 1,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 40,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 1,
+        "replayed_bytes": 4156
+      }
+    },
+    "41": {
+      "exit": 0,
+      "seconds": 1.0447336109937169,
+      "protection": {
+        "pass_test": true,
+        "mode": 41,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 1
+      },
+      "replay": {
+        "mode": 41,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 1,
+        "replayed_bytes": 4156
+      }
+    },
+    "42": {
+      "exit": 0,
+      "seconds": 1.0495298420428298,
+      "protection": {
+        "pass_test": true,
+        "mode": 42,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 1
+      },
+      "replay": {
+        "mode": 42,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 1,
+        "replayed_bytes": 4156
+      }
+    },
+    "43": {
+      "exit": 0,
+      "seconds": 1.048449800000526,
+      "protection": {
+        "pass_test": true,
+        "mode": 43,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 1
+      },
+      "replay": {
+        "mode": 43,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 1,
+        "replayed_bytes": 4156
+      }
+    },
+    "44": {
+      "exit": 0,
+      "seconds": 1.0492317529860884,
+      "protection": {
+        "pass_test": true,
+        "mode": 44,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 1
+      },
+      "replay": {
+        "mode": 44,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 1,
+        "replayed_bytes": 4156
+      }
+    },
+    "45": {
+      "exit": 0,
+      "seconds": 1.033553097047843,
+      "protection": {
+        "pass_test": true,
+        "mode": 45,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 45,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    },
+    "46": {
+      "exit": 0,
+      "seconds": 1.0447282890090719,
+      "protection": {
+        "pass_test": true,
+        "mode": 46,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 1,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 46,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 1,
+        "replayed_bytes": 4156
+      }
+    },
+    "47": {
+      "exit": 0,
+      "seconds": 1.0393419429892674,
+      "protection": {
+        "pass_test": true,
+        "mode": 47,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 1
+      },
+      "replay": {
+        "mode": 47,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 48
+      }
+    },
+    "49": {
+      "exit": 0,
+      "seconds": 1.0510030610021204,
+      "protection": {
+        "pass_test": true,
+        "mode": 49,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 49,
+        "CRC_good": 0,
+        "CRC_bad": 1,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      }
+    }
+  },
+  "planned_modes": [
+    0,
+    1,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    49
+  ],
+  "case_limit_seconds": 10,
+  "compile_limit_seconds": 10,
+  "clock_ns": 4,
+  "cycle_limit": 100000,
+  "actual_IPv4_ICRC": true,
+  "actual_remote_MR": true,
+  "actual_RQ": true,
+  "actual_registered_owned_replay": true,
+  "bytes_compared_to_authored_input": true,
+  "all_backend_HLS_MAC_CQ_certificate_producers_modeled": true,
+  "actual_generated_new_HLS": false,
+  "full_native_integration": false,
+  "payload_DMA_executed": false,
+  "full_raw_or_native_1MiB_transfer": false,
+  "hardware_verified": false,
+  "LFSR_simulation_only_constant_function_evaluation_at_compile_time": true,
+  "original_vendor_LFSR_and_all_actual_XOR_functions_parameters_unchanged": true,
+  "compile_commands": [
+    [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "tb",
+      "-o",
+      "/dev/shm/as02-segmented-write-rx-front-22mgzml1/normal",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/tb.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_segmented_write_rx_frontend.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_remote_write_message_guard.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_mr_table.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_ipv4_icrc.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/axis_register.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/axis_fifo.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/lfsr_const_masks.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_write_notice_binding_queue.v"
+    ],
+    [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "tb",
+      "-Ptb.COOKIE_INIT=64'hffffffffffffffff",
+      "-o",
+      "/dev/shm/as02-segmented-write-rx-front-22mgzml1/cookie",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/tb.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_segmented_write_rx_frontend.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_remote_write_message_guard.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_mr_table.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_ipv4_icrc.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/axis_register.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/axis_fifo.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/lfsr_const_masks.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_write_notice_binding_queue.v"
+    ],
+    [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "tb",
+      "-Ptb.TAG_INIT=16'hffff",
+      "-o",
+      "/dev/shm/as02-segmented-write-rx-front-22mgzml1/tag",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/tb.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_segmented_write_rx_frontend.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_remote_write_message_guard.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_mr_table.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_ipv4_icrc.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/axis_register.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/axis_fifo.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/lfsr_const_masks.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_write_notice_binding_queue.v"
+    ]
+  ],
+  "source_unchanged": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/33-input.hex": "35ad7f1e31bdc227e2c165e74f19d3fb0ae2857659e2320236be7b891a3d31a2",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/31.log": "84cc0ca097574dfc248debe0dc0a53f389ceb878fd587c232186adcc29bc7491",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/34.log": "6081ab1ea7769294333663d3c5fac73dbe896a3eeb56a93f1eba96c10e663e07",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/37.log": "db6401c74d0b4cfb13bcde2402ff2defcae011285d591d8ba07bb2a8af1f2260",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/14-input.hex": "8b96ab3a04c27589e0945e5f1f54226d5960d70b30763d602c85422f577c206b",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/27-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/38-input.hex": "68572a9f2151841b3d143a2ef42453e20da5f4f2802ca79a689d4babdb9b8cd2",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/44.log": "10bd4735451daeedc2d55b34c2f107e40123b847614c00a399742c2c34099a76",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/45.log": "f8a1b295e1cec7c0a873941dade3e5dabf27328cd420037d594cc8d791760351",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/1-input.hex": "35ad7f1e31bdc227e2c165e74f19d3fb0ae2857659e2320236be7b891a3d31a2",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/6.log": "e7be8784e9b8894dd47305da4e069c8da4751ea020e39a5b7cc3f650f9194a33",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/23.log": "3345e04df12346759acdf5cfbd7d962dda007d3ff8fba9c5126b78b311e9aff0",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/40.log": "2d73dbbf325b31096ef5234f976b313ced8e69ef3a373d7f07290a8f008279bb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/43.log": "3125c1cf334776cba9e9447c8a2e02b060a289fc5c42fa09108ceef8025a61f7",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/42.log": "adf5dcdf2077d63eb33a39cf3723d71fd683451df3e17a97f354862512520afa",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/49-input.hex": "c8322fc77e351be1f69a02c5b5ae8ef1c4109285098c7458e174169d83a5f2bb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/49.log": "b61f22a92336f5acc4c8c645f78b916ed1296a925481a4bc4da034807bb8c6f1",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/10-input.hex": "9cab61655b85dbcde687da8ac7439825732ddc66780e5f3746d629e72042bbac",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/3-input.hex": "85efea252b26e292a0130bfd51b02d553d2a208f8cd2a37bcf1c28545257c81a",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/47.log": "fbb08be47d3278cc24646f82c4f28125bcf8bc9f198d408e7e682bdf055d4ce7",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/41-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/10.log": "ab01f02a94c44f26abc76ca21edf531a75909881b32ae4a04ef0cff7692a3053",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/42-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/38.log": "017a4f359f5138ddd8cae959b9392164191588fcd67059122f95f229ea4ee3c5",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/12.log": "bad0ed2fb341a33585b7f534ca35aeccb5def39386f285c57456d84fa719bb8f",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/0-input.hex": "68572a9f2151841b3d143a2ef42453e20da5f4f2802ca79a689d4babdb9b8cd2",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/cookie-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/15.log": "014f03813dc24c2bb99ff661e2b08d53512fbc0203a824ef764627a80e63a7d8",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/9-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/4.log": "cfe2a0f79f271130d99905b8b7833e1e42e75159c6d7610f2e679091d57c03d6",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/11-input.hex": "b669a952181b0fa56eabfd3891b962ca7481e735ac12636e83decf260b52b20b",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/18.log": "e0698763ac813fbeff28cdb40a8f21c16393efb66c1d0d76642c52e461e2eb9a",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/24.log": "ed69fcf6a0a16813caeded57dc54175247956037ac0e167c9ee34f139ce343f1",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/29.log": "ba4e78ba290877ea405b842fe8f11b19923b9bebc1076c58d3e48916fe868a43",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/31-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_write_notice_binding_queue.v": "d060a8674c6d4eae284f545a251d32417231ba9eadcfce9108c05ecdf0a9cec9",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/1.log": "cb473020fb819f3b4062a5814fcfc3bdf00f81178446b8004b83c28b464f73dc",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/22.log": "c541f8dc8d33fbf8d1cb844e44f89fe8f7adafda05191b0dacaf54dd285ef3a6",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/14.log": "06a10849211ba81858d57debb4d029c0b7ddec52e9b16057c653d12819ea765a",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/8-input.hex": "bf3e8ba46f5755e53383ad64b44130f65ddfe80628a6752ff77b4790627e4437",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/28-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/25-input.hex": "6358b7bdb659744f54e5e0a8f81283f0634d68e60a258b60d12cdef6cb5157d7",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/34-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/30-input.hex": "68572a9f2151841b3d143a2ef42453e20da5f4f2802ca79a689d4babdb9b8cd2",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/24-input.hex": "c46541fea36e8a6b0be6e97eb8fcc2c99a3b29954f8c412a13305be4b744fac6",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/13-input.hex": "1c647b5aab448296618612c3c028522eee679b2c649c00a21989efe15c3b2ad8",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/35.log": "c96ee66053be03c14ab15b0bfb9a7977aff535d2e89a1065b8511e4fbe1f20e6",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/40-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/12-input.hex": "2ed6f3f87df32b30f53459707296f1e6348f279c551f0494377750fa0b271e07",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/39.log": "ff5dcb8e53420384d7c959fc61050765299af54ed126b4b46ec7e3f0167c863f",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/25.log": "5cec8029ad72baf32ae2cfd4c858806444a2bb573a8c461d656ec8ad6d2fb8f6",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/6-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/lfsr_const_masks.v": "7ba699196856ac80edcb79aeebc9ecb6eedacba5a6fa1b47cee1ac30eca1bb4e",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/45-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/18-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/17.log": "1116073e7890f347fec5b5e2869284a7b60890f1fc106f5c6619abd33a7a3fa4",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/11.log": "4ac7262545d7cc6389ef308c8ca93363ca540f1ea329a7b5d0ef278b8387f390",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/7-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/3.log": "f1d2b4880a4af51c11940d00c5e8d7cffc28b8d5a7897c168b5d7326fc54cea5",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/0.log": "7beceafb3e937a51dead26d0e0193ad33ef572f6a7ac75ee98e84c9f54fba3bf",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/32.log": "067f8e79e89ad19a0e50c71368df606493d22fda548a687f045b8f0f278de51c",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/21.log": "b09745a7d23b35606ee2dbc09b46e075e0256e50d186d285d27ee836f76fddde",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/17-input.hex": "4209d17824542a78279e0fd180c4abb07ab67343e296f6b2f22c23d5b994acf0",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/36-input.hex": "35ad7f1e31bdc227e2c165e74f19d3fb0ae2857659e2320236be7b891a3d31a2",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/23-input.hex": "f2391d94d20ef04e6b91fbdc51f5e1b761d5981da8101a08914c01f7317e4238",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_remote_write_message_guard.v": "138a27297c8f6655911f98140ae46a07db2f453a0a3d504c412ab3d199dd22ca",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/5-input.hex": "cfaa83af20272048d34ca9e5203d6f8ea6b05d750d8ec421d1de06e6a56d411d",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/16-input.hex": "ad54451f86c0512210d4aef084bdb83447c81a49211d4c1ea848e5e4f3ab6ed3",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/41.log": "83a2cf6b877d5e847cae35367afb698d48129c043e419a189e62db90337ef3e8",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/tb.v": "9e7a576bf50b80f291808d6ffb5c9f175348060f68cf8aa30c58f99680a87d79",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/21-input.hex": "4936638798884dba7bf3bd5f7626bb531c6395087ca436e53ee32a94d70fb2d3",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/28.log": "1474a4dab723518a4dcc1ec35b96d1c166aae84000d749027be620b3f8c72f14",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/33.log": "24874920a53bd448642891e74b38183c2912a51cfc6bd8fbb7945d171877f88a",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/37-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/43-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/30.log": "3a50687225fdb0771ed5a85de94710a16733f34f3ce62fbabb3a6975a0874454",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/8.log": "1ceccfee82fa0aabda86c3ae104ba09a2001b9aa1a6fd8c35849a10bda249411",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/4-input.hex": "555c76a1c3e17ff790e9bcbdec26f41a1a1c78bd1264c3b3a764686a1f1fad35",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/normal-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/20-input.hex": "73da24fd2aca593c8f82b3c8683229a50803184bc223a9ebc5407260ccc4366a",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/19-input.hex": "10abc6e136df0b80641770460a5a8ee9fa7b4fde337de3b5e625773c6ea20ef2",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/39-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/13.log": "d83fa8940caedab05e02f056886ef901284bc3f71a8114b47ae671b83a120897",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/9.log": "9f3183fcaff03fd9020a116b12bd613dca455ba0e58b534557c7b260aece39aa",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/35-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/47-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/20.log": "d081d6be9b7ce3ad3f327272d0eb7be6c55ef959ca44f670029b00b15f6d8fb6",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/16.log": "f0a98de1be4f5997f9e5388cfb767ce6f52e934cb7a5fd84ec1faa988a80aed6",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/rocev2_segmented_write_rx_frontend.v": "ee215a74b6d2eb0d13426af2e968b857b431a88fe88882b78b210e9b6eaa85f6",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/46-input.hex": "d678edb6e3594400da77651c48e3c4d2ca670c94bfa7806fd28d0b8d54447d31",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/46.log": "c4f7408be9c7a06fc58cc1c9d1f4dd0acbaf1a78815e04456c4d4b4ca6ce2a09",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/22-input.hex": "211baa85de3506a03f9907c2c8293a32f8ec3e63675b997e42e4b3b9411e6cad",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/29-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/32-input.hex": "68572a9f2151841b3d143a2ef42453e20da5f4f2802ca79a689d4babdb9b8cd2",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/tag-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/27.log": "42c7e7c327424d253d604eac47c38fdacb3ebcc4058796bb015a0d4d0ac28f05",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/19.log": "71ee2eb885d872d9b2dabad64929f7d8559ffeaae89ae252826eb5cf94359dd1",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/7.log": "fbc9b48fd61e0d1952175c6dc7877646acbac651ee6843080cbc28ab242bc029",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/44-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/5.log": "5010541702b45e745d5e4599d51e6ed4d274ed10df60d49e2c5608620b521766",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/15-input.hex": "292c5381ed29e9f42d6bc1f3b40531920d10de386146258e58973540c4e5f3dc",
+    "rdma/rnic/build/segmented-write-rx-front-uv559crg/36.log": "8e3cfdbcad0b1cc8c99752116f35008c642ce5b1ebf759a10747d41b3939923e"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-segmented-write-rx-front-22mgzml1/tag": "a1ad7e547d496192b01eb24b69607c335f7e7d0f8d180bf998c224e8f8a696c4",
+    "/dev/shm/as02-segmented-write-rx-front-22mgzml1/cookie": "9c4ebaf63da8a0f7d4e181ebe496dd1c73a4af11350c710cd3990c23d2533cc8",
+    "/dev/shm/as02-segmented-write-rx-front-22mgzml1/normal": "c1ed34fd49f139d33adba352bf03569b3310ddec5dc4fabfe54fbd610c328f17"
+  }
+}

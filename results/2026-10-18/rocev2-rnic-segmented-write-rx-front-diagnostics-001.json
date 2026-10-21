@@ -1,0 +1,140 @@
+{
+  "scope": "Source-bound checked-frame/MR/RQ/replay evidence, not full native proof.\n\nRetain every original failure and exact preimage. The CRC accelerator uses\nunchanged vendor masks/XORs; compare all actual coefficients, not just a\nwire sample. Do not compose this component with separate HLS/native tests\nand call that live native, payload-DMA, Linux,1MiB or physical completion.\n",
+  "audit_passed": true,
+  "overall_goal_complete": false,
+  "hardware_verified": false,
+  "raw_frontend": {
+    "bindings_verified": 124,
+    "report_sha256": "7515f5678bde562be2b56d7c28dfeead477eaec55166f5af46720ffb2279f018",
+    "exact_preimage_resolutions": []
+  },
+  "actual_complete_CRC_masks": {
+    "bindings_verified": 461,
+    "report_sha256": "6de6a932ca77e40e1aaab9d7b903b1ff3419c40c55b78f5f15faaed670a7975a",
+    "exact_preimage_resolutions": [
+      "rdma/rnic/tests/probe_segmented_write_rx_frontend.py"
+    ]
+  },
+  "prior_guard_audit": {
+    "bindings_verified": 10,
+    "report_sha256": "1433151194b066c4e21096bb2dd4729990557744f8bb5652434517ae869a1b59",
+    "exact_preimage_resolutions": []
+  },
+  "prior_guard46_and_old_RQ62": {
+    "bindings_verified": 128,
+    "report_sha256": "d5f5fd14c2d3798ece79254632b8ccb636f32602f8bd677f4ff40fe48632cb66",
+    "exact_preimage_resolutions": []
+  },
+  "failures": {
+    "segmented-write-rx-front-001": {
+      "identity": {
+        "bindings_verified": 31,
+        "report_sha256": "7aad4c25755e40ed88db6e7de58d8480c23d28574737a56eba8c5eb79c9a288f",
+        "exact_preimage_resolutions": [
+          "rdma/rnic/tests/probe_segmented_write_rx_frontend.py"
+        ]
+      },
+      "error": "Command '['vvp', '/dev/shm/as02-segmented-write-rx-front-sqvr7l1s/normal', '+MODE=0', '+IMAGE=/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-u0ygyyqg/0-input.hex', '+COUNT=522']' timed out after 10 seconds",
+      "tests_observed": 1
+    },
+    "segmented-write-rx-front-002": {
+      "identity": {
+        "bindings_verified": 24,
+        "report_sha256": "ab6faab0add0ec7bcdbc6993485cdc670320804e1b0dc0da35f198794c6b4400",
+        "exact_preimage_resolutions": [
+          "rdma/rnic/tests/probe_segmented_write_rx_frontend.py"
+        ]
+      },
+      "error": "Command '['iverilog', '-g2012', '-s', 'tb', '-o', '/dev/shm/as02-segmented-write-rx-front-pju150u9/normal', '/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-yhtr_9qu/tb.v', '/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-yhtr_9qu/rocev2_segmented_write_rx_frontend.v', '/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-yhtr_9qu/rocev2_remote_write_message_guard.v', '/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-yhtr_9qu/rocev2_mr_table.v', '/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-yhtr_9qu/rocev2_ipv4_icrc.v', '/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-yhtr_9qu/axis_register.v', '/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-yhtr_9qu/axis_fifo.v', '/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-yhtr_9qu/lfsr_const_masks.v', '/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-yhtr_9qu/rocev2_write_notice_binding_queue.v']' timed out after 10 seconds",
+      "tests_observed": 0
+    },
+    "segmented-write-rx-front-003": {
+      "identity": {
+        "bindings_verified": 34,
+        "report_sha256": "2dc480c30e18290a250d5221424df296af2fbfb8498e6d708cc79c0b1ca115e3",
+        "exact_preimage_resolutions": [
+          "rdma/rnic/tests/probe_segmented_write_rx_frontend.py"
+        ]
+      },
+      "error": "actual checked-frame assertion failed:/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-0soq5h6y/1.log",
+      "tests_observed": 2
+    },
+    "segmented-write-rx-front-004": {
+      "identity": {
+        "bindings_verified": 90,
+        "report_sha256": "25a0d0465f269abd241923527f47a9047723ab0b07fd1cb86552febfb433cbde",
+        "exact_preimage_resolutions": [
+          "rdma/rnic/tests/probe_segmented_write_rx_frontend.py"
+        ]
+      },
+      "error": "actual checked-frame assertion failed:/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-write-rx-front-4g2ee033/31.log",
+      "tests_observed": 30
+    }
+  },
+  "verified_bindings": 902,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_segmented_write_rx_frontend.py": "fb70514623f72b1b9dff3a8fcb63b905135d1c94874995fa7cf6173ec163523f"
+  },
+  "diagnostic_artifact_sha256": {
+    "rdma/rnic/build/write-rx-front-001-preimages-c365f6ZJ/read-only-observer.log": "2b486bd42b564b5eeb6115ec941efe4ceb3a580bf02e844e64c1a2d9a608f807",
+    "rdma/rnic/build/write-rx-front-001-preimages-c365f6ZJ/lint.log": "3742b1c507960d3990994103bf0c63a80f8b7b3ce3a96b84c20b95accd213f40",
+    "rdma/rnic/build/write-rx-front-003-preimages-ahuKSiDw/read-only-observer.log": "963624e74fef4aa0ba1b0d3b9c5737d5c214cb3578d5af1f975e068c1744d440",
+    "rdma/rnic/build/write-rx-front-003-preimages-ahuKSiDw/rdma/rnic/tests/segmented_write_rx_front_observe.v": "b1814f73e6685eedde3bd46d76802fca8d704b8715487395a9e2f773c8262872",
+    "rdma/rnic/tests/segmented_write_rx_front_observe.v": "3f51c07fe3f95ba074cfaee8c0a44d7d1a2cf6912e0b7302cd2f27ad0f097388"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "new_raw_modes": 47,
+  "all_mask_rows": 448,
+  "all_mask_coefficient_bits": 55296,
+  "maximum_raw_seconds": 2.0769589039846323,
+  "actual_IPv4_ICRC_MR_RQ_registered_owned_replay": true,
+  "all_authorized_frame_bytes_masks_EOF_unchanged": true,
+  "bad_ICRC_no_MR_or_replay": true,
+  "same_RNR_frame_PSN_tag_retried_without_duplicate_replay": true,
+  "downstream_owner_before_replay_and_real_replay_EOF_before_receipt": true,
+  "CRC_vendor_function_and_output_XORs_unchanged": true,
+  "CRC_acceleration_simulation_only": true,
+  "mask_test_runner_exact_preimage": "rdma/rnic/build/write-rx-front-004-preimages-4xDD69LD",
+  "original_failures": [
+    "001 original unmodified LFSR masks spend timeout before clocks; only2 time steps observed.",
+    "002 naive per-net compile-time mask evaluation also hits original10s compile guard; no runtime was proved.",
+    "003 old posedge counter drives READY combinationally and races register-slice sampling; move only stimulus READY to negedge, same full-byte oracle.",
+    "004 old metadata-producer reaction phase is checked before full checker/frame admission. Return raw producer at public MR/reject/fault/owner boundary, retain original five-cycle fault assertion and10s/global cycle gates."
+  ],
+  "producer_boundaries_modeled": [
+    "trusted context and management",
+    "posted RQ admission",
+    "downstream owner consumer",
+    "payload DMA/backend fence",
+    "HLS/core/readback/whole receipt",
+    "actual ACK-MAC/tail",
+    "CQ consumers"
+  ],
+  "full_native_integration": false,
+  "generated_new_HLS": false,
+  "payload_DMA_executed": false,
+  "full_raw_or_native_1MiB_transfer": false,
+  "live_Linux_RTL_coupling": false,
+  "matched_new_software": false,
+  "original4ns_timing_met": false,
+  "inherited_source_check": {
+    "exit": 1,
+    "stdout": "Tcl completeness checks passed: 28 files (not Vivado elaboration).\nLFC source allowlist tests passed: 14 cases; no hardware/Vivado access.\nSource check passed: 122 HDL, 12 constraints, 3 IP generators.\n",
+    "stderr": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v\n",
+    "overall_suite_passed": false,
+    "original_gate_unchanged": true
+  },
+  "remaining": [
+    "All original11 requirements retained; goal incomplete.",
+    "Plug this checked-frame frontend into actual protected shared-native MR/PTE/DMA/HLS/RNR/ACK-MAC/whole-CQ graph; its external proof/owner consumers are not yet actual native producers.",
+    "Generate exact new HLS; qualify full1MiB, matched new software, multiSGE/live Linux references and short real-peer recovery/MSN/congestion.",
+    "Original4ns/default1.08ns full-board fit/setup/hold/CDC/DRC/routing and short physical proof remain. Latest actual HLS15.571ns FAILS.",
+    "No reboot needed; restore all archived RAM caches and prove authenticated exact-thread/active-goal revival before any necessary reboot."
+  ],
+  "hardware_install_load_network_fan_BIOS_flash_reboot_actions": [],
+  "commit_or_push": false
+}

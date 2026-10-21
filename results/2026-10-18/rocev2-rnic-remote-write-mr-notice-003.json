@@ -1,0 +1,710 @@
+{
+  "scope": "Actual remote-WRITE message guard, MR table and late-notice RQ coupling.\n\nReal MR management/checks, full-message/per-packet authorization, guards,\nRQ take, count, CQ ticket/commit/retirement run together in four-state RTL.\nIntegrity/QP metadata, posted RQ admission, backend/HLS/MAC certificates\nand CQ consumers remain explicit models. No payload DMA, native generated\nHLS or Linux/physical execution is claimed by this component test.\n",
+  "pass_test": false,
+  "directory": "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_remote_write_message_guard.v": "138a27297c8f6655911f98140ae46a07db2f453a0a3d504c412ab3d199dd22ca",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/tests/remote_write_mr_notice_tb.v": "f951f70596204592b8fe5d66b9076a2bd02740298f74204a0472dbbe1c8ae665",
+    "rdma/rnic/tests/probe_remote_write_mr_notice.py": "8f2e965d4a4efcdd1024d57c323aa442f91de95fc66b1314b6dfeeb4d6d440b4",
+    "rdma/rnic/fpga/derive_write_notice_binding_queue.py": "d7e43f8871ba5003085c8ff80a36aecbc705d505b5bde8e19517bbe70c95591b",
+    "rdma/rnic/rtl/rocev2_receive_message_queue.v": "fd989c8f471342e0794c0a1bbf661d766d7335be06b2702e12cc196dd4dcd572",
+    "rdma/rnic/fpga/derive_write_notice_queue.py": "92a99549ab37e754f8ef410e3ebc6796174ad9c06fed18adea34719e793f4d1c",
+    "rdma/rnic/tests/probe_write_notice_queue.py": "eef0ed327acd4d28c2023344a87616080551ab9ed13594c40dbf09182be40ca6",
+    "rdma/rnic/tests/probe_receive_message_queue.py": "c3e3e278dd75f3d926feebdbbe3820b7290a85cc410fa8917d3e4e1869d95ff4"
+  },
+  "tests": {
+    "0": {
+      "exit": 0,
+      "seconds": 0.03241510002408177,
+      "summary": {
+        "pass_test": true,
+        "mode": 0,
+        "MR_queries": 4,
+        "grants": 3,
+        "completed_packets": 3,
+        "completed_messages": 1,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "1": {
+      "exit": 0,
+      "seconds": 0.03226487699430436,
+      "summary": {
+        "pass_test": true,
+        "mode": 1,
+        "MR_queries": 4,
+        "grants": 3,
+        "completed_packets": 3,
+        "completed_messages": 1,
+        "cancelled_messages": 0,
+        "RQ_posted": 1,
+        "RQ_taken": 1,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "2": {
+      "exit": 0,
+      "seconds": 0.12303955701645464,
+      "summary": {
+        "pass_test": true,
+        "mode": 2,
+        "MR_queries": 257,
+        "grants": 256,
+        "completed_packets": 256,
+        "completed_messages": 1,
+        "cancelled_messages": 0,
+        "RQ_posted": 1,
+        "RQ_taken": 1,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "3": {
+      "exit": 0,
+      "seconds": 0.03320637595606968,
+      "summary": {
+        "pass_test": true,
+        "mode": 3,
+        "MR_queries": 3,
+        "grants": 2,
+        "completed_packets": 2,
+        "completed_messages": 1,
+        "cancelled_messages": 0,
+        "RQ_posted": 1,
+        "RQ_taken": 1,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "4": {
+      "exit": 0,
+      "seconds": 0.03222381498198956,
+      "summary": {
+        "pass_test": true,
+        "mode": 4,
+        "MR_queries": 5,
+        "grants": 3,
+        "completed_packets": 3,
+        "completed_messages": 1,
+        "cancelled_messages": 0,
+        "RQ_posted": 1,
+        "RQ_taken": 1,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "5": {
+      "exit": 0,
+      "seconds": 0.03164338500937447,
+      "summary": {
+        "pass_test": true,
+        "mode": 5,
+        "MR_queries": 3,
+        "grants": 2,
+        "completed_packets": 2,
+        "completed_messages": 1,
+        "cancelled_messages": 0,
+        "RQ_posted": 1,
+        "RQ_taken": 1,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "6": {
+      "exit": 0,
+      "seconds": 0.029152306029573083,
+      "summary": {
+        "pass_test": true,
+        "mode": 6,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "7": {
+      "exit": 0,
+      "seconds": 0.02960493095451966,
+      "summary": {
+        "pass_test": true,
+        "mode": 7,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "8": {
+      "exit": 0,
+      "seconds": 0.029409591981675476,
+      "summary": {
+        "pass_test": true,
+        "mode": 8,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "9": {
+      "exit": 0,
+      "seconds": 0.03018948098178953,
+      "summary": {
+        "pass_test": true,
+        "mode": 9,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "10": {
+      "exit": 0,
+      "seconds": 0.029270611994434148,
+      "summary": {
+        "pass_test": true,
+        "mode": 10,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "11": {
+      "exit": 0,
+      "seconds": 0.02978546399390325,
+      "summary": {
+        "pass_test": true,
+        "mode": 11,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "12": {
+      "exit": 0,
+      "seconds": 0.02927501202793792,
+      "summary": {
+        "pass_test": true,
+        "mode": 12,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "13": {
+      "exit": 0,
+      "seconds": 0.029319569992367178,
+      "summary": {
+        "pass_test": true,
+        "mode": 13,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "14": {
+      "exit": 0,
+      "seconds": 0.02941252401797101,
+      "summary": {
+        "pass_test": true,
+        "mode": 14,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "15": {
+      "exit": 0,
+      "seconds": 0.029195047973189503,
+      "summary": {
+        "pass_test": true,
+        "mode": 15,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "16": {
+      "exit": 0,
+      "seconds": 0.029787350038532168,
+      "summary": {
+        "pass_test": true,
+        "mode": 16,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "17": {
+      "exit": 0,
+      "seconds": 0.029365594033151865,
+      "summary": {
+        "pass_test": true,
+        "mode": 17,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "18": {
+      "exit": 0,
+      "seconds": 0.029649766976945102,
+      "summary": {
+        "pass_test": true,
+        "mode": 18,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "19": {
+      "exit": 0,
+      "seconds": 0.029575108957942575,
+      "summary": {
+        "pass_test": true,
+        "mode": 19,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "20": {
+      "exit": 0,
+      "seconds": 0.02951546700205654,
+      "summary": {
+        "pass_test": true,
+        "mode": 20,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "21": {
+      "exit": 0,
+      "seconds": 0.02972791704814881,
+      "summary": {
+        "pass_test": true,
+        "mode": 21,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      }
+    },
+    "22": {
+      "exit": 0,
+      "seconds": 0.030078436946496367,
+      "summary": {
+        "pass_test": true,
+        "mode": 22,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 1
+      }
+    },
+    "23": {
+      "exit": 0,
+      "seconds": 0.030377695977222174,
+      "summary": {
+        "pass_test": true,
+        "mode": 23,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 1
+      }
+    },
+    "24": {
+      "exit": 0,
+      "seconds": 0.029877302004024386,
+      "summary": {
+        "pass_test": true,
+        "mode": 24,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 1
+      }
+    },
+    "25": {
+      "exit": 0,
+      "seconds": 0.029847201018128544,
+      "summary": {
+        "pass_test": true,
+        "mode": 25,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 1
+      }
+    },
+    "26": {
+      "exit": 0,
+      "seconds": 0.029879676003474742,
+      "summary": {
+        "pass_test": true,
+        "mode": 26,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 1
+      }
+    },
+    "27": {
+      "exit": 0,
+      "seconds": 0.029710457019973546,
+      "summary": {
+        "pass_test": true,
+        "mode": 27,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 1
+      }
+    },
+    "28": {
+      "exit": 0,
+      "seconds": 0.030117198009975255,
+      "summary": {
+        "pass_test": true,
+        "mode": 28,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 1
+      }
+    },
+    "29": {
+      "exit": 0,
+      "seconds": 0.032548565010074526,
+      "summary": {
+        "pass_test": true,
+        "mode": 29,
+        "MR_queries": 2,
+        "grants": 1,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 1
+      }
+    },
+    "30": {
+      "exit": 0,
+      "seconds": 0.03335555101512,
+      "summary": {
+        "pass_test": true,
+        "mode": 30,
+        "MR_queries": 3,
+        "grants": 2,
+        "completed_packets": 1,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 1
+      }
+    },
+    "31": {
+      "exit": 0,
+      "seconds": 0.030099597992375493,
+      "summary": {
+        "pass_test": true,
+        "mode": 31,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 1,
+        "message_active": 0
+      }
+    },
+    "32": {
+      "exit": 1,
+      "seconds": 0.029753550013992935
+    }
+  },
+  "planned_modes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45
+  ],
+  "case_limit_seconds": 10,
+  "compile_limit_seconds": 10,
+  "original_clock_ns": 4,
+  "cycle_limit": 100000,
+  "MAX_QPS": 8,
+  "four_state": true,
+  "actual_remote_MR_table": true,
+  "actual_late_RQ": true,
+  "MR_response_successes_never_fabricated": true,
+  "negative_MR_transport_corruptions": [
+    31,
+    32,
+    45
+  ],
+  "posted_RQ_admission_modeled": true,
+  "integrity_QP_context_backend_HLS_MAC_CQ_consumers_modeled": true,
+  "payload_DMA_executed": false,
+  "generated_HLS_or_native_integration": false,
+  "live_Linux_RTL_coupling": false,
+  "hardware_verified": false,
+  "compile_commands": [
+    [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "tb",
+      "-o",
+      "/dev/shm/as02-remote-write-mr-notice-br2w84zi/normal",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/tb.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/rocev2_remote_write_message_guard.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/rocev2_mr_table.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/rocev2_write_notice_binding_queue.v"
+    ],
+    [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "tb",
+      "-Ptb.COOKIE_INIT=64'hffffffffffffffff",
+      "-o",
+      "/dev/shm/as02-remote-write-mr-notice-br2w84zi/exhausted",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/tb.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/rocev2_remote_write_message_guard.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/rocev2_mr_table.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/rocev2_write_notice_binding_queue.v"
+    ]
+  ],
+  "normal_compile_seconds": 0.04191966698272154,
+  "exhausted_compile_seconds": 0.040785484947264194,
+  "error_type": "ValueError",
+  "error": "actual MR/notice assertion failed:/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/32.log",
+  "artifact_sha256": {
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/31.log": "03b61a4d1991d6feb8ddad6b0e97ed45a6141b27bf1fdef1c491d01492574c50",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/6.log": "e8d8d7e761ddd09f039f48b275883d257828da6b6044668b2e778e8cb2b655db",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/23.log": "b5b32c6a994962bb8ee7302bbc9334ac0661a054f955228a1d8ea0a40e2a9c80",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/10.log": "1afb80d2bbea76121c75d93bd34a9a72172c02d13121b56b81fe571ba3713595",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/26.log": "7bf427c17403d21926eb55564d338605a287636492b081cc671ee1d862a1bf85",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/12.log": "bb7c88cfe682055197d6737ab94a24bd2f73563f332d0ab68be11d559f000a98",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/15.log": "41d716a8ba214e0b9f2910460fe785f2b2c405f088b5cbe29544002966c66088",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/4.log": "cd0c51550af543f8db02d9e017c7b0648096dc25151c71608b5af1bd1f39ffcf",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/18.log": "2d9ef9abc628532a4988db19fd3da4beb0f3dc69e24c5bf1180769c69e0e2658",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/24.log": "f119daac2bae1ced57b1d915f21ddb6f82f9c09d272e4b69fc32ffd556093caa",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/29.log": "73ec383c3c8c7fccfdd8dbd1fd5e14a649080140be539cb6931f62616e91a511",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/rocev2_write_notice_binding_queue.v": "d060a8674c6d4eae284f545a251d32417231ba9eadcfce9108c05ecdf0a9cec9",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/1.log": "371aae1703d1f77b9c4ee4d8d10b5dd8a1bb9dbba68b5e4b6f7bab9022cabc3b",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/22.log": "4c60c96118eabf933186e22b37583c4cada28984b6c8ce952dcc7c296524037a",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/14.log": "737f7fb220f4a74079fb5c8e05c6acaf79799d92dcd619a8c3a2ee104c121908",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/2.log": "1712c58f06cfd4c0ff4764f70fafceeec4f20a8535a9edf37121ecdd65332340",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/25.log": "12d03647408861abc88c6276c5cbe9281db3aebbc023dcdc7ff33baca7bef335",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/17.log": "fd4c89fa85d0a63eab5bf1c32d81cad4a82a686e771f83b59521faf638fac474",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/11.log": "ee9860d62547c56c9d48e73ee912e2a105d8b41e038b9e1d5fdf4ea9ee5e1b95",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/3.log": "b84d136cd6fdc7d0d171b941e68acfd4fc3a185bc520fe898e97f942a8f72949",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/0.log": "15398c03580c3bc5a385bd209b617ca74df3f13d475016ec708c00ff62b2172f",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/32.log": "29a20c62ede0b5f99a7341c41502eb1a2e2b9e5fd8e600cb20c583506719cd18",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/21.log": "c8651f74a8517f3d959bf9c3b5e23bd8532b2b1c9a1caecd19524aee97302a68",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/rocev2_remote_write_message_guard.v": "138a27297c8f6655911f98140ae46a07db2f453a0a3d504c412ab3d199dd22ca",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/tb.v": "f9b50d821ebcb715023c6179de8c6b73688d05e85a16f187d409d12514390109",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/28.log": "dbb503df5b105d79390f2ac301942a2509addc5f47f159a1fbbdbeea45f11b50",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/30.log": "df13646f53c1d2fd5ba0fa95a6d88a5346659ef4ddb79370c782a862bb1a43e8",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/8.log": "fc33a1d52a5d0dc24562f5ddfa7dc2feefdb8bf375970fbf82e1470a7c5a696d",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/normal-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/exhausted-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/13.log": "06d7259265fb30d8dfc3e222e82878ae07f49c9e213eb747f3d1a196894b3924",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/9.log": "9671042d3316a98386716c95f4b8caead203a4e118f6629158840fefa87bc026",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/20.log": "cbaccbf54f98f2ab055c41041418048f249432b7c1bbd3d4a28ac1d859063ee4",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/16.log": "b15d1a16d386ec4290f6108ad895c907228a20353b29a91d3a32f49cec10d224",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/27.log": "49fab727dc636c23d02e9e75207c3213baeee1916817d4ebfd80f0d120cd543e",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/19.log": "82df9adb8f3b3957379f154122ccc4346b9a185bd628d93de133d6302433f2c6",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/7.log": "658d2f5b428815d9ab0298194f4ea40db07ebf34b89a7240bee1c23f01ef6151",
+    "rdma/rnic/build/remote-write-mr-notice-_lbqhp8g/5.log": "c447bae2a78ea6356088fa46f5a12ec1124c3117ae7b3718dd6e4d0938345124"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-remote-write-mr-notice-br2w84zi/exhausted": "e28a28ac421a7e81a103a87b9d149d70ce0adbaf1a4e2910cfd8c940a0a23438",
+    "/dev/shm/as02-remote-write-mr-notice-br2w84zi/normal": "ef46284ce8b823aa29c70f17c5cda520b1ccfa07abae9525993ff338eb434f5a"
+  }
+}

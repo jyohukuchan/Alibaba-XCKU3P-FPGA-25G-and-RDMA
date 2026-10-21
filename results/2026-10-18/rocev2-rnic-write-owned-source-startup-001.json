@@ -1,0 +1,15 @@
+{
+  "scope": "Original exact-source generator anchor failure before any new source tree was written.",
+  "pass_test": false,
+  "exit_code": 1,
+  "error": "ValueError: QP transport anchor changed: #pragma HLS INTERFACE ap_none port=regRecvFault",
+  "source_sha256": {
+    "rdma/rnic/hls/segmented_write_owned_transport.py": "80319c9fc0b4d1d5b8e196ae4148b64d144f7668893a8d7143bc0b68fd1fa8fd"
+  },
+  "exact_preimage_root": "rdma/rnic/build/write-owned-startup-001-preimages-14oN9Wmy",
+  "diagnosis": "The qualified top contains two real overloads with the same interface pragma and name. Requiring one anchor was incorrect; both real interfaces/forwarding paths need the new typed ports.",
+  "actual_CPP_runtime": false,
+  "generated_HLS": false,
+  "native_integration": false,
+  "hardware_verified": false
+}

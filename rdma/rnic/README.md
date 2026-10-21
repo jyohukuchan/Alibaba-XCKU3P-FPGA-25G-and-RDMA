@@ -16,6 +16,63 @@ passes; this does not relabel the old suite or qualify a hardware release.
 
 ## Latest functional milestone (2026-10-21)
 
+Explicit publication now includes progress154–156 source and successful/
+failed reports. Local/unpushed and old-public-HEAD notes below are history.
+This does not qualify native integration, timing or hardware, and the
+historical TX-padding provenance failure in `scripts/check.sh` remains.
+
+Progress156 implements actual HLS packet completion for segmented WRITE:
+native424 owner -> real parser/payload EOF/ACK-MSN/SAME PSN-table readback
+->456 receipt. Full320 message identity stays across FIRST/MID/LAST; late
+RQ remains a different genuine620 owner, never a fake FIRST/MID owner.
+ALL87 C++ modes retain all65 old names/summaries and add22 typed cases;
+each WRITE mode checks6 messages/284 full tokens through1MiB, unchanged
+every byte/ACK/pad/whole-RQ oracles. Compile83.019s/new4.642/4.732s, all
+original600s/30s/8QP/2000 bounds retained. Real owned Atomic/MR/memory RTL
+and old Immediate compatibility pass26.199s compile/1.016s runtime.
+[1116-binding evidence audit](../../results/2026-10-18/rocev2-rnic-segmented-write-owned-diagnostics-001.json).
+Exact frozen002 RTL generation PASSES497.799s in `native-zero-service-hls-vwnhb_tj`
+under original1500MiB/7200s/4ns/default1.08ns/old+424/456/776 port gates.
+Actual estimate15.571ns FAILS original timing;112990 LUT/140339 FF/279 BRAM18K/
+0 DSP are HLS estimates, not board fit. [Generation audit](../../results/2026-10-18/rocev2-rnic-segmented-write-owned-generated-diagnostics-001.json)
+verifies741 more bindings. No generated-RTL functional/native/physical
+success is inferred, no live job remains. The obsolete001 cohort
+was never executed/synthesized and stays intact. Native real MR/DMA/fence/
+ACK-MAC/CQ and safe partial-message teardown remain; do not convert separate
+tests or modeled parent-drain into completion. All11 remain; local/unpushed.
+
+Progress155 implements a checked-frame segmented-WRITE frontend. Actual
+IPv4/ICRC -> saved356 privileged context/parser -> message/per-packet MR ->
+late-RQ -> real registered owned replay passes47 four-state cases, max2.077s
+(original10s/4ns/100000 cycles). Every authorized8193-byte WRITE/Immediate
+frame byte/mask/EOF is unchanged, no replay occurs without an owner, and
+even correct proof before replay EOF cannot release the message. RQ
+shortage retries the same frame/PSN/tag with no duplicate replay; bad ICRC
+never reaches MR. The1MiB case is FIRST+safe cancellation, NOT full transfer.
+Host-only CRC constant memoization matches ALL448 unchanged-vendor masks /
+55296 coefficients, no original hardware/function/XOR/policy changes.
+[902-binding scope/failure audit](../../results/2026-10-18/rocev2-rnic-segmented-write-rx-front-diagnostics-001.json).
+Raw context references, management, posted admission and downstream owner/
+backend/HLS/MAC/CQ consumers remain models. Actual protected-native MR/PTE/
+DMA/HLS/ACK-MAC/CQ/RNR integration, generated new HLS and matched software
+remain; do not combine separate tests into a native proof. All11 original
+requirements and original timing/physical gates stay open. Local/unpushed.
+
+Progress154 executes the actual remote-WRITE message guard, REQUIRE_EPOCH
+MR table and late-notice RQ together:46 cases through1MiB plus all62 exact
+old queue modes pass (max0.122/0.165s, original4ns/100000cycles/10s/8QP).
+Real full/per-packet MR checks, high key/PD/permission/range/translation,
+RNR same-PSN/offset/tag retry, distinct320/620 owners, whole-byte CQ and
+joint retirement backpressure run. A discovered notice/head-VALID loop is
+fixed in a separate queue variant with a non-authorizing posted-head peek.
+Every old actual gate reconstructs byte-for-byte; failures/preimages stay.
+[Scope/failure audit](../../results/2026-10-18/rocev2-rnic-remote-write-mr-notice-diagnostics-001.json)
+verifies283 bindings. Metadata/trusted QP/initial MSN, posted admission,
+backend/HLS/MAC proof and CQ consumers are models; no payload DMA/new HLS
+generation/native/Linux/physical claim. Full native protection/data/fanout,
+matched software,1MiB native/multiSGE/interop and original timing still
+remain. Latest public HEAD is be16288; these additions are local/unpushed.
+
 Explicit publication includes progress152/153 plus unfinished
 `rtl/rocev2_remote_write_message_guard.v`. The guard has only passed syntax
 compilation; its actual MR-table/late-RQ functional test and native hookup

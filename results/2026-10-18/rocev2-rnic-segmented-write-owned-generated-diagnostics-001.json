@@ -1,0 +1,82 @@
+{
+  "scope": "Actual typed WRITE RTL generation/port/clock provenance, NOT native release.\n\nA successful audit may verify that generation succeeded AND original timing\nfailed. Keep those facts separate; do not call synthesis an on-board or\nfull-native functional pass, and never replace the original clock gates.\n",
+  "audit_passed": true,
+  "overall_goal_complete": false,
+  "actual_generation": {
+    "bindings_verified": 737,
+    "report_sha256": "897ad312a3a71e714c8897af5547fa9ce8e69239e50e8cb24ebcb0ab8cd227bc",
+    "exact_preimage_resolutions": []
+  },
+  "actual_consumer_audit": {
+    "bindings_verified": 4,
+    "report_sha256": "e9dd4bce184023592152aa34e858d44636346ea6a9a75a7dab88a8c59feb3361",
+    "exact_preimage_resolutions": []
+  },
+  "verified_bindings": 741,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_segmented_write_owned_generated.py": "97cdf155c28b49769dc4262b232649fad1ba42db800b70ce524cf52fd9e5b470"
+  },
+  "artifact_sha256": {
+    "rdma/rnic/build/native-zero-service-hls-vwnhb_tj/project/solution1/syn/report/rocev2_native_segmented_write_owned_top_csynth.xml": "573dbe227e2f10706777f034b9ce8e8e521d8ffac27be3ca1b2e94cf0b6d6197",
+    "rdma/rnic/build/native-zero-service-hls-vwnhb_tj/synthesis.log": "48757a806fc3bf77bc703999e13de6b4dbd670f788bd16e2c02656d2e19aaf56"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "actual_new_generated_RTL": true,
+  "old_and_new_generated_ports_verified": {
+    "m_axis_atomic_request_TDATA": 512,
+    "s_axis_atomic_reply_TDATA": 392,
+    "s_axis_atomic_owner_TDATA": 144,
+    "m_axis_atomic_done_TDATA": 224,
+    "s_axis_sq_meta_TDATA": 408,
+    "m_axis_qp_apply_TDATA": 80,
+    "s_axis_rnr_event_TDATA": 56,
+    "s_axis_recv_owner_TDATA": 680,
+    "m_axis_recv_done_TDATA": 752,
+    "s_axis_request_owner_TDATA": 752,
+    "m_axis_request_done_TDATA": 816,
+    "m_axis_mem_read_cmd_TDATA": 96,
+    "m_axis_mem_write_cmd_TDATA": 96,
+    "s_axis_zero_owner_TDATA": 344,
+    "m_axis_zero_done_TDATA": 400,
+    "s_axis_write_owner_TDATA": 424,
+    "m_axis_write_done_TDATA": 456,
+    "m_axis_recv_message_TDATA": 776
+  },
+  "write_fault_output_verified": true,
+  "original_clock_period_ns": 4.0,
+  "original_uncertainty_ns": 1.08,
+  "original_effective_period_ns": 2.92,
+  "estimated_period_ns": 15.571,
+  "original_effective_period_met": false,
+  "timing_status": "FAIL",
+  "resources": {
+    "LUT": "112990",
+    "FF": "140339",
+    "BRAM_18K": "279",
+    "DSP": "0"
+  },
+  "synthesis_seconds": 497.7990308260196,
+  "MAX_QPS": 8,
+  "metadata_entries": 2000,
+  "source_cohort": "rdma/rnic/build/native-segmented-write-owned-transport-002",
+  "generated_directory": "rdma/rnic/build/native-zero-service-hls-vwnhb_tj",
+  "full_native_elaboration": false,
+  "new_generated_RTL_functional_runtime": false,
+  "full_native_payload_DMA_MAC_CQ": false,
+  "live_Linux_RTL_coupling": false,
+  "full_board_implementation": false,
+  "hardware_verified": false,
+  "remaining": [
+    "All11 original requirements retained; goal incomplete.",
+    "Integrate actual generated typed424/456 RTL with checked frontend/sharedMR/PTE/DMA/nonces/fences and ONE dual-owner ACK allocator, true SFD/EOF/tail/CQ fanout; preserve all old/default paths.",
+    "Prove safe partial-message HLS teardown without forged parent drain/reset/unpin, complete native1MiB/matched software/multiSGE/liveLinux/short real-peer recovery/RNR/MSN/congestion.",
+    "Original4ns/default1.08ns timing fails at this exact estimate; full-board fit/setup/hold/CDC/DRC/routing and short supervised physical qualification remain.",
+    "No reboot needed; restore all archived RAM caches and prove authenticated exact-thread/active-goal revival before any necessary reboot."
+  ],
+  "hardware_install_load_network_fan_BIOS_flash_reboot_actions": [],
+  "commit_or_push": false
+}

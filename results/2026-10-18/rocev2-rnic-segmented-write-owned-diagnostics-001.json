@@ -1,0 +1,99 @@
+{
+  "scope": "Actual typed-WRITE HLS consumers and unchanged compatibility provenance.\n\nThis audit proves the C++ consumer/source cohort, not generated RTL, native\nMR/DMA/MAC/CQ/Linux, original timing or physical completion. RTL generation\nis evaluated separately; a live synthesis process is not a successful bitfile.\n",
+  "audit_passed": true,
+  "overall_goal_complete": false,
+  "hardware_verified": false,
+  "actual_HLS_CPP": {
+    "bindings_verified": 407,
+    "report_sha256": "787c21e87b969808437e917de2256c8f79154378e1c0b935961c6300bd42ce2c",
+    "exact_preimage_resolutions": []
+  },
+  "actual_compatibility": {
+    "bindings_verified": 319,
+    "report_sha256": "9112cd6a2e9bc2626f6ff7d81789d599d9fdf0c393b10b206aadbdf1d2842326",
+    "exact_preimage_resolutions": []
+  },
+  "old65": {
+    "bindings_verified": 380,
+    "report_sha256": "45d65fb540ae003e887126d1c3fe7b77ad5f08177b9bc7b4019050987b63524d",
+    "exact_preimage_resolutions": []
+  },
+  "previous_checked_frontend": {
+    "bindings_verified": 9,
+    "report_sha256": "10c2b35e5f8041a92dd5eeec9923a9bc5c6aad347b7d486981baabbe3e460274",
+    "exact_preimage_resolutions": []
+  },
+  "original_startup_failure": {
+    "bindings_verified": 1,
+    "report_sha256": "0c6f1e60d76b8ea0f2cd870437c8a81c7c31fcf754eb2d90f2b222a67af35bad",
+    "exact_preimage_resolutions": [
+      "rdma/rnic/hls/segmented_write_owned_transport.py"
+    ]
+  },
+  "verified_bindings": 1116,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_segmented_write_owned.py": "e74234c6ca708dec24590f387c79ac5ecfdf068209e32ce3168415498236e00a"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "current_modes": 87,
+  "all65_old_modes_and_summaries_retained": true,
+  "new_cases": 22,
+  "compile_seconds": 83.0190490380046,
+  "maximum_mode_seconds": 8.387445141968783,
+  "new_WRITE_mode_seconds": {
+    "write-rx": 4.641899167036172,
+    "write-rx-imm": 4.731448920967523
+  },
+  "actual_payload_EOF_ACK_MSN_and_same_PSN_table": true,
+  "full424_owner_and_actual456_receipt": true,
+  "packets_per_operation": 284,
+  "messages_per_operation": 6,
+  "max_CPP_message_bytes": 1048576,
+  "late_RQ_does_not_consume_or_lose_remote_owner": true,
+  "posted620_and_remote424_not_aliased": true,
+  "no_fixed_delay_global_idle_fake_RQ_or_synthetic_completion": true,
+  "compatibility": {
+    "actual_service_RTL": true,
+    "Atomic_jobs": 9,
+    "Immediate_TX": 8,
+    "Immediate_RX": 8,
+    "compile_seconds": 26.198699278000277,
+    "runtime_seconds": 1.0153328380547464
+  },
+  "source001_superseded_before_CPP": true,
+  "source001_generator_preimage": "rdma/rnic/build/write-owned-cohort001-preimages-MhQdXyFh/rdma/rnic/hls/segmented_write_owned_transport.py",
+  "source_only_late_RQ_fix": "Require both real remote owner and late posted RQ availability before consuming either; source001 was never executed or synthesized.",
+  "modeled_boundaries": [
+    "protected native424 owner input",
+    "peer/connection/input packets",
+    "posted RQ",
+    "memory source/sink"
+  ],
+  "new_generated_RTL_evaluated_by_this_audit": false,
+  "full_native_integration": false,
+  "actual_backend_visibility_or_MAC_CQ": false,
+  "live_Linux_RTL_coupling": false,
+  "original4ns_timing_met": false,
+  "matched_new_software": false,
+  "inherited_source_check": {
+    "exit": 1,
+    "stdout": "Tcl completeness checks passed: 28 files (not Vivado elaboration).\nLFC source allowlist tests passed: 14 cases; no hardware/Vivado access.\nSource check passed: 122 HDL, 12 constraints, 3 IP generators.\n",
+    "stderr": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v\n",
+    "overall_suite_passed": false,
+    "original_gate_unchanged": true
+  },
+  "remaining": [
+    "All original11 requirements remain; this is actual HLS C++ evidence only.",
+    "Generate exact new RTL and verify old/new ports, then connect protected frontend/shared MR/PTE/DMA/nonce/fence, typed424 owner, actual456 HLS receipt, real ACK-MAC/SFD/EOF/tail and whole CQ/remote/RQ retire fanout.",
+    "Use one disjoint ACK tag allocator for WRITE and real RQ paths, retaining both full identities on LAST Immediate; do not use fake620 owners or collide with existing private MAC tags.",
+    "Actual HLS write-message state persists across FIRST/MID; a modeled parent drain/cancel is not proof of safe HLS cancellation or MR unpin. Privileged message teardown still needs real lifetime/drain handling.",
+    "Full native1MiB, matched software, multiSGE/live Linux/ref coupling, short real-peer recovery/RNR/MSN/congestion and original4ns/default1.08ns board/physical qualification remain.",
+    "No reboot needed; restore ALL archived RAM caches and prove authenticated exact-thread/active-goal revival before any necessary reboot."
+  ],
+  "hardware_install_load_network_fan_BIOS_flash_reboot_actions": [],
+  "commit_or_push": false
+}

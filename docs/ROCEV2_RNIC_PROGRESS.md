@@ -32,6 +32,264 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+Publication on explicit user request (2026-10-21) includes progress154–156
+source and successful/failed reports. All325 authored-source and139 report
+hashes matched checkpoint156 before the publication-only documentation
+update; exact prior docs remain in `publication-progress156-SzMtIavH`.
+Local/unpushed and previous-public-HEAD statements below are historical.
+`scripts/check.sh` was rerun and still fails the existing TX-padding
+source/test identity gate. No new functional build or hardware action was
+performed for publication; native integration, timing and all11 original
+requirements remain open. Build products, caches and credentials are excluded.
+
+Progress156: previous155 was PROGRESS (actual raw checker/MR/RQ/replay47
+and exact CRC-mask448). Public HEAD remains be16288;154..156 stay local.
+All eleven requirements remain intact, not a smaller component-only goal.
+
+New `segmented_write_owned_transport.py` derives a distinct complete HLS
+cohort from the qualified WRITE prototype without changing its sources.
+`as02WriteOwner` carries the exact native424 token, separate from620 RQ.
+The real segmented-WRITE parser validates token/RETH/PSN/count/offset/key/
+whole-message identity, retaining the full320 prefix per QP through MID/
+LAST. LAST Immediate additionally binds the real independent RQ's PD/epoch.
+Dedicated fields carry this owner through actual payload and ACK/MSN
+consumers. They do not repurpose an RQ/SQ or fabricate one for FIRST/MID.
+Exact payload KEEP/EOF/count/zero-padding checking now covers ordinary
+segmented WRITE too. Real payload EOF and actual ACK/MSN receipts must
+match the complete token; a new lower-priority query reads the SAME actual
+PSN table after RX/TX/QPI/other updates. Only then is the distinct456-bit
+packet receipt published. No idle duration, fake status or global drain is
+used; actual backend visibility/MAC/CQ still require separate native joins.
+
+[Complete C++001](../results/2026-10-18/rocev2-rnic-segmented-write-owned-hls-001.json)
+PASSES ALL87 exact modes: every65 old mode/summary plus one actual-consumer
+withholding case and21 typed-owner/message/RQ negatives. Compile83.019s;
+ordinary/Immediate WRITE4.642/4.732s; maximum old prior8.388s, original
+600s compile/30s per mode and8QP/2000 geometry unchanged. Each WRITE mode
+executes6 messages/284 packets through1MiB with independent every-full424
+identity/tag/cookie/offset/PSN/MSN Python oracles, alongside unchanged full
+payload/pad/ACK/whole-RQ byte oracles. Missing actual owner blocks execution;
+withholding data EOF, ACK/MSN, SAME-table response or the real join blocks
+receipt. Late missing RQ keeps the remote owner unconsumed. PD/epoch/cookie/
+key/VA/total/PSN/tag mismatch, including valid-shaped changed message and
+independent posted RQ contexts, cannot produce a receipt or command.
+
+[Compatibility001](../results/2026-10-18/rocev2-rnic-segmented-write-owned-compat-001.json)
+PASSES real owned Atomic/MR/memory RTL9 jobs plus unchanged8 Immediate TX
+and8 Immediate RX consumers, compile26.199s/runtime1.016s under original
+600s/30s limits. [Audit001](../results/2026-10-18/rocev2-rnic-segmented-write-owned-diagnostics-001.json)
+verifies1116 current/old/failed bindings and all65 old summaries. Protected
+native owner/peer/connection/RQ/memory boundaries remain models in these
+HLS tests. Do NOT combine separate raw/HLS tests into a native proof.
+
+The strict initial generator anchor failure is retained in
+`rocev2-rnic-write-owned-source-startup-001.json` and exact preimage
+`write-owned-startup-001-preimages-14oN9Wmy`: there are TWO actual top
+overloads/interfaces, not one; both must expose the typed ports. Source
+cohort001 is retained but superseded BEFORE any C++ execution/synthesis.
+Inspection found consuming a remote owner before a late RQ was available
+would lose it across parser retries. Cohort002 requires both available
+before consuming either and is the ONLY current tested/build input. Exact
+cohort001 generator preimage: `write-owned-cohort001-preimages-MhQdXyFh`.
+Neither an old source/binary nor an easier compatibility-only run qualifies002.
+
+The exact-source HLS builder requires all87 actual executions, every prior
+old consumer, full token/byte/ACK/RQ logs and real owned-service compatibility.
+It retains original1500MiB/7200s/4ns/default1.08ns/8QP/2000 and all old port
+gates, adding actual generated424/456 ports and sticky fault-output checks.
+RTL generation finished as ONE job `native-zero-service-hls-vwnhb_tj`, not
+a restart of the old timed-out synthesis. [Generation001](../results/2026-10-18/rocev2-rnic-segmented-write-owned-generated-hls-001.json)
+PASSES497.799s with actual424 owner/456 receipt/776 whole-RQ/sticky fault
+and every old port verified. Frozen inputs and generated files are bound.
+Actual estimates are112990 LUT/140339 FF/279 BRAM18K/0 DSP. The SAME15.571ns
+estimate FAILS original4ns/default1.08ns (effective2.92ns); no relaxed clock
+or timing/board pass. [Generated audit001](../results/2026-10-18/rocev2-rnic-segmented-write-owned-generated-diagnostics-001.json)
+verifies741 further source/RTL/XML/log bindings. Tool/children exited
+naturally; no synthesis remains live. This is generation/port evidence,
+not new generated-RTL functional simulation or full native elaboration.
+
+Before launch, four exact successful old scratch DBs were process/cwd/FD/
+maps-audited twice, persistently compressed/fsynced with complete hash
+manifests, compared to archives and RAM copies, and only then relocated
+with same-path symlinks. No source/generated RTL/failure/log was removed;
+all bytes remain accessible and restorable. Available root at start was
+1715232768B > original1572864000B guard. ALL new and older RAM-backed DBs
+must be restored and every manifest verified before ANY reboot; no reboot
+is needed or authorized here. This archive is storage administration, not
+functional evidence or an HLS completion claim.
+
+Next: actual typed-HLS/generated-RTL integration with protected frontend,
+shared MR/PTE/DMA/physical nonce/fence and ACK-MAC/SFD/EOF/tail/CQ fanout.
+WRITE and real RECV must share ONE collision-free ACK tag allocator, keep
+424 remote and620 RQ records distinct, and on LAST Immediate certify both
+against the SAME actual ACK. No new tag class may collide with Atomic,
+requester, zero-service, RECV or host classes. Existing HLS WRITE-message
+state persists across FIRST/MID; modeled parent-drained/cancel is NOT safe
+HLS teardown or unpin proof. Privileged partial-message teardown needs real
+state/reference handling, not reset or forged idle. Full native1MiB, exact
+matched new software, multiSGE/live Linux refs, short real-peer/RNR/MSN/
+congestion and original-clock board/physical qualification remain mandatory.
+No install/load/program/default/network/fan/BIOS/flash/reboot/Git action.
+BIOS Medium, Atomic_NONE and oneSGE stay. Exact authenticated thread/goal
+reboot revival is still unproved. Progress155 docs are preserved in
+`write-owned-progress155-doc-preimages-r3MsGTeC`.
+
+Progress155: previous154 was PROGRESS (actual message MR/RQ46 + old62,
+non-authorizing peek fix). Public HEAD remains explicitly authorized
+be16288;154/155 are local/uncommitted. All eleven requirements remain.
+
+`rocev2_segmented_write_rx_frontend.v` now implements checked whole-frame
+capture, privileged full356 native-context retention, IPv4/UDP/BTH/peer/
+full-QPN/PSN/header policy and FIRST/MIDDLE/LAST/Immediate length parsing.
+FIRST alone supplies the RETH/key/total; continuations use the existing
+message guard's saved address/offset and exact per-packet MR checks. The
+external query ports are intended for the SAME native MR namespace, not a
+new private validator. Actual owner admission is required before the real
+native-style AXIS replay register sees any beat. The complete unchanged
+frame (including pad/ICRC) is replayed under stalls. Even correct-token
+proof bits cannot advance execution before actual replay EOF. The full
+message/context guard survives packets, shortage retries and CQ/retire.
+No downstream data/fence/HLS/MAC/CQ certificate is invented by the module.
+
+[Raw frontend005](../results/2026-10-18/rocev2-rnic-segmented-write-rx-front-005.json)
+PASSES47 four-state cases, maximum2.077s with original10s compile/runtime,
+4ns clock and100000-cycle overall bound. Uses actual IPv4/ICRC/FIFO,
+frontend, message guard, MR table, late-RQ and registered replay bodies.
+Normal8193, Immediate8193/8192, high64-bit endpoint4097 and continuation
+tests compare every header/payload/pad/ICRC byte/mask/EOF to independent
+authored input and the independent full424 token/MR translation oracle.
+Plain8193 replays8344 wire bytes/3 frames, Immediate8348/3. RQ shortage
+validates4 actual CRC frames but grants/replays only3, with5 genuine MR
+queries; retry keeps the same PSN/offset/private tag and takes only1 RQ.
+Bad actual ICRC yields1 drop/0 queries/0 grants/0 replay. Correct proof
+before replay EOF faults with the message owner still held and0 completions.
+Tag/cookie exhaustion, malformed RETH, high/stale keys, PD/permission/range,
+bad metadata/proof/X values, cancel and mismatched retire checks remain.
+
+The1MiB raw case intentionally proves FIRST extent admission, one4096-byte
+packet and safe drained cancellation, NOT a full1MiB transfer. The original
+metadata-only1MiB46-case proof stays separate. Private tags are not wire
+fields: new raw26 does not pretend a peer can inject a reused private tag;
+that original negative remains in unchanged metadata46. Trusted raw-reference
+context/management, posted-RQ admission, downstream owner consumer and
+backend/data/fence/HLS/MSN/ACK-MAC/CQ producers are MODELS at this boundary.
+This is not the complete protected-native graph, actual payload DMA,
+generated new HLS, live Linux/provider or real physical execution.
+
+Original failed executions are immutable.001 times out before any clock
+(read-only observer:2 time steps) while vendor constant LFSR masks initialize;
+002's naive per-net compile-time masks instead hit the same10s compile
+guard. New simulation-only helper memoizes the original index-independent
+matrix prefix once per exact width and retains the original function and
+all actual XOR/output bodies. No production/vendor source, polynomial,
+port, clock, limit, checksum or frame policy changes.
+[Exact-mask proof001](../results/2026-10-18/rocev2-rnic-CRC-constant-masks-001.json)
+PASSES ALL448 state/data masks for32/64/96/128-bit CRC lanes,55296 complete
+coefficients against the UNCHANGED actual vendor function (max0.059s/case).
+Identical coefficients and XORs preserve four-state inputs, not merely a
+sampled binary CRC model. The raw005 helper matches that exact frozen copy.
+
+003 exposes a fixture READY race: deriving READY from a blocking posedge
+scoreboard counter makes consumer and register sample different values.
+Read-only frozen observer shows the same first beat across that transition;
+only boundary READY driving moves to negedge, SAME whole-byte assertions.
+004 then fails the old five-cycle MR-fault assertion before a full checker
+frame reaches authorization. The raw producer now returns at the SAME
+public MR/reject/fault/owner boundary as the old metadata producer. Full
+CRC/frame latency is not MR response time; original five-cycle fault and
+10s/4ns/100000-cycle assertions remain unchanged. All failures, exact
+fixture preimages, raw logs/inputs and binaries stay retained.
+
+[Audit001](../results/2026-10-18/rocev2-rnic-segmented-write-rx-front-diagnostics-001.json)
+verifies902 current/prior/failed bindings, exact CRC masks, correct producer
+phases and unchanged protected raw sources. The inherited historical
+TX-padding source gate still fails; no overall-green or strict full-native
+elaboration claim. HLS15.571ns still FAILS original4ns/default1.08ns.
+
+Next remains actual insertion into the shared-native protected graph:
+shared MR/PTE/DMA64 refs/nonce/fence, typed HLS ownership and actual MSN
+readback/ACK-MAC/tail/whole-CQ fanout, genuine RNR wire behavior, exact new
+HLS generation and matched software/native runtime. Full1MiB, multiSGE,
+live Linux refs, short real-peer recovery/congestion and original-clock
+board fit/setup/hold/CDC/DRC/routing/short physical proof remain required.
+No HLS starts under the unchanged1500MiB guard (root~1.10GB). No hardware/
+install/load/program/default/network/fan/BIOS/flash/reboot/Git actions.
+No live job remains; no reboot needed. Restore ALL archived RAM caches and
+prove authenticated exact-thread/goal revival before any necessary reboot.
+Progress154 doc preimages: `write-rx-front-progress154-doc-preimages-vAD2RNk0`.
+
+Progress154: previous153 was PROGRESS (new separate WRITE HLS65/RQ62).
+The subsequent explicit publication is verified main/origin/main/remote
+`be1628899bf5bb6d13a03c0528ff74c2c0d1acfc`; no further automatic Git action
+is authorized. This turn executes the previously syntax-only remote-WRITE
+guard with an actual REQUIRE_EPOCH MR table and real late-notice queue.
+All eleven requirements remain incomplete; this is not a native release.
+
+[Connected MR/RQ004](../results/2026-10-18/rocev2-rnic-remote-write-mr-notice-004.json)
+PASSES46 four-state cases and ALL62 exact old queue modes on the new
+variant. Original4ns/100000cycles/10s/8QP limits remain. Normal/exhausted
+compiles0.042/0.039s; maximum new0.122s/old0.165s. Genuine high-generation
+MR keys, trusted PD, remote-write permission, whole and per-packet extents,
+64-bit offsets/translations and the inclusive top-of-address-space case
+are checked against independent request/token oracles. One1MiB message
+performs257 actual MR queries and256 granted/completed packet lifetimes.
+Missing permission, wrong PD, stale/high keys, unregistered slot and a
+whole-range overflow that still fits FIRST produce actual MR denials,
+never substituted success responses. Unknown/tag/child-offset corruption,
+bad sequencing, exact whole token, missing data/fence/HLS/MAC proofs,
+stale cancellation and mismatched retire owners retain guards/fail closed.
+
+LAST Immediate alone takes a distinct genuine posted620-bit RQ; zero/one/
+17-byte notification capacity is not the remote DMA target or whole CQ
+length. An absent RQ returns modeled error38 with no new grant, leaves
+PSN/offset unchanged and retries the SAME packet/tag after a real queue
+post. Actual MR invalidation cannot pass while the full remote320-bit
+owner is held. Packet grant alone does not advance execution. Correctly
+matched terminal/CQ/remote-retire fanout retains both owners under
+backpressure; privileged cancellation cannot release an in-flight packet.
+The actual guard and MR checks run, but metadata/integrity/trusted QP and
+initial MSN, posted-RQ admission, backend data/fence, HLS/core/whole, actual
+ACK-MAC/tail and CQ consumers are EXPLICIT MODELS in this component test.
+No payload DMA, generated new HLS/native graph or live Linux executes.
+
+Preserved failures:001's fixture missed the real MR management transfer
+after reset and waited on an already unconsumed response. Read-only
+observer proves no MR lookup or packet grant; only clock-edge transfer
+sampling was corrected.002's ordinary WRITE passes, but actual Immediate
+coupling times out at10s: notice VALID depends on protocol-gated RQ head
+VALID, which depends on this same notice's combinational protocol fault.
+Read-only frozen-DUT observer stops at4 queries/2 grants/111 time steps;
+Verilator diagnoses the exact loop. New separate
+`derive_write_notice_binding_queue.py` adds a posted-head observation port
+independent of that same combinational fault. The peek NEVER authorizes a
+take, MR or completion. Actual head/notice/protocol/CQ/retirement gates are
+not weakened. Removing only the new module name/ports/peek assignments
+reconstructs the qualified parent BYTE FOR BYTE; all62 old cases rerun.
+003's negative offset vector injected FIRST query2 while its oracle expected
+MIDDLE query3; only the injection phase was corrected, same fault/retention
+assertions. All exact fixture/runner preimages and failed reports remain.
+
+[Audit001](../results/2026-10-18/rocev2-rnic-remote-write-mr-notice-diagnostics-001.json)
+verifies283 actual/current/prior/failed bindings plus read-only diagnostics
+and unchanged protected sources. Its first reconstruction removal literal
+left one inserted blank line; the failed auditor/preimage is retained in
+`rocev2-rnic-remote-write-audit-startup-001.json`. Only that removal literal
+was corrected, retaining exact-byte comparison (no whitespace normalization).
+The inherited TX-padding provenance check still fails. HLS15.571ns still
+FAILS original4ns/default1.08ns; no overall suite/timing/physical pass.
+
+Next is actual protected opcode06/07/08/09 continuation/RNR admission,
+full-message/per-packet shared MR refs/PTE/DMA64, generated new HLS,
+genuine backend/ACK-MAC/whole-CQ fanout and exact matched software/native
+runtime. Native1MiB, multiSGE, real-peer recovery/MSN/congestion, live Linux
+refs and original-clock board fit/setup/hold/CDC/DRC/routing/short physical
+proof stay open. No HLS synthesis starts below the original1500MiB root
+guard (currently about1.11GB). No hardware/default/install/load/program/
+network/fan/BIOS/flash/reboot/Git action; BIOS Medium, Atomic_NONE and oneSGE
+remain. No live job or reboot needed. Restore ALL archived RAM caches and
+prove authenticated exact-thread/goal revival before any necessary reboot.
+Pre-turn publication docs: `remote-write-progress153-doc-preimages-HFkrIeg0`.
+
 Publication on explicit user request (2026-10-21): publish the current
 progress152/153 source and both successful and failed reports. Also include
 the unfinished `rtl/rocev2_remote_write_message_guard.v`: its corrected

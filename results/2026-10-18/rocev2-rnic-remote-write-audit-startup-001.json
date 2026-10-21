@@ -1,0 +1,14 @@
+{
+  "scope": "Original exact-source audit reconstruction failure; not an RTL execution failure.",
+  "pass_test": false,
+  "exit_code": 1,
+  "error": "ValueError: any old actual protection/take/proof/CQ/retire gate changed",
+  "source_sha256": {
+    "rdma/rnic/tests/audit_remote_write_mr_notice.py": "c437183ad628cb689a4637555cfe74d79775ad64db508a7bbdfdd3139e388523"
+  },
+  "exact_preimage_root": "rdma/rnic/build/remote-write-audit-001-preimages-jlR9biaF",
+  "read_only_reconstruction_diff": "The removal literal left exactly one blank line before assign held_context=owner;assign active=held;. The production queue and its actual gates were not changed.",
+  "correction_scope": "Correct only the auditor removal literal to include that inserted newline; retain exact byte-for-byte parent reconstruction, not whitespace normalization or a weakened comparison.",
+  "RTL_or_fixture_changed": false,
+  "hardware_verified": false
+}

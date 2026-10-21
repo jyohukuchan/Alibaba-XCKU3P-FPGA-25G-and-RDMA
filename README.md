@@ -28,6 +28,51 @@ inbound SEND/WRITE target, READ responder, native InfiniBand or production-relia
 
 ### RNIC development snapshot (2026-10-21)
 
+Publication update: this snapshot includes progress154–156 source and both
+successful and failed reports. References below to local/unpushed work or
+the previous public HEAD are historical. Native integration and original
+timing qualification remain incomplete; this is not a hardware release.
+`scripts/check.sh` still rejects the historical TX-padding source/test
+identity mismatch; no overall-green claim is made.
+
+Progress156 adds an actual HLS WRITE-packet execution path: protected424
+identity -> actual parser/payload EOF/ACK-MSN/SAME PSN-table readback ->
+distinct456 receipt. ALL87 C++ modes pass, every65 old mode/summary retained;
+both WRITE modes check6 messages/284 full tokens through1MiB with unchanged
+complete data/ACK/whole-RQ oracles (new4.642/4.732s, original30s bounds).
+Actual owned Atomic service RTL and prior Immediate consumers also pass.
+[1116-binding scope audit](results/2026-10-18/rocev2-rnic-segmented-write-owned-diagnostics-001.json).
+Exact new RTL generation PASSES497.799s under original4ns/default1.08ns/
+8QP/2000 and1500MiB/7200s gates; all old/new424/456/776 ports verify.
+The15.571ns estimate still FAILS the original timing requirement.
+[Generated-RTL provenance](results/2026-10-18/rocev2-rnic-segmented-write-owned-generated-diagnostics-001.json).
+This is NOT native/physical success. Typed424 is never a fake posted620 RQ. Actual backend/
+MAC/CQ coupling and safe message teardown still remain. Local/unpushed.
+
+Progress155 adds the checked-frame WRITE frontend: actual IPv4/ICRC ->
+parsed full-context MR authorization -> late-RQ -> registered owned replay.
+ALL47 component cases pass, max2.077s under original10s/4ns/100000 cycles.
+8193-byte WRITE/Immediate replay every input byte unchanged; RQ shortage
+retries the same frame without duplicate replay. Bad ICRC never reaches MR;
+an owner is required before replay and replay EOF before an execution proof.
+Backend/HLS/MAC/CQ consumers remain MODELS; this is not full-native/DMA/
+Linux/physical proof. The1MiB case is FIRST+safe cancellation, NOT full1MiB.
+Host-only CRC constant memoization matches every448 original vendor mask /
+55296 coefficients; hardware sources/gates stay unchanged.
+[902-binding scope/failure audit](results/2026-10-18/rocev2-rnic-segmented-write-rx-front-diagnostics-001.json).
+New work remains local/unpushed; original timing qualification stays open.
+
+Progress154 connects the segmented-WRITE guard to the actual MR table and
+late-notice RQ in46 four-state component cases (max0.122s), plus all62 old
+queue modes on the new queue variant (max0.165s). Full-message/per-packet
+checks, up to1MiB, distinct remote/RQ owners, late-RNR same-PSN/offset retry
+and joint CQ retirement pass. An actual notice/head-VALID combinational
+loop was fixed with a non-authorizing posted-head peek; every original
+take/protocol/proof/CQ/retirement gate is byte-identical. Backend/HLS/MAC/
+CQ and posted-admission producers remain models; this is NOT native or
+physical proof. [Scope/failure audit](results/2026-10-18/rocev2-rnic-remote-write-mr-notice-diagnostics-001.json).
+This addition is local/unpushed; prior publication/history follows.
+
 This publication includes progress152/153 source and successful/failed
 reports, plus the unfinished `rocev2_remote_write_message_guard` leaf.
 That leaf passes syntax compilation only: its actual MR/RQ functional

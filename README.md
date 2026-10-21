@@ -172,6 +172,21 @@ verifies626 new successful bindings and preserves failed fixtures/preimages.
 This is not installed/live Linux/RTL or physical proof. Single SGE and4KiB
 Immediate/RQ remain; native1MiB READ and original timing remain unqualified.
 
+A further separate RNC32767/CQC127 candidate now PASSES actual8193-byte
+segmented SEND/WRITE Immediate and ALL30 prior native cases:32 total, each
+4.125..6.430s. Immediate appears only on LAST; real SQ/MR/PTE/generated HLS/
+DMA/shared nonce/status/board-MAC-FCS-SFD-CDC/CQ and all source/sentinel bytes
+are checked. Physical host/root/peer/PHY/PTP remain MODELS; native1MiB is not
+tested. Separate matched source-only kernel/profile6/provider builds and
+passes134 standard-C callback cases,80 untouched native-SQ/CQ snapshot cases
+and all7 provider identities with modeled Linux/syscall boundaries.
+[Current audit and failures](results/2026-10-18/rocev2-rnic-segmented-immediate-native-software-diagnostics-001.json)
+verify2586 fresh bindings. This is not live Linux/RTL or physical/timing
+qualification. Source/C++/API models allow1MiB; incoming RQ stays4KiB/single
+SGE, old/default/profile5 stay unchanged. The earlier
+[source/component audit](results/2026-10-18/rocev2-rnic-segmented-immediate-diagnostics-001.json)
+is retained separately, not relabeled as a native-runtime result.
+
 This is a **work-in-progress source snapshot**, separate from the earlier
 hardware-tested READ/WRITE images. Its latest HLS estimate13.885ns misses the original
 4ns target; no new FPGA image, installation or hardware claim is published.

@@ -16,7 +16,53 @@ passes; this does not relabel the old suite or qualify a hardware release.
 
 ## Latest functional milestone (2026-10-21)
 
-Progress140: NEW separate exact16383/63/SQC13/RQC15/stride128 software profile5
+Progress143: actual generated-HLS complete-native Immediate001 PASSES ALL32:
+new8193 SEND/WRITE Immediate and ALL30 old cases. Compile633.005s; all cases
+4.125..6.430s/original1200s build/30s runtime. Per new WR:one actual whole MR
+query/grant,3 source commands/statuses/common physical nonce translations,
+3 expectations/MAC-FCS-SFD-CDC frames,2 advances,one HLS receipt/CQ;6 paged
+descriptors/68 read TLPs, no data writes/fences. Every wire/source/sentinel
+byte and full owner match, Immediate LAST-only, final real MAC receipt held
+to prevent early CQ. Small SEND_IMM also now retains source lease/real MAC.
+Physical host/root/peer/PHY/PTP MODELS; ordinary READ MAC-pin model retained.
+New explicit source-only32767/127/profile6 kernel/provider cohort built against
+real running headers10.242s. New WR adapter real-header build5.138s and ASan/
+UBSan0.012s:48 large Immediate/22 compatibility/22 negatives, every old case
+retained. Standard callback C ALL134 PASS (44 new/all90 old), max0.015s;
+untouched native SQ/CQ snapshots ALL80 PASS (16 pairs/four mutations each),
+all128 posted bytes and actual C refs/ACK retire match. Real libibverbs/
+private provider ALL7 identities PASS (all6 old), full Immediate/SGE/MR/bad-WR
+serialization with fake-fd/WC models.2586 new/103 failed historical/1665 old
+native bindings verified. Strict preflight CQ-count and nested test-main/
+indentation failures/preimages preserved; no assertion/gate/limit relaxed.
+No live Linux/RTL/pins/page-table coupling, native1MiB or physical/timing
+qualification; HLS13.885ns still fails4ns/default1.08ns. RQ4096/single SGE/
+old/default/profile5/Atomic_NONE unchanged. No install/load/hardware/Git.
+All11 scope remains; next coarse work: large inbound receive/Immediate and
+multi-SGE, plus missing live API/recovery/original timing/physical proof.
+[Audit](../../results/2026-10-18/rocev2-rnic-segmented-immediate-native-software-diagnostics-001.json).
+
+Progress142 (historical): NEW separate32767/127 source candidate adds true segmented
+SEND/WRITE Immediate<=1MiB over the same actual READ-capable HLS and native
+graph. Actual C++ ALL21 old/new modes PASS; each Immediate op6 WRs/284 packets/
+13 stored first/middle/LAST replays, exact LAST-only Immediate/whole receipt,
+max5.469s/original30s. All old11 modes and Atomic RTL-service/Immediate TX/RX
+compatibility remain. New HLS generation PASS374.863s,81375 LUT/99264 FF/
+209 BRAM18K; original4ns/default1.08ns/8QP/2000 retained, estimate13.885ns FAIL.
+Full-native elaboration PASS3.510s with exact14 coordinated leaves/new HLS,
+strict width/shared-domain/module-count/both-global-drains0 gates. Actual
+codec26 methods (all20 old), wire17 cases, source/unchanged-child19, real
+MR/HLS-SQ61, register/CQ27 and padding/ICRC9 methods PASS.4513 fresh bindings
+and648 historical bindings/preimages audited. Explicit HLS/RX/ACK/backend/
+MAC-pin/CQ boundaries remain modeled; HLS C++ snapshots through ICRC are
+separate executions. No native Immediate payload/CQ runtime, matching Linux/
+provider, physical or original timing pass; receive4096/single SGE/defaults/
+profile5 stay. All11 scope retained; no program/load/network/fan/BIOS/reboot/
+Git change. Next coarse work: actual new generated-HLS native Immediate
+runtime with all30 old regressions, then matching software source/lifetimes.
+[Audit](../../results/2026-10-18/rocev2-rnic-segmented-immediate-diagnostics-001.json).
+
+Progress140 (historical): NEW separate exact16383/63/SQC13/RQC15/stride128 software profile5
 kernel/provider source cohort. Running-header full kernel build001 PASS9.989s;
 actual READ WR adapter build PASS4.482s and ASan/UBSan0.012s, old54 positive/
 14 negative plus new24 large READ/15 compatibility positives/14 negatives.

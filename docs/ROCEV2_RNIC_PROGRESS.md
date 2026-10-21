@@ -32,6 +32,87 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+Publication checkpoint (2026-10-21, after progress143): the user explicitly
+requested this commit/push of progress142..143 source, documentation and
+public success/failure reports. Rechecked all241 checkpoint source hashes,
+56 report hashes and2586 current native/software evidence bindings; syntax
+checks passed for23 new Python sources and25 JSON reports. The original
+`scripts/check.sh` still FAILS at the historical transport-RX record versus
+`rdma/rtl/rocev2_tx_padding.v` SHA mismatch; neither record nor gate is
+changed. The13.885ns HLS estimate still fails the original4ns target; no
+physical or live Linux/RTL qualification is claimed. This publication is
+PROGRESS, not completion of the11 requirements. No hardware changes, new
+long builds, reboot or authorization for future automatic pushes.
+
+Progress143: previous142 was PROGRESS (actual large-Immediate C++/HLS and
+full-native wiring/components). Now genuine native Immediate001 PASSES ALL32
+cases, including new8193-byte SEND/WRITE Immediate and ALL30 old cases. Fresh
+compile633.005s; cases4.125..6.430s, new6.229/6.429s, unchanged1200s/30s.
+Actual coherent SQ/full-range MR/PTE/generated HLS/protected RX/MSN/source
+child DMA/shared physical nonce-status/wire/replay/board FIFO-FCS-SFD-CDC-MAC/
+whole CQ complete. Each new op3 fragments,3 statuses/nonce translations/MAC
+frames,2 advances,one whole receipt/CQ,6 paged read descriptors/68 read TLPs,
+no data writes/fences. Full independent packet/128-record/748-owner and
+16384 source/sentinel-byte checks retain final actual MAC receipt withholding.
+Old small SEND_IMM now uses actual retained source and actual board MAC;
+ordinary READ still has its explicit old MAC-pin model. Physical host/root/
+peer/PHY/PTP MODELS, native1MiB not tested. No output normalization or old
+binary treated as new source proof. All1862 native bindings match.
+Separate exact32767/127/SQC13/RQC15/stride128 software profile6 implements new
+WR adapter/SQ encode-decode-replay/CQ/full MR/PD/range/ref/failure lifetimes;
+all old/default/profile5 selectors stay. Full real-header modules PASS10.242s;
+adapter real-header5.138s/ASan-UBSan0.012s,48 new large/22 compatibility/22
+negative, every old assertion kept. Actual standard C callbacks ALL134 PASS
+(44 new/all90 old), compile7.723s/max0.015s. Unedited native SQ/CQ integration
+ALL80 PASS (all14 old+two new pairs/four mutations each), compile6.969s/max
+0.015s; every128 posted byte and actual C MR/CQ ACK release match. Actual
+libibverbs/private provider ALL7 FW identities PASS (all6 old), max0.018s,
+4097/8193/1MiB Immediate chains/full values/keys/SGEs/exact second bad-WR;
+fake-fd/WC replies modeled. Total2586 new successful/103 historical and1665
+old native bindings audited. Failed strict fixture CQ-count startup and
+post-header-build nested-main/indentation fixture compile remain with exact
+preimages. Only require all four independently expected CQ ABI reads and
+rename the frozen prior test main/split counter statement; no assertion,
+sanitizer,-Werror,clock,drain or timeout relaxed. No actual live Linux/RTL/
+provider/device/pins/page-table coupling; no install/load/program/hardware/
+network/fans/BIOS/flash/reboot/Git. RQ4096/single SGE/Atomic_NONE unchanged.
+HLS13.885ns fails original4ns/default1.08ns/full-board gates; all11 original
+requirements remain. Next coarse features: large inbound receive/Immediate,
+multi-SGE, then missing live API/recovery/congestion/interop/physical/timing.
+[Audit](../results/2026-10-18/rocev2-rnic-segmented-immediate-native-software-diagnostics-001.json).
+
+Progress142 (historical): previous explicit publication141 was PROGRESS (remote/main
+verified at e22ff35; no future automatic push). Add new coarse feature,
+segmented SEND/WRITE Immediate<=1MiB, separate exact RNC32767/CQC127 source.
+Same748-bit owner, real FIRST/MIDDLE/LAST replay/ACK/pointer/pool/timer/PSN
+consumers, Immediate only on LAST, one whole-WR receipt. Actual HLS C++ ALL21
+old/new modes PASS (all11 old),6 WRs/284 packets/13 stored replays per new op,
+max5.469s; every original30s bound retained. Compatibility real Atomic RTL
+service and Immediate TX/RX PASS. New actual HLS generation PASS374.863s,
+81375 LUT/99264 FF/209 BRAM18K/0 DSP, estimate13.885ns still FAILS original
+4ns/default1.08ns/8QP/2000. Complete-native elaboration PASS3.510s,14 explicit
+leaves and new exact HLS selection, strict ports/counts/shared domains/drains.
+Actual C/UBSan26 methods (all20 old); wire8 methods/17 cases max29.423s;
+source10/19 with unchanged bounded child; real MR/HLS-SQ25/61; exact register/
+CQ27 cases/20 complete publications; padding/ICRC9 methods max19.586s PASS.
+4513 current and648 historical bindings verified, exact failure preimages
+preserved. Initial codec macro/helper, source report-container, MR permission
+oracle and strict startup-anchor failures remain separate, never relabeled.
+The MR correction uses an independently stale-generation key and adds a
+positive read-only source case, retaining READ local-write checks. No gate,
+assertion, sanitizer, timing or timeout relaxed. All HLS/RX/ACK/backend/CQ/
+MAC-pin/control models and separate HLS-C++/ICRC snapshots remain explicit.
+Actual native Immediate payload/DMA/common-nonce/MAC/CQ runtime, matching
+kernel/provider and Linux/physical/original full-board timing remain open.
+RQ4096/single SGE/old/default/profile5/IB_ATOMIC_NONE unchanged. All11 original
+requirements retained. Two inactive HLS scratch DBs losslessly relocated to
+RAM with persistent archives/hash manifests, local-only administration audit;
+restore before reboot, exact authenticated thread/goal restoration unproved.
+No reboot needed or performed, no hardware/default/module/network/fan/BIOS/
+flash/Git change. Next: genuine native Immediate with all30 existing cases,
+then exact new software source/lifetimes; large RX/multi-SGE/recovery remain.
+[Audit](../results/2026-10-18/rocev2-rnic-segmented-immediate-diagnostics-001.json).
+
 Publication checkpoint (2026-10-21): the user explicitly requested another
 current-progress commit/push. This publishes progress136..140 source and
 public success/failure reports, including native8193-byte READ/all29 old
@@ -44,7 +125,7 @@ still fails at the historical transport-RX/TX-padding SHA mismatch; the
 original record/check remain unchanged. No new hardware tests or long builds
 are required for this publication.
 
-Progress140: new explicit matched READ software profile5 source implemented,
+Progress140 (historical): new explicit matched READ software profile5 source implemented,
 not merely serialization. Exact16383/63/SQC13/RQC15/128-byte geometry/mixed-
 tuple refusal; old0/1/3/4/default paths remain. Actual new Linux READ WR adapter
 selects full-range codec only for READ>4096, delegates every old operation;

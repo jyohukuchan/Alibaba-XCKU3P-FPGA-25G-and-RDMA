@@ -1,0 +1,178 @@
+{
+  "scope": "Current exact-source audit: genuine complete-native8193 Immediate/all30 regressions and separately matched profile6 software source; not live Linux/RTL or physical/timing qualification",
+  "audit_passed": true,
+  "overall_goal_complete": false,
+  "hardware_verified": false,
+  "new_profile": {
+    "RNC": 32767,
+    "CQC": 127,
+    "SQC": 13,
+    "RQC": 15,
+    "descriptor_bytes": 128,
+    "software_profile": 6,
+    "source_READ_WRITE_SEND_Immediate_max_bytes": 1048576,
+    "native_Immediate_bytes_tested": 8193,
+    "native1MiB_tested": false,
+    "receive_buffers_max_bytes": 4096,
+    "single_SGE": true,
+    "old_default_and_profile5_unchanged": true,
+    "IB_ATOMIC_NONE": true
+  },
+  "complete_native": {
+    "pass": true,
+    "all_cases": 32,
+    "all30_prior_cases_retained": true,
+    "compile_seconds": 633.0045393269975,
+    "unchanged_compile_limit_seconds": 1200,
+    "minimum_case_seconds": 4.12514481501421,
+    "maximum_case_seconds": 6.429196604003664,
+    "unchanged_case_limit_seconds": 30,
+    "new_cases": [
+      "LARGE_SEND_IMM",
+      "LARGE_WRITE_IMM"
+    ],
+    "new_case_seconds": [
+      6.228738981997594,
+      6.429127939976752
+    ],
+    "actual_paths": "Coherent SQ fetch, full-range real MR/PTE, generated HLS, source child DMA, shared nonreusing physical nonce/status, wire/lifetime/replay/protected RX/MSN, actual board FIFO-FCS-SFD-CDC-MAC and whole-owner CQ",
+    "each_new_case": {
+      "bytes": 8193,
+      "whole_MR_query": 1,
+      "whole_MR_response": 1,
+      "source_commands": 3,
+      "per_packet_expectations": 3,
+      "packet_advances": 2,
+      "whole_HLS_receipt": 1,
+      "paged_read_descriptors": 6,
+      "read_TLPs": 68,
+      "write_TLPs": 0,
+      "fences": 0,
+      "actual_SFD": 3,
+      "CQ_commits": 1,
+      "shared_nonce_translations": 3,
+      "PSN_first": 16777214,
+      "PSN_next": 1,
+      "Immediate_only_LAST": true,
+      "full128_and_full748_owner_and_all16384_source_sentinel_bytes_checked": true,
+      "final_genuine_MAC_receipt_withheld_no_early_CQ": true
+    },
+    "small_SEND_IMM_regression_now_actual_retained_source_and_real_board_MAC": true,
+    "physical_host_root_peer_PHY_PTP_modeled": true,
+    "ordinary_READ_MAC_pin_model_retained": true,
+    "no_forced_owner_MR_status_CQ_or_retirement": true
+  },
+  "matched_software": {
+    "source_only": true,
+    "installed_or_loaded": false,
+    "real_running_header_full_module_build_seconds": 10.242280039004982,
+    "real_header_WR_adapter_build_seconds": 5.138383893005084,
+    "adapter_ASan_UBSan_seconds": 0.012075934966560453,
+    "new_adapter_cases": {
+      "large_Immediate": 48,
+      "other_positive": 22,
+      "negative": 22,
+      "base_only_SEND_WITH_IMM_ASan_guarded": true,
+      "all_old_READ_WRITE_SEND_Atomic_zero_assertions_retained": true
+    },
+    "standard_callbacks": {
+      "cases": 134,
+      "all90_previous_retained": true,
+      "new_Immediate": 44,
+      "compile_seconds": 7.7227555949939415,
+      "maximum_case_seconds": 0.01461764395935461,
+      "actual_WR_SQ_MR_CQ_and_failure_lifetimes": true,
+      "exact_tuple_mixed_refusal_and_full_ranges_refs_replay_CQ_backpressure_ambiguous_producer": true,
+      "Linux_MMIO_pins_coherent_DMA_hardware_completion_boundaries_modeled": true
+    },
+    "provider": {
+      "profiles": 7,
+      "all6_old_retained": true,
+      "compile_seconds": 2.1057834120001644,
+      "maximum_case_seconds": 0.017200285976286978,
+      "WRITE_SEND_Immediate_lengths": [
+        4097,
+        8193,
+        1048576
+      ],
+      "network_order_per_WR_Immediate": true,
+      "exact_second_bad_WR": true,
+      "distinct_registered_MR_handle_keys": true,
+      "actual_installed_libibverbs_and_private_provider_C": true,
+      "fake_fd_syscalls_and_WC_replies_modeled": true
+    },
+    "native_snapshot_C_integration": {
+      "cases": 80,
+      "operation_pairs": 16,
+      "all14_prior_pairs_retained": true,
+      "new_8193_Immediate_pairs": 2,
+      "four_negative_mutations_each": true,
+      "compile_seconds": 6.968923665001057,
+      "maximum_case_seconds": 0.014905666001141071,
+      "unedited_native_SQ_CQ": true,
+      "every128_posted_byte_identical": true,
+      "actual_C_CQ_ACK_MR_reference_retirement": true,
+      "separate_executions_not_live_Linux_RTL_page_table_coupling": true
+    },
+    "native_1MiB_or_real_API_device_execution_qualified": false
+  },
+  "successful_bindings_verified": 2586,
+  "successful_reports": {
+    "segmented-immediate-native-full-001": {
+      "bindings": 1862,
+      "report_sha256": "fb24f22bed309d479948b5c00be4cb9910d8434800587cef2c3da9dadd3edbb1",
+      "directory": "rdma/rnic/build/segmented-immediate-native-full-hrry5757"
+    },
+    "segmented-immediate-kernel-build-001": {
+      "bindings": 143,
+      "report_sha256": "1a7df46c9c39d253bd3cb0b78133956b2dd29c5f6e97cc25c53f3b689abee80b",
+      "directory": "rdma/rnic/build/segmented-immediate-kernel-frozen-rgd_aysg"
+    },
+    "segmented-immediate-verbs-adapter-002": {
+      "bindings": 107,
+      "report_sha256": "2791c93e66ec75cd4d9b1658dae0025fc13e4cdcbb5394a58f1818b66e90c3d0",
+      "directory": "rdma/rnic/build/segmented-immediate-verbs-adapter-ee3n5lt1"
+    },
+    "segmented-immediate-kernel-post-001": {
+      "bindings": 226,
+      "report_sha256": "d6f82daf5587c5085f0aa6836fe930546362d26b673fc0c894bc32d7816d86c3",
+      "directory": "rdma/rnic/build/segmented-immediate-kernel-post-evnzl_97"
+    },
+    "provider-segmented-immediate-001": {
+      "bindings": 43,
+      "report_sha256": "c903fd8c680222f937bde6c0e4787c17dd2f865266e7e85496378b3b1f8de52f",
+      "directory": "rdma/rnic/build/provider-segmented-immediate-zksg__pg"
+    },
+    "segmented-immediate-kernel-native-cq-001": {
+      "bindings": 205,
+      "report_sha256": "51c4bfff7854ec4403a1eb3891e4453b72bcd7de3f8d62a3bd8c5e01c270b0e4",
+      "directory": "rdma/rnic/build/segmented-immediate-kernel-native-cq-_3knr8pq"
+    }
+  },
+  "historical_adapter_failure": {
+    "bindings": 103,
+    "report_sha256": "29d040e8dcf053af3e749ac54e0b806bc0ad45ccaea4a08b2e280008cc3bec5c",
+    "preimage_root": "rdma/rnic/build/segmented-immediate-verbs-adapter-001-preimages-zLhkYvqz",
+    "only_resolved_to_exact_preimages": [
+      "rdma/rnic/tests/kernel_segmented_immediate_wqe.c",
+      "rdma/rnic/tests/probe_segmented_immediate_verbs_adapter.py"
+    ]
+  },
+  "preflight_failure": "Strict new fixture expected three CQ reads; the qualified READ task duplicates the snapshot, giving four. Exact authoring preimage/zero compiled-runtime report retained before requiring all four independent new ABI values.",
+  "adapter_fixture_failure": "Real new adapter module builds, but modeled test C has nested main macro/name collision and misleading indentation. Exact103 bindings/preimages retained. Only derive a frozen prior fixture with its actual main function renamed and split the independent negative counter line; all assertions, -Werror, ASan/UBSan and10s limit retained.",
+  "all_previous_native_bindings_verified": 1665,
+  "protected_raw_files_unchanged": true,
+  "remaining": "Live pinned Linux/provider/FPGA coupling, large inbound receive/Immediate, multi-SGE, bounded recovery/congestion/interop, full-board original timing/fit/CDC/DRC/routing and short thermally supervised physical qualification remain. All11 original requirements are retained and the goal remains active.",
+  "original_timing": "Latest HLS13.885ns still misses original4ns/default1.08ns; no new board image/programming or clock/drain waiver",
+  "safety": {
+    "hardware_or_default_changed": false,
+    "module_install_or_load": false,
+    "BIOS": "Medium unchanged",
+    "management_network_unchanged": true,
+    "flash": false,
+    "reboot": false,
+    "authenticated_exact_thread_goal_restore_proven": false,
+    "no_reboot_needed": true,
+    "commit_or_push": false
+  }
+}

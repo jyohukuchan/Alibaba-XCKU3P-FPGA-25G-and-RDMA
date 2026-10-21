@@ -5,6 +5,99 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+## Actual native large Immediate and matched software source (143)
+
+[Fresh complete-native001](../results/2026-10-18/rocev2-rnic-segmented-immediate-native-full-001.json)
+PASSES ALL32 cases:8193 SEND/WRITE Immediate and ALL30 previous cases. Actual
+new generated HLS and source graph, not a reused executable. Compile633.005s;
+runtimes4.125..6.430s, new6.229/6.429s, original1200s/30s limits retained.
+Each new WR has one actual full-range local MR grant,3 child source reads/
+shared unique physical nonces/statuses,3 packet expectations/real board-MAC
+FCS/SFD/CDC frames,2 replay-cache advances,one whole HLS receipt and CQ. Six
+paged descriptors/68 read TLPs; no source data writes/fences. Independent
+full-wire/Immediate-LAST-only/PSN wrap/C128/748-owner and all16384 source/
+sentinel bytes pass. Final actual MAC receipt is withheld so memory/ACK
+cannot prematurely complete CQ. Physical host/root/peer/PHY/PTP remain
+MODELS; ordinary READ retains its explicit previous MAC-pin model. Small
+SEND_IMM now uses retained source ownership and actual board MAC as well.
+
+New separate exact32767/127/profile6 kernel/provider source extends profile5
+without changing any old/default selection. Actual standard WR adapter safely
+accesses extended RDMA objects only for WRITE_WITH_IMM; base SEND_WITH_IMM is
+ASan guarded. Full source ranges/keys/network-order Immediate and actual MR/
+PD/ref/SQ replay/CQ/failure retention remain. [Full real-header build001](../results/2026-10-18/rocev2-rnic-segmented-immediate-kernel-build-001.json)
+PASSES10.242s, gated by all32 current native results. [Adapter002](../results/2026-10-18/rocev2-rnic-segmented-immediate-verbs-adapter-002.json)
+PASSES real-header5.138s/ASan-UBSan0.012s,48 new large/22 compatibility/22
+negative cases plus unchanged old READ/WRITE/SEND/Atomic/zero assertions.
+[Standard C callbacks001](../results/2026-10-18/rocev2-rnic-segmented-immediate-kernel-post-001.json)
+ALL134 PASS (44 new/all90 old), including mixed tuple/geometry refusals,
+full-MR ranges/source-read permission, unknown producer retention, wrong
+Immediate/full CQ owner, CQ pressure, zero and1MiB modeled source operations.
+[Native snapshot integration001](../results/2026-10-18/rocev2-rnic-segmented-immediate-kernel-native-cq-001.json)
+ALL80 PASS:16 unedited real native SQ/CQ pairs/four negative mutations each;
+every128 posted byte and actual C CQ/MR-ref retirement match. [Provider001](../results/2026-10-18/rocev2-rnic-provider-segmented-immediate-001.json)
+ALL7 identities PASS, all6 old retained,4097/8193/1MiB Immediate/SGE/full keys/
+standard chain/second bad-WR/WC marshalling through actual libibverbs/private
+provider. ONLY fake-fd syscalls/WC replies are modeled on that provider path.
+
+[Audit001](../results/2026-10-18/rocev2-rnic-segmented-immediate-native-software-diagnostics-001.json)
+verifies2586 new/103 historical/1665 old native bindings; strict fixture-count
+and test-main/indentation failures/preimages are preserved, no gates relaxed.
+Linux/MMIO/pins/DMA/CQ completion boundaries remain models and snapshot
+executions are separate, not live Linux/RTL or matching physical page tables.
+Native1MiB, large inbound receive/Immediate, multi-SGE, recovery/congestion/
+interop/original full-board timing and physical qualification remain open;
+HLS13.885ns still misses4ns/default1.08ns. RQ4096/single SGE/defaults/Atomic_NONE
+unchanged; all11 scope remains. No install/load/program/network/fan/BIOS/
+flash/reboot/automatic Git change.
+
+## Segmented Immediate requester, actual HLS and whole native wiring (142, historical)
+
+New `hls/segmented_immediate_transport.py` extends the same real READ-capable
+transport. True SEND/WRITE FIRST/MIDDLE/LAST, not independent ONLY requests;
+only LAST carries the full network-order Immediate. One748-bit trusted owner,
+exact per-fragment replay metadata/PSN and actual ACK/pointer/pool/timer/common
+state consumers precede the next fragment and final whole-WR receipt.
+[C++001](../results/2026-10-18/rocev2-rnic-segmented-immediate-hls-001.json)
+PASSES ALL21 modes (all11 previous READ/WRITE/SEND/zero/Atomic modes retained).
+Each new op6 whole WRs/284 packets/13 real stored first/middle/LAST replays,
+sizes4097/8192/8193/12289/65537/1MiB, values0/ffffffff/high values, PSN wrap,
+poisoned invalid source lanes, independent complete wire/zero-pad oracles.
+Withheld ACK/timer/PSN consumers block progress. Maximum new runtime5.469s,
+unchanged30s bounds. [Compatibility001](../results/2026-10-18/rocev2-rnic-segmented-immediate-compat-001.json)
+retains actual Atomic service RTL and Immediate TX/RX assertions.
+
+[Actual HLS generation001](../results/2026-10-18/rocev2-rnic-segmented-immediate-generated-hls-001.json)
+PASSES374.863s with original frozen-source/ports/1500MiB guard/4ns/default
+1.08ns/8QP/2000.81375 LUT/99264 FF/209 BRAM18K/0 DSP; estimate13.885ns FAILS
+original timing. Separate `fpga/derive_segmented_immediate.py` changes14
+coordinated native leaves for full-range admission/source ownership, actual
+LAST-Immediate header/pad/replay/whole-PSN joins and distinct32767/127 identity.
+Its [complete native elaboration001](../results/2026-10-18/rocev2-rnic-segmented-immediate-native-elaboration-001.json)
+PASSES3.510s, strict port widths/module multiplicities/shared HLS/PSN/MSN/MR/PTE
+domains and both global drains0 preserved. This is compilation, NOT new
+Immediate native payload/DMA/MAC/CQ execution or original timing proof.
+
+Actual private C128 codec26 methods (all20 old) PASS; real MR/HLS-SQ61 cases,
+source/unchanged native child19, wire/cache/MAC/CQ17, exact register/CQ27 cases
+with20 publications, padding/ICRC9 methods PASS. Backend/RX/ACK/CQ/MAC-pin and
+control endpoints are MODELS; six actual HLS C++ captures through ICRC are
+separate snapshot executions, not live HLS RTL. The MR tests distinguish
+source reads from READ-result local writes, including valid read-only source,
+stale full key/PD/full range and no authorization from raw command addresses.
+[Audit001](../results/2026-10-18/rocev2-rnic-segmented-immediate-diagnostics-001.json)
+verifies4513 current/648 historical bindings. Every failed batch/preimage is
+kept; only wrong macro/helper/record container/MR fixture/metadata anchors
+were corrected. All checks, full-owner gates and original limits remain.
+
+No new matched kernel/provider profile or standard API support is claimed.
+Receive buffers remain4096; large inbound receive/Immediate, multi-SGE,
+recovery/congestion/interop, native new Immediate and physical/timing work
+remain. Old/default/profile5 sources and IB_ATOMIC_NONE are unchanged; all11
+original requirements remain open, no hardware/program/load/network/fan/BIOS/
+flash/reboot/Git action. Next integrate genuine native runtime and software,
+not a capability advertisement or reuse of an old native binary as proof.
+
 ## Matched large READ kernel/provider source and actual C integration (140)
 
 New `kernel/derive_segmented_read_kernel.py` adds explicit software profile5

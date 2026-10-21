@@ -1,0 +1,324 @@
+{
+  "scope": "Actual Immediate LAST normalization/ICRC RTL, preserving old pad tests.\n\nIndependent complete packets, every tail/pad position and poisoned padding.\nSelected actual HLS C++ wire captures also traverse this RTL in a separate\nsnapshot execution, not live generated HLS/native/physical qualification.\n",
+  "pass_test": true,
+  "methods": 9,
+  "seconds": 167.93988694099244,
+  "source_sha256": {
+    "rdma/rnic/tests/test_segmented_immediate_padding_rtl.py": "fa20dbf238dd41afab27a11b4f532bc1ae353fd134d9b933f032293f8634cb2f",
+    "rdma/rnic/fpga/derive_shared_responder.py": "3d97aec6c1f5efe8f1d1b3d0c830a684ed4045dacdd3bcaa4923cf751e1fd477",
+    "rdma/rnic/fpga/prepare_wrkey_transport.py": "11aff17a0d9eb097abc4a5eec097409171b997d59c451ffb6e8fad3d4984e8c3",
+    "rdma/rnic/fpga/derive_qp_tx_bridge.py": "51afb390ce130f69e8b55cbfb2af2055e7fa3746004790b5b509f4f6273d28a7",
+    "rdma/rnic/fpga/derive_duplex_transport.py": "ff81dfb2ba41ffc59d482bee177fc106537a22a786bf11d588880c3990c85a53",
+    "rdma/rnic/fpga/derive_immediate_bridge.py": "a9758360ee8466e011819fe3ebf79b80fd175ee7f59c91af4fa949047a4b0667",
+    "rdma/rnic/fpga/derive_immediate_native.py": "9281857caf2714945f280e126eb39553e8f9324c8416b5b71bbd79c5ed6fdac4",
+    "rdma/rnic/fpga/derive_atomic_owner_lookup.py": "10f497b1ae2c5358e960ae8695903bf4655896c99b977bd26ffba287d270b453",
+    "rdma/rnic/fpga/derive_atomic_native_authority.py": "0b881da1ad4a9d72f43c90e54492c3299b43b3109d0529eb81851319a4f88451",
+    "rdma/rnic/fpga/derive_atomic_native_bridge.py": "332a5064cb3adfbadd2e2196eb950885e9945a9af528ccd45776944631db331c",
+    "rdma/rnic/fpga/derive_atomic_native_owned_stage.py": "aa9869c3c51c2fe25b5dfa53429bd62b7180fcfde20140e1e4397d76b5463576",
+    "rdma/rnic/fpga/derive_atomic_native_rx.py": "9f9e8db656cffc70f59761ba0c42e402f4dd9d392c065d0a7a79abb6b752fec0",
+    "rdma/rnic/fpga/derive_atomic_native.py": "b3758f15718303cf12b95af02052dcad8bc6d1e806ef64075ff75e3e6856c90e",
+    "rdma/rnic/fpga/derive_atomic128_fetch.py": "4123c117771f568fc4a002a614ade421f6c94eb08dd17b27dff2a6a8d9dbe433",
+    "rdma/rnic/fpga/derive_atomic128_admission.py": "da4e91e41d7bb9861534cfe2b98e7690076850d192c401cc1290d1942b8d83e3",
+    "rdma/rnic/fpga/derive_atomic128_response.py": "eaa3439ece1fd0fad5ff30e81aab0d14346c3739058c1272a4fdc4b8e431063e",
+    "rdma/rnic/fpga/derive_atomic128_executor.py": "bc01f0d68fc39c78e6a3ff5d96d93a2e82396f4b9db67a7e03bee35cf114b004",
+    "rdma/rnic/fpga/derive_atomic128_lifetime.py": "09148e2f11eb3c2ea9bd72fc28cf357e8991de64acef1af9ad79b17dfebc90cb",
+    "rdma/rnic/fpga/derive_atomic_request_bridge.py": "a626d9f3d20ecfc7c477100c63472fa8547792fafacb612d28846f6f6f0a4463",
+    "rdma/rnic/fpga/derive_atomic128_native.py": "9be2756604ed23cc9b41b2fd8d1a3b8db9bf2e2176663878463c12abc03b20ad",
+    "rdma/rnic/fpga/derive_atomic_access_native.py": "ab42d555c459c2e7b7da71686539c3d75a31e075a3a8c11c66e09a59e6e903ee",
+    "rdma/rnic/fpga/derive_zero_native.py": "d652f5e0a805b96d2a963f33d9112d8121f1170a15b111e3e400c81eface97a7",
+    "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "2f092ca9eeee90d6a1ab57439227ad39b5d9b623947201e274b2654bf46c8af4",
+    "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "022eee2383a8be45e8858946659fc05182537f0a09562b6011bde5285536de16",
+    "rdma/rnic/tests/test_zero_integrity_rtl.py": "bf57573a43b62ec0da5e3fc3a7609cf3269df79a3f233ce9d882711e36d81904",
+    "rdma/rnic/tests/test_wqe_lifetime_rtl.py": "db403efc39482428444d0761a05dcbc4606780043f26a579cfc160b7eda20b5a",
+    "rdma/rnic/tests/test_wqe_mac_tx_rtl.py": "9f1e0fbf323bfe15e6e755a552aba78c15787ace756e80e1a4f86d2bed14373e",
+    "rdma/rnic/tests/test_corundum_dma_backend_rtl.py": "cf9ce4a872f203dcb1d9d4bc7c170c01a8f252c1d5ce8b290bd88c223139986a",
+    "rdma/rnic/tests/test_paged_memory_backend_rtl.py": "860ebddc40c0bbff2f8eed74da2a1339b0c7b982bbcfa4b00fa73913e2d63ba2",
+    "rdma/rnic/tests/probe_atomic_responder.py": "c910018a2e8a9d77e649437f9a7727f5cf2fd9c02cb20ab92016b5209a3a189e",
+    "rdma/rnic/fpga/derive_zero_rq_native.py": "92ed231ada071d15feab574127c7974d4d17516f48db5d8f4e6a79f118d225f8",
+    "rdma/rnic/fpga/derive_zero_service_native.py": "0f92353804e547ef8df2ee70ff294e356447667f4668450d11020cc302a84b86",
+    "rdma/rnic/fpga/derive_segmented_source.py": "138c80829c920c6d8d32a7a7ac29cb05e33bec051028dd741558979b5314ad62",
+    "rdma/rnic/tests/test_segmented_source_executor_rtl.py": "ab2a1ddc8f6a118bf4d69d924dbb5d6ffd0db164d453ecc0b28b431acf8190e0",
+    "rdma/rnic/fpga/derive_segmented_native.py": "78f20feaa504ef5ab12cdee9ce420b5f3a8ec5a4f6eeca209d3dbd4cb70682a2",
+    "rdma/rnic/fpga/derive_segmented_executor.py": "a2340b3346215f952ff882fca09a6c8ba886c46a29215ff676e998119252497c",
+    "rdma/rnic/fpga/derive_segmented_wire.py": "94bba46ee3e380bcd6f2578f25f4ef00eda0407a22eefa90c1824003a2aa8386",
+    "rdma/rnic/tests/test_segmented_wire_rtl.py": "ca5633d05be7654d267fd9da6b87885204564e075a736b803ec349feda17fd6d",
+    "rdma/rnic/tests/test_segmented_padding_rtl.py": "dafc1fcb8a4363b39d7ff001df26a8e4ab3833a6f45c1d4d78066d1d051f6ea3",
+    "rdma/rnic/fpga/derive_segmented_padding.py": "ac8d48a5918a095e6f712853ae7d55ab9510c11edbdf74888e68dfe137119ae8",
+    "rdma/rnic/fpga/derive_segmented_profile.py": "2eeb93fba67c67ff6dd907fc1bf46741371af9548b3c0908c38d3c4d466fbd55",
+    "rdma/rnic/fpga/derive_segmented_read_executor.py": "a7e261df5ad7bf7e4f182b4a34a4673f2e3f4241b40cab01c921721129c7d19c",
+    "rdma/rnic/fpga/derive_segmented_read_memory_native.py": "d6aa6356c022aeb2e8f3c37c6d84a4ba9b63646bca881e065d074edb509940d1",
+    "rdma/rnic/fpga/derive_expected_remote_msn_native.py": "799f29a49803a525ed61a68d444791ff5fc23398ea9ac951c7d1175d2d67c759",
+    "rdma/rnic/fpga/derive_segmented_read_response.py": "623ad265109287439858a9ec0b899c110bbfca926ce3405b2a8d027699847271",
+    "rdma/rnic/fpga/derive_segmented_read_lifetime.py": "7149ac3d6feacb6223e6667b413bb14497158689325a67dbe53ded7e0db86057",
+    "rdma/rnic/fpga/derive_segmented_read_profile.py": "5e51f25d6d7a063c03e963fef1d71ad0a9c2655c75e960d870d325fd3e37d361",
+    "rdma/rnic/fpga/derive_segmented_read_route.py": "9d017a1173e799ac9a1a3e79d77e3defe73ae24d6c70021c45c0a52fc3ba17f6",
+    "rdma/rnic/fpga/derive_segmented_read_command_queue.py": "6b988072bb63f71306860159933f7fbe122842568b6e027f4735ae24b9c307ef",
+    "rdma/rnic/fpga/derive_segmented_immediate.py": "5389927b412ed1ae9f75b632725cc6c7a82e552a40d1761cb3a704b3918d6d02",
+    "rdma/rnic/tests/test_segmented_immediate_wire_rtl.py": "041a5612978aef1fac3296224ce01383b9318cd7a27e2d30ad959f0fc225222c",
+    "rdma/rnic/build/segmented-immediate-padding-source-xmkzjw3v/rocev2_segmented_tx_padding.v": "e8fd5145f06aed5e68b6a1144c6e49d8beb8c099946832841a9ba7d0e92e51d1",
+    "results/2026-10-18/rocev2-rnic-segmented-immediate-hls-001.json": "090ad6799b78a58ae681e0a986fe16f1db7893db43689ef7acc9014d74087128",
+    "rdma/rnic/build/segmented-immediate-hls-r9jx8g_q/imm-send.log": "8912a84e8d0f9f7a74573fb583ed5b589eead9c5e56c50d7e3d25502c36b73ea",
+    "rdma/rnic/build/segmented-immediate-hls-r9jx8g_q/imm-write.log": "0ee79396c66432885db438dc4bf36cecb48509f3a1d4374de031eaedc3c0e7e9"
+  },
+  "source_unchanged": true,
+  "tests": {
+    "test_Immediate_LAST_all_pad_counts_and_tail_positions": [
+      {
+        "pass_test": true,
+        "summary": {
+          "cycles": 7889,
+          "input_beats": 1360,
+          "output_beats": 1380,
+          "good_frames": 76,
+          "bad_frames": 0,
+          "input_stall_cycles": 5967,
+          "output_stall_cycles": 6198,
+          "first_output": 6002,
+          "last_output": 7840
+        },
+        "seconds": 14.74564602598548,
+        "engine": "icarus-four-state",
+        "directory": "rdma/rnic/build/segmented-padding-hio7c_wz",
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-padding-hio7c_wz/expected.hex": "21013c90be42193e495997defe40e7912276b144933a28fbfc65a808e177799e",
+          "rdma/rnic/build/segmented-padding-hio7c_wz/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-padding-hio7c_wz/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+          "rdma/rnic/build/segmented-padding-hio7c_wz/tb.v": "3569dbb6173f567acd24912c9acefa2ed71792827b16cebab6fe972ef7942bdf",
+          "rdma/rnic/build/segmented-padding-hio7c_wz/simulation.log": "518cdf09d5bd5db1e2903e2c2dc86121895a8170ff107b8115b6c304f906ac21",
+          "rdma/rnic/build/segmented-padding-hio7c_wz/input.hex": "484ab4f6ce3e0eeb1edc91c0c7376a03d01434674a8b626cf39abf61c2d04aa6",
+          "rdma/rnic/build/segmented-padding-hio7c_wz/test": "2ed09f3b97616173bdab935c6cea6c6cfd97e6ac6adee127cf5cd03aaa1a3363"
+        }
+      }
+    ],
+    "test_Immediate_LAST_poisoned_pad_never_repaired": [
+      {
+        "pass_test": true,
+        "summary": {
+          "cycles": 8470,
+          "input_beats": 2116,
+          "output_beats": 2104,
+          "good_frames": 14,
+          "bad_frames": 6,
+          "input_stall_cycles": 4826,
+          "output_stall_cycles": 6014,
+          "first_output": 6002,
+          "last_output": 8421
+        },
+        "seconds": 16.622744151041843,
+        "engine": "icarus-four-state",
+        "directory": "rdma/rnic/build/segmented-padding-b5msml32",
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-padding-b5msml32/expected.hex": "bfa8ffcc6a3d3007b748f0811b1d30a637082fd933e2455218775e233e5cfec3",
+          "rdma/rnic/build/segmented-padding-b5msml32/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-padding-b5msml32/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+          "rdma/rnic/build/segmented-padding-b5msml32/tb.v": "b42fb7bc6402258164ec9c586fdc9110648d9fcd529cb9973b7106b2e7a35661",
+          "rdma/rnic/build/segmented-padding-b5msml32/simulation.log": "4f52d38cb208bfa12ee8ec68d8fec6725c59f81159986acab10a6f4a6c62608e",
+          "rdma/rnic/build/segmented-padding-b5msml32/input.hex": "449a534547fbba76f38c0207a706f5aacb99c679e86670101f4e921c0e61d168",
+          "rdma/rnic/build/segmented-padding-b5msml32/test": "af071ba27a59b5603f568a987ca16f6b4839c5a26a93a618195f2848a73f3319"
+        }
+      }
+    ],
+    "test_all_padding_tail_positions": [
+      {
+        "pass_test": true,
+        "summary": {
+          "cycles": 6994,
+          "input_beats": 710,
+          "output_beats": 718,
+          "good_frames": 38,
+          "bad_frames": 0,
+          "input_stall_cycles": 5797,
+          "output_stall_cycles": 6124,
+          "first_output": 6002,
+          "last_output": 6945
+        },
+        "seconds": 12.633754856011365,
+        "engine": "icarus-four-state",
+        "directory": "rdma/rnic/build/segmented-padding-dywsinr_",
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-padding-dywsinr_/expected.hex": "94ff80bc20a68114e21d51e10a9e15aafaafc98af976183ecb2c5f1d26c66bce",
+          "rdma/rnic/build/segmented-padding-dywsinr_/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-padding-dywsinr_/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+          "rdma/rnic/build/segmented-padding-dywsinr_/tb.v": "bd5337009937967c2d800f53d09ba0f7f9761dc7045990be13d6f092ccbad8cc",
+          "rdma/rnic/build/segmented-padding-dywsinr_/simulation.log": "6fbbeb81ee145be53d616f56f53100a742a31b1bafb7b3594f88a7e24175f072",
+          "rdma/rnic/build/segmented-padding-dywsinr_/input.hex": "ca58b65c27e917b2d90209c6c55df4ce1b68c6249346a4589fb8968297450f31",
+          "rdma/rnic/build/segmented-padding-dywsinr_/test": "765794d46ef287776075e48558619a5dc7a6e4573b3f56b5b28cd5a96625d35b"
+        }
+      }
+    ],
+    "test_bad_input_not_healed": [
+      {
+        "pass_test": true,
+        "summary": {
+          "cycles": 8514,
+          "input_beats": 2192,
+          "output_beats": 2136,
+          "good_frames": 15,
+          "bad_frames": 7,
+          "input_stall_cycles": 4818,
+          "output_stall_cycles": 6026,
+          "first_output": 6002,
+          "last_output": 8465
+        },
+        "seconds": 17.123521585017443,
+        "engine": "icarus-four-state",
+        "directory": "rdma/rnic/build/segmented-padding-bknkksvp",
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-padding-bknkksvp/expected.hex": "166a6c86898cab398fbf45ea22d9c4fb695205c48386c9e691d79465142da19d",
+          "rdma/rnic/build/segmented-padding-bknkksvp/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-padding-bknkksvp/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+          "rdma/rnic/build/segmented-padding-bknkksvp/tb.v": "82e258f6b471bb9c4229644e8b488ee237ad60de5598ed2a0fd536272a687790",
+          "rdma/rnic/build/segmented-padding-bknkksvp/simulation.log": "86f650dc090d16085f756c5f5186cc22c4b110e682841659373c089a0569ab92",
+          "rdma/rnic/build/segmented-padding-bknkksvp/input.hex": "c6202cf8d95a9dd1983951528178acf96ed47af204dca76d5975c9fc7199816e",
+          "rdma/rnic/build/segmented-padding-bknkksvp/test": "2ff18a1e9ccb17a20d659caa5b2c7e5fe1803d266fa9b8d115d0f2143825c3f2"
+        }
+      }
+    ],
+    "test_padding_path_25g_cycle_capacity": [
+      {
+        "pass_test": true,
+        "summary": {
+          "cycles": 8636,
+          "input_beats": 8320,
+          "output_beats": 8320,
+          "good_frames": 32,
+          "bad_frames": 0,
+          "input_stall_cycles": 0,
+          "output_stall_cycles": 0,
+          "first_output": 268,
+          "last_output": 8587
+        },
+        "seconds": 0.07571165502304211,
+        "engine": "verilator-two-state",
+        "directory": "rdma/rnic/build/segmented-padding-96i76i4a",
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-padding-96i76i4a/expected.hex": "aa95e94d87ea52552b64082e166acd5d24f55c7faa5f09cfe40499839e5a5e00",
+          "rdma/rnic/build/segmented-padding-96i76i4a/compile.log": "ac2ec6858f7ccd18692e43c61dceaaf5c4d808b39692508fa46639a221b381b8",
+          "rdma/rnic/build/segmented-padding-96i76i4a/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+          "rdma/rnic/build/segmented-padding-96i76i4a/tb.v": "f6c57284cd9b967ac1ce278d2775bb949310e6fdd0f4c00beca79781bca9da96",
+          "rdma/rnic/build/segmented-padding-96i76i4a/simulation.log": "494a14b332a3be20b8871e513847e23548871c69f577620fe68605cb6a7acbef",
+          "rdma/rnic/build/segmented-padding-96i76i4a/input.hex": "22c850cb9d8ac92acf2030fcf3c30aab13db702be130206fe9b2b698934acfad"
+        }
+      }
+    ],
+    "test_pre_padded_LAST_all_pad_counts_and_payload_tail_positions": [
+      {
+        "pass_test": true,
+        "summary": {
+          "cycles": 7885,
+          "input_beats": 1344,
+          "output_beats": 1360,
+          "good_frames": 76,
+          "bad_frames": 0,
+          "input_stall_cycles": 5985,
+          "output_stall_cycles": 6192,
+          "first_output": 6002,
+          "last_output": 7836
+        },
+        "seconds": 14.686732105968986,
+        "engine": "icarus-four-state",
+        "directory": "rdma/rnic/build/segmented-padding-6i4m1wfy",
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-padding-6i4m1wfy/expected.hex": "07331b0eb1aab92aca426084e2065ac93b3ca482642383ffdf061e45ffde8566",
+          "rdma/rnic/build/segmented-padding-6i4m1wfy/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-padding-6i4m1wfy/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+          "rdma/rnic/build/segmented-padding-6i4m1wfy/tb.v": "432965ed763d5cd14ea19b359c927e646ec0c925fd6f9316cef9ec03eec8c7c0",
+          "rdma/rnic/build/segmented-padding-6i4m1wfy/simulation.log": "698070778b97624f0afb17316689f0e8dc38dd368e67243924588020d3fa43a7",
+          "rdma/rnic/build/segmented-padding-6i4m1wfy/input.hex": "99664d751736c8b60078c6e46fe0baf901d967f0d4d98fda7d41649557319ed0",
+          "rdma/rnic/build/segmented-padding-6i4m1wfy/test": "f1e1d82190727c9e76a7177c78bf875543ab6a18b967b1558611199a9fde82f5"
+        }
+      }
+    ],
+    "test_pre_padded_LAST_never_heals_bad_pad_class_lengths_or_masks": [
+      {
+        "pass_test": true,
+        "summary": {
+          "cycles": 8476,
+          "input_beats": 2140,
+          "output_beats": 2110,
+          "good_frames": 18,
+          "bad_frames": 10,
+          "input_stall_cycles": 4818,
+          "output_stall_cycles": 6014,
+          "first_output": 6002,
+          "last_output": 8427
+        },
+        "seconds": 16.913560427958146,
+        "engine": "icarus-four-state",
+        "directory": "rdma/rnic/build/segmented-padding-p1pcl9k2",
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-padding-p1pcl9k2/expected.hex": "c655477be725d389c4338cdc0921fb3ad43354038654b6dc399ea48ccbe021fe",
+          "rdma/rnic/build/segmented-padding-p1pcl9k2/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-padding-p1pcl9k2/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+          "rdma/rnic/build/segmented-padding-p1pcl9k2/tb.v": "9ba4ad19a0b00c129c73b1fb1162f2855643397af215ef65646ebff5fc9b246b",
+          "rdma/rnic/build/segmented-padding-p1pcl9k2/simulation.log": "013006d19a0854dd31d0e86ea0bf1da85feffcc5b97e656bbeab785e693cc725",
+          "rdma/rnic/build/segmented-padding-p1pcl9k2/input.hex": "b32ef84f70bd4a9a921a5b9fbf015d6f8a882afcae97c884d468cbc4a6415196",
+          "rdma/rnic/build/segmented-padding-p1pcl9k2/test": "27519ca73aad9593123f7b11ec36dfdbb70c86dca501471a5c2fbd85deb02815"
+        }
+      }
+    ],
+    "test_unedited_actual_HLS_CPP_first_middle_LAST_captures_through_ICRC": [
+      {
+        "pass_test": true,
+        "summary": {
+          "cycles": 9624,
+          "input_beats": 3123,
+          "output_beats": 3125,
+          "good_frames": 14,
+          "bad_frames": 0,
+          "input_stall_cycles": 4821,
+          "output_stall_cycles": 6147,
+          "first_output": 6002,
+          "last_output": 9575
+        },
+        "seconds": 19.585450118989684,
+        "engine": "icarus-four-state",
+        "directory": "rdma/rnic/build/segmented-padding-i3ne_wrp",
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-padding-i3ne_wrp/expected.hex": "1bd13d7b911cef896d3838db16871c0082b553dabb8c0e2888c5ef23ec7aa208",
+          "rdma/rnic/build/segmented-padding-i3ne_wrp/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-padding-i3ne_wrp/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+          "rdma/rnic/build/segmented-padding-i3ne_wrp/tb.v": "f6666d7d4acd4edae9a72bbcf1f440d0bfced744f8f63cda8e49e8ea4df9133f",
+          "rdma/rnic/build/segmented-padding-i3ne_wrp/simulation.log": "d8868ad5b00feaa84bdd531e77a678090b8f9ba501a0a1ba2c8feb0dc0ad8999",
+          "rdma/rnic/build/segmented-padding-i3ne_wrp/input.hex": "96915d44039b1aaa8bac00b0e26c1b4a99a46e52e89f21e9a382e0ca06cfb308",
+          "rdma/rnic/build/segmented-padding-i3ne_wrp/test": "23525d1da1ed907bdc7bf83e396a11f514328c580f3e317ee7b0e137ca711b63"
+        }
+      }
+    ],
+    "test_zero_SEND_and_ordinary_unpadded_WRITE_SEND_stay_compatible": [
+      {
+        "pass_test": true,
+        "summary": {
+          "cycles": 6093,
+          "input_beats": 37,
+          "output_beats": 42,
+          "good_frames": 11,
+          "bad_frames": 0,
+          "input_stall_cycles": 5,
+          "output_stall_cycles": 5990,
+          "first_output": 6002,
+          "last_output": 6044
+        },
+        "seconds": 10.7081028430257,
+        "engine": "icarus-four-state",
+        "directory": "rdma/rnic/build/segmented-padding-y8o7qsc1",
+        "artifact_sha256": {
+          "rdma/rnic/build/segmented-padding-y8o7qsc1/expected.hex": "41a45cebed67ec769015e80718598e7a714e290ffee795221e3ab37f61c9589c",
+          "rdma/rnic/build/segmented-padding-y8o7qsc1/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rdma/rnic/build/segmented-padding-y8o7qsc1/integrity.v": "60d530cff1cd06ac826dff2b57d5a8f45c3449bdb8d4f4500f0dc99a2a01c51a",
+          "rdma/rnic/build/segmented-padding-y8o7qsc1/tb.v": "ad24649fe089d2c53d78cfbf68bbca9b92d31a22c86426e7e4d8a27d502d5ad9",
+          "rdma/rnic/build/segmented-padding-y8o7qsc1/simulation.log": "75d6d4bdf94756f21a1d917e0c2defc1b8d4c5298adb786df8b2fbfeb3b44f8e",
+          "rdma/rnic/build/segmented-padding-y8o7qsc1/input.hex": "91878f9cd203999ff968a200b664f33b8164b7fcc4565c483383eb836d4f9cd7",
+          "rdma/rnic/build/segmented-padding-y8o7qsc1/test": "e9855b16c9e54692d1682d87bc4e3673635b7ca39bd5dad2755c42a8899373f5"
+        }
+      }
+    ]
+  },
+  "tested_padding_sha256": "e8fd5145f06aed5e68b6a1144c6e49d8beb8c099946832841a9ba7d0e92e51d1",
+  "all_prior_padding_methods_retained": true,
+  "actual_HLS_CPP_captures_are_separate_snapshot": true,
+  "live_HLS_RTL": false,
+  "native_runtime": false,
+  "hardware_verified": false,
+  "failures": []
+}

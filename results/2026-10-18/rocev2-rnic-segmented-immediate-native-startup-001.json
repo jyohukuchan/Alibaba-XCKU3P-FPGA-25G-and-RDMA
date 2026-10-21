@@ -1,0 +1,11 @@
+{
+  "scope": "Preserved native checker source-derivation startup failure; no elaboration or runtime executed",
+  "pass_test": false,
+  "compiled_cases": 0,
+  "runtime_cases": 0,
+  "error": "once() correctly rejects two matches of large_READ_admission_open=True,READ_admission_limit=1048576, in the unchanged parent checker (result initialization and printed summary)",
+  "preimage": "rdma/rnic/build/segmented-immediate-native-startup-001-preimages-B1Y7CSPU/rdma/rnic/tests/check_segmented_immediate_native_elaboration.py",
+  "preimage_sha256": "f078b592b0f2d14b86d9e229921e304a79c35f020952f629ec557142080d10cb",
+  "correction": "Require exactly both known metadata matches, then add new explicit Immediate/receive limit fields to both; do not relax actual source, clock, domain, width or compile gates",
+  "hardware_verified": false
+}

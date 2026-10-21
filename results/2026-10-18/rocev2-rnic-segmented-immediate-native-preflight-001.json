@@ -1,0 +1,12 @@
+{
+  "scope": "Preserved new full-native fixture preflight failure, before compilation/runtime",
+  "pass_test": false,
+  "compiled_cases": 0,
+  "runtime_cases": 0,
+  "error": "Strict fixture substitution expected three exact CQ ABI reads, but the existing READ fixture also copies the full CQ snapshot into its READ task: four genuine reads exist",
+  "observed_exact_CQ_reads": 4,
+  "preimage": "rdma/rnic/build/segmented-immediate-native-preflight-001-preimages-9vflmi2O/rdma/rnic/tests/segmented_immediate_native_fixture.py",
+  "preimage_sha256": "0d1a7cb4d090705d0b7105f9d4357939abdb66cdfa1eee0dce73f6128dd4d50c",
+  "correction": "Require all four actual reads, changing only the independently expected new profile value from63 to127. No observed output is rewritten, no assertion or old case removed",
+  "hardware_verified": false
+}

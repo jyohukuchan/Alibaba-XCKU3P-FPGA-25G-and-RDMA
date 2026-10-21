@@ -1,0 +1,41 @@
+{
+  "scope": "Actual source-only Immediate C128 codec, UBSan and all20 old methods.\n\nIndependent full bytes/64-bit ranges and unchanged old codec refusals. No\nposting/MR/DMA/driver/provider/capability follows serialization success.\n",
+  "pass_test": false,
+  "methods": 26,
+  "seconds": 1.4630293980007991,
+  "source_sha256": {
+    "rdma/rnic/kernel/wqe.c": "4b3618b01a20876084cd56c5c14c27c3cb8d2c6390aa328bdbf795cd64104211",
+    "rdma/rnic/kernel/wqe_atomic.c": "965050dda10092921a48d9caa6e9557562c9704c0d39f9289b54f997c6046f72",
+    "rdma/rnic/kernel/wqe_zero.c": "dbeb8076d21f809253fd96871c0861e316559b34478c02c7352d20e681352348",
+    "rdma/rnic/kernel/wqe_segmented.c": "5d5d67ecb00a70b988ddb16c780febcd4b3180815dc5c8bf8368f5fef0938d61",
+    "rdma/rnic/kernel/wqe_segmented_read.c": "11b3086bf4f4fd23014587f4a50b171e7ba75247b7e392b47bd6dff30e25eac9",
+    "rdma/rnic/kernel/wqe_segmented_immediate.c": "5bcf912f2fc6e86d5dcef989e801d8f7d20e485a185e9664e05e372e271ba413",
+    "rdma/rnic/kernel/wqe.h": "646e0f6c09f85af72cd9d93016f1368ee7378b6f0cc1f869e4ace0e8e68e8a2a",
+    "rdma/rnic/kernel/wqe_atomic.h": "f971b72123b3b3a24c78c28a2c1a856d5c9a9597977fae0a09f654b13f952f68",
+    "rdma/rnic/kernel/wqe_zero.h": "70087a973c4eee08b25c93c8d5aab60ff2e9d9a0e9888363201bf4d375697f9b",
+    "rdma/rnic/kernel/wqe_segmented.h": "78d950a46d3978fe1929716c4595ba1e9dec61ffa7d9574ef06419d7914a9c5a",
+    "rdma/rnic/kernel/wqe_segmented_read.h": "74aa2cd9c47751c6ef019fe9fea17fd166ad2bab9b2355368db959209d8889b8",
+    "rdma/rnic/kernel/wqe_segmented_immediate.h": "c6c3e086486a0a6ec7bc10943928c35360e5ab66adfddaa7c5615bd8c09cf7fd",
+    "rdma/rnic/tests/test_segmented_read_wqe.py": "903488e234f0405a3aa65fbb3a5d706c313532b7b4ac4722ddc588777da49bcd",
+    "rdma/rnic/tests/test_segmented_wqe.py": "3db40989b94fde5d3e3dc08b6eb99edb23e5d72d239ac5f7458519bd35a10608",
+    "rdma/rnic/tests/test_zero_wqe.py": "15f995aa9227b08da7f4c75a35d980dec29306d1e9231c142a1f0827f4269a9d",
+    "rdma/rnic/tests/test_atomic_wqe.py": "da6e83a20073aa3a397f969130cb773bd5e603de0b64a5ffeb3ccb644915f38f",
+    "rdma/rnic/tests/test_segmented_immediate_wqe.py": "60c6ff3550df3245c8effbf4e2d230c77572dbc4727c8f64d6caaa86767ec858"
+  },
+  "source_unchanged": true,
+  "C_UBSan": true,
+  "independent_bytes": true,
+  "all20_prior_methods_retained": true,
+  "old_codecs_unchanged": true,
+  "descriptor_bytes": 128,
+  "large_Immediate_max_bytes": 1048576,
+  "default_profile_changed": false,
+  "native_runtime": false,
+  "hardware_verified": false,
+  "failures": [
+    {
+      "test": "test_all_old_operation_and_zero_policies_unchanged (__main__.SegmentedImmediateWQE.test_all_old_operation_and_zero_policies_unchanged)",
+      "trace": "Traceback (most recent call last):\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/test_segmented_immediate_wqe.py\", line 95, in test_all_old_operation_and_zero_policies_unchanged\n    w=old.old.old.old.AtomicWQETests.atomic(op)\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: type object 'AtomicWQETests' has no attribute 'atomic'\n"
+    }
+  ]
+}

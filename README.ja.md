@@ -31,6 +31,10 @@ Alibaba AS02MC04（XCKU3P）向けの、**Corundumベースの25GbE移植・検�
 
 ## RNIC開発中ソースの進捗（2026-10-21）
 
+別のRNC32767／CQC127構成で、8193バイトのSEND／WRITE with Immediateと従来30ケース、計32ケースの全体シミュレーションが成功しました。最終パケットだけのImmediate値、実際のSQ・MR／ページ表・生成HLS・DMA・共通識別子・MAC経路・要求全体で1回のCQ完了、全データと周辺メモリを確認しています。各試験約4.1〜6.5秒です。ただし物理ホスト／接続先／PHY／PTPはモデルで、1MiBの全体転送や実機動作の検証ではありません。
+
+対応するカーネル／プロバイダー用ソース（プロファイル6）も追加し、実カーネルヘッダーでビルドできました。標準Cコールバック134ケース、未改変の回路保存データとの整合80ケース、新旧7構成の標準libibverbs試験が成功しています。[現在の検証範囲・失敗記録](results/2026-10-18/rocev2-rnic-segmented-immediate-native-software-diagnostics-001.json)を保持しています。Linux／MMIO／DMA／システムコール境界はモデルのままで、実際のドライバーとFPGAの直結検証ではありません。1MiBはソース・HLS C++・APIモデルでの確認です。受信バッファ4KiB・1 SGE制限、従来構成は維持し、推定周期13.885nsで元の4ns目標に未達のため実機へは適用していません。[以前の部品試験・合成記録](results/2026-10-18/rocev2-rnic-segmented-immediate-diagnostics-001.json)も別に保持しています。
+
 新しいRNC16383／CQC63専用のカーネル／プロバイダー用ソース（プロファイル5）も追加しました。実際のカーネルヘッダーでビルドに成功し、投稿・MR参照・CQの90ケース（従来65ケースを維持）、実際のRTL保存データとの整合70ケース、標準libibverbsを使う新旧6構成の試験が成功しています。[監査記録](results/2026-10-18/rocev2-rnic-segmented-read-software-diagnostics-001.json)も追加しました。ただしLinux／MMIO／DMA／システムコール境界はモデルで、ドライバーの導入・読み込みやLinuxと実機を同時に動かす検証はしていません。1MiBはC／APIモデルでの確認で、実際のRNIC全体READ試験は8193バイトまでです。既定の構成、1 SGE制限、Immediate／受信キューの4KiB制限は維持しています。
 
 新しいコマンド先行保持入りの[RNIC全体シミュレーション](results/2026-10-18/rocev2-rnic-segmented-read-command-queue-native-full-001.json)で、8193バイトREADと従来29ケース、計30ケースがすべて成功しました。新READは実際の生成HLS・SQ取得・MR／ページ表・受信検証・DMA・共通識別子・可視性確認・MAC経路・CQを使い、全データと要求全体の完了を約6.1秒で確認しています。全ケース約4.2〜6.3秒で、元の30秒上限内です。[記録済みハッシュ1665件](results/2026-10-18/rocev2-rnic-segmented-read-command-queue-native-diagnostics-001.json)も照合しました。ただし物理ホスト／相手機／PHY／PTPはモデルで、Linux・実機・元のタイミング条件への適合は未確認です。受付上限1MiBの構成ですが、今回の全体READ試験は8193バイトまでです。

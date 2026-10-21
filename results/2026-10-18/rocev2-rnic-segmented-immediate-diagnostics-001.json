@@ -1,0 +1,176 @@
+{
+  "scope": "Current-source audit of the separate large-Immediate requester candidate; not native payload/CQ/Linux/physical or timing qualification",
+  "audit_passed": true,
+  "feature_complete": false,
+  "hardware_verified": false,
+  "source_profile": {
+    "RNC": 32767,
+    "CQC": 127,
+    "SQC": 13,
+    "RQC": 15,
+    "descriptor_bytes": 128,
+    "whole_WR_owner_bits": 748,
+    "READ_WRITE_SEND_Immediate_max_bytes": 1048576,
+    "receive_buffer_max_bytes": 4096,
+    "single_SGE": true,
+    "matched_kernel_provider": false,
+    "old_default_and_profile5_unchanged": true
+  },
+  "actual_HLS_CPP": {
+    "modes": 21,
+    "all11_prior_READ_WRITE_SEND_Atomic_zero_modes_retained": true,
+    "new_Immediate_operations": 2,
+    "whole_WRs_per_Immediate_operation": 6,
+    "packets_per_operation": 284,
+    "stored_first_middle_LAST_replays_per_operation": 13,
+    "Immediate_only_on_LAST": true,
+    "one_whole_owner_receipt": true,
+    "maximum_new_mode_seconds": 5.468840176996309,
+    "unchanged_each_mode_limit_seconds": 30,
+    "peer_connection_source_memory_modeled": true
+  },
+  "generated_HLS": {
+    "pass": true,
+    "seconds": 374.86319003696553,
+    "LUT": 81375,
+    "FF": 99264,
+    "BRAM_18K": 209,
+    "DSP": 0,
+    "estimated_period_ns": 13.885,
+    "original_clock_ns": 4,
+    "original_default_uncertainty_ns": 1.08,
+    "original_timing_pass": false,
+    "MAX_QPS": 8,
+    "metadata_entries": 2000,
+    "original_1500MiB_guard_retained": true
+  },
+  "actual_components": {
+    "C128_UBSan_methods": 26,
+    "all20_old_codec_methods_retained": true,
+    "wire_methods": 8,
+    "wire_cases": 17,
+    "wire_maximum_case_seconds": 29.422073238994926,
+    "wire_each_case_original_limit_seconds": 30,
+    "actual_source_and_unchanged_child_methods": 10,
+    "source_cases": 19,
+    "all7_old_source_methods_retained": true,
+    "real_MR_and_HLS_SQ_methods": 25,
+    "real_MR_cases": 34,
+    "HLS_SQ_cases": 27,
+    "all11_old_MR_and8_old_SQ_methods_retained": true,
+    "actual_register_CQ_cases": 27,
+    "published_acked_whole_CQ_owners": 20,
+    "padding_ICRC_methods": 9,
+    "all_old_padding_methods_retained": true,
+    "padding_maximum_case_seconds": 19.585450118989684,
+    "all_backend_RX_HLS_ACK_CQ_MAC_pin_or_control_boundaries_are_explicit_models": true
+  },
+  "complete_native_elaboration": {
+    "pass": true,
+    "seconds": 3.5098778139799833,
+    "exact14_coordinated_leaves_changed": true,
+    "new_generated_HLS_selected": true,
+    "single_shared_HLS_PSN_MSN_MR_PTE_domain_counts_preserved": true,
+    "both_global_HLS_drains_zero": true,
+    "compiled_only": true,
+    "native_Immediate_payload_or_CQ_executed": false
+  },
+  "successful_bindings_verified": 4513,
+  "historical_bindings_verified": 648,
+  "successful": {
+    "segmented-immediate-hls-001": {
+      "bindings_verified": 326,
+      "report_sha256": "090ad6799b78a58ae681e0a986fe16f1db7893db43689ef7acc9014d74087128"
+    },
+    "segmented-immediate-compat-001": {
+      "bindings_verified": 311,
+      "report_sha256": "42456e945358bac3af2beacd95e4fdcc7681e848a6035c007897a514f2528277"
+    },
+    "segmented-immediate-wqe-003": {
+      "bindings_verified": 17,
+      "report_sha256": "ec7e0d40e66ce9a41d222c05ec3c7b8eeaab94bc65179d216b43e867f3d88012"
+    },
+    "segmented-immediate-wire-001": {
+      "bindings_verified": 448,
+      "report_sha256": "9c2a3bc7ca90c4e91a8afb339d27f6fcb52ff3da52f7546725bf2c2177105867"
+    },
+    "segmented-immediate-source-002": {
+      "bindings_verified": 271,
+      "report_sha256": "431a18fdab20a8fdab3e8a90a1c588546d1aa4f315e39bf1c2fa02a363a33cfc"
+    },
+    "segmented-immediate-admission-002": {
+      "bindings_verified": 473,
+      "report_sha256": "c322a2eddd9e2804184d7ff4067a11897b4fecc484529b914daec83454df6bcf"
+    },
+    "segmented-immediate-profile-001": {
+      "bindings_verified": 245,
+      "report_sha256": "96255ec440a7b7c0b031ececa5a0103428b8c1822ee7d58c2f292e71a4e9d81e"
+    },
+    "segmented-immediate-padding-001": {
+      "bindings_verified": 117,
+      "report_sha256": "0ba1b55d572c9b6f8b687c5d2d4f45ecb640ea25f04e384d2c1eda8f645b8b6b"
+    },
+    "segmented-immediate-generated-hls-001": {
+      "bindings_verified": 699,
+      "report_sha256": "07292ab0e94db5fb6b9f3793a9f9bda337929d68b81d9b115fa8f99998d6d2e8"
+    },
+    "segmented-immediate-native-elaboration-001": {
+      "bindings_verified": 1606,
+      "report_sha256": "7ca22f9fe580c1d371e0f10409ecee9ae6a2bb1c681443dcc9c6c993df4b5bd5"
+    }
+  },
+  "historical": {
+    "segmented-immediate-wqe-001": {
+      "bindings_verified": 17,
+      "report_sha256": "a306d1d889c77fac6f0ea19daa1b8c6bbb609ef9224a4eff59733c132876437c",
+      "resolved_only_to_exact_preimages": [
+        "rdma/rnic/kernel/wqe_segmented_immediate.c",
+        "rdma/rnic/tests/test_segmented_immediate_wqe.py"
+      ],
+      "preimage_root": "rdma/rnic/build/segmented-immediate-wqe-001-preimages-UAtFkYUC"
+    },
+    "segmented-immediate-wqe-002": {
+      "bindings_verified": 17,
+      "report_sha256": "01bb84110435ac04ced4c82030c09684a76032121022609db7474f98de79426a",
+      "resolved_only_to_exact_preimages": [
+        "rdma/rnic/tests/test_segmented_immediate_wqe.py"
+      ],
+      "preimage_root": "rdma/rnic/build/segmented-immediate-wqe-002-preimages-f0L16XBV"
+    },
+    "segmented-immediate-source-001": {
+      "bindings_verified": 159,
+      "report_sha256": "384a6160ec2df346debb5ef352f0c5d02d74b91a8b6b44aefc9d98d998f82758",
+      "resolved_only_to_exact_preimages": [
+        "rdma/rnic/tests/test_segmented_immediate_source_rtl.py"
+      ],
+      "preimage_root": "rdma/rnic/build/segmented-immediate-source-001-preimages-fadOXcCP"
+    },
+    "segmented-immediate-admission-001": {
+      "bindings_verified": 455,
+      "report_sha256": "4708a23f99f3326b5a52bc2ba52d7feb9b939c479e812a2de21984b46c6622e2",
+      "resolved_only_to_exact_preimages": [
+        "rdma/rnic/tests/probe_segmented_immediate_admission.py"
+      ],
+      "preimage_root": "rdma/rnic/build/segmented-immediate-admission-001-preimages-29UFHgRQ"
+    }
+  },
+  "failed_evidence": {
+    "codec001": "Actual C compilation refuses nonexistent short macro names; original20 methods run, new class does not compile. Exact C/test/header preimages saved before using existing AS02_WQE_SEND_IMMEDIATE/WRITE_IMMEDIATE names.",
+    "codec002": "One new compatibility method invokes a nonexistent Atomic test helper. Exact preimage saved; use original independent candidate() and retain the full byte oracle, all assertions and UBSan.",
+    "source001": "Actual RTL executions pass then fail report bookkeeping because list has no setdefault. All40 frozen run artifacts and119 source bindings retained; only restore the inherited dict interface, rerun every original/new method.",
+    "admission001": "New test incorrectly expects local-write permission denial for source reads using a second valid MR; actual MR instead correctly reports range overflow. Exact455 bindings/preimage retained. Check an independently stale-generation key and add a positive full-range read-only-source case, retaining all prior READ permission checks.",
+    "native_startup001": "Strict anchor refuses two known result/summary metadata occurrences before compilation. Exact preimage and zero compiled/runtime record retained; explicitly require both metadata matches only."
+  },
+  "remaining": "Actual complete-native Immediate payload/DMA/common-nonce/MAC/CQ execution; matching Linux/provider source and real API/device lifecycle; large inbound RX/Immediate, multi-SGE, recovery/congestion/interop, original full-board timing and short physical qualification remain. All11 original requirements are retained; goal is incomplete.",
+  "protected_raw_files_unchanged": true,
+  "safety": {
+    "hardware_or_default_changed": false,
+    "module_installed_or_loaded": false,
+    "BIOS": "Medium unchanged",
+    "management_network_unchanged": true,
+    "FPGA_program_or_flash": false,
+    "reboot": false,
+    "reboot_thread_goal_restore_proven": false,
+    "commit_or_push": false
+  }
+}

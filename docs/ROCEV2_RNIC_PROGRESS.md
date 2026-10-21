@@ -32,6 +32,285 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+Explicit publication snapshot (2026-10-21): progress162–165 and the CURRENT,
+unfinished166 RNR component sources/reports are included at the user's request.
+Local/unpushed/previous-HEAD/live-build statements below are checkpoint history.
+No build is currently running. The active functionality goal is not complete;
+this publication does not narrow any of the eleven original requirements.
+Generated/vendor build artifacts, credentials, binaries and private agent/cache
+administration remain excluded. Existing successful AND failed evidence stays
+unaltered. No hardware, driver install/load, network, fan/BIOS, flash or reboot
+action is performed for publication.
+
+In-progress166 adds `derive_receive_write_rnr_ack.py`, extending the existing
+single RECV/WRITE ACK sequence with a distinct368-bit RNR owner and384-bit
+wire proof. It requires the real captured negative ACK, accepted EOF, SFD/MAC
+receipt and1024-cycle tail before independently backpressured proof and exact
+retirement. It does not invent a posted RQ, positive WRITE/HLS receipt or CQ.
+[Component002](../results/2026-10-18/rocev2-rnic-receive-write-rnr-ack-002.json)
+PASSES all58 old+20 new modes and both legacy fixtures under unchanged10s,
+4ns/100000-cycle gates. The new actual-MAC mixed path is RNR/WRITE/RECV/RNR,
+four full frames and fresh shared tags6001..6004. RNR body/producer and HLS/
+controller boundaries remain MODELS; this is not generated-HLS/native retry.
+[Failed component001](../results/2026-10-18/rocev2-rnic-receive-write-rnr-ack-001.json)
+is retained: mode90 initially cleared a bit already zero;002 changes only the
+fixture mutation to the actual syndrome bit. The DUT derivative is unchanged.
+
+`rocev2_segmented_write_rnr_control.v` and its24-mode test are new WIP, NOT
+connected to the native hierarchy. The intended path retains the rejected
+WRITE identity, binds a fresh typed RNR owner before issuing the HLS event,
+and waits for wire proof and ACK retirement before the local error consumer.
+[Controller001](../results/2026-10-18/rocev2-rnic-segmented-write-rnr-control-001.json)
+FAILS during test port parsing. After a parser-only correction,
+[controller002](../results/2026-10-18/rocev2-rnic-segmented-write-rnr-control-002.json)
+still FAILS at mode0's final lifecycle assertion; the remaining23 modes were
+not executed. A
+[read-only observer](../results/2026-10-18/rocev2-rnic-write-rnr-control-observer-001.json)
+against the exact frozen failing bench and unchanged DUT observes the actual
+REPORT handshake, then IDLE/counts1/fault0 before the following negedge. The
+fixture checks combinational guards immediately after withdrawing VALID with
+no settling delay; this is diagnostic evidence only. The original failure is
+NOT relabeled and no fix/retest is included in this publication.
+
+The latest completed integrated milestone remains profile8 native36 and the
+matching software-source/callback/native-CQ tests in165 below. Incoming WRITE
+RNR/same-PSN retry/NAK still require actual native and real-peer integration.
+Full1MiB native, multiSGE, live registered Linux/provider references, safe
+partial-HLS teardown, congestion, original4ns/default1.08ns/full-board timing/
+fit/CDC/DRC/routing and short supervised physical work remain. HLS15.571ns
+still FAILS and13 native UNOPTFLAT warnings remain unwaived. The publication
+rerun of `scripts/check.sh` still FAILS on the historical TX-padding SHA
+mismatch; no overall suite pass is claimed. BIOS Medium, management networking,
+oneSGE, `IB_ATOMIC_NONE`, both zero global drains and rollback images stay intact.
+
+Progress165: previous164 was PROGRESS (distinct profile8 sources, actual
+CQ predicate140800/provider9 passes and verified-live fresh native build).
+All363 authored/174 public-report/614 live-input hashes revalidated. SAME
+session68327/runner2909319/compiler2909330 was polled, not restarted. The
+new matching131071/511/13/63 native36 is now TERMINAL PASS:894.627967s build,
+maximum9.733767s/case, original1200s/30s/4ns unchanged. All36 old raw inputs
+and every data/owner/cardinality summary remain exact; only EXPECTED identity
+constants change. [New-identity native audit001](../results/2026-10-18/rocev2-rnic-segmented-write-profile-native-diagnostics-001.json)
+PASSES2998 bindings; all197 generated HLS files and actual sole native
+MR/PTE/backend/nonce/ACK/RQ/controller multiplicities match.13 UNOPTFLAT
+warnings remain unwaived; no loop or physical timing closure follows.
+
+`build_segmented_write.py` then froze the matching source and actually
+built/linked modules with real running-kernel headers in10.842521s under
+original180s. No module was installed or loaded; Atomic_NONE/defaults stay.
+[Kernel build001](../results/2026-10-18/rocev2-rnic-segmented-write-kernel-build-001.json).
+
+New boundary models support the explicit profile8 tuple without changing
+old profile models. [Actual standard callback202 cases](../results/2026-10-18/rocev2-rnic-segmented-write-kernel-post-001.json)
+PASS under ASan/UBSan, compile8.364628s and original10s/case. All170 old
+case names and summaries remain identical;32 WRITE-notice cases add zero and
+nonzero notification capacity, lengths0/1/4096/4097/8193/1MiB, old-profile
+refusal, bad tuples/geometry/WRs, bad whole owners/epochs/cookies/proofs/
+errors/counts, full CQ/backpressure and ambiguous RQ producer ACK. Actual
+standard C posts/checks exact128-byte records and keeps/releases its MR/RQ/CQ
+references correctly.1MiB completion input is MODELED, not native payload.
+
+[Unedited-native-CQ95 cases](../results/2026-10-18/rocev2-rnic-segmented-write-kernel-native-cq-001.json)
+also PASS (compile7.383391s, each <=10s). All18 old pairs/four mutations each
+remain, plus the new WRITE/Immediate pair. The actual NEW native33-word CQ
+with8193/flags3/Immediate89abcdef/CQC511 and its original genuine zero-capacity
+C128 receive record are read WITHOUT rewriting observed data. Standard C
+post_recv emits the same128 bytes. poll_cq yields one IB_WC_RECV_RDMA_WITH_IMM
+with byte_len8193/BE Immediate, despite posted capacity0, and exactly one CQ
+ACK. Zero RQ gains no invented local payload-MR work ref: the separately
+registered MR remains registered/refcount1 until explicit cleanup. Four
+malformed in-memory copies retain the owner and do not ACK/unpin or publish a
+false completion. The original native input/event files remain unchanged.
+
+[Matched source audit001](../results/2026-10-18/rocev2-rnic-segmented-write-native-software-diagnostics-001.json)
+PASSES2130 exact bindings across actual new native36, real-header kernel,
+callback202, native-CQ95, provider9, policy140800 and the strict old-tuple
+build rejection. The semantic-tested CQ header equals the actual frozen module
+header byte-for-byte. Old failed receive-post001 remains failed (exact
+preimage); successful old170 baseline002 is distinct. Initial audit attempts
+corrected ONLY the frozen-input map base directory and selection of that
+actual successful old baseline; DUT/test/data/gates were not changed.
+Exact initial audit source preimages are retained locally. The model-source
+startup checker also narrowed an ambiguous derivation anchor to its exact
+full geometry expression; no actual kernel/hardware gate was relaxed.
+
+This is SOURCE and SNAPSHOT coupling, not live Linux/RTL/provider execution.
+Linux primitives/pins/MMIO/coherent DMA and provider syscall/WC replies are
+explicit models. Registered physical page/QP/MR lifetimes and actual PCIe/CPU
+visibility remain unqualified. All11 remain: full1MiB native/multiSGE,
+incoming segmented WRITE wire RNR/NAK/retry, real-peer MSN/recovery/congestion,
+privileged partial-HLS cleanup, original4ns/default1.08ns/full-board fit/
+setup/hold/CDC/DRC/routing and short supervised physical behavior. HLS15.571ns
+still FAILS; no image/install/load/reboot/fan/BIOS/network/Git action. No active
+jobs;162–165 local after7234cab. Next coarse feature boundary is real wire
+RNR/NAK/retry for retained incoming WRITE messages, not silent capability
+expansion or timing waivers. Historical scripts/check.sh TX-padding identity
+failure remains, and no overall goal/whole-suite/physical completion is claimed.
+
+Progress164: previous163 was PROGRESS (actual complete native36 execution and
+4366-binding audit). All351 authored/170 report hashes revalidated unchanged.
+All11 remain. No automatic Git/driver/hardware/default action is authorized.
+
+New `derive_segmented_write_profile.py` gives the same qualified native WRITE
+graph a DISTINCT source identity: RNC131071/CQC511/SQC13/RQC63/profile8.
+Exactly THREE leaves change: control/CQ/queue CSR feature words only. Native
+payload/owners/PSN/MR/PTE/backend/nonce/HLS/ACK/RQ/CQ gates and old identities
+remain byte-identical. Full native elaboration001 PASSES8.167276s with no
+missing leaves/HLS stubs/port-width waiver and identical module counts.
+Fresh matching native36/session68327 is LIVE; original1200s build/30s cases/
+4ns clocks/root1GiB/RAM4GiB guards remain. Only EXPECTED capability words
+change in the existing complete36 test fixture; observed events/data are NEVER
+normalized. The old65535 successful binary is not used as new131071 proof.
+
+`derive_segmented_write_kernel.py` adds profile8 to the actual standard verbs,
+MR/QP/native graph, ring codec/replay and CQ semantic paths. It requires the
+exact131071/511/13/63 tuple/geometry; old/default cohorts remain. The actual
+C128 large/zero RECV codec is reused, not a user DMA/BAR/payload-copy bypass.
+Only profile8 accepts flags3 WRITE notification bytes through1MiB; profile7
+still limits that class to4096 and retains its1MiB non-WRITE receive semantics.
+[CQ semantics001](../results/2026-10-18/rocev2-rnic-segmented-write-cq-semantics-001.json)
+PASSES140800 actual C predicate combinations under UBSan, including all256
+flags, all profiles/unknowns, zero/4096/4097/8193/1MiB/oversized lengths and
+five capacities.128000 old/unknown rows are exactly unchanged. This is NOT
+execution of the real MR/queue/CQ callback lifetimes or1MiB native transfer.
+
+`derive_segmented_write_provider.py` retains all8 old firmware identities and
+adds131071, using the same real standard uverbs/libibverbs marshalling.
+[Provider001](../results/2026-10-18/rocev2-rnic-provider-segmented-write-001.json)
+PASSES all9 profiles. New chained zero-capacity RECV requests exercise bad-WR
+errors and WRITE-notice WC lengths0/1/4096/4097/8193/1048576, actual RDMA-WITH-
+Immediate opcode and big-endian Immediate values. The syscall/WC producer is
+a MODEL: this does not prove kernel callbacks/native CQ or real1MiB data.
+
+New `build_segmented_write.py` will freeze/build/link real running-header
+modules ONLY after the exact NEW native tuple and all36 actual cases pass.
+Its actual invocation with the old successful65535 native36 report is rejected
+BEFORE creating a build report or compiling modules. [Source diagnostics001](../results/2026-10-18/rocev2-rnic-segmented-write-software-source-diagnostics-001.json)
+PASSES652 bindings across the semantic/provider/native-boundary evidence and
+this negative gate. Eleven reviewed kernel leaves change in a separate source
+cohort, not installed/default files. Atomic_NONE stays. Actual new module build,
+callback/reference lifetimes and UNEDITED matching native33-word WRITE CQ
+consumption are NEXT, not proved by these source/predicate/provider checks.
+
+The initial development command mixed kernel/provider module search paths
+(duplicate `derive_atomic_access` basenames); separate subprocesses with each
+owning path resolved that startup-only import error. A provider CLI attempt
+without required `--rdma-core` stopped at argument parsing; the actual reported
+run uses the same pinned local rdma-core tree as previous successful cohorts.
+Neither is a DUT failure or a waived test. No existing source was changed to
+hide either diagnostic. Matching native compile retains13 UNOPTFLAT warnings.
+All11/full1MiB native/multiSGE/live registered APIs/recovery/partial-HLS cleanup/
+original4ns timing/physical remain. No image/install/load/reboot/fan/BIOS/network
+or Git action. New source work is local after explicit publication7234cab.
+
+Progress163: previous162 was PROGRESS (actual header-gate512 runtime, new
+36-case full native fixture and a verified-live fresh compile). Checkpoint162
+350 authored/168 public-report/618 live-input hashes all revalidated exactly.
+The SAME session74185/runner2905891/compiler2905912 was polled, never restarted
+for an observation timeout. Its actual terminal result is now SUCCESS.
+
+[Native-full002](../results/2026-10-18/rocev2-rnic-segmented-write-native-full-002.json)
+PASSES ALL36 actual executions. Compile896.666412s remains below1200s; new
+WRITE8.832630s/WRITE+Immediate9.433548s and maximum9.533906s (large SEND+IMM)
+remain below the original30s/case. Actual typed generated HLS/native PSN/
+MR/PTE/PCIe TLP/global physical nonce/visibility fence/sole dual-owner ACK/
+MAC/XGMII/FCS/SFD/receipt CDC/whole CQ execute together, not trace models or
+the earlier component's descriptor-only RAM engine. All three424 owners,
+456 HLS receipts and atomic native expected-PSN commits match. Full8193 host
+bytes/padding/sentinels and ACK frames match, with four whole/per-packet MR
+queries, three real memory commands, five scattered page writes, three
+actual fences/ACKs and strict no-positive-SFD-before-fence checks. FIRST/MID
+consume no RQ; LAST Immediate alone consumes the real zero-capacity C128 RQ
+and produces ONE whole8193/flags3 CQ and genuine host ACK. Holding its final
+MAC receipt1100 cycles retains the actual PSN/message/RQ/CQ ownership.
+
+Every34 old case passes on this NEW binary, including large READ/SEND/WRITE/
+Immediate, incoming SEND/Immediate, zero RQ/RNR/ordinary services, requester
+CAS/FADD, mixed Atomic and permission denials, and all five zero operations.
+Every original raw-input hash and every available summary oracle is identical,
+not normalized or copied as execution proof. The old successful34 binary and
+all frozen failures remain intact. New binary SHA is
+`b9282fe6a0b708ba82a978a5047f054dfd754bff70e3acac1eec20dcd1eb9e3d`.
+
+[Runtime diagnostics001](../results/2026-10-18/rocev2-rnic-segmented-write-native-runtime-diagnostics-001.json)
+PASSES4366 exact bindings. Actual executable-bench module counts match native
+elaboration, including the single shared MR/PTE/backend/nonce/ACK/RQ and the
+real WRITE controller/frontend/bridge. All197 same-generation HLS RTL/data
+files are selected. Full001 `.dat` startup failure and exact source preimages
+are retained; header-gate and fixture audits are separately bound. Native
+inputs are two-state; physical host/root/peer/PHY/PTP are still MODELS, not
+live pinned Linux or physical PCIe ordering. Real native TLP behavior is not
+itself physical host-ordering proof.
+
+Warnings are not erased: the old34 build had12 UNOPTFLAT warnings, the new36
+has13. Existing CRC/priority nodes overlap, and native configuration/admission/
+guard cones expand. Actual runtime success does NOT establish loop-free or
+original setup/hold/CDC/DRC/routing closure. HLS estimate15.571ns still FAILS
+the original4ns/default1.08ns; full-board fit/timing remains unqualified.
+
+Next feature boundary is software: current exact profile7 still accepts
+WRITE/Immediate flags3 receipts only through4096 bytes. New native8193/flags3
+and zero-capacity ownership must reach a NEW explicit matched kernel/provider
+capability cohort; do not silently widen the old profile or advertise support
+on an older core. Full1MiB native/multiSGE, registered live Linux refs/verbs,
+real-peer NAK/RNR/recovery/MSN/congestion and partial-HLS teardown also remain.
+All11 original requirements stay open. No active feature jobs, install/load/
+program/fan/BIOS/network/reboot/Git action.162–163 local after explicit7234cab.
+`scripts/check.sh` still fails the historical TX-padding source/report hash
+identity check; no whole-suite or physical release success is claimed.
+
+Progress162: previous goal turn was PROGRESS: actual native controller
+insertion and complete native elaboration001 passed. The intervening explicit
+user-requested51-file publication7234cab includes157–161, successful and
+failed reports. This goal turn does NOT authorize automatic further Git or
+hardware/default changes, and all11 requirements remain unchanged.
+
+The ACTUAL native-only `allow_header` extension now has four-state runtime
+evidence, not just the earlier base classifier512. [Header-gate001](../results/2026-10-18/rocev2-rnic-native-write-header-gate-001.json)
+PASSES all256 opcodes x2 current-message states/512 frames. Each FIRST is
+offered for5 cycles with opposite old classification and alternating0/X
+admission:2560 cycles accept no header/output and retain the configuration
+guard. After release with current message state, admission closes again
+immediately after FIRST; SECOND, buffered headers and BODY still drain with
+the original every-byte/KEEP/EOF/stall assertions. Compile/runtime10s,
+4ns and100000cycles stay unchanged; runtime0.087117s. This is the actual
+native router leaf, not a complete native payload or physical proof.
+
+`segmented_write_payload_native_fixture.py` adds two8193-byte incoming
+WRITE/Immediate cases to all34 old native cases. Full independent424 token,
+456 generated-HLS receipt and actual native expected-PSN commit are checked,
+with four real whole/per-packet MR queries, three MR-relative memory commands,
+five scattered PCIe page writes, three actual visibility fences/ACK SFDs and
+exact full host payload/pad/sentinels. Only LAST Immediate may consume a real
+zero-capacity coherent RQ; its whole CQ must still report8193/flags3, not the
+capacity0 or LAST1 byte. Final actual MAC receipt is held1100 cycles to forbid
+premature PSN/guard/CQ retirement. These are NEW TEST REQUIREMENTS, not passes.
+
+[Fixture diagnostics001](../results/2026-10-18/rocev2-rnic-segmented-write-native-fixture-diagnostics-001.json)
+PASSES recipe/input provenance only: all34 old descriptors/order and359
+original fatal messages survive,37 new fatal checks added, no internal force.
+New raw Ethernet beats are261/260/4 ordinary or261/260/5 Immediate. Existing
+native MR first offset3565 + relative528 = host offset4093;8193 bytes end at
+12286, so the same THREE sealed pages suffice (unlike a different component
+geometry with MR-first4093). This is not a page-count assertion relaxation.
+
+Fresh actual native-full002/session74185 is building with the exact actual
+elaboration001 selected RTL and ENTIRE same-generation197-file HLS manifest.
+No old executable/object is reused. Original1200s build,30s/case,4ns clocks,
+1GiB root/4GiB RAM guards remain. Full001 stopped before bench generation:
+the selector incorrectly looked for `.dat` hashes in the RTL-only source map.
+Its failure and exact preimages remain; the corrected selector verifies ALL
+actual `.dat` paths/hashes against the original generated-HLS manifest, not
+a fallback/missing-file waiver. No DUT gate, expected payload or timeout changed.
+
+At this checkpoint compilation is LIVE, not successful or timed out. Its13
+UNOPTFLAT warnings include existing CRC/priority paths and newly expanded
+native admission/configuration/guard cones; they are retained and NOT waived.
+Neither source/fixture audit nor eventual compilation can substitute for the
+new36 runtime cases or full-board original setup/hold/CDC/DRC/routing proof.
+Software flags3 ceiling4096/default Atomic_NONE/installed profile/BIOS Medium/
+management networking stay unchanged. No reboot, JTAG, flash or load test.
+
 Explicit publication update (2026-10-21): this snapshot includes progress157–160
 and the current progress161 integration work, with both successful and failed
 reports. Local/unpushed statements and older public HEADs below are historical.

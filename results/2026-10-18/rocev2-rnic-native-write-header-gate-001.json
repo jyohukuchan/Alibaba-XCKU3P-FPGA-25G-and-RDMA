@@ -1,0 +1,44 @@
+{
+  "scope": "Actual native FIRST-header gate plus every512 unchanged classifier oracle.\n\nHold a new frame while the previous WRITE classification is still opposite;\nzero/unknown admission must not accept it. Release with the current real\nmessage state, then close admission after FIRST: SECOND and all buffered/body\nbeats must still drain. No authority, full-native payload or physical claim.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/native-write-header-gate-5xoqehni",
+  "source_sha256": {
+    "rdma/rnic/tests/probe_native_write_header_gate.py": "ed793d1fe55a62b8939c6747f0004ce119f52004a91ca28255fe11a7d2c44b0c",
+    "rdma/rnic/tests/probe_native_write_classifier.py": "a037c3bd0c1dd5a858d8d3761f998ca8d411d228dd2b9be4206a8158ba8cee3c",
+    "rdma/rnic/fpga/derive_segmented_write_native.py": "1e5fe9ee14e6b2108836133a91220ef0f250c1fa79db154e9d357c2ba3660b53",
+    "rdma/rnic/fpga/derive_write_controller_leaves.py": "ebb665acf843ed99c99b0f6342c79216eed6884a7993c413d44a78000ce77753",
+    "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64"
+  },
+  "compile_limit_seconds": 10,
+  "runtime_limit_seconds": 10,
+  "clock_ns": 4,
+  "cycle_limit": 100000,
+  "hardware_verified": false,
+  "complete_native": false,
+  "actual_native_header_extension": true,
+  "compile_seconds": 0.010369051015004516,
+  "exit": 0,
+  "simulation_seconds": 0.08711698499973863,
+  "source_unchanged": true,
+  "summary": {
+    "pass_test": true,
+    "frames": 512,
+    "opcodes": 256,
+    "force_states": 2,
+    "blocked_FIRST_cycles": 2560,
+    "gate_closed_after_FIRST": true,
+    "WRITE_frames": 260,
+    "other_frames": 252,
+    "every_byte_KEEP_EOF": true,
+    "cycles": 6700
+  },
+  "artifact_sha256": {
+    "rdma/rnic/build/native-write-header-gate-5xoqehni/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/native-write-header-gate-5xoqehni/tb.v": "9b2416341e2ae4278640786391085e6ce40c968cba4c6610f3b4096d672e9607",
+    "rdma/rnic/build/native-write-header-gate-5xoqehni/simulation.log": "ead8fc846b690dc98926e5139333ea8358bc7bfd1284cb8bfc85096e52dc7685",
+    "rdma/rnic/build/native-write-header-gate-5xoqehni/router.v": "f036432d2c92cda7c193414f3061e1074de3e7894445f50ede80c8d916ca67dd"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-native-write-header-gate-jd_6ca2y/test": "28f709e9e7cc07b02abee1b88f3c0dfbf7ee8027f74cfa4b77947112850c246e"
+  }
+}

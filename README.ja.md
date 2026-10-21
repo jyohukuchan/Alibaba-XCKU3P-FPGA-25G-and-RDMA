@@ -31,6 +31,18 @@ Alibaba AS02MC04（XCKU3P）向けの、**Corundumベースの25GbE移植・検�
 
 ## RNIC開発中ソースの進捗（2026-10-21）
 
+今回の公開にはprogress162〜165と、開発中のprogress166のRNR関連ソース・成功／失敗記録を含めます。以下の「未push」「ビルド中」は各時点の履歴で、現在ビルドは動いていません。統合試験で確認済みの最新範囲は、以下のprofile8・全36件とカーネル／provider側の対応です。実機向けリリースではありません。
+
+開発中のprogress166では、RECV／WRITE／RNRのACK割当てを1つにまとめ、単体78ケースと従来試験2本が成功しました。実MAC回路を通る混在4フレームも照合しています。[RNR ACK単体試験](results/2026-10-18/rocev2-rnic-receive-write-rnr-ack-002.json)。一方、WRITE状態を保持するRNR制御部の最新試験は失敗のままで、観測用回路の記録を合格扱いにはしていません。RNR／同一PSN再試行のnative全体統合・実機確認は未完了です。元のタイミングとTX-paddingのハッシュ照合も未解決で、公開のための条件緩和や実機・設定変更はしていません。
+
+progress165では、新profile8のnative全36件、実ヘッダーによるカーネルモジュールのビルド、標準verbsの処理を使う202件、未改変のnative完了通知を読む95件が成功しました。旧170件の結果も同一です。容量0のRQから8,193バイトのWRITE／Immediate完了通知を生成し、異常な所有権で解放しない処理まで確認しています。[2,130件のハッシュ照合を含む監査](results/2026-10-18/rocev2-rnic-segmented-write-native-software-diagnostics-001.json)。ただしLinux・MMIO・ピン留め・DMAの基本動作などはモデルで、実機上のカーネル／native／provider接続ではありません。実機・設定は変えていません。次はsegmented WRITEの受信拒否に対する実際のRNR／NAK・再試行などが残っています。
+
+progress164では、旧構成と区別する新しいprofile8と、カーネル／providerの対応ソースを追加しました。旧profile7のWRITE通知4,096バイト制限は保ち、新しい完了通知判定だけを拡張しています。判定140,800通りと、実際のlibibverbs／private providerによる全9識別・容量0のRQ・WRITE完了通知の受け渡しが成功しました。[ソース段階の監査](results/2026-10-18/rocev2-rnic-segmented-write-software-source-diagnostics-001.json)。新識別のnative全体コンパイルも成功し、同じ36ケースを新規ビルド中です。ただしカーネルのモジュールビルド、実際のコールバックによるキュー・MR解放、新native完了通知との結合はまだです。実機への導入・設定変更はしていません。
+
+progress163では、新しいnative全体の36ケースがすべて成功しました。WRITE／Immediateの8,193バイト全量に加え、既存34件も元と同じ入力・結果条件で通っています。生成HLS・MR／ページ表・PCIe DMA・nonce・フェンス・実MACのACK・native PSN更新・全体CQを接続した試験で、ビルド約897秒、各試験は最長約9.54秒でした。[4,366件のハッシュ照合を含む監査](results/2026-10-18/rocev2-rnic-segmented-write-native-runtime-diagnostics-001.json)。ビルドは終了済みです。ただしホスト／リンクの一部はモデルで、実機・元の4nsタイミング・最大1MiB・複数SGE・回復処理などは未完了です。現行profile7のカーネルはWRITE通知を4,096バイトまでに制限しているため、新しい8,193バイトの完了通知を扱うドライバー／provider対応も残っています。実機・設定は変えず、progress162〜163は未pushです。
+
+progress162では、native固有のヘッダー受付ゲートも512フレームで検証できました。受付禁止／未知値の2,560周期では新規フレームを受け付けず、受付済みフレームは最後まで流れます。[試験記録](results/2026-10-18/rocev2-rnic-native-write-header-gate-001.json)。WRITE／Immediateの8,193バイト全経路試験を追加し、既存34件と合わせた36件用の新規ビルドを実行中です。[入力・検査項目の監査](results/2026-10-18/rocev2-rnic-segmented-write-native-fixture-diagnostics-001.json)では既存の全入力・順序と359個のチェックを維持していますが、転送成功の証拠ではありません。循環経路の警告も未解決・未免除で、通信実行・タイミング・実機の新たな合格はまだありません。この追加分は未pushで、公開済み7234cabは以下のprogress157〜161です。
+
 今回の公開にはprogress157〜160と、進行中のprogress161のnative統合ソース、成功・失敗の両方の記録を含めます。以下の「未push」「未commit」や以前の公開HEADは各時点の履歴です。完成版RoCEや実機向けリリースではありません。
 
 progress161では、WRITE受信コントローラーをnative全体へ配置し、実際の生成HLS・native PSN更新・同じMR／ページ表／バックエンド／nonce・単一のRECV／WRITE ACK割当て・本物のRQ／全体CQ経路へ接続しました。native全体のコンパイルは約8.23秒で成功しています。[接続・コンパイル記録](results/2026-10-18/rocev2-rnic-segmented-write-native-elaboration-001.json)。ただし統合後のデータ転送試験ではなく、既存34件と新しいWRITE／Immediateの実行回帰、新しいヘッダー受付ゲートの単独実行検証、最大1MiBのnative転送、ソフトウェア対応、回復処理、元の4nsタイミング達成・実機検証は残っています。FPGAへの書き込み、ドライバー導入、能力広告、BIOS・ファン・ネットワーク設定の変更はしていません。

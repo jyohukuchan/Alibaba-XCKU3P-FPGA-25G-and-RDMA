@@ -1,0 +1,20 @@
+{
+  "scope": "Real retained-WRITE RNR controller handshakes; owner/ACK/HLS edges modeled.\n\nNo generated HLS, actual MAC/native RX/RQ/DMA/PSN or software proof follows.\nNever interpret READY, idle, local report or a reset as a wire certificate.\n",
+  "pass_test": false,
+  "directory": "rdma/rnic/build/segmented-write-rnr-control-1gop0zio",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_segmented_write_rnr_control.v": "d857ec9613ea2f9e31cc75bcae4e1049fe82db4f1d7c6c9e2b60ca47c891d12f",
+    "rdma/rnic/tests/probe_segmented_write_rnr_control.py": "5438bc228536abf3c2649d2e27a2225e63db57cf0e7dfee8c16d14b9c2e83ce6"
+  },
+  "tests": {},
+  "compile_limit_seconds": 10,
+  "runtime_limit_seconds": 10,
+  "clock_ns": 4,
+  "cycle_limit": 100000,
+  "actual_native_or_HLS_or_MAC": false,
+  "hardware_verified": false,
+  "error_type": "ValueError",
+  "error": "exact helper port required:input wire [103:0] trusted_identity",
+  "artifact_sha256": {},
+  "RAM_artifact_sha256": {}
+}

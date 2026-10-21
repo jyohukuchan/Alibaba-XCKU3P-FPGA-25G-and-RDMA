@@ -5,6 +5,46 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+Publication snapshot includes progress162–165 and in-progress166 RNR component
+work, with successes AND failures retained. Earlier local/unpushed/building
+statements are checkpoint history; no build is currently running. Shared ACK
+component78+2 fixtures pass, but the new RNR controller test still FAILS and
+native RNR/retry is not integrated. This does not add live Atomic support or
+relax the original timing/drain gates, `IB_ATOMIC_NONE` or hardware defaults.
+See [current publication boundaries](ROCEV2_RNIC_PROGRESS.md#current-evidence-and-remaining-work).
+
+Progress165: new profile8 native36, real-header module build, standard C202
+callbacks and actual unedited-native-CQ95 cases all PASS. Old170 callback
+summaries remain identical, including prior Atomic paths. [2130-binding audit](../results/2026-10-18/rocev2-rnic-segmented-write-native-software-diagnostics-001.json).
+True zero-RQ/8193 WRITE notice and corrupt-owner retention are checked, but
+Linux/MMIO/pins/DMA/provider replies remain primitive models, not live API/
+physical or Atomic advertisement. IB_ATOMIC_NONE/defaults/timing unchanged.
+All11/full1MiB/multiSGE/WRITE wire RNR/recovery/cleanup/physical remain.
+
+Progress164 adds distinct private131071/511/13/63/profile8 source identities,
+actual CQ semantic140800 cases (old profiles unchanged), and all9 actual
+provider marshalling modes. [652-binding source audit](../results/2026-10-18/rocev2-rnic-segmented-write-software-source-diagnostics-001.json).
+Matching native36 is freshly BUILDING, not runtime-qualified; module builds
+reject old65535 proof. Callback/native-CQ/MR lifetimes and original timing/
+physical remain. No Atomic_NONE/default/install/hardware/Git change.
+
+Progress163 completes fresh native36 execution: incoming8193 WRITE/Immediate
+and all34 old cases, including CAS/FADD/Atomic-mixed/denials, PASS under the
+original1200s build/30s cases (896.667s/max9.534s). [4366-binding audit](../results/2026-10-18/rocev2-rnic-segmented-write-native-runtime-diagnostics-001.json).
+Actual generated HLS/MR/PCIe/global nonce/fence/ACK/MAC/PSN/wholeCQ execute;
+host/root/peer/PHY/PTP remain models. Old raw inputs/summary oracles match.
+The13 UNOPTFLAT warnings remain unwaived; no full-board timing/physical or
+live Linux/native Atomic capability claim. Exact profile7 still limits flags3
+WRITE notices to4096. Matched software/full1MiB/multiSGE/recovery/cleanup and
+all11 remain; Atomic_NONE/defaults unchanged. No live jobs;162–163 local.
+
+Progress162 qualifies the native-only WRITE FIRST-header gate512 frames and
+starts a fresh actual generated-HLS native36-case build (new8193 incoming
+WRITE/Immediate PLUS all34 prior cases). Every359 old fatal check remains;
+the build is LIVE,13 UNOPTFLAT warnings unwaived, no new runtime/timing/
+Atomic capability claim. [Fixture-only audit](../results/2026-10-18/rocev2-rnic-segmented-write-native-fixture-diagnostics-001.json).
+7234cab is the explicit157–161 publication;162 is local. Defaults unchanged.
+
 Publication update (2026-10-21): progress157–160 and the current progress161
 native integration sources and successful/failed reports are now included.
 Earlier local/unpushed/previous-public-HEAD statements are checkpoint history.

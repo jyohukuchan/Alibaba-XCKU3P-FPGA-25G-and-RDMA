@@ -1,0 +1,122 @@
+{
+  "scope": "Matched profile8 native/kernel/provider/C callback source coupling audit.\n\nActual RTL produces the untouched snapshots; actual C posts/compares/retires\nowners with explicit Linux/MMIO/pin/coherent-DMA primitive models. Provider\nuses actual libibverbs with modeled syscalls/WC replies. These are NOT live\nLinux/FPGA/provider/physical page/ref/order/timing qualification.\n",
+  "audit_passed": true,
+  "evidence": {
+    "segmented-write-profile-native-full-001": {
+      "bindings_verified": 854,
+      "report_sha256": "8187903a9109598e670555fd3e589a5b6445e686852fe6274932434c58189ffa",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-profile-native-diagnostics-001": {
+      "bindings_verified": 4,
+      "report_sha256": "a9ce6105d5e5e68d11737e18e029f318be7847fac0d2e5a813498e4d82a37762",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-kernel-build-001": {
+      "bindings_verified": 155,
+      "report_sha256": "7037295600df7a3adc1a29b022d742a70070c98b5ef4903338676c1bacd547c7",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-kernel-post-001": {
+      "bindings_verified": 315,
+      "report_sha256": "e004633dfdc186424debabac5834c2a11ab40f0d2f8c7e4e6818f9cd901a6cc0",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-kernel-native-cq-001": {
+      "bindings_verified": 238,
+      "report_sha256": "9cb56f8df6d5a388b3056d051f459cf64c97fc5f0460a83e8c3de002c5ceced9",
+      "exact_preimage_resolutions": []
+    },
+    "provider-segmented-write-001": {
+      "bindings_verified": 54,
+      "report_sha256": "765517fda3eed4865d3c5b98f3daca9a8201a3f7f2ae641981b4eaf22784114f",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-cq-semantics-001": {
+      "bindings_verified": 82,
+      "report_sha256": "1a8421ee518bcec78fb76a14f368bd40a0e210e830fdc042a11852a280eb3bbd",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-software-source-diagnostics-001": {
+      "bindings_verified": 33,
+      "report_sha256": "bfc0a8dae18b4e1e61f5c589436c768dad8ce19257a72864d23ba05d58543325",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-receive-kernel-post-002": {
+      "bindings_verified": 269,
+      "report_sha256": "00157e7c6f8fc6d9bcf782b1ee7cd00210bf80bed306ccb7837ec5ff7fc307ee",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-receive-kernel-post-001": {
+      "bindings_verified": 126,
+      "report_sha256": "0ff08bd075280e378729684d84571fb7c372a5b9f79dc97ddfebf865253baa96",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/kernel_segmented_receive_post.c"
+      ]
+    }
+  },
+  "verified_bindings": 2130,
+  "private_identity": [
+    131071,
+    511,
+    13,
+    63,
+    8
+  ],
+  "actual_native_cases": 36,
+  "actual_C_callback_cases": 202,
+  "all170_prior_callback_summaries_identical": true,
+  "actual_unedited_native_CQ_cases": 95,
+  "actual_provider_identities": 9,
+  "actual_CQ_policy_cases": 140800,
+  "kernel_real_header_build_seconds": 10.842520813981537,
+  "callback_compile_seconds": 8.364627597969957,
+  "native_CQ_compile_seconds": 7.3833905450301245,
+  "callback_max_seconds": 0.01566866901703179,
+  "native_CQ_max_seconds": 0.014708037953823805,
+  "actual_native_WRITE_snapshot": {
+    "path": "rdma/rnic/build/segmented-write-profile-native-full-0qt29bcv/LARGE_RX_WRITE_IMM-event.hex",
+    "sha256": "35752f31f0d2bf3301bfcbe7e9edae87b9bb9805a2670d8e0188872d21324d8f",
+    "words": 33,
+    "whole_bytes": 8193,
+    "flags": 3,
+    "Immediate": 2309737967,
+    "original_RQ_record_path": "rdma/rnic/build/segmented-write-profile-native-full-0qt29bcv/LARGE_RX_WRITE_IMM-receive-records.hex",
+    "original_RQ_record_sha256": "fbdc435d11e27ee2605a1f229a422e0f84df1a7bbaab3bb623f56f68a6102f85",
+    "capacity": 0,
+    "exact_C128_match": true
+  },
+  "malformed_native_CQ_mutations_retain_owner": true,
+  "semantic_header_matches_real_module": true,
+  "old_profile7_WRITE_max_bytes": 4096,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_segmented_write_native_software.py": "c58749f2db72c97fc243953151a900a37f9af4a750c0aaf3ab7d0c0b2d60f6d2"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "inherited_source_check": {
+    "exit": 1,
+    "stdout": "Tcl completeness checks passed: 28 files (not Vivado elaboration).\nLFC source allowlist tests passed: 14 cases; no hardware/Vivado access.\nSource check passed: 122 HDL, 12 constraints, 3 IP generators.\n",
+    "stderr": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v\n",
+    "overall_suite_passed": false,
+    "original_gate_unchanged": true
+  },
+  "callback_Linux_MMIO_pins_DMA_models": true,
+  "provider_syscall_WC_reply_models": true,
+  "live_kernel_RTL_provider_coupling": false,
+  "standard_installed_API_runtime": false,
+  "hardware_verified": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "remaining": [
+    "All11 remain; this matched source/actual-native-snapshot milestone is NOT live installed Linux/native refs or physical PCIe/CPU visibility.",
+    "Full1MiB actual native and multiSGE remain.1MiB C policy/CPP or modeled WC is not native payload proof.",
+    "Incoming segmented WRITE real wire RNR/NAK/retry, real-peer recovery/MSN/congestion and privileged partial-HLS-message cleanup remain.",
+    "Original4ns/default1.08ns/full-board fit/setup/hold/CDC/DRC/routing and short supervised physical work remain; HLS15.571ns FAIL and13 UNOPTFLAT unwaived.",
+    "No reboot needed; restore ALL archived RAM caches and prove authenticated exact-thread/goal revival before any necessary reboot."
+  ],
+  "install_load_program_reboot_fan_BIOS_network_Git_actions": []
+}

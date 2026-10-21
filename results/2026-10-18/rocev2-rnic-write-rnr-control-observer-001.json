@@ -1,0 +1,25 @@
+{
+  "scope": "Read-only exact failed002 REPORT handshake and registered counts, not positive DUT/test/native proof.",
+  "diagnostic_completed": true,
+  "failed_test_still_failed": true,
+  "source_sha256": {
+    "results/2026-10-18/rocev2-rnic-segmented-write-rnr-control-002.json": "eca56221c05a2871256d4bd5e076976ad9d29988e882dca255aad726fb3c1a3f",
+    "rdma/rnic/build/segmented-write-rnr-control-w9fukyuv/tb.v": "b69e81454ae1101eb1211fc0e4b41e21a65724c24131892f59b24ab32e47ccb3",
+    "rdma/rnic/rtl/rocev2_segmented_write_rnr_control.v": "d857ec9613ea2f9e31cc75bcae4e1049fe82db4f1d7c6c9e2b60ca47c891d12f",
+    "rdma/rnic/tests/write_rnr_control_observe.v": "4a194e6bb76f4cd7a157a8648a51e763a6eb60ef17abbf84bc94dbd9a4b0df83"
+  },
+  "source_unchanged": true,
+  "original_clock_ns": 4,
+  "observation_delay_ns": 1,
+  "original_runtime_limit_seconds": 10,
+  "original_compile_limit_seconds": 10,
+  "actual_valid_handshake": true,
+  "actual_registered_state": "IDLE; requests/proofs/retirements/reports all1, fault0; source VALID still1 before following negedge",
+  "artifact_sha256": {
+    "rdma/rnic/build/rnr-control-observe-16o2xv4q/observe.log": "87663255eaf6f7c67a112f89f6c899baa1e4e38d9207e02457754100676e7572"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-rnr-control-observe-jxajp1_e/test": "18b80db7ca9a78851027eab8d4266cfbcf5948be425b0ed8b4a090a5546b02ed"
+  },
+  "hardware_verified": false
+}

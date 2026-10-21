@@ -16,6 +16,91 @@ passes; this does not relabel the old suite or qualify a hardware release.
 
 ## Latest functional milestone (2026-10-21)
 
+Publication snapshot includes progress162–165 and in-progress166, both passing
+and failing reports. Older local/unpushed/live-build notes below are history;
+no build is currently running. The newest completed integrated milestone is
+profile8 native36 and the matched software-source tests, not live hardware.
+
+The new RNR ACK derivative passes78 modes plus both old fixtures, including
+RNR/WRITE/RECV/RNR through the actual MAC RTL with four distinct shared tags.
+[ACK component002](../../results/2026-10-18/rocev2-rnic-receive-write-rnr-ack-002.json).
+RNR packet producers and HLS/controller boundaries remain models. The new
+`rocev2_segmented_write_rnr_control.v` is NOT yet native-integrated and its
+[latest controller test002](../../results/2026-10-18/rocev2-rnic-segmented-write-rnr-control-002.json)
+still FAILS. [Read-only observer](../../results/2026-10-18/rocev2-rnic-write-rnr-control-observer-001.json)
+confirms a real REPORT handshake and registered counts, not a successful test
+or native retry. No fixture, DUT or assertion is changed by this publication.
+Wire RNR/retry/NAK, original timing, physical and all11 requirements remain.
+
+Progress165: the NEW131071/511/13/63/profile8 native36 is TERMINAL PASS,
+compile894.628s/max9.734s under original1200s/30s. All36 old raw inputs/data
+summary oracles stay identical; only expected CSR identity literals differ.
+Real running-header module build10.843s, actual standard C callback202 cases
+and unedited-native-CQ95 cases all PASS. Every170 old callback summary remains
+identical. New native33-word flags3/8193/Immediate/CQC511 and actual C128 zero
+RQ bytes are consumed directly: IB_WC_RECV_RDMA_WITH_IMM reports8193 despite
+capacity0, and four owner mutations retain queue/MR/CQ lifetime.
+[2130-binding matched-source audit](../../results/2026-10-18/rocev2-rnic-segmented-write-native-software-diagnostics-001.json).
+32 new callback cases cover old-profile refusal, bad tuples/geometry/WRs,
+oversized/notified/corrupted events, reference retention, full CQ backpressure
+and ambiguous producer ACKs. Primitive Linux/MMIO/pin/DMA and provider syscall/
+WC models remain; no live installed Linux/native/provider/physical proof.
+No active jobs/install/default/Git changes. Incoming WRITE wire RNR/NAK/retry,
+full1MiB native/multiSGE/live refs/partial-HLS cleanup/original timing/physical
+and all11 remain.13 UNOPTFLAT warnings unwaived; HLS15.571ns still FAILS4ns.
+
+Progress164 adds private profile8/RNC131071/CQC511/SQC13/RQC63 source
+derivatives across native CSR/kernel/provider. Exactly THREE native identity
+leaves differ; every owner/data/MR/HLS/PSN/ACK/CQ gate remains byte-identical.
+Elaboration001 passes8.168s. Fresh matching36 execution/session68327 is LIVE;
+the old65535 native36 is not substituted as new-identity runtime evidence.
+Actual UBSan CQ predicate140800 combinations pass,128000 old/unknown rows
+identical, profile7 flags3 still4096; profile8 alone permits up to1MiB source
+semantics. Actual libibverbs/private-provider all9 identities pass; six modeled
+WRITE-notice lengths0..1MiB use genuine standard zero-capacity RQ marshalling,
+chained bad-WR errors and network-order Immediate/WC byte counts.
+[652-binding source-only audit](../../results/2026-10-18/rocev2-rnic-segmented-write-software-source-diagnostics-001.json)
+also verifies the real new module builder rejects the old native identity.
+NO new module build, actual callback/MR/RQ/CQ lifetime, unedited new native
+snapshot consumption or installed API proof yet. Full1MiB native/multiSGE/
+recovery/cleanup/original timing/physical/all11 remain; Atomic_NONE unchanged.
+
+Progress163: native-full002/session74185 is TERMINAL SUCCESS. The fresh
+actual typed-HLS/controller graph passes ALL36 cases: new8193 incoming
+WRITE/Immediate plus ALL34 original recipes with identical input hashes and
+summary oracles. Compile896.667s/max9.534s per case meet original1200s/30s.
+[4366-binding actual-runtime audit](../../results/2026-10-18/rocev2-rnic-segmented-write-native-runtime-diagnostics-001.json).
+Every payload/pad/sentinel byte and ACK frame passes, with four actual MR
+queries, five scattered PCIe page writes, three visibility fences/real MAC
+receipts/native PSN commits and true LAST-only zero-capacity RQ/whole8193 CQ.
+Actual executable hierarchy matches elaboration, entire197-file typed HLS
+RTL/data set is selected, no previous object/binary is reused. New binary SHA
+`b9282fe6a0b708ba82a978a5047f054dfd754bff70e3acac1eec20dcd1eb9e3d`.
+13 UNOPTFLAT warnings remain UNWAIVED (old34 build had12); runtime success
+is not loop/setup/hold/CDC/DRC/routing qualification. Host/root/peer/PHY/PTP
+are models, not physical pinning/PCIe ordering. Profile7 flags3 CQ limit4096
+is unchanged: new8193 notices still need an explicit matched kernel/provider
+capability cohort, not a silent old-profile limit increase. Full1MiB/multiSGE/
+recovery/partial-HLS cleanup/original timing/all11 remain. No live jobs or
+image/driver/default/hardware changes;162–163 local after7234cab.
+
+Progress162 adds actual native FIRST-header gate runtime:512 frames/256
+opcodes/two states,2560 blocked zero/unknown-gate cycles, all bytes/KEEP/EOF/
+stalls and post-FIRST drain pass in0.088s under original10s/4ns/100000cycles.
+[Header gate001](../../results/2026-10-18/rocev2-rnic-native-write-header-gate-001.json).
+Fresh `probe_segmented_write_native_full.py` selects the EXACT elaborated
+typed HLS/controller graph and the ENTIRE same-generation `.dat` manifest,
+with no old executable/object reuse. New8193 WRITE/Immediate must earn
+actual native424/456/PSN, whole/per-packet MR, scattered PCIe writes/fences,
+real ACK/MAC and genuine LAST-only zero-capacity RQ/whole8193 CQ proofs.
+All34 old case recipes/order and359 fatal checks remain;37 new fatal checks
+are added. [Fixture-only audit](../../results/2026-10-18/rocev2-rnic-segmented-write-native-fixture-diagnostics-001.json).
+The new36-case build is still LIVE, NOT a compilation/runtime pass. Its13
+UNOPTFLAT warnings are retained/unwaived, not a loop/timing qualification.
+Original1200s compile/30s cases/4ns and1GiB root/4GiB RAM guards remain.
+All11/software/recovery/full1MiB/original timing/physical gates stay open.
+Explicit publication7234cab covers157–161;162 stays local/unpushed.
+
 Publication update: progress157–160 and the current progress161 integration
 sources/reports are included. Earlier local/unpushed statements are history,
 not the current publication state. Successful and failed evidence is retained.

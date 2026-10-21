@@ -1,0 +1,32 @@
+{
+  "scope": "Real retained-WRITE RNR controller handshakes; owner/ACK/HLS edges modeled.\n\nNo generated HLS, actual MAC/native RX/RQ/DMA/PSN or software proof follows.\nNever interpret READY, idle, local report or a reset as a wire certificate.\n",
+  "pass_test": false,
+  "directory": "rdma/rnic/build/segmented-write-rnr-control-w9fukyuv",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_segmented_write_rnr_control.v": "d857ec9613ea2f9e31cc75bcae4e1049fe82db4f1d7c6c9e2b60ca47c891d12f",
+    "rdma/rnic/tests/probe_segmented_write_rnr_control.py": "6e9c76fa7ae82331a34f23b856a0cabbe8e44084940947f61bf1310255a25d9f"
+  },
+  "tests": {
+    "0": {
+      "exit": 1,
+      "seconds": 0.010444557992741466
+    }
+  },
+  "compile_limit_seconds": 10,
+  "runtime_limit_seconds": 10,
+  "clock_ns": 4,
+  "cycle_limit": 100000,
+  "actual_native_or_HLS_or_MAC": false,
+  "hardware_verified": false,
+  "compile_seconds": 0.012986851972527802,
+  "error_type": "ValueError",
+  "error": "actual RNR control failed:0",
+  "artifact_sha256": {
+    "rdma/rnic/build/segmented-write-rnr-control-w9fukyuv/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/segmented-write-rnr-control-w9fukyuv/0.log": "d787d7771e3f8f414a2e810e9e694b2cf327435f3c78eed76de36aa598a2010e",
+    "rdma/rnic/build/segmented-write-rnr-control-w9fukyuv/tb.v": "b69e81454ae1101eb1211fc0e4b41e21a65724c24131892f59b24ab32e47ccb3"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-segmented-write-rnr-control-_6h9exu6/test": "9a3ad09b5472054e89d730ba7af7c6abd133073a6a1eec61c7b5ef760b603fbb"
+  }
+}

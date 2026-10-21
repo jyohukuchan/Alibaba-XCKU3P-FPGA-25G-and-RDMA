@@ -1,0 +1,129 @@
+{
+  "scope": "Actual NEW profile8 native36, unchanged inputs/data oracles, not hardware.\n\nOnly expected CSR identity words differ from previous actual WRITE-native36.\nNo observed snapshot normalization or borrowed binary/software proof.\n",
+  "audit_passed": true,
+  "evidence": {
+    "segmented-write-profile-native-full-001": {
+      "bindings_verified": 854,
+      "report_sha256": "8187903a9109598e670555fd3e589a5b6445e686852fe6274932434c58189ffa",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-native-full-002": {
+      "bindings_verified": 858,
+      "report_sha256": "8125446ea837f057220ba0c777fbd9d85774f1559233c9e4d8c01f79607eb22c",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-profile-native-elaboration-001": {
+      "bindings_verified": 509,
+      "report_sha256": "45e6aa31f2e60ec2522adb83af523cba44a00fbe2e5a677eb75b98650e914ecc",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-native-runtime-diagnostics-001": {
+      "bindings_verified": 7,
+      "report_sha256": "3ec398af43ab8cc1fbe484318d2d63eea4ba0501350e7850f1d1e57c4d332e88",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-owned-generated-hls-001": {
+      "bindings_verified": 737,
+      "report_sha256": "897ad312a3a71e714c8897af5547fa9ce8e69239e50e8cb24ebcb0ab8cd227bc",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-software-source-diagnostics-001": {
+      "bindings_verified": 33,
+      "report_sha256": "bfc0a8dae18b4e1e61f5c589436c768dad8ce19257a72864d23ba05d58543325",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 2998,
+  "actual_native_cases": 36,
+  "all36_prior_inputs_and_data_summaries_identical": true,
+  "private_identity": [
+    131071,
+    511,
+    13,
+    63,
+    8
+  ],
+  "compilation_seconds": 894.6279671500088,
+  "maximum_case_seconds": 9.733767034951597,
+  "binary_sha256": "5025e5ab861f922275f3f99e36a6df5db253d49c3c18b36d4fc61c392c8969b1",
+  "frozen_binary_path": "/dev/shm/as02-segmented-write-profile-native-artifacts-ug5fj85s/Vtb",
+  "same_generation_RTL_data_files": 197,
+  "actual_executable_native_module_counts": {
+    "rocev2_top": 1,
+    "rocev2_native_rnic_endpoint": 1,
+    "rocev2_native_sq_endpoint": 1,
+    "rocev2_mr_table": 1,
+    "rocev2_mr_page_table": 1,
+    "rocev2_shared_hls_transport": 1,
+    "rocev2_shared_protected_responder": 1,
+    "rocev2_atomic_request_integrity_transport": 1,
+    "rocev2_wqe_memory_executor": 1,
+    "rocev2_wqe_response_guard": 0,
+    "rocev2_wqe_tx_lifetime": 1,
+    "rocev2_wqe_replay": 1,
+    "rocev2_receive_queue": 0,
+    "rocev2_receive_ack_tx": 0,
+    "rocev2_cq_mmio": 1,
+    "rocev2_duplex_rx_mux": 1,
+    "rocev2_duplex_tx_router": 1,
+    "rocev2_memory_origin_router": 2,
+    "rocev2_sq_control_regs": 2,
+    "rocev2_sq_dma_fetch": 1,
+    "rocev2_sq_fetch": 1,
+    "rocev2_queue_cfg_arbiter": 1,
+    "rocev2_wqe_admission": 2,
+    "rocev2_native_atomic_request_top": 0,
+    "rocev2_native_zero_request_top": 0,
+    "rocev2_zero_ipv4_icrc": 3,
+    "rocev2_zero_rx_padding": 1,
+    "rocev2_native_zero_rq_top": 0,
+    "rocev2_zero_service_owner": 1,
+    "rocev2_zero_service_mac": 1,
+    "rocev2_memory_command_nonce": 1,
+    "rocev2_native_zero_service_top": 0,
+    "rocev2_paged_memory_backend": 1,
+    "rocev2_segmented_source_executor": 1,
+    "rocev2_segmented_executor_mux": 1,
+    "rocev2_segmented_child_executor": 2,
+    "rocev2_native_segmented_read_top": 0,
+    "rocev2_segmented_read_executor_mux": 1,
+    "rocev2_segmented_read_unpad_route": 1,
+    "rocev2_segmented_read_executor": 1,
+    "rocev2_segmented_read_child_unpad": 1,
+    "rocev2_wqe_read_unpad": 1,
+    "rocev2_native_segmented_request_top": 0,
+    "rocev2_expected_remote_msn": 1,
+    "rocev2_segmented_read_response_guard": 1,
+    "rocev2_native_segmented_immediate_top": 0,
+    "rocev2_native_segmented_receive_top": 0,
+    "rocev2_receive_message_queue": 0,
+    "rocev2_native_segmented_write_owned_top": 1,
+    "rocev2_mr_query_arbiter": 4,
+    "rocev2_receive_write_ack_tx": 1,
+    "rocev2_write_notice_binding_queue": 1,
+    "rocev2_segmented_write_native_controller": 1,
+    "rocev2_segmented_write_native_frontend": 1,
+    "rocev2_native_write_rx_router": 1,
+    "rocev2_remote_write_memory": 1,
+    "rocev2_remote_write_message_guard": 1,
+    "rocev2_memory_client_arbiter": 3
+  },
+  "UNOPTFLAT_warnings": 13,
+  "warning_waivers": false,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_segmented_write_profile_native.py": "8e753dc2af4ccb998e419a5936ba45648a63a0f8d26011c4aebc0b7aef8f4c75"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "kernel_modules_or_callbacks_qualified": false,
+  "live_Linux_or_physical": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "remaining": [
+    "Matching real-header kernel build, standard callbacks/refs, unedited new native WRITE-CQ consumption.",
+    "Full1MiB native/multiSGE/live registered refs/recovery/partial-HLS cleanup/original timing/physical and all11 remain."
+  ]
+}

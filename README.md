@@ -28,6 +28,66 @@ inbound SEND/WRITE target, READ responder, native InfiniBand or production-relia
 
 ### RNIC development snapshot (2026-10-21)
 
+Publication snapshot: progress162–165 and the in-progress166 RNR sources and
+reports are included. Older local/unpushed/building statements below describe
+their checkpoints, not the current publication state. No build is running.
+The latest completed integrated milestone is profile8 native36 plus the
+kernel/provider source checks described below; this is not a hardware release.
+
+In-progress166 adds one shared RECV/WRITE/RNR ACK allocator: all78 component
+modes and both legacy fixtures pass, including four mixed frames through the
+actual MAC RTL. [RNR ACK component report](results/2026-10-18/rocev2-rnic-receive-write-rnr-ack-002.json).
+The retained-WRITE RNR controller is still WIP: its latest test FAILS, and the
+read-only observer does not turn that failure into a pass. No native RNR/retry
+integration or new physical result is claimed. Successful AND failed reports
+are retained. Original timing and the historical TX-padding source check still
+fail; no test/default/clock/hardware gate has been relaxed for publication.
+
+Progress165 completes matching profile8 native36 (894.628s build/max9.734s
+cases), real-header kernel build10.843s, actual C callback202 cases and
+95 unedited-native-CQ cases, with all170 old callback summaries identical.
+The true zero-capacity RQ yields an8193-byte WRITE/Immediate WC; corrupted
+full owners do not retire it. [2130-binding matched source audit](results/2026-10-18/rocev2-rnic-segmented-write-native-software-diagnostics-001.json).
+Provider9/CQ-policy140800 checks remain successful. Linux/MMIO/pin/DMA
+primitives and provider syscall/WC replies are MODELS; this is not live
+kernel/native/provider or physical qualification. No jobs/install/default
+changes. WRITE wire RNR/NAK/retry, full1MiB/multiSGE/live refs/cleanup,
+original timing/physical and all11 remain.162–165 local after7234cab.
+
+Progress164 adds a DISTINCT private WRITE software identity:131071/511/13/63,
+profile8, preserving every older/default tuple. Only three native CSR feature
+words change; full elaboration passes8.168s. A FRESH matching36-case native
+build is LIVE, not yet runtime-qualified. Actual CQ-header predicate tests
+pass140800 combinations with128000 old/unknown rows identical; only profile8
+permits large flags3 WRITE notices. Real libibverbs/private-provider tests
+pass all9 identities and zero-capacity RQ/WC/network-order Immediate cases.
+[652-binding source-only audit](results/2026-10-18/rocev2-rnic-segmented-write-software-source-diagnostics-001.json).
+The new kernel module builder rejects the OLD successful native tuple; real
+module/callback/native-CQ/MR-lifetime coupling still requires matching gates.
+No install/image/default change; this source work remains local after7234cab.
+
+Progress163 completes the FRESH actual native run: all36 cases pass, including
+incoming8193 WRITE/Immediate and every34 prior case with identical raw inputs
+and summary oracles. Actual generated HLS/native PSN/shared MR/PTE/PCIe/
+nonce/fence/sole ACK/MAC/whole CQ execute together; compile896.667s and
+maximum9.534s/case retain the original1200s/30s bounds. [4366-binding audit](results/2026-10-18/rocev2-rnic-segmented-write-native-runtime-diagnostics-001.json).
+The build is now TERMINAL, not still live as in the older checkpoint below.
+Host/root/peer/PHY/PTP remain models; full1MiB/multiSGE, matched software,
+real-peer recovery, partial-HLS cleanup, original timing and physical proof
+remain. In particular, current profile7 still rejects flags3 WRITE notices
+above4096 bytes: the new8193 native CQ is not yet a driver/provider feature.
+No image/driver/default changes;162–163 remain local after7234cab.
+
+Progress162 qualifies the actual native-only FIRST-header admission gate:
+all512 opcode/state frames pass, including2560 blocked zero/unknown-gate
+cycles and uninterrupted SECOND/body drain. [Header-gate runtime](results/2026-10-18/rocev2-rnic-native-write-header-gate-001.json).
+A fresh actual native build now targets incoming8193 WRITE/Immediate PLUS
+all34 unchanged old cases. [Fixture audit](results/2026-10-18/rocev2-rnic-segmented-write-native-fixture-diagnostics-001.json)
+retains every old recipe and359 fatal checks; it is NOT native runtime proof.
+The build is still running, combinational-path warnings are NOT waived, and
+no new payload/runtime/timing/hardware pass is claimed. This work is local;
+explicit publication7234cab covers157–161 below, not this later addition.
+
 Publication update: this snapshot includes progress157–160 and the current
 progress161 native integration sources, with successful AND failed reports.
 Local/unpushed statements below describe earlier checkpoints. This remains

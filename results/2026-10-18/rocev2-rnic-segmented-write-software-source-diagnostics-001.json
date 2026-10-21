@@ -1,0 +1,100 @@
+{
+  "scope": "Audit candidate profile8 semantics/provider and mandatory native build gate.\n\nNo kernel module, actual callback ownership, matching new native execution or\ninstalled API proof follows. Old65535 native36 must NOT qualify131071 modules.\n",
+  "audit_passed": true,
+  "directory": "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp",
+  "evidence": {
+    "segmented-write-cq-semantics-001": {
+      "bindings_verified": 82,
+      "report_sha256": "1a8421ee518bcec78fb76a14f368bd40a0e210e830fdc042a11852a280eb3bbd",
+      "exact_preimage_resolutions": []
+    },
+    "provider-segmented-write-001": {
+      "bindings_verified": 54,
+      "report_sha256": "765517fda3eed4865d3c5b98f3daca9a8201a3f7f2ae641981b4eaf22784114f",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-profile-native-elaboration-001": {
+      "bindings_verified": 509,
+      "report_sha256": "45e6aa31f2e60ec2522adb83af523cba44a00fbe2e5a677eb75b98650e914ecc",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-native-runtime-diagnostics-001": {
+      "bindings_verified": 7,
+      "report_sha256": "3ec398af43ab8cc1fbe484318d2d63eea4ba0501350e7850f1d1e57c4d332e88",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 652,
+  "source_sha256": {
+    "rdma/rnic/kernel/build_frozen.py": "e4f6c8e37657614f186def1f50010ecfbf229d006c8b7f4ccaeb1d4b1d792f44",
+    "rdma/rnic/kernel/build_segmented.py": "127822f40d058b37ce6d6b51c9f4a98a138bc7b9748d37432ff82bce2bdcb9d4",
+    "rdma/rnic/kernel/build_segmented_immediate.py": "3260e1e3b1183238c95969fdd353c37607ea1f9e9c5809793ac8a39c485d1b3c",
+    "rdma/rnic/kernel/build_segmented_read.py": "c64091c85cd2cb620d7b74ecff97f68dee7826e59af4c9259580b958a289eabe",
+    "rdma/rnic/kernel/build_segmented_receive.py": "43c1143ad39bb8db16b7657fcc849679a0ef9af27d81dc9fef06877132d17eb0",
+    "rdma/rnic/kernel/build_segmented_write.py": "8297c30ba7f58135ed4e5e16d48b2acde531c18727f28dff39a04b1828145bfb",
+    "rdma/rnic/kernel/build_zero.py": "ed796e8837a0df01bdb42dfa54d2c4b3845573a1bee0c318d5c42747ff676173",
+    "rdma/rnic/kernel/derive_atomic128.py": "604eac54786c59739746716e3203d96d3ee099826252db96a42c8c1f81fb9983",
+    "rdma/rnic/kernel/derive_atomic_access.py": "9694c7f0c16c68d0d8b315049a792c52d512ad77f516daad1a7cc0fd3f107486",
+    "rdma/rnic/kernel/derive_segmented_immediate_kernel.py": "ae7e5344711b90a19c1b80e647974eb872df516bc9665325d7d4491774c1ee51",
+    "rdma/rnic/kernel/derive_segmented_kernel.py": "094846d7aa0ff5dfdf5b02a2b88c2eebdb65bdb66353e5559501e78bdd310ffe",
+    "rdma/rnic/kernel/derive_segmented_read_kernel.py": "a99d0ababfe359b5997b508e0d93fb544884e0e404e4126d3eaed62fcaa32dfb",
+    "rdma/rnic/kernel/derive_segmented_receive_kernel.py": "e69f82ae3c5bf8538470111d1263b0764c46ca592700fa30135c6ac67f9bca61",
+    "rdma/rnic/kernel/derive_segmented_write_kernel.py": "91d2e12dcea223d1691f4540a807311b15c8c2bee8e3da7a89d4bd87b41cdb78",
+    "rdma/rnic/kernel/derive_zero_kernel.py": "280aeb2234f9f0c42133e6c8d082a822d7fdd110700243c05fb7194b1c595f33",
+    "rdma/rnic/tests/audit_segmented_write_software_sources.py": "baad34525d7ae245283978891d61888e1fcad34d763a29c1d8e784ae2cea1bce"
+  },
+  "artifact_sha256": {
+    "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp/old-tuple-rejection.log": "a9eef2cb744678b1d967739396c2b5ce4e30afe5276ce26572b285ccdc68eb9c",
+    "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp/kernel/Makefile": "3b340840106a61ca37ac686cc6812df3179e132b60ae5ab92e76f7790acea1a5",
+    "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp/kernel/rnic_regs.h": "902b3976b72d377fadf410549b262fad97ccdae978095374f100b0caf060b9de",
+    "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp/kernel/device.c": "81cf09e598bebb7b155286abcf43f0593f97670b841bf58dec8cc73e429b322a",
+    "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp/kernel/qp_hw.h": "8ba44af36588003ed00ebe8e51737b070f99a33b4140d842e6bb966e9265f474",
+    "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp/kernel/cq.c": "3fea3dd751d491b6241f8a55db4b65fa92a7c2ff72263d948ad45f1d912404c5",
+    "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp/kernel/rnic_io.c": "3cdcf0756e7f2fde7ac857d8e0711e447be64b9119014517fc2568c4abf59b38",
+    "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp/kernel/atomic_profile.h": "fa9b8b94fa682a3a9225ba92b14682fb1df8d69cc36e88e1f077099d601d6792",
+    "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp/kernel/sq.h": "98bdd9260c2a40853ef4a12102eb64dfec66d19a8560c858f83c0ad74c23c242",
+    "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp/kernel/sq_io.h": "9ab44b2186598290b57ac0999b861f01b212ef7e6ed7e890870bbdc1d9731d60",
+    "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp/kernel/qp_hw.c": "e7ae309e2d4536cdc41ab3ce4d213a33cd3b403dd5820afad310e468b035274c",
+    "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp/kernel/sq.c": "398412c6c4015cf87cf57ffa5dcb7c878e52fe5106eb9b11ff990e3b0f6b3fbb",
+    "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp/kernel/sq_io.c": "0d304dbc5ab1dbbbb076600a11852eb44f1a40ac54f3df050753b194accb5dc6",
+    "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp/kernel/verbs.c": "d0733a719e505f6bdfb6ac32e1f9ad275b585fbb84898eb9dc849c281e6abb21",
+    "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp/kernel/cq_io.c": "261214485514e969a0f250c5a3ff21c5a7a61b2f915c7550875a3e5c15a77dd8",
+    "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp/kernel/native_graph.c": "2a372e77c688ecbaf354226cd776c4e97dfcc7bd7649661360da25a1154490cb",
+    "rdma/rnic/build/segmented-write-software-source-audit-kfpwzzkp/kernel/cq_io.h": "40b5077954e39163671de8a4ae4a2a48df67d4a6559ee7350cb3ebefb0837fe0"
+  },
+  "changed_private_kernel_leaves": [
+    "atomic_profile.h",
+    "cq_io.c",
+    "cq_io.h",
+    "device.c",
+    "native_graph.c",
+    "qp_hw.c",
+    "rnic_io.c",
+    "rnic_regs.h",
+    "sq.c",
+    "sq_io.c",
+    "verbs.c"
+  ],
+  "private_identity": {
+    "RNC": 131071,
+    "CQC": 511,
+    "SQC": 13,
+    "RQC": 63,
+    "profile": 8
+  },
+  "old_profile7_WRITE_max_bytes": 4096,
+  "new_profile8_WRITE_max_bytes": 1048576,
+  "old_successful_native_tuple_build_rejected": true,
+  "all9_provider_identities": true,
+  "actual_CQ_predicate_cases": 140800,
+  "kernel_modules_built": false,
+  "kernel_callbacks_lifetimes_executed": false,
+  "new_matching_native36_proved": false,
+  "source_candidates_only": true,
+  "hardware_verified": false,
+  "installed_or_default_changes": false,
+  "remaining": [
+    "Actual matching profile8 native36, real-header module build, actual callback/MR/RQ/CQ retirement and unedited native snapshot consumption.",
+    "Full1MiB native/multiSGE/live Linux/provider refs/recovery/partial-HLS cleanup/original timing/physical and all11 requirements remain."
+  ]
+}

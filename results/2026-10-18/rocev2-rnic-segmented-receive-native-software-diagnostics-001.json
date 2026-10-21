@@ -1,0 +1,67 @@
+{
+  "scope": "Exact actual native/RQ/CQ snapshots consumed by matched profile7 C.\n\nPreserve the preceding functional audit; all18 positive pairs andfour\nexplicit in-memory negative mutations per pair are required. No snapshot\nrewrites, live Linux/RTL/pin/page-table coupling, native1MiB or physical claim.\n",
+  "audit_passed": true,
+  "overall_goal_complete": false,
+  "hardware_verified": false,
+  "functional_audit": {
+    "bindings_verified": 4,
+    "report_sha256": "4b6c37620a409f7e7c21b136c332cd5e4b4dc20d6a5369afca2322bf9d498ca6",
+    "exact_preimage_resolutions": []
+  },
+  "actual_native": {
+    "bindings_verified": 2094,
+    "report_sha256": "3249d40c1e7dd808fe50a3530c66094df62817f4b31aeaf2974c38d883c175e8",
+    "exact_preimage_resolutions": []
+  },
+  "actual_matched_C": {
+    "bindings_verified": 227,
+    "report_sha256": "2f9d421c61a6ba18b1eb32ea69dc5fbcb61060efe1018ba8364b2f6dff965a1d",
+    "exact_preimage_resolutions": []
+  },
+  "verified_bindings": 2325,
+  "auditor_source_sha256": {
+    "rdma/rnic/tests/audit_segmented_receive_native_software.py": "3af9c2517bb06e13d7d1f4450abdc58bec13db0e5e11177315564751e1dda56f"
+  },
+  "actual_native_cases": 34,
+  "matched_C_snapshot_cases": 90,
+  "all16_old_pairs_retained": true,
+  "new_receive_pairs": 2,
+  "malformed_copies_explicitly_labeled_in_memory": true,
+  "real_native_input_and_event_files_unchanged": true,
+  "receive_snapshots": {
+    "LARGE_RX_SEND": {
+      "event_sha256": "cb83385ba536f3aed9e574442ac009535bd7ceed8ba2c18399b29d56d8b9844c",
+      "RQ_records_sha256": "b23326c4f56c3f80e6a9206bcc678a1f1a1a187949c4211087449bf82cbf7255",
+      "event_words": 33,
+      "fabricated_geometry_words": false,
+      "actual_positive_owner_MR_retirement": true
+    },
+    "LARGE_RX_SEND_IMM": {
+      "event_sha256": "1ef5886912eefbb9db0e7d33701c99aebbd387ce4656e89dbc3ad6fa11795c02",
+      "RQ_records_sha256": "b23326c4f56c3f80e6a9206bcc678a1f1a1a187949c4211087449bf82cbf7255",
+      "event_words": 33,
+      "fabricated_geometry_words": false,
+      "actual_positive_owner_MR_retirement": true
+    }
+  },
+  "maximum_C_case_seconds": 0.014885797048918903,
+  "actual_positive_records_all128_bytes": true,
+  "actual_C_MR_RQ_CQ_owner_and_reference_lifetimes": true,
+  "Linux_MMIO_pins_coherent_DMA_and_teardown_modeled": true,
+  "live_kernel_RTL_coupling": false,
+  "actual_native_and_C_page_tables_live_coupled": false,
+  "standard_provider_with_live_kernel": false,
+  "native_1MiB_receive_verified": false,
+  "original4ns_timing_met": false,
+  "installed": false,
+  "module_loaded": false,
+  "remaining": [
+    "All11 original requirements remain incomplete; no target narrowing.",
+    "Native1MiB receive and live matched Linux/RTL/physical page-table, API and lifetime qualification remain.",
+    "Segmented WRITE Immediate independent remote MR/late RQ, multi-SGE, real-peer recovery/RNR/congestion/interoperability remain.",
+    "HLS15.571ns still fails original4ns/default1.08ns; full-board fit/setup/hold/CDC/DRC/routing and short supervised physical qualification remain.",
+    "No reboot needed. Restore ALL archived RAM caches and prove exact authenticated thread/goal restoration before any necessary reboot."
+  ],
+  "hardware_install_load_network_fan_BIOS_flash_reboot_actions": [],
+  "commit_or_push": false
+}

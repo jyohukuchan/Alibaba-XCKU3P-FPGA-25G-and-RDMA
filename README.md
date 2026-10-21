@@ -28,6 +28,13 @@ inbound SEND/WRITE target, READ responder, native InfiniBand or production-relia
 
 ### RNIC development snapshot (2026-10-21)
 
+This publication includes progress152/153 source and successful/failed
+reports, plus the unfinished `rocev2_remote_write_message_guard` leaf.
+That leaf passes syntax compilation only: its actual MR/RQ functional
+tests and native integration have not run. No new hardware or timing
+qualification is claimed. Uncommitted/unpushed descriptions below are
+historical states, superseded by this explicit publication.
+
 The new [incremental RNIC sources](rdma/rnic/README.md) include protected host
 memory/queues, kernel/provider work, SEND/RECV/Immediate and Atomic candidates.
 The [retained-source dispatcher native regression](results/2026-10-18/rocev2-rnic-segmented-executor-native-full-001.json)
@@ -237,6 +244,37 @@ The corrected full-native34-case run has NOT started; new incoming8193
 runtime, matched software, original4ns timing and physical proof remain
 unverified. No hardware or installed/default profile is changed. Earlier
 progress149/150 build-state descriptions above are historical snapshots.
+
+Progress152 now PASSES all34 fresh corrected-graph native cases, including
+8193-byte incoming SEND/Immediate on one8194-byte RQ, three real packet/MR/
+DMA/fence/ACK-MAC releases and exactly one whole HLS/CQ/host ACK. Compile
+798.354s; new cases8.534/8.584s, original1200s/30s limits unchanged. Separate
+exact65535/255/13/31/profile7 kernel source builds against running headers
+and passes170 actual C callback model cases (all134 old retained),2442 IO
+identity/geometry cases and90 unedited native SQ/RQ/CQ snapshot cases. The
+private provider passes all8 identities and new standard RECV marshalling.
+[Native/software scope audit](results/2026-10-18/rocev2-rnic-segmented-receive-native-software-diagnostics-001.json).
+Linux/MMIO/pins/DMA/completion boundaries are models; snapshots are separate
+executions, not live Linux/RTL or matching physical-page-table coupling.
+Default/installed profile6 incoming4096 and IB_ATOMIC_NONE are unchanged.
+Native1MiB, multi-SGE, segmented WRITE Immediate, recovery/interop and original
+4ns full-board timing/physical work remain open. Source004 timeout, full003
+failure and the first callback-vector error stay recorded with exact preimages.
+This progress152 addition is local/uncommitted, with no automatic push.
+
+Progress153 adds a separate segmented incoming WRITE/WRITE Immediate HLS
+source and late-notification RQ component. Actual C++ passes65 modes (all44
+old retained), including6 messages/284 packets per new operation through1MiB,
+independent complete data/ACK oracles, LAST-only MSN, PSN wrap, distinct RETH
+target and late RQ capacity0/1/17/etc. The RQ component passes62 cases (all48
+old retained), keeping separate320-bit remote and620-bit posted identities,
+whole bytes rather than LAST bytes/capacity, and remote-retirement backpressure.
+[Scope/failure audit](results/2026-10-18/rocev2-rnic-segmented-write-receive-diagnostics-001.json).
+Peer/memory/posted-RQ boundaries and the component's trusted remote-MR/HLS/
+MAC/visibility producers are MODELS. These separate tests are NOT connected
+native proof; the new source has no generated RTL, native MR/DMA/CQ coupling,
+matched software or physical qualification. All old/default sources and
+original timing gates remain. No automatic commit/push.
 
 The current source checkpoint also adds a 1 MiB posted-RECV codec and a
 correctly typed `ib_recv_wr` adapter: 37 codec methods, 78 admission/staging

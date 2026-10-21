@@ -5,6 +5,32 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+Explicit publication (2026-10-21) includes progress152/153 and the unfinished
+remote-WRITE MR guard (syntax-only, not functionally/native qualified).
+Successful and failed evidence is retained; no Atomic advertisement,
+hardware/default change or original timing waiver accompanies this push.
+Local/unpushed descriptions below preserve historical checkpoint states.
+
+Progress153 adds separate segmented incoming WRITE/Immediate HLS and late
+notification-RQ source. ALL65 actual C++ modes include every44 old mode,
+including Atomic compatibility; ALL62 RQ component cases retain all48 old.
+This does not update the current native core or qualify Atomic/WRITE
+Immediate hardware: new native MR/DMA/HLS/MAC/CQ integration, synthesis,
+matched software and original timing/physical work remain. Atomic_NONE and
+all default/hardware settings stay unchanged.
+[Separate component scope](../results/2026-10-18/rocev2-rnic-segmented-write-receive-diagnostics-001.json).
+
+Progress152: corrected receive-native004 now PASSES ALL34, including both
+8193-byte incoming cases and every old Atomic/READ/WRITE/SEND/zero case.
+Matched separate profile7 kernel source builds against real headers;170
+callback-model cases,2442 IO cases,all8 provider identities and90 actual
+unedited-native SQ/RQ/CQ snapshot cases pass. These retain old Atomic paths
+but do NOT qualify Atomic hardware or advertise it: IB_ATOMIC_NONE remains.
+Linux/MMIO/pin/DMA/completion boundaries remain modeled; original4ns timing,
+live kernel/RTL coupling and physical proof remain unmet/unverified.
+[Native/software scope](../results/2026-10-18/rocev2-rnic-segmented-receive-native-software-diagnostics-001.json).
+All11 requirements remain incomplete; this addition is not automatically pushed.
+
 Publication after progress151: full-native003 fails at the second incoming
 SEND packet; it is NOT an Atomic or large receive pass. Read-only original
 object diagnosis identifies a held-group raw-reference admission stall.

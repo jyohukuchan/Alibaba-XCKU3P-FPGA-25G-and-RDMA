@@ -1,0 +1,14 @@
+{
+  "scope": "Original strict queue-derivation startup failure; no RTL compile/runtime or generated-output qualification.",
+  "pass_test": false,
+  "exit_code": 1,
+  "error_type": "ValueError",
+  "error": "source derivation anchor changed: s_retire_context===owner && !halted && !rst;",
+  "source_sha256": {
+    "rdma/rnic/fpga/derive_write_notice_queue.py": "b87dc2c2e1ec3a011c212b490bda9dfb7c6dbecbd1a3154cdc7f9aa8dc8ce637"
+  },
+  "exact_preimage_root": "rdma/rnic/build/write-notice-startup-001-preimages-Eh6Gm2TM",
+  "actual_RTL_runtime": false,
+  "native_integration": false,
+  "hardware_verified": false
+}

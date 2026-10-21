@@ -16,6 +16,52 @@ passes; this does not relabel the old suite or qualify a hardware release.
 
 ## Latest functional milestone (2026-10-21)
 
+Explicit publication includes progress152/153 plus unfinished
+`rtl/rocev2_remote_write_message_guard.v`. The guard has only passed syntax
+compilation; its actual MR-table/late-RQ functional test and native hookup
+have not run. Existing success/failure reports are preserved separately.
+No new hardware, timing or complete-RNIC claim is made. Historical local/
+uncommitted/unpushed descriptions below describe the earlier checkpoints.
+
+Progress153: separate new incoming segmented WRITE/Immediate HLS source
+passes65 C++ modes (all44 old retained). Both new modes check6 messages/
+284 packets through1MiB; runtimes3.899/3.980s, original30s bounds. FIRST
+holds the RETH target/total, MID retains offset/PSN/MSN, LAST alone advances
+MSN; LAST Immediate consumes one distinct posted RQ and joins actual final
+data/ACK/MSN proof with whole-write metadata. RQ capacity is not DMA target
+or WC length. A separate late-notice RQ passes62 four-state RTL cases (all48
+old retained), maximum0.168s, full320 remote/620 RQ owner binding and sticky
+CQ/remote-MR retirement fanout. Component upstream MR/HLS/MAC/visibility
+producers are MODELS, not native injection or authorization. The new HLS
+and queue are separate executions, not a connected native graph. Native
+remote-MR message/packet refs, late RNR, DMA/MAC/CQ/software, new synthesis
+and original-clock/physical qualification remain. No new HLS build starts
+under the unchanged1500MiB root-space guard; no old binary or slower clock
+substitute. [Evidence audit](../../results/2026-10-18/rocev2-rnic-segmented-write-receive-diagnostics-001.json)
+verifies863 bindings and both startup failures/exact preimages. All11 scope
+remains; installed/default/hardware/BIOS/management/Git stay unchanged.
+
+Progress152: fresh corrected native004 ALL34 PASS (all32 old retained),
+compile798.354s/new RX8.534/8.584s. Incoming8193 SEND/Immediate each uses
+one8194-byte RQ, four actual MR queries, three real DMA/fence/HLS/ACK-MAC
+packet releases and one whole CQ/host ACK; every modeled host payload and
+sentinel byte/full620-bit owner match. Original1200s/30s/4ns gates remain.
+Separate exact65535/255/13/31/profile7 kernel builds10.842s, no warning;
+170 actual callback-model cases (36 RECV/all134 old),2442 actual IO C cases,
+all8 real-libibverbs provider identities and90 unedited actual-native SQ/RQ/
+CQ snapshot cases pass. New RX snapshots keep their original33-word shape;
+no geometry words or completion proofs are synthesized. Linux/MMIO/pins/
+DMA/CQ boundaries remain explicit models, not live kernel/RTL/page-table or
+physical coupling. Header/native/C compile results do not install a profile.
+[Full functional scope](../../results/2026-10-18/rocev2-rnic-segmented-receive-functional-diagnostics-001.json),
+[actual snapshot/C lifetime audit](../../results/2026-10-18/rocev2-rnic-segmented-receive-native-software-diagnostics-001.json).
+The failed callback001 vector toggled epoch1 to0 instead of a valid distinct
+owner. Read-only GDB confirms that;002 changes only that input bit to63,
+keeping the exact ESTALE assertion and driver. All original failure evidence
+and preimages remain. All11 requirements, native1MiB/multiSGE/WRITE Immediate/
+interop/timing/physical work stay open. No hardware/install/load/default/
+network/fan/BIOS/flash/reboot or Git change; this addition is local/uncommitted.
+
 Publication after progress151: actual full-native003 compiled697.994s but
 FAILED the original packet1 (second packet) deadline after a genuine first
 packet DMA/fence/ACK-MAC release; no whole CQ completed. Read-only archived

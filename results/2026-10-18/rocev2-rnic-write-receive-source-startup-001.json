@@ -1,0 +1,16 @@
+{
+  "scope": "Original strict new-source generation startup failure, before copying or writing an output tree; not a C++/HLS/native runtime result.",
+  "pass_test": false,
+  "exit_code": 1,
+  "error_type": "ValueError",
+  "error": "QP transport anchor changed: rx_pkgShiftTypeFifo,s_axis_recv_owner,recv_bind_fault",
+  "source_sha256": {
+    "rdma/rnic/hls/segmented_write_receive_transport.py": "3ef17856c6c303f2fa095772761653c08666523fda2f7c7cc93b40f2b2df5592"
+  },
+  "exact_preimage_root": "rdma/rnic/build/write-receive-startup-001-preimages-4OP43K1j",
+  "output_tree_written_by_this_attempt": false,
+  "actual_CPP_runtime": false,
+  "generated_HLS": false,
+  "native_integration": false,
+  "hardware_verified": false
+}

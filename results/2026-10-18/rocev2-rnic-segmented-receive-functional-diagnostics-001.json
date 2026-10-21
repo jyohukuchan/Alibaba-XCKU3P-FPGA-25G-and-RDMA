@@ -1,0 +1,132 @@
+{
+  "scope": "Actual corrected incoming native/old regressions and matched software scope.\n\nKeep original native failure and diagnostic evidence. Modeled API/syscall\nexecutions and real-header compilation are not live Linux/FPGA coupling,\nnative1MiB, multi-SGE, original timing or physical qualification.\n",
+  "created_UTC": "2026-10-21T11:02:25.678968+00:00",
+  "audit_passed": true,
+  "overall_goal_complete": false,
+  "hardware_verified": false,
+  "live_Linux_RTL_coupling": false,
+  "verified_reports": {
+    "segmented-receive-native-full-004": {
+      "bindings_verified": 2094,
+      "report_sha256": "3249d40c1e7dd808fe50a3530c66094df62817f4b31aeaf2974c38d883c175e8",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-receive-native-compat-001": {
+      "bindings_verified": 2067,
+      "report_sha256": "a3ae8aaa14923dd6ca423625a16c467d0fbe2afaf4578e7f8c892e7466dda4b0",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-receive-native-full-003": {
+      "bindings_verified": 1913,
+      "report_sha256": "adc67b32b15500b5d48b3a2ceeb3322dc973786360b1cd0880ef654aeae5f3ea",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-receive-native-fatal-diagnostics-003": {
+      "bindings_verified": 61,
+      "report_sha256": "613d6397692fe0cbc2beb4af9eb5a6d77bac18923a2908847c6cca68958b60f7",
+      "exact_preimage_resolutions": []
+    },
+    "receive-continuation-gate-001": {
+      "bindings_verified": 64,
+      "report_sha256": "e2dbeeb681bd4adf69b905e5f09e800b5704747fa08b899905cddd6b553339ad",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-receive-native-elaboration-002": {
+      "bindings_verified": 1813,
+      "report_sha256": "52839e79c7931173faa654d9da69517308059c031389603a53f114e68aab717e",
+      "exact_preimage_resolutions": []
+    },
+    "provider-segmented-receive-001": {
+      "bindings_verified": 49,
+      "report_sha256": "2ea031f8516cb643e472e79f671147d6c1e4575180c943b13829c5ef5e24bb82",
+      "exact_preimage_resolutions": []
+    },
+    "receive-kernel-identity-001": {
+      "bindings_verified": 141,
+      "report_sha256": "3080e7e5579e71ff1b109b0148e7054878814582041ad661ca3c94e222d9dcd9",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-receive-kernel-post-002": {
+      "bindings_verified": 269,
+      "report_sha256": "00157e7c6f8fc6d9bcf782b1ee7cd00210bf80bed306ccb7837ec5ff7fc307ee",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-receive-kernel-post-001": {
+      "bindings_verified": 126,
+      "report_sha256": "0ff08bd075280e378729684d84571fb7c372a5b9f79dc97ddfebf865253baa96",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/kernel_segmented_receive_post.c"
+      ]
+    },
+    "segmented-receive-kernel-build-001": {
+      "report_sha256": "061d4cc50680d86f100fb82da75a6abf699f7fe2b282fb40977d30efd354c217",
+      "bindings_verified": 153
+    }
+  },
+  "verified_bindings": 8750,
+  "auditor_source_sha256": {
+    "rdma/rnic/tests/audit_segmented_receive_functional.py": "08523c4ee95084671aaa7e56c0934bacf1659717cd462b531474136d1a28bbf5"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "actual_native": {
+    "cases": 34,
+    "new_received_bytes": 8193,
+    "posted_capacity": 8194,
+    "packets": 3,
+    "whole_CQ": 1,
+    "compile_seconds": 798.3544122020248,
+    "maximum_case_seconds": 8.583531334006693,
+    "new_case_seconds": {
+      "LARGE_RX_SEND": 8.53370835405076,
+      "LARGE_RX_SEND_IMM": 8.583531334006693
+    },
+    "actual_MR_PTE_DMA_nonce_fence_HLS_MAC_CQ_and_full_bytes": true,
+    "physical_host_root_peer_PHY_PTP_models": true
+  },
+  "matched_software": {
+    "profile": 7,
+    "RNC": 65535,
+    "CQC": 255,
+    "SQC": 13,
+    "RQC": 31,
+    "real_header_modules_compiled": true,
+    "actual_C_standard_callback_models": 170,
+    "new_RECV_callback_cases": 36,
+    "all134_old_callback_cases_retained": true,
+    "actual_IO_geometry_cases": 2442,
+    "actual_provider_serializer_identities": 8,
+    "only_syscalls_and_WCs_modeled_in_provider": true,
+    "kernel_Linux_MMIO_pins_DMA_completions_modeled": true,
+    "installed": false,
+    "module_loaded": false
+  },
+  "original_callback_vector_failure": {
+    "report": "segmented-receive-kernel-post-001",
+    "actual_QP_epoch_read_only_GDB": 1,
+    "low_epoch_bit_flip_produced_zero_not_stale_owner": true,
+    "corrected_to_high_bit_nonzero_distinct_epoch": true,
+    "same_exact_ESTALE_assertion_and_all_other_oracles_retained": true,
+    "driver_source_unchanged": true,
+    "failed_source_preimage": "rdma/rnic/build/receive-kernel-post-001-preimages-8oxDUI04"
+  },
+  "inherited_source_check": {
+    "exit": 1,
+    "stdout": "Tcl completeness checks passed: 28 files (not Vivado elaboration).\nLFC source allowlist tests passed: 14 cases; no hardware/Vivado access.\nSource check passed: 122 HDL, 12 constraints, 3 IP generators.\n",
+    "stderr": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v\n",
+    "overall_suite_passed": false,
+    "original_gate_unchanged": true
+  },
+  "remaining": [
+    "All11 original requirements remain incomplete; no target narrowing.",
+    "Native1MiB receive and live matched Linux/RTL/physical page-table, API and lifetime qualification remain.",
+    "Segmented WRITE Immediate independent remote MR/late RQ, multi-SGE, real-peer recovery/RNR/congestion/interoperability remain.",
+    "HLS15.571ns still fails original4ns/default1.08ns; full-board fit/setup/hold/CDC/DRC/routing and short supervised physical qualification remain.",
+    "No reboot needed. Restore ALL archived RAM caches and prove exact authenticated thread/goal restoration before any necessary reboot."
+  ],
+  "hardware_install_load_network_fan_BIOS_flash_reboot_actions": [],
+  "commit_or_push": false
+}

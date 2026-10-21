@@ -32,6 +32,201 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+Publication on explicit user request (2026-10-21): publish the current
+progress152/153 source and both successful and failed reports. Also include
+the unfinished `rtl/rocev2_remote_write_message_guard.v`: its corrected
+source passes syntax compilation, but no functional MR-table/late-RQ test
+or native integration has run. The original syntax failure and exact
+preimage remain separate. Do not infer authorization or persistent MR refs
+are already proved merely from this leaf's interface. Current publication
+rechecks the functional, native/software and WRITE-component evidence
+audits; it does not repeat long builds or claim an overall-green suite.
+The inherited historical TX-padding provenance check and original timing
+failure remain. No install/load/program/network/fan/BIOS/flash/reboot change.
+All eleven requirements remain open. Historical local/unpushed descriptions
+below refer to their original checkpoints. Exact pre-publication docs are
+retained locally in `publication-progress153-drkhvn`.
+
+Progress153: previous152 was PROGRESS (actual corrected all34 native,
+matched real-header profile7,170 callbacks/90 unedited snapshots/8 provider
+identities). This turn adds missing segmented incoming WRITE/Immediate
+functionality in separate HLS and late-RQ components, not another timing
+optimization. All eleven requirements remain; no automatic commit/push.
+
+`segmented_write_receive_transport.py` derives a new complete source from
+qualified receive007 without changing it. Per-QP FIRST retains full64-bit
+RETH target/total, offset and first/next PSN/base MSN. FIRST/MIDDLE require
+full4096/no-pad fragments; LAST must exactly finish the declared total.
+Only LAST advances MSN. The raw HLS memory command always uses the saved
+RETH target+offset, never a posted RECV address/capacity. LAST Immediate
+alone consumes a canonical distinct RQ and waits when it is absent. A new
+typed internal write-metadata stream joins the genuine final packet data/
+ACK/MSN readback proof before producing whole776 with total bytes/first
+PSN/last PSN/Immediate. Packet proof remains752; no raw owner field is
+repurposed. Existing small/zero WRITE Immediate produces its real metadata
+on the same new internal path. The qualified old SEND helper remains;
+the new top and checked harness use the new join. Native MR authorization,
+backend visibility, real RNR/MAC/CQ coupling remain external requirements.
+
+[HLS C++001](../results/2026-10-18/rocev2-rnic-segmented-write-receive-hls-001.json)
+PASSES ALL65 exact modes: ALL44 old retained, two new complete WRITE modes
+and19 malformed/sequence/RQ/padding negatives. Compile75.437s; new modes
+3.899/3.979s, original600s compile/30s runtime and8QP/2000 geometry retained.
+Each new mode executes6 messages/284 packets through1MiB, with independent
+complete byte/padding/ACK/PSN/MSN Python oracles. Includes PSN wrap, Immediate
+0/ffffffff/89abcdef-derived values, late RQ capacity0/1/17/8194/1MiB, one
+actually withheld RQ, and data/ACK/table/whole-join stalls. Plain WRITE never
+consumes a posted RQ or emits a receive notification. Immediate notification
+contains the full written byte count, not its final packet or RQ capacity.
+Peer, posted RQ and memory are models; this is C++ execution of actual HLS
+consumers, NOT newly generated RTL or native MR/PTE/DMA/MAC/CQ/Linux proof.
+
+Separate `derive_write_notice_queue.py` keeps the original message RQ and
+adds a qualified late-notice variant. It accepts a full320-bit trusted
+remote-message identity from a FUTURE real remote-MR guard, binds PD/epoch/
+QPN to a genuine posted620-bit RQ, and keeps them distinct. Valid metadata
+may wait for an actual RQ; it cannot manufacture a posted owner. The final
+packet's real placement/core/MAC/visibility plus whole HLS receipt must match
+the trusted full total/PSN span. Whole received bytes may exceed notification
+RQ capacity; RQ memory is not written. Both the full RQ and remote identity
+remain held through CQ ticket/commit and remote-MR retirement backpressure;
+neither packet ACK nor an offered-but-unaccepted retire can release them.
+
+[Late-notice RTL001](../results/2026-10-18/rocev2-rnic-write-notice-queue-001.json)
+PASSES62 four-state cases: ALL48 old message-RQ cases plus14 new. Original
+4ns clock/100000-cycle/10s limits remain; maximum runtime0.1673s. Positive
+8193/1MiB/4097/8192 cases and initially absent RQ keep one posted/taken RQ,
+one final-packet release and the actual whole byte count. Wrong PD/epoch/
+key/range/QPN/unknown valid, wrong LAST PSN/whole first PSN/byte count fail
+closed. Remote MR identity and placement/HLS/MAC/visibility proof producers
+are explicit component MODELS, NOT actual MR/HLS/backend/MAC execution or
+signals injected into a production native graph. The C++ and RTL component
+tests are separate, not proof of their live connection.
+
+Strict startup failures are preserved: HLS generator001 first used an
+outdated top-call anchor, before writing any tree; exact source preimage
+`write-receive-startup-001-preimages-4OP43K1j`. The queue generator001 first
+matched an ambiguous retire suffix; exact preimage
+`write-notice-startup-001-preimages-Eh6Gm2TM`. Only exact source anchors were
+corrected; no oracle/limit/clock/geometry relaxation or old source rewrite.
+[Audit001](../results/2026-10-18/rocev2-rnic-segmented-write-receive-diagnostics-001.json)
+verifies863 current/old/failed bindings, every exact old mode, unchanged
+qualified007 tree and protected raw sources. The unchanged inherited source
+check still fails historical TX-padding provenance; no overall-green claim.
+
+Protocol cross-checks used Linux RXE's request-resource and message-end MSN
+handling ([resource checks](https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux/+/5b10ff013e8a57f8845615ac2cc37edf7f6eef05/drivers/infiniband/sw/rxe/rxe_resp.c),
+[message-end MSN](https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux.git/+/0275dc184aa007b260374af6d46fb15741c062a8/drivers/infiniband/sw/rxe/rxe_resp.c)).
+No Linux implementation code was copied into the new HLS/RTL.
+
+New actual full-message/per-packet remote-MR refs/protection, native opcode/
+continuation/RNR admission, late RQ/packet/whole-HLS/backend/MAC/CQ fanout,
+generated new HLS/complete native/runtime and exact matched software remain
+required before claiming actual new WRITE Immediate support. Current native
+profile7 all34 evidence is unchanged and is NOT proof of this new source.
+No new HLS synthesis starts below the original1500MiB root guard; it is not
+weakened. Native1MiB, multi-SGE, real-peer recovery/congestion/interoperability
+and original-clock full-board fit/setup/hold/CDC/DRC/routing/short physical
+proof remain. Latest actual HLS15.571ns still FAILS original4ns/default1.08ns.
+No install/load/program/default/network/fan/BIOS/flash/reboot/Git action.
+No job remains live. No reboot needed; restore ALL archived RAM caches and
+prove authenticated exact-thread/goal restoration before any necessary
+reboot. Progress152 doc preimages: `write-receive-progress152-doc-preimages-aszOVXxc`.
+
+Progress152: the previous goal turn151 and its explicit publication were
+PROGRESS (actual fault diagnosis/targeted gate/complete compile, then verified
+main/origin/main/remote53eefbf8bbb8b0eb9ca71d9294ac940f0be54011). This turn
+adds genuine large incoming execution and matched standard software source;
+it does not automatically commit/push or narrow the eleven requirements.
+
+[Fresh corrected native004](../results/2026-10-18/rocev2-rnic-segmented-receive-native-full-004.json)
+PASSES ALL34 exact cases: both new8193-byte incoming SEND/Immediate cases and
+ALL32 old case names. Fresh compile798.354s; new cases8.534/8.584s and all
+cases<=8.584s under original1200s/30s limits/4ns clocks. One actual8194-byte
+C128 RQ owner survives three packets, four real full-range MR queries,
+scattered-page DMA64/low32 addressing, unique physical command nonces,
+three real ordered readback fences, HLS packet processing, genuine board
+FIFO/XGMII/FCS/SFD/CDC/MAC receipts/1024-cycle tails and three packet releases.
+Only the final whole776 receipt and final actual MAC release allow one full
+CQ/retire/host ACK. The real final MAC receipt is withheld1100 cycles so
+memory/core/per-packet release alone cannot complete the request. Every
+16384 modeled host payload/pad/sentinel byte, coherent RQ input, actual
+received8193 vs capacity8194, full620 owner/Immediate/PSN/MSN0/0/1 and ACK
+wire bytes match independent oracles. Physical host/root/peer/PHY/PTP remain
+models; this is actual generated-RTL native simulation, not real FPGA IO.
+
+Separate `derive_segmented_receive_kernel.py` integrates the typed large
+RECV adapter and C128 codec into the actual kernel source cohort. Only exact
+RNC65535/CQC255/SQC13/RQC31/profile7 plus original128/748/0xa0 geometry can
+bind it. RQC31 cannot be accepted as SQC; mismatched tuples fail before ring
+allocation. RECV obtains a full-capacity local-write MR reference, independent
+RQ sequence/cookie/ring and full owner; CQ decodes actual received length,
+not capacity. Only this profile raises SEND/Immediate receive length to1MiB;
+segmented WRITE Immediate is NOT enabled by the notification validator.
+All old/default tuples, full MR/PD/key/range/ref/uncertain-producer/CQ-full
+retention and IB_ATOMIC_NONE remain unchanged.
+
+[Real-header build001](../results/2026-10-18/rocev2-rnic-segmented-receive-kernel-build-001.json)
+PASSES10.842s with full modules/symbols and no compiler warnings, gated by
+the exact corrected ALL34 native proof. No install/load occurs.
+[Callback002](../results/2026-10-18/rocev2-rnic-segmented-receive-kernel-post-002.json)
+PASSES ALL170 actual standard callback C cases (36 new RECV plus ALL134 old).
+Maximum runtime0.0153s, ASan/UBSan/original10s per case. New cases cover full
+1MiB capacity, offset/high keys, exact independent128 posted bytes, zero,
+capacity-vs-actual counts, network-order Immediate, standard bad-WR tail,
+read-only/range/key/SGE refusal, stale full owner, CQ pressure and unknown
+producer retaining the actual modeled MR reference. Linux primitives/MMIO/
+pin/coherent DMA/hardware-completion boundaries are explicit models.
+
+[Failed callback001](../results/2026-10-18/rocev2-rnic-segmented-receive-kernel-post-001.json)
+stops at RECV26: the fixture's low-bit epoch mutation turns actual epoch1
+into0, testing canonical-form rejection rather than a valid stale owner.
+Read-only GDB on the unchanged failed executable confirms epoch1/context0.
+Exact public fixture/runner preimages in `receive-kernel-post-001-preimages-8oxDUI04`
+remain.002 changes only the mutation to epoch bit63, keeping it nonzero and
+distinct and retaining the SAME exact ESTALE assertion, all170 cases and
+the unmodified real-header driver cohort. No output normalization, stale
+report rewrite, timeout/assertion waiver or manufactured cleanup occurs.
+
+[Actual IO C001](../results/2026-10-18/rocev2-rnic-receive-kernel-identity-001.json)
+PASSES2442 identity/geometry/notification conditions in0.0123s:384 SQ/RQ,
+2048 CQ and10 receive-bound cases. CSR reads are models; this is not the
+full driver or native proof. [Private provider001](../results/2026-10-18/rocev2-rnic-provider-segmented-receive-001.json)
+PASSES all8 exact FW identities/all7 old retained, original10s runtime
+(maximum0.0175s). Real installed libibverbs/private provider executes standard
+MR/RECV/SGE/two-WR-chain/exact second-bad-WR/CQ marshalling through1MiB,
+with actual-byte4096/8193/1048575 versus capacity4097/8194/1048576 and
+Immediate values0/89abcdef/ffffffff. ONLY fake-fd syscalls/WC replies are
+modeled on that path. No real NIC context opened, provider installed or
+kernel module loaded; serializer success is not real MR/RQ execution.
+
+[Unedited native/C001](../results/2026-10-18/rocev2-rnic-segmented-receive-kernel-native-cq-001.json)
+PASSES90 actual-C cases: ALL16 old operation pairs/four negative mutations
+each plus the two new large receive pairs. All128 bytes posted through the
+standard C RECV callback match the genuine coherent RQ input and the actual
+native33-word CQ snapshot retires its full owner/MR reference once, producing
+WC8193, not capacity8194. Snapshots are never rewritten or extended with
+invented geometry words; geometry remains an explicit separate CSR model.
+All malformed events are labeled in-memory negative copies and retain refs.
+Maximum runtime0.0149s/original10s, ASan/UBSan. Linux/MMIO/pins/DMA/teardown
+are models in a SEPARATE execution, not live kernel/RTL or physically matched
+page tables. [Functional audit001](../results/2026-10-18/rocev2-rnic-segmented-receive-functional-diagnostics-001.json)
+verifies8750 current/prior/failed bindings; [native/software audit001](../results/2026-10-18/rocev2-rnic-segmented-receive-native-software-diagnostics-001.json)
+verifies2325 further bindings. The original TX-padding provenance gate still
+fails; no overall suite-green claim.
+
+All11 remain incomplete. Native1MiB, multi-SGE, segmented WRITE Immediate's
+independent remote MR/late notification RQ, live registered Linux/RTL/ref
+lifetimes, real-peer recovery/RNR/congestion/interoperability, original-clock
+full-board fit/setup/hold/CDC/DRC/routing and short supervised physical work
+remain. HLS15.571ns FAILS original4ns/default1.08ns; no waiver. Installed/
+default profile6 incoming4096 and oneSGE stay unchanged. No hardware/default/
+install/load/network/fan/BIOS/flash/reboot/Git action. No build remains live.
+No reboot needed; restore ALL archived RAM caches and prove authenticated
+exact-thread/goal revival first. Publication151 doc preimages are retained
+in `receive-publication151-doc-preimages-Sdw1PgN9`; this152 work is local.
+The following numbered sections preserve their historical observed states.
+
 Publication after progress151 (explicit user request): commit/push the
 current source-development checkpoint, including successful and failed
 reports. No new long build is started merely to publish this snapshot.

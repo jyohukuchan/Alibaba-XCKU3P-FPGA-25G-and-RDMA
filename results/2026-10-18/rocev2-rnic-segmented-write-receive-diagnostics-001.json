@@ -1,0 +1,100 @@
+{
+  "scope": "Exact segmented WRITE/late-RQ HLS and real RQ component evidence only.\n\nThese are separate executions with explicit trusted metadata/proof models;\nno new generated HLS, connected native MR/DMA/MAC/CQ, software/physical or\noriginal-clock proof. Original failures/preimages and all old modes remain.\n",
+  "audit_passed": true,
+  "overall_goal_complete": false,
+  "verified_reports": {
+    "new_CPP": {
+      "bindings_verified": 380,
+      "report_sha256": "45d65fb540ae003e887126d1c3fe7b77ad5f08177b9bc7b4019050987b63524d",
+      "exact_preimage_resolutions": []
+    },
+    "old44_CPP": {
+      "bindings_verified": 355,
+      "report_sha256": "bb119681797f91eccb27553972dc0f96cc10c5dd15e7c2e22b48ad44fef15b5c",
+      "exact_preimage_resolutions": []
+    },
+    "new_queue": {
+      "bindings_verified": 71,
+      "report_sha256": "67b9eece60b6b37d4710d82982cb07f3e8be251d230e22e23df710bac8c382fc",
+      "exact_preimage_resolutions": []
+    },
+    "old48_queue": {
+      "bindings_verified": 54,
+      "report_sha256": "07071de8ec45595ee90b589050a48410429c7cfeed23fef9c5044f3da6d44bc8",
+      "exact_preimage_resolutions": []
+    },
+    "previous_native_software": {
+      "bindings_verified": 1,
+      "report_sha256": "a8e6900537a456616de52d4e28f69db7688b0c64da6f5fc8c01e1360fcaa230f",
+      "exact_preimage_resolutions": []
+    },
+    "write-receive-source-startup-001": {
+      "bindings_verified": 1,
+      "report_sha256": "82d961b7fb8dc27684dd612bc3f3ddb9965da17a7efc68a9af4a4540f9919c3e",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_write_receive_transport.py"
+      ]
+    },
+    "write-notice-source-startup-001": {
+      "bindings_verified": 1,
+      "report_sha256": "0fe3911c2981b67dd9b9df9fc76468965ce213013b63c08e587cedf589deaf97",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/fpga/derive_write_notice_queue.py"
+      ]
+    }
+  },
+  "verified_bindings": 863,
+  "auditor_source_sha256": {
+    "rdma/rnic/tests/audit_segmented_write_receive.py": "108c956493a25feb89504b83bfdf2a87049b374a72d45ff04530949f19d7758d"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "actual_CPP": {
+    "modes": 65,
+    "all44_old_retained": true,
+    "new_messages_per_operation": 6,
+    "new_packets_per_operation": 284,
+    "compile_seconds": 75.43723551102448,
+    "new_seconds": {
+      "write-rx": 3.899024828977417,
+      "write-rx-imm": 3.9790270419907756
+    },
+    "independent_complete_data_pad_ACK_PSN_MSN_oracles": true,
+    "late_RQ_not_REMOTE_MR_authority": true
+  },
+  "actual_queue_component": {
+    "cases": 62,
+    "all48_old_retained": true,
+    "producer_metadata_HLS_MAC_visibility_models": true,
+    "distinct_full320_remote_and620_RQ_owners": true,
+    "one_late_RQ_and_actual_whole_bytes": true,
+    "remote_retire_backpressure_retains_RQ": true,
+    "maximum_seconds": 0.1672493540099822
+  },
+  "generated_new_HLS": false,
+  "new_native_integration": false,
+  "new_kernel_provider_profile": false,
+  "hardware_verified": false,
+  "original4ns_timing_met": false,
+  "HLS_free_space_guard_bytes": 1572864000,
+  "HLS_build_started": false,
+  "inherited_source_check": {
+    "exit": 1,
+    "stdout": "Tcl completeness checks passed: 28 files (not Vivado elaboration).\nLFC source allowlist tests passed: 14 cases; no hardware/Vivado access.\nSource check passed: 122 HDL, 12 constraints, 3 IP generators.\n",
+    "stderr": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v\n",
+    "overall_suite_passed": false,
+    "original_gate_unchanged": true
+  },
+  "remaining": [
+    "All11 original requirements retained; goal incomplete.",
+    "Real full-message/per-packet remote MR guard and persistent refs, late RNR/RQ binding, HLS/MAC/backend/native CQ fanout must be connected and independently proved.",
+    "New HLS generation/complete native/short runtime, exact matched software profile, native1MiB, multi-SGE, recovery/congestion/real-peer compatibility remain.",
+    "Original4ns/default1.08ns full-board fit/setup/hold/CDC/DRC/routing and short supervised physical qualification remain; previous HLS15.571ns is a timing failure.",
+    "No reboot needed; restore all archived RAM caches and verify authenticated exact-thread/active-goal restoration before any necessary reboot."
+  ],
+  "hardware_install_load_network_fan_BIOS_flash_reboot_actions": [],
+  "commit_or_push": false
+}

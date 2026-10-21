@@ -1,0 +1,34 @@
+{
+  "scope": "Syntax compilation only of the unfinished segmented incoming WRITE MR guard. No functional MR/RQ execution or native integration has run.",
+  "checked_date_UTC": "2026-10-21",
+  "pass_test": true,
+  "command": [
+    "iverilog",
+    "-g2012",
+    "-s",
+    "rocev2_remote_write_message_guard",
+    "-o",
+    "/dev/null",
+    "rdma/rnic/rtl/rocev2_remote_write_message_guard.v"
+  ],
+  "exit_code": 0,
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_remote_write_message_guard.v": "138a27297c8f6655911f98140ae46a07db2f453a0a3d504c412ab3d199dd22ca"
+  },
+  "original_failure_retained": {
+    "report": "results/2026-10-18/rocev2-rnic-remote-write-compile-001.json",
+    "report_sha256": "69676649287a790f16dfa479c8f09af6d32f8e73161b99c7991361b29ebd59ae",
+    "exact_preimage_root": "rdma/rnic/build/remote-write-compile-001-preimages-WN1JwBN9",
+    "preimage_and_compile_log_hashes_rechecked": true,
+    "reserved_identifier_renamed": true,
+    "later_ownership_cookie_and_retirement_source_changes_functionally_tested": false
+  },
+  "actual_RTL_runtime": false,
+  "actual_MR_table_RQ_connection_verified": false,
+  "persistent_MR_reference_lifetimes_verified": false,
+  "native_integration": false,
+  "overall_suite_passed": false,
+  "original4ns_timing_met": false,
+  "hardware_verified": false,
+  "hardware_install_load_network_fan_BIOS_flash_reboot_actions": []
+}

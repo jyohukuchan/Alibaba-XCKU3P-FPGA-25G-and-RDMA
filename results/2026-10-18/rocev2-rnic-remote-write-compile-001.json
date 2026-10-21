@@ -1,0 +1,24 @@
+{
+  "scope": "Original exact-source syntax failure before runtime; SystemVerilog context identifier is reserved.",
+  "pass_test": false,
+  "command": [
+    "iverilog",
+    "-g2012",
+    "-s",
+    "rocev2_remote_write_message_guard",
+    "-o",
+    "/dev/null",
+    "rdma/rnic/rtl/rocev2_remote_write_message_guard.v"
+  ],
+  "exit_code": 144,
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_remote_write_message_guard.v": "8eb4bdb1c3191c3e91ebc13c961aea43ecc113f6cda1d53782afb496a238367d"
+  },
+  "exact_preimage_root": "rdma/rnic/build/remote-write-compile-001-preimages-WN1JwBN9",
+  "artifact_sha256": {
+    "rdma/rnic/build/remote-write-compile-001-preimages-WN1JwBN9/compile.log": "87fe99dcbfd67863a7192d1dbc9eb4718768871708a1cb265db0f0edd47054eb"
+  },
+  "actual_RTL_runtime": false,
+  "native_integration": false,
+  "hardware_verified": false
+}

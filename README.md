@@ -28,6 +28,63 @@ inbound SEND/WRITE target, READ responder, native InfiniBand or production-relia
 
 ### RNIC development snapshot (2026-10-21)
 
+Publication update: this user-requested checkpoint includes progress176–181,
+the scheduled WRITE-abort implementation/tests, and successful AND failed
+reports. The latest [fixed-MAC native40 run](results/2026-10-18/rocev2-rnic-write-abort-scheduled-mac-native-full-001.json)
+has now ended: fresh compilation PASSES966.875s under1200; the first8 cases,
+including both new fatal-WRITE cases, pass, but case9 `LARGE_SEND_IMM` fails
+its packet-issue deadline (exit-6). The remaining31 cases were not run, and
+the all40 runtime auditor is unexecuted. This is NOT a completed regression
+or hardware release. C++140/compatibility/HLS-generation/source audits retain
+their separate scopes. Original timing still FAILS15.571ns versus4ns; error
+CQ/STOP/lifetimes remain unfinished. `scripts/check.sh` still fails its
+historical TX-padding source identity check. No hardware/default changes;
+older live/unpublished notes below are checkpoint history, not current status.
+
+Local181: fresh scheduled compilation PASSES1197.687s under1200, but its first
+access test fails: the fixture holds NAK tag6001's MAC receipt forever. Failure
+and binary stay intact. A same-binary [partial diagnostic002](results/2026-10-18/rocev2-rnic-write-abort-scheduled-native-partial-diagnostic-002.json)
+PASSES9.383s with genuine wire/HLS-abort/native-cancel/queued-RQ/quarantine
+proofs, NOT all40. Diagnostic001's wrong tag-retag counter expectation remains
+a recorded failure; `translated` counts tag changes, not address translation.
+New test-only MAC-hold/actor factoring retains all419 checks/all40 raw recipes;
+[preflight2320](results/2026-10-18/rocev2-rnic-write-abort-scheduled-mac-native-fixture-diagnostics-001.json)
+PASSES. Same206 HLS/DUT, partial1100 stalls/gates unchanged; fresh fixed-bench
+native40 build14062 is LIVE, not runtime-qualified yet. No error CQ/STOP/unpin/
+timing/physical/hardware/default/Git qualification; older live notes are history.
+
+Local180: actual scheduled HLS generation PASS865.357s,206 RTL/data files.
+RTL shrinks108.19MB to10.40MB (parser103.60MB to5.81MB); [audit2322](results/2026-10-18/rocev2-rnic-write-abort-scheduled-generated-diagnostics-001.json)
+preserves all121 port contracts and sole domains. Estimate15.571ns still
+FAILS original4ns/default1.08ns. Whole scheduled native graph460RTL/8data
+elaborates9.671s, all262 non-HLS leaves unchanged. [Preflight2249](results/2026-10-18/rocev2-rnic-write-abort-scheduled-native-fixture-diagnostics-001.json)
+retains the ENTIRE original40-case bench/inputs/391+28 checks exactly. A NEW
+binary is now compiling under unchanged1200s/30s gates; new native40 runtime
+is NOT yet qualified. Original timeout remains a failure, all11/error CQ/
+STOP/lifetimes/timing/physical remain; no hardware/default/Git action. Older
+live/unexecuted notes below describe their checkpoint times.
+
+Local progress178: the first fresh native40 compiler actually TIMED OUT at
+the unchanged1200s gate; zero packet cases ran. The failed record/objects/logs
+are retained. New abort HLS emitted108MB RTL, including a103.6MB parser;
+new simulator C++ was1.38GB versus698MB previously. A separate state-scoped
+abort/checkpoint source candidate passes all140 C++ cases and real legacy
+service compatibility, retaining160 original outcome/oracle fields exactly.
+[Audit2274](results/2026-10-18/rocev2-rnic-write-abort-scheduled-diagnostics-001.json).
+Its actual HLS generation is now LIVE, not yet generated/native/timing-qualified.
+No original check/deadline/core was waived or replaced in the failed result.
+Native40/error CQ/STOP/lifetimes/original timing/all11 remain; no hardware/Git action.
+Earlier live native40 statements below are historical checkpoint observations.
+
+Local progress176 after publication97781fd: exact source/preflight revalidation
+passes, and the complete new40-case bench elaborates without diagnostics.
+A fresh native40 executable is compiling in a new object directory, under the
+unchanged1200s deadline; no packet execution or new native runtime PASS is
+claimed yet. A new runtime auditor requires every prior38 result except wall
+time to match, plus real fatal wire/abort/cancel/retained-RQ/quarantine evidence.
+That auditor is not runtime-qualified yet. No hardware/default/Git action;
+original timing/error-CQ/STOP/lifetime/all11 requirements remain open.
+
 Publication update: this user-requested snapshot includes progress173–175 and
 the unfinished progress176 native40 test fixture, with successful AND failed
 reports. WRITE-abort C++140, controller66, merged control81, frontend47 and

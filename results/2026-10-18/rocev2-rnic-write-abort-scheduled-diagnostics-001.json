@@ -1,0 +1,75 @@
+{
+  "scope": "Actual scheduled-abort C++140/service compatibility; NOT native runtime.\n\nPreserve original native1200s timeout, exact original/new source cohorts and\nall140 outcomes/oracles. Generated RTL size/timing improvements are unproven.\n",
+  "audit_passed": true,
+  "evidence": {
+    "write-abort-scheduled-hls-001": {
+      "bindings_verified": 469,
+      "report_sha256": "93fa0116f6242ade9c3f3d59bd5ffe008e686e298f6c2de45553d69e0d0e2895",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-scheduled-compat-001": {
+      "bindings_verified": 325,
+      "report_sha256": "9e4e355a0eae9d1bb08d7dc2ec8160db67bd334e819ea950eae7e465a06e4706",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-hls-003": {
+      "bindings_verified": 468,
+      "report_sha256": "997cb6a72f985f08da2b8d9201fda1bf975c29c4deef556de35219a8b4a07e0f",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-compat-001": {
+      "bindings_verified": 324,
+      "report_sha256": "8c79f054aac14c1f90569f8b5224495f98a90d385fb8c68dc75802b0eed3edf6",
+      "exact_preimage_resolutions": []
+    },
+    "write-fatal-native-full-001": {
+      "bindings_verified": 687,
+      "report_sha256": "b28fe7e86ab86839eff64bf248769ab6e16f88c0a85b54e675416904c773f3ff",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-scheduled-source-startup-001": {
+      "bindings_verified": 1,
+      "report_sha256": "1cac42d394135b3c78b82f0118c43d66d3d3529005e4fdc4ba9340c88d231de6",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_write_abort_scheduled_transport.py"
+      ]
+    }
+  },
+  "verified_bindings": 2274,
+  "actual_CPP_cases": 140,
+  "all140_original_summary_and_oracle_fields_identical": 160,
+  "unchanged_real_owned_Atomic_Immediate_service": true,
+  "compile_seconds": 101.84857963299146,
+  "compile_limit_seconds": 600,
+  "maximum_case_seconds": 9.75983565399656,
+  "runtime_limit_seconds": 30,
+  "actual_same_retire_checkpoint_and_PSN_MSN_state_clear_consumers": true,
+  "late_checkpoint_still_serviced_in_FENCE": true,
+  "only_parser_scheduling_changed": true,
+  "original_native_timeout_retained": true,
+  "original_native_cases_run": 0,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_write_abort_scheduled.py": "87564aa8e1fbd2c2eac8aca7a65a16b4f96b9109fb03a6e860f68699e0bc966e",
+    "rdma/rnic/hls/segmented_write_abort_scheduled_transport.py": "ae9055cf7207cb3deb886ebafe7b1fc5817a6a31a05f913a197e989a3e176a5b",
+    "rdma/rnic/build/native-write-abort-scheduled-transport-001/source.json": "739a6b88d6ccb837f9f4037074cc0cfae4881909cfd573055adc5ab12b1e9dbc",
+    "rdma/rnic/build/native-write-abort-scheduled-transport-001/fns/hls/ib_transport_protocol/ib_transport_protocol.cpp": "883f3b5eb45434a17ab1abfa67d6c62cc67bcbb11a0a88826a5208cd117dc0b3"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "new_generated_HLS": false,
+  "new_RTL_size_or_timing_improvement_proven": false,
+  "new_native_runtime": false,
+  "QP_global_drain_or_unpin": false,
+  "hardware_verified": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false,
+  "remaining": [
+    "Generate actual scheduled HLS under original7200s/4ns/default1.08ns/8QP/2000/resources gates; audit every actual port/cohort/domain before fresh full native execution.",
+    "All original11, genuine native fatal61/62/63/error CQ/STOP/reference lifetime/legitimate recovery and real-peer/timing/physical requirements remain."
+  ]
+}

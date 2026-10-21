@@ -1,0 +1,119 @@
+{
+  "scope": "One unchanged partial-fatal case on the actual failed40 run's binary.\n\nDiagnostic only: isolated new files, exact qualified inputs, original30s,\nsame binary/DUT/bench. NOT a fresh fixed-bench native40 regression pass.\n",
+  "pass_test": false,
+  "directory": "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp",
+  "evidence": {
+    "actual_failed40": {
+      "bindings_verified": 705,
+      "report_sha256": "5af58de4781cdcdbfba7323b9c9d178ea88a4f1186469ad4a7ebeef57ed5d5c9",
+      "exact_preimage_resolutions": []
+    },
+    "actual_preflight": {
+      "bindings_verified": 122,
+      "report_sha256": "8062cbd8ac6a0d63c62f706ce0a43334faba11e874dca5f2708a2f8f4094417e",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "source_sha256": {
+    "rdma/rnic/tests/probe_write_abort_scheduled_partial_diagnostic.py": "a94277201f6824395b46dc12bb7bede5133e831a84a0047b2277223117fedd89",
+    "rdma/rnic/tests/write_fatal_native_fixture.py": "006ad319b00a886f49e35df4b8e6069c3b9b96865206b1e23716fee38cd35538",
+    "results/2026-10-18/rocev2-rnic-write-abort-scheduled-native-full-001.json": "5af58de4781cdcdbfba7323b9c9d178ea88a4f1186469ad4a7ebeef57ed5d5c9",
+    "results/2026-10-18/rocev2-rnic-write-abort-scheduled-native-fixture-diagnostics-001.json": "8062cbd8ac6a0d63c62f706ce0a43334faba11e874dca5f2708a2f8f4094417e"
+  },
+  "diagnostic_input_sha256": {
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/input.hex": "5261b184336d034f13fc1f07e63a2e40080d305d6d4d2a4a0c65c2c15072976b",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/records.hex": "38bd14a1ffd0bf2fc3851788a0774d9e992baafd0047b3189e54195adacaf35f",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/large-write-receive-input.hex": "945489254fa6808054e893e22618716f19a08e35433995505cd9c6f7451a5f1e",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/receive-records.hex": "fbdc435d11e27ee2605a1f229a422e0f84df1a7bbaab3bb623f56f68a6102f85",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/write-fatal-input.hex": "d66c59e96b251fa07fff6a9cd05721a9da3087cbaefeb5db46c7bdb94a00f212",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/atomic-input.hex": "7010aadb364023546e3d5f9413b170b8c6166365f740bc0953f568a322788248"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-write-abort-scheduled-native-artifacts-afaenq7h/Vtb": "780355d62036d0cb3eb30a64e6a9ec55435028332b9fbda655deaedc133d0e3e"
+  },
+  "original_binary_sha256": "780355d62036d0cb3eb30a64e6a9ec55435028332b9fbda655deaedc133d0e3e",
+  "same_original_DUT_bench_binary": true,
+  "reused_binary_for_diagnostic_only": true,
+  "compile_limit_seconds": 1200,
+  "actual_original_compile_seconds": 1197.687433032028,
+  "runtime_limit_seconds": 30,
+  "actual_native40_regression_completed": false,
+  "new_fixed_bench_runtime_qualified": false,
+  "hardware_verified": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false,
+  "command": [
+    "/dev/shm/as02-write-abort-scheduled-native-artifacts-afaenq7h/Vtb",
+    "+LARGE_WRITE_RX",
+    "+LARGE_RX_OP=5",
+    "+WRITE_FATAL_PARTIAL"
+  ],
+  "seconds": 9.132243597996421,
+  "exit": 0,
+  "actual_partial_case": {
+    "summary": {
+      "pass_test": true,
+      "partial": 1,
+      "MR_queries": 2,
+      "bytes": 4096,
+      "commands": 1,
+      "fences": 1,
+      "native_PSN_commits": 1,
+      "NAK": 1,
+      "HLS_aborts": 1,
+      "native_cancels": 1,
+      "selected_proofs": 1,
+      "retained_RQ": 1,
+      "CQ": 0,
+      "quarantine": 4,
+      "replay_words_accepted": 260
+    },
+    "actual_native_fatal61_62": true,
+    "actual_HLS_abort": true,
+    "actual_native_selected_cancel": true,
+    "full_control_owner480": "0619876559876550000000000000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef91234567000000010011000002",
+    "full_abort_owner960": "000f60010000000619876559876550000000000000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001000000000000000100000008fedcba98765432100000200198765400000000000010009876540001",
+    "full_selected1000": "0700000000000f60010000000619876559876550000000000000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001000000000000000100000008fedcba98765432100000200198765400000000000010009876540001",
+    "full_retained_RQ620": "00000000f123456789abc00100000000000000019123456700000001000002001100010004000100000000000000000000000000000000000000000000000000000000000000000000000000003",
+    "retained_RQ_not_error_CQ_or_unpin": true,
+    "global_drain_or_STOP": false,
+    "actual_XGMII_frames": [
+      {
+        "tag": 24577,
+        "frame_hex": "b8830367c5d08af3fbb975310800450200300000400064117493c6120b02c6120b0112b712b7001c00001140ffff000000c4009876540000000071f7502e"
+      },
+      {
+        "tag": 24578,
+        "frame_hex": "b8830367c5d08af3fbb975310800450200300000400064117493c6120b02c6120b0112b712b7001c00001140ffff000000c40098765561000000a74eaa90"
+      }
+    ],
+    "host_snapshot_sha256": "840ce6d9fa7d15ca6e6a663858826e8e83273b406be613c894d77de94b315d70",
+    "every_host_payload_pad_sentinel_byte": true,
+    "physical_peer_or_live_Linux": false
+  },
+  "error_type": "ValueError",
+  "error": "one actual FIRST logical data command/nonce required",
+  "artifact_sha256": {
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/receive-records.hex": "fbdc435d11e27ee2605a1f229a422e0f84df1a7bbaab3bb623f56f68a6102f85",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/atomic-input.hex": "7010aadb364023546e3d5f9413b170b8c6166365f740bc0953f568a322788248",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/large-write-receive-host.hex": "85312454b2e5c7aa07f385ae715d9bae073019d169970600c9ab140d9776f070",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/write-fatal-rq-owner.hex": "70bf9e1fc8b95d04340dc8d2696996b771738631e50857d34e3c868c9e839986",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/partial.log": "b6fe25f43fca378c880ce003a07b442e3a476f98f9fbb84f45ec52a5ab138939",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/rocev2_native_write_abort_top_retrans_meta_table_0_s_meta_table_offs_RAM_T2P_BRAM_1R1W.dat": "f5d77a3523b6c0d3e7c0ff5745c4e58e99a69d61bdf17ff4ff61795da7c93934",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/rocev2_native_write_abort_top_retrans_meta_table_0_s_meta_table_request_token_RAM_T2P_BRAM_1R1W.dat": "f5d77a3523b6c0d3e7c0ff5745c4e58e99a69d61bdf17ff4ff61795da7c93934",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/rocev2_native_write_abort_top_retrans_meta_table_0_s_meta_table_rkey_valid_RAM_T2P_BRAM_1R1W.dat": "f5d77a3523b6c0d3e7c0ff5745c4e58e99a69d61bdf17ff4ff61795da7c93934",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/rocev2_native_write_abort_top_retrans_meta_table_0_s_meta_table_compare_RAM_T2P_BRAM_1R1W.dat": "f5d77a3523b6c0d3e7c0ff5745c4e58e99a69d61bdf17ff4ff61795da7c93934",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/records.hex": "38bd14a1ffd0bf2fc3851788a0774d9e992baafd0047b3189e54195adacaf35f",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/rocev2_native_write_abort_top_retrans_meta_table_0_s_meta_table_psn_RAM_T2P_BRAM_1R1W.dat": "f5d77a3523b6c0d3e7c0ff5745c4e58e99a69d61bdf17ff4ff61795da7c93934",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/rocev2_native_write_abort_top_retrans_meta_table_0_s_meta_table_immediate_RAM_T2P_BRAM_1R1W.dat": "f5d77a3523b6c0d3e7c0ff5745c4e58e99a69d61bdf17ff4ff61795da7c93934",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/profile.hex": "66f1f9371cc81ce2fcd54b2814b28834b0afd23996af64322d0a13d2a41e212b",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/rocev2_native_write_abort_top_retrans_meta_table_0_s_meta_table_request_owned_RAM_T2P_BRAM_1R1W.dat": "f5d77a3523b6c0d3e7c0ff5745c4e58e99a69d61bdf17ff4ff61795da7c93934",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/write-fatal-selected.hex": "7243539f5fa635efc9730deba74c225c6539d6d40670809a45144e2aebc5697c",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/large-write-receive-input.hex": "945489254fa6808054e893e22618716f19a08e35433995505cd9c6f7451a5f1e",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/input.hex": "5261b184336d034f13fc1f07e63a2e40080d305d6d4d2a4a0c65c2c15072976b",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/write-fatal-input.hex": "d66c59e96b251fa07fff6a9cd05721a9da3087cbaefeb5db46c7bdb94a00f212",
+    "rdma/rnic/build/write-abort-partial-diagnostic-cq2lmcpp/rocev2_native_write_abort_top_retrans_meta_table_0_s_meta_table_next_RAM_T2P_BRAM_1R1W.dat": "f5d77a3523b6c0d3e7c0ff5745c4e58e99a69d61bdf17ff4ff61795da7c93934"
+  }
+}

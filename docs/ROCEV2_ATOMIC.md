@@ -5,6 +5,49 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+Publication checkpoint: progress176–181 sources and successful/failed reports
+are included by explicit request. The latest fixed-MAC native build has ended:
+compile966.875s PASS; first8 cases PASS, then `LARGE_SEND_IMM` fails its
+packet-issue deadline (exit-6). Remaining31 cases, including the unexecuted
+Atomic cases, and the all40 runtime auditor were not run. Thus prior native38/
+CQ105 remain the completed integrated baselines; no new complete Atomic/native
+qualification is claimed. Timing15.571ns still fails4ns; IB_ATOMIC_NONE,
+global drains, STOP/unpin and hardware/defaults are unchanged. Older live/
+unpublished statements below refer to their historical checkpoint times.
+
+Local181: scheduled compilation1197.687s meets1200, but first new fatal-access
+case fails on an indefinitely held test MAC receipt. Not a new40/Atomic pass.
+Separate same-binary partial diagnostic002 succeeds9.383s with real abort/
+cancel/retainedRQ/quarantine; corrected tag-retag oracle failure001 remains.
+New test-only case-specific hold/actor control passes exact40/419-check
+preflight2320 and a FRESH build14062 is live. All38 original Atomic/other
+results still require execution on that binary. No DUT/advertisement/default/
+hardware/Git/timing/STOP/unpin change or qualification; all11 remain.
+
+Local180: actual scheduled HLS206 generated865.357s, all121 ports/domain
+audit2322 PASS; RTL size shrank substantially but15.571ns still FAILS original
+4ns/default1.08ns. Whole new native graph elaborates9.671s with unchanged262
+non-HLS leaves. Exact original40 bench/raw/391+28 checks pass preflight2249;
+a FRESH binary is compiling, not Atomic/native packet qualification yet.
+The old native40 timeout remains a failure; no advertisement/error CQ/STOP/
+unpin/global drain/default/hardware/Git change. Earlier live/prepared notes
+are history; all original11 and physical/timing requirements remain open.
+
+Local178: first native40 compilation actually hit unchanged1200s and ran zero
+cases; no new Atomic/native runtime pass exists. Separate scheduled-abort
+candidate retains all140 C++ outcomes/oracles and actual legacy owned Atomic/
+Immediate service compatibility; [audit2274](../results/2026-10-18/rocev2-rnic-write-abort-scheduled-diagnostics-001.json).
+Its HLS generation is LIVE, not generated/native/timing/STOP/unpin qualification.
+Original failed/native38 artifacts remain, with no gate waiver, advertisement,
+default/Git/hardware change. Older live-build notes describe checkpoint times.
+
+Local176 after97781fd: new40 bench elaborates without diagnostics, and a fresh
+native binary is compiling under the unchanged1200s bound. Original38 Atomic/
+other cases have NOT yet run on this new core; no new Atomic runtime pass or
+advertisement is claimed. An unexecuted new auditor requires every old case's
+entire result except wall time plus genuine fatal61/62 proofs. Original timing,
+both zero global drains, IB_ATOMIC_NONE, STOP/lifetimes/all11 remain unchanged.
+
 Publication update (progress173–175 plus unfinished176): the new native40
 fixture has passed its [1449-binding preflight](../results/2026-10-18/rocev2-rnic-write-fatal-native-fixture-diagnostics-001.json),
 retaining all38 old cases, but the fresh binary and packet tests have NOT been

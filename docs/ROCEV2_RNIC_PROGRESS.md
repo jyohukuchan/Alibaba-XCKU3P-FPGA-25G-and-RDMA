@@ -32,6 +32,232 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+### Publication checkpoint: latest fixed-MAC native run ended, regression incomplete
+
+This explicit user-requested publication includes progress176–181 and all
+new successful/failed reports, without generated binaries/vendor artifacts.
+The [fresh fixed-MAC run](../results/2026-10-18/rocev2-rnic-write-abort-scheduled-mac-native-full-001.json)
+has ended, so the live-build statements below are historical observations.
+Compilation succeeds966.875s under the unchanged1200s bound. The first8
+cases pass: fatal access, fatal partial, WRITE PSN, WRITE RNR, WRITE,
+WRITE Immediate, SEND receive and SEND Immediate receive. Case9,
+`LARGE_SEND_IMM`, exits-6 after10.987s at the original packet-issue deadline:
+`large actual packet issue deadline packet1 flags00 fault00`. The remaining31
+cases were not run; the report remains `pass_test=false`, and the all40
+runtime auditor has NOT executed. The cause of this new failure is not yet
+diagnosed here; no test/DUT fix, deadline waiver or new build is part of
+this publication request. All failure logs, frozen inputs and artifacts remain.
+
+The source/fixture audits and first8 cases do not establish all38 old-case
+regression equivalence, Atomic qualification, standard API runtime, safe
+unpin/STOP, original timing or physical operation. Prior-core native38/CQ105
+remain the latest completed integrated baselines. C++140/compatibility and
+actual206-file HLS generation retain their independently recorded scopes;
+15.571ns still fails4ns. Read-only `scripts/check.sh` again fails the existing
+`rocev2-transport-rx-rtl.json` to `rocev2_tx_padding.v` identity check, without
+rewriting that evidence. Python syntax/JSON/binding checks are publication
+checks, not new hardware qualification. No hardware/default/fan/network/BIOS,
+driver-load, JTAG/flash or reboot action accompanies this push.
+
+### Local progress181: actual first-case failure, real partial proof, fixed test control
+
+Previous180 is PROGRESS plus VERIFIED WAIT. SAME scheduled native build44151
+actually compiles1197.687s under original1200s, binary SHA780355d6..., then
+[native-full001](../results/2026-10-18/rocev2-rnic-write-abort-scheduled-native-full-001.json)
+fails first access case10.485s, exit-6; the other39 were not run. No timeout/
+assertion waiver, restart or rewritten result. The completed binary, all
+objects/source/logs and original failed input snapshots remain immutable.
+
+Actual log contains real480 owner/512 HLS response and NAK6001 SFD/EOF, but
+no MAC528/abort992/selected1000; control/native fault codes remain0. The
+fixture sets `lrx_hold_final_MAC=1` for BOTH new cases and selects tag6001,
+but only the partial case has a1100-cycle release. Access has no positive
+FIRST: it indefinitely holds its own NAK receipt, correctly preventing abort.
+This is test-control evidence, not a missing or fabricated MAC completion.
+
+A new isolated diagnostic copies the exact qualified partial inputs and
+reuses the actual unchanged binary without altering the original failure
+directory. [Diagnostic001](../results/2026-10-18/rocev2-rnic-write-abort-scheduled-native-partial-diagnostic-001.json)
+executes successfully9.132s and passes all full wire/owner/host/RQ checks,
+but its NEW post-parser oracle wrongly expects `translated=1`. The unchanged
+observer increments that counter only for logical-tag != physical nonce;
+it is NOT an address/PTE-translation count. FIRST tag1==fresh nonce1 means0,
+consistent with the actual old38 WRITE results. Exact failed script preimage
+is retained; only that new oracle is corrected, with all command/page/status
+and independent ownership/data checks unchanged. [Diagnostic002](../results/2026-10-18/rocev2-rnic-write-abort-scheduled-native-partial-diagnostic-002.json)
+PASSES9.383s under30: one real FIRST/4096 bytes/data nonce/fence/PSN commit,
+NAK61, actual960/992/1000, real native cancellation, retained queuedRQ620,
+no CQ and permanent quarantine4 after notification consumption/replay probe.
+This is one unchanged-binary native diagnostic, NOT a fresh fixed-bench40 pass.
+
+New `write_abort_scheduled_mac_native_fixture.py` preserves the original
+fixture and changes only case-specific MAC hold plus test-control factoring.
+Partial retains its real1100-cycle positive receipt hold and all71-cycle
+local/selected stalls. Access no longer holds NAK6001 forever. The new test
+task runs in a separate simulation actor: the last17.1MB initial-coroutine
+C++ unit dominated1197.687s compilation; factoring keeps original compiler
+geometry/deadlines. Its finished bit controls test sequencing only, NEVER a
+DUT/owner/MAC/CQ/cancel/drain/unpin certificate. No DUT or HLS source changes.
+
+[MAC preflight001](../results/2026-10-18/rocev2-rnic-write-abort-scheduled-mac-native-fixture-diagnostics-001.json)
+PASSES2320 bindings: ONLY those3 explicit text substitutions, all419 original
+fatal checks/all40 recipes/raw bytes/oracle functions/stalls/gates retained.
+The bench is deliberately NOT byte-identical after this test-only correction;
+its exact NEW bench/runner hashes are bound. A new actual fresh build14062
+has passed whole-bench elaboration and is compiling against the SAME actual
+206 HLS/unchanged460 RTL/profile8 under original1200s/30s/4ns/j4/O1/cfuncs500000.
+The fixed-bench runtime auditor is prepared/AST-valid, NOT yet executed.
+All original38 outcomes plus both real fatal cases must pass on the NEW binary.
+Original failed access and counter-oracle reports stay failures; all11/error
+CQ/STOP/lifetimes/recovery/timing/physical remain. No hardware/default/Git,
+reboot or extra cache-relocation action in this goal turn.
+
+### Local progress180: actual compact generation/native graph and fresh40 build
+
+Previous179 is PROGRESS plus VERIFIED WAIT. SAME HLS99277/builder2941023/
+HLS2941274 completed normally, TERMINAL0, not restarted for scheduling or
+observation timeouts. [Generated001](../results/2026-10-18/rocev2-rnic-write-abort-scheduled-generated-hls-001.json)
+PASSES865.357s under7200s, actual start1703698432>=1572864000 bytes,
+4ns/default1.08ns/8QP/2000 unchanged.206 files,119193 LUT/166152 FF/
+306 BRAM18K/0 DSP. Actual RTL108193238->10403781 bytes; RX parser
+103598334->5812546. Estimate15.571ns STILL FAILS original effective2.92ns.
+Generation/representation reduction is not full-board fit/CDC/routing/timing.
+
+[Generated audit001](../results/2026-10-18/rocev2-rnic-write-abort-scheduled-generated-diagnostics-001.json)
+PASSES2322 bindings: all121 actual port directions/widths identical, actual
+same tested scheduled parser, unique top and sole parser/checkpoint/control/
+ACK/MSN/state domains. The ENTIRE new206 cohort is selected, not an assumed
+208-file core. Observed532 vs actual549 source/frozen input maps are DISTINCT:
+528 common hashes identical,4 only-observed/21 only-actual; both verify.
+
+[Native elaboration001](../results/2026-10-18/rocev2-rnic-write-abort-scheduled-native-elaboration-001.json)
+PASSES9.671s under original180s/root+RAM1GiB, actual460 RTL/8 data; every262
+non-HLS leaf stays identical and actual sole namespaces/profile8/both zero
+global drains remain. This is compilation, not new packet execution.
+
+New scheduled source selector/runner/preflight require those ACTUAL records,
+retain the old failed native40 timeout, and leave original source/fixtures/
+verifiers untouched. [Preflight001](../results/2026-10-18/rocev2-rnic-write-abort-scheduled-native-fixture-diagnostics-001.json)
+PASSES2249 bindings: ENTIRE native40 bench matches the first failed run and
+qualified original fixture byte-for-byte; all40 recipes/raw bytes and391+28
+assertions remain. All38 original inputs match their actual prior runtime;
+new2 retain genuine positive/coherent-RQ inputs plus exact bad FIRST/short MID.
+Original1200s compile/30s each case/180s bench elaboration/4ns/root1GiB/
+RAM4GiB/j4/CXX-O1/cfuncs500000 gates remain. One fresh scheduled native40
+binary build is now LIVE in session44151; new packet-runtime PASS is unproven.
+Its whole bench elaboration already passed before actual Verilator compilation.
+
+No new error CQ/STOP/global drain/unpin/physical/real-peer qualification is
+claimed. Original native38/CQ105 remain the latest completed integrated/
+software regressions; original timeout/partial objects/reports/logs preserved.
+All original11/native1MiB/multiSGE/live Linux refs/recovery/congestion/timing
+remain. No hardware/default/install/load/network/fan/BIOS/reboot/Git action.
+No additional cache relocation; restore ALL earlier archived RAM caches before
+ANY reboot, though none is needed. Older live/unexecuted notes are history.
+
+### Local progress179: generation/native verification prepared; SAME HLS live
+
+All432 authored/248 report/532 observed HLS-input hashes revalidate. SAME
+session99277/builder2941023/HLS2941274 remains live in actual scheduling;
+the original7200s limit/4ns/default1.08ns/8QP/2000 remain. An unchanged log or
+an observation timeout is not a terminal result and does not justify restart.
+
+New `audit_write_abort_scheduled_generated.py` is prepared to require ALL121
+original port directions/widths, actual same tested parser, every generated
+file and unique parser/checkpoint/control/ACK/MSN/state domains. It measures
+the actual size/resource/timing outcome without assuming improvement or208
+files. Its reader parses the original121 ports and rejects duplicate/changed
+width controls; AST passes, but the NEW generated audit is NOT yet executed.
+New `check_write_abort_scheduled_native.py` is AST-valid, NOT executed. It will
+accept only successful actual generated/consumer audits, replace the ENTIRE
+old core and retain all262 non-HLS RTL leaves unchanged, then compile/check
+actual sole namespaces under the original180s/root+RAM1GiB/profile8 gates.
+Neither prepared source establishes new native runtime or timing success.
+Original native40 failure/all11 requirements and safety constraints remain;
+no hardware/default/Git or further storage actions in this goal turn.
+
+### Local progress178: actual native timeout and scheduled-abort candidate
+
+Previous177 is VERIFIED WAIT: same native session78074/builder2939317 was
+confirmed in actual C++ compilation, not presumed stopped. It subsequently
+became TERMINAL1 at original1200s: [native-full001 failure](../results/2026-10-18/rocev2-rnic-write-fatal-native-full-001.json),
+TimeoutExpired, zero cases run. The owned compiler process group is gone;
+report/logs/all partial objects and the actual208-file core remain. Actual
+failed-run manifest674 and observed621 are separate:9 only-observed/62
+only-actual, all common hashes identical;687 source/artifact bindings verify.
+No timeout restart, rewritten failure, old executable reuse or gate waiver.
+
+Measured representation growth: actual abort HLS108193238 bytes versus
+9448627, largest RX FSM103598334 versus4949385; actual new C++93 files/
+1379069446 bytes versus71/698216932. The emitted parser repeats complex
+pipeline predicates across unrelated FSM states. This is build evidence,
+not a claim of FPGA resource exhaustion or completed timing analysis.
+
+`segmented_write_abort_scheduled_transport.py` derives a SEPARATE source cohort
+`native-write-abort-scheduled-transport-001`, leaving original002 unchanged.
+Only parser scheduling changes: same real retired checkpoint is serviced in
+META and WRITE_ABORT_FENCE (including late arrival), and original abort-owner
+admission moves under its already-required META case. Every960/992 owner,
+actual checkpoint/same PSN/MSN/selected clear/verify check remains; no idle or
+READY becomes a proof. First strict derivation rejected a space-vs-tab META
+anchor before allocating a cohort; exact failed source is saved separately.
+
+[Actual C++001](../results/2026-10-18/rocev2-rnic-write-abort-scheduled-hls-001.json)
+PASSES140, compile101.849s under600, max9.760s under30; all160 previous
+summary/independent-oracle fields are identical across ALL140 old cases.
+[Compatibility001](../results/2026-10-18/rocev2-rnic-write-abort-scheduled-compat-001.json)
+PASSES27.309s compile/1.110s runtime, same actual owned Atomic/Immediate
+service summaries. [Scheduled audit001](../results/2026-10-18/rocev2-rnic-write-abort-scheduled-diagnostics-001.json)
+PASSES2274 bindings and retains original native timeout/source-startup failures.
+These HLS consumers use modeled privileged native/MAC/fence/management inputs,
+not fresh full-native or physical proof. Actual new HLS generation is LIVE
+under original7200s/4ns/default1.08ns/8QP/2000/resource gates. RTL size/resource/
+timing improvement is unproven until generation and audit; then fresh native
+elaboration, all38 old+2 fatal packet cases and kernel/CQ matching remain.
+
+Only four explicit successful terminal OLD scratch DBs were durably archived,
+byte-verified and moved to RAM:5808 files/93734521 archive bytes. Both exact
+process-use audits and durable fsync preceded each move; original/archive/RAM
+hashes match. Sources/generated RTL/logs/reports are untouched. Root free rose
+to1706336256 bytes, above the unchanged1500MiB HLS start guard. Restore these
+AND ALL earlier RAM-backed caches before ANY reboot; none is needed now.
+Fatal63/error CQ/full QP STOP/reference release/recovery/all original11 remain.
+No hardware/default/install/load/network/fan/BIOS/reboot/Git actions.
+
+### Local progress176: fresh native40 build and stronger runtime audit source
+
+Previous goal work is PROGRESS: actual full native fatal source integration
+and exact new40 fixture preflight, followed by explicit user-requested push
+97781fd. Before continuing, all425 authored/242 report/549 actual-abort/596
+observed-abort/527 fatal-elaboration/568 old-native/543 control-HLS/515
+control-elaboration/both653 native38 bindings revalidate. The five175 docs
+resolve to the exact saved publication preimages; no old report was rewritten.
+The successful fixture preflight and exact new runner/whole-bench hashes
+revalidate as well. No prior native40 job existed, so one fresh run was started.
+
+Actual run `rdma/rnic/build/write-fatal-native-full-o0pvi70w` has passed its
+complete Icarus bench elaboration without diagnostics and moved to Verilator.
+Session78074/builder2939317 is live, with fresh object directory
+`/dev/shm/as02-write-fatal-native-obj-4l23j7vg` and RAM artifacts
+`/dev/shm/as02-write-fatal-native-artifacts-5ffanilc`. Original1200s compiler/
+30s each case/180s elaboration/4ns/resource/parallelism gates remain unchanged.
+An observation timeout does NOT authorize restart. There is no final native40
+record yet and no new packet-runtime success is claimed.
+
+`audit_write_fatal_native_runtime.py` is new source, AST-checked but not yet
+executed against a successful new runtime. It requires EVERY old38 result
+field except wall-clock seconds to match; new raw inputs must be the genuine
+positive/RQ baseline plus the independently authored invalid FIRST/short MID.
+It rereads each untouched archived log/host/selected1000/queuedRQ620 snapshot,
+checks full wire/current PSN/MSN/fresh tags and exact physical nonce counts,
+and verifies sole actual HLS/MR/PTE/backend/ACK/cancel namespaces against the
+whole new208 cohort. It cannot pass on elaboration or component models alone.
+Selected proof and permanently retained quarantine are NOT standard error CQ,
+QP/global drain, STOP, safe unpin or legitimate recovery. Fatal63, full error
+CQ/STOP/reference lifetimes and all original11 requirements remain unfinished;
+estimated15.571ns still contradicts the original4ns timing requirement.
+No FPGA/driver/network/fan/BIOS/default/reboot/Git action in this goal turn.
+
 ### Publication checkpoint: progress173–175 and unfinished176
 
 This explicit user-requested commit/push includes the source changes and both

@@ -1,0 +1,16 @@
+{
+  "scope": "Strict new scheduled-abort source derivation startup, before any cohort or compilation.",
+  "pass_test": false,
+  "error_type": "ValueError",
+  "error": "QP transport anchor changed:     case META:",
+  "failed_before_cohort_allocation": true,
+  "source_sha256": {
+    "rdma/rnic/hls/segmented_write_abort_scheduled_transport.py": "1312517a1b7e947d1be4b7d47df911e82a025ee8fb17ea4a89e68ff451ef0b9f"
+  },
+  "exact_source_preimage_root": "rdma/rnic/build/write-abort-scheduled-source-startup-001-preimages-fclFtbOa",
+  "correction": "The actual original META case is tab-indented; only the exact textual anchor is corrected. No DUT/oracle/gate relaxation.",
+  "generated_HLS": false,
+  "actual_native_runtime": false,
+  "hardware_verified": false,
+  "overall_goal_complete": false
+}

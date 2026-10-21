@@ -1,0 +1,18 @@
+{
+  "scope": "Preserved first READ standard-callback C fixture compilation failure before model correction",
+  "audit_pass": true,
+  "batch_pass": false,
+  "actual_kernel_build001_pass_unchanged": true,
+  "failed_report": "results/2026-10-18/rocev2-rnic-segmented-read-kernel-post-001.json",
+  "failed_report_sha256": "96f6a456a3a63696792c64588c79681c9303636e4fbbe61f68270280e73598ff",
+  "source_bindings_verified_before_correction": 83,
+  "artifact_bindings_verified_before_correction": 1,
+  "mismatched_bindings": 0,
+  "runtime_cases": 0,
+  "failure": "Explicit MMIO model case branch indentation triggers retained -Werror=misleading-indentation; actual kernel body build already passes",
+  "preimage_directory": "rdma/rnic/build/read-kernel-post-001-preimages-iE6nkmLG",
+  "preimage_model_sha256": "c10794febe40fa92b1c04aebb386b7c59d1ec0520978bb8723264742b5e6a969",
+  "correction": "Add braces to the modeled CQ-feature branch only; same returned identity, kernel code and every original assertion/ASan/UBSan/-Werror/10s limit unchanged",
+  "kernel_source_or_old_reports_modified": false,
+  "hardware_verified": false
+}

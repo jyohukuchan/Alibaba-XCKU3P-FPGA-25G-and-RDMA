@@ -1,0 +1,22 @@
+{
+  "scope": "Preserved initial configuration-route component probe and pre-correction provenance",
+  "audit_pass": true,
+  "batch_pass": false,
+  "hardware_verified": false,
+  "failed_report": "results/2026-10-18/rocev2-rnic-segmented-read-config-route-001.json",
+  "failed_report_sha256": "913f3a9359c7cae19c13b6c82c3d47ce64440063a3af723899124009f515ed04",
+  "source_bindings_verified_before_correction": 116,
+  "artifact_bindings_verified_before_correction": 14,
+  "mismatched_bindings": 0,
+  "passed_cases_before_compile_failure": [0, 1, 2],
+  "case0": "Actual accepted QP_TX requires zero route fields; old observer erases route and real predictor latches fault0xa2",
+  "case1": "Same actual controller stimulus and predictor with route-only derivation preserves peer196, no fault, and accepts TX_PSN0x89abcd",
+  "case2": "Actual controller rejects QP_TX before normal QP setup without inventing a route",
+  "failure": "Case3 testbench loop used undeclared integer i; no case3 runtime occurred",
+  "preimage_directory": "rdma/rnic/build/read-config-route-001-preimages-zGqCp5dT",
+  "preimage_probe_sha256": "decb8a966d665281e6f88badffe9b15ba9218532d41754455db6343e2934e8f6",
+  "correction": "Declare and use dedicated mutation_index in the fixture; no controller, observer derivation, predictor or expected-value changes",
+  "failed_native002_preimages": "rdma/rnic/build/read-native-002-preimages-pofhDgkr",
+  "original_native_failure_relabelled": false,
+  "root_cause_scope": "Deterministic component reproduction isolates the real QP_TX/observer contract mismatch; corrected full-native runtime still required"
+}

@@ -1,0 +1,49 @@
+{
+  "scope": "Historical/fresh configuration-route and complete-native elaboration audit; full corrected native runtime remains pending",
+  "audit_pass": true,
+  "hardware_verified": false,
+  "large_READ_native_runtime_pass": false,
+  "verified_bindings": {
+    "failed_config001": 130,
+    "failed_config002": 132,
+    "passing_config003": 140,
+    "passing_complete_native_elaboration001": 1419,
+    "preserved_failed_original_full_native002": 1503
+  },
+  "historical_changed_source_resolution": {
+    "config001": "rdma/rnic/build/read-config-route-001-preimages-zGqCp5dT/rdma/rnic/tests/probe_segmented_read_config_route.py",
+    "config002": "rdma/rnic/build/read-config-route-002-preimages-eW59pzR8/rdma/rnic/tests/probe_segmented_read_config_route.py",
+    "only_changed_source": "rdma/rnic/tests/probe_segmented_read_config_route.py",
+    "all_other_current_sources_and_artifacts_match": true
+  },
+  "actual_controller_contract": "QP_TX requires zero peer/IP/RX_PSN fields and an already configured matching QPN/PD; its accepted TX_PSN remains0x89abcd",
+  "baseline_reproduction": "Original exact observer erases peer/IP and actual predictor latches fault0xa2 with all queue guards set",
+  "corrected_component_cases": 5,
+  "baseline_reproduction_cases": 1,
+  "all_case_runtimes_seconds": [0.023304, 0.023215, 0.022669, 0.026498, 0.025455, 0.023914],
+  "actual_controller_rejections": "Before-QP ERR_OWNER; wrong QPN/PD ERR_OWNER; all12 unused/route-field mutations ERR_SHAPE; no accepted configuration or route mutation",
+  "additional_cases": "Unaccepted/stalled QP_TX leaves route unchanged; normal reapply and reset retain original semantics",
+  "complete_native_elaboration_directory": "rdma/rnic/build/read-profile-native-263rt2ak",
+  "complete_native_elaboration_seconds": 3.436252524959855,
+  "exact_generated_RTL_comparison": {
+    "unchanged_common_RTL_files": 37,
+    "changed_file": "rocev2_controlled_responder.v",
+    "changed_lines": 2,
+    "change": "Only accepted non-TX-only configuration updates the effective route; all genuine configuration handshake guards and downstream TX_PSN application stay unchanged"
+  },
+  "native_fixture": "Exact original prefix/suffix and original fatal assertion preserved; only read-only subfault prints inserted before that fatal assertion",
+  "no_MR_owner_status_MSN_CQ_success_injected": true,
+  "original_limits_clocks_guards_and_oracles_retained": true,
+  "full_native_fresh_build_directory": "rdma/rnic/build/segmented-read-route-native-full-sbv9y0bo",
+  "full_native_fresh_build_session": 4838,
+  "full_native_runtime_unverified_at_this_audit": true,
+  "old_reports_relabelled": false,
+  "default_hardware_kernel_provider_unchanged": true,
+  "source_sha256": {
+    "results/2026-10-18/rocev2-rnic-segmented-read-config-route-001.json": "913f3a9359c7cae19c13b6c82c3d47ce64440063a3af723899124009f515ed04",
+    "results/2026-10-18/rocev2-rnic-segmented-read-config-route-002.json": "8c12b875f223c6a52767a244f579cef07ec07a4ece27251c2f3f7b91c34bb253",
+    "results/2026-10-18/rocev2-rnic-segmented-read-config-route-003.json": "bd9051845ee263767ff5482e72db56955638aeba5cb8cac16302083b0b890d43",
+    "results/2026-10-18/rocev2-rnic-segmented-read-route-native-elaboration-001.json": "0a92db76c7ae6846d4a42c832ed49b136b47bebe714bf2b2c9c4e8e858290cdb",
+    "results/2026-10-18/rocev2-rnic-segmented-read-native-full-002.json": "50bd5525698b78af07e86acff2667d848fada6402b151c68b7431e6ee6c477d9"
+  }
+}

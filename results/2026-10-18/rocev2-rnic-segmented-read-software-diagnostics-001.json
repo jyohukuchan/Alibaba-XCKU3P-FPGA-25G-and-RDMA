@@ -1,0 +1,92 @@
+{
+  "scope": "Exact16383/63 software profile5 build, actual C/model/native-snapshot/provider audit; no installed or live Linux/hardware proof",
+  "audit_pass": true,
+  "actual_Linux_runtime": false,
+  "live_kernel_RTL_coupling": false,
+  "hardware_verified": false,
+  "installed_or_loaded": false,
+  "software_profile": 5,
+  "RNC_features": 16383,
+  "CQC_features": 63,
+  "SQC_RQC_features": [13, 15],
+  "SQ_RQ_stride_bytes": 128,
+  "source_READ_limit_bytes": 1048576,
+  "native_READ_maximum_tested_bytes": 8193,
+  "old_profiles_and_defaults_unchanged": true,
+  "old_default8191_31_READ_limit": 4096,
+  "single_SGE_only": true,
+  "Immediate_and_RQ_limit_bytes": 4096,
+  "IB_ATOMIC_NONE_retained": true,
+  "verified_bindings": {
+    "actual_running_header_kernel_build001": 133,
+    "actual_READ_WR_adapter001": 95,
+    "actual_standard_kernel_callbacks_post003": 175,
+    "actual_libibverbs_provider001": 38,
+    "actual_kernel_C_unedited_native_snapshots001": 185,
+    "total_new_successful_bindings": 626,
+    "historical_failed_post001": 84,
+    "historical_failed_post002": 90,
+    "unchanged_prior_actual_native30_case_batch": 1665
+  },
+  "kernel_build_seconds": 9.989480205986183,
+  "READ_WR_adapter": {
+    "real_running_header_compile_link": true,
+    "kernel_build_seconds": 4.481630962982308,
+    "ASan_UBSan_model_runtime_seconds": 0.011827725043985993,
+    "all54_positive14_negative_old_cases_retained": true,
+    "new_large_READ_cases": 24,
+    "new_other_compatibility_positive_cases": 15,
+    "new_negative_cases": 14,
+    "NEW_entry_base_only_SEND_ASan_guarded": true,
+    "actual_posting": false
+  },
+  "standard_kernel_callbacks": {
+    "compile_seconds": 7.3550768960267305,
+    "cases": 90,
+    "new_READ_cases": 25,
+    "all65_previous_cases_retained": true,
+    "maximum_runtime_seconds": 0.01490203500725329,
+    "checks": "Actual WR/SQ/MR/CQ C; exact new tuple and geometry, full READ range/local-write permission/key validation, old-profile refusal, producer0 on rejection, ambiguous publication and wrong CQ retain MR/queue, CQ backpressure, READ WC bytes, zero/short and1MiB modeled READ",
+    "Linux_MMIO_pins_coherent_DMA_hardware_completion_boundaries_modeled": true
+  },
+  "provider": {
+    "profiles": 6,
+    "all5_old_profiles_retained": true,
+    "compile_seconds": 1.6747888129903004,
+    "maximum_runtime_seconds": 0.017012938973493874,
+    "READ_SEND_chain_lengths": [4097, 8193, 1048576],
+    "actual_libibverbs_and_standard_serializer": true,
+    "fake_fd_syscalls_and_WC_replies_only_modeled": true,
+    "full64_addresses_keys_SGEs_exact_second_bad_WR_and_READ_WC_lengths_checked": true
+  },
+  "native_snapshot_integration": {
+    "compile_seconds": 6.798877325025387,
+    "cases": 70,
+    "old_operation_pairs": 13,
+    "new_actual8193_READ_pair": 1,
+    "four_negative_mutations_per_pair": true,
+    "maximum_runtime_seconds": 0.015019073034636676,
+    "unedited_native_SQ_CQ_captures": true,
+    "full128_actual_kernel_and_native_records_identical": true,
+    "actual_C_CQ_ACK_and_MR_ref_retirement": true,
+    "Linux_MMIO_pin_DMA_peer_and_physical_page_tables_not_live_coupled": true
+  },
+  "failed_evidence": {
+    "startup001": "CLI-only new builder lacks digest helper; original checked/digest helper retained without changing exact new-cohort requirement, zero C cases",
+    "post001": "Modeled CQ-feature branch indentation triggers original -Werror; preserved84 bindings/preimages before adding braces only",
+    "post002": "Four READ cases pass; old-profile refusal oracle incorrectly treats allocated-SQ count as posted-WR count. Preserved90 bindings/preimage before independently requiring allocated SQ1, producer0, observed0, MR ref1",
+    "historical_source_resolution": "Only exact saved preimages in read-kernel-post-001-preimages-iE6nkmLG and read-kernel-post-002-preimages-ZTjJIjcj resolve changed model/C fixture hashes",
+    "old_reports_relabelled": false,
+    "kernel_code_or_original_assertions_relaxed": false
+  },
+  "source_sha256": {
+    "results/2026-10-18/rocev2-rnic-segmented-read-kernel-build-001.json": "12ce598304101b5e2614f850197f1db6cf85fae552cc534199091ee97cc0c7d5",
+    "results/2026-10-18/rocev2-rnic-segmented-read-verbs-adapter-001.json": "4262922c261a6895b81961496a9f75a586a8b429ea44ce9770cd35d07e67cf31",
+    "results/2026-10-18/rocev2-rnic-segmented-read-kernel-post-003.json": "1e685b930b9b7346be97c123bcc692b5da4c00addae75548948f78c03b064c68",
+    "results/2026-10-18/rocev2-rnic-provider-segmented-read-001.json": "5ee51a098e437a2efdf8586d863ca1e02e6adcc74334e0b39005af51c8a9df44",
+    "results/2026-10-18/rocev2-rnic-segmented-read-kernel-native-cq-001.json": "c128aa4802d241d42c67c03af960a89b507a628e932cf7e2464a468b9995e1e8"
+  },
+  "remaining": "No actual installed Linux/libibverbs/FPGA execution; native1MiB/large receive/Immediate/multi-SGE/recovery/interoperability/full-board timing and all11 requirements still open",
+  "original_timing_gate": "HLS13.885ns still fails4ns/default1.08ns; no clock/geometry/CDC/DRC/routing waiver",
+  "hardware_network_fans_BIOS_flash_reboot_or_Git_changed": false
+}

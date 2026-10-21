@@ -32,7 +32,138 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
-Publication checkpoint135 (2026-10-21): user explicitly requested a current
+Publication checkpoint (2026-10-21): the user explicitly requested another
+current-progress commit/push. This publishes progress136..140 source and
+public success/failure reports, including native8193-byte READ/all29 old
+cases and matched profile5 kernel/provider source. It does not authorize
+future automatic pushes or imply installed Linux, physical hardware, native
+1MiB READ, original timing qualification or completion of the overall goal.
+Publication checks reparse new Python/JSON, verify the new native/software
+evidence against local hashes and run `git diff --check`. `scripts/check.sh`
+still fails at the historical transport-RX/TX-padding SHA mismatch; the
+original record/check remain unchanged. No new hardware tests or long builds
+are required for this publication.
+
+Progress140: new explicit matched READ software profile5 source implemented,
+not merely serialization. Exact16383/63/SQC13/RQC15/128-byte geometry/mixed-
+tuple refusal; old0/1/3/4/default paths remain. Actual new Linux READ WR adapter
+selects full-range codec only for READ>4096, delegates every old operation;
+SQ expected-record/replay/CQ validates with that codec only under new profile.
+Full MR/PD/range/local-write/ref/ring/CQ/failure-lifetime checks retained.
+Private running-header kernel build001 PASS9.989s, WR-adapter build4.482s and
+ASan/UBSan0.012s (all54 positive14 negative old;24 new large READ,15 other
+positive,14 negative). Standard callback C post003 ALL90 PASS (25 new/all65
+old), max0.015s; snapshot integration001 ALL70 PASS (14 untouched native pairs,
+four labeled bad-copy mutations each), max0.016s. All128 kernel/native posted
+bytes and actual C CQ/MR retirement match. Real installed libibverbs/private
+provider ALL6 FW identities PASS (all5 old), READ+SEND4097/8193/1MiB, exact
+bad-WR/keys/SGE/READ WC lengths; fake-fd/WC only modeled, max0.018s.
+626 fresh successful bindings verified (133/95/175/38/185), plus84/90 historical
+failures and unchanged1665 native139 bindings. Startup helper-import error
+zero compiled cases, modeled indentation -Werror failure and wrong allocated-
+SQ-count oracle remain with exact preimages. Corrections only restore helper
+API/add model braces/independently require allocated SQ1+producer0+MR ref1;
+no kernel gates, ASan/UBSan/-Werror/10s limits or old assertions weakened.
+Actual Linux/MMIO/pins/DMA/completion/page tables remain boundary models or
+separate native snapshots; no live Linux/RTL/provider/device execution, install,
+load, hardware/fans/BIOS/network/flash/reboot/Git. Source profile5 permits1MiB
+READ/WRITE/SEND, one SGE and Immediate/RQ4096; native READ tested8193 only.
+Large receive/Immediate, multi-SGE/recovery/physical/original timing remain,
+HLS13.885ns>4ns/default1.08ns/all11 scope retained.
+[Audit](../results/2026-10-18/rocev2-rnic-segmented-read-software-diagnostics-001.json).
+
+Progress139 (historical): fresh command-queue full-native001 PASSES ALL30 cases with exact
+actual generated READ HLS and original independent oracles. New8193 READ and
+ALL29 previous cases pass. Compile623.025s; cases4.175..6.279s/READ6.078s,
+original1200s compile/30s runtime,4ns/default1.08ns clock conditions unchanged.
+Actual coherent SQ/MR/PTE/protected RX/MSN/HLS/paged DMA/common nonce/3 genuine
+statuses/3 host fences/board MAC-FCS-SFD-CDC/whole-owner CQ complete. READ3 RX,
+one token/receipt/aggregate event/CQ,4read/67write TLPs/8193 visible bytes and
+wrapped PSNsfffffe->000001. All16384 host bytes/sentinels and independent full
+READ owner/ABI63 CQ reverified from preserved C128/capture. All1665 source/
+artifact/RAM bindings match (1449/214/2), frozen binary/models/logs retained.
+The report uses overall pass_test/source_unchanged plus each exit0 and strict
+per-case oracle outputs; a universal per-case pass_test field is not part of
+its schema. Physical host/root/peer/PHY/PTP remain
+MODELS; older ordinary READ/Immediate MAC-pin models remain explicitly scoped.
+Native1MiB READ, actual Linux/provider/API/physical and original full-board
+timing are NOT proved. HLS13.885ns still fails4ns/default1.08ns; source16383/63
+admits1MiB but old/default/kernel/provider8191/31 stays READ4096. Next coarse
+feature: separate exact16383/63 software profile (new explicit profile5) with
+actual Linux WR adapter, SQ encode/decode/replay/CQ/full-MR lifetimes and
+provider FW binding, retaining every old profile/default. All11 original
+requirements remain, no hardware/default/fan/BIOS/module/network/flash/reboot/
+Git changes. [Audit](../results/2026-10-18/rocev2-rnic-segmented-read-command-queue-native-diagnostics-001.json).
+
+Progress138 (historical): original -O1 native002 compile PASSES620.672s; actual READ fails
+original cycle deadline in9.436s, distinguishing functional wait from CPU
+slowness. Actual first4096-byte fragment/status/fence completes. Second child
+waits for2176 bytes, data_ready1/data_valid0, future raw command valid/ready0,
+stable18000..28000cycles;3 RX,2 commands,1 status/fence,0 aggregate events.
+All1510 bindings and exact authoring preimages/model/binary/log preserved.
+New separate derive_segmented_read_command_queue.py changes ONLY READ mux:
+two exact owner-derived future commands may queue after genuine placement,
+while original serial child DMA/status/fences and whole-owner/CQ joins remain.
+Queue must drain at CQ; no RAW address becomes DMA authority. New component
+001 PASSES12 methods/23 cases, retaining all17 prior mux cases; coupled8193
+producer/data and full-queue16385 plus four malformed/unknown refusals. Actual
+child/unpad/mux/common nonce, modeled HLS/placement/backend status/fence/CQ.
+372 bindings verified, maximum case0.342s/original10s bounds. Derivation startup
+anchor failure/preimages retain zero compiled/runtime cases. Complete native
+elaboration001 PASS3.418s/1422 bindings/same45 kinds/domains;37 common RTL files
+identical, only mux differs, all23 unit mux bodies equal actual native bytes.
+Fresh actual HLS/native build live session99689, original30 cases/independent
+oracles/1200s compile/30s runtime. Actual generated-HLS deadlock resolution/
+full READ/CQ still unverified. All11 scope/timing/default/hardware/Git safety
+retained; original13.885ns still fails4ns/default1.08ns, no reboot needed.
+[Audit](../results/2026-10-18/rocev2-rnic-segmented-read-command-queue-diagnostics-001.json).
+
+Progress137 (historical): corrected QP observer now passes the previously failing genuine
+native QP_TX setup and reaches actual coherent SQ fetch/READ wire emission/
+first4096-byte paged-write/fence descriptors. Full-native001 compiles433.696s,
+then TIMES OUT at original30s bound: no completed case/old29 not attempted.
+All1508 source/artifact/RAM bindings and exact preimages verified/preserved.
+Separate exact-binary/identical-input30s line-buffered diagnostic reaches24000
+cycles,33 write TLPs, first3+4093-byte writes and one-byte fence read; no fault
+or second physical write descriptor observed. This does NOT prove completion
+or distinguish simulator cost from a functional stall. All47 diagnostic
+bindings verified, original failed input/model/binary/log/report unchanged.
+New -O1 host C++ simulation build and read-only child/unpad/status/nonce/
+backend progress snapshots keep RTL/FPGA clocks/oracles/1200s build/30s runtime
+and all30 cases. First optimized attempt FAILS Icarus elaboration on seven
+monitor paths missing actual native_endpoint.datapath; all1499 bindings and
+exact preimage preserved before adding only that hierarchy segment. Fresh002
+build is live, session56210, directory segmented-read-route-o1-native-full-xkdqr376.
+No old binary is new-source proof; all native large READ/CQ/API/physical goals
+still incomplete. Original timing13.885ns fails4ns/default1.08ns; defaults/
+hardware/modules/network/fans/BIOS/flash/reboot/Git unchanged. All11 retained.
+[Audit](../results/2026-10-18/rocev2-rnic-segmented-read-route-native-diagnostics-002.json).
+
+Progress136 (historical): actual-controller reproduction isolates QP_TX route erasure.
+The real controller REQUIRES empty peer/IP/RX_PSN fields on accepted PSN-only
+updates. Old observer writes those zeros into the effective route; actual MSN
+predictor latches0xa2. New separate checked derivation changes ONLY two lines
+of controlled-responder observation: normal accepted config updates route,
+TX-only config leaves existing route untouched while actual TX_PSN still
+applies. Controller, predictor, identity/range/guards/HLS and defaults unchanged.
+Component003 PASSES6 cases (one exact old-fault reproduction, five corrected),
+all<0.027s: genuine command refusal before QP, wrong QPN/PD,12 forbidden-field
+mutations, accepted/stalled updates, normal reapply/reset. No SQC identity or
+WR is provided; decoded commands/QP apply/quiescence/drain are explicit models.
+First fixture001's missing loop integer and002's original slot0-only reply
+oracle fail separately. Exact preimages/all130/132 historical bindings kept;
+corrections only declare mutation_index and independently require slot1 for
+the deliberate slot1 mutation, retaining exact slot equality/all reply checks.
+Fresh003140 bindings and complete-native0011419 bindings verified;37 common
+RTL files equal failed native002, only the two observer lines differ. Original
+failed native0021503 bindings and model/log preimages are unchanged.
+Full corrected native fresh build is live (session4838), original1200s build/
+30s runtime/all30 cases/oracles retained. Only extra read-only subfault prints
+precede the original fatal assertion. No new payload/DMA/CQ runtime pass yet;
+all11 requirements remain, original timing13.885ns>4ns/default1.08ns fails.
+No hardware/default/module/network/fan/BIOS/program/flash/reboot/Git changes.
+
+Publication checkpoint135 (2026-10-21, historical): user explicitly requested a current
 progress commit/push. Include132..134 source/component work plus the NEW
 30-case native runner and failed full-runtime evidence, without claiming a
 completed feature or all-suite pass. The8193-byte READ fixture uses the actual

@@ -1,0 +1,38 @@
+{
+  "scope": "Fresh/historical native timeout evidence and observation-only optimized-run audit",
+  "audit_pass": true,
+  "large_READ_native_runtime_pass": false,
+  "hardware_verified": false,
+  "bindings_verified": {
+    "route_native_full001": 1508,
+    "same_binary_line_buffered_diagnostic001": 47,
+    "route_o1_native_full001_before_hierarchy_correction": 1499
+  },
+  "historical_changed_source": "rdma/rnic/tests/segmented_read_route_progress_native_fixture.py",
+  "historical_source_resolved_only_to": "rdma/rnic/build/read-route-o1-native-001-preimages-dMDHt5aQ/rdma/rnic/tests/segmented_read_route_progress_native_fixture.py",
+  "all_other_source_and_artifact_bindings_match": true,
+  "source_sha256": {
+    "results/2026-10-18/rocev2-rnic-segmented-read-route-native-full-001.json": "5b4a2b259df982f9f49e60e2b6aef3b2e8609878dc10f21d5c8ccaa4b5403763",
+    "results/2026-10-18/rocev2-rnic-segmented-read-route-native-timeout-diagnostic-001.json": "e9e58e53ee214f5090fd291308296f2071a1d9e31404e7602be2ce4acd1e79c5",
+    "results/2026-10-18/rocev2-rnic-segmented-read-route-o1-native-full-001.json": "08c7c1cd578fb4f2981333d601d562fc41481fc9d5a66f32dec9a54ccde22067"
+  },
+  "actual_progress": "New genuine coherent SQ/MR/HLS request traverses the board-faithful TX path, followed by first4096-byte paged write and fence descriptors. No second logical placement command or whole READ/CQ completion observed",
+  "same_binary_last_observed_cycle": 24000,
+  "same_binary_TLP_writes": 33,
+  "same_binary_fault_lines": 0,
+  "same_binary_runtime_limit_seconds": 30,
+  "performance_vs_functional_stall_not_yet_resolved": true,
+  "fresh_optimized_run_directory": "rdma/rnic/build/segmented-read-route-o1-native-full-xkdqr376",
+  "fresh_optimized_compile_directory": "/dev/shm/as02-segmented-read-route-o1-obj-3y0rpckv",
+  "fresh_optimized_session": 56210,
+  "host_CXX_optimization": "-O1",
+  "FPGA_clock_geometry_timing_or_RTL_changed": false,
+  "original_fixture_preserved": "Exact original before/after module header and all stimulus/assertions remain byte-identical; only read-only progress snapshots added",
+  "planned_cases": 30,
+  "original_compile_limit_seconds": 1200,
+  "original_runtime_limit_seconds": 30,
+  "all_prior_limits_source_gates_and_independent_oracles_preserved": true,
+  "old_failed_model_binary_logs_and_reports_preserved": true,
+  "success_injected_or_observations_normalized": false,
+  "default_hardware_kernel_provider_unchanged": true
+}

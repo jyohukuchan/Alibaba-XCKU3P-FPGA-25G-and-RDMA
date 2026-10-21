@@ -1,0 +1,63 @@
+{
+  "scope": "Preserved functional native READ stall and exact bounded metadata-queue component/native-elaboration audit",
+  "audit_pass": true,
+  "hardware_verified": false,
+  "large_READ_native_runtime_pass": false,
+  "earlier_diagnostic_limitation": "The earlier line-buffered run logged PAGE_DMA physical descriptors but no logical child-command counter. Its no-second-command-observed wording must not be read as proof that no second logical command was accepted. New READ_GRAPH proves commands2/statuses1 while the second physical write descriptor still waits for payload",
+  "failed_optimized_native": {
+    "report": "results/2026-10-18/rocev2-rnic-segmented-read-route-o1-native-full-002.json",
+    "bindings_verified_before_changes": 1510,
+    "compilation_seconds": 620.6715597540024,
+    "compile_exit": 0,
+    "runtime_seconds": 9.435531317954883,
+    "runtime_exit": -6,
+    "failure": "Original HLS/payload/DMA receipt cycle deadline, NOT30s wall timeout",
+    "state": "First fragment/status/fence complete. Second fragment accepts1920 of4096 bytes and waits for remaining2176 with data_ready1/data_valid0; next raw command offered, command_ready0. Stable18000..28000cycles. RX3, commands2, statuses1, events0, fenced_bytes4096",
+    "binary_path": "/dev/shm/as02-segmented-read-route-o1-artifacts-eapxia4h/Vtb",
+    "binary_sha256": "19529e9d9665029fb1efbea07c6fd80155af4b4586664a034d9e103550232172",
+    "log_sha256": "5dbdefc7f37def89b74bcaf6e465e956d985fa2475a2c8df44ba0c2c9333066f",
+    "preimages": "rdma/rnic/build/read-route-o1-native-002-preimages-zlsYn8bT",
+    "old29_cases_attempted": false
+  },
+  "candidate": {
+    "changed_native_leaf": "rocev2_segmented_read_executor_mux.v",
+    "command_queue_depth": 2,
+    "authority": "Every future command is independently derived from actual full saved owner/offset/length and requires genuine accepted placement plus live guard. Original child independently checks it again before serial bounded DMA",
+    "retirement": "Original data/status/fence/event/CQ joins remain, additionally requiring empty metadata queue and full queued extent",
+    "actual_generated_HLS_wait_resolved": false,
+    "native_runtime_pending": true
+  },
+  "queue_component001": {
+    "methods": 12,
+    "cases": 23,
+    "all17_prior_cases_retained": true,
+    "bindings_verified": 372,
+    "maximum_case_seconds": 0.3419842279981822,
+    "new_cases": "Modeled coupled-producer8193-byte completion; full two-command-queue backpressure/five-fragment16385-byte completion; four malformed/unknown future command refusals",
+    "HLS_MR_placement_backend_status_fence_and_CQ_endpoints_modeled": true,
+    "actual_child_unpad_mux_and_common_nonce": true,
+    "all23_mux_bodies_equal_selected_native_bytes": true
+  },
+  "queue_native_elaboration001": {
+    "compile_seconds": 3.4177405980299227,
+    "bindings_verified": 1422,
+    "counted_native_module_kinds": 45,
+    "original_module_and_HLS_domain_counts_preserved": true,
+    "common_generated_RTL_files_identical": 37,
+    "only_changed_generated_RTL": "rocev2_segmented_read_executor_mux.v",
+    "compile_only": true
+  },
+  "startup_failure_preserved": "results/2026-10-18/rocev2-rnic-segmented-read-command-queue-startup-001.json; exact missing-parenthesis source-anchor preimages, zero compiled/runtime cases",
+  "fresh_native_directory": "rdma/rnic/build/segmented-read-command-queue-native-full-09lr8r31",
+  "fresh_native_compile_directory": "/dev/shm/as02-segmented-read-command-queue-obj-23i7sg14",
+  "fresh_native_session": 99689,
+  "original_compile_and_runtime_limits_seconds": [1200, 30],
+  "all30_native_cases_and_independent_oracles_preserved": true,
+  "source_sha256": {
+    "results/2026-10-18/rocev2-rnic-segmented-read-route-o1-native-full-002.json": "3c40a30d253dffa6a9ebab7c2e50422ad13370a20cbe59c7c85cc523788ef40b",
+    "results/2026-10-18/rocev2-rnic-segmented-read-command-queue-001.json": "48f8faca2cbfc194764ec503d857cd3cc9c0bbba295c9805a1b2cd0741fb32e1",
+    "results/2026-10-18/rocev2-rnic-segmented-read-command-queue-native-elaboration-001.json": "7b70876206f64e01aed52ebc7f58c98e23c21c2b667716c7e2b386dfd5d2ae4f"
+  },
+  "FPGA_clocks_geometry_HLS_default_or_hardware_changed": false,
+  "old_failures_relabelled_or_success_injected": false
+}

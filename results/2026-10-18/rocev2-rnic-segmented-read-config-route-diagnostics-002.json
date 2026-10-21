@@ -1,0 +1,19 @@
+{
+  "scope": "Preserved config-route probe002 failure before independently correcting the varied-slot reply oracle",
+  "audit_pass": true,
+  "batch_pass": false,
+  "hardware_verified": false,
+  "failed_report": "results/2026-10-18/rocev2-rnic-segmented-read-config-route-002.json",
+  "failed_report_sha256": "8c12b875f223c6a52767a244f579cef07ec07a4ece27251c2f3f7b91c34bb253",
+  "source_bindings_verified_before_correction": 116,
+  "artifact_bindings_verified_before_correction": 16,
+  "mismatched_bindings": 0,
+  "passed_cases_before_failure": [0, 1, 2],
+  "failure": "Case3's slot1 invalid QP_TX is correctly rejected with ERR_SHAPE and its accepted snapshot slot1 echoed. Original response helper assumes every test uses slot0, so its slot assertion fails; command, sequence, cookie, key, error and flags remain correct",
+  "preimage_directory": "rdma/rnic/build/read-config-route-002-preimages-eW59pzR8",
+  "preimage_probe_sha256": "f39d154f1f02bc9e200f5533c1bc47e6cccada19f0ceab8c81cf486d660af06a",
+  "correction": "Require an independently assigned expected_reply_slot: constant1 only for the deliberate slot1 mutation, constant0 otherwise. Keep exact slot equality and all other original full-reply, stall, error, route and no-work assertions",
+  "production_derivation_controller_predictor_changed": false,
+  "old_reports_relabelled": false,
+  "full_native_runtime_still_required": true
+}

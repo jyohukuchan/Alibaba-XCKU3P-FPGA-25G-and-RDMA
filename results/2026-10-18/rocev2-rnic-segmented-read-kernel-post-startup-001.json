@@ -1,0 +1,14 @@
+{
+  "scope": "Preserved READ kernel-post fixture startup failure before actual C compile/runtime",
+  "pass_test": false,
+  "compiled_cases": 0,
+  "runtime_cases": 0,
+  "error_type": "AttributeError",
+  "error": "Fixture imported the new CLI-only kernel builder as the digest/checked helper API; that thin wrapper intentionally exports no digest",
+  "preimage_directory": "rdma/rnic/build/read-kernel-post-startup-001-rYovtEiw",
+  "preimage_sha256": "7fb4f309d8f98a0e5444b68be260b8b243b6888f25d215bd48c6c94584d393bf",
+  "correction": "Retain original build_zero digest/checked helper API; the separately required exact16383/63/profile5 real-header build and all its bound current sources/frozen inputs are still checked",
+  "kernel_builder_or_source_changed": false,
+  "old_native_or_kernel_build_results_relabelled": false,
+  "hardware_verified": false
+}

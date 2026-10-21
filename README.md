@@ -126,8 +126,51 @@ before a fetched READ/data transfer** (`main native RNIC fault 00`). The new
 runner plans one8193-byte READ plus all29 previous cases; only the first READ
 case was attempted, and none passed in this batch. The failure, exact hashes
 and [audit](results/2026-10-18/rocev2-rnic-segmented-read-native-diagnostics-002.json)
-are retained. The root cause is not yet confirmed; no native large-READ,
-regression-suite, Linux or hardware success is claimed.
+are retained. At that historical checkpoint the root cause was unconfirmed;
+the route correction and subsequent native success are recorded below.
+
+A separate route-observer correction now passes six short real-controller
+cases: the old fault is reproduced, while the corrected observer retains the
+peer/IP route across a PSN-only QP_TX command. Invalid commands and stalled
+acceptance remain checked. [Complete-native elaboration](results/2026-10-18/rocev2-rnic-segmented-read-route-native-elaboration-001.json)
+passes with only two observer lines changed; all original gates remain.
+The [fresh corrected native build](results/2026-10-18/rocev2-rnic-segmented-read-route-native-full-001.json)
+passes compilation and reaches genuine SQ fetch, actual READ request emission
+and the first4096-byte paged-write/fence descriptors, but times out at the
+unchanged30s limit. A separate same-binary diagnostic reaches cycle24000 with
+no fault,33 write TLPs and no second fragment's physical write descriptor: completion and absence
+of a functional stall are NOT proved. The later optimized -O1 run reaches the
+original cycle deadline in9.436s and confirms a real stall: first fragment
+completes, but the second waits for2176 payload bytes while the next command
+is blocked. Neither historical batch proves full READ/CQ or the old29 cases;
+the subsequent command-queue batch below does.
+
+A new owner-checked two-command metadata queue breaks that
+command/data dependency without changing serial DMA/status/fence/CQ ownership.
+[Component tests](results/2026-10-18/rocev2-rnic-segmented-read-command-queue-001.json)
+pass23 cases, retaining all17 prior cases, with explicitly modeled HLS/backend/
+CQ endpoints. The [fresh complete-native run](results/2026-10-18/rocev2-rnic-segmented-read-command-queue-native-full-001.json)
+now PASSES all30 cases: new8193-byte READ plus all29 old cases. New READ uses
+actual generated HLS/SQ/MR/PTE/protected RX/MSN/DMA/shared nonce/status/fence/
+board-MAC/FCS/SFD/CDC/CQ RTL and passes in6.078s, including every host byte and
+one whole-owner CQ. All cases take4.175..6.279s under the unchanged30s limit;
+[audit](results/2026-10-18/rocev2-rnic-segmented-read-command-queue-native-diagnostics-001.json)
+verifies1665 bindings. Physical host/root/peer/PHY/PTP remain MODELS; old ordinary
+READ/Immediate cases retain their old MAC-pin completion models. This is not
+Linux/physical/timing qualification or a native1MiB READ test. Separate matched
+16383/63 kernel/provider support now has a separate source cohort below;
+old/default8191/31 keeps READ4096.
+
+New explicit software profile5 binds exact16383/63/SQC13/RQC15/stride128.
+Its actual kernel source builds against running headers; actual WR/SQ/MR/CQ
+C passes90 modeled-boundary cases (all65 old retained), and70 cases consume
+unedited native SQ/CQ captures, including8193 READ, with exact posted bytes/
+MR retirement. The actual installed libibverbs/private provider passes all
+six identities and4097/8193/1MiB READ chains under fake-fd/WC models.
+[Software audit](results/2026-10-18/rocev2-rnic-segmented-read-software-diagnostics-001.json)
+verifies626 new successful bindings and preserves failed fixtures/preimages.
+This is not installed/live Linux/RTL or physical proof. Single SGE and4KiB
+Immediate/RQ remain; native1MiB READ and original timing remain unqualified.
 
 This is a **work-in-progress source snapshot**, separate from the earlier
 hardware-tested READ/WRITE images. Its latest HLS estimate13.885ns misses the original

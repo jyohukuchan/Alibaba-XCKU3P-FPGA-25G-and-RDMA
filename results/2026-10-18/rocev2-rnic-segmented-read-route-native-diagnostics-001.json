@@ -1,0 +1,50 @@
+{
+  "scope": "Preserved corrected-route native timeout and failed optimization-run observer hierarchy; no native large READ pass",
+  "audit_pass": true,
+  "large_READ_native_runtime_pass": false,
+  "hardware_verified": false,
+  "route_native_full001": {
+    "report": "results/2026-10-18/rocev2-rnic-segmented-read-route-native-full-001.json",
+    "report_sha256": "5b4a2b259df982f9f49e60e2b6aef3b2e8609878dc10f21d5c8ccaa4b5403763",
+    "source_bindings_verified": 1442,
+    "artifact_bindings_verified": 64,
+    "RAM_bindings_verified": 2,
+    "mismatches": 0,
+    "compile_exit": 0,
+    "compilation_seconds": 433.69572685897583,
+    "runtime_result": "TimeoutExpired at original30s limit; no completed runtime case and old29 cases not attempted",
+    "progress": "Genuine QP setup/SQ fetch succeeds, one actual READ request crosses board MAC/FCS/SFD path, actual paged write descriptors start",
+    "binary_path": "/dev/shm/as02-segmented-read-route-artifacts-2c2_fffq/Vtb",
+    "binary_sha256": "2ef4c7132d1d9dca7b99e37f846dd9f858bdadb3bac28bc0c6b4d9970b06def6",
+    "preimage_directory": "rdma/rnic/build/read-route-native-full-001-preimages-DX3uHD51",
+    "failed_run_and_binary_preserved": true
+  },
+  "same_binary_line_buffered_diagnostic": {
+    "report": "results/2026-10-18/rocev2-rnic-segmented-read-route-native-timeout-diagnostic-001.json",
+    "runtime_limit_seconds": 30,
+    "last_progress_cycle": 24000,
+    "TLP_writes": 33,
+    "actual_descriptors": "SQ read128, page writes3+4093 bytes, first one-byte fence read; no second logical READ fragment command observed",
+    "fault_lines_observed": 0,
+    "timed_out": true,
+    "scope": "Exact copied inputs and original failed binary, fresh working directory and line-buffered stdout only. Does not establish native completion or exclude a functional stall"
+  },
+  "route_o1_native_full001": {
+    "report": "results/2026-10-18/rocev2-rnic-segmented-read-route-o1-native-full-001.json",
+    "report_sha256": "08c7c1cd578fb4f2981333d601d562fc41481fc9d5a66f32dec9a54ccde22067",
+    "source_bindings_verified_before_correction": 1444,
+    "artifact_bindings_verified_before_correction": 55,
+    "mismatches": 0,
+    "runtime_cases": 0,
+    "CXX_compilation_started": false,
+    "failure": "Seven read-only nonce/backend observation paths omitted the real native_endpoint.datapath hierarchy segment; Icarus refuses elaboration",
+    "preimage_directory": "rdma/rnic/build/read-route-o1-native-001-preimages-dMDHt5aQ",
+    "preimage_fixture_sha256": "a7a754b11374c06bb466eda58be63174f00881de3fea77c81de54aff573618a8",
+    "correction": "Only add .datapath in seven observation paths verified against the actual native endpoint source; no production RTL, input, expected value or assertion changed"
+  },
+  "next_attempt": "Fresh reproducible -O1 host C++ build plus read-only child/unpad/status/nonce/backend snapshots. Preserve original1200s compilation/30s runtime and all30 cases; no FPGA clock/geometry/timing change",
+  "old_reports_relabelled": false,
+  "inputs_or_oracles_relaxed": false,
+  "MR_status_MSN_or_CQ_success_injected": false,
+  "default_hardware_kernel_provider_unchanged": true
+}

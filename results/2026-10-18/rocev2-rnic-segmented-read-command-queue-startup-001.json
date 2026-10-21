@@ -1,0 +1,16 @@
+{
+  "scope": "Preserved command-queue derivation startup failure before RTL compilation",
+  "pass_test": false,
+  "RTL_cases_compiled": 0,
+  "RTL_cases_run": 0,
+  "error_type": "ValueError",
+  "error": "Source replacement anchor omitted the existing closing parenthesis in the READ mux retire-ready assignment",
+  "preimage_directory": "rdma/rnic/build/read-command-queue-startup-001-nic8YS8X",
+  "preimage_sha256": {
+    "rdma/rnic/fpga/derive_segmented_read_command_queue.py": "c6434c73387e12ea70a888fa6ce2624a07bd601371cd6dc14400a8efa34348b1",
+    "rdma/rnic/tests/test_segmented_read_command_queue_rtl.py": "035f7762892fa7acd6147c5bc2c32118ec02714684bb09ec10e8ff2d1e98498b"
+  },
+  "correction": "Match the exact existing parenthesized retire-ready assignment; intended empty-command-queue retirement guard is unchanged",
+  "hardware_or_default_changed": false,
+  "old_native_failures_relabelled": false
+}

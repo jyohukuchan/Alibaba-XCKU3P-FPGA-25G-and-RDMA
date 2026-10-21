@@ -1,0 +1,18 @@
+{
+  "scope": "Preserved READ post002's incorrect queue-counter oracle before correction",
+  "audit_pass": true,
+  "batch_pass": false,
+  "failed_report": "results/2026-10-18/rocev2-rnic-segmented-read-kernel-post-002.json",
+  "failed_report_sha256": "b0a1eba30fc1b8466e3278ab847e4d5c9ced559a4aedbbecb0a5ec372ddb0ec5",
+  "source_bindings_verified_before_correction": 83,
+  "artifact_bindings_verified_before_correction": 7,
+  "mismatched_bindings": 0,
+  "passing_cases_before_failure": ["READ0", "READ1", "READ2", "READ3"],
+  "failure": "READ4 correctly refuses a large READ on the old profile, but the test expects sq.queue_count0 even though create_objects has already allocated its SQ. Actual sq.c increments that counter on queue allocation and decrements on queue retirement; it is not a posted-WR counter",
+  "preimage_directory": "rdma/rnic/build/read-kernel-post-002-preimages-ZTjJIjcj",
+  "preimage_C_fixture_sha256": "4293ddf1b3d0b17538c8ac8bb5adcd1ee9e91e758b404582a2ea4c4a247f0859",
+  "correction": "Independently require one retained allocated SQ, unchanged producer0 and observed_count0, original MR work_ref1 and negative return/exact bad_WR. Preserve actual no-post/no-ref/no-release checks rather than treating allocated queue as a WR count",
+  "kernel_or_MMIO_model_changed": false,
+  "actual_Linux_or_hardware_runtime": false,
+  "old_failed_report_relabelled": false
+}

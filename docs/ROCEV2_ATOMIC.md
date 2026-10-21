@@ -5,6 +5,208 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+## Matched large READ kernel/provider source and actual C integration (140)
+
+New `kernel/derive_segmented_read_kernel.py` adds explicit software profile5
+only for exact RNC16383/CQC63/SQC13/RQC15/stride128 and full existing geometry.
+Mixed old/new tuples refuse before queues. New Linux READ adapter, source-only
+`verbs_segmented_read_wqe.c/.h`, selects the already checked full-range codec
+for READ>4096, with safe extended-WR access only after proving READ kind.
+Old WRITE/SEND/zero/short/Immediate/Atomic use unchanged adapters. Actual SQ
+encode/decode/replay/CQ comparisons use READ codec only for this profile; full
+MR/PD/local-write/range/refs/rings/uncertain-producer/CQ lifetime gates remain.
+The new uninstalled source returns its1MiB port message limit only after
+profile5 binding ([standard port attribute](https://raw.githubusercontent.com/linux-rdma/rdma-core/v50.0/libibverbs/man/ibv_query_port.3));
+single SGE and4KiB receive/Immediate policies remain explicitly enforced.
+Old profiles/defaults and IB_ATOMIC_NONE stay unchanged.
+
+[Full real-header kernel build001](../results/2026-10-18/rocev2-rnic-segmented-read-kernel-build-001.json)
+PASSES9.989s, actual new symbols linked, no install/load. [WR adapter001](../results/2026-10-18/rocev2-rnic-segmented-read-verbs-adapter-001.json)
+also builds actual headers4.482s and runs ASan/UBSan0.012s: all54 positive/14
+negative original cases plus24 large READ,15 compatibility positives and14
+new negatives, full64 fields/ranges and base-only SEND allocation guarded.
+[Standard C posting003](../results/2026-10-18/rocev2-rnic-segmented-read-kernel-post-003.json)
+PASSES ALL90 cases, all65 old plus25 new. Full READ permission/range/key,
+mixed geometry, wrong CQ, backpressure, ambiguous publication and no premature
+MR release are checked. [Native snapshot integration001](../results/2026-10-18/rocev2-rnic-segmented-read-kernel-native-cq-001.json)
+PASSES70 cases:14 actual unedited SQ/CQ operation pairs, including8193 READ,
+with four labeled in-memory negative mutations each; all128 posted bytes and
+actual C MR-ref/CQ retirement match. Linux/MMIO/pins/DMA/peer are MODELS or
+separate executions, NOT live kernel/RTL or physically matching page tables.
+
+New provider derivation adds only exact FW16383 identity, retaining all5 old
+and the standard kernel-owned verbs/uverbs path. [Provider001](../results/2026-10-18/rocev2-rnic-provider-segmented-read-001.json)
+PASSES all6 identities with actual installed libibverbs and private provider
+C:4097/8193/1MiB READ+SEND chains, full64 addresses/keys/SGE serialization,
+exact second bad-WR, registered MR handles and correct READ WC lengths.
+Only fake-fd syscall/WC replies are models; no direct user BAR/DMA/C128 path.
+All C/provider cases remain<10s (observed maxima0.015/0.016/0.018s).
+[Software audit001](../results/2026-10-18/rocev2-rnic-segmented-read-software-diagnostics-001.json)
+verifies626 successful bindings plus84/90 historical and1665 native139 bindings.
+Failed startup/indentation/wrong allocated-SQ-count fixture oracles remain
+separate with exact preimages; no failed batch relabeled or kernel gate relaxed.
+
+This is a new matched SOURCE feature, not installed/live Linux/standard API/
+hardware/timing qualification. Native1MiB READ, large receive/Immediate,
+multi-SGE/recovery/interoperability remain incomplete; all11 scope and original
+HLS13.885ns>4ns/default1.08ns/board gates remain. No hardware/module/network/
+fan/BIOS/program/flash/reboot or automatic Git changes.
+
+## Actual complete-native8193 READ and all29 regressions PASS (139)
+
+[Full-native001](../results/2026-10-18/rocev2-rnic-segmented-read-command-queue-native-full-001.json)
+PASSES ALL30 cases: new8193-byte READ plus ALL29 prior cases, unchanged inputs/
+independent oracles/1200s compilation/30s runtime. Fresh -O1 host compile takes
+623.025s; cases4.175..6.279s, large READ6.078s. This confirms the two-entry
+owner-checked metadata lookahead resolves the actual generated-HLS command/
+payload wait, without bypassing serial data/status/fence/whole-owner joins.
+
+Large READ uses genuine coherent SQ fetch, actual MR/PTE/protected RX/MSN/
+generated HLS/child DMA/common nonreusing nonce/backend statuses/host visibility
+fences/board FIFO-FCS-SFD-CDC-MAC/CQ RTL. It has3 actual commands/statuses/
+fences,3 RX packets,one protected placement/HLS full receipt/aggregate memory
+event/CQ and8193 placed bytes.4read/67write TLPs and one real SFD/MAC receipt
+are required. HLS receipt binds the full owner and response spanfffffe->000001.
+Withheld real MAC receipt still prevents early HLS/WR/CQ release. Every16384
+host byte/padding/sentinel and whole READ owner/status/ABI63 CQ were independently
+rechecked from preserved C128 input and captures; no observations normalized.
+[Audit001](../results/2026-10-18/rocev2-rnic-segmented-read-command-queue-native-diagnostics-001.json)
+verifies ALL1665 bindings (1449 source/214 artifact/2 RAM) unchanged. Failed
+configuration/timeout/functional-stall/fixture attempts stay separate and intact.
+
+Physical host/root/peer/PHY/PTP endpoints are MODELS. Old ordinary READ and
+Immediate cases keep their original MAC-pin completion models; the new large
+READ uses actual board-TX receipt RTL. This is no actual Linux/standard API/
+physical or native1MiB READ proof. Experimental source profile16383/63 admits
+1MiB; old/default8191/31/kernel/provider READ4096 and Atomic_NONE stay unchanged.
+Exact matched new kernel/provider binding is the next coarse functional step.
+All11 original scope remains; HLS13.885ns still fails4ns/default1.08ns and board
+fit/CDC/routing/DRC/timing remain unproved. No hardware/module/network/fan/BIOS/
+program/flash/reboot or automatic Git change.
+
+## Bounded READ command lookahead for the observed payload wait (138)
+
+[Optimized native002](../results/2026-10-18/rocev2-rnic-segmented-read-route-o1-native-full-002.json)
+compiles620.672s and reaches the original cycle deadline in9.436s. This is NOT
+the earlier30s host timeout: first4096-byte fragment/status/fence completes,
+but second child waits for2176 bytes while data_ready1/data_valid0 and the next
+command is blocked. State is stable18000..28000cycles; RX3/commands2/status1/
+event0/fenced4096. All1510 bindings and exact source preimages/model/binary/log
+are preserved; no full native READ/CQ/regression success is claimed.
+
+`derive_segmented_read_command_queue.py` extends the exact route candidate,
+changing ONLY the READ mux. Two96-bit future metadata entries are independently
+checked against the genuine full saved owner and queued extent, after accepted
+protected placement and with a live guard. Existing bounded child checks the
+same metadata again before actual DMA. Data/status/fences remain serial and
+all original full-owner/CQ joins stay, additionally requiring an empty queue
+and full queued extent at retirement. No HLS/default/clock/geometry changes.
+This is intended to break command/data producer dependency, not to invent a
+memory grant or completion; actual generated-HLS verification remains pending.
+
+[Component001](../results/2026-10-18/rocev2-rnic-segmented-read-command-queue-001.json)
+PASSES12 methods/23 cases, keeping all17 prior mux cases. New cases cover a
+coupled producer requiring next metadata before the prior payload finishes
+(8193 bytes), full two-entry backpressure/five fragments(16385 bytes), and four
+malformed/unknown future-command refusals. Child/unpad/mux/common nonce are
+real RTL; HLS/owner/placement/backend status/fences/CQ are MODELS. Maximum
+case0.342s; original10s per-case bound. Initial source-anchor failure retains
+exact preimages and zero compiled/runtime cases. [Native elaboration001](../results/2026-10-18/rocev2-rnic-segmented-read-command-queue-native-elaboration-001.json)
+PASSES3.418s/1422 bindings, same45 module-kind/domain counts. All23 unit mux
+bodies equal selected native bytes;37 other generated RTL files are identical.
+[Audit001](../results/2026-10-18/rocev2-rnic-segmented-read-command-queue-diagnostics-001.json)
+also rechecks372 unit bindings and preserves original functional failure.
+
+Fresh actual HLS/native compilation is live with all30 original cases/oracles,
+1200s compile/30s runtime, -O1 HOST simulation and read-only queue snapshots.
+No successful native large READ/DMA/host visibility/CQ, matched kernel/provider
+or physical/timing qualification yet. All11 requirements and original timing
+13.885ns>4ns/default1.08ns remain; no hardware/fan/BIOS/module/network/reboot/Git
+changes. Old/default8191/31 keeps READ4096 and Atomic_NONE.
+
+## Genuine native READ issue/DMA progress, unresolved30s timeout (137)
+
+[Corrected-route full-native001](../results/2026-10-18/rocev2-rnic-segmented-read-route-native-full-001.json)
+passes Icarus elaboration and fresh Verilator/C++ compilation433.696s, then
+passes the previous actual QP_TX setup failure. Real coherent SQ/MR work
+issues one real READ request through board-faithful MAC/FCS/SFD/CDC. First
+4096-byte paged writes (3+4093) and one-byte visibility-fence read descriptors
+are observed. The first LARGE_READ runtime reaches the original30s wall bound
+and TIMES OUT. No completed case is recorded; the old29 cases are NOT run in
+this batch. Host visibility/whole READ/CQ success is NOT established.
+
+[Same-binary diagnostic001](../results/2026-10-18/rocev2-rnic-segmented-read-route-native-timeout-diagnostic-001.json)
+uses the exact failed frozen binary and copied identical .hex/.dat inputs in
+a fresh directory. Only stdout/stderr line buffering changes; original30s
+limit remains. It reaches24000 cycles,33 write TLPs and the same first fence
+without fault lines, but no second physical write descriptor. This does NOT
+exclude a functional deadlock, manufacture success, or relabel the failed
+batch. All1508 original and47 diagnostic bindings were verified unchanged;
+failed run/source preimages and binary/model/log/report remain intact.
+
+New `probe_segmented_read_route_o1_native_full.py` changes only HOST C++
+optimization from -O0 to -O1 and selects read-only progress snapshots. Actual
+RTL/inputs/independent data, descriptor, nonce, PSN, MSN, MAC and CQ oracles,
+all30 cases, original1200s compile/30s runtime and FPGA clocks/geometry stay
+unchanged. `segmented_read_route_progress_native_fixture.py` inherits the
+entire previous bench and adds actual child/unpad/status/nonce/backend prints;
+it cannot supply a status, grant, owner or CQ. First O1 attempt fails Icarus
+before C++ compilation because seven observation paths omitted the actual
+native_endpoint.datapath hierarchy segment. Its1499 bindings and exact fixture
+preimage were saved before correcting ONLY those paths. Fresh002 compilation
+is live; no optimized runtime pass yet. [Audit002](../results/2026-10-18/rocev2-rnic-segmented-read-route-native-diagnostics-002.json)
+records these limits/failures without relaxing them.
+
+This is progress past configuration into real native issue/first DMA, not
+finished large READ or a green regression. Unqualified16383/63 source keeps
+1MiB admission; old/default/kernel/provider8191/31 READ4096 and Atomic_NONE
+remain unchanged. Original HLS13.885ns still fails4ns/default1.08ns/full-board
+timing. All11 scope retained; no hardware/module/network/fan/BIOS/program/
+flash/reboot or automatic Git changes.
+
+## Preserve effective routes across actual QP_TX acceptance (136)
+
+The real `rocev2_mr_control.v` requires all peer/IP/RX_PSN fields to be zero
+for QP_TX, and requires an existing matching normal QP/QPN/PD. It changes only
+TX PSN. The original MSN observer nevertheless copied those empty fields as a
+new valid route. New `derive_segmented_read_route.py` extends the unchanged
+qualified READ profile and changes ONLY two observer lines: update route on
+accepted non-TX-only configuration, preserve it across accepted QP_TX. The
+actual controller/HLS PSN path, predictor rules, configuration guards, source
+identities/capacity/clocks and default/kernel/provider selections are intact.
+
+[Component003](../results/2026-10-18/rocev2-rnic-segmented-read-config-route-003.json)
+PASSES six short four-state cases. Exact original observer plus actual MR
+controller/MR/PTE/predictor reproduce route erasure and fault0xa2. Same actual
+command under corrected observer preserves peer196/IPs and accepts TX_PSN
+0x89abcd without fault. Before-QP/wrong QPN/PD/12 forbidden-field mutations
+remain rejected; stalled commands cannot update observation; normal reapply
+and reset remain checked. Decoded host input/QP apply/quiescence/parent drain
+are MODELS; SQC identity is explicitly absent, NO WR is issued. This isolates
+configuration, not data/identity/HLS/DMA/CQ or physical operation.
+
+First probes001/002 retain their first three passing observations but FAIL:
+001's varied-field loop used undeclared i;002's deliberate slot1 mutation was
+correctly rejected and echoed slot1, while the reused reply helper expected
+only slot0. Exact failed source/artifacts/preimages are preserved before
+declaring a dedicated loop index and independently expecting slot1 for just
+that mutation. Exact slot equality/all other reply and route checks remain.
+[Audit003](../results/2026-10-18/rocev2-rnic-segmented-read-config-route-diagnostics-003.json)
+verifies130/132 historical,140 fresh component,1419 complete-native elaboration
+and1503 original failed-native bindings. Changed historical probe hashes
+resolve ONLY to exact preimages.37 common native RTL files are byte-identical;
+only the two controlled-responder observer lines differ.
+
+[Corrected complete-native elaboration001](../results/2026-10-18/rocev2-rnic-segmented-read-route-native-elaboration-001.json)
+PASSES3.436s with every original READ-profile module/domain/identity/width/
+drain gate plus the new component source gate. A fresh full-native build is
+live, retaining the actual8193 READ and all29 old cases/independent oracles,
+1200s compile/30s runtime limits. A fixture wrapper only prints actual faults
+before the unchanged original fatal assertion. NO corrected native READ
+payload/DMA/visibility/CQ or regression pass is claimed yet. The old failed
+native model/log/report are unchanged. Original timing still fails13.885ns;
+no hardware/default/module/network/fan/BIOS/flash/reboot or Git change.
+
 ## Full native READ runtime attempt: build PASS, setup FAIL (135)
 
 The new `tests/segmented_read_native_fixture.py` and

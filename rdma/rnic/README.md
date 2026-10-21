@@ -9,13 +9,94 @@ generated HLS/vendor artifacts, credentials and binaries are not published.
 The repository's strict recorded-source check currently detects historical
 TX-padding SHA mismatch after44-byte SEND support; the old evidence/check
 remain unchanged, not retroactively declared current.
-Publication checks: focused Atomic RTL12 methods PASS; the full RNIC suite
-is not green (native MAC-lifetime ERROR and QP-TX FAIL observed before the
-remaining run was interrupted). No all-suite or release-pass claim is made.
+Historical publication checks: focused Atomic RTL12 methods PASS; an earlier
+full RNIC suite was not green (native MAC-lifetime ERROR and QP-TX FAIL before
+the remaining run was interrupted). The new bounded30-case native batch below
+passes; this does not relabel the old suite or qualify a hardware release.
 
 ## Latest functional milestone (2026-10-21)
 
-Publication checkpoint135: new full-native runner adds an actual8193-byte
+Progress140: NEW separate exact16383/63/SQC13/RQC15/stride128 software profile5
+kernel/provider source cohort. Running-header full kernel build001 PASS9.989s;
+actual READ WR adapter build PASS4.482s and ASan/UBSan0.012s, old54 positive/
+14 negative plus new24 large READ/15 compatibility positives/14 negatives.
+Actual WR/SQ/MR/CQ standard C90 cases PASS (25 new/all65 prior), max0.015s;
+actual C consumes unedited native128-byte records/CQ in70 cases (14 operation
+pairs/four negative mutations each), max0.016s. Real libibverbs/provider six
+profiles (allfive old) PASS with new READ+SEND4097/8193/1MiB chains, max0.018s.
+No user BAR/DMA/C128 ABI or MR/ref bypass; failed fixture startup/indentation/
+queue-count oracle reports/preimages retained.626 fresh successful bindings,
+84/90 failed historical and all1665 prior native bindings verified unchanged.
+Linux/MMIO/pin/DMA/completion/fake-fd/WC boundaries remain MODELS, separate
+executions not live Linux/RTL/page-table coupling. Nothing installed/loaded;
+old/default8191/31 READ4096, single SGE/Immediate-RQ4096 and Atomic_NONE remain.
+Native1MiB/large RX/Immediate/multi-SGE/recovery/physical/timing still open;
+original13.885ns fails4ns/default1.08ns/all11 scope retained. No hardware/Git.
+[Audit](../../results/2026-10-18/rocev2-rnic-segmented-read-software-diagnostics-001.json).
+
+Progress139 (historical): actual generated-HLS complete-native queue001 PASSES ALL30
+cases: new8193-byte READ plus ALL29 previous cases. Fresh compile623.025s;
+all runtimes4.175..6.279s, READ6.078s, original1200s/30s limits unchanged.
+Genuine SQ/MR/PTE/protected RX/MSN/HLS/DMA/shared nonce/status/fence/board
+MAC-FCS-SFD-CDC/CQ run. READ has3 commands/statuses/fences,3 RX,1 placement/
+HLS receipt/aggregate memory event/CQ,8193 verified bytes,4read/67write TLPs,
+PSNfffffe->000001 and genuine MAC receipt. All16384 host bytes/sentinels and
+whole748 owner/ABI63 CQ independently reverified; all1665 source/artifact/RAM
+bindings match. Physical host/root/peer/PHY/PTP MODELS; old ordinary READ/
+Immediate regressions retain original MAC-pin completion models. No native
+1MiB test/Linux/API/physical/board timing pass. Original HLS13.885ns still
+fails4ns/default1.08ns; defaults8191/31 keep READ4096. Next coarse work is a
+separate matched16383/63 kernel/profile/provider, preserving all old profiles,
+MR/queue/CQ lifetimes and all11 original requirements. No hardware or Git change.
+[Audit](../../results/2026-10-18/rocev2-rnic-segmented-read-command-queue-native-diagnostics-001.json).
+
+Progress138 (historical): -O1 native002 compiles620.672s and fails the original cycle
+deadline in9.436s, not30s wall time. Actual first READ fragment/status/fence
+complete; second waits for2176 bytes with data_ready1/data_valid0, next raw
+command blocked, stable18000..28000cycles. All1510 bindings/model/binary/log/
+source preimages preserved. New two-entry owner-checked metadata lookahead
+changes one mux leaf; genuine placement/guard, independent full-owner raw
+checks, original serial child DMA/status/fence and whole-CQ lease remain.
+Queue component001 PASS12 methods/23 cases, all17 old cases retained; actual
+child/unpad/mux/nonce, modeled HLS/placement/backend/CQ. New8193 coupled data/
+command and16385 full-queue cases pass; all cases<0.342s. Native elaboration
+PASS3.418s/1422 bindings, same45 module-kind/domain counts,37 common RTL files
+identical, all23 unit mux bodies match selected native bytes. Fresh actual
+HLS/native build live, all30 cases and1200s/30s limits preserved. No native
+large READ/CQ/API/physical success yet; original timing/defaults unchanged.
+[Audit](../../results/2026-10-18/rocev2-rnic-segmented-read-command-queue-diagnostics-001.json).
+
+Progress137 (historical): corrected-route full-native001 compiles433.696s and passes the
+previous genuine QP setup failure. Actual coherent SQ fetch/one READ request
+through board MAC/FCS/SFD and first4096-byte paged-write/fence descriptors
+are observed. Runtime hits original30s limit; no completed case, old29 not
+attempted. Same-binary/identical-input line-buffered diagnostic reaches24000
+cycles with33 write TLPs/no fault, but no second physical write descriptor; a real
+functional stall is NOT excluded. Original failed report/binary/logs and all
+1508/47 bindings stay unchanged. New -O1 host C++ build with read-only actual
+child/unpad/status/nonce/backend prints is live, keeping exact RTL/clocks/
+all30 cases/independent oracles/1200s build/30s runtime. First O1 elaboration
+failed on seven missing .datapath observer paths; all1499 bindings/preimages
+preserved before observation-only correction. No large-READ/CQ/host-visibility
+or kernel/provider/hardware pass, timing relaxation or default change.
+[Audit and limits](../../results/2026-10-18/rocev2-rnic-segmented-read-route-native-diagnostics-002.json).
+
+Progress136 (historical): isolate the real QP_TX/route-observer contract mismatch. Actual
+controller requires empty route fields for PSN-only setup; the old observer
+overwrites the accepted peer/IP with those zeros and actual MSN logic faults.
+[Component003](../../results/2026-10-18/rocev2-rnic-segmented-read-config-route-003.json)
+passes six cases (one baseline fault reproduction and five corrected cases),
+all<0.027s. Actual MR controller/MR/PTE/observer/predictor run; decoded host
+commands/QP apply/quiescence/parent drain are modeled, NO SQC identity/WR.
+Only two observer lines change in a separately checked derivation; all prior
+gates/guards and default/kernel/provider profiles stay unchanged. Corrected
+complete native elaboration001 PASS3.436s/1419 bindings, same domains/counts.
+A fresh actual full-native build is live; READ payload/DMA/visibility/CQ and
+all29 old runtime cases remain UNVERIFIED in this corrected cohort. Two probe
+fixture failures/preimages and the original failed native002 remain preserved.
+[Audit and limits](../../results/2026-10-18/rocev2-rnic-segmented-read-config-route-diagnostics-003.json).
+
+Publication checkpoint135 (historical): new full-native runner adds an actual8193-byte
 READ fixture ahead of ALL29 prior bounded cases. The actual connected graph
 compiles, but [runtime002](../../results/2026-10-18/rocev2-rnic-segmented-read-native-full-002.json)
 FAILS during QP setup before SQ fetch/READ data (`main native RNIC fault 00`).

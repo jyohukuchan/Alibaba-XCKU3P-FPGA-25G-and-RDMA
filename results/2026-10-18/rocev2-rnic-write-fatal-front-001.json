@@ -1,0 +1,886 @@
+{
+  "scope": "Same47 real ICRC/MR/RQ/replay inputs with qualified fatal61/62 metadata.\n\nZero RKEY/overflow now reach the actual whole MR lookup and return1/4, not\nsemantic16; both still grant/replay nothing. Other45 protection and all47\nraw/replay outcomes remain. Backend/HLS/MAC/native frontier modeled; not\nfull native fatal execution/error CQ/STOP/global drain/unpin proof.\n",
+  "pass_test": false,
+  "directory": "rdma/rnic/build/write-fatal-front-bdd144ya",
+  "source_sha256": {
+    "rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_segmented_write_native_frontend.v": "9d3c485c3cb7372e638a590ebea50bb34a30f58265438bc6000076f6149d7939",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_fatal_write_message_guard.v": "78e4f95fbb8c820a23a1930dd443d4db69f874a6fa50b8da4b91350f63c269a4",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "external/corundum/fpga/lib/eth/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+    "external/corundum/fpga/lib/eth/lib/axis/rtl/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+    "external/corundum/fpga/lib/eth/rtl/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+    "rdma/rnic/rtl/rocev2_remote_write_message_guard.v": "138a27297c8f6655911f98140ae46a07db2f453a0a3d504c412ab3d199dd22ca",
+    "rdma/rnic/fpga/derive_write_error_control.py": "14ae3595f022c4e7edf283a6f87335c9714bf1d1f96c892c75e8d15a4f9ae7fd",
+    "results/2026-10-18/rocev2-rnic-write-psn-front-002.json": "e415416d505840f8acd7118f0c5c747fee1f974661817e628e17bb89a11fb5cf",
+    "rdma/rnic/tests/probe_segmented_write_rx_frontend.py": "0d31b6b73323e29dee5f3bab9adc1087601fae4caa28102e964b40c440238eac",
+    "rdma/rnic/fpga/derive_write_fatal_native.py": "deae58438a383c5acb59ffd4ae67690e30caeb26109c5d168b7c0c6711977930",
+    "rdma/rnic/fpga/derive_write_controller_leaves.py": "ebb665acf843ed99c99b0f6342c79216eed6884a7993c413d44a78000ce77753",
+    "rdma/rnic/tests/probe_write_fatal_frontend.py": "b13f3cb7dbc40423cb7a25ae7dc9ddd20e303e62feb959302bba6a15934cb021",
+    "rdma/rnic/tests/probe_remote_write_mr_notice.py": "8f2e965d4a4efcdd1024d57c323aa442f91de95fc66b1314b6dfeeb4d6d440b4",
+    "rdma/rnic/tests/remote_write_mr_notice_tb.v": "8180bc9bede4c5ca515cd965cba9981015dcebd73024332261c05bb775b4669e",
+    "rdma/rnic/fpga/derive_write_notice_binding_queue.py": "d7e43f8871ba5003085c8ff80a36aecbc705d505b5bde8e19517bbe70c95591b",
+    "rdma/rnic/fpga/derive_write_notice_queue.py": "92a99549ab37e754f8ef410e3ebc6796174ad9c06fed18adea34719e793f4d1c",
+    "rdma/rnic/rtl/rocev2_receive_message_queue.v": "fd989c8f471342e0794c0a1bbf661d766d7335be06b2702e12cc196dd4dcd572",
+    "rdma/host/rocev2_wire.py": "358cd01812d9c8100dc4b62540b071997fbd048252247f6b8bc70a77f995b84c"
+  },
+  "tests": {
+    "0": {
+      "exit": 0,
+      "seconds": 2.0523337479680777,
+      "protection": {
+        "pass_test": true,
+        "mode": 0,
+        "MR_queries": 4,
+        "grants": 3,
+        "completed_packets": 3,
+        "completed_messages": 1,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 0,
+        "CRC_good": 3,
+        "CRC_bad": 0,
+        "replayed_frames": 3,
+        "replayed_bytes": 8344
+      },
+      "certification": {
+        "mode": 0,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 0,
+        "cycles": 0,
+        "consumed": 0,
+        "syndrome": 0
+      },
+      "every_input_byte_mask_EOF_unchanged": true
+    },
+    "1": {
+      "exit": 0,
+      "seconds": 2.058070653991308,
+      "protection": {
+        "pass_test": true,
+        "mode": 1,
+        "MR_queries": 4,
+        "grants": 3,
+        "completed_packets": 3,
+        "completed_messages": 1,
+        "cancelled_messages": 0,
+        "RQ_posted": 1,
+        "RQ_taken": 1,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 1,
+        "CRC_good": 3,
+        "CRC_bad": 0,
+        "replayed_frames": 3,
+        "replayed_bytes": 8348
+      },
+      "certification": {
+        "mode": 1,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 1,
+        "cycles": 0,
+        "consumed": 0,
+        "syndrome": 0
+      },
+      "every_input_byte_mask_EOF_unchanged": true
+    },
+    "3": {
+      "exit": 0,
+      "seconds": 2.02417048800271,
+      "protection": {
+        "pass_test": true,
+        "mode": 3,
+        "MR_queries": 3,
+        "grants": 2,
+        "completed_packets": 2,
+        "completed_messages": 1,
+        "cancelled_messages": 0,
+        "RQ_posted": 1,
+        "RQ_taken": 1,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 3,
+        "CRC_good": 2,
+        "CRC_bad": 0,
+        "replayed_frames": 2,
+        "replayed_bytes": 8300
+      },
+      "certification": {
+        "mode": 3,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 3,
+        "cycles": 0,
+        "consumed": 0,
+        "syndrome": 0
+      },
+      "every_input_byte_mask_EOF_unchanged": true
+    },
+    "4": {
+      "exit": 0,
+      "seconds": 2.0981927780085243,
+      "protection": {
+        "pass_test": true,
+        "mode": 4,
+        "MR_queries": 5,
+        "grants": 3,
+        "completed_packets": 3,
+        "completed_messages": 1,
+        "cancelled_messages": 0,
+        "RQ_posted": 1,
+        "RQ_taken": 1,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 4,
+        "CRC_good": 4,
+        "CRC_bad": 0,
+        "replayed_frames": 3,
+        "replayed_bytes": 8348
+      },
+      "certification": {
+        "mode": 4,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 4,
+        "cycles": 0,
+        "consumed": 0,
+        "syndrome": 0
+      },
+      "every_input_byte_mask_EOF_unchanged": true
+    },
+    "5": {
+      "exit": 0,
+      "seconds": 1.0910451899981126,
+      "protection": {
+        "pass_test": true,
+        "mode": 5,
+        "MR_queries": 3,
+        "grants": 2,
+        "completed_packets": 2,
+        "completed_messages": 1,
+        "cancelled_messages": 0,
+        "RQ_posted": 1,
+        "RQ_taken": 1,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 5,
+        "CRC_good": 2,
+        "CRC_bad": 0,
+        "replayed_frames": 2,
+        "replayed_bytes": 4208
+      },
+      "certification": {
+        "mode": 5,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 5,
+        "cycles": 0,
+        "consumed": 0,
+        "syndrome": 0
+      },
+      "every_input_byte_mask_EOF_unchanged": true
+    },
+    "6": {
+      "exit": 0,
+      "seconds": 1.042001455964055,
+      "protection": {
+        "pass_test": true,
+        "mode": 6,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 6,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      },
+      "certification": {
+        "mode": 6,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 6,
+        "cycles": 4,
+        "consumed": 1,
+        "syndrome": 98
+      }
+    },
+    "7": {
+      "exit": 0,
+      "seconds": 1.0438701870152727,
+      "protection": {
+        "pass_test": true,
+        "mode": 7,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 7,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      },
+      "certification": {
+        "mode": 7,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 7,
+        "cycles": 4,
+        "consumed": 1,
+        "syndrome": 98
+      }
+    },
+    "8": {
+      "exit": 0,
+      "seconds": 1.0398845720337704,
+      "protection": {
+        "pass_test": true,
+        "mode": 8,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 8,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      },
+      "certification": {
+        "mode": 8,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 8,
+        "cycles": 4,
+        "consumed": 1,
+        "syndrome": 98
+      }
+    },
+    "9": {
+      "exit": 0,
+      "seconds": 1.0461084250127897,
+      "protection": {
+        "pass_test": true,
+        "mode": 9,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 9,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      },
+      "certification": {
+        "mode": 9,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 9,
+        "cycles": 4,
+        "consumed": 1,
+        "syndrome": 98
+      }
+    },
+    "10": {
+      "exit": 0,
+      "seconds": 1.0427133219782263,
+      "protection": {
+        "pass_test": true,
+        "mode": 10,
+        "MR_queries": 1,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 10,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      },
+      "certification": {
+        "mode": 10,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 10,
+        "cycles": 4,
+        "consumed": 1,
+        "syndrome": 98
+      }
+    },
+    "11": {
+      "exit": 0,
+      "seconds": 1.041502658976242,
+      "protection": {
+        "pass_test": true,
+        "mode": 11,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 11,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      },
+      "certification": {
+        "mode": 11,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 11,
+        "cycles": 4,
+        "consumed": 1,
+        "syndrome": 97
+      }
+    },
+    "12": {
+      "exit": 0,
+      "seconds": 1.0371561700012535,
+      "protection": {
+        "pass_test": true,
+        "mode": 12,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 12,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      },
+      "certification": {
+        "mode": 12,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 12,
+        "cycles": 4,
+        "consumed": 1,
+        "syndrome": 97
+      }
+    },
+    "13": {
+      "exit": 0,
+      "seconds": 1.0478794400114566,
+      "protection": {
+        "pass_test": true,
+        "mode": 13,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 13,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      },
+      "certification": {
+        "mode": 13,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 13,
+        "cycles": 4,
+        "consumed": 1,
+        "syndrome": 97
+      }
+    },
+    "14": {
+      "exit": 0,
+      "seconds": 1.036000166030135,
+      "protection": {
+        "pass_test": true,
+        "mode": 14,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 14,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      },
+      "certification": {
+        "mode": 14,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 14,
+        "cycles": 4,
+        "consumed": 1,
+        "syndrome": 97
+      }
+    },
+    "15": {
+      "exit": 0,
+      "seconds": 1.0353777099517174,
+      "protection": {
+        "pass_test": true,
+        "mode": 15,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 15,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      },
+      "certification": {
+        "mode": 15,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 15,
+        "cycles": 4,
+        "consumed": 1,
+        "syndrome": 97
+      }
+    },
+    "16": {
+      "exit": 0,
+      "seconds": 1.037345614982769,
+      "protection": {
+        "pass_test": true,
+        "mode": 16,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 16,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      },
+      "certification": {
+        "mode": 16,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 16,
+        "cycles": 0,
+        "consumed": 0,
+        "syndrome": 0
+      }
+    },
+    "17": {
+      "exit": 0,
+      "seconds": 1.0389173779985867,
+      "protection": {
+        "pass_test": true,
+        "mode": 17,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 17,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      },
+      "certification": {
+        "mode": 17,
+        "cycles": 4,
+        "consumed": 1
+      },
+      "fatal_certification": {
+        "mode": 17,
+        "cycles": 0,
+        "consumed": 0,
+        "syndrome": 0
+      }
+    },
+    "18": {
+      "exit": 0,
+      "seconds": 1.0450257829506882,
+      "protection": {
+        "pass_test": true,
+        "mode": 18,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 18,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      },
+      "certification": {
+        "mode": 18,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 18,
+        "cycles": 0,
+        "consumed": 0,
+        "syndrome": 0
+      }
+    },
+    "19": {
+      "exit": 0,
+      "seconds": 1.034993473032955,
+      "protection": {
+        "pass_test": true,
+        "mode": 19,
+        "MR_queries": 0,
+        "grants": 0,
+        "completed_packets": 0,
+        "completed_messages": 0,
+        "cancelled_messages": 0,
+        "RQ_posted": 0,
+        "RQ_taken": 0,
+        "fault": 0,
+        "message_active": 0
+      },
+      "replay": {
+        "mode": 19,
+        "CRC_good": 1,
+        "CRC_bad": 0,
+        "replayed_frames": 0,
+        "replayed_bytes": 0
+      },
+      "certification": {
+        "mode": 19,
+        "cycles": 0,
+        "consumed": 0
+      },
+      "fatal_certification": {
+        "mode": 19,
+        "cycles": 4,
+        "consumed": 1,
+        "syndrome": 97
+      }
+    },
+    "20": {
+      "exit": 1,
+      "seconds": 1.041177797014825
+    }
+  },
+  "planned_modes": [
+    0,
+    1,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    49
+  ],
+  "case_limit_seconds": 10,
+  "compile_limit_seconds": 10,
+  "clock_ns": 4,
+  "cycle_limit": 100000,
+  "actual_IPv4_ICRC": true,
+  "actual_remote_MR": true,
+  "actual_RQ": true,
+  "actual_registered_owned_replay": true,
+  "bytes_compared_to_authored_input": true,
+  "all_backend_HLS_MAC_CQ_certificate_producers_modeled": true,
+  "actual_generated_new_HLS": false,
+  "full_native_integration": false,
+  "payload_DMA_executed": false,
+  "full_raw_or_native_1MiB_transfer": false,
+  "hardware_verified": false,
+  "LFSR_simulation_only_constant_function_evaluation_at_compile_time": true,
+  "original_vendor_LFSR_and_all_actual_XOR_functions_parameters_unchanged": true,
+  "compile_commands": [
+    [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "tb",
+      "-o",
+      "/dev/shm/as02-write-fatal-front-7zt86i8n/normal",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/tb.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_segmented_write_native_frontend.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_fatal_write_message_guard.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_mr_table.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_ipv4_icrc.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/axis_register.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/axis_fifo.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/lfsr_const_masks.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_write_notice_binding_queue.v"
+    ],
+    [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "tb",
+      "-Ptb.COOKIE_INIT=64'hffffffffffffffff",
+      "-o",
+      "/dev/shm/as02-write-fatal-front-7zt86i8n/cookie",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/tb.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_segmented_write_native_frontend.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_fatal_write_message_guard.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_mr_table.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_ipv4_icrc.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/axis_register.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/axis_fifo.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/lfsr_const_masks.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_write_notice_binding_queue.v"
+    ],
+    [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "tb",
+      "-Ptb.TAG_INIT=16'hffff",
+      "-o",
+      "/dev/shm/as02-write-fatal-front-7zt86i8n/tag",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/tb.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_segmented_write_native_frontend.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_fatal_write_message_guard.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_mr_table.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_ipv4_icrc.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/axis_register.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/axis_fifo.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/lfsr_const_masks.v",
+      "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_write_notice_binding_queue.v"
+    ]
+  ],
+  "error_type": "ValueError",
+  "error": "actual checked-frame assertion failed:/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-fatal-front-bdd144ya/20.log",
+  "artifact_sha256": {
+    "rdma/rnic/build/write-fatal-front-bdd144ya/14-input.hex": "8b96ab3a04c27589e0945e5f1f54226d5960d70b30763d602c85422f577c206b",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/1-input.hex": "35ad7f1e31bdc227e2c165e74f19d3fb0ae2857659e2320236be7b891a3d31a2",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/6.log": "a8c72a724bc5ac6df2254510be335bfb65f2dca81eea4a9cfcef02a8a45694ce",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/axis_fifo.v": "7d1ea178349654c92f2ac4823620004abe067b37f9fbd09fcff97fe00db6e19c",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/10-input.hex": "9cab61655b85dbcde687da8ac7439825732ddc66780e5f3746d629e72042bbac",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/3-input.hex": "85efea252b26e292a0130bfd51b02d553d2a208f8cd2a37bcf1c28545257c81a",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/10.log": "4c5c662e89e651e58160b27a773bc0f76be2e4d5049ebf8a6695841be23730ab",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/12.log": "993f14bff58c090bef83546c620a728bddb20899c049737f5bc96b241a03adcb",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/0-input.hex": "68572a9f2151841b3d143a2ef42453e20da5f4f2802ca79a689d4babdb9b8cd2",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/cookie-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/15.log": "6df0544e7f5ccf984a2691bebefa405d5285b0355c619bed1629073219a9721c",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/9-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/4.log": "f1b0c727111e0c266402ffee2e87c817e78ecc4005bc2dc873afda613c15021e",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/11-input.hex": "b669a952181b0fa56eabfd3891b962ca7481e735ac12636e83decf260b52b20b",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/18.log": "c6020baedc6fe1891349efbd6fbf95139ddbe7877460604b318814f95e571661",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_write_notice_binding_queue.v": "d060a8674c6d4eae284f545a251d32417231ba9eadcfce9108c05ecdf0a9cec9",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/1.log": "cc3e3c85c8df88b6ae0acef194f1856cb4fe56a98e9016213185567f2748fde8",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/14.log": "9fc8a2e61c6cb43c1132668bb468d0ddb13f8ea9d5fcd2a1f3bfcaca835334ae",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/8-input.hex": "bf3e8ba46f5755e53383ad64b44130f65ddfe80628a6752ff77b4790627e4437",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/13-input.hex": "1c647b5aab448296618612c3c028522eee679b2c649c00a21989efe15c3b2ad8",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/12-input.hex": "2ed6f3f87df32b30f53459707296f1e6348f279c551f0494377750fa0b271e07",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/6-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/lfsr_const_masks.v": "7ba699196856ac80edcb79aeebc9ecb6eedacba5a6fa1b47cee1ac30eca1bb4e",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/18-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/17.log": "965873c8f7e200a5b0694e7d996c39c9002c83243824e7227d16e70be6d6a275",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/11.log": "864b890c123cf3a7c8b5e8be89f4356a38642df0be3f10b01d60c1f6e728fb1f",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/7-input.hex": "ea7abcc5485b12fab2fcad127c85dff36e07ea9bff320952a9eb7e5dd29504eb",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/3.log": "34d6bcfe5f317ec439ce4d68cb9c02b039243fdcbd5c1cf61c0a42f1510495ce",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/0.log": "da3e489b0dc0a328ec609c5194e689de520b4d9be3cafd6a10e7b302b2d7113e",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_fatal_write_message_guard.v": "78e4f95fbb8c820a23a1930dd443d4db69f874a6fa50b8da4b91350f63c269a4",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/17-input.hex": "4209d17824542a78279e0fd180c4abb07ab67343e296f6b2f22c23d5b994acf0",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/5-input.hex": "cfaa83af20272048d34ca9e5203d6f8ea6b05d750d8ec421d1de06e6a56d411d",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/16-input.hex": "ad54451f86c0512210d4aef084bdb83447c81a49211d4c1ea848e5e4f3ab6ed3",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/tb.v": "7d7440001f93da5b504396a11f90b52f21d9bb46f0a4e9636ce7d0f49b408148",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/8.log": "07cab0be8d27c1d2281c994c80de1681ed75615bbf475b7b30fc5a38f0d0c25d",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/rocev2_segmented_write_native_frontend.v": "9d3c485c3cb7372e638a590ebea50bb34a30f58265438bc6000076f6149d7939",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/4-input.hex": "555c76a1c3e17ff790e9bcbdec26f41a1a1c78bd1264c3b3a764686a1f1fad35",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/normal-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/20-input.hex": "73da24fd2aca593c8f82b3c8683229a50803184bc223a9ebc5407260ccc4366a",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/19-input.hex": "10abc6e136df0b80641770460a5a8ee9fa7b4fde337de3b5e625773c6ea20ef2",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/13.log": "3c5b159f8e4802db106b51717571c4947343004e9583c8d441e9e614f3c583ac",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/9.log": "b12c2c33896494d700a0b57d30f25799fa4bb830c7892ccf6c52941031606621",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/20.log": "8dcee0bee738da11553d5ea24451221235fd6f9e20e6c3f78bbfba90b9e5fe55",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/16.log": "d2d626b3053b78d0e2fb4e9a7d71c055a4de6a00d3c1658cc7616856edf82930",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/lfsr.v": "5502c8203b0dfc7246c1a2de93e60c199ded3c1d7840b106350d714f72a9a079",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/tag-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/19.log": "dc1a84054aafe3c00e542424e41aa0e07d6dcdc89c2a9e4cd05f2b4c08ff60c7",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/7.log": "b473c9c692f3965d6e7b1d73d5fa1669599653d0d61c78fa9f0dfabb08a36eb0",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/5.log": "96e3ef795cc9a87246ef3fededa8e229e773b28684a6ec7c7e6ead324730af87",
+    "rdma/rnic/build/write-fatal-front-bdd144ya/15-input.hex": "292c5381ed29e9f42d6bc1f3b40531920d10de386146258e58973540c4e5f3dc"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-write-fatal-front-7zt86i8n/tag": "d2e27bcd62540f28e4a9e95a8940e6bd7c59f5f4fa80e7f1a50c1d5b17c61146",
+    "/dev/shm/as02-write-fatal-front-7zt86i8n/cookie": "9e865488429fbd85560b007b2106ab4a2b015156308b17ddcb5b60715fdb1bc2",
+    "/dev/shm/as02-write-fatal-front-7zt86i8n/normal": "8a300442b4513df678fd52f94ddca5b0939aad493b59c5c0c6e6c99f0b8d4fd7"
+  }
+}

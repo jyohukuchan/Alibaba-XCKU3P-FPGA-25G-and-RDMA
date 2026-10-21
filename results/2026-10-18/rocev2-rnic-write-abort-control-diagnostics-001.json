@@ -1,0 +1,76 @@
+{
+  "scope": "Actual66 four-state abort RTL consumers, not native/HLS/global drain proof.\n\nRequire independent full960/1000, actual retained quarantine/cancel ordering,\nimmutable failures and unchanged original10s/4ns/100000-cycle gates.\n",
+  "audit_passed": true,
+  "evidence": {
+    "write-abort-control-004": {
+      "bindings_verified": 73,
+      "report_sha256": "884dfa78e70a7c4847fe389d10667c77568d42e1954d193a2f7b7693c611b59b",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-hls-003": {
+      "bindings_verified": 468,
+      "report_sha256": "997cb6a72f985f08da2b8d9201fda1bf975c29c4deef556de35219a8b4a07e0f",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-hls-diagnostics-001": {
+      "bindings_verified": 10,
+      "report_sha256": "9e1dbe67e25cffb739dd33fb2e0bd91fb9755112a6c57b9706e73b23b20d4132",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-control-001": {
+      "bindings_verified": 3,
+      "report_sha256": "ee348d586e60d184cdb2e97800eb57d97f23d7f694e86ca424e5e61067769123",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_write_abort_control.py",
+        "rdma/rnic/rtl/rocev2_write_abort_control.v"
+      ]
+    },
+    "write-abort-control-002": {
+      "bindings_verified": 6,
+      "report_sha256": "92534aa96e3b6a9e06dbbdd236953bdc24f9de1d82736ff06f41036612494c32",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_write_abort_control.py",
+        "rdma/rnic/rtl/rocev2_write_abort_control.v"
+      ]
+    },
+    "write-abort-control-003": {
+      "bindings_verified": 26,
+      "report_sha256": "f7237f17aab6cc492ac7e3195e02f7e44c1dc175c7092e22ab56952fa7bb4335",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/rtl/rocev2_write_abort_control.v"
+      ]
+    }
+  },
+  "verified_bindings": 586,
+  "actual_four_state_cases": 66,
+  "positive_full_owner_oracles": 5,
+  "invalid_or_ordering_cases": 61,
+  "maximum_case_seconds": 0.017197835026308894,
+  "real_consumer_RTL": true,
+  "retained_selected_quarantine_and_actual_cancel_readback": true,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_write_abort_control.py": "60abb0953af105af12aef159c6e59bd4af45c8e83eb1281820eba3fe6bc03bba",
+    "rdma/rnic/rtl/rocev2_write_abort_control.v": "b705489dbdfc5bbc96787cac952ff501abb2b6bde63e20f43d614349448d8de0",
+    "rdma/rnic/tests/probe_write_abort_control.py": "ac360a2a62fda1a310de27a5c80c9500bd5bcd2e53e40534274d67abef4b352b"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "native_HLS_MAC_backend_quarantine_local_report_producers_modeled": true,
+  "native_integration": false,
+  "actual_generated_HLS_coupling": false,
+  "QP_global_drain_or_unpin": false,
+  "native_fatal_admission_error_CQ_STOP_and_lifetime_complete": false,
+  "physical": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "remaining": [
+    "Wire genuine actual native packet/MAC/commit/ACK retirement and authenticated fatal quarantine/error wire/local report to the real same HLS abort960/992; one nonwrapping serial namespace.",
+    "Actual full native38 plus genuine fatal cases/error CQ/STOP/pinned references; this component consumer and separate HLS140 are NOT native coupling.",
+    "Original all11/native1MiB/multiSGE/live Linux-provider/real-peer recovery/congestion/original board timing/physical remain."
+  ],
+  "hardware_or_default_actions": [],
+  "commit_or_push": false
+}

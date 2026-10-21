@@ -1,0 +1,385 @@
+{
+  "scope": "Selected-WRITE abort RTL consumer; native/HLS/MAC/quarantine inputs modeled.\n\nFour-state4ns/10s/100000-cycle checks. Not integrated native/error CQ/STOP/\nQP-global drain/unpin/physical proof. Full proofs and quarantine must stay.\n",
+  "pass_test": false,
+  "directory": "rdma/rnic/build/write-abort-control-tywygcf_",
+  "source_sha256": {
+    "rdma/rnic/tests/probe_write_abort_control.py": "ac360a2a62fda1a310de27a5c80c9500bd5bcd2e53e40534274d67abef4b352b",
+    "rdma/rnic/rtl/rocev2_write_abort_control.v": "6105710b9cf1ebd32ea9118f36b044cb61532f0b74ce549fa095fd3fef17bf15",
+    "rdma/rnic/fpga/derive_segmented_write_native.py": "1e5fe9ee14e6b2108836133a91220ef0f250c1fa79db154e9d357c2ba3660b53"
+  },
+  "tests": {
+    "0": {
+      "exit": 0,
+      "seconds": 0.01689060003263876,
+      "summary": {
+        "pass_test": true,
+        "mode": 0,
+        "fault": 0,
+        "cycles": 214,
+        "requests": 1,
+        "completions": 1,
+        "quarantine": 4
+      },
+      "independent_oracles": {
+        "owner960": "000f6001000000062ffffffffffffa123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001fedcba987654321181234567e23456789abcdef000002001fffffe0000000000001000fffffe0001",
+        "selected_receipt1000": "0700000000000f6001000000062ffffffffffffa123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001fedcba987654321181234567e23456789abcdef000002001fffffe0000000000001000fffffe0001",
+        "not_QP_global_or_unpin": true
+      }
+    },
+    "1": {
+      "exit": 0,
+      "seconds": 0.01646231097402051,
+      "summary": {
+        "pass_test": true,
+        "mode": 1,
+        "fault": 0,
+        "cycles": 217,
+        "requests": 1,
+        "completions": 1,
+        "quarantine": 4
+      },
+      "independent_oracles": {
+        "owner960": "000f6002000000061000000000000a123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001fedcba987654321181234567e23456789abcdef000002001fffffe0000100000001000ffffff0002",
+        "selected_receipt1000": "0700000000000f6002000000061000000000000a123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001fedcba987654321181234567e23456789abcdef000002001fffffe0000100000001000ffffff0002",
+        "not_QP_global_or_unpin": true
+      }
+    },
+    "2": {
+      "exit": 0,
+      "seconds": 0.015894332027528435,
+      "summary": {
+        "pass_test": true,
+        "mode": 2,
+        "fault": 0,
+        "cycles": 173,
+        "requests": 1,
+        "completions": 1,
+        "quarantine": 4
+      },
+      "independent_oracles": {
+        "owner960": "00000000000000063fffffefffffea123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef912345670000000100110000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "selected_receipt1000": "070000000000000000000000063fffffefffffea123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef912345670000000100110000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "not_QP_global_or_unpin": true
+      }
+    },
+    "3": {
+      "exit": 0,
+      "seconds": 0.015678370953537524,
+      "summary": {
+        "pass_test": true,
+        "mode": 3,
+        "fault": 0,
+        "cycles": 179,
+        "requests": 1,
+        "completions": 1,
+        "quarantine": 4
+      },
+      "independent_oracles": {
+        "owner960": "00000000000001062000000000000a123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef912345670000000100110000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "selected_receipt1000": "070000000100000000000001062000000000000a123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef912345670000000100110000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "not_QP_global_or_unpin": true
+      }
+    },
+    "4": {
+      "exit": 0,
+      "seconds": 0.017155730980448425,
+      "summary": {
+        "pass_test": true,
+        "mode": 4,
+        "fault": 0,
+        "cycles": 220,
+        "requests": 1,
+        "completions": 1,
+        "quarantine": 4
+      },
+      "independent_oracles": {
+        "owner960": "000f6002000000062ffffffffffffa123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001fedcba987654321181234567e23456789abcdef000002001fffffe0000000000001000fffffe0001",
+        "selected_receipt1000": "0700000000000f6002000000062ffffffffffffa123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001fedcba987654321181234567e23456789abcdef000002001fffffe0000000000001000fffffe0001",
+        "not_QP_global_or_unpin": true
+      }
+    },
+    "20": {
+      "exit": 0,
+      "seconds": 0.015093488967977464,
+      "summary": {
+        "pass_test": true,
+        "mode": 20,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "21": {
+      "exit": 0,
+      "seconds": 0.014519013988319784,
+      "summary": {
+        "pass_test": true,
+        "mode": 21,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "22": {
+      "exit": 0,
+      "seconds": 0.014664223010186106,
+      "summary": {
+        "pass_test": true,
+        "mode": 22,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "23": {
+      "exit": 0,
+      "seconds": 0.014297675981651992,
+      "summary": {
+        "pass_test": true,
+        "mode": 23,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "24": {
+      "exit": 0,
+      "seconds": 0.014294394000899047,
+      "summary": {
+        "pass_test": true,
+        "mode": 24,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "25": {
+      "exit": 0,
+      "seconds": 0.014415713958442211,
+      "summary": {
+        "pass_test": true,
+        "mode": 25,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "26": {
+      "exit": 0,
+      "seconds": 0.014288317004684359,
+      "summary": {
+        "pass_test": true,
+        "mode": 26,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "27": {
+      "exit": 0,
+      "seconds": 0.014201499987393618,
+      "summary": {
+        "pass_test": true,
+        "mode": 27,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "28": {
+      "exit": 0,
+      "seconds": 0.01422126597026363,
+      "summary": {
+        "pass_test": true,
+        "mode": 28,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "29": {
+      "exit": 0,
+      "seconds": 0.014230275992304087,
+      "summary": {
+        "pass_test": true,
+        "mode": 29,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "30": {
+      "exit": 0,
+      "seconds": 0.013920165016315877,
+      "summary": {
+        "pass_test": true,
+        "mode": 30,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "31": {
+      "exit": 0,
+      "seconds": 0.014181105012539774,
+      "summary": {
+        "pass_test": true,
+        "mode": 31,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "32": {
+      "exit": 0,
+      "seconds": 0.014171397022437304,
+      "summary": {
+        "pass_test": true,
+        "mode": 32,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "33": {
+      "exit": 1,
+      "seconds": 0.014619452005717903
+    }
+  },
+  "planned_modes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88
+  ],
+  "clock_ns": 4,
+  "runtime_limit_seconds": 10,
+  "compile_limit_seconds": 10,
+  "cycle_limit": 100000,
+  "producer_boundaries_modeled": true,
+  "actual_native_or_HLS_or_MAC": false,
+  "QP_global_drain_or_unpin": false,
+  "hardware_verified": false,
+  "overall_goal_complete": false,
+  "compilation": {
+    "exit": 0,
+    "seconds": 0.019211685983464122
+  },
+  "error_type": "ValueError",
+  "error": "actual abort controller failed:33",
+  "artifact_sha256": {
+    "rdma/rnic/build/write-abort-control-tywygcf_/31.log": "57d5e00e2db84d88c8b206522532eb78501afd8d54c658e8e7515c242df1c9ed",
+    "rdma/rnic/build/write-abort-control-tywygcf_/23.log": "52408fc5e25e55c0c8bdd6f60f52cf2ffc9547f95a9f98d6a3f1d0b98bf4ad40",
+    "rdma/rnic/build/write-abort-control-tywygcf_/26.log": "9636b2dbfafbc6d964f37be9c9bdc8a577717050eaa3a5014c147bc13b373416",
+    "rdma/rnic/build/write-abort-control-tywygcf_/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/write-abort-control-tywygcf_/4.log": "b83173be561c81b13164c0f0a591df76f7ee3f424fd113933c1b057e6f2b7050",
+    "rdma/rnic/build/write-abort-control-tywygcf_/24.log": "1bb83cca57daa56bcf7bb5400582336004f38304e6ff9cc73a54b3f7bc495550",
+    "rdma/rnic/build/write-abort-control-tywygcf_/29.log": "6d3fa07a2546b7c5aa7e4784302dfefc31516da0099e1fe9649338a56e21e6b3",
+    "rdma/rnic/build/write-abort-control-tywygcf_/1.log": "dcc3fa81239a7b0bec4f29fff21e26aab8f12988ea87adc8a5fc5a1ae4c9fdcd",
+    "rdma/rnic/build/write-abort-control-tywygcf_/22.log": "7320c4bf06f7644b5267f40f84a4acc35cf5d2aeddbc2761a1d2a12f3486bed9",
+    "rdma/rnic/build/write-abort-control-tywygcf_/2.log": "9f49ad3dc03675a6f6fc14f47c04c70b306aeda8befb1e0badca5823ad0beb48",
+    "rdma/rnic/build/write-abort-control-tywygcf_/25.log": "f036aadb5810c57a68a833fa7918eab4e2e573c7739a8101e7ae458b85c98ad0",
+    "rdma/rnic/build/write-abort-control-tywygcf_/3.log": "789be000c1c8e1ee641e95057a2b4de19e5db8ea50e284ed094ef3e4d4b8669b",
+    "rdma/rnic/build/write-abort-control-tywygcf_/0.log": "74761e6127e81c41944e36887ddad8aff0dc10e01dbf10bdc9399ed7d3403fc7",
+    "rdma/rnic/build/write-abort-control-tywygcf_/32.log": "1f327ba1db71a4851579be905329685df75327ccecbcc0a39212369516034141",
+    "rdma/rnic/build/write-abort-control-tywygcf_/21.log": "afc1f4be577e9cd5caabd99729ee60b89feb00068b27201ec1a6690734c48620",
+    "rdma/rnic/build/write-abort-control-tywygcf_/tb.v": "01eadd5d7dffaf285a417951adcd2470f32f6ff2380c3a1e7af6bc99c4ac7b6a",
+    "rdma/rnic/build/write-abort-control-tywygcf_/28.log": "7d358e851732ca75db2a09cddea4bf1978b491c87c0fc65ab471208cdaea1100",
+    "rdma/rnic/build/write-abort-control-tywygcf_/33.log": "3adf6142f98b97a711f4d3b4a3cf3cb320d923d7f2bbb8707202789f1ca378e4",
+    "rdma/rnic/build/write-abort-control-tywygcf_/30.log": "2d71af8e8c334dda9a387de635141472f452585d0b11c9cc588ccfa3f6b559a1",
+    "rdma/rnic/build/write-abort-control-tywygcf_/20.log": "c1d8d212a10821ca92a2875f132645f70e2bed1262d3786494bf4ed9a85e1fb1",
+    "rdma/rnic/build/write-abort-control-tywygcf_/27.log": "9a37262a3f662f743d04053a2d4852b36b336895794967ea4a0d4a4c70e473f4",
+    "rdma/rnic/build/write-abort-control-tywygcf_/rocev2_write_abort_control.v": "6105710b9cf1ebd32ea9118f36b044cb61532f0b74ce549fa095fd3fef17bf15"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-write-abort-control-81f2ko08/test": "b77e58e3e45ba2b54efd1a27763de5a9ca23f9f2b5534d178fa51f47c032b81e"
+  }
+}

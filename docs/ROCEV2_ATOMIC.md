@@ -5,6 +5,42 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+Publication update (progress173–175 plus unfinished176): the new native40
+fixture has passed its [1449-binding preflight](../results/2026-10-18/rocev2-rnic-write-fatal-native-fixture-diagnostics-001.json),
+retaining all38 old cases, but the fresh binary and packet tests have NOT been
+built/run. New abort HLS generation and native source elaboration passed;
+estimated15.571ns still FAILS4ns. Old native38/CQ105 remain the latest completed
+integrated regressions. No new Atomic advertisement, hardware/default/driver
+change, error CQ/STOP/global drain or safe unpin qualification is claimed.
+No builds are live. Older unpublished/live notes below are checkpoint history.
+
+Local175: SAME HLS50411 finished1577.657s,208 generated files; actual new960/992
+ports and single parser/checkpoint/ACK/MSN/state pass audit2303. Full new native
+fatal61/62/abort/cancel source graph elaborates462RTL/8data/123.334s, not native
+packet runtime. [Source audit1743](../results/2026-10-18/rocev2-rnic-write-fatal-native-source-diagnostics-001.json).
+Same tested frontend47/merged control81 pass; old46 control outcomes identical.
+Old native38 (including Atomic) were NOT rerun on this new graph. Original
+4ns/default1.08ns still FAIL15.571ns; no Atomic advertisement/error CQ/STOP/
+global drain/unpin/physical qualification. All jobs terminal; no hardware/
+default/Git change. Both zero global drains/IB_ATOMIC_NONE/all11 remain.
+
+Local progress174 adds a separate selected-WRITE abort RTL consumer66 PASS,
+[audit586](../results/2026-10-18/rocev2-rnic-write-abort-control-diagnostics-001.json).
+Native/HLS/MAC/quarantine/report producers are modeled; it is not native
+coupling, Atomic qualification or a QP/global drain/unpin/STOP/error CQ.
+SAME new HLS50411 is still LIVE; prior CPP140/legacy service/native38/CQ105
+retain their exact separate scopes. No advertisement/default/hardware/Git
+change; original timing, both zero global drains and all11 remain.
+
+Local progress173 after8017904: all140 actual HLS C++ modes PASS and every105
+old outcome/oracle stays identical; real old owned Atomic/Immediate RTL service
+compatibility passes28.638s compile/1.114s runtime. [Consumer audit2307](../results/2026-10-18/rocev2-rnic-write-abort-hls-diagnostics-001.json).
+New960/992 selected-WRITE abort synthesis is LIVE, not generated/native/QP/
+global drain/unpin/physical/timing proof. Both original global drains stay0,
+IB_ATOMIC_NONE/defaults/all11 unchanged. Native38/CQ105 were not reexecuted
+against this new core. Earlier failed/no-live/publication notes are history.
+No hardware/install/load/default/Git action in this local development turn.
+
 Publication update (2026-10-21): this explicit user-requested checkpoint adds
 progress170–172 and unfinished173, preserving successful AND failed evidence.
 Native38/CQ105 remain the latest completed regressions. The separate typed

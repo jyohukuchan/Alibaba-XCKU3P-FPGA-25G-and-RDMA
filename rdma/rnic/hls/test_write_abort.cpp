@@ -15,11 +15,18 @@ template<int I> static as02WriteOwner abort_write(ReceiveEndpoint<I>& e,unsigned
     auto b=write_packet(false,total,off,psn,0);put_be(b,5,3,q);
     e.h.write_owners.write(w);e.input(b,b.size()+12);e.h.dest.write(196);e.steps(240);e.clean();
     assert(!e.h.write_abort_fault && e.h.destination_cmd.size()==1);auto c=e.h.destination_cmd.read();
-    assert(c.len==((std::min(4096U,total-off)+3)&~3U));
+    const unsigned payload=std::min(4096U,total-off),stored=(payload+3)&~3U;
+    assert(c.len==stored && c.addr==((WRITE_VA+off)&0xffffffffffffULL) && c.host && c.pid==q);
     unsigned bytes=0;bool last=false;
     while(!e.h.memory.empty()) {auto x=e.h.memory.read();assert(!last);last=x.last;
-        for(unsigned j=0;j<64;j++)if(x.keep[j])assert(x.data(j*8+7,j*8)==write_byte(off+bytes++));}
-    assert(last && bytes==std::min(4096U,total-off));e.packet(false);assert(e.h.length.read()==20);
+        for(unsigned j=0;j<64;j++)if(x.keep[j]) {
+            assert(x.data(j*8+7,j*8)==(bytes<payload ? write_byte(off+bytes):0));bytes++;
+        }}
+    assert(last && bytes==stored);
+    auto ack=e.packet(false);std::vector<unsigned char> expected(16,0);
+    expected[0]=17;expected[1]=0x40;put_be(expected,2,2,0xffff);put_be(expected,5,3,196);
+    put_be(expected,9,3,psn);put_be(expected,13,3,msn);
+    assert(ack==expected && e.h.length.read()==20);
     take_write_receipt(e.h,w,msn);return w;
 }
 template<int I> static void abort_no_grants(ReceiveEndpoint<I>& e) {

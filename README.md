@@ -28,6 +28,57 @@ inbound SEND/WRITE target, READ responder, native InfiniBand or production-relia
 
 ### RNIC development snapshot (2026-10-21)
 
+Publication update: this user-requested snapshot includes progress173–175 and
+the unfinished progress176 native40 test fixture, with successful AND failed
+reports. WRITE-abort C++140, controller66, merged control81, frontend47 and
+new native hierarchy elaboration pass in their respective scopes. Actual new
+HLS generation is complete, but its estimated15.571ns FAILS the original4ns
+target. [Native40 fixture preflight](results/2026-10-18/rocev2-rnic-write-fatal-native-fixture-diagnostics-001.json)
+passes1449 evidence bindings and preserves all38 original case inputs/checks;
+the new binary and its40 packet tests have NOT been built/run. Native38/CQ105
+on the prior core remain the latest completed integrated regressions. Standard
+error CQ, full QP stop/recovery and safe reference release remain unfinished.
+No build is running; no FPGA/driver/default changes accompany publication.
+Earlier local/unpushed/live-build statements below are checkpoint history.
+`scripts/check.sh` still has its recorded historical TX-padding source-hash
+mismatch; this snapshot does not claim an all-green suite or hardware release.
+
+Local progress175 completes actual abort HLS generation208 files (1577.657s,
+127951 LUT/169686 FF/306 BRAM18K/0 DSP), with [2303-binding port/domain audit](results/2026-10-18/rocev2-rnic-write-abort-generated-diagnostics-001.json).
+Estimated15.571ns still FAILS original4ns/default1.08ns. New native fatal61/62
+classification/quarantine/HLS-abort/real-cancel wiring elaborates against the
+ENTIRE new core (462RTL/8data,123.334s). Same tested real ICRC/MR frontend47
+and ONE PSN/fatal serial controller81 pass; [source audit1743](results/2026-10-18/rocev2-rnic-write-fatal-native-source-diagnostics-001.json).
+This is NOT fresh native packet execution: all38 old cases plus genuine fatal
+scenarios still need running. Selected1000 is not standard error CQ/STOP/QP
+or global drain/unpin; fatal63/full lifetime/recovery/all11 remain. All jobs
+are terminal, not blocked. No hardware/default/Git action; older live notes
+below describe checkpoint times, not a physical/timing-qualified release.
+
+Local progress174 adds a separate selected-WRITE abort RTL controller:
+66 four-state cases PASS, including independent full960/1000 owners,
+withheld positive commit/ACK retirement/fatal wire/HLS/cancel/local-report
+proofs and retained quarantine. [586-binding audit](results/2026-10-18/rocev2-rnic-write-abort-control-diagnostics-001.json).
+It is NOT YET wired into native; all upstream native/HLS/MAC/quarantine
+producers are models. It never grants QP/global drain, STOP, error CQ or unpin.
+The SAME new HLS synthesis50411 remains LIVE, not stopped/restarted or
+generation-qualified. Native38/CQ105/CPP140 retain their separate scopes.
+No hardware/default/Git changes; earlier checkpoint notes below are history.
+
+Local progress173 after publication8017904 fixes the unfinished WRITE-abort
+helper ordering and the new test's padded-tail oracle (now checks payload
+AND every zero-pad byte). All140 actual C++ modes PASS, with every105 old
+summary/independent oracle identical; unchanged real Atomic/Immediate service
+compatibility also PASS. [2307-binding audit](results/2026-10-18/rocev2-rnic-write-abort-hls-diagnostics-001.json).
+The960-bit selected-WRITE abort/992-bit receipt uses actual retirement and
+same PSN/MSN tables before selected-state clear/verify. Privileged native/
+MAC/fence/management inputs remain models; it is NOT native fatal-QP recovery,
+a QP/global DMA drain or permission to unpin. New HLS generation is LIVE,
+not qualified yet. Native38/CQ105 remain the latest completed native/software
+regressions, not rerun for this new core. Original timing/all11 remain.
+No hardware/default/install/load/reboot/Git action this development turn.
+Earlier failed/unpushed/live notes below describe their checkpoint times.
+
 Publication update: this user-requested checkpoint adds progress170–172 and
 the unfinished progress173 WRITE-abort source, including successful AND failed
 reports. Native38 and standard C CQ105 are the latest completed regressions;

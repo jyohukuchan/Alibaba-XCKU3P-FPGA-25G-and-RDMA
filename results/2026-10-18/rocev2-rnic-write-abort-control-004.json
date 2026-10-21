@@ -1,0 +1,1051 @@
+{
+  "scope": "Selected-WRITE abort RTL consumer; native/HLS/MAC/quarantine inputs modeled.\n\nFour-state4ns/10s/100000-cycle checks. Not integrated native/error CQ/STOP/\nQP-global drain/unpin/physical proof. Full proofs and quarantine must stay.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/write-abort-control-bde3om8f",
+  "source_sha256": {
+    "rdma/rnic/tests/probe_write_abort_control.py": "ac360a2a62fda1a310de27a5c80c9500bd5bcd2e53e40534274d67abef4b352b",
+    "rdma/rnic/rtl/rocev2_write_abort_control.v": "b705489dbdfc5bbc96787cac952ff501abb2b6bde63e20f43d614349448d8de0",
+    "rdma/rnic/fpga/derive_segmented_write_native.py": "1e5fe9ee14e6b2108836133a91220ef0f250c1fa79db154e9d357c2ba3660b53"
+  },
+  "tests": {
+    "0": {
+      "exit": 0,
+      "seconds": 0.017197835026308894,
+      "summary": {
+        "pass_test": true,
+        "mode": 0,
+        "fault": 0,
+        "cycles": 214,
+        "requests": 1,
+        "completions": 1,
+        "quarantine": 4
+      },
+      "independent_oracles": {
+        "owner960": "000f6001000000062ffffffffffffa123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001fedcba987654321181234567e23456789abcdef000002001fffffe0000000000001000fffffe0001",
+        "selected_receipt1000": "0700000000000f6001000000062ffffffffffffa123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001fedcba987654321181234567e23456789abcdef000002001fffffe0000000000001000fffffe0001",
+        "not_QP_global_or_unpin": true
+      }
+    },
+    "1": {
+      "exit": 0,
+      "seconds": 0.01620827295118943,
+      "summary": {
+        "pass_test": true,
+        "mode": 1,
+        "fault": 0,
+        "cycles": 217,
+        "requests": 1,
+        "completions": 1,
+        "quarantine": 4
+      },
+      "independent_oracles": {
+        "owner960": "000f6002000000061000000000000a123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001fedcba987654321181234567e23456789abcdef000002001fffffe0000100000001000ffffff0002",
+        "selected_receipt1000": "0700000000000f6002000000061000000000000a123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001fedcba987654321181234567e23456789abcdef000002001fffffe0000100000001000ffffff0002",
+        "not_QP_global_or_unpin": true
+      }
+    },
+    "2": {
+      "exit": 0,
+      "seconds": 0.0154311090009287,
+      "summary": {
+        "pass_test": true,
+        "mode": 2,
+        "fault": 0,
+        "cycles": 173,
+        "requests": 1,
+        "completions": 1,
+        "quarantine": 4
+      },
+      "independent_oracles": {
+        "owner960": "00000000000000063fffffefffffea123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef912345670000000100110000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "selected_receipt1000": "070000000000000000000000063fffffefffffea123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef912345670000000100110000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "not_QP_global_or_unpin": true
+      }
+    },
+    "3": {
+      "exit": 0,
+      "seconds": 0.01633692701580003,
+      "summary": {
+        "pass_test": true,
+        "mode": 3,
+        "fault": 0,
+        "cycles": 179,
+        "requests": 1,
+        "completions": 1,
+        "quarantine": 4
+      },
+      "independent_oracles": {
+        "owner960": "00000000000001062000000000000a123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef912345670000000100110000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "selected_receipt1000": "070000000100000000000001062000000000000a123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef912345670000000100110000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "not_QP_global_or_unpin": true
+      }
+    },
+    "4": {
+      "exit": 0,
+      "seconds": 0.016188926005270332,
+      "summary": {
+        "pass_test": true,
+        "mode": 4,
+        "fault": 0,
+        "cycles": 220,
+        "requests": 1,
+        "completions": 1,
+        "quarantine": 4
+      },
+      "independent_oracles": {
+        "owner960": "000f6002000000062ffffffffffffa123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001fedcba987654321181234567e23456789abcdef000002001fffffe0000000000001000fffffe0001",
+        "selected_receipt1000": "0700000000000f6002000000062ffffffffffffa123456700000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001fedcba987654321181234567e23456789abcdef000002001fffffe0000000000001000fffffe0001",
+        "not_QP_global_or_unpin": true
+      }
+    },
+    "20": {
+      "exit": 0,
+      "seconds": 0.014421920001041144,
+      "summary": {
+        "pass_test": true,
+        "mode": 20,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "21": {
+      "exit": 0,
+      "seconds": 0.01437261002138257,
+      "summary": {
+        "pass_test": true,
+        "mode": 21,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "22": {
+      "exit": 0,
+      "seconds": 0.014132343989331275,
+      "summary": {
+        "pass_test": true,
+        "mode": 22,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "23": {
+      "exit": 0,
+      "seconds": 0.014389651943929493,
+      "summary": {
+        "pass_test": true,
+        "mode": 23,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "24": {
+      "exit": 0,
+      "seconds": 0.015040047990623862,
+      "summary": {
+        "pass_test": true,
+        "mode": 24,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "25": {
+      "exit": 0,
+      "seconds": 0.014460404985584319,
+      "summary": {
+        "pass_test": true,
+        "mode": 25,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "26": {
+      "exit": 0,
+      "seconds": 0.014461103011853993,
+      "summary": {
+        "pass_test": true,
+        "mode": 26,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "27": {
+      "exit": 0,
+      "seconds": 0.01412947999779135,
+      "summary": {
+        "pass_test": true,
+        "mode": 27,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "28": {
+      "exit": 0,
+      "seconds": 0.014203304948750883,
+      "summary": {
+        "pass_test": true,
+        "mode": 28,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "29": {
+      "exit": 0,
+      "seconds": 0.01421720499638468,
+      "summary": {
+        "pass_test": true,
+        "mode": 29,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "30": {
+      "exit": 0,
+      "seconds": 0.015056181000545621,
+      "summary": {
+        "pass_test": true,
+        "mode": 30,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "31": {
+      "exit": 0,
+      "seconds": 0.014656319981440902,
+      "summary": {
+        "pass_test": true,
+        "mode": 31,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "32": {
+      "exit": 0,
+      "seconds": 0.014412280987016857,
+      "summary": {
+        "pass_test": true,
+        "mode": 32,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "33": {
+      "exit": 0,
+      "seconds": 0.014557070040609688,
+      "summary": {
+        "pass_test": true,
+        "mode": 33,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "34": {
+      "exit": 0,
+      "seconds": 0.014582982985302806,
+      "summary": {
+        "pass_test": true,
+        "mode": 34,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "35": {
+      "exit": 0,
+      "seconds": 0.014784205995965749,
+      "summary": {
+        "pass_test": true,
+        "mode": 35,
+        "fault": 1,
+        "cycles": 10,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "36": {
+      "exit": 0,
+      "seconds": 0.014331890037283301,
+      "summary": {
+        "pass_test": true,
+        "mode": 36,
+        "fault": 1,
+        "cycles": 10,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "37": {
+      "exit": 0,
+      "seconds": 0.014263651974033564,
+      "summary": {
+        "pass_test": true,
+        "mode": 37,
+        "fault": 1,
+        "cycles": 10,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "38": {
+      "exit": 0,
+      "seconds": 0.01422914897557348,
+      "summary": {
+        "pass_test": true,
+        "mode": 38,
+        "fault": 1,
+        "cycles": 9,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "39": {
+      "exit": 0,
+      "seconds": 0.014156859018839896,
+      "summary": {
+        "pass_test": true,
+        "mode": 39,
+        "fault": 1,
+        "cycles": 10,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "40": {
+      "exit": 0,
+      "seconds": 0.014166986977215856,
+      "summary": {
+        "pass_test": true,
+        "mode": 40,
+        "fault": 1,
+        "cycles": 11,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "41": {
+      "exit": 0,
+      "seconds": 0.014953997975680977,
+      "summary": {
+        "pass_test": true,
+        "mode": 41,
+        "fault": 1,
+        "cycles": 11,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "50": {
+      "exit": 0,
+      "seconds": 0.014275594963692129,
+      "summary": {
+        "pass_test": true,
+        "mode": 50,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "51": {
+      "exit": 0,
+      "seconds": 0.014174179988913238,
+      "summary": {
+        "pass_test": true,
+        "mode": 51,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "52": {
+      "exit": 0,
+      "seconds": 0.014264558965805918,
+      "summary": {
+        "pass_test": true,
+        "mode": 52,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "53": {
+      "exit": 0,
+      "seconds": 0.014418707054574043,
+      "summary": {
+        "pass_test": true,
+        "mode": 53,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "54": {
+      "exit": 0,
+      "seconds": 0.014215178962331265,
+      "summary": {
+        "pass_test": true,
+        "mode": 54,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "55": {
+      "exit": 0,
+      "seconds": 0.01434851298108697,
+      "summary": {
+        "pass_test": true,
+        "mode": 55,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "56": {
+      "exit": 0,
+      "seconds": 0.014820036012679338,
+      "summary": {
+        "pass_test": true,
+        "mode": 56,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "57": {
+      "exit": 0,
+      "seconds": 0.01424660999327898,
+      "summary": {
+        "pass_test": true,
+        "mode": 57,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "58": {
+      "exit": 0,
+      "seconds": 0.014701160020194948,
+      "summary": {
+        "pass_test": true,
+        "mode": 58,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "59": {
+      "exit": 0,
+      "seconds": 0.014345998992212117,
+      "summary": {
+        "pass_test": true,
+        "mode": 59,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "60": {
+      "exit": 0,
+      "seconds": 0.01419359800638631,
+      "summary": {
+        "pass_test": true,
+        "mode": 60,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "61": {
+      "exit": 0,
+      "seconds": 0.014014794025570154,
+      "summary": {
+        "pass_test": true,
+        "mode": 61,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "62": {
+      "exit": 0,
+      "seconds": 0.014221815043129027,
+      "summary": {
+        "pass_test": true,
+        "mode": 62,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "63": {
+      "exit": 0,
+      "seconds": 0.014297596004325897,
+      "summary": {
+        "pass_test": true,
+        "mode": 63,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "64": {
+      "exit": 0,
+      "seconds": 0.014145613997243345,
+      "summary": {
+        "pass_test": true,
+        "mode": 64,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "65": {
+      "exit": 0,
+      "seconds": 0.014278528979048133,
+      "summary": {
+        "pass_test": true,
+        "mode": 65,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "66": {
+      "exit": 0,
+      "seconds": 0.014165938016958535,
+      "summary": {
+        "pass_test": true,
+        "mode": 66,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "67": {
+      "exit": 0,
+      "seconds": 0.01467559696175158,
+      "summary": {
+        "pass_test": true,
+        "mode": 67,
+        "fault": 1,
+        "cycles": 10,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "68": {
+      "exit": 0,
+      "seconds": 0.014219439995940775,
+      "summary": {
+        "pass_test": true,
+        "mode": 68,
+        "fault": 1,
+        "cycles": 11,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "69": {
+      "exit": 0,
+      "seconds": 0.014238158008083701,
+      "summary": {
+        "pass_test": true,
+        "mode": 69,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 1,
+        "completions": 0,
+        "quarantine": 4
+      }
+    },
+    "70": {
+      "exit": 0,
+      "seconds": 0.014333566010463983,
+      "summary": {
+        "pass_test": true,
+        "mode": 70,
+        "fault": 1,
+        "cycles": 30,
+        "requests": 1,
+        "completions": 0,
+        "quarantine": 4
+      }
+    },
+    "71": {
+      "exit": 0,
+      "seconds": 0.014744184969458729,
+      "summary": {
+        "pass_test": true,
+        "mode": 71,
+        "fault": 1,
+        "cycles": 85,
+        "requests": 1,
+        "completions": 0,
+        "quarantine": 4
+      }
+    },
+    "72": {
+      "exit": 0,
+      "seconds": 0.014726163994055241,
+      "summary": {
+        "pass_test": true,
+        "mode": 72,
+        "fault": 1,
+        "cycles": 85,
+        "requests": 1,
+        "completions": 0,
+        "quarantine": 4
+      }
+    },
+    "73": {
+      "exit": 0,
+      "seconds": 0.014752007031347603,
+      "summary": {
+        "pass_test": true,
+        "mode": 73,
+        "fault": 1,
+        "cycles": 85,
+        "requests": 1,
+        "completions": 0,
+        "quarantine": 4
+      }
+    },
+    "74": {
+      "exit": 0,
+      "seconds": 0.015395069029182196,
+      "summary": {
+        "pass_test": true,
+        "mode": 74,
+        "fault": 1,
+        "cycles": 85,
+        "requests": 1,
+        "completions": 0,
+        "quarantine": 4
+      }
+    },
+    "75": {
+      "exit": 0,
+      "seconds": 0.014535207999870181,
+      "summary": {
+        "pass_test": true,
+        "mode": 75,
+        "fault": 1,
+        "cycles": 30,
+        "requests": 1,
+        "completions": 0,
+        "quarantine": 4
+      }
+    },
+    "76": {
+      "exit": 0,
+      "seconds": 0.015389480977319181,
+      "summary": {
+        "pass_test": true,
+        "mode": 76,
+        "fault": 1,
+        "cycles": 103,
+        "requests": 1,
+        "completions": 0,
+        "quarantine": 4
+      }
+    },
+    "77": {
+      "exit": 0,
+      "seconds": 0.014996254991274327,
+      "summary": {
+        "pass_test": true,
+        "mode": 77,
+        "fault": 1,
+        "cycles": 104,
+        "requests": 1,
+        "completions": 0,
+        "quarantine": 4
+      }
+    },
+    "78": {
+      "exit": 0,
+      "seconds": 0.014980748994275928,
+      "summary": {
+        "pass_test": true,
+        "mode": 78,
+        "fault": 1,
+        "cycles": 104,
+        "requests": 1,
+        "completions": 0,
+        "quarantine": 4
+      }
+    },
+    "79": {
+      "exit": 0,
+      "seconds": 0.01467049797065556,
+      "summary": {
+        "pass_test": true,
+        "mode": 79,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 1,
+        "completions": 0,
+        "quarantine": 4
+      }
+    },
+    "80": {
+      "exit": 0,
+      "seconds": 0.01442394603509456,
+      "summary": {
+        "pass_test": true,
+        "mode": 80,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 1,
+        "completions": 0,
+        "quarantine": 4
+      }
+    },
+    "81": {
+      "exit": 0,
+      "seconds": 0.014440778002608567,
+      "summary": {
+        "pass_test": true,
+        "mode": 81,
+        "fault": 1,
+        "cycles": 30,
+        "requests": 1,
+        "completions": 0,
+        "quarantine": 4
+      }
+    },
+    "82": {
+      "exit": 0,
+      "seconds": 0.01437945500947535,
+      "summary": {
+        "pass_test": true,
+        "mode": 82,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 1,
+        "completions": 0,
+        "quarantine": 4
+      }
+    },
+    "83": {
+      "exit": 0,
+      "seconds": 0.015318867983296514,
+      "summary": {
+        "pass_test": true,
+        "mode": 83,
+        "fault": 1,
+        "cycles": 103,
+        "requests": 1,
+        "completions": 0,
+        "quarantine": 4
+      }
+    },
+    "84": {
+      "exit": 0,
+      "seconds": 0.016240819997619838,
+      "summary": {
+        "pass_test": true,
+        "mode": 84,
+        "fault": 1,
+        "cycles": 222,
+        "requests": 1,
+        "completions": 1,
+        "quarantine": 4
+      }
+    },
+    "85": {
+      "exit": 0,
+      "seconds": 0.01584689598530531,
+      "summary": {
+        "pass_test": true,
+        "mode": 85,
+        "fault": 1,
+        "cycles": 223,
+        "requests": 1,
+        "completions": 1,
+        "quarantine": 4
+      }
+    },
+    "86": {
+      "exit": 0,
+      "seconds": 0.014414725999813527,
+      "summary": {
+        "pass_test": true,
+        "mode": 86,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 1,
+        "completions": 0,
+        "quarantine": 4
+      }
+    },
+    "87": {
+      "exit": 0,
+      "seconds": 0.01487570203607902,
+      "summary": {
+        "pass_test": true,
+        "mode": 87,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    },
+    "88": {
+      "exit": 0,
+      "seconds": 0.014674687990918756,
+      "summary": {
+        "pass_test": true,
+        "mode": 88,
+        "fault": 1,
+        "cycles": 12,
+        "requests": 0,
+        "completions": 0,
+        "quarantine": 0
+      }
+    }
+  },
+  "planned_modes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88
+  ],
+  "clock_ns": 4,
+  "runtime_limit_seconds": 10,
+  "compile_limit_seconds": 10,
+  "cycle_limit": 100000,
+  "producer_boundaries_modeled": true,
+  "actual_native_or_HLS_or_MAC": false,
+  "QP_global_drain_or_unpin": false,
+  "hardware_verified": false,
+  "overall_goal_complete": false,
+  "compilation": {
+    "exit": 0,
+    "seconds": 0.019420647993683815
+  },
+  "source_unchanged": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/write-abort-control-bde3om8f/31.log": "3e1774c216df96ac45e5fbf5a4ae4a046850b8ae4ceea72cd4d3aeeb47c5d90c",
+    "rdma/rnic/build/write-abort-control-bde3om8f/34.log": "33f084b37f807f0e6e1be19850e7082066f92c4628cefbdf1aa7fa49354d0c31",
+    "rdma/rnic/build/write-abort-control-bde3om8f/37.log": "22ad4a9873592da8665ce5e68702014df38ea34ab575ef6a659e0e7b7a27d11b",
+    "rdma/rnic/build/write-abort-control-bde3om8f/23.log": "3e389afc63e4d17283ba32c85b9bd7c690c94d2d84c7e35e333eec7eef350a89",
+    "rdma/rnic/build/write-abort-control-bde3om8f/40.log": "6be03084eda368656a1c24de11734611fe62d8d15f592aa960d2be9bba1313c9",
+    "rdma/rnic/build/write-abort-control-bde3om8f/76.log": "084fb70bb15e8c3b901f7fecb33aee1ae14afd971a52a56997b79f20db2612c7",
+    "rdma/rnic/build/write-abort-control-bde3om8f/26.log": "2c8d51327b67efe69db819edb4a65b084d0b3c3989ed61efa7f1db01b5de0f01",
+    "rdma/rnic/build/write-abort-control-bde3om8f/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/write-abort-control-bde3om8f/38.log": "bbe48de9c6f5945a6ceca3fa7eeddac9ccec4e7d2480990318f91a9ae1099817",
+    "rdma/rnic/build/write-abort-control-bde3om8f/69.log": "f4d45d293b85ea992478a902900f79030ec548ba0403a57c6cef15fcd57ba441",
+    "rdma/rnic/build/write-abort-control-bde3om8f/71.log": "b3b00f75788eea59b5dcc4ef3e60bf553fa8d757d350a73ec716f71664b44c6e",
+    "rdma/rnic/build/write-abort-control-bde3om8f/4.log": "33e73a959ace5110da6c0b2caec8c8d386b5763fb7f83384e08a97fd19591598",
+    "rdma/rnic/build/write-abort-control-bde3om8f/58.log": "1165aa27435f96d668b07df6b5a230930c162717b58022c8993d6c5539776701",
+    "rdma/rnic/build/write-abort-control-bde3om8f/77.log": "adedd5d404f872a07e271d97b3c022a17f9216f6ada84f11bbd977e683e543c6",
+    "rdma/rnic/build/write-abort-control-bde3om8f/24.log": "d8bb4795202fb47aa8ad1005c599dc4d1d1fe839d2342d76fc8285b9322c7715",
+    "rdma/rnic/build/write-abort-control-bde3om8f/67.log": "8301e7a6e9dcdd0772776a2b47f6421bb760837d0fa314c85c3d70e272326532",
+    "rdma/rnic/build/write-abort-control-bde3om8f/78.log": "ca3711e09b4181ff25d0cdc906f05f5d75dfeb59641e8a342fe7d34239c562a0",
+    "rdma/rnic/build/write-abort-control-bde3om8f/29.log": "70e2f2b3139ee54563fc22e0f8864f5ed088d96fbe99688db65ba9f94e1b7cd4",
+    "rdma/rnic/build/write-abort-control-bde3om8f/72.log": "77d5dc7336a737b71a5a58837fb175cc8bacaf0eba34f1af7c5002600b773823",
+    "rdma/rnic/build/write-abort-control-bde3om8f/59.log": "62bf6d6243a0b3302b250c70d28b5bb7bb8502e0418d451101138eb4e50e888b",
+    "rdma/rnic/build/write-abort-control-bde3om8f/1.log": "e2486c987cd78210bb748a61af13611b927b333f2b20a88bb43a810f3709493f",
+    "rdma/rnic/build/write-abort-control-bde3om8f/22.log": "e8f2782f0beddc0a8f53484861fddddf9d253c32ce40322f4d0e9507cf2479be",
+    "rdma/rnic/build/write-abort-control-bde3om8f/75.log": "04f1416408556011e380df88fb10a3495d45eff7b781c3eb2c4868fc6bf1ce28",
+    "rdma/rnic/build/write-abort-control-bde3om8f/81.log": "6573f2d025bf3a223c9748e149f731a2475e20ab1550b683b543533c02174b64",
+    "rdma/rnic/build/write-abort-control-bde3om8f/56.log": "a466e90a7482caad9676d3eccc79a1776d3050cc26177fef8e1e71ecf9935959",
+    "rdma/rnic/build/write-abort-control-bde3om8f/63.log": "9959eeb569fb113715188c2d1b590d01fbbd26e88036c1e7f78722e87e16e83d",
+    "rdma/rnic/build/write-abort-control-bde3om8f/2.log": "17f77dcdaa90b515c373739f79f4f6daddab7adcb4ed22c2a0f90fe46affd8d9",
+    "rdma/rnic/build/write-abort-control-bde3om8f/82.log": "15dc1f2728836d950ff97da2319f0650c4c6cc598b9f78a93fd80e0c77eeeed6",
+    "rdma/rnic/build/write-abort-control-bde3om8f/51.log": "4bf863a9c033324cfa8d9c4c3f1cc2e7381de2ea2daae912887e4b41335108f1",
+    "rdma/rnic/build/write-abort-control-bde3om8f/53.log": "66c380b61c3bbe5cdb844202e7ed0edcdbcf640a999720e31e1bbaa388ff9181",
+    "rdma/rnic/build/write-abort-control-bde3om8f/86.log": "3165bc898535b3a980df3b3c63f32343017d55f3df486a0a6943f76f120813da",
+    "rdma/rnic/build/write-abort-control-bde3om8f/52.log": "3f3632c11d6631957c9ce2e10804b4a3df5d3ee6b0ac632f9ed49b4942fc0818",
+    "rdma/rnic/build/write-abort-control-bde3om8f/80.log": "054dc0f2f94ca4faccc7243636a05f1a7b1ac3820e05ed701b03ea4c812e4bc3",
+    "rdma/rnic/build/write-abort-control-bde3om8f/64.log": "554834c8a07eb1037d1a397d5c24129f6e78d625af20dbe9192d51a9c9936eb8",
+    "rdma/rnic/build/write-abort-control-bde3om8f/35.log": "3540dfd4b8140446b776213c3a92a1fc76497c15505a8f55873a853955e6e33d",
+    "rdma/rnic/build/write-abort-control-bde3om8f/62.log": "c07a8badb02f0f61d29e0958bfac284c3e1697092e007ea2c8eb66fab6249df2",
+    "rdma/rnic/build/write-abort-control-bde3om8f/54.log": "4d1921ddf93807e5e3c9846ef7eef4bb06c9b531ed12deeb8428a68e5fac6c4c",
+    "rdma/rnic/build/write-abort-control-bde3om8f/39.log": "a02120335aa8d99047289ef093f4074a5e8d098c64956c24ac7fef0a8762b5de",
+    "rdma/rnic/build/write-abort-control-bde3om8f/25.log": "d88df1919d68091012a091674d3541b8f1ba3a1cce5b3e49ccb89d2a90e6431f",
+    "rdma/rnic/build/write-abort-control-bde3om8f/83.log": "1990eddc2d4d69fc84f9552741502dcccc028ffbc467a0ddd155fd7056120d4d",
+    "rdma/rnic/build/write-abort-control-bde3om8f/57.log": "323a5bde854367ebe5b05471fd55c829abf59f6279a2c4895512c3ef8adfaa5e",
+    "rdma/rnic/build/write-abort-control-bde3om8f/3.log": "a9a27311c8ae749ab8b2086ec729d0f41adcaf2387763bc5b9150111430dfb7f",
+    "rdma/rnic/build/write-abort-control-bde3om8f/0.log": "d1d4260b9ccd04c41233a3d44e66c9381219fa4e534a835f5f36cd39fa40a72a",
+    "rdma/rnic/build/write-abort-control-bde3om8f/32.log": "f52c38fb2d87c004a53a60e47ed22b73ea61c359096d48ad0e1d565ace74d33f",
+    "rdma/rnic/build/write-abort-control-bde3om8f/21.log": "af428b7fc1a2c475f10e30642d19e47c6b3979bf8d61e8ceba61d4be29b179d7",
+    "rdma/rnic/build/write-abort-control-bde3om8f/85.log": "17d41f8ff631933643b14946c1884437f8ee9207dd78625a46275ebf3ea72997",
+    "rdma/rnic/build/write-abort-control-bde3om8f/73.log": "04a1287aabd50d87ed9657912d69bd48c00241ea21d0ccb7b3d5b9be0ed11d6b",
+    "rdma/rnic/build/write-abort-control-bde3om8f/66.log": "237c35eb66c4d70b2b08beec36007e82557bf3b75d041509bbc8172c668c92fb",
+    "rdma/rnic/build/write-abort-control-bde3om8f/41.log": "d52f02daeeca64ce6aa510a7eebb0a0fabc5cdc3d911646c90c07a55512acb68",
+    "rdma/rnic/build/write-abort-control-bde3om8f/61.log": "0cb7ea3aec187fd970b33378110811ba89a986462a09add4af8edd06bed146a9",
+    "rdma/rnic/build/write-abort-control-bde3om8f/60.log": "8fb7b3fe8415fb05c30649a6fa1976506101a48fdcaabe0a31632a80076c9737",
+    "rdma/rnic/build/write-abort-control-bde3om8f/tb.v": "01eadd5d7dffaf285a417951adcd2470f32f6ff2380c3a1e7af6bc99c4ac7b6a",
+    "rdma/rnic/build/write-abort-control-bde3om8f/55.log": "0e4721a26a0f903535f92b2b22c40f2ad503a04f7e1dd8b2cec38fee8c0451a0",
+    "rdma/rnic/build/write-abort-control-bde3om8f/28.log": "f706b82e1b6d2514b328f37e2fd69c913f204e06b817abb994bfc1bdc43a4634",
+    "rdma/rnic/build/write-abort-control-bde3om8f/33.log": "1d9b94ea36a8a9dbc98a1d2bffd61dc79272457466f90cd708cb2abef2b2f1cb",
+    "rdma/rnic/build/write-abort-control-bde3om8f/88.log": "25478ac0d96cd5ae468d3ee8465f33531ba1c1e10d8a44bcb3155428ce14959c",
+    "rdma/rnic/build/write-abort-control-bde3om8f/30.log": "890f1c2f89f41b417d4a3a2f55faf2a7e0311e2f46802918da16019fcebc76e3",
+    "rdma/rnic/build/write-abort-control-bde3om8f/50.log": "2e907ba9c155733d0ea70a425b0d6fc901f08bd6112015cd8cb91339c971aee0",
+    "rdma/rnic/build/write-abort-control-bde3om8f/65.log": "de274e14e64a2f386b2777a06b380939001a689c689881fa8dec9320e328a2e8",
+    "rdma/rnic/build/write-abort-control-bde3om8f/20.log": "78b41cba399f9f360e9f12db2301cc4c92d9877c8d8cf28c7d5b63f31ed1283c",
+    "rdma/rnic/build/write-abort-control-bde3om8f/68.log": "6d817b88ac2592b39a8ecc8af169b7fa6428cb4865850b5d82c1f3bff160cc6f",
+    "rdma/rnic/build/write-abort-control-bde3om8f/27.log": "53f25098845687dd9cdeda42d00326b52ca412d530e552ab5e8c06f1517523d0",
+    "rdma/rnic/build/write-abort-control-bde3om8f/rocev2_write_abort_control.v": "b705489dbdfc5bbc96787cac952ff501abb2b6bde63e20f43d614349448d8de0",
+    "rdma/rnic/build/write-abort-control-bde3om8f/70.log": "fb6da488627b1119ce66efb11531e9644384867d7993370184936a056cc22df8",
+    "rdma/rnic/build/write-abort-control-bde3om8f/79.log": "35408b79a252a9b9ea31f686c659a9ea065edf4343d39bacdcd362e948378829",
+    "rdma/rnic/build/write-abort-control-bde3om8f/84.log": "4d5f91fc79023c72bb33cdd36fb997e456a7bef681b0989d868965e9aa88b27b",
+    "rdma/rnic/build/write-abort-control-bde3om8f/36.log": "bb640a427ef0213a6bd6126567c4444625e8b353ef30e7e7dec77ab40fc51ca6",
+    "rdma/rnic/build/write-abort-control-bde3om8f/74.log": "1ca37849c5874fc64b64232dabead3efc5a3efdd59328e1f1084653fed47d8c5",
+    "rdma/rnic/build/write-abort-control-bde3om8f/87.log": "4839f8dcac652c5bd1920f0aa97693757bec5fdfd79e5a1552875a7ce5893954"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-write-abort-control-4xrcu8ui/test": "f5a0a7036fe9c1547a6ee72bc14fdb33f0263f35db60f355214b9bd4e035dd9c"
+  }
+}

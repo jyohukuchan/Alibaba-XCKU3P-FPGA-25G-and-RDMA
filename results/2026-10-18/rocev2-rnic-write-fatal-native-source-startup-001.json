@@ -1,0 +1,13 @@
+{
+  "pass_test": false,
+  "scope": "Source startup only before resource gate/build directory or compilation",
+  "stage": "incorrect local FEATURES import, actual prior checker imports check_immediate_native_elaboration",
+  "error": "ModuleNotFoundError: No module named 'probe_native_rnic_all'",
+  "source_sha256": {
+    "rdma/rnic/tests/check_write_fatal_native.py": "d7f2f5b467f2b6847a034493b6b2c0c38606f9464d2a874fe40808dd00a65852"
+  },
+  "exact_preimage_root": "rdma/rnic/build/write-fatal-native-source-startup-001-preimages-kam9gPbo",
+  "actual_native_compile": false,
+  "native_runtime": false,
+  "hardware_actions": []
+}

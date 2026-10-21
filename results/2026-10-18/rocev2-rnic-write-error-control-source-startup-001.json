@@ -1,0 +1,13 @@
+{
+  "pass_test": false,
+  "scope": "Source derivation startup only, no compile/runtime/HLS/native qualification",
+  "stage": "textual local-ready and local-valid anchors have two exact occurrences, strict once rejected before compile",
+  "error": "source derivation anchor changed: (state==IDLE && !wire_request) || state==REPORT",
+  "source_sha256": {
+    "rdma/rnic/fpga/derive_write_error_control.py": "258058932ad365a965bb07e56f410fb0d1fe3a64b7c6e4403a7773a3bd95baaa"
+  },
+  "exact_preimage_root": "rdma/rnic/build/write-error-control-source-startup-001-preimages-VHBQoVxg",
+  "generated_HLS": false,
+  "native_runtime": false,
+  "hardware_actions": []
+}

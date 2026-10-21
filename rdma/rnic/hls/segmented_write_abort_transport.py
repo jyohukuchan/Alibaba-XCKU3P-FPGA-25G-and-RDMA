@@ -134,7 +134,10 @@ FSM=r'''
 
 def derive():
     out=parent.derive();out[HPP]=once(out[HPP],'struct as02ControlOwner {',TYPES+'\nstruct as02ControlOwner {')
-    out[CPP]=once(out[CPP],'template<int INSTID=0> void as02_native_control_merger(',VALID+'\ntemplate<int INSTID=0> void as02_native_control_merger(')
+    # Non-dependent helpers must be declared before rx_exh_fsm's template
+    # definition, not merely before the later control-merger instantiation.
+    anchor='template <int WIDTH, int INSTID = 0>\nvoid rx_exh_fsm('
+    out[CPP]=once(out[CPP],anchor,VALID+'\n'+anchor)
     for name in [HPP,CPP,TOP]:
         text,n=re.subn(r'(ap_uint<1>& regControlFault,)([ \t]*\\)?\n',
             lambda m:m[1]+(m[2]or'')+'\n    stream<as02WriteAbortOwner>& s_axis_write_abort_owner,'+(m[2]or'')+

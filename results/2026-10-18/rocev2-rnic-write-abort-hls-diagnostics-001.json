@@ -1,0 +1,99 @@
+{
+  "scope": "Actual HLS WRITE-abort consumers, not generated/native/QP/global drain proof.\n\nRequire all105 original results/oracles,35 new actual modes, same selected\nsources/tables/checkpoint/clear, legacy service and immutable failures.\n",
+  "audit_passed": true,
+  "evidence": {
+    "write-abort-hls-003": {
+      "bindings_verified": 468,
+      "report_sha256": "997cb6a72f985f08da2b8d9201fda1bf975c29c4deef556de35219a8b4a07e0f",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-compat-001": {
+      "bindings_verified": 324,
+      "report_sha256": "8c79f054aac14c1f90569f8b5224495f98a90d385fb8c68dc75802b0eed3edf6",
+      "exact_preimage_resolutions": []
+    },
+    "control-response-hls-003": {
+      "bindings_verified": 429,
+      "report_sha256": "a0d9cf6d7bba5ad8ee19f6c25c446db62b1be5978136c2f267f9afc7fefef27c",
+      "exact_preimage_resolutions": []
+    },
+    "control-response-compat-001": {
+      "bindings_verified": 321,
+      "report_sha256": "ee493aa7e79f982f2a7df8c17158504a23279d52dd97ecc80d624fb9668a1ace",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-source-startup-001": {
+      "bindings_verified": 1,
+      "report_sha256": "d3c327b599ee0220ec67f55f49d3289414f8116e69d098827ef92c0ef307f766",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_write_abort_transport.py"
+      ]
+    },
+    "write-abort-hls-001": {
+      "bindings_verified": 327,
+      "report_sha256": "a0e80530c9264cf09bb2afa9472790279d907b433f00bd77d5c52dd96785eadb",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_write_abort_transport.py",
+        "rdma/rnic/hls/test_write_abort.cpp"
+      ]
+    },
+    "write-abort-hls-002": {
+      "bindings_verified": 437,
+      "report_sha256": "d5557e57981a9174d420b6aaab1bed2670fbd07b8c3937e9aabe13730b29110d",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/test_write_abort.cpp"
+      ]
+    }
+  },
+  "verified_bindings": 2307,
+  "actual_CPP_modes": 140,
+  "all105_original_summaries_and_independent_oracles_identical": true,
+  "new_abort_modes": 35,
+  "abort_owner_bits": 960,
+  "abort_receipt_bits": 992,
+  "actual_positive_retirement_checkpoint_and_same_PSN_MSN_tables": true,
+  "selected_partial_WRITE_clear_and_verify": true,
+  "empty_state_distinct_from_positive": true,
+  "per_QP_other_partial_WRITE_preserved": true,
+  "abort_serial_survives_QPI_initialization": true,
+  "compile_seconds": 92.83009197300998,
+  "maximum_case_seconds": 8.870741959020961,
+  "actual_legacy_owned_service_RTL": true,
+  "compatibility_compile_seconds": 28.637622209032997,
+  "compatibility_runtime_seconds": 1.1136231150012463,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_write_abort_hls.py": "0e28cf6e0e52ee4d1ce706e79c128eb90419d1c0583591d7ede9071c0e00458a",
+    "rdma/rnic/hls/segmented_write_abort_transport.py": "e8b657682b186d727244d17cc311b8a5602dd23e810cc5c4faa2a2ff96341d30",
+    "rdma/rnic/hls/test_write_abort.cpp": "1d0dc2f98796dc32f1a9dea87062ff43e4d060ac956013b481a662c440053692",
+    "rdma/rnic/hls/build_native_write_abort.py": "62e191607c893f0e67781f451b85b4f5bc96e78e7391d116dfab9f7e8e2a08ec",
+    "rdma/rnic/tests/probe_write_abort_hls.py": "1489f6ce6459f7a802a57930d3f2083e70edf543495b326496323d45ea155006",
+    "rdma/rnic/tests/probe_write_abort_compat.py": "b30434c49707353661a13bb14a17352cc8ea51d86f2b23062c2f2a9acd197a6d",
+    "rdma/rnic/build/native-write-abort-transport-002/source.json": "3750bc8b00feeab132ebc5a1d91e922d3dd2f3e761c8017809e4f55f8a729b4c"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "inherited_source_check": {
+    "exit": 1,
+    "stdout": "Tcl completeness checks passed: 28 files (not Vivado elaboration).\nLFC source allowlist tests passed: 14 cases; no hardware/Vivado access.\nSource check passed: 122 HDL, 12 constraints, 3 IP generators.\n",
+    "stderr": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v\n",
+    "overall_suite_passed": false
+  },
+  "privileged_native_MAC_fence_management_inputs_modeled": true,
+  "abort_is_QP_or_global_drain": false,
+  "generated_abort_HLS_qualified": false,
+  "native_error_quarantine_cancel_STOP_CQ_integrated": false,
+  "permission_to_unpin": false,
+  "live_Linux_or_physical": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "remaining": [
+    "Actual generated same-core960/992 interface and original4ns/default1.08ns/8QP/2000 gates.",
+    "Native authenticated fatal61/62/63 admission, QP quarantine, real backend/MAC ownership, actual message cancel/STOP/error CQ and all lifetime refs; no global drain substitution.",
+    "All original11/full1MiB native/multiSGE/live registered refs/real-peer recovery/congestion/original timing/physical remain."
+  ],
+  "hardware_or_default_actions": [],
+  "commit_or_push": false
+}

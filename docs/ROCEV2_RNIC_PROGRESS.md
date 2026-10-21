@@ -32,6 +32,257 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+### Publication checkpoint: progress173–175 and unfinished176
+
+This explicit user-requested commit/push includes the source changes and both
+successful and failed reports since8017904. Completed evidence is summarized
+in progress175 below; it does not qualify timing or a hardware release.
+
+Progress176 prepares two genuine native fatal scenarios: invalid full RKEY on
+FIRST, and a short nonterminal MID after a successful FIRST with its actual MAC
+receipt withheld1100 cycles. The new fixture retains all38 original recipes,
+raw inputs, independent oracles and391 fatal checks; it adds28 checks and
+requires actual full wire/backend/HLS/abort/cancel/retained-RQ/quarantine
+observations, without injecting internal proofs. [Fixture preflight001](../results/2026-10-18/rocev2-rnic-write-fatal-native-fixture-diagnostics-001.json)
+passes1449 evidence bindings with exact new runner/bench hashes and unchanged
+1200s compile/30s case/4ns/root1GiB/RAM4GiB gates. This is preparation only:
+the fresh native40 binary has NOT been built and the40 cases have NOT run.
+No new native runtime result is claimed; prior-core native38/CQ105 remain the
+latest completed integrated/software regressions. Fatal63, standard error CQ,
+full QP stop/recovery, lifetime release and the original timing/physical gates
+remain open. `scripts/check.sh` retains the known historical TX-padding
+source-hash mismatch. No build is live; no FPGA programming, module load,
+network/fan/BIOS/default changes accompany this publication. Earlier local,
+unpublished and live-build statements below describe their checkpoint times.
+
+### Local progress175: actual generated HLS and native fatal source integration
+
+Previous174 is PROGRESS plus VERIFIED WAIT: real RTL66/audit586 and SAME live
+HLS50411. All419 authored/233 report/596 live-input/568 old-native/543
+control-HLS/515 elaboration/both653 native38 manifests revalidate. SAME
+session50411/builder2933498/HLS2933805 continued, never restarted for a poll
+timeout or slow scheduling. It is now TERMINAL0, and those PIDs are gone.
+
+[Actual abort generation001](../results/2026-10-18/rocev2-rnic-write-abort-generated-hls-001.json)
+PASSES1577.657s under original7200s, start free1695166464>=1572864000 bytes,
+4ns/default1.08ns/8QP/2000 unchanged.208 RTL/data files,127951 LUT/169686 FF/
+306 BRAM18K/0 DSP. [Generated audit001](../results/2026-10-18/rocev2-rnic-write-abort-generated-diagnostics-001.json)
+PASSES2303 bindings: actual960 owner/992 receipt/fault, all old ports, exactly
+one actual parser/positive-checkpoint join/control merger/ACK/MSN/state table.
+Estimate15.571ns still FAILS effective2.92ns; generation is not board timing,
+fit/CDC/routing or native functional qualification.
+
+After actual terminal success, only this job's scratch DB was durably archived
+and moved to RAM. All1682 original/archive/RAM file hashes match; archive
+38704003 bytes, persistent manifest/fsync and two exact cmdline/cwd/FD/maps
+project-use audits precede relocation. Sources/generated RTL/reports/logs
+remain. Root free rose to1131188224 bytes, preserving the original1GiB native
+elaboration guard. Restore this AND ALL older RAM caches before any reboot.
+
+`derive_write_error_control.py` replaces the PSN helper only in the NEW source
+graph. It uses the SAME nonwrapping64 serial for normal1f/60 and fatal61/62,
+requires separate full native fatal certification, fans actual528 wire/480
+retirement to the abort consumer and gates BOTH local-report handshakes on
+that consumer's real abort release. [Helper001](../results/2026-10-18/rocev2-rnic-write-error-control-001.json)
+PASSES81 four-state cases under original4ns/10s/100000 cycles, max0.017131s;
+all46 previous summaries identical. Six independent full480 fatal/serial
+oracles include ordinary control followed by fatal on the same serial counter.
+Its upstream proof/release producers are models here, not native coupling.
+
+`derive_write_fatal_native.py` now sources fatal certificates ONLY after the
+real checked-frame peer/format/native-PSN path enters actual metadata/MR
+processing. Semantic guard16 becomes61; actual whole-MR1..4 becomes62.
+Wrong peer, PSN18, malformed local headers, bad ICRC and internal packet-MR
+transport failures are NOT generic NAK authority. A separate derived guard
+lets zero RKEY and overflowing remote ranges reach the SAME whole-MR lookup
+before any packet owner/DMA grant; they are access failures, not semantic16.
+No63 producer is invented; internal packet-MR anomaly recovery remains absent.
+
+Native wiring uses actual positive472 handshake, full native packet commit/
+proofs0f and ACK424 retirement; actual negative528/480; whole960/992 HLS
+ports; actual local reject480 retirement; actual frontend message cancellation
+and inactive readback. Permanent per-QP quarantine gates native admission
+before NAK wire issue and persists after selected1000 output consumption.
+That explicit output has an independent real consumer port, NOT default
+READY or standard error CQ/STOP/global drain/unpin. Both old global drains
+remain0. The original default/raw/old-helper/kernel/capability sources remain.
+
+[Native elaboration001](../results/2026-10-18/rocev2-rnic-write-fatal-native-elaboration-001.json)
+PASSES123.334s under180s/root+RAM1GiB, actual462 RTL/8 data, ENTIRE same208
+generated cohort, no HLS stubs/unknown-leaf waiver. Exactly one actual MR/PTE/
+backend/physical nonce/ACK and actual new parser/checkpoint/MSN/state; profile
+131071/511/13/63/software8 unchanged. This is compilation, NOT packet execution.
+
+[Actual frontend002](../results/2026-10-18/rocev2-rnic-write-fatal-front-002.json)
+PASSES47 real ICRC/MR/RQ/replay cases, max2.084418s under original10s/4ns/
+100000. Every47 raw input and replay/CRC outcome is identical; other45
+protection summaries are identical. Two intentional changes: zero-key20 and
+range-overflow21 query the unchanged actual MR once, reject1/4, certify62 and
+still grant/replay/take no data/RQ. Exact query key/address/PD/length/tag/op
+remain independent byte-authored oracles. Sixteen semantic/access cases
+certify actual full356/context/PSN/class exactly once; wrong peer/native-PSN/
+format/ICRC do not. Backend/HLS/MAC/native-frontier producers remain models.
+
+Original helper source startup001 rejected a two-occurrence textual anchor
+before compile; native source startup001 rejected a wrong local FEATURES
+import before build creation. Frontend001 reached the newly correct zero-key
+MR query but its NEW test still expected the old configured key/address.
+Its exact failed sources/logs remain. Only the two new query oracles were
+updated to the unchanged RAW invalid key/address, without changing registered
+MR, frame bytes, other assertions, counts or gates. No output normalization.
+
+[Source diagnostics001](../results/2026-10-18/rocev2-rnic-write-fatal-native-source-diagnostics-001.json)
+PASSES1743 bindings, actual identical tested/native frontend/guard/helper/
+bridge, all208 generated files, protected raw sources and immutable failures.
+All jobs are terminal, not stopped/blocked. NEXT is a fresh full native run:
+all38 old exact inputs/oracles plus actual fatal first-MR62 and partial-WRITE61,
+real wire/MSN/FCS/backend/HLS/native cancellation and retained quarantine/RQ.
+No new native packet runtime, installed Linux or physical result is claimed.
+
+Fatal63, standard error CQ/asynchronous QP events, authentic QP STOP/reference
+retirement/quarantine release remain. Kernel CQ currently rejects nonzero
+hardware status; selected1000 is not permission to unpin. All original eleven,
+native1MiB/multiSGE/live Linux-provider/real-peer recovery/congestion/original
+board timing/physical remain. Old native38/CQ105 retained, not rerun. Historical
+TX-padding source SHA mismatch remains FAIL, not waived. No hardware/install/
+load/JTAG/flash/network/fan/BIOS/default/reboot/Git action; BIOS Medium,
+management/IB_ATOMIC_NONE unchanged. No reboot needed; exact authenticated
+thread/goal revival unproved; restore ALL archived caches first if needed.
+
+### Local progress174: selected abort controller66; same HLS still live
+
+Previous173 is PROGRESS plus VERIFIED WAIT: actual HLS CPP140/legacy service/
+audit2307 passed, and actual frozen HLS50411 was running. All416 authored/228
+reports/596 live inputs/568 old-native/543 control-HLS/515 elaboration/both653
+native38 manifests revalidate. SAME builder2933498/HLS2933805/session50411
+remain live, with actual CPU time advancing during scheduling/array dependency
+resolution. It has NOT been stopped/restarted or declared terminal from a poll
+timeout. Actual generated ports/resources/timing are not available/qualified yet.
+
+New `rocev2_write_abort_control.v` is a SEPARATE real RTL consumer, NOT YET
+connected to native. It retains full positive472 wire receipt/native424
+commit/MSN/proofs0f and exact ACK424 retirement in per-QP history. A privileged
+fatal528 wire receipt must match trusted356, expected PSN,61/62/63, nonzero
+strict serial/fresh shared-tag and an ALREADY quarantined full context. Active
+partial WRITE must match actual cached message320/nextPSN/MSN/retirement;
+empty state is a distinct mode, never a fake positive owner.
+
+It then requires real fatal480 ACK retirement before presenting960 to HLS,
+exact992 before releasing the local reject, exact480 local-report retirement
+before selected cancellation, and readback of inactive selected native message
+after the cancel handshake. Only then may it offer distinct1000 selected-only
+proof. The quarantine bit and replay history remain after that proof is taken.
+There is NO automatic resume/STOP/global-drain/error-CQ/unpin certificate.
+All native/backend/HLS/MAC/quarantine/local-report producers are MODELS in the
+component tests; two separate tested consumers do not establish native coupling.
+
+[Component004](../results/2026-10-18/rocev2-rnic-write-abort-control-004.json)
+PASSES66 four-state cases, maximum0.017198s, unchanged4ns/10s/100000-cycle
+limits. Five independent every-bit960/1000 positive oracles cover partial
+FIRST/MIDDLE/PSN wrap, truly empty/completed-LAST and another QP's partial
+history surviving the selected cancellation.61 malformed, unknown, early,
+missing/reordered owner/proof/cancel/report/quarantine/replay conditions fail
+closed. Independent17/37/71-cycle consumer stalls cannot manufacture completion.
+[Audit001](../results/2026-10-18/rocev2-rnic-write-abort-control-diagnostics-001.json)
+PASSES586 bindings, actual compiled RTL, all66 outcomes/oracles, prior actual
+CPP140 and all original failed runs/preimages.
+
+Original001 failed in the parameterized-only declaration reader before compile;
+the test now adapts only that reader's input, not the compiled parameterless
+DUT.002 failed because `sequence` was a reserved SystemVerilog identifier in
+the NEW test; only its task argument was renamed.003 then passed five positive
+modes and13 preceding negatives but FAILED unknown-MSN mode33: the new DUT
+validated packet424 but omitted a known-value check over the complete472 wire
+receipt. The DUT now checks ALL472 bits before accepting a positive proof;
+the unknown-MSN stimulus/assertion remains identical. Failed reports, actual
+logs and exact earlier source preimages are retained, never relabeled PASS.
+
+Next actual integration must source monitored events from genuine controller
+handshakes, not hierarchy-injected proofs: positive `s_ack_done`472, actual
+full packet commit and exact ACK retirement; one authenticated native fatal
+admission/quarantine and shared serial namespace; actual negative528/480,
+same new HLS960/992 ports, and actual local reject/cancel readback. Current
+native cancellation remains tied off; no source-only component claims to fix
+that. Full fatal-QP error CQ/STOP/pinned references and actual new full-graph
+native38-plus-fatal scenarios remain required. The current controller
+intentionally has no quarantine-release interface; implementing authentic
+full-QP close/lifetime recovery must not turn its selected proof into unpin.
+
+No existing native/helper/default/ABI/raw-protected sources were changed by
+this separate component. Old native38/CQ105/CPP140 were retained, not rerun.
+All original eleven/native1MiB/multiSGE/live Linux-provider/real-peer recovery/
+congestion/original board timing/physical remain. Prior HLS15.571ns still
+fails4ns/default1.08ns; the source suite's TX-padding SHA mismatch is not fixed
+or waived. BIOS Medium, management, IB_ATOMIC_NONE and both zero global drains
+stay unchanged; no hardware/install/load/JTAG/flash/network/fan/BIOS/reboot/
+commit/push action. No reboot needed; restore ALL archived RAM caches before
+any reboot; exact authenticated thread/goal revival remains unproved.
+
+### Local progress173: actual WRITE-abort consumers; synthesis live
+
+The preceding goal work is PROGRESS: native38/CQ105 and the separate unfinished
+abort source/failures changed authoritative state. The intervening explicit
+user publication8017904 contains170–172 plus that unfinished source; it did
+not authorize subsequent automatic Git actions. All409 authored/222 report/
+568 old-native/543 control-HLS/515 elaboration and both653 native38 manifests
+revalidate; five old document identities resolve to their exact prepublication
+copies. No previous terminal process was restarted.
+
+`segmented_write_abort_transport.py` now declares its helpers before the actual
+`rx_exh_fsm` template. New cohort002 preserves failed cohort001 and its log.
+The next C++ run002 compiled93.521s and passed all105 prior modes plus three
+new ones, then FAILED its109th case: the new helper compared the three kept
+zero-pad bytes after a one-byte LAST with payload-pattern bytes. Exact source,
+log and failed JSON remain. Only that new fixture was corrected: it now checks
+every actual payload byte AND zero-pad byte, rounded stored extent, actual
+memory command address and every ACK/PSN/MSN byte. No old test/DUT assertion,
+compiler permissiveness, timeout, geometry or protected raw source was relaxed.
+
+[Actual C++003](../results/2026-10-18/rocev2-rnic-write-abort-hls-003.json)
+PASSES140 modes, compile92.830s under600s and maximum8.871s under30s. All105
+original summaries/independent byte/wire/owner oracles are identical. Nine new
+positive modes independently check every960/992 owner/receipt bit, including
+partial FIRST/MIDDLE and PSN wrap, genuinely empty and completed-LAST state,
+withheld actual payload retirement, withheld same PSN table, withheld actual
+MSN table, actual QPI reinitialization, and preservation/completion of another
+QP's genuine partial WRITE. Replay serial survives QPI init; actual wrong MSN
+and24 malformed owners quarantine without granting data/RQ/CQ/PSN or abort
+completion. The old105 consumers run the new parser/checkpoint path too.
+
+[Legacy service compatibility001](../results/2026-10-18/rocev2-rnic-write-abort-compat-001.json)
+PASSES28.638s compile/1.114s runtime, unchanged actual owned Atomic service RTL
+and Immediate consumers, identical old summaries. [Consumer diagnostics001](../results/2026-10-18/rocev2-rnic-write-abort-hls-diagnostics-001.json)
+PASSES2307 bindings: actual complete current derived source, same checkpoint/
+PSN/MSN/selected-state clear/verify consumers, every105 old oracle, all35 new
+modes, legacy service and exact immutable failed-source preimages.
+
+The960 request carries privileged native control480, last actual WRITE424,
+MSN/MAC/proof flags with a distinct empty mode;992 is a selected HLS-state
+receipt only. Native/MAC/fence/management producers are MODELS. This is NOT
+QP/global DMA drain, safe unpin or integrated fatal61/62/63 quarantine/error
+CQ/cancel/STOP/reference release. Both actual original global drain inputs
+remain0; no idle/reset/READY or empty queue substitutes for a certificate.
+
+`build_native_write_abort.py` requires all140 actual cases/old105 exact oracles,
+same-source legacy service and unchanged original1500MiB-start/7200s/4ns/
+default1.08ns/8QP/2000/old-port gates. New synthesis is LIVE in
+`build/native-zero-service-hls-b1fnzo59`, session50411, builder2933498/HLS2933805,
+start free1695166464 bytes. It freezes its actual inputs first and will check
+the new960/992 ports/fault output as well as all old ports. Generation, actual
+new RTL ports/resources/timing and native packet execution are NOT qualified
+yet. Continue the SAME live handle; observation timeout is not a stopped job.
+
+Native38/CQ105 remain the latest completed native/software regressions; none
+was rerun with this new HLS. All original eleven, native1MiB/multiSGE/live
+registered references/real-peer recovery/congestion/original board timing and
+short physical checks remain. Old HLS15.571ns still contradicts original4ns/
+default1.08ns; historical TX-padding SHA mismatch still fails source checks.
+No hardware/install/load/JTAG/flash/network/fan/BIOS/default/reboot/commit/push
+action this turn. BIOS Medium/management/IB_ATOMIC_NONE unchanged. No reboot
+needed; authenticated exact thread/goal restoration remains unproved; restore
+ALL archived RAM-backed caches before any reboot. Older published failed/
+no-live/local/Git statements below describe their checkpoint times.
+
 ### User-requested publication: progress170–173 (2026-10-21)
 
 This checkpoint publishes the completed control ACK/NAK/native38/software

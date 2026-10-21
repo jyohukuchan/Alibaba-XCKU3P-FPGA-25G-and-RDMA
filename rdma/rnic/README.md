@@ -16,6 +16,44 @@ passes; this does not relabel the old suite or qualify a hardware release.
 
 ## Latest functional milestone (2026-10-21)
 
+Publication update: progress173–175 and unfinished176 are included, preserving
+both successful and failed reports. Abort C++140/controller66, merged81,
+frontend47 and whole new native elaboration pass, but original4ns timing
+still FAILS (estimate15.571ns). [Native40 fixture preflight](../../results/2026-10-18/rocev2-rnic-write-fatal-native-fixture-diagnostics-001.json)
+passes1449 evidence bindings; all38 old inputs/checks remain. Its fresh binary
+and40 packet cases have NOT been built/run. Prior-core native38/CQ105 remain
+the latest completed integrated regressions. Error CQ/full QP stop/recovery/
+reference release are unfinished. No build is running and no hardware/driver/
+default changes were made. Historical unpushed/live notes below are not current.
+
+Local175: actual abort HLS208 generated1577.657s, audit2303; original timing
+still FAIL15.571ns. Actual fatal61/62 quarantine/abort/cancel native hierarchy
+elaborates462RTL/8data/123.334s against the whole new core. Same actual tested
+ICRC/MR frontend47 and shared PSN/fatal serial helper81 pass; old46 outcomes
+identical. [Source audit1743](../../results/2026-10-18/rocev2-rnic-write-fatal-native-source-diagnostics-001.json).
+This is NOT fresh full native packet runtime: old38 plus genuine fatal cases
+remain required. Selected1000 output is not standard error CQ/STOP/QP-global
+drain/unpin; quarantine stays,63/full lifetime/all11 remain. All jobs terminal;
+no hardware/default/Git action. Older live/not-wired notes are checkpoint history.
+
+Local progress174: new separate selected-WRITE abort RTL controller66 PASS,
+[audit586](../../results/2026-10-18/rocev2-rnic-write-abort-control-diagnostics-001.json).
+Genuine full positive wire/commit/retire, fatal wire/retire, HLS992, local
+report and actual selected cancel/readback are REQUIRED INPUT CONTRACTS;
+their producers are MODELS here, not yet native-wired. Exact960/1000 ownership
+and persistent quarantine do not certify QP/global drain, STOP/error CQ/unpin.
+SAME HLS50411 is LIVE, not generation-qualified. No hardware/default/Git action.
+
+Local progress173 after8017904: selected-WRITE abort C++140 PASS, all105 old
+summaries/independent oracles identical, unchanged Atomic/Immediate service
+compatibility PASS. [Consumer audit2307](../../results/2026-10-18/rocev2-rnic-write-abort-hls-diagnostics-001.json).
+Actual retirement checkpoint/same PSN/MSN/selected state clear/verify are tested;
+privileged native/MAC/fence/management producers are models. New960/992 HLS
+generation is LIVE; no generated/native/fatal-QP/global-drain/unpin/physical
+or timing pass is claimed. Native38/CQ105 remain the latest completed native/
+software regressions and were not rerun for this core. Earlier failure/no-live
+notes are history. No hardware/default/install/load/reboot/Git changes.
+
 Publication update: the user-requested snapshot adds progress170–172 and the
 unfinished progress173 WRITE-abort source, with successful AND failed reports.
 Native38/CQ105 below remain the latest completed regressions. The separate

@@ -1,0 +1,88 @@
+{
+  "scope": "Actual generated960/992 WRITE-abort HLS, not native/QP/global drain proof.\n\nRequire all140 CPP consumers, same-source legacy compatibility, actual port\nwidths/one parser/MSN/state domain and original clock/geometry/resource gates.\n",
+  "audit_passed": true,
+  "evidence": {
+    "write-abort-generated-hls-001": {
+      "bindings_verified": 759,
+      "report_sha256": "8d46ef368f2d111933227043a37e432e4002a3e06ee4ce5ad1751cf76f0a15e3",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-hls-003": {
+      "bindings_verified": 468,
+      "report_sha256": "997cb6a72f985f08da2b8d9201fda1bf975c29c4deef556de35219a8b4a07e0f",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-compat-001": {
+      "bindings_verified": 324,
+      "report_sha256": "8c79f054aac14c1f90569f8b5224495f98a90d385fb8c68dc75802b0eed3edf6",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-hls-diagnostics-001": {
+      "bindings_verified": 10,
+      "report_sha256": "9e1dbe67e25cffb739dd33fb2e0bd91fb9755112a6c57b9706e73b23b20d4132",
+      "exact_preimage_resolutions": []
+    },
+    "control-response-generated-hls-001": {
+      "bindings_verified": 742,
+      "report_sha256": "901429e484918214a4d65fe0dae4f1edd48c701fec209c2f4079c75b2a82f8f1",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 2303,
+  "actual_generation_seconds": 1577.6570428219857,
+  "HLS_top": "rocev2_native_write_abort_top",
+  "actual_port_widths": {
+    "s_axis_write_abort_owner_TDATA": 960,
+    "m_axis_write_abort_done_TDATA": 992,
+    "s_axis_control_owner_TDATA": 480,
+    "m_axis_control_done_TDATA": 512,
+    "s_axis_write_owner_TDATA": 424,
+    "m_axis_write_done_TDATA": 456,
+    "m_axis_recv_message_TDATA": 776
+  },
+  "actual_domain_definition_counts": {
+    "as02_native_control_merger_0_s": 1,
+    "rx_exh_fsm_512_0_s": 1,
+    "as02_write_packet_retire_join_0_s": 1,
+    "generate_exh_512_0_s": 1,
+    "msn_table_0_s": 1,
+    "state_table_0_s": 1
+  },
+  "actual_generated_RTL_and_data_files": 208,
+  "resources": {
+    "LUT": "127951",
+    "FF": "169686",
+    "BRAM_18K": "306",
+    "DSP": "0"
+  },
+  "target_clock_ns": 4,
+  "default_uncertainty_ns": 1.08,
+  "effective_ns": 2.92,
+  "estimated_ns": 15.571,
+  "original_timing_met": false,
+  "actual_CPP_modes": 140,
+  "all105_previous_modes_retained": true,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_write_abort_generated.py": "319de52b1d1e5cb93942476cce92458e2f8016eebbd687b68d76b5f75e43b1f8",
+    "rdma/rnic/build/native-zero-service-hls-b1fnzo59/project/solution1/syn/verilog/rocev2_native_write_abort_top.v": "f410fa035dea8d63bda400455ecf8c309c1502f37a6471fbeff276de523a34d6"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "abort_is_QP_or_global_drain": false,
+  "native_error_quarantine_cancel_STOP_CQ_integrated": false,
+  "permission_to_unpin": false,
+  "privileged_native_MAC_fence_management_inputs_modeled": true,
+  "live_Linux_or_physical": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "remaining": [
+    "Integrate actual authenticated fatal-QP admission/quarantine, real backend/MAC ownership, selected HLS abort and native message cancel/STOP/error CQ plus retained lifetime refs.",
+    "Fresh complete native graph of all38 old cases plus real fatal-QP scenarios; HLS140/generation alone cannot establish native/global drain or safe unpin.",
+    "All11/full1MiB native/multiSGE/live registered refs/real-peer recovery/congestion/original timing/physical remain."
+  ],
+  "hardware_or_default_actions": [],
+  "commit_or_push": false
+}

@@ -1,0 +1,289 @@
+{
+  "scope": "Actual native fatal source/elaboration plus same tested frontend/control.\n\nNOT fresh native packet runtime/error CQ/STOP/global drain/unpin/physical.\nAll38 native regressions and actual fatal scenarios remain mandatory.\n",
+  "audit_passed": true,
+  "evidence": {
+    "write-fatal-native-elaboration-001": {
+      "bindings_verified": 543,
+      "report_sha256": "9f6cb8a79b31b4866ca45fb4abefc7ccd652b32374180135cb2a7e20b9f88fc5",
+      "exact_preimage_resolutions": []
+    },
+    "write-fatal-front-002": {
+      "bindings_verified": 130,
+      "report_sha256": "a652cd0d8a293a98917aa33285bd94228f184e515b35daa70f1630c9f557e0b3",
+      "exact_preimage_resolutions": []
+    },
+    "write-error-control-001": {
+      "bindings_verified": 93,
+      "report_sha256": "6edc78a418b81c28e9c232f0d8851a59ca1d1b8e56cb360533e67c9603637b97",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-control-004": {
+      "bindings_verified": 73,
+      "report_sha256": "884dfa78e70a7c4847fe389d10667c77568d42e1954d193a2f7b7693c611b59b",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-control-diagnostics-001": {
+      "bindings_verified": 6,
+      "report_sha256": "641f9670cb4fbe8ba7a739dab1af7259fe2cb38df0ca829d1bf3ded78b3ca5df",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-generated-hls-001": {
+      "bindings_verified": 759,
+      "report_sha256": "8d46ef368f2d111933227043a37e432e4002a3e06ee4ce5ad1751cf76f0a15e3",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-generated-diagnostics-001": {
+      "bindings_verified": 5,
+      "report_sha256": "aacf18490f49ed56ec4d4c118f11e27520f982496936abbaa4cf54ac08abdae8",
+      "exact_preimage_resolutions": []
+    },
+    "write-psn-control-001": {
+      "bindings_verified": 56,
+      "report_sha256": "1f2ae8387691a5620b1b4350c287a1290d322b41cf83941ac77cda2811e40a89",
+      "exact_preimage_resolutions": []
+    },
+    "write-error-control-source-startup-001": {
+      "bindings_verified": 1,
+      "report_sha256": "e1ae9c5409ad158ff97f4f361a96ca342fc2da4dfa219f5dedf13bbbe7327611",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/fpga/derive_write_error_control.py"
+      ]
+    },
+    "write-fatal-native-source-startup-001": {
+      "bindings_verified": 1,
+      "report_sha256": "a12b7b9124187071ba290dc86699cba0fec31dd569ec7d7528409f2bf57736ac",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/check_write_fatal_native.py"
+      ]
+    },
+    "write-fatal-front-001": {
+      "bindings_verified": 76,
+      "report_sha256": "9a58a965e76ace5ecdb5696274815a4b5ceeb87149893c50f6d88bf28972e8ba",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_write_fatal_frontend.py"
+      ]
+    }
+  },
+  "verified_bindings": 1743,
+  "native_elaboration_seconds": 123.33382429502672,
+  "actual_selected_RTL": 462,
+  "actual_selected_HLS_data": 8,
+  "actual_same_generation_HLS_files": 208,
+  "actual_same_tested_frontend_guard_control_bridge": true,
+  "actual_frontend_cases": 47,
+  "all47_raw_inputs_and_replay_identical": true,
+  "other45_protection_identical": true,
+  "explicit_zero_key_overflow_change": "Both now query the unchanged actual whole MR namespace once and reject1/4 ->NAK62 certification before any data/RQ/replay; old pre-MR semantic16 not silently normalized.",
+  "qualified_fatal_cases": {
+    "6": {
+      "mode": 6,
+      "cycles": 4,
+      "consumed": 1,
+      "syndrome": 98
+    },
+    "7": {
+      "mode": 7,
+      "cycles": 4,
+      "consumed": 1,
+      "syndrome": 98
+    },
+    "8": {
+      "mode": 8,
+      "cycles": 4,
+      "consumed": 1,
+      "syndrome": 98
+    },
+    "9": {
+      "mode": 9,
+      "cycles": 4,
+      "consumed": 1,
+      "syndrome": 98
+    },
+    "10": {
+      "mode": 10,
+      "cycles": 4,
+      "consumed": 1,
+      "syndrome": 98
+    },
+    "11": {
+      "mode": 11,
+      "cycles": 4,
+      "consumed": 1,
+      "syndrome": 97
+    },
+    "12": {
+      "mode": 12,
+      "cycles": 4,
+      "consumed": 1,
+      "syndrome": 97
+    },
+    "13": {
+      "mode": 13,
+      "cycles": 4,
+      "consumed": 1,
+      "syndrome": 97
+    },
+    "14": {
+      "mode": 14,
+      "cycles": 4,
+      "consumed": 1,
+      "syndrome": 97
+    },
+    "15": {
+      "mode": 15,
+      "cycles": 4,
+      "consumed": 1,
+      "syndrome": 97
+    },
+    "19": {
+      "mode": 19,
+      "cycles": 4,
+      "consumed": 1,
+      "syndrome": 97
+    },
+    "20": {
+      "mode": 20,
+      "cycles": 4,
+      "consumed": 1,
+      "syndrome": 98
+    },
+    "21": {
+      "mode": 21,
+      "cycles": 4,
+      "consumed": 1,
+      "syndrome": 98
+    },
+    "22": {
+      "mode": 22,
+      "cycles": 4,
+      "consumed": 1,
+      "syndrome": 97
+    },
+    "23": {
+      "mode": 23,
+      "cycles": 4,
+      "consumed": 1,
+      "syndrome": 97
+    },
+    "24": {
+      "mode": 24,
+      "cycles": 4,
+      "consumed": 1,
+      "syndrome": 97
+    }
+  },
+  "actual_control_cases": 81,
+  "all46_original_control_summaries_identical": true,
+  "actual_bridge_cases": 66,
+  "native_module_counts": {
+    "rocev2_top": 1,
+    "rocev2_native_rnic_endpoint": 1,
+    "rocev2_native_sq_endpoint": 1,
+    "rocev2_mr_table": 1,
+    "rocev2_mr_page_table": 1,
+    "rocev2_shared_hls_transport": 1,
+    "rocev2_shared_protected_responder": 1,
+    "rocev2_atomic_request_integrity_transport": 1,
+    "rocev2_wqe_memory_executor": 1,
+    "rocev2_wqe_response_guard": 0,
+    "rocev2_wqe_tx_lifetime": 1,
+    "rocev2_wqe_replay": 1,
+    "rocev2_receive_queue": 0,
+    "rocev2_receive_ack_tx": 0,
+    "rocev2_cq_mmio": 1,
+    "rocev2_duplex_rx_mux": 1,
+    "rocev2_duplex_tx_router": 1,
+    "rocev2_memory_origin_router": 2,
+    "rocev2_sq_control_regs": 2,
+    "rocev2_sq_dma_fetch": 1,
+    "rocev2_sq_fetch": 1,
+    "rocev2_queue_cfg_arbiter": 1,
+    "rocev2_wqe_admission": 2,
+    "rocev2_native_atomic_request_top": 0,
+    "rocev2_native_zero_request_top": 0,
+    "rocev2_zero_ipv4_icrc": 3,
+    "rocev2_zero_rx_padding": 1,
+    "rocev2_native_zero_rq_top": 0,
+    "rocev2_zero_service_owner": 1,
+    "rocev2_zero_service_mac": 1,
+    "rocev2_memory_command_nonce": 1,
+    "rocev2_native_zero_service_top": 0,
+    "rocev2_paged_memory_backend": 1,
+    "rocev2_segmented_source_executor": 1,
+    "rocev2_segmented_executor_mux": 1,
+    "rocev2_segmented_child_executor": 2,
+    "rocev2_native_segmented_read_top": 0,
+    "rocev2_segmented_read_executor_mux": 1,
+    "rocev2_segmented_read_unpad_route": 1,
+    "rocev2_segmented_read_executor": 1,
+    "rocev2_segmented_read_child_unpad": 1,
+    "rocev2_wqe_read_unpad": 1,
+    "rocev2_native_segmented_request_top": 0,
+    "rocev2_expected_remote_msn": 1,
+    "rocev2_segmented_read_response_guard": 1,
+    "rocev2_native_segmented_immediate_top": 0,
+    "rocev2_native_segmented_receive_top": 0,
+    "rocev2_receive_message_queue": 0,
+    "rocev2_native_segmented_write_owned_top": 0,
+    "rocev2_mr_query_arbiter": 4,
+    "rocev2_receive_write_ack_tx": 0,
+    "rocev2_write_notice_binding_queue": 1,
+    "rocev2_segmented_write_native_controller": 1,
+    "rocev2_segmented_write_native_frontend": 1,
+    "rocev2_native_write_rx_router": 1,
+    "rocev2_remote_write_memory": 1,
+    "rocev2_remote_write_message_guard": 0,
+    "rocev2_memory_client_arbiter": 3,
+    "rocev2_receive_write_rnr_ack_tx": 0,
+    "rocev2_segmented_write_rnr_control": 1,
+    "rocev2_native_control_response_top": 0,
+    "rocev2_receive_control_ack_tx": 1,
+    "rocev2_write_psn_control": 0,
+    "rocev2_native_control_response_top_as02_native_control_merger_0_s": 0,
+    "rocev2_native_control_response_top_generate_exh_512_0_s": 0,
+    "rocev2_native_control_response_top_msn_table_0_s": 0,
+    "rocev2_native_control_response_top_state_table_0_s": 0,
+    "rocev2_native_write_abort_top": 1,
+    "rocev2_write_error_control": 1,
+    "rocev2_write_abort_control": 1,
+    "rocev2_fatal_write_message_guard": 1,
+    "rocev2_native_write_abort_top_as02_native_control_merger_0_s": 1,
+    "rocev2_native_write_abort_top_rx_exh_fsm_512_0_s": 1,
+    "rocev2_native_write_abort_top_as02_write_packet_retire_join_0_s": 1,
+    "rocev2_native_write_abort_top_generate_exh_512_0_s": 1,
+    "rocev2_native_write_abort_top_msn_table_0_s": 1,
+    "rocev2_native_write_abort_top_state_table_0_s": 1
+  },
+  "estimated_HLS_ns": 15.571,
+  "original_timing_met": false,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_write_fatal_native_sources.py": "9c44bc42a71d88b6b5af395f5e9707b7864d5372b2f7c2fd275094e63401aa92",
+    "rdma/rnic/fpga/derive_write_fatal_native.py": "deae58438a383c5acb59ffd4ae67690e30caeb26109c5d168b7c0c6711977930",
+    "rdma/rnic/fpga/derive_write_error_control.py": "14ae3595f022c4e7edf283a6f87335c9714bf1d1f96c892c75e8d15a4f9ae7fd",
+    "rdma/rnic/rtl/rocev2_write_abort_control.v": "b705489dbdfc5bbc96787cac952ff501abb2b6bde63e20f43d614349448d8de0",
+    "rdma/rnic/rtl/rocev2_remote_write_message_guard.v": "138a27297c8f6655911f98140ae46a07db2f453a0a3d504c412ab3d199dd22ca",
+    "rdma/rnic/tests/probe_write_fatal_frontend.py": "0cc3ae4ba97c25f563f17fc080c31b29b663363752fb769c82b62d984dbc9b2c",
+    "rdma/rnic/tests/probe_write_error_control.py": "dae7112e6a8b2babb1a0e5a844d6094d9c35eb563fd52cef97c7140519880523",
+    "rdma/rnic/tests/check_write_fatal_native.py": "e299eddae106798665e0447e20cb31aee6585869a6dd599e66f0a9432476ccc4"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "actual_native_fatal_packet_runtime": false,
+  "original38_rerun_on_new_graph": false,
+  "full_QP_error_CQ_STOP_or_lifetime_qualified": false,
+  "fatal63_implemented": false,
+  "QP_global_drain_or_unpin": false,
+  "live_Linux_or_physical": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "remaining": [
+    "Fresh actual full new graph: all38 old exact inputs/oracles plus genuine first-MR fatal62 and partial-WRITE fatal61, real wire/MSN/FCS/backend/native/HLS cancel and persistent quarantine.",
+    "Actual fatal63/standard error CQ/QP STOP/pinned-reference retirement and legitimate quarantine release; selected1000 is not global drain or safe unpin.",
+    "Original all11/native1MiB/multiSGE/live Linux-provider/real-peer recovery/congestion/original timing/physical remain."
+  ],
+  "hardware_or_default_actions": [],
+  "commit_or_push": false
+}

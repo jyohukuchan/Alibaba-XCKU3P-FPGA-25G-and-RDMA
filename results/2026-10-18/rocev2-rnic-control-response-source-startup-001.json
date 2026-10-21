@@ -1,0 +1,15 @@
+{
+  "scope": "Retained source-generation startup failure before any output directory/runtime/HLS generation.",
+  "pass_test": false,
+  "error_type": "ValueError",
+  "error": "both actual full-top forwarding calls required",
+  "source_sha256": {
+    "rdma/rnic/build/control-response-source-startup-001-preimages-HkNfag7n/rdma/rnic/hls/segmented_control_response_transport.py": "ba8d72be5910480b97561bab4d9d5518b9b7cc6f470e547165e05b25681f0392"
+  },
+  "old_expected_forwarding_calls": 2,
+  "actual_parent_forwarding_calls": 3,
+  "output_directory_created_before_failure": false,
+  "fix": "Require all THREE actual inner/public-top forwarding calls; no DUT/deadline/clock/assertion waiver.",
+  "runtime_test": false,
+  "hardware_verified": false
+}

@@ -1,0 +1,12 @@
+{
+  "scope": "Retained builder startup failure before synthesis: wrong historical report name, not a DUT or HLS runtime failure.",
+  "pass_test": false,
+  "error_type": "FileNotFoundError",
+  "error": "rocev2-rnic-segmented-write-owned-hls-002.json does not exist; actual verified87-mode baseline is001.",
+  "source_sha256": {
+    "rdma/rnic/build/control-response-builder-startup-001-preimages-pTn5jyTR/rdma/rnic/hls/build_native_control_response.py": "823dd383bdfdce1b72eda0d147a400521b5e6d16f526500044b75c49fcca4444"
+  },
+  "HLS_started": false,
+  "raw_builder_report_created": false,
+  "hardware_verified": false
+}

@@ -109,7 +109,9 @@ initial begin
       repeat(17)begin tick;if(!m_error_valid || s_ready || !configuration_guard || retirements!=1 || reports)
        $fatal(1,"independent local reject consumer escaped");end
       m_error_ready=1;@(posedge clk);if(!s_ready)$fatal(1,"local reject exact handshake after actual negative wire proof");
-      @(negedge clk);s_valid=0;
+      // Observe after continuous assignments settle, within the SAME4ns cycle.
+      // Frozen002 plus the read-only observer retain the original failure.
+      @(negedge clk);s_valid=0;#1;
       if(configuration_guard || queue_guard || requests!=1 || wire_proofs!=1 || retirements!=1 || reports!=1 || fault)
        $fatal(1,"complete RNR control lifecycle counts");
      end

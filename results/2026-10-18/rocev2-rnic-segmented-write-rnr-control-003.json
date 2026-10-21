@@ -1,0 +1,362 @@
+{
+  "scope": "Real retained-WRITE RNR controller handshakes; owner/ACK/HLS edges modeled.\n\nNo generated HLS, actual MAC/native RX/RQ/DMA/PSN or software proof follows.\nNever interpret READY, idle, local report or a reset as a wire certificate.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_segmented_write_rnr_control.v": "d857ec9613ea2f9e31cc75bcae4e1049fe82db4f1d7c6c9e2b60ca47c891d12f",
+    "rdma/rnic/tests/probe_segmented_write_rnr_control.py": "9d2373bcfd3511571a31b3a2896ab8e8be98cb2510a28960ca2679108fa8da06"
+  },
+  "tests": {
+    "0": {
+      "exit": 0,
+      "seconds": 0.010405441047623754,
+      "summary": {
+        "pass_test": true,
+        "mode": 0,
+        "fault": 0,
+        "requests": 1,
+        "proofs": 1,
+        "retirements": 1,
+        "reports": 1
+      }
+    },
+    "1": {
+      "exit": 0,
+      "seconds": 0.009158688015304506,
+      "summary": {
+        "pass_test": true,
+        "mode": 1,
+        "fault": 0,
+        "requests": 0,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "2": {
+      "exit": 0,
+      "seconds": 0.008701012004166842,
+      "summary": {
+        "pass_test": true,
+        "mode": 2,
+        "fault": 0,
+        "requests": 0,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "3": {
+      "exit": 0,
+      "seconds": 0.009032623027451336,
+      "summary": {
+        "pass_test": true,
+        "mode": 3,
+        "fault": 1,
+        "requests": 0,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "4": {
+      "exit": 0,
+      "seconds": 0.008735375013202429,
+      "summary": {
+        "pass_test": true,
+        "mode": 4,
+        "fault": 1,
+        "requests": 0,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "5": {
+      "exit": 0,
+      "seconds": 0.008633892983198166,
+      "summary": {
+        "pass_test": true,
+        "mode": 5,
+        "fault": 1,
+        "requests": 0,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "6": {
+      "exit": 0,
+      "seconds": 0.009091918007470667,
+      "summary": {
+        "pass_test": true,
+        "mode": 6,
+        "fault": 1,
+        "requests": 0,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "7": {
+      "exit": 0,
+      "seconds": 0.00856642599683255,
+      "summary": {
+        "pass_test": true,
+        "mode": 7,
+        "fault": 1,
+        "requests": 0,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "8": {
+      "exit": 0,
+      "seconds": 0.008856900036334991,
+      "summary": {
+        "pass_test": true,
+        "mode": 8,
+        "fault": 1,
+        "requests": 0,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "9": {
+      "exit": 0,
+      "seconds": 0.008541562012396753,
+      "summary": {
+        "pass_test": true,
+        "mode": 9,
+        "fault": 1,
+        "requests": 0,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "10": {
+      "exit": 0,
+      "seconds": 0.008618947002105415,
+      "summary": {
+        "pass_test": true,
+        "mode": 10,
+        "fault": 1,
+        "requests": 0,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "11": {
+      "exit": 0,
+      "seconds": 0.008534997003152966,
+      "summary": {
+        "pass_test": true,
+        "mode": 11,
+        "fault": 1,
+        "requests": 0,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "12": {
+      "exit": 0,
+      "seconds": 0.008551898004952818,
+      "summary": {
+        "pass_test": true,
+        "mode": 12,
+        "fault": 1,
+        "requests": 0,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "13": {
+      "exit": 0,
+      "seconds": 0.009040864009875804,
+      "summary": {
+        "pass_test": true,
+        "mode": 13,
+        "fault": 1,
+        "requests": 0,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "14": {
+      "exit": 0,
+      "seconds": 0.008708973997272551,
+      "summary": {
+        "pass_test": true,
+        "mode": 14,
+        "fault": 1,
+        "requests": 0,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "15": {
+      "exit": 0,
+      "seconds": 0.008639829989988357,
+      "summary": {
+        "pass_test": true,
+        "mode": 15,
+        "fault": 1,
+        "requests": 1,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "16": {
+      "exit": 0,
+      "seconds": 0.009127327997703105,
+      "summary": {
+        "pass_test": true,
+        "mode": 16,
+        "fault": 1,
+        "requests": 1,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "17": {
+      "exit": 0,
+      "seconds": 0.009077391994651407,
+      "summary": {
+        "pass_test": true,
+        "mode": 17,
+        "fault": 1,
+        "requests": 1,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "18": {
+      "exit": 0,
+      "seconds": 0.00894057098776102,
+      "summary": {
+        "pass_test": true,
+        "mode": 18,
+        "fault": 1,
+        "requests": 1,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "19": {
+      "exit": 0,
+      "seconds": 0.008530247956514359,
+      "summary": {
+        "pass_test": true,
+        "mode": 19,
+        "fault": 1,
+        "requests": 1,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "20": {
+      "exit": 0,
+      "seconds": 0.008697170007508248,
+      "summary": {
+        "pass_test": true,
+        "mode": 20,
+        "fault": 1,
+        "requests": 1,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "21": {
+      "exit": 0,
+      "seconds": 0.008813737018499523,
+      "summary": {
+        "pass_test": true,
+        "mode": 21,
+        "fault": 1,
+        "requests": 1,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "22": {
+      "exit": 0,
+      "seconds": 0.008550013008061796,
+      "summary": {
+        "pass_test": true,
+        "mode": 22,
+        "fault": 1,
+        "requests": 1,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    },
+    "23": {
+      "exit": 0,
+      "seconds": 0.008991137030534446,
+      "summary": {
+        "pass_test": true,
+        "mode": 23,
+        "fault": 1,
+        "requests": 1,
+        "proofs": 0,
+        "retirements": 0,
+        "reports": 0
+      }
+    }
+  },
+  "compile_limit_seconds": 10,
+  "runtime_limit_seconds": 10,
+  "clock_ns": 4,
+  "cycle_limit": 100000,
+  "actual_native_or_HLS_or_MAC": false,
+  "hardware_verified": false,
+  "compile_seconds": 0.012891824007965624,
+  "source_unchanged": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/6.log": "06c9d9db95e6967ca7dbb5839c5eb46c96cfe5fbe7867fd0262ce6a5ccf3141a",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/23.log": "40a0c4f0fdf3668799587b030881f9ab7624dbff9ed7c3a0aaa9572b153589e0",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/10.log": "930da3c9abc2497ec1cff93f8045a7736f00b0c11c4bd89189d3db010c084c91",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/12.log": "4e73983fc04c2644ad08395a64c60cabfb20a0194329d3c76a74626ec952a41e",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/15.log": "17eb90e59a5fb8313c64919a33bc124f3c7f8c024fa8f1c0c25f0bc948377f4d",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/4.log": "eac9709ceda103c2816d2b71916a9aa85dfcc0ac4e2148a3421547d745a21d39",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/18.log": "128dc54e62f74f1d1f6ec0e6a5688991760e98a32826c71b00b31d4b3d69c546",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/1.log": "058e926556f47a5eae2cbebd1f0d86830c078fe5c43fae7a3b8c80a5a83dc541",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/22.log": "dc116ca3dbcc7ab9d28ec9a1667909a3324365424877d9f07d2e053c47415ac9",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/14.log": "217b5b8c691679a155b5fa65ded998a3a819d98f5f7a3f47bc17386a2e0793e4",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/2.log": "bc272d09345fbea4a8e59e225adc348da6f4c1de208d38ccfdf2e2d6a81dc2fb",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/17.log": "abafec4e8a80fb54f07b4034aba5982d103619b4774363a4105025fbb1f16b29",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/11.log": "b3ea2233a62d548b80b14045081b8a74ea534dac1656380f336cc66cd7e7e4b2",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/3.log": "9b0418c3014e0d6b8e501c6a01a17798742df63853a7df1b1b9750d9f032d852",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/0.log": "1d4885861331fb59de77b97b13e275bc5344717cd2ee00d5511e9ba6f9259c33",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/21.log": "3c60cb1af845d012087c7d36f93b4227633cf32c2bb0b0a17e39d0a767418efb",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/tb.v": "7a226f023cb14adbe044f3b56f0c2a4e48a3a4a81be19b91a4473be9f7c95afe",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/8.log": "aae77f2a52840f0a84d92e503bdeab236b1c1a50fa7a104001da42ee8f93d6b9",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/13.log": "6a1669e294a5f3e5ac8aa584cfbdbc71bdb314159720614cd243335ade56ec78",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/9.log": "9540644af3786d8c5c55f083bd42e0c9491c776706520805f7ea0182615bc6df",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/20.log": "94a22d76f22a4077ed922e7f0f8158d655ca29298b8ea34fb32872ec89aa656c",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/16.log": "f35c7deba8ff3045db1f5a01cdf14382cb9812019b2fff2351049dc74dd61450",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/19.log": "f0b0f6ee65b0fcb1a2e40cf3c2b518e0c7e1d663ec63a397ebaa9cb94e97283c",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/7.log": "ad8e48be061b39874781a7cdda27eeb69e9811ebf7039cc19ece2427761cd91a",
+    "rdma/rnic/build/segmented-write-rnr-control-qm1gxky_/5.log": "a54f2c1ff254ce7203de01012148bb7bafcd9acbea73c20ed4643e9108669d07"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-segmented-write-rnr-control-08aebfw7/test": "437cf973b4787b048309e3a7b268c074e18298e5f0dd16ae22186d5245a68abc"
+  }
+}

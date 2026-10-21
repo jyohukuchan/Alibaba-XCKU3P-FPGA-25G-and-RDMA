@@ -16,6 +16,67 @@ passes; this does not relabel the old suite or qualify a hardware release.
 
 ## Latest functional milestone (2026-10-21)
 
+Publication update: this user-requested snapshot includes progress167–169,
+successful and failed reports alike. RNR/same-PSN retry native37 is the latest
+completed integration; control ACK/NAK HLS generation is NOT native/MAC or
+physical qualification. Older local/unpushed/building notes are checkpoint
+history. Original timing/defaults/remaining requirements are unchanged.
+
+Progress169 adds control-only480/512 HLS ownership/receipt, distinct from
+WRITE424/456 and posted RQ620. The same actual ACK/MSN consumers emit duplicate
+ACK1f and NAK60/61/62/63; actual MSN1 and unchanged same PSN table are checked.
+CPP105 PASS, all87 old summaries/full independent oracles identical, real old
+owned Atomic/Immediate RTL compatibility PASS.
+[Consumer audit1907](../../results/2026-10-18/rocev2-rnic-control-response-hls-diagnostics-001.json).
+Actual generation502.562s/197 RTL+data files passes under original7200s and
+1500MiB-start/4ns/default1.08ns/8QP/2000. New480/512, sticky fault and all old
+ports are checked. [Generated audit2239](../../results/2026-10-18/rocev2-rnic-control-response-generated-diagnostics-001.json).
+LUT113600/FF143708/BRAM18K306/DSP0 are HLS estimates, not full-board fit.
+15.571ns still FAILS original timing. The512 receipt proves only actual ACK
+header/MSN consumption, NEVER payload/DMA/PSN advance/RQ/MAC/CQ execution.
+Native full-context admission/serial, shared fresh MAC528 proof, PSN-NAK
+suppression/retry/duplicate and proper fatal-QP quarantine/teardown remain.
+Native RNR37 is still the prior completed native cohort, not this new HLS.
+No live jobs/hardware/default/Git actions. Four exact terminal scratch DBs
+have persistent verified archives and RAM copies; restore ALL old/new archived
+caches before any necessary reboot. All11 remain;167–169 local after5428885.
+
+Progress168: fresh native37 is TERMINAL PASS, including actual retained-WRITE
+RNR/same-PSN retry and all36 prior cases with identical raw inputs/summary
+oracles. Compile996.591s/max9.944s retain original1200s/30s/4ns bounds.
+[2988-binding runtime audit](../../results/2026-10-18/rocev2-rnic-segmented-write-rnr-native-runtime-diagnostics-001.json).
+Rejected LAST leaves the real8192-byte message/MR/HLS/PSN/RQ/CQ state intact;
+RNR6003 uses actual SFD/EOF/tail, exact ACK retirement and independent local
+report. Genuine zero-RQ post and SAME LAST/PSN retry yield positive6004 and one
+whole8193/flags3 CQ. Every host byte/pad/sentinel and all four wire frames pass.
+Real-header module build10.993s uses all68 IDENTICAL old frozen inputs, no
+kernel feature/ABI change/install/load. Actual standard C unedited-native-CQ100
+passes, all95 old outcomes identical; four corrupt new owners retain lifetime.
+[1673-binding matched-source audit](../../results/2026-10-18/rocev2-rnic-segmented-write-rnr-native-software-diagnostics-001.json).
+Previous202 modeled-primitive callback tests were not reexecuted. Host/root/
+peer/PHY/PTP and Linux/MMIO/pins/DMA remain models, NOT installed/live Linux/
+provider/physical/real-peer RNR proof.13 UNOPTFLAT warnings remain unwaived;
+HLS15.571ns FAILS original timing. All11/full1MiB/multiSGE/NAK/congestion/
+partial-HLS cleanup/physical remain. No active jobs/default/Git/hardware actions;
+167–168 local after5428885. Older live-build statements below are history.
+
+Progress167 inserts the checked RNR controller into the real native hierarchy:
+actual native identity/message/MSN/reject input, SAME existing HLS RNR pipeline,
+one shared fresh-tag ACK allocator, exact wire-proof/ACK-retire/local-consumer
+handshakes. Complete elaboration passes8.348s; no new MR/HLS/PTE/backend/nonce
+namespace, RQ/DMA/PSN/CQ grant or positive visibility bypass is invented.
+Controller003 passes24 after only a1ns settling observation within the same4ns
+cycle; failed001/002 and the unchanged DUT/observer remain exact.
+[Source/fixture audit1753 bindings](../../results/2026-10-18/rocev2-rnic-segmented-write-rnr-native-source-diagnostics-001.json)
+retains every36 old recipe and364 fatal messages. Fresh native37/full002 is
+BUILDING, not runtime-qualified: FIRST/MID8192, rejected LAST withoutRQ, real
+RNR6003, genuine zero-RQ post and SAME raw LAST/PSN retry must yield one8193
+CQ and final positive6004. All36 old input/oracles/1200s/30s/4ns gates remain.
+Full001 is retained as a fixture derivation startup failure, not a runtime
+failure or proof.13 UNOPTFLAT warnings remain unwaived; original timing/all11
+still open. No hardware/default/install/Git actions;167 local after5428885.
+Older no-build/not-integrated/local statements below describe their checkpoints.
+
 Publication snapshot includes progress162–165 and in-progress166, both passing
 and failing reports. Older local/unpushed/live-build notes below are history;
 no build is currently running. The newest completed integrated milestone is

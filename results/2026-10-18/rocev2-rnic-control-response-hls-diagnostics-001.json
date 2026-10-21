@@ -1,0 +1,147 @@
+{
+  "scope": "Actual control CPP105/legacy RTL compatibility, not generated/native proof.\n\nOriginal87 outcomes/oracles, full480 owner/512 header receipt, genuine MSN1\nand same actual PSN table are required. Preserve all original failures/gates.\n",
+  "audit_passed": true,
+  "evidence": {
+    "control-response-hls-003": {
+      "bindings_verified": 429,
+      "report_sha256": "a0d9cf6d7bba5ad8ee19f6c25c446db62b1be5978136c2f267f9afc7fefef27c",
+      "exact_preimage_resolutions": []
+    },
+    "control-response-compat-001": {
+      "bindings_verified": 321,
+      "report_sha256": "ee493aa7e79f982f2a7df8c17158504a23279d52dd97ecc80d624fb9668a1ace",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-owned-hls-001": {
+      "bindings_verified": 407,
+      "report_sha256": "787c21e87b969808437e917de2256c8f79154378e1c0b935961c6300bd42ce2c",
+      "exact_preimage_resolutions": []
+    },
+    "control-response-source-startup-001": {
+      "bindings_verified": 1,
+      "report_sha256": "57cef0f66e0880b61ecebf6ff3243df921703baf3a3f894d3bf6229e9db8c456",
+      "exact_preimage_resolutions": []
+    },
+    "control-response-builder-startup-001": {
+      "bindings_verified": 1,
+      "report_sha256": "dc71238cdea08036e0c95877df444b6d2bd04276e89e00a87276965983721aad",
+      "exact_preimage_resolutions": []
+    },
+    "control-response-hls-001": {
+      "bindings_verified": 323,
+      "report_sha256": "afcb00e0a2a608156ac308908b8b61694825249f294e2a1f10dadb8c4639558b",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/test_control_response.cpp"
+      ]
+    },
+    "control-response-hls-002": {
+      "bindings_verified": 425,
+      "report_sha256": "9322e18f7ecceddf0cd10444ff1e74e21ce0fb9143a8650df950c4aeb724b0a3",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/test_control_response.cpp"
+      ]
+    }
+  },
+  "verified_bindings": 1907,
+  "actual_CPP_modes": 105,
+  "all87_original_summaries_and_independent_oracles_identical": true,
+  "compile_seconds": 84.61458803602727,
+  "maximum_case_seconds": 8.505175645987038,
+  "new_control_CPP_modes": 18,
+  "control_ACK_headers": [
+    {
+      "syndrome": 31,
+      "received_PSN": 16777214,
+      "response_PSN": 16777215,
+      "serial": 1,
+      "MSN": 1,
+      "owner480": "01ffffffeffffffa123456700000001e8af3fbb97531b8830367c5d0c0a81f02c0a81f010000c4fedcba9889abcdef91234567000000010011000002",
+      "ACK_hex": "1140ffff000000c400ffffff1f000001"
+    },
+    {
+      "syndrome": 96,
+      "received_PSN": 5,
+      "response_PSN": 0,
+      "serial": 2,
+      "MSN": 1,
+      "owner480": "060000005000000a123456700000002e8af3fbb97531b8830367c5d0c0a81f02c0a81f010000c4fedcba9889abcdef91234567000000010011000002",
+      "ACK_hex": "1140ffff000000c40000000060000001"
+    },
+    {
+      "syndrome": 97,
+      "received_PSN": 0,
+      "response_PSN": 0,
+      "serial": 3,
+      "MSN": 1,
+      "owner480": "061000000000000a123456700000003e8af3fbb97531b8830367c5d0c0a81f02c0a81f010000c4fedcba9889abcdef91234567000000010011000002",
+      "ACK_hex": "1140ffff000000c40000000061000001"
+    },
+    {
+      "syndrome": 98,
+      "received_PSN": 0,
+      "response_PSN": 0,
+      "serial": 4,
+      "MSN": 1,
+      "owner480": "062000000000000a123456700000004e8af3fbb97531b8830367c5d0c0a81f02c0a81f010000c4fedcba9889abcdef91234567000000010011000002",
+      "ACK_hex": "1140ffff000000c40000000062000001"
+    },
+    {
+      "syndrome": 99,
+      "received_PSN": 0,
+      "response_PSN": 0,
+      "serial": 5,
+      "MSN": 1,
+      "owner480": "063000000000000a123456700000005e8af3fbb97531b8830367c5d0c0a81f02c0a81f010000c4fedcba9889abcdef91234567000000010011000002",
+      "ACK_hex": "1140ffff000000c40000000063000001"
+    }
+  ],
+  "actual_MSN_from_existing_table": 1,
+  "same_actual_PSN_table_unchanged": true,
+  "control_owner_bits": 480,
+  "control_header_receipt_bits": 512,
+  "actual_legacy_owned_service_RTL": true,
+  "compatibility_compile_seconds": 26.991511502012145,
+  "compatibility_runtime_seconds": 1.0561018440057524,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_control_response_hls.py": "4461193ae7d812cbad1a2b77760bb70767330620257c3b31f8d17c7d7bc175df",
+    "rdma/rnic/hls/segmented_control_response_transport.py": "59fc9ac6d265b80db69a163883d9784b5f9767c5efa47f0063b91bd4dee81017",
+    "rdma/rnic/hls/test_control_response.cpp": "ad63a8dfe800df8ccdf131f9d53e2fede7e0a85980eabfaf727b52ef67cfbe2f",
+    "rdma/rnic/hls/build_native_control_response.py": "2826cc72fe3c1d6c6cb9ec071735073b8ae69bc4a381197849445786f3a593bc",
+    "rdma/rnic/tests/probe_control_response_hls.py": "c2669cbfb372af69398177d7e305bd8e44d01e85e3fc6332fa1110e4bc883f87",
+    "rdma/rnic/tests/probe_control_response_compat.py": "be531e171057ef9fa0eba0fbae0bb7ea815edfe041f2fd4748c9d5446d333ad4",
+    "rdma/rnic/build/native-control-response-transport-001/source.json": "c2b66d1258feaacba080eb759da2dcf1037bbd49ec831de2f56531c4b421708f"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "inherited_source_check": {
+    "exit": 1,
+    "stdout": "Tcl completeness checks passed: 28 files (not Vivado elaboration).\nLFC source allowlist tests passed: 14 cases; no hardware/Vivado access.\nSource check passed: 122 HDL, 12 constraints, 3 IP generators.\n",
+    "stderr": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v\n",
+    "overall_suite_passed": false
+  },
+  "primary_behavioral_references": [
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.17/drivers/infiniband/sw/rxe/rxe_resp.c",
+      "used_for": "check_psn/duplicate_request/prepare_ack_packet: future PSN NAK uses expected PSN; duplicate WRITE ACK uses last accepted PSN; AETH takes actual responder MSN; no Linux code copied."
+    },
+    {
+      "url": "https://github.com/torvalds/linux/blob/v6.17/drivers/infiniband/sw/rxe/rxe_hdr.h",
+      "used_for": "AETH constants: duplicate unlimited ACK1f and NAK60/61/62/63; these are control responses, never memory execution grants."
+    }
+  ],
+  "generated_HLS_qualified": false,
+  "native_control_response_integration": false,
+  "real_peer_or_physical": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "remaining": [
+    "Actual generated new480/512 core and original HLS clocks/geometry/legacy port gates; fresh native wiring/runtime of all37 old cases plus authenticated control/retry/duplicate cases.",
+    "Native full-context authentication, fresh nonwrapping serial, exact typed control-HLS proof plus real MAC EOF/SFD/tail and same shared ACK allocator; fatal-QP quarantine/safe teardown must not be invented.",
+    "All11/full1MiB native/multiSGE/live registered refs/real-peer NAK/RNR/MSN/congestion/partial-HLS cleanup/original timing/physical remain."
+  ],
+  "hardware_or_default_actions": [],
+  "commit_or_push": false
+}

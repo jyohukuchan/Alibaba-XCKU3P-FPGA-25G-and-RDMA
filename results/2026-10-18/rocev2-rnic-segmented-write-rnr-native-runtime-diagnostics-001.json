@@ -1,0 +1,122 @@
+{
+  "scope": "Actual fresh native37 RNR/retry and all36 old regressions, not hardware.\n\nSame generated HLS/MR/PTE/PCIe/nonce/fence/MAC/PSN/whole CQ execute together.\nPhysical host/root/peer/PHY/PTP are modeled; original timing/all11 remain.\n",
+  "audit_passed": true,
+  "evidence": {
+    "segmented-write-rnr-native-full-002": {
+      "bindings_verified": 868,
+      "report_sha256": "2714ed78a5509f861c0a24da646ec2f6ffe7aeebd27ed73dcc03cb00004577f1",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-profile-native-full-001": {
+      "bindings_verified": 854,
+      "report_sha256": "8187903a9109598e670555fd3e589a5b6445e686852fe6274932434c58189ffa",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-rnr-native-elaboration-001": {
+      "bindings_verified": 519,
+      "report_sha256": "4b1f8a719e22f4163cd60c72ea57c98e900bdeb6bec6da0daee249268a4b2950",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-rnr-native-source-diagnostics-001": {
+      "bindings_verified": 10,
+      "report_sha256": "f645be2280492e4fc1570ceca84d80d4497656ecb4af082e3e4fcc9d96288d6d",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-owned-generated-hls-001": {
+      "bindings_verified": 737,
+      "report_sha256": "897ad312a3a71e714c8897af5547fa9ce8e69239e50e8cb24ebcb0ab8cd227bc",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 2988,
+  "actual_native_cases": 37,
+  "all36_old_inputs_and_summary_oracles_identical": true,
+  "actual_RNR_and_same_PSN_retry": true,
+  "actual_generated_HLS_MR_PTE_PCIe_nonce_fence_MAC_PSN_CQ": true,
+  "actual_native_module_counts": {
+    "rocev2_top": 1,
+    "rocev2_native_rnic_endpoint": 1,
+    "rocev2_native_sq_endpoint": 1,
+    "rocev2_mr_table": 1,
+    "rocev2_mr_page_table": 1,
+    "rocev2_shared_hls_transport": 1,
+    "rocev2_shared_protected_responder": 1,
+    "rocev2_atomic_request_integrity_transport": 1,
+    "rocev2_wqe_memory_executor": 1,
+    "rocev2_wqe_response_guard": 0,
+    "rocev2_wqe_tx_lifetime": 1,
+    "rocev2_wqe_replay": 1,
+    "rocev2_receive_queue": 0,
+    "rocev2_receive_ack_tx": 0,
+    "rocev2_cq_mmio": 1,
+    "rocev2_duplex_rx_mux": 1,
+    "rocev2_duplex_tx_router": 1,
+    "rocev2_memory_origin_router": 2,
+    "rocev2_sq_control_regs": 2,
+    "rocev2_sq_dma_fetch": 1,
+    "rocev2_sq_fetch": 1,
+    "rocev2_queue_cfg_arbiter": 1,
+    "rocev2_wqe_admission": 2,
+    "rocev2_native_atomic_request_top": 0,
+    "rocev2_native_zero_request_top": 0,
+    "rocev2_zero_ipv4_icrc": 3,
+    "rocev2_zero_rx_padding": 1,
+    "rocev2_native_zero_rq_top": 0,
+    "rocev2_zero_service_owner": 1,
+    "rocev2_zero_service_mac": 1,
+    "rocev2_memory_command_nonce": 1,
+    "rocev2_native_zero_service_top": 0,
+    "rocev2_paged_memory_backend": 1,
+    "rocev2_segmented_source_executor": 1,
+    "rocev2_segmented_executor_mux": 1,
+    "rocev2_segmented_child_executor": 2,
+    "rocev2_native_segmented_read_top": 0,
+    "rocev2_segmented_read_executor_mux": 1,
+    "rocev2_segmented_read_unpad_route": 1,
+    "rocev2_segmented_read_executor": 1,
+    "rocev2_segmented_read_child_unpad": 1,
+    "rocev2_wqe_read_unpad": 1,
+    "rocev2_native_segmented_request_top": 0,
+    "rocev2_expected_remote_msn": 1,
+    "rocev2_segmented_read_response_guard": 1,
+    "rocev2_native_segmented_immediate_top": 0,
+    "rocev2_native_segmented_receive_top": 0,
+    "rocev2_receive_message_queue": 0,
+    "rocev2_native_segmented_write_owned_top": 1,
+    "rocev2_mr_query_arbiter": 4,
+    "rocev2_receive_write_ack_tx": 0,
+    "rocev2_write_notice_binding_queue": 1,
+    "rocev2_segmented_write_native_controller": 1,
+    "rocev2_segmented_write_native_frontend": 1,
+    "rocev2_native_write_rx_router": 1,
+    "rocev2_remote_write_memory": 1,
+    "rocev2_remote_write_message_guard": 1,
+    "rocev2_memory_client_arbiter": 3,
+    "rocev2_receive_write_rnr_ack_tx": 1,
+    "rocev2_segmented_write_rnr_control": 1
+  },
+  "compilation_seconds": 996.5905560450046,
+  "maximum_case_seconds": 9.943333595001604,
+  "fresh_binary_sha256": "ca4246f8fb362ea8461388936b11b1aa203afafe76bd70ea1540694a0b443eba",
+  "unedited_CQ_matches_prior_ABI": true,
+  "zero_capacity_RQ_record_matches_prior_ABI": true,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_segmented_write_rnr_native_runtime.py": "72f4c8615dc635b2504ea01c1cfbddc82346d546bcb86bbebcf914771cf588ae",
+    "rdma/rnic/build/segmented-write-rnr-native-full-yuyp7mv4/LARGE_RX_WRITE_RNR-event.hex": "35752f31f0d2bf3301bfcbe7e9edae87b9bb9805a2670d8e0188872d21324d8f",
+    "rdma/rnic/build/segmented-write-rnr-native-full-yuyp7mv4/LARGE_RX_WRITE_RNR-receive-records.hex": "fbdc435d11e27ee2605a1f229a422e0f84df1a7bbaab3bb623f56f68a6102f85"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "UNOPTFLAT_warnings": 13,
+  "warning_waivers": false,
+  "live_Linux_or_physical": false,
+  "real_peer_RNR_retry": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "remaining": [
+    "All11/full1MiB native/multiSGE/live Linux/provider refs/real-peer NAK/RNR/retry/MSN/congestion/safe partial-HLS cleanup/original timing/physical remain."
+  ]
+}

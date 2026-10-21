@@ -5,6 +5,40 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+Publication update: the user-requested snapshot includes progress167–169 and
+both successful and failed evidence. Earlier local/unpushed/building statements
+are checkpoint history. RNR native37 is complete; control ACK/NAK HLS is not yet
+native/MAC-integrated. Atomic advertisement and hardware defaults stay unchanged.
+
+Progress169 adds typed control-only480/512 ACK/NAK HLS, NOT Atomic/data/CQ
+completion authority. All105 CPP modes retain every87 old outcome/oracle;
+real old owned Atomic/Immediate service compatibility passes. Actual new HLS
+generation502.562s passes the added480/512 and old port gates, but15.571ns still
+FAILS original4ns/default1.08ns.
+[Generated audit](../results/2026-10-18/rocev2-rnic-control-response-generated-diagnostics-001.json).
+No native control/MAC/fatal-QP/physical claim, install/load/program or Atomic
+advertisement. All11/IB_ATOMIC_NONE/defaults/zero drains remain; no live jobs.
+
+Progress168 completes actual native37: new retained-WRITE RNR/retry and all36
+old cases (including CAS/FADD/Atomic-mixed/denials) PASS with identical old raw
+inputs/summary oracles.996.591s build/max9.944s retain original1200s/30s/4ns.
+Real-header same-source kernel build and actual unedited-native-CQ100 also PASS;
+all68 frozen inputs/all95 old CQ outcomes identical.
+[Matched-source audit](../results/2026-10-18/rocev2-rnic-segmented-write-rnr-native-software-diagnostics-001.json).
+Primitive boundaries remain models, not live Linux/native/physical/Atomic
+advertisement. IB_ATOMIC_NONE/defaults/original timing/all11 stay unchanged;
+13 UNOPTFLAT warnings unwaived. No active jobs/install/program/Git actions.
+
+Progress167 integrates the real retained-WRITE RNR controller and shared ACK
+into the existing native/HLS graph. Elaboration8.348s and controller24 pass;
+fresh native37 is BUILDING, not a runtime RNR/Atomic/physical pass. Every36 old
+recipe and364 fatal messages remain, including Atomic regressions.
+[1753-binding source/fixture audit](../results/2026-10-18/rocev2-rnic-segmented-write-rnr-native-source-diagnostics-001.json).
+The same-cycle observation fix does not change the DUT or original failures.
+IB_ATOMIC_NONE, both zero global drains, original timing/defaults and all11 stay.
+13 UNOPTFLAT warnings unwaived. No install/program/hardware/Git change;167 local
+after5428885. Earlier no-live-build/not-integrated statements are history.
+
 Publication snapshot includes progress162–165 and in-progress166 RNR component
 work, with successes AND failures retained. Earlier local/unpushed/building
 statements are checkpoint history; no build is currently running. Shared ACK

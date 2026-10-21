@@ -1,0 +1,83 @@
+{
+  "scope": "Actual generated control480/512 HLS and old ports, not native/physical.\n\nKeep original4ns/default1.08ns/8QP/2000/1500MiB-start/7200s gates, all105\nactual CPP modes and unchanged legacy service. Generation is not timing fit.\n",
+  "audit_passed": true,
+  "evidence": {
+    "control-response-generated-hls-001": {
+      "bindings_verified": 742,
+      "report_sha256": "901429e484918214a4d65fe0dae4f1edd48c701fec209c2f4079c75b2a82f8f1",
+      "exact_preimage_resolutions": []
+    },
+    "control-response-hls-003": {
+      "bindings_verified": 429,
+      "report_sha256": "a0d9cf6d7bba5ad8ee19f6c25c446db62b1be5978136c2f267f9afc7fefef27c",
+      "exact_preimage_resolutions": []
+    },
+    "control-response-compat-001": {
+      "bindings_verified": 321,
+      "report_sha256": "ee493aa7e79f982f2a7df8c17158504a23279d52dd97ecc80d624fb9668a1ace",
+      "exact_preimage_resolutions": []
+    },
+    "control-response-hls-diagnostics-001": {
+      "bindings_verified": 10,
+      "report_sha256": "fdfb8a7403b14018136a59bfa636f6b5ce4a56dc920f88e3914a019a113ec7d0",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-owned-generated-hls-001": {
+      "bindings_verified": 737,
+      "report_sha256": "897ad312a3a71e714c8897af5547fa9ce8e69239e50e8cb24ebcb0ab8cd227bc",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 2239,
+  "actual_generation_seconds": 502.5618853259948,
+  "HLS_top": "rocev2_native_control_response_top",
+  "actual_port_widths": {
+    "s_axis_control_owner_TDATA": 480,
+    "m_axis_control_done_TDATA": 512,
+    "s_axis_write_owner_TDATA": 424,
+    "m_axis_write_done_TDATA": 456,
+    "m_axis_recv_message_TDATA": 776
+  },
+  "actual_domain_definition_counts": {
+    "as02_native_control_merger_0_s": 1,
+    "generate_exh_512_0_s": 1,
+    "msn_table_0_s": 1,
+    "state_table_0_s": 1
+  },
+  "actual_generated_RTL_and_data_files": 197,
+  "resources": {
+    "LUT": "113600",
+    "FF": "143708",
+    "BRAM_18K": "306",
+    "DSP": "0"
+  },
+  "target_clock_ns": 4,
+  "default_uncertainty_ns": 1.08,
+  "effective_ns": 2.92,
+  "estimated_ns": 15.571,
+  "original_timing_met": false,
+  "actual_CPP_modes": 105,
+  "all87_previous_modes_retained": true,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_control_response_generated.py": "e5715c86f0698a23f729450e4269cb55e94dc38336130892ec2576b4af4695ff",
+    "rdma/rnic/build/native-zero-service-hls-9m7iatwn/project/solution1/syn/verilog/rocev2_native_control_response_top.v": "4a59a3a338838b9c57b03ce026f7e72441922ec3a7e487ae38b52eac385efc43"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "native_control_response_integration": false,
+  "real_MAC_control_proof": false,
+  "fatal_QP_error_and_teardown_qualified": false,
+  "live_Linux_or_physical": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "remaining": [
+    "Wire actual native full-context authentication and fresh nonwrapping480 control owner to this actual new HLS; shared allocator with typed512 core plus real MAC528 proof, no fake payload/RQ/CQ/PSN grant.",
+    "Execute all37 old native cases plus futurePSN NAK, suppression/retry, duplicate ACK without repeated data, and proper fatal-QP quarantine; do not treat CPP or generation as native proof.",
+    "All11/full1MiB native/multiSGE/live registered refs/real-peer NAK/RNR/MSN/congestion/safe partial-HLS cleanup/original timing/physical remain."
+  ],
+  "hardware_or_default_actions": [],
+  "commit_or_push": false
+}

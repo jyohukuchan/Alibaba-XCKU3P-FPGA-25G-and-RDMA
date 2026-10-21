@@ -32,6 +32,227 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+Explicit publication update (2026-10-21): at the user's request, this snapshot
+includes progress167–169 sources and successful AND failed reports. Earlier
+local/unpushed/live-build statements below describe their checkpoint times.
+The completed native milestone is RNR/same-PSN retry with all37 cases passing;
+new control ACK/NAK HLS generation and CPP105 do NOT imply native/MAC integration,
+fatal-QP recovery, physical qualification or timing closure. No long build or
+hardware change is performed for publication. The source-only check still fails
+the retained historical TX-padding recorded-source SHA mismatch; it is not
+reported as an all-green suite. All original remaining requirements stay open.
+
+Progress169 classifies168 as PROGRESS: actual native37 RNR/retry, same-source
+kernel build, rawCQ100 and matched-source audits completed. All385 authored/
+194 public reports/568 completed-build input hashes revalidate. No prior live
+job was restarted. The completed native milestone remains168's RNR37; the NEW
+control HLS below is NOT yet selected/connected in that native runtime graph.
+
+Behavioral cross-check used primary
+[Linux RXE v6.17 responder](https://raw.githubusercontent.com/torvalds/linux/v6.17/drivers/infiniband/sw/rxe/rxe_resp.c)
+and [AETH constants](https://github.com/torvalds/linux/blob/v6.17/drivers/infiniband/sw/rxe/rxe_hdr.h).
+Future PSNs receive a sequence NAK naming the expected PSN; duplicate WRITE
+receives an ACK naming the last accepted PSN, not repeated memory execution.
+AETH uses the actual responder MSN. Fatal classes additionally require proper
+QP error/quarantine/lifetime handling; emitting a NAK alone cannot prove that.
+No Linux implementation text was copied into the new original HLS code.
+
+`segmented_control_response_transport.py` extends the SAME existing ACK/MSN
+pipeline with a byte-aligned control owner480 and separate header receipt512:
+`{reserved4,syndrome8,receivedPSN24,responsePSN24,serial64,nativeContext356}`
+and `{error8,actualMSN24,owner480}`. Full QPN/PD/epoch/QP-cookie/nonzero serial,
+reserved bits, allowed type and24-bit signed-wrap PSN relationship are checked
+before historical QPN narrowing. This is privileged control metadata, never a
+remote-MR/RQ/data grant. Duplicate ACK1f and NAK60/61/62/63 use actual shared
+MSN/ACK consumers. Legacy ACK/RNR priority and RNR-only20 validation stay exact.
+The512 proof is emitted only by the real header consumer after using the same
+MSN value as the actual AETH, NOT by a delay/idle/READY/reset bit. Native context
+authentication and serial monotonicity are still the enclosing native bridge's
+responsibility, not inferred from these modeled inputs.
+
+[CPP003](../results/2026-10-18/rocev2-rnic-control-response-hls-003.json)
+PASSES all105 modes, compile84.614588s/max8.505176s, original600s/30s/8QP/2000.
+All87 old summaries and independent whole-byte/token/READ/WRITE/SEND/Immediate/
+RQ oracles stay identical.18 new modes cover five actual control headers/full
+480-token/512-receipt echoes with actual NONZERO MSN1, same actual PSN-table
+readback unchanged, withheld real ACK consumer, retained unconsumed receipt,
+no payload/RQ/WR/CQ completion, preserved old ACK/RNR priority, fifteen invalid
+owners and sticky RNR rejection. The genuine preceding4097-byte WRITE supplies
+that MSN1; it is not a fabricated positive receipt. Native/peer/RQ/memory inputs
+and packet endpoints are models, not IPv4/ICRC/MAC/physical execution proof.
+[Real legacy owned Atomic/Immediate compatibility001](../results/2026-10-18/rocev2-rnic-control-response-compat-001.json)
+PASSES26.991512s compile/1.056102s execution under unchanged600s/30s.
+[Consumer diagnostics001](../results/2026-10-18/rocev2-rnic-control-response-hls-diagnostics-001.json)
+PASSES1907 bindings. Failed startup/CPP001/CPP002/builder-startup reports and
+exact preimages remain: wrong forwarding-count assumption, fixture numeric
+literal spacing, hexadecimal log marker and wrong historical report filename
+were corrected without changing DUT gates/assertions/clocks/deadlines. Old
+failures are not relabeled; the successful105 run uses a fresh binary.
+
+[Actual generated HLS001](../results/2026-10-18/rocev2-rnic-control-response-generated-hls-001.json)
+PASSES502.561885s under original7200s. Free root1,661,014,016 bytes at start
+exceeds the unchanged1,572,864,000-byte gate. Actual new197 RTL/data files,
+480/512 control ports/sticky fault and all old checked ports are present.
+[Generated diagnostics001](../results/2026-10-18/rocev2-rnic-control-response-generated-diagnostics-001.json)
+PASSES2239 bindings. Actual generated top contains one control merger, ACK
+generator, MSN table and state table instance each, not a second control
+namespace. Resource estimates LUT113600/FF143708/BRAM18K306/DSP0 are not board
+fit. Estimated15.571ns still FAILS4ns/default1.08ns/effective2.92ns; no timing
+condition is relaxed. HLS68686/runner2921765/tool2921990 is terminal0, not live.
+
+Before generation, four exact successful older Atomic/request synthesis scratch
+DBs were losslessly archived (persistent fsynced tar/manifest) and relocated to
+RAM. Every5976 original/archive/RAM file matched; archives total96,887,261 bytes.
+Sources/generated RTL/logs and old successes/failures were NOT removed. After
+relocation1,740,025,856 root bytes were free. Restore ALL these and earlier
+archived RAM-backed caches before ANY necessary reboot; authenticated exact
+thread/goal revival remains unproved and no reboot is needed. The private
+archive/restore manifest remains local, not public functional test evidence.
+
+Next: actual native ICRC/peer/QP/format/PSN-certified control admission, fresh
+nonwrapping serial, real same-owner512 HLS plus528 MAC proof, single shared ACK
+allocator and guarded TX permission; no fake RQ/data/CQ/PSN grant. Execute every
+37 old native case plus future-PSN suppression/retry/duplicate-no-repeat-data
+and proper fatal-QP behavior. Current control headers alone do NOT implement
+native fatal-QP error transitions, safe partial-HLS teardown or general RC
+reliability. All11/full1MiB native/multiSGE/live registered Linux/provider refs/
+real-peer NAK/RNR/MSN/congestion/original board timing/physical remain. The old
+TX-padding SHA mismatch still fails `scripts/check.sh`; no all-green suite is
+claimed. No hardware/install/load/JTAG/flash/network/fan/BIOS/commit/push action;
+167–169 remain local after5428885.
+
+Progress168 classifies167 as PROGRESS (actual RNR insertion/elaboration,
+controller24/source1753 passes and verified-live fresh native37 compilation).
+All381 authored/189 public-report/568 live-input hashes revalidate. SAME
+session61837/runner2916220/compiler2916263 was polled until terminal, never
+restarted because observation timed out. Compile finished996.590556s under
+original1200s; ALL37 actual native cases PASS, maximum9.943334s under30s.
+The process/session is now terminal0, not live. The entire SAME-generation
+197-file typed HLS set and actual executable namespaces match elaboration.
+All36 old raw input hashes and every summary oracle stay identical.
+[Actual-runtime diagnostics001](../results/2026-10-18/rocev2-rnic-segmented-write-rnr-native-runtime-diagnostics-001.json)
+PASSES2988 bindings; no old executable/object or normalized event was used.
+Fresh binary SHA `ca4246f8fb362ea8461388936b11b1aa203afafe76bd70ea1540694a0b443eba`.
+
+The new RNR case actually executes generated HLS/native shadow PSN/shared
+MR/PTE/PCIe descriptors/TLPs/global nonce/visibility fences/ACK/MAC/wholeCQ.
+FIRST/MID write8192 bytes. Empty notification RQ causes LAST error38 and
+actual syndrome20/PSN987656/MSN0, unique shared MACtag6003, accepted EOF/SFD/
+1024-tail, exact typed368-owner ACK retirement, then the independently stalled
+local error consumer. During rejection there is NO LAST replay/DMA/nativePSN
+advance/RQtake/CQ; real message/MR/context/offset are retained. Only a genuine
+RQ producer post follows; IDENTICAL raw LAST/PSN retry writes the final byte,
+produces positive6004/MSN1, and one whole8193/flags3 CQ despite notification
+capacity0. Withholding final actual receipt1100 cycles still forbids premature
+PSN/CQ retirement. Full payload/pad/sentinel/record and all four wire frames
+are independently checked. Host/root/peer/PHY/PTP boundaries remain MODELS;
+manual peer replay is not physical ConnectX or actual-peer retry qualification.
+
+`build_segmented_write_rnr.py` preserves the exact profile8/kernel source/ABI,
+but requires actual native37/RNR/all36 old passes and original bounds before
+module compilation. A negative control using the OLD successful36 native
+report is rejected BEFORE creating build/output/report files; not a reused
+runtime qualification. With the genuine37 report,
+[real-header kernel build001](../results/2026-10-18/rocev2-rnic-segmented-write-rnr-kernel-build-001.json)
+PASSES10.992679s under original180s. ALL68 frozen inputs, including parent
+headers and Makefile, match previous165 byte-for-byte. No module is installed
+or loaded, no capabilities/defaults/Atomic_NONE change.
+
+[Actual standard C raw-CQ100 cases](../results/2026-10-18/rocev2-rnic-segmented-write-rnr-kernel-native-cq-001.json)
+PASS, compile7.394619s and original10s/case. Every95 prior outcome is identical;
+five new cases consume the unedited RNR-retry wholeCQ and genuine C128 zero-RQ.
+The standard poll returns IB_WC_RECV_RDMA_WITH_IMM/8193/network-order Immediate;
+four malformed full-owner variants retain lifetime/no ACK. New actual CQ/RQ
+bytes equal the prior ABI exactly; no observed snapshot is rewritten.
+[Matched-source software diagnostics001](../results/2026-10-18/rocev2-rnic-segmented-write-rnr-native-software-diagnostics-001.json)
+PASSES1673 bindings, all68 kernel inputs and all95 previous outcomes. Prior202
+callback runs are retained but NOT reexecuted. Linux/MMIO/pin/coherent-DMA
+primitives remain explicit models: no live Linux/native/provider pin/reference/
+ordering or physical-runtime claim follows from C/model execution.
+
+No live build remains. Terminal sessions61837/4766/48447/70183 must not be
+repolled/restarted. Next broad gap is authenticated wire NAK/other recovery,
+not a claim that RNR alone completes RC reliability. The current HLS56-bit RNR
+merger accepts only syndrome20; do NOT feed general NAK codes into it without
+real implementation/fresh generated-HLS/native proof. Retain the real native
+QPN/PD/epoch/expectedPSN/message identity and use typed negative ownership, never
+positive data/RQ/CQ grants or a second allocator. Full1MiB native/multiSGE/live
+registered refs/real-peer NAK/RNR/MSN/congestion/safe partial-HLS cleanup and all
+eleven original requirements remain. HLS15.571ns still FAILS4ns/default1.08ns;
+13 UNOPTFLAT warnings unwaived. `scripts/check.sh` still FAILS the historical
+TX-padding SHA mismatch. No timing/clock/deadline/geometry/drain gate is relaxed.
+No reboot is needed; authenticated exact thread/goal restoration stays unproved.
+Restore ALL archived RAM caches before any necessary reboot. No hardware,
+install/load/JTAG/flash/network/fan/BIOS/commit/push action this turn;167–168
+remain local after5428885. Older live-build/no-RNR-runtime notes are history.
+
+Progress167 classifies the preceding component/publication work as PROGRESS:
+actual78+2 shared-RNR ACK passes, exact failed controller diagnostics and the
+explicit user-requested publication5428885 changed authoritative state. The
+original165 checkpoint's370 authored/180 report hashes revalidate; its five
+documentation hashes resolve ONLY to the exact explicit-publication preimages.
+All eleven original requirements remain intact; no completion is inferred.
+
+The read-only failed002 witness showed a real REPORT handshake followed by
+IDLE/counts1/fault0, while the test sampled continuous guards in the same delta
+as withdrawing VALID. Only that final test observation gains a1ns settle within
+the SAME4ns cycle; no clock, cycle/runtime limit, stimulus, DUT or assertion is
+changed. [Controller003](../results/2026-10-18/rocev2-rnic-segmented-write-rnr-control-003.json)
+PASSES all24 four-state modes under original10s/4ns/100000. Both old failures,
+the frozen002 source and read-only witness remain; no failure is relabeled.
+
+`derive_segmented_write_rnr_native.py` modifies seven actual native flow leaves,
+substitutes the ONE shared ACK allocator and adds the checked RNR controller.
+Actual controller reject/MSN/full message and native QPN/PD/epoch/expectedPSN
+drive it; the local error consumer is independent and cannot consume before
+the real fresh-tag negative wire proof and exact ACK retirement. Four flow pins
+cross existing wrappers to the SAME existing generated HLS RNR event pipeline.
+Old RNR state/data/handshakes remain the other mutually-exclusive producer;
+colliding/unknown offers quarantine. Negative TX permission never becomes a
+positive memory fence or DMA/PSN/RQ/CQ grant. Both original global drains remain
+zero; the shared HLS idle predicate and original visibility gates are retained.
+[Native elaboration001](../results/2026-10-18/rocev2-rnic-segmented-write-rnr-native-elaboration-001.json)
+PASSES8.347083s under original180s/root+RAM1GiB. Actual sole MR/PTE/backend/
+nonce/HLS/message/RQ/CQ namespaces remain; only ACK replacement and one RNR
+controller instance differ. Profile8 remains131071/511/13/63, no new advertised
+or installed capability. Elaboration is not RNR payload/retry or physical proof.
+
+The new full fixture configures a genuine EMPTY RQ before FIRST. FIRST/MID must
+write/fence/ACK8192 bytes and retain the real message/MR/nativePSN. LAST Immediate
+with no postedRQ must cause actual HLS RNR, fresh shared tag6003 and real MAC
+EOF/SFD/1024-tail proof, exact ACK retirement, then the independently blocked
+local error report. Rejection cannot replay LAST into HLS, DMA its byte, advance
+PSN/MSN, take an RQ or create a CQ. Only the genuine RQ producer then advances;
+the IDENTICAL raw LAST and PSN are retried. Positive6004's real MAC receipt is
+held1100 cycles to forbid premature PSN/CQ escape. The actual final1-byte DMA,
+whole8193/flags3 CQ and every payload/pad/sentinel must all pass.
+
+[Source/fixture diagnostics001](../results/2026-10-18/rocev2-rnic-segmented-write-rnr-native-source-diagnostics-001.json)
+PASSES1753 bindings: all36 old case recipes/order/arguments/zero/capacity values
+and364 fatal messages remain,14 new fatal descriptions added. Raw WRITE packet
+generation stays unchanged; no internal force or observed-output normalization.
+Full001 FAILS before bench generation because a textual anchor matched more
+than one old fixture; its raw report/preimages stay. A second ambiguous startup
+anchor was also resolved before launch, not a DUT/test-gate change.
+
+Fresh full002/session61837, runner2916220/compiler2916263 is now LIVE, targeting
+all37 cases with new objects/binary and the entire SAME-generation197-file HLS
+RTL/data set. Bench elaboration has passed with no width warnings; compilation
+is still running. Original1200s build/30s cases/4ns/root1GiB/RAM4GiB gates stay.
+13 UNOPTFLAT warnings are retained, NOT waived. Do not restart merely because
+an observation wait expires; inspect the same handles until terminal.
+
+No native RNR runtime/real-peer retry/NAK/congestion/full1MiB/multiSGE/live
+Linux/provider references/partial-HLS cleanup/original board fit/setup/hold/CDC/
+DRC/routing or physical pass follows from this work. HLS15.571ns still FAILS the
+original4ns/default1.08ns gate. `scripts/check.sh` still FAILS the historical
+TX-padding SHA mismatch. BIOS Medium, management networking, oneSGE,
+IB_ATOMIC_NONE and rollback images are unchanged. No reboot is needed; exact
+authenticated thread/goal revival remains unproved, and ALL archived RAM caches
+must be restored before any necessary reboot. No install/JTAG/flash/network/
+fan/BIOS/commit/push action this turn;167 is local after5428885. Older publication
+no-build/not-integrated statements below describe those checkpoint times.
+
 Explicit publication snapshot (2026-10-21): progress162–165 and the CURRENT,
 unfinished166 RNR component sources/reports are included at the user's request.
 Local/unpushed/previous-HEAD/live-build statements below are checkpoint history.

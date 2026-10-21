@@ -1,0 +1,80 @@
+{
+  "scope": "Actual native37 RNR/retry with same-source kernel and raw-CQ100 checks.\n\nCompare every frozen kernel input byte and every95 previous callback result.\nLinux/MMIO/pins/DMA primitives remain MODELS, not installed/live hardware.\n",
+  "audit_passed": true,
+  "evidence": {
+    "segmented-write-rnr-native-full-002": {
+      "bindings_verified": 868,
+      "report_sha256": "2714ed78a5509f861c0a24da646ec2f6ffe7aeebd27ed73dcc03cb00004577f1",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-rnr-native-runtime-diagnostics-001": {
+      "bindings_verified": 6,
+      "report_sha256": "1328ebef4835ac5d4d832f74286e11230d9fa8e8c295535cb7b0257afaea9a64",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-rnr-kernel-build-001": {
+      "bindings_verified": 156,
+      "report_sha256": "772f38d1d9bb088306e3a8ae7230413b45846b892a84dc9f32536c16c364acd6",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-rnr-kernel-native-cq-001": {
+      "bindings_verified": 246,
+      "report_sha256": "ff55f04cc15d21ff1ef73c6291dbafc6976adc7f7049253e53eaebbff15a228e",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-kernel-build-001": {
+      "bindings_verified": 155,
+      "report_sha256": "7037295600df7a3adc1a29b022d742a70070c98b5ef4903338676c1bacd547c7",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-kernel-native-cq-001": {
+      "bindings_verified": 238,
+      "report_sha256": "9cb56f8df6d5a388b3056d051f459cf64c97fc5f0460a83e8c3de002c5ceced9",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-native-software-diagnostics-001": {
+      "bindings_verified": 4,
+      "report_sha256": "e43c0491869fb27f8b15eba453ed45b351dcb967a808ac69fce0a77ff9037314",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 1673,
+  "actual_native_cases": 37,
+  "actual_standard_C_native_CQ_cases": 100,
+  "all95_previous_CQ_outcomes_identical": true,
+  "exact_frozen_kernel_input_files": 68,
+  "all_frozen_kernel_inputs_byte_identical": true,
+  "kernel_compile_seconds": 10.992679333023261,
+  "CQ_compile_seconds": 7.394619268015958,
+  "new_RNR_CQ_summary": {
+    "pass_test": true,
+    "opcode": 40,
+    "bytes": 8193,
+    "capacity": 0,
+    "mutation": 0,
+    "native_RTL_CQ_unedited": true,
+    "full128_kernel_native_record_identical": true,
+    "actual_standard_WRITE_notification_CQ_MR_lifetime": true,
+    "profile8_CQC511": true,
+    "Linux_Hardware_boundaries_modeled": true
+  },
+  "malformed_native_CQ_mutations_retain_owner": true,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_segmented_write_rnr_native_software.py": "0454b7735ea211f524e82570d286b6c870a699abab7a5b8d4a68ee1c875ebd72"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "previous202_callback_runs_not_reexecuted": true,
+  "primitive_Linux_MMIO_pins_DMA_models": true,
+  "installed_kernel_or_physical": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "remaining": [
+    "All11/full1MiB native/multiSGE/live registered Linux/provider refs/real-peer NAK/RNR/retry/MSN/congestion/safe partial-HLS teardown/original timing/physical remain."
+  ],
+  "install_load_program_reboot_network_fan_BIOS_actions": [],
+  "commit_or_push": false
+}

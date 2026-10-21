@@ -1,0 +1,104 @@
+{
+  "scope": "Checked RNR components/native wiring/37-case fixture, NOT native runtime.\n\nPreserve all36 old cases and364 fatal messages, original failed fixtures,\nsingle actual namespaces and original clocks/deadlines. No physical claim.\n",
+  "audit_passed": true,
+  "overall_goal_complete": false,
+  "evidence": {
+    "receive-write-rnr-ack-002": {
+      "bindings_verified": 173,
+      "report_sha256": "ec67dd07f4e3453f0836c418f467b35a3542965eefe3c5a19d6fc5fad44f26e5",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-rnr-control-003": {
+      "bindings_verified": 29,
+      "report_sha256": "f0888bbc9a1e4103be52f082912c02d0f0252099ede3492fec8e76f4546a0a0f",
+      "exact_preimage_resolutions": []
+    },
+    "write-rnr-control-observer-001": {
+      "bindings_verified": 6,
+      "report_sha256": "9f76ad7e11335f82b680827bf4da0ead8a016e5fadd09f579d57787dd8656d98",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-rnr-native-elaboration-001": {
+      "bindings_verified": 519,
+      "report_sha256": "4b1f8a719e22f4163cd60c72ea57c98e900bdeb6bec6da0daee249268a4b2950",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-profile-native-full-001": {
+      "bindings_verified": 854,
+      "report_sha256": "8187903a9109598e670555fd3e589a5b6445e686852fe6274932434c58189ffa",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-rnr-native-full-001": {
+      "bindings_verified": 0,
+      "report_sha256": "bd005dda405756e14e32d1344f36e91adda38a79923f894c57e31afe7f75ff36",
+      "exact_preimage_resolutions": []
+    },
+    "receive-write-rnr-ack-001": {
+      "bindings_verified": 164,
+      "report_sha256": "d8e5ee9a71df0d9058fd1892bfd3b28881b6117f4528d84155e2cc20cfa3e151",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_receive_write_rnr_ack.py"
+      ]
+    },
+    "segmented-write-rnr-control-001": {
+      "bindings_verified": 2,
+      "report_sha256": "0f068864343f7c754eae1fe0a9febb11627d6c33168eff13f5dcdd7910448f5b",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_segmented_write_rnr_control.py"
+      ]
+    },
+    "segmented-write-rnr-control-002": {
+      "bindings_verified": 6,
+      "report_sha256": "eca56221c05a2871256d4bd5e076976ad9d29988e882dca255aad726fb3c1a3f",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_segmented_write_rnr_control.py"
+      ]
+    }
+  },
+  "verified_bindings": 1753,
+  "actual_ACK_component_modes": 78,
+  "actual_legacy_fixtures": 2,
+  "actual_new_MAC_mixed_frames": 4,
+  "actual_RNR_controller_cases": 24,
+  "actual_native_elaboration_seconds": 8.347083239001222,
+  "previous_actual_native_cases": 36,
+  "new_planned_native_cases": 37,
+  "all36_prior_case_recipes_identical": true,
+  "original_fatal_messages_retained": 364,
+  "new_fatal_messages": 14,
+  "exact_previous_native_bench_sha256": "1ae37b03d0c0c7d86ece24077764c3a1a604b8348316ec95af03abd4eedb55fc",
+  "all_raw_WRITE_inputs_unchanged": true,
+  "same_cycle_observation_fix_only": true,
+  "original_failures_preserved": true,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_segmented_write_rnr_native_sources.py": "5ec1c52ae8462d1f6dd4efd66872c10cef0da93062f55ccf580d20dcb3d1b311",
+    "rdma/rnic/tests/segmented_write_rnr_native_fixture.py": "a077e8952069c550aabda955243fd4a49b78b93a65cf05b8ea7a80bb140463c6",
+    "rdma/rnic/tests/probe_segmented_write_rnr_native_full.py": "f07671cdb4cc7f8c0feb381a5f764facb88478d1141407cc6a58fb785927ed85",
+    "rdma/rnic/tests/segmented_write_rnr_native_sources.py": "eb1a1527378b92a043ff5c25a115129b17066991d092b286cb61d58c575aa38f"
+  },
+  "failed_native_fixture_preimage_sha256": {
+    "rdma/rnic/build/write-rnr-native-full-001-preimages-DPPmoAxn/rdma/rnic/tests/segmented_write_rnr_native_fixture.py": "fcdbec7cc01b8ec4bcffb1ea17ac1f11c9c0c17e5ca58e605f35a967b7948d39",
+    "rdma/rnic/build/write-rnr-native-full-001-preimages-DPPmoAxn/rdma/rnic/tests/probe_segmented_write_rnr_native_full.py": "f07671cdb4cc7f8c0feb381a5f764facb88478d1141407cc6a58fb785927ed85",
+    "rdma/rnic/build/write-rnr-native-full-001-preimages-DPPmoAxn/rdma/rnic/tests/segmented_write_rnr_native_sources.py": "eb1a1527378b92a043ff5c25a115129b17066991d092b286cb61d58c575aa38f"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "inherited_source_check": {
+    "exit": 1,
+    "stdout": "Tcl completeness checks passed: 28 files (not Vivado elaboration).\nLFC source allowlist tests passed: 14 cases; no hardware/Vivado access.\nSource check passed: 122 HDL, 12 constraints, 3 IP generators.\n",
+    "stderr": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v\n",
+    "overall_suite_passed": false
+  },
+  "native_RNR_runtime_qualified": false,
+  "full_board_timing": false,
+  "hardware_verified": false,
+  "remaining": [
+    "Actual fresh native37 runtime; no component/fixture/elaboration proof substitutes for it.",
+    "All11/full1MiB/multiSGE/live Linux/provider refs/real-peer NAK/RNR/retry/MSN/congestion/partial-HLS cleanup/original timing/physical remain."
+  ],
+  "hardware_or_default_actions": [],
+  "commit_or_push": false
+}

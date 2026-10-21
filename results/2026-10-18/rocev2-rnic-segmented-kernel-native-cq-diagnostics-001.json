@@ -1,0 +1,30 @@
+{
+  "scope": "Preserve new consumer launcher/diagnostic mistakes; no actual kernel C/body or native snapshot changed to obtain PASS.",
+  "diagnostic_completed": true,
+  "events": [
+    {
+      "classification": "runner generation before C compilation",
+      "error": "once() refused a source/artifact verification loop appearing twice in the parent",
+      "preserved_preimage": "rdma/rnic/build/segmented-native-cq-runner-startup-dTvzkx/probe-before-unique-anchor-fix.py",
+      "fix": "Insert exact tuple guard before unique frozen-kernel setup anchor. Keep BOTH before/after full-native hash verification loops."
+    },
+    {
+      "classification": "manual syntax-only diagnostic used wrong include search origin",
+      "error": "Compiling authored test in tests/ directly selects original kernel_verbs_cases.c instead of frozen matched model and reports missing observed_atomic/feature declarations.",
+      "fix": "Feed identical authored C via compiler stdin with the correct frozen-model include paths. Syntax-only check passed; real consumer runner already copies C into its model directory and compiled/ran all65 successfully.",
+      "actual_C_source_changed": false,
+      "native_or_kernel_inputs_changed": false
+    }
+  ],
+  "successful_report": "results/2026-10-18/rocev2-rnic-segmented-kernel-native-cq-001.json",
+  "native_report": "results/2026-10-18/rocev2-rnic-segmented-profile-native-full-001.json",
+  "failed_native_or_kernel_runtime": false,
+  "hardware_verified": false,
+  "preserved_and_consumed_sha256": {
+    "rdma/rnic/build/segmented-native-cq-runner-startup-dTvzkx/probe-before-unique-anchor-fix.py": "f75ebd96971e8cb9917338bae0a196b34e282681d516c305d97f5de4ff52af85",
+    "results/2026-10-18/rocev2-rnic-segmented-kernel-native-cq-001.json": "1c7a91feed1290011c827263835dc670c8f2b4bdfc6e4a3a5b111d4825a96e76",
+    "results/2026-10-18/rocev2-rnic-segmented-profile-native-full-001.json": "c87661a51e68e8b1d0b3beb367a6a2e0e1b88ca05125158517010e20731888c9",
+    "rdma/rnic/tests/kernel_segmented_native_cq.c": "7a8ad5b6629a17dc0f057f5d809edea6c16dca159882e1e55b508efc9456848b",
+    "rdma/rnic/tests/probe_kernel_segmented_native_cq.py": "30101013d2fb3b9e9585931c464f2873be92656ca307e6f0e9dd5d714a0dc982"
+  }
+}

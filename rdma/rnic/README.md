@@ -15,7 +15,66 @@ remaining run was interrupted). No all-suite or release-pass claim is made.
 
 ## Latest functional milestone (2026-10-21)
 
-Publication checkpoint: [padding-native-full001](../../results/2026-10-18/rocev2-rnic-segmented-padding-native-full-001.json)
+Publication checkpoint (2026-10-21): protected segmented READ RX
+[component002](../../results/2026-10-18/rocev2-rnic-segmented-read-response-002.json)
+PASSES all17 methods/60 cases:59 four-state cases plus one explicit two-state
+1MiB/256-packet case. All8500 source/artifact/RAM bindings were reverified.
+A separate true segmented READ HLS candidate compiles and passes its prior
+regressions, but [HLS001](../../results/2026-10-18/rocev2-rnic-segmented-read-hls-001.json)
+FAILS its new READ runtime after the first4096-byte payload. Remaining new
+READ modes did not run; there is no HLS synthesis/native/physical pass.
+Both successful and failed reports remain separate. Incremental RNIC READ
+still4096; defaults/Atomic_NONE/hardware are unchanged. See
+[exact scope and remaining work](../../docs/ROCEV2_ATOMIC.md).
+
+Progress127 (historical): new private segmented READ-response RX retains one whole748-bit
+owner/placement token over validated FIRST/MIDDLE/LAST packets, with strict
+CRC/peer/PSN/length/AETH/trusted-remote-MSN checks and offset/bytes/last metadata.
+59four-state cases pass; component001 still FAILED because its warning
+classifier rejected the compiled1MiB case before runtime. That unchanged
+two-state binary independently PASSES full1MiB/256 packets/one token1.442s.
+Fresh all17-method/60-case002 first1MiB case PASSES1.414s with identical DUT/
+packet bytes; remaining cases RUNNING, same bounds/RTL, no full-suite pass yet. NOT selected
+in native/HLS/kernel/provider, no new DMA/whole-WR CQ/physical claim. Incremental
+RNIC READ remains4096; trusted MSN must not come from local inbound state/RX.
+All11 original requirements remain. [Evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Progress126 (historical): [matched8191 native-full001](../../results/2026-10-18/rocev2-rnic-segmented-profile-native-full-001.json)
+PASSES ALL29 cases, each18.05..26.61s;1443 source/artifact/RAM hashes verified.
+New [actual kernel/native SQ-CQ integration001](../../results/2026-10-18/rocev2-rnic-segmented-kernel-native-cq-001.json)
+PASSES65 ASan/UBSan cases:13 genuine UNEDITED native snapshot pairs plus52
+explicit-copy corruptions. Actual standard C posting/coherent128-byte SQ,
+CQC31/full748-owner matching/WC and MR-ref retirement execute, including
+8193 WRITE/SEND/Atomic/ordinary/zero. Linux/pins/DMA/MMIO/teardown remain
+separate MODELS; not actual Linux/provider/live RTL/physical-page coupling.
+Full-native large runtime is8193, up to1MiB remains HLS/component/C/provider
+serialization evidence. All11 requirements and large RX/READ/Immediate/
+multi-SGE/recovery/original timing remain open. No hardware/default/install/
+load/reboot/automatic Git changes. [Evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Progress125 (historical): new matched8191/31 native8193-byte WRITE/SEND both PASS, with
+independently rechecked complete wire/data/nonce/source/full748-CQ/owner
+oracles. Actual native AXI tuple8191/13/15/31 matches the kernel. Three real
+packet/source commands, one final CQ/retirement and no fault/remaining owners
+per case. ALL27 old regressions still run on the SAME launcher; no all29 or
+whole-batch hash-audit pass yet. Physical endpoints remain models, not real
+Linux/standard-API/physical execution. All11 requirements and large RX/READ/
+Immediate/multi-SGE/recovery/original timing remain open. No hardware/default/
+install/load/reboot/automatic Git changes. [Evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Progress124 (historical): private matched8191 standard-provider cohort PASSES all FIVE
+public libibverbs/ASan/UBSan profiles, retaining ALL four old ones and adding
+4097/8193/1MiB WRITE/SEND chains with actual standard serialization/MR/bad-WR/
+WC handling. Syscall and WC replies are modeled; not actual kernel execution.
+Actual four-state RNC8191/CQC31 AXI/CQ/dependency tests PASS27 cases, and whole
+new graph elaboration PASS3.17s, with same native domains/owner/drain checks.
+Only two identity leaves change from the previously passing padding graph.
+New matched8191/31 all29 native run is COMPILING, not runtime-qualified yet.
+All11 original requirements and real Linux/API/physical/timing integration,
+large RX/READ/Immediate/multi-SGE/recovery remain open. No default/install/
+load/hardware/reboot/automatic publication. [Evidence and limits](../../docs/ROCEV2_ATOMIC.md).
+
+Publication checkpoint (historical): [padding-native-full001](../../results/2026-10-18/rocev2-rnic-segmented-padding-native-full-001.json)
 PASSES ALL29 simulated cases:8193-byte WRITE/SEND and ALL27 prior cases,
 each18.15..27.12s.1438 source/artifact/RAM hashes reverified. Real generated
 HLS/MR/PTE/DMA/nonce/board-TX/CDC/XGMII/FCS/SFD/MAC paths reach one full748-bit

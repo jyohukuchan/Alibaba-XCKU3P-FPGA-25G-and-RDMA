@@ -37,23 +37,40 @@ actual generated HLS, MR/PTE/DMA and XGMII/FCS/SFD/CDC/MAC/CQ RTL for the new
 ordinary source cases; physical host/root/peer/PHY/PTP endpoints remain
 models, and ordinary READ/SEND_IMM retain prior MAC-receipt models.
 
-The [new large-wire native regression](results/2026-10-18/rocev2-rnic-segmented-padding-native-full-001.json)
+The [matched large-wire native regression](results/2026-10-18/rocev2-rnic-segmented-profile-native-full-001.json)
 now passes all29 simulated cases, including8193-byte WRITE/SEND and all27
-prior cases, each in18.15..27.12s. The new cases exercise actual generated
+prior cases, each in18.05..26.61s. Its8191/13/15/31 RNC/SQC/RQC/CQC tuple matches
+the private large-WR kernel cohort. The new cases exercise actual generated
 HLS, scattered-page MR/PTE/DMA, board-faithful TX FIFO/CDC, XGMII/FCS/SFD/MAC
 and one final whole-WR CQ, with independent wire/data/owner checks. Physical
 host/root/peer/PHY/PTP endpoints remain models. Earlier failed runs and their
 FIFO, PCIe3DW-model and pre-padded-LAST diagnoses are retained separately.
 Up to1MiB remains HLS/component evidence, not this full-native runtime test.
 
-A separate private RNC8191/CQC31/profile4 Linux source cohort builds against
+A private RNC8191/CQC31/profile4 Linux source cohort builds against
 the running kernel headers. Its [actual C posting/MR/SQ/CQ tests](results/2026-10-18/rocev2-rnic-segmented-kernel-post-003.json)
 pass65 ASan/UBSan cases, including8193-byte/1MiB WRITE/SEND and all47 prior
 cases, under explicit Linux/MMIO/DMA/completion models. This is not execution
-inside Linux or a matched8191 native graph. Its RTL identity helper is not
-runtime-qualified; matching standard-provider support, physical runtime,
-large receive/READ/Immediate and multi-SGE remain incomplete. No module is
-installed/loaded; defaults and `IB_ATOMIC_NONE` are unchanged.
+inside Linux. A separate [actual kernel/native SQ-CQ integration test](results/2026-10-18/rocev2-rnic-segmented-kernel-native-cq-001.json)
+passes65 cases:13 unedited native snapshot pairs plus52 explicit corrupt-copy
+controls. Real C posting/coherent128-byte SQ/full-owner CQ/WC/ref retirement
+execute under Linux/MMIO/DMA models. Native and C page tables remain separate;
+this is not live kernel/RTL coupling. A private standard-provider cohort also
+passes all five firmware profiles through real libibverbs serialization,
+but actual Linux/provider/API/physical runtime, large receive/READ/Immediate
+and multi-SGE remain incomplete. No module is installed/loaded; defaults and
+`IB_ATOMIC_NONE` are unchanged.
+
+A new private protected segmented READ-response RX candidate now passes
+[all17 methods/60 component cases](results/2026-10-18/rocev2-rnic-segmented-read-response-002.json),
+including59 four-state cases and an explicit1MiB/256-packet two-state case.
+The first failed suite and its diagnostic evidence are preserved separately.
+A separate true segmented READ HLS candidate compiles and passes its prior
+regressions, but its new READ runtime FAILS after the first4096-byte response;
+it is not a working large-READ implementation. Neither candidate is selected
+in the native/kernel/provider path: incremental RNIC READ remains4096 bytes,
+and native large READ DMA/whole-WR completion remains unimplemented. See
+[exact evidence and limits](docs/ROCEV2_ATOMIC.md).
 
 This is a **work-in-progress source snapshot**, separate from the earlier
 hardware-tested READ/WRITE images. Its latest HLS estimate11.180ns misses the original

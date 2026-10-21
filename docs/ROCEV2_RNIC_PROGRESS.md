@@ -32,7 +32,84 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
-Publication checkpoint (2026-10-21): new padding-native-full001 PASSES ALL29
+Publication checkpoint (2026-10-21): corrected protected segmented READ RX
+component002 is terminal PASS, all17 methods/60 cases. All8500 bindings/594
+unique files were reverified.59 cases are four-state; the explicit1MiB case
+is two-state,256 packets/one token/321979 cycles, runtime1.423s. Failed001 and
+its independent same-binary diagnostic are preserved, not relabeled.
+New true segmented READ HLS source is separate and unselected. Its actual
+C++ compile and prior regressions PASS, but new READ runtime001 FAILS after
+first4096-byte data placement when timer processing resumes. The unchanged
+external replay timer rejects nonterminal owned updates; its relationship
+to this failure remains a diagnosis, not a completed fix. Remaining new
+negative modes did not run. No synthesis/native/whole-WR CQ/physical READ
+qualification; default READ limit4096 and all11 requirements remain.
+This user-requested publication includes unfinished source and failed
+evidence, with no authorization for subsequent automatic commit/push.
+[Evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress127 (historical): NEW separately named protected segmented READ-response leaf
+retains full748-bit owner/one placement token over FIRST/MIDDLE/LAST, checks
+per-packet CRC/peer/PSN/length/class/AETH and trusted expected REMOTE MSN,
+exports offset/bytes/last/AETH-presence and keeps the downstream lease.
+Not selected in native/HLS/kernel/provider; incremental RNIC READ still4096.
+Component001 FAILED only on an overbroad warning classifier after full1MiB
+compile179.48s;16of17 methods/59four-state cases PASS (all8oldAtomic+2zero
+methods retained), tails4097..12289/PSN-wrap/bad CRC/header/MSN/lease covered.
+All8518 bindings/612unique files verified before fix. SAME unmodified1MiB
+two-state binary independently PASSES256packets/one token/321979cycles1.442s;
+not a relabeled all-suite pass. Fresh002 keeps all17/60,180s/30s bounds,
+actual port/pin refusal and unchanged RTL;1MiB loop fixture runs FIRST.
+Fresh1MiB case also PASS1.414s/identical DUT/packet bytes/321979cycles; remaining
+suite RUNNING, no all17 pass. Actual READ memory/HLS/common-state/CQ/
+Linux/API/native/physical integration and all11 original requirements remain.
+No hardware/default/install/load/reboot/automatic publication.
+[Evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress126 (historical): SAME matched8191 native-full001 is terminal PASS ALL29 cases,
+compile427.49s/runtime18.05..26.61s; all1443 source/artifact/RAM bindings
+reverified. No prior4095 result substituted. New actual profile4 standard
+post_send/MR/SQ/CQ C consumes13 UNEDITED native SQ/CQ snapshot pairs and
+matches all128 posted/coherent bytes, genuine complete owners and standard
+WC/ref retirement. Kernel/native CQ001 PASSES65 ASan/UBSan cases (13genuine+
+52explicit-copy mutations), compile6.59s, each<0.015s,172 bindings verified.
+CAS/FADD/READ/SEND_IMM/small WRITE/SEND/8193 WRITE/SEND/five zero operations
+covered; corrupt operands/extensions/length/offset never ACK/free/publish.
+Linux/pins/DMA/MMIO/teardown are MODELS, native/C page tables separate, not
+live kernel/RTL/provider/API/physical execution. All11 original requirements,
+large RX/READ/Immediate/multi-SGE/recovery/original timing remain OPEN.
+No hardware/default/install/load/reboot/automatic publication.
+[Evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress125 (historical): SAME matched8191 native build finished;8193-byte WRITE26.61s and
+SEND26.31s PASS complete independent wire/data/nonce/source/full748-CQ/owner
+oracles, rechecked from immutable case logs/events. Actual AXI capture
+8191/13/15/31 matches kernel RNC/SQC/RQC/CQC; CQ feature31 in both events.
+Three actual source/physical-nonce commands/frames and one whole-WR CQ/retire
+per case, no fault/live owners/source changes. ALL27 old regressions continue;
+NOT an all29 pass, final report/all-bindings audit pending. Compiler terminal,
+same launcher alive; no restart/input edits. Physical endpoints remain models;
+standard libibverbs-to-actual-Linux execution is still not proved. All11 goals,
+large RX/READ/Immediate/multi-SGE/recovery/original timing remain OPEN.
+No hardware/install/load/reboot/default/automatic publication.
+[Evidence and limits](ROCEV2_ATOMIC.md).
+
+Progress124 (historical): exact8191 standard-provider cohort PASSES all FIVE actual public
+libibverbs/ASan/UBSan profiles, including ALL four old profiles and new4097/
+8193/1MiB WRITE/SEND chains/MR/second-bad-WR/zero-byte-WC serialization.
+Only fake-fd syscalls/WC replies are modeled; not actual kernel execution.
+Four-state RNC8191/CQC31 AXI/CQ/dependency tests PASS27 cases/290 bindings;
+ALL six old mailbox cases/four old CQ owners remain. Whole matched graph
+elaboration002 PASS3.17s/1220 bindings/no width mismatch/same owner/domain/
+drain gates. Only two actual identity leaves change; no default selection.
+Fresh exact-profile all29 native-full001 is COMPILING, not runtime-passed.
+Fixture expected capability fields are explicit, never normalized observations.
+Preserved startup/caller/provenance diagnostics waive no test or guard.
+All11 requirements, actual Linux/API/native/physical integration, large RX/
+READ/Immediate/multi-SGE/recovery/original timing remain OPEN. No hardware,
+install/load/reboot/default/automatic publication. [Evidence and limits](ROCEV2_ATOMIC.md).
+
+Publication checkpoint (2026-10-21, historical): new padding-native-full001 PASSES ALL29
 simulated cases, including8193-byte WRITE/SEND plus ALL27 prior cases.
 Compile431.52s; runtimes18.15..27.12s;1438 bound hashes reverified. Large cases
 join real HLS/MR/PTE/DMA/nonce/board-TX/CDC/XGMII/FCS/SFD/MAC to one full748-bit

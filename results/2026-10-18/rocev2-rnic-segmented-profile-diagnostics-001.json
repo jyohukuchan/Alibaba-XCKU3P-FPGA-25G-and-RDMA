@@ -1,0 +1,59 @@
+{
+  "scope": "Preserved startup/input-inventory and caller mistakes; no DUT gate or runtime assertion waived.",
+  "diagnostic_completed": true,
+  "hardware_verified": false,
+  "native_runtime_pass": false,
+  "events": [
+    {
+      "stage": "new four-state test launcher, before any RTL execution",
+      "classification": "Python syntax error",
+      "error": "else8193 lacked whitespace in a conditional expression",
+      "preserved_preimage": "rdma/rnic/build/segmented-profile-syntax-zxSuuk/probe-before-syntax-fix.py"
+    },
+    {
+      "stage": "new four-state test input inventory, before RTL compilation",
+      "classification": "Python file inventory error",
+      "error": "A synthetic generated child-module key was incorrectly treated as an existing source file",
+      "preserved_preimage": "rdma/rnic/build/segmented-profile-syntax-zxSuuk/probe-before-input-inventory-fix.py",
+      "partial_directories": [
+        "rdma/rnic/build/segmented-profile-rtl-z15f618n"
+      ],
+      "fix": "Bind actual existing original RTL plus all kernel C/header inputs and generator helpers, not nonexistent virtual output paths."
+    },
+    {
+      "stage": "full-native elaboration001",
+      "classification": "caller passed wrong HLS report; exact generation guard rejected it",
+      "failed_report": "results/2026-10-18/rocev2-rnic-segmented-profile-native-elaboration-001.json",
+      "successful_report": "results/2026-10-18/rocev2-rnic-segmented-profile-native-elaboration-002.json",
+      "fix": "Pass segmented-request-synth-001 as request report. No source/generation guard change."
+    },
+    {
+      "stage": "provider001 to002",
+      "classification": "both runtime PASS; improve template provenance, not a failed runtime fix",
+      "preserved_preimage": "rdma/rnic/build/segmented-provider-inventory-U4waKP/probe-before-parent-template-binding.py",
+      "fix": "Additionally bind exact parent probe_provider_zero.py template.",
+      "identical_actual_C_and_header_cohort": {
+        "provider/as02.c": "ba380a2b9e90f8bbc5b5f045e4abd10317ffd7997c1a33f49413b912587648f0",
+        "tests/provider_commands.c": "d9a84350e8879a21b1a272cd46887d5e375a54330794f53f8990e6c077461dcb",
+        "tests/provider_atomic_commands.c": "ffc248f538d50670404d30c7e9c1bab2106761bc30224947c61ef0c10d2969d7",
+        "tests/provider_zero_commands.h": "7ccacbaa8f00286da10221b4b26f41f01eb817faba7e7452c7a032beefbaf20e",
+        "tests/provider_segmented_commands.h": "5a7f5737d5dd711bf05b817d5cefd0b7415cba6202f88328efb69d98bd2eb592"
+      },
+      "source_behavior_changed": false
+    }
+  ],
+  "successful_reports": [
+    "results/2026-10-18/rocev2-rnic-segmented-profile-rtl-001.json",
+    "results/2026-10-18/rocev2-rnic-segmented-provider-002.json",
+    "results/2026-10-18/rocev2-rnic-segmented-profile-native-elaboration-002.json"
+  ],
+  "source_and_preserved_evidence_sha256": {
+    "results/2026-10-18/rocev2-rnic-segmented-profile-rtl-001.json": "b94c794ec5893ee4fe8cfc45805dd70a05c4e471e4917f0ce2742b83b4b27a72",
+    "results/2026-10-18/rocev2-rnic-segmented-provider-002.json": "54c1b05f054a1107c34d8b3a1e6186e75859f9eb8d62963ecb3753e4f78fdb07",
+    "results/2026-10-18/rocev2-rnic-segmented-profile-native-elaboration-002.json": "412354e316fb1862e140a25fa8d76448430fd563c10f563715ae75bd1dc0cbae",
+    "rdma/rnic/build/segmented-profile-syntax-zxSuuk/probe-before-syntax-fix.py": "f328b1a6db620d28f00f4fbe7aa391d25f27aa586c8c138255ac91613c22ad06",
+    "rdma/rnic/build/segmented-profile-syntax-zxSuuk/probe-before-input-inventory-fix.py": "22a4f95be1e2d68ad8a9551af4095df9aa21124a96987cff66f2456669936040",
+    "results/2026-10-18/rocev2-rnic-segmented-profile-native-elaboration-001.json": "7a9a381172c481c139edb9532e5e3a91bbd1145309fa5eae53703cc411952626",
+    "rdma/rnic/build/segmented-provider-inventory-U4waKP/probe-before-parent-template-binding.py": "c06f58d4cd61f3fbea146d8ad845ac74eaed55164b70555f5316b742f79cb960"
+  }
+}

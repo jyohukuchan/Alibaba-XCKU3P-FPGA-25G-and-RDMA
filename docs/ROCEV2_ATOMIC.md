@@ -5,7 +5,234 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
-## Publication checkpoint: large native29 and private kernel65 (2026-10-21)
+## Publication checkpoint: segmented READ HLS candidate is NOT passing
+
+NEW `hls/segmented_read_transport.py`, `hls/test_segmented_read.cpp` and
+`tests/probe_segmented_read_hls.py` add a separate, unselected true READ
+transport candidate. One READ request carries the complete length; its
+FIRST/MIDDLE/LAST response plan retains the whole request owner. The new
+source includes actual receive payload extent checks, incremental destination
+commands, same-entry retransmission progress and a whole-request retirement
+join. These are development source changes, NOT qualified large-READ support.
+
+[HLS001](../results/2026-10-18/rocev2-rnic-segmented-read-hls-001.json)
+is FAILED: actual C++ compile/link57.298s and prior regressions7.9998s PASS,
+including old Atomic/zero/RQ/service/segmented WRITE/SEND and291 independent
+wire/replay oracles. In the copied fixture only, the intended new READ maximum
+changes the over-limit test from4097 to1048577; the original tests are untouched.
+The new4097-byte READ emits one complete request and its stored replay, accepts
+FIRST at PSN0xfffffe, advances actual retransmission metadata and copies the
+first4096 destination bytes correctly. Runtime then aborts in the real
+endpoint's combined fault assertion when timers resume, before LAST. The
+four new negative modes did NOT run. All302 bound source/artifact/RAM hashes
+were reverified; failed source, binary, logs and pre-fix authoring inputs
+remain unchanged locally. No failed batch is presented as passing.
+
+The unchanged external replay timer rejects request-owned updates with
+`stop=false`, whereas a nonterminal READ FIRST produces such an update.
+This is a concrete candidate cause, not a completed runtime diagnosis/fix.
+No timer guard was removed to obtain a pass. HLS synthesis, trusted REMOTE
+MSN source/wiring, mid-READ retry recovery, native unpadding/nonce/status/
+memory visibility/whole-WR CQ and Linux/provider/physical integration remain
+unqualified. The default READ limit remains4096, `IB_ATOMIC_NONE` stays set,
+and no hardware, module, network, fan, BIOS or reboot change accompanies
+this explicitly requested source publication. Future automatic Git writes
+are not authorized by this checkpoint.
+
+## New protected segmented READ-response RX candidate (127; completed at publication)
+
+NEW `fpga/derive_segmented_read_response.py` creates a separately named
+`rocev2_segmented_read_response_guard`, leaving the passing8191 graph/defaults
+untouched. READ up to1MiB uses FIRST/MIDDLE/LAST with exact PMTU, remaining
+length, pad count, per-packet complete ICRC/peer/IP/QPN/PSN/class/positive-AETH
+checks and a captured trusted expected REMOTE response MSN. One full748-bit
+owner and first placement token remain across all fragments. Offset/bytes/last
+and AETH-presence metadata accompany each packet event; MIDDLE payload is not
+interpreted as AETH. Rejected/CRC-bad packets do not advance offset/PSN or
+issue another token. Lost downstream placement lease quarantines the owner.
+Existing ordinary/Atomic/zero behavior is retained under the new leaf name.
+
+Packet events are NOT whole-WR CQ/DMA-visibility certificates. The downstream
+owner must survive the final replay/event until actual memory/HLS/CQ joins.
+This candidate is NOT selected in native RTL, HLS, Linux or the provider;
+the incremental RNIC READ limit remains4096. Large READ still needs actual
+memory-command/status/nonce aggregation, HLS request/response/retransmission/
+common-PSN retirement, trusted MSN wiring, CQ/kernel/API/native/physical proof.
+
+Protocol rationale: Linux v6.17 RXE increments responder MSN before READ
+replies and populates AETH from that state. This motivates the strict single-
+active-WR candidate's captured expected remote MSN, not a general multi-WR
+interoperability claim. It MUST NOT be the local inbound MSN counter or a
+value learned from arriving packets; actual trusted-common-state integration
+is still missing. [Primary Linux source](https://raw.githubusercontent.com/torvalds/linux/v6.17/drivers/infiniband/sw/rxe/rxe_resp.c).
+
+[Component001](../results/2026-10-18/rocev2-rnic-segmented-read-response-001.json)
+is FAILED, not a passing suite:16of17 methods/59four-state cases PASS, each
+<=12.44s, retaining all eight prior Atomic and two zero methods. New READ
+4097/4098/4099/4100/8192/8193/12289 cover tails and PSN wrap; wrong first/
+middle/last MSN/peer/QPN/PSN/class/length, bad ICRC, lost lease and unknown
+trusted MSN fail closed with recovery/retained state. The full1MiB Verilator
+case compiled179.48s but the new harness incorrectly classified arithmetic
+operand-width warnings as port mismatches and refused to run its binary.
+All8518 bindings/612 unique files were verified BEFORE correction; the
+failed report/model/binary/log and exact probe/generator preimages remain.
+
+[Diagnostic001](../results/2026-10-18/rocev2-rnic-segmented-read-response-diagnostics-001.json)
+separately runs that SAME UNMODIFIED full1MiB TWO-STATE model:1.442s,
+256accepted packets/events, one placement token, zero faults/rejects/drops,
+321979 cycles, complete independent byte/offset/PSN/stall/lease oracles PASS.
+This diagnostic does not relabel failed component001 or prove four-state1MiB,
+actual HLS, native DMA/placement, whole-WR CQ, Linux or physical operation.
+
+Fresh component002 keeps ALL17 methods/60 cases, same180s compile/30s runtime
+bounds and unchanged DUT/ICRC. Explicit Icarus/Verilator port/pin diagnostics
+still fail and have negative self-tests; arithmetic warnings stay in logs.
+Its identical256-packet1MiB workload uses a procedural loop rather than a
+huge compiler-expanded coroutine, preserving all checks and finite bounds.
+[Component002](../results/2026-10-18/rocev2-rnic-segmented-read-response-002.json)
+is now terminal PASS, ALL17 methods/60 cases. Its first1MiB case compiles
+62.042s and runs1.423s with identical DUT/packet input bytes and321979 cycles:
+256 accepted packets/events, one placement token, zero faults/rejects/CRC
+drops. All59 other four-state cases PASS, retaining all eight Atomic and two
+zero methods. All8500 bindings/594 unique files were reverified. This is
+component evidence, not native DMA/HLS/whole-WR CQ or physical qualification.
+No installation/load/hardware/network/fan/BIOS/reboot/program/flash changes;
+all11 requirements remain.
+
+## Matched native29 and actual kernel/native SQ-CQ integration65 (126, historical)
+
+[Matched8191 native-full001](../results/2026-10-18/rocev2-rnic-segmented-profile-native-full-001.json)
+is terminal PASS: compile427.49s, ALL29 cases18.05..26.61s. Both8193-byte
+WRITE/SEND plus ALL27 old regressions ran; no case/gate/deadline waiver.
+All1443 source/artifact/RAM bindings were reverified. This is the actual
+RNC8191/SQC13/RQC15/CQC31 graph, not transferred4095 evidence. Its actual
+large source/DMA/HLS/wire/CQ/retirement oracles and all physical-model limits
+remain as below. No launcher/compiler/runtime job remains for this batch.
+
+NEW `kernel_segmented_native_cq.c` and checked runner consume the successful
+native graph's UNEDITED per-case SQ/CQ files with the actual frozen profile4
+kernel cohort. The real standard post_send callback, coherent SQ serialization,
+full-key/range/ref handling, actual CQC31/748/0xa0 decoder, full-owner comparison,
+CQ polling and MR-reference retirement run. All128 bytes of each C-produced
+first posted SQ entry match the native input record AND actual coherent ring.
+No positive event/profile field is normalized or fabricated.
+
+[Kernel/native CQ001](../results/2026-10-18/rocev2-rnic-segmented-kernel-native-cq-001.json)
+PASSES65 ASan/UBSan cases after real C compile6.59s, each<0.015s;172 bound
+hashes reverified plus ALL1443 native bindings before/after consumption.
+There are13 genuine positive snapshot pairs: CAS/FADD, ordinary READ/SEND_IMM,
+small WRITE/SEND,8193-byte WRITE/SEND and five zero operations. Positive cases
+publish the exact standard WC once and release actual saved MR work refs
+only after matching CQ consumption. Zero operations never acquire an unused
+local MR reference.52 EXPLICIT in-memory negative mutations cover Atomic
+operand, reserved extension, whole length and local offset; wrong owners
+retain CQ/queue/MR ownership with no ACK/publication/free. Actual native
+snapshot files remain byte-identical. Existing four ordinary/Atomic operations
+and both original mutation categories remain, not just new large cases.
+
+Linux primitives, pins, coherent-DMA allocation, MMIO, peer and teardown are
+still userspace MODELS. Native and C page tables remain separate; this is not
+a proof of identical physical mappings, live kernel/RTL coupling, actual
+Linux callback execution, standard-provider end-to-end runtime or hardware.
+This is stronger byte-level integration evidence, not a replacement for those
+requirements. Up to1MiB still has only HLS/component/C/provider-serialization
+evidence; full-native large runtime here is8193 bytes.
+
+[Consumer diagnostics001](../results/2026-10-18/rocev2-rnic-segmented-kernel-native-cq-diagnostics-001.json)
+preserves a startup generator anchor mistake (two mandatory before/after hash
+loops, not one) and a manual syntax-only diagnostic's wrong include origin.
+Only the launcher anchor/diagnostic invocation changed; actual C and native
+inputs were not changed to obtain PASS. Both full-native hash audits remain.
+
+All11 original requirements remain OPEN except preserved exclusions. Large
+RX/READ/Immediate/multi-SGE/recovery, actual Linux/provider/API/native/physical
+integration and original full-board timing are unfinished. HLS11.180ns still
+fails4ns/default1.08ns; historical scripts/check.sh SHA mismatch remains.
+Default sources/Atomic_NONE/install/load/hardware/network/fan/BIOS/reboot/
+program/flash/Git publication are unchanged. No automatic push is authorized.
+
+## Matched8191 native large WRITE/SEND pass; regression still live (125, historical)
+
+The SAME native-full001 build finished and has PASSED8193-byte WRITE26.61s
+and SEND26.31s. Their immutable case logs and saved CQ events were independently
+rechecked against all original complete data/wire/nonce/owner/receipt oracles.
+Each has one MR grant,3 real source commands,6 read descriptors/68 read TLPs
+(33three-DW/35four-DW),3 full MAC frames/EOF-ordered ACKs, wrapped PSNs,
+one actual generated HLS whole-WR receipt and one full748-bit final CQ.
+Actual source/HLS/dispatcher owners retire exactly once with no remaining
+owners/fault or source/sentinel changes. Both actual CQ snapshots expose31.
+Actual native AXI profile capture is8191/13/15/31 (RNC/SQC/RQC/CQC), matching
+the new kernel tuple. No observed event/profile field was rewritten.
+
+This is partial live-batch evidence, NOT an all29 pass: the same launcher
+continues ALL27 old regressions under unchanged30s bounds. Final report and
+whole-batch source/artifact/RAM verification are still pending. Compiler is
+terminal; do not mistake its missing PID for a stopped launcher or restart it.
+All frozen inputs remain unchanged. Physical host/root/peer/PHY/PTP are models;
+ordinary READ/SEND_IMM retain prior MAC-receipt models. This does not execute
+standard libibverbs into actual Linux callbacks or qualify a physical image.
+All11 requirements, large RX/READ/Immediate/multi-SGE/recovery and original
+timing remain open; HLS11.180ns still fails4ns/default1.08ns. No hardware,
+installation/load/network/fan/BIOS/reboot/program/flash or automatic Git changes.
+
+## Matched large identity and standard-provider integration (124, historical)
+
+NEW private `provider/derive_segmented_provider.py` accepts exact8191 firmware
+identity alongside511/1023/2047/4095. All operations still use genuine standard
+uverbs serialization; no BAR mapping, exposed DMA address, private user C128
+ABI, payload transport copy or completion is added to the provider. Kernel
+remains responsible for full RNC/SQC/RQC/CQC tuple/geometry/MR/lifetime checks.
+
+[Provider002](../results/2026-10-18/rocev2-rnic-segmented-provider-002.json)
+PASSES all FIVE profiles with actual installed libibverbs/PABI34 and pinned
+rdma-core50 headers, ASan/UBSan, each<0.018s. All four old Atomic/access/zero
+profiles remain;8191 also runs the full zero and Atomic cases. New standard
+WRITE/SEND two-WR chains cover4097/8193/1MiB, full64-bit VAs/remote addresses/
+keys/lengths, exact second bad-WR pointer, standard zero-byte send WCs and
+a distinct1MiB MR handle/key, registration and deregistration. Each profile
+also refuses wrong firmware identity before objects. Actual C serializer and
+public API run; fake-fd syscall and WC replies are MODELS, not actual Linux
+callbacks, DMA or physical completions.28 source/upstream/library/artifact
+bindings reverified; original provider/default kernel/Atomic_NONE unchanged.
+
+[Four-state identity/CQ RTL001](../results/2026-10-18/rocev2-rnic-segmented-profile-rtl-001.json)
+PASSES27 cases/290 bound hashes. Actual AXI reads expose RNC8191 and CQC31,
+full748-bit owner and0xa0 operand aperture; all six original controller mailbox
+scenarios and four original CQ owners remain. Four large WRITE/SEND owners
+(8193/1MiB) commit/retire/publish/ACK with immutable full-context backpressure.
+Eight incomplete prerequisite combinations trigger the actual dependency
+fatal; disabling Immediate exposes a nonmatching value, not8191. Eleven
+invalid Atomic/extension/large-op/length owners cannot obtain CQ authority.
+Controller and upstream CQ ticket/commit/retire producers are MODELS.
+Only two identity leaves differ from the prior padding graph; no data gate
+or default selection changes. The new tuple agrees with actual kernel headers.
+
+NEW `segmented_profile_native_sources.py` gates that component proof and all
+parent HLS/owner proofs before selecting exactly those two changes.
+[Whole graph elaboration002](../results/2026-10-18/rocev2-rnic-segmented-profile-native-elaboration-002.json)
+PASSES3.17s/1220 hashes/no width warnings with unchanged module counts, one
+padding instance and both global drains0. COMPILE ONLY. NEW exact-profile
+fixture changes ONLY expected identity fields, never observed snapshots;
+all independent wire/data/CQ/owner/receipt/nonce/tail oracles and29 cases remain.
+Fresh matched8191/31 native-full001 is COMPILING under the same1200s build/
+30s per-case bounds. No matched8191 native runtime pass is claimed yet.
+
+[Diagnostics001](../results/2026-10-18/rocev2-rnic-segmented-profile-diagnostics-001.json)
+preserves two launcher startup mistakes (syntax, nonexistent virtual input),
+wrong-HLS-report elaboration001 (guard correctly refused), and provider001's
+successful runtime before adding a missing parent-template provenance binding.
+All five actual provider C/header bodies are identical001/002. No failed report
+was relabeled, DUT changed to hide a fixture error, or test/guard waived.
+
+All11 original requirements remain. This is not actual Linux/provider/native
+end-to-end execution or physical/timing qualification. Up to1MiB remains
+HLS/component/C/provider-serialization evidence, not full-native runtime;
+large RX/READ/Immediate/multi-SGE/recovery remain open. HLS11.180ns still fails
+original4ns/default1.08ns. No installation/load/hardware/network/fan/BIOS/
+reboot/program/flash or automatic commit/push. Exact authenticated same-thread/
+active-goal restore is unproven, and no reboot is needed.
+
+## Publication checkpoint: large native29 and private kernel65 (2026-10-21, historical)
 
 [Padding-native-full001](../results/2026-10-18/rocev2-rnic-segmented-padding-native-full-001.json)
 is terminal PASS: compilation431.52s, ALL29 runtimes18.15..27.12s. Both8193-byte

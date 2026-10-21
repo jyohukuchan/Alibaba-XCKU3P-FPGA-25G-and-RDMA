@@ -1,0 +1,76 @@
+{
+  "scope": "Preserved failed new READ component001 and unchanged-model full1MiB diagnostic; not native DMA/HLS/CQ/kernel/physical qualification.",
+  "diagnostic_completed": true,
+  "failed_component_report": "results/2026-10-18/rocev2-rnic-segmented-read-response-001.json",
+  "failed_component_pass_test": false,
+  "component_methods": 17,
+  "component_cases": 60,
+  "four_state_cases_passed": 59,
+  "max_four_state_runtime_seconds": 12.436270030972082,
+  "all_bindings_checked_before_fix": 8518,
+  "unique_files_checked_before_fix": 612,
+  "failure": {
+    "method": "test_segmented_READ_full_1MiB_256_packets_explicit_two_state",
+    "stage": "compiler warning classification BEFORE runtime",
+    "cause": "Generic expects/bits substring test incorrectly counted arithmetic/logical operand width diagnostics as module-port mismatches.",
+    "directory": "rdma/rnic/build/segmented-read-response-pxw3klp4",
+    "compile_seconds": 179.47811715200078,
+    "compiled_model": "/dev/shm/as02-segmented-read-obj-juozik2c/Vtb",
+    "actual_port_width_error_observed": false,
+    "preserved_probe_preimage": "rdma/rnic/build/segmented-read-response-pxw3klp4/test-before-warning-and-loop-fixture-fix.py",
+    "preserved_generator_preimage": "rdma/rnic/build/segmented-read-response-pxw3klp4/derive-unchanged-preimage.py"
+  },
+  "separate_unchanged_model_runtime": {
+    "command": [
+      "timeout",
+      "30s",
+      "/dev/shm/as02-segmented-read-obj-juozik2c/Vtb"
+    ],
+    "directory": "rdma/rnic/build/segmented-read-response-pxw3klp4",
+    "exit": 0,
+    "engine": "verilator-two-state",
+    "wall_seconds_from_engine": 1.442,
+    "summary": {
+      "pass_test": true,
+      "accepted": 256,
+      "rejected": 0,
+      "ICRC_drops": 0,
+      "unowned_drops": 0,
+      "tokens": 1,
+      "events": 256,
+      "fault": 0,
+      "cycles": 321979
+    },
+    "positive_model_or_inputs_modified": false,
+    "whole17_method_suite_pass": false
+  },
+  "correction": {
+    "DUT_RTL_changed": false,
+    "original_integrity_or_protection_changed": false,
+    "warning_logs_preserved": true,
+    "port_gate": "Explicit Icarus/Verilator port-connection diagnostics and missing pins still fail; negative classifier self-tests added.",
+    "full_1MiB_fixture": "Same256 packets/complete byte/PSN/offset/stall/lease/event checks in a procedural loop instead of256 compiler-expanded coroutine calls.",
+    "compile_limit_seconds": 180,
+    "runtime_limit_seconds": 30,
+    "full_fresh_suite_report": "results/2026-10-18/rocev2-rnic-segmented-read-response-002.json",
+    "full_fresh_suite_planned_methods": 17,
+    "full_fresh_suite_pass_unproven": true
+  },
+  "protocol_reference": {
+    "primary_source": "https://raw.githubusercontent.com/torvalds/linux/v6.17/drivers/infiniband/sw/rxe/rxe_resp.c",
+    "inference": "Single-active-WR candidate uses a trusted expected REMOTE response MSN. This must not be wired to the local inbound MSN or learned from incoming responses; actual trusted-HLS integration is still missing."
+  },
+  "hardware_verified": false,
+  "source_and_evidence_sha256": {
+    "results/2026-10-18/rocev2-rnic-segmented-read-response-001.json": "4a426cc90d96f08deacef11f29b94f6a42a986ca11b082a1d20d721410c2a94d",
+    "rdma/rnic/build/segmented-read-response-pxw3klp4/test-before-warning-and-loop-fixture-fix.py": "a8cd8a2fb2ecc8e14fc71d7ec5d64be6bf8f48cc582979351a396dc4ea479988",
+    "rdma/rnic/build/segmented-read-response-pxw3klp4/derive-unchanged-preimage.py": "623ad265109287439858a9ec0b899c110bbfca926ce3405b2a8d027699847271",
+    "/dev/shm/as02-segmented-read-obj-juozik2c/Vtb": "c43da1e145d0b3dd811737b428d51bd1313d0a403bb429c02776106d46f82e5a",
+    "rdma/rnic/build/segmented-read-response-pxw3klp4/tb.v": "cdf7904a08a25f9da6b584a3f2f77f4431f7ea710c5b7212c661e913770b6e58",
+    "rdma/rnic/build/segmented-read-response-pxw3klp4/guard.v": "e7149b6cb925d0f3ff8b6385bf29ca9438625da63ce10609618799b8df409768",
+    "rdma/rnic/build/segmented-read-response-pxw3klp4/frames.hex": "d049822779da7793364867328901011c54144a5468e26fcef4c4780d62170bb4",
+    "rdma/rnic/build/segmented-read-response-pxw3klp4/compile.log": "5be3677fde6c58aa8fc6db17d7bd3d6aa4ea118925c41104899bcb14503daab5",
+    "rdma/rnic/fpga/derive_segmented_read_response.py": "623ad265109287439858a9ec0b899c110bbfca926ce3405b2a8d027699847271",
+    "rdma/rnic/tests/test_segmented_read_response_rtl.py": "c75018ba9230962a51d7e34fa9e277dde2452f937adde8f0746256ab66a29227"
+  }
+}

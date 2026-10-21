@@ -1,0 +1,128 @@
+{
+  "scope": "Actual packet MR/data/backend/ACK coupling, NOT complete native execution.\n\nDescriptor/host ordering and HLS trace producers remain explicit models.\nAll11 original requirements, timing failure and exact failures are retained.\n",
+  "audit_passed": true,
+  "overall_goal_complete": false,
+  "hardware_verified": false,
+  "current": {
+    "bindings_verified": 100,
+    "report_sha256": "596ab4d78838e91de8cd51ea206742bc173ee04323943a84e7327731ccc10849",
+    "exact_preimage_resolutions": []
+  },
+  "immutable_failed": {
+    "1": {
+      "bindings_verified": 85,
+      "report_sha256": "a2ebd9ed57b0bf470e79a9f6ce0332e10a207e84cffd058a76fafe05b6a2530f",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_remote_write_memory.py"
+      ]
+    },
+    "2": {
+      "bindings_verified": 85,
+      "report_sha256": "86abc2e6346da10373cff900ccccd6dee73681011a1da707def14dd437bf694e",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_remote_write_memory.py"
+      ]
+    },
+    "3": {
+      "bindings_verified": 92,
+      "report_sha256": "feb25f339bae2a6c14e51d85ebed176b592cefc0062184951b2bf44e13e102e2",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_remote_write_memory.py"
+      ]
+    }
+  },
+  "read_only_observer": {
+    "bindings_verified": 22,
+    "report_sha256": "3fe8666b7a06aa1a3bbc33325284dedfc59adafd6a9186f39f22fcef688b91cf",
+    "exact_preimage_resolutions": []
+  },
+  "previous_ACK": {
+    "bindings_verified": 4,
+    "report_sha256": "89cbb22d4ff7bd9120b4dc85ba05cc458ece746728cff78485557002dc9e0512",
+    "exact_preimage_resolutions": []
+  },
+  "prior_HLS": {
+    "bindings_verified": 4,
+    "report_sha256": "e9dd4bce184023592152aa34e858d44636346ea6a9a75a7dab88a8c59feb3361",
+    "exact_preimage_resolutions": []
+  },
+  "prior_generation": {
+    "bindings_verified": 6,
+    "report_sha256": "7f34a2933955c257dd94564142af0ef962e5ca675b59ef386abbc2ed8625b623",
+    "exact_preimage_resolutions": []
+  },
+  "verified_bindings": 398,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_remote_write_memory.py": "ffbd2644fad1469cd3e49df6d42c070d85db74ec819132b91bbf99de57a7157d"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "cases": 14,
+  "maximum_seconds": 2.699142738012597,
+  "compile_seconds": 0.6763488940196112,
+  "actual_elaborated_modules": {
+    "rocev2_remote_write_memory": 1,
+    "rocev2_remote_write_message_guard": 1,
+    "rocev2_mr_table": 1,
+    "rocev2_write_notice_binding_queue": 1,
+    "rocev2_receive_write_ack_tx": 1,
+    "rocev2_memory_command_nonce": 1,
+    "rocev2_paged_memory_backend": 1,
+    "rocev2_mr_page_table": 1,
+    "rocev2_page_dma_engine": 1,
+    "rocev2_corundum_dma_backend": 1,
+    "dma_psdpram": 1,
+    "dma_client_axis_sink": 1,
+    "dma_client_axis_source": 1,
+    "axis_xgmii_tx_64": 1,
+    "axis_async_fifo_adapter": 1
+  },
+  "actual_8193_host_bytes_and_all_sentinels": true,
+  "actual_page_write_descriptors": 5,
+  "actual_fence_commands": 3,
+  "actual_physical_nonce_commands": 3,
+  "actual_ACK_MAC_SFD_CDC": 3,
+  "actual_late_RQ_whole_CQ_ticket": true,
+  "independent_remote424_and_posted_zero_capacity620": true,
+  "actual_HLS_ACK_data_are_checked_CPP_trace_replay": true,
+  "live_generated_HLS": false,
+  "complete_native_PCIe_TLP_HLS_CQ_graph": false,
+  "full_native_1MiB": false,
+  "live_Linux": false,
+  "modeled_boundaries": [
+    "integrity-checked metadata/trusted QP",
+    "posted-RQ admission",
+    "HLS96/456/data/ACK and whole-RQ HLS producer",
+    "PCIe descriptor-engine/host ordering",
+    "clocks/PTP/physical pins",
+    "whole CQ commit/retire consumers"
+  ],
+  "leaf_lint": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "%Warning-WIDTHEXPAND: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_remote_write_memory.v:56:25: Operator ASSIGNW expects 24 bits on the Assign RHS, but Assign RHS's SEL generates 20 bits.\n                                                                                                                  : ... note: In instance 'rocev2_remote_write_memory'\n   56 | wire [23:0] in_psn_delta=s_packet_token[103:84];\n      |                         ^\n                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.020\n                      ... Use \"/* verilator lint_off WIDTHEXPAND */\" and lint_on around source to disable this message.\n",
+    "no_loop_latch_driver_warnings": true,
+    "not_full_native_or_timing": true
+  },
+  "inherited_source_check": {
+    "exit": 1,
+    "stdout": "Tcl completeness checks passed: 28 files (not Vivado elaboration).\nLFC source allowlist tests passed: 14 cases; no hardware/Vivado access.\nSource check passed: 122 HDL, 12 constraints, 3 IP generators.\n",
+    "stderr": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v\n",
+    "overall_suite_passed": false
+  },
+  "original_timing_met": false,
+  "original_estimated_ns": 15.571,
+  "remaining": [
+    "All original11 requirements stay intact, not a component-only goal.",
+    "Integrate this typed packet memory/HLS/ACK bridge into complete native graph, SAME actual MR/PTE/backend/physical nonce instances and all previous paths; replace ENTIRE HLS module/data set with new002.",
+    "Prove actual new generated native elaboration/runtime and all original34 regressions plus WRITE/Immediate, real PCIe TLP/whole CQ graph, full1MiB/matched software/multiSGE/live Linux refs.",
+    "Preserve independent genuine late-RQ lifetimes and actual MR/PTE guards through whole CQ; privileged partial-message HLS teardown/unpin remains unproved.",
+    "Short real-peer recovery/RNR/MSN/congestion and original4ns/default1.08ns full-board fit/setup/hold/CDC/DRC/routing/short supervised physical qualification remain.",
+    "No reboot needed; restore all archived RAM caches and prove authenticated exact-thread/active-goal revival before any necessary reboot."
+  ],
+  "hardware_install_load_network_fan_BIOS_flash_reboot_actions": [],
+  "commit_or_push": false
+}

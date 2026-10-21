@@ -1,0 +1,117 @@
+{
+  "scope": "Real raw WRITE controller/visibility/PSN fanout and full classifier scope.\n\nHLS and native-PSN endpoint are MODELS/traces; complete native placement and\nactual generated-HLS payload/PCIe/CQ runtime still remain. No scope shrink.\n",
+  "audit_passed": true,
+  "overall_goal_complete": false,
+  "hardware_verified": false,
+  "evidence": {
+    "segmented-write-controller-003": {
+      "bindings_verified": 114,
+      "report_sha256": "db1bc7dea733a747f6f97566089b8b42cb8b50d88eb5711f610cabf63770324e",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-controller-001": {
+      "bindings_verified": 99,
+      "report_sha256": "2fb3f4edde6e5d034610a181f910038c55999895be2c5719076b4029b6e3c0e2",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_segmented_write_controller.py"
+      ]
+    },
+    "segmented-write-controller-002": {
+      "bindings_verified": 114,
+      "report_sha256": "b2c61d3e0e913b382fa48f40d1d10f7cb40bc4fa0dd8220084a6a166e5252e60",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_segmented_write_controller.py"
+      ]
+    },
+    "native-write-classifier-002": {
+      "bindings_verified": 8,
+      "report_sha256": "1c3d81e97838015a00ec402574d6086e07d5fbbfb34c704b49007801a36b7fcc",
+      "exact_preimage_resolutions": []
+    },
+    "native-write-classifier-001": {
+      "bindings_verified": 8,
+      "report_sha256": "a37c4a741779b8ce80a20b4f10004fa5819dcd1d179c4ca7dc3054fa180605e7",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_native_write_classifier.py"
+      ]
+    },
+    "remote-write-memory-004": {
+      "bindings_verified": 100,
+      "report_sha256": "596ab4d78838e91de8cd51ea206742bc173ee04323943a84e7327731ccc10849",
+      "exact_preimage_resolutions": []
+    },
+    "write-native-gateway-diagnostics-001": {
+      "bindings_verified": 4,
+      "report_sha256": "9f91f4896b783e9d631f673c36d3f06d06d9cc1560dc8afd1c9a6ae026bcf8c0",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 447,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_segmented_write_controller.py": "10b09ba1d1c26a59d1b6887a60ade6227c5e5eaba1e7d6c8071c7689c8584ac4"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "controller_modes": 14,
+  "classifier_frames": 512,
+  "actual_elaborated_modules": {
+    "rocev2_segmented_write_controller": 1,
+    "rocev2_segmented_write_native_frontend": 1,
+    "rocev2_remote_write_message_guard": 1,
+    "rocev2_remote_write_memory": 1,
+    "rocev2_mr_table": 1,
+    "rocev2_mr_page_table": 1,
+    "rocev2_paged_memory_backend": 1,
+    "rocev2_memory_command_nonce": 1,
+    "rocev2_receive_write_ack_tx": 1,
+    "rocev2_write_notice_binding_queue": 1,
+    "axis_xgmii_tx_64": 1,
+    "rocev2_ipv4_icrc": 1
+  },
+  "maximum_controller_seconds": 5.282396016991697,
+  "actual_whole_raw_bytes": true,
+  "ACK_waits_real_backend_fence_before_any_MAC_SFD": true,
+  "frontend_DONE_and_native_commit_atomic": true,
+  "genuine_LAST_only_full680_RQ_owner_verified": true,
+  "whole_frontend_and_classifier_parent_reconstruct_exactly": true,
+  "modeled_boundaries": [
+    "trusted native context/admission",
+    "actual CPP HLS trace/raw-command/RQ/whole producers",
+    "native expected-PSN commit endpoint",
+    "descriptor engine/host ordering",
+    "clock/PTP/PHY/CQ consumers"
+  ],
+  "actual_generated_HLS_payload_runtime": false,
+  "complete_native_controller_inserted": false,
+  "complete_native_WRITE_runtime": false,
+  "full_native1MiB": false,
+  "live_Linux": false,
+  "partial_message_HLS_teardown_proved": false,
+  "original_timing_met": false,
+  "original_estimated_ns": 15.571,
+  "leaf_lint": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "%Warning-WIDTHEXPAND: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_remote_write_message_guard.v:90:17: Operator EQ expects 32 bits on the LHS, but LHS's VARREF 's_packet_pad' generates 2 bits.\n                                                                                                                         : ... note: In instance 'rocev2_segmented_write_controller.frontend.protection'\n   90 |     s_packet_pad==((32'd0-s_packet_length)&3) &&\n      |                 ^~\n                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.020\n                      ... Use \"/* verilator lint_off WIDTHEXPAND */\" and lint_on around source to disable this message.\n%Warning-WIDTHEXPAND: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_remote_write_memory.v:56:25: Operator ASSIGNW expects 24 bits on the Assign RHS, but Assign RHS's SEL generates 20 bits.\n                                                                                                                  : ... note: In instance 'rocev2_segmented_write_controller.packet_memory'\n   56 | wire [23:0] in_psn_delta=s_packet_token[103:84];\n      |                         ^\n",
+    "no_loop_latch_driver_warnings": true,
+    "not_board_timing": true
+  },
+  "inherited_source_check": {
+    "exit": 1,
+    "stdout": "Tcl completeness checks passed: 28 files (not Vivado elaboration).\nLFC source allowlist tests passed: 14 cases; no hardware/Vivado access.\nSource check passed: 122 HDL, 12 constraints, 3 IP generators.\n",
+    "stderr": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v\n",
+    "overall_suite_passed": false
+  },
+  "remaining": [
+    "All11 original requirements retained. Insert this actual controller/classifier into the complete native graph, not another compatible-only substitute.",
+    "Connect real native expectedPSN event, SAME MR/PTE/backend/global nonce, shared HLS424/456 and true680 RQ owner, ONE ACK allocator/real late-RQ/whole CQ retirement. No second namespace, fake RQ or early wire ACK.",
+    "Fresh full native compile/all34 old regressions PLUS WRITE/Immediate, full1MiB/matched software/multiSGE/live Linux refs/short peer recovery/RNR/MSN/congestion.",
+    "Implement real privileged partial-HLS-message teardown/unpin; no cancel/drain/reset substitute. Original4ns/default1.08ns board/physical qualification still fails/remains.",
+    "No reboot needed; restore all archived RAM caches and prove authenticated exact-thread/goal revival before any necessary reboot."
+  ],
+  "hardware_install_load_network_fan_BIOS_flash_reboot_actions": [],
+  "commit_or_push": false
+}

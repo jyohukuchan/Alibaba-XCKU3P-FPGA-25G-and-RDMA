@@ -31,6 +31,18 @@ Alibaba AS02MC04（XCKU3P）向けの、**Corundumベースの25GbE移植・検�
 
 ## RNIC開発中ソースの進捗（2026-10-21）
 
+今回の公開にはprogress157〜160と、進行中のprogress161のnative統合ソース、成功・失敗の両方の記録を含めます。以下の「未push」「未commit」や以前の公開HEADは各時点の履歴です。完成版RoCEや実機向けリリースではありません。
+
+progress161では、WRITE受信コントローラーをnative全体へ配置し、実際の生成HLS・native PSN更新・同じMR／ページ表／バックエンド／nonce・単一のRECV／WRITE ACK割当て・本物のRQ／全体CQ経路へ接続しました。native全体のコンパイルは約8.23秒で成功しています。[接続・コンパイル記録](results/2026-10-18/rocev2-rnic-segmented-write-native-elaboration-001.json)。ただし統合後のデータ転送試験ではなく、既存34件と新しいWRITE／Immediateの実行回帰、新しいヘッダー受付ゲートの単独実行検証、最大1MiBのnative転送、ソフトウェア対応、回復処理、元の4nsタイミング達成・実機検証は残っています。FPGAへの書き込み、ドライバー導入、能力広告、BIOS・ファン・ネットワーク設定の変更はしていません。
+
+progress160では、実際のCRC検査済みフレーム・MR・メモリ・フェンス・HLS／ACKの完了を束ねる制御部を追加しました。14ケースが成功し（最長約5.29秒、元の10秒制限内）、8,193バイトの全量と周辺領域、最終パケットだけの本物のRECV所有権、フェンス前のACK送信禁止、受信入口とPSN更新の同時完了を検査しています。分類器も全256オペコード×2状態の512フレームで全バイト・KEEP・EOFが一致しました。[検証範囲](results/2026-10-18/rocev2-rnic-segmented-write-controller-diagnostics-001.json)。HLS・native PSN更新先・PCIe記述子エンジン／ホスト順序・CQ消費側はモデルで、native全体への配置と新生成HLSによる実行回帰はまだです。実機・設定は変えず、progress157〜160は未pushです。
+
+progress159では、新しいWRITE用生成HLS一式をnative回路へ選択し、9階層へ424／456ビットの所有権・完了ポートを通しました。native全体の接続確認は約8.18秒で成功し、MR表・ページ表・バックエンド・nonceを増やさずMR照合クライアントだけを追加しています。実際のnative MR部分をそのまま切り出した競合試験8ケースも成功し、同一タグの応答分離や権限・範囲・古いキー・無効化を検査しました。[検証範囲](results/2026-10-18/rocev2-rnic-write-native-gateway-diagnostics-001.json)。これは接続確認とMR部分の実行試験で、WRITE受信入口・DMA・ACK・CQの全体統合や、新生成HLSによるWRITEデータ転送の成功ではありません。既存34件のnative実行回帰とタイミング達成も残っています。progress157〜159は未pushです。
+
+progress158では、MR保護・通知キュー・パディング除去・ページ分割バックエンド／RAM・可視化フェンス・ACK/MAC完了をつなぎ、14ケースが成功しました（最長約2.70秒、元の10秒制限内）。通常WRITE／Immediateの8,193バイト全量と隣接領域、5個の書き込み記述子、3回のフェンス／nonce／実MAC送信を検査し、通知容量0でも全体8,193バイトのCQチケットになることを確認しています。[検証範囲と失敗履歴](results/2026-10-18/rocev2-rnic-remote-write-memory-diagnostics-001.json)。これはRTL接続シミュレーションで、HLS境界は実C++トレース、PCIe記述子エンジン・ホストの順序保証・CQ消費側などはモデルです。生成HLS・PCIe TLP・native全体・実機の成功ではありません。progress157／158は未pushで、公開済みはfbea645です。
+
+progress157では、RECVとWRITEのACKタグ割当てを1つに統合しました。WRITEと実際のRECV要求を別々に保持し、同じACKのEOF・SFD送信完了・1,024周期の待機を確認します。WRITE＋Immediateの最終パケットでは、両方の完了確認・退役要求がそろうまで片側だけを解放しません。58ケースと従来試験2本が成功し、混在5フレームの実MAC・FIFO・XGMII・FCS・SFD・完了通知も全バイト／タグが一致しました（最長約1.67秒、元の10秒制限内）。[検証範囲と失敗履歴](results/2026-10-18/rocev2-rnic-receive-write-ack-diagnostics-001.json)。HLS入力は実C++試験のトレース再生で、生成RTL・DMA・CQを含むnative全体の成功ではありません。今回の追加は未pushで、以下の公開更新はfbea645（progress154〜156）の履歴です。
+
 今回の公開には、progress154〜156のソースと成功／失敗記録を含めます。以下の「未push」「未commit」や以前の公開HEADは各時点の履歴です。native全体への統合と元のタイミング条件の達成は未完了で、実機向けリリースではありません。`scripts/check.sh`は従来のTX-paddingソースと試験記録のハッシュ不一致で引き続き停止し、全体合格とはしていません。
 
 progress156では、WRITE専用の424ビット識別情報を、実際のHLSパーサー・データEOF・ACK/MSN生成・同じPSNテーブルの読み戻しへ通し、456ビットの実行完了を出す経路を追加しました。従来65モードを含む87モードが成功し、最大1MiB・各284パケットの全識別情報と既存の全データ／ACK検査が一致しました。旧Atomicサービス実RTL・Immediateの互換試験も成功しています。[検証範囲](results/2026-10-18/rocev2-rnic-segmented-write-owned-diagnostics-001.json)。RTL生成も約498秒で完了し、既存・追加ポート幅を確認しました。ただし推定15.571nsで元の4ns条件には未達です。[生成・タイミング記録](results/2026-10-18/rocev2-rnic-segmented-write-owned-generated-diagnostics-001.json)。DMA／MAC／CQを含むnative全体・実機の成功ではありません。実機設定は変えず、追加分は未pushです。

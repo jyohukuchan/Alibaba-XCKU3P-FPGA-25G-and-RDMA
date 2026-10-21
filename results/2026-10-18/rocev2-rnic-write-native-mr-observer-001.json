@@ -1,0 +1,17 @@
+{
+  "scope": "Read-only frozen failing MR001 management response observation; no drive/assertion change.",
+  "compile_exit": 0,
+  "simulation_exit": 1,
+  "stdout": "NATIVE_MR_MANAGEMENT_OBSERVE op=3 error=00 key=10000000 quiet=1\nNATIVE_MR_MANAGEMENT_OBSERVE op=1 error=00 key=80000008 quiet=1\nFATAL: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-native-mr-gateway-znnfxka1/tb.v:329: actual native MR management failed\n       Time: 340000  Scope: tb.configure\n",
+  "stderr": "",
+  "source_sha256": {
+    "rdma/rnic/build/write-native-mr-gateway-znnfxka1/tb.v": "b2924ae7feb05dde07e3f5f2f00f65c4e862a2c3e19dd8f5f6da68b3f797bfb8",
+    "rdma/rnic/rtl/rocev2_mr_query_arbiter.v": "abeb223c0d54652bbac141187f660e136dc99055a66e83eaa72deb30d3aa96cc",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/tests/write_native_mr_observe.v": "a4bbccda11dabbc3f60af98e6f39012b58223aabc7c5eab987d379edf8427a50"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-native-mr-observe-zwqezxm8/test": "f3d1f96e8d253cbea90a95ab689162d1a3ce0fc8c602319c726f48bda575b44a"
+  },
+  "hardware_verified": false
+}

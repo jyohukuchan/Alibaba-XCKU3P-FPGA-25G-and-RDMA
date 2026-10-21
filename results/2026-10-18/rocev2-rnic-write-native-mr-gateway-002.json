@@ -1,0 +1,147 @@
+{
+  "scope": "Exact native four-client MR island: normal/SQ/Atomic/typed-WRITE, ONE table.\n\nExtract the actual gateway's unchanged MR-chain and write guard expressions,\nnot a duplicate Python/RTL authorization model. Native caller/state/lease\nand management boundaries are modeled. No complete native/HLS/DMA runtime.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/write-native-mr-gateway-1en55bef",
+  "source_sha256": {
+    "rdma/rnic/tests/probe_write_native_mr_gateway.py": "cbaf63bfd63e3c206300995aa765f6155dfcc4086f903ab7af5c7f96cdd9974a",
+    "rdma/rnic/fpga/derive_segmented_write_native_gateway.py": "4882feee4d73a2f7730ea87b42f4aa3422c4d7c95671d7dbc844ccfaf3d4407a",
+    "rdma/rnic/rtl/rocev2_mr_query_arbiter.v": "abeb223c0d54652bbac141187f660e136dc99055a66e83eaa72deb30d3aa96cc",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539"
+  },
+  "tests": {
+    "0": {
+      "exit": 0,
+      "seconds": 0.018910050974227488,
+      "summary": {
+        "pass_test": true,
+        "mode": 0,
+        "queries": 4,
+        "responses": 4,
+        "native_guard_denied": 0,
+        "cycles": 72
+      }
+    },
+    "1": {
+      "exit": 0,
+      "seconds": 0.017415986978448927,
+      "summary": {
+        "pass_test": true,
+        "mode": 1,
+        "queries": 4,
+        "responses": 4,
+        "native_guard_denied": 0,
+        "cycles": 72
+      }
+    },
+    "2": {
+      "exit": 0,
+      "seconds": 0.016749203961808234,
+      "summary": {
+        "pass_test": true,
+        "mode": 2,
+        "queries": 0,
+        "responses": 0,
+        "native_guard_denied": 1,
+        "cycles": 25
+      }
+    },
+    "3": {
+      "exit": 0,
+      "seconds": 0.01624291797634214,
+      "summary": {
+        "pass_test": true,
+        "mode": 3,
+        "queries": 0,
+        "responses": 0,
+        "native_guard_denied": 1,
+        "cycles": 25
+      }
+    },
+    "4": {
+      "exit": 0,
+      "seconds": 0.017505664960481226,
+      "summary": {
+        "pass_test": true,
+        "mode": 4,
+        "queries": 4,
+        "responses": 4,
+        "native_guard_denied": 0,
+        "cycles": 72
+      }
+    },
+    "5": {
+      "exit": 0,
+      "seconds": 0.018054972984828055,
+      "summary": {
+        "pass_test": true,
+        "mode": 5,
+        "queries": 4,
+        "responses": 4,
+        "native_guard_denied": 0,
+        "cycles": 72
+      }
+    },
+    "6": {
+      "exit": 0,
+      "seconds": 0.016242428973782808,
+      "summary": {
+        "pass_test": true,
+        "mode": 6,
+        "queries": 0,
+        "responses": 0,
+        "native_guard_denied": 1,
+        "cycles": 25
+      }
+    },
+    "7": {
+      "exit": 0,
+      "seconds": 0.0178198849898763,
+      "summary": {
+        "pass_test": true,
+        "mode": 7,
+        "queries": 5,
+        "responses": 5,
+        "native_guard_denied": 0,
+        "cycles": 85
+      }
+    }
+  },
+  "planned_modes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "compile_limit_seconds": 10,
+  "runtime_limit_seconds": 10,
+  "clock_ns": 4,
+  "cycle_limit": 100000,
+  "native_MR_island_extracted_exactly": true,
+  "MR_response_model": false,
+  "outer_native_HLS_DMA_runtime": false,
+  "hardware_verified": false,
+  "compile_seconds": 0.021975773968733847,
+  "source_unchanged": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/write-native-mr-gateway-1en55bef/native_protected.v.txt": "c566a02b3c4118f6bd674c617390154b1aa264e0c9ba77deaabc80f5d1d751ca",
+    "rdma/rnic/build/write-native-mr-gateway-1en55bef/6.log": "45d666cc7acc59ae0963fe8211284bf65589157564812c1d36f3786343598ca8",
+    "rdma/rnic/build/write-native-mr-gateway-1en55bef/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/write-native-mr-gateway-1en55bef/4.log": "589d746ac310e64e5b586c3e015ad2ffa778ba82b8f2060deafb0d027746d860",
+    "rdma/rnic/build/write-native-mr-gateway-1en55bef/native_write_guard.v.txt": "71dd7213cb65421bd02640c00f2fa6bfd9c9d21380095a6794bb17a33c1ca1a5",
+    "rdma/rnic/build/write-native-mr-gateway-1en55bef/1.log": "d03f286d14370b2008619569753a83dfb053700718520b830862185587aa592e",
+    "rdma/rnic/build/write-native-mr-gateway-1en55bef/2.log": "57555137dfd2ad436d3ebdde4a8e88a7668cfa4e386271964b5438fbfcea19cf",
+    "rdma/rnic/build/write-native-mr-gateway-1en55bef/3.log": "7fe754aaed7732dd1481a62d4c4c8917ae89264bb8c8a2f09932ff1964fb5687",
+    "rdma/rnic/build/write-native-mr-gateway-1en55bef/0.log": "6583548fde9991da74231f8c06c01f45975550437ac2fe1b4b33140d79c48d93",
+    "rdma/rnic/build/write-native-mr-gateway-1en55bef/tb.v": "ca0ee9b82b8534b1a169410fb605e95c1fb871745638c5844d179bd6962f4c6c",
+    "rdma/rnic/build/write-native-mr-gateway-1en55bef/native_mr_island.v.txt": "d511bbad788bd11f084cab2bb67cbcf81cd8c558939dcc72202dcc90ec1ea79c",
+    "rdma/rnic/build/write-native-mr-gateway-1en55bef/7.log": "9901bc553edd4c76980efdc43bb614cc082e26fc86d4c007eee1126c0290d6a0",
+    "rdma/rnic/build/write-native-mr-gateway-1en55bef/5.log": "bf178fdea452dda35f091fd8b3df3024d9e4fa25f56ca52d6706fb776889bdea"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-write-native-mr-ijk2l61b/test": "99be8ad82b625a0ddf739234b61be94cedd18468a28cb001f950020d4c7faeca"
+  }
+}

@@ -5,6 +5,48 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+Publication update (2026-10-21): progress157–160 and the current progress161
+native integration sources and successful/failed reports are now included.
+Earlier local/unpushed/previous-public-HEAD statements are checkpoint history.
+
+Progress161 actually inserts the checked WRITE controller into the native
+graph, with real generated HLS/native PSN and the existing shared MR/PTE/
+backend/nonce plus sole RECV/WRITE ACK allocator and genuine RQ/CQ paths.
+[Native elaboration001](../results/2026-10-18/rocev2-rnic-segmented-write-native-elaboration-001.json)
+passes8.225s, but this is compile-only, NOT integrated payload-runtime,
+native Atomic, software or physical/timing qualification. Fresh all34 old
+native cases plus new WRITE/Immediate and the new header-gate runtime remain.
+Atomic_NONE, original timing/defaults and hardware settings stay unchanged.
+
+Progress160 adds actual checked-WRITE controller/fenced ACK visibility/
+atomic frontend-PSN commit fanout (14 cases) and full opcode classifier512
+frames. [447-binding audit](../results/2026-10-18/rocev2-rnic-segmented-write-controller-diagnostics-001.json).
+HLS/native-PSN/descriptor-host/CQ boundaries remain modeled; complete native
+controller insertion and generated-WRITE payload runtime remain. Original
+Atomic path/defaults/Atomic_NONE/timing requirements unchanged;157–160 local.
+
+Progress159 compiles the actual typed-WRITE HLS/native boundary and adds
+one client below existing normal/SQ/Atomic MR arbitration, not another MR.
+Actual native four-client MR-island8 cases pass. [1432-binding audit](../results/2026-10-18/rocev2-rnic-write-native-gateway-diagnostics-001.json).
+This is compile/isolated-MR evidence, not integrated WRITE/native Atomic
+runtime or physical/timing qualification. Atomic_NONE/defaults unchanged;
+157–159 local after public fbea645. No new software capability advertisement.
+
+Progress158 connects protected WRITE MR/RQ, actual packet memory/unpad,
+nonce/paged RAM/fence and ACK/MAC/DONE in14 bounded cases (8193 whole bytes,
+5 page-write descriptors/3 fences/3 actual MAC ACKs). [398-binding audit](../results/2026-10-18/rocev2-rnic-remote-write-memory-diagnostics-001.json).
+HLS/descriptor-host/CQ boundaries remain modeled; NOT full native/TLP/live
+generated-HLS/physical or Atomic qualification. Existing Atomic_NONE and
+all original timing/defaults stay;157/158 local after public fbea645.
+
+Progress157 adds one shared class6000 WRITE/RECV ACK allocator, not another
+Atomic tag source. ALL58 new cases/two old fixtures pass, including five
+actual mixed MAC/FCS/SFD/CDC frames and distinct WRITE/RQ proof/retirement
+fanout. [800-binding audit](../results/2026-10-18/rocev2-rnic-receive-write-ack-diagnostics-001.json).
+HLS boundaries are checked C++ trace replay, NOT live generated/native DMA/
+CQ or partial-message teardown qualification. Atomic_NONE and original
+timing remain unchanged; new work is local after explicit push fbea645.
+
 Explicit publication (2026-10-21) now includes progress154–156 source and
 successful/failed records. Local/unpushed and previous-HEAD statements
 below describe earlier checkpoints, not the publication status. This is

@@ -1,0 +1,104 @@
+{
+  "scope": "Audit real typed HLS/native boundary and exact native MR-island execution.\n\nThis proves compile plus isolated MR arbitration, NOT integrated WRITE\nfrontend/DMA/ACK/CQ runtime. All11 original requirements remain open.\n",
+  "audit_passed": true,
+  "overall_goal_complete": false,
+  "hardware_verified": false,
+  "evidence": {
+    "segmented-write-native-gateway-003": {
+      "bindings_verified": 690,
+      "report_sha256": "ba7e8e2c443b1f9b7c00474b382c785b6b23fa16078b690ad3104367d91ffef9",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-native-gateway-001": {
+      "bindings_verified": 2,
+      "report_sha256": "75bdbdc7f56e0d9daeee29669eabb50bd0cf3bca1bbda830e197e4872d6a0491",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/check_segmented_write_native_gateway.py",
+        "rdma/rnic/fpga/derive_segmented_write_native_gateway.py"
+      ]
+    },
+    "segmented-write-native-gateway-002": {
+      "bindings_verified": 690,
+      "report_sha256": "6d67b24316c680d87271512c00633eeeabae5f3190df9378d391d6846225bf12",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/check_segmented_write_native_gateway.py"
+      ]
+    },
+    "write-native-mr-gateway-002": {
+      "bindings_verified": 18,
+      "report_sha256": "85c5324979ac8536ca93a39f0754a995a94be26bb01db94fe2b67c17643b94c8",
+      "exact_preimage_resolutions": []
+    },
+    "write-native-mr-gateway-001": {
+      "bindings_verified": 18,
+      "report_sha256": "e8a79ca4e53cba3d3f4536d4d2ef09e53b3d570f650739a4a8c186880453f5a6",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_write_native_mr_gateway.py"
+      ]
+    },
+    "write-native-mr-observer-001": {
+      "bindings_verified": 5,
+      "report_sha256": "62b4fa3dc85e07b62b1c71dec583c03a0ede392f155b11a7dcda35fd25d1af2f",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/write_native_mr_observe.v"
+      ]
+    },
+    "write-native-mr-observer-002": {
+      "bindings_verified": 5,
+      "report_sha256": "6eb7bba78d7388fedb801306802729728c33b4cf39cfd1172622275965fd9742",
+      "exact_preimage_resolutions": []
+    },
+    "remote-write-memory-diagnostics-001": {
+      "bindings_verified": 4,
+      "report_sha256": "73056cf624e43c1cec96022c6358310b57cb41476270100231ea9b042c18b63b",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 1432,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_write_native_gateway.py": "4b1583825ceb9b01d6ed62b66e72b9ffa9432d045e184de977a16e9bb1e5dfda"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "actual_new_HLS_native_elaboration": true,
+  "compile_seconds": 8.171180580975488,
+  "changed_native_leaves": 9,
+  "one_HLS_MR_backend_nonce_domain": true,
+  "old_MR_arbiters": 3,
+  "new_MR_arbiters": 4,
+  "actual_native_MR_island_cases": 8,
+  "maximum_MR_seconds": 0.018910050974227488,
+  "same_tag_parallel_normal_SQ_Atomic_WRITE": true,
+  "whole_lease_still_guards_invalidation_after_queries": true,
+  "actual_shared_invalidation_revokes_WRITE_key": true,
+  "no_MR_response_model": true,
+  "native_WRITE_frontend_backend_ACK_CQ_inserted": false,
+  "complete_native_WRITE_runtime": false,
+  "actual_generated_WRITE_payload_runtime": false,
+  "full_native_1MiB": false,
+  "live_Linux": false,
+  "modeled_MR_island_boundaries": [
+    "caller state/leases and management",
+    "normal/SQ/Atomic/WRITE requests/response consumers"
+  ],
+  "original_timing_met": false,
+  "original_HLS_estimate_ns": 15.571,
+  "inherited_source_check": {
+    "exit": 1,
+    "stdout": "Tcl completeness checks passed: 28 files (not Vivado elaboration).\nLFC source allowlist tests passed: 14 cases; no hardware/Vivado access.\nSource check passed: 122 HDL, 12 constraints, 3 IP generators.\n",
+    "stderr": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v\n",
+    "overall_suite_passed": false
+  },
+  "remaining": [
+    "All11 original requirements retained; this is native boundary elaboration plus MR-island runtime, NOT a complete WRITE implementation.",
+    "Connect raw checked classifier/frontend, native expected-PSN completion, packet memory/global backend/physical nonce, ONE ACK/late-RQ/whole-CQ and actual generated typed HLS end to end.",
+    "Keep all old paths and exact new full-native compile/all34 regressions plus WRITE/Immediate; then full1MiB/matched software/multiSGE/live Linux refs/short peer recovery/RNR/MSN/congestion.",
+    "Safe partial HLS message teardown/unpin and original4ns/default1.08ns board fit/setup/hold/CDC/DRC/routing/short supervised physical remain.",
+    "No reboot needed; restore archived RAM caches and prove authenticated exact-thread/active-goal revival before any necessary reboot."
+  ],
+  "hardware_install_load_network_fan_BIOS_flash_reboot_actions": [],
+  "commit_or_push": false
+}

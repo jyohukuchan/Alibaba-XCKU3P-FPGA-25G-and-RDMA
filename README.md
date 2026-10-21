@@ -28,6 +28,65 @@ inbound SEND/WRITE target, READ responder, native InfiniBand or production-relia
 
 ### RNIC development snapshot (2026-10-21)
 
+Publication update: this snapshot includes progress157–160 and the current
+progress161 native integration sources, with successful AND failed reports.
+Local/unpushed statements below describe earlier checkpoints. This remains
+development work, not a hardware release or a complete RoCE implementation.
+
+Progress161 inserts the checked-frame WRITE controller into the complete
+native graph: the actual generated typed HLS, native expected-PSN commit,
+shared MR/PTE/backend/physical nonce, sole RECV/WRITE ACK allocator and genuine
+late-RQ/whole-CQ paths. Full native elaboration passes in8.225s without HLS
+stubs, missing leaves or port-width waivers. [Compile-only evidence](results/2026-10-18/rocev2-rnic-segmented-write-native-elaboration-001.json).
+This is NOT payload-runtime proof: all34 prior native cases and the new
+WRITE/Immediate cases still need a fresh integrated run. The new native-only
+first-header admission gate is also not separately runtime-qualified.
+Full1MiB native transfers, matched software, recovery/partial-message cleanup,
+original4ns timing and physical qualification remain open. No FPGA image,
+driver, advertised capability, BIOS/fan/network setting or default is changed.
+
+Progress160 adds the real checked-frame WRITE controller: frontend/MR,
+packet memory, actual backend visibility, typed HLS/ACK and atomic frontend/
+native-PSN-commit fanout. ALL14 bounded cases pass (max5.283s, original10s),
+including8193 full bytes, real CRC/replay, genuine LAST-only680 RQ owner,
+3 fences/ACKs and NO positive MAC SFD before actual visibility. The derived
+classifier also passes all256 opcodes x2 states/512 full frames. [447-binding audit](results/2026-10-18/rocev2-rnic-segmented-write-controller-diagnostics-001.json).
+HLS/native-PSN endpoint/descriptor-host/CQ boundaries remain MODELS; this
+controller still needs placement in the complete native graph. No generated
+WRITE payload/native runtime or timing qualification follows.157–160 local.
+
+Progress159 selects the ENTIRE actual typed-WRITE generated HLS set in the
+native graph and propagates424/456 owner/receipt ports through9 leaves.
+Full native elaboration passes8.172s: same native HLS/MR/PTE/backend/nonce,
+old3 MR arbiters plus ONE new client, no old/new generated-helper mixture.
+An exact extracted native MR island passes8 short four-client contention/
+same-tag/permission/range/key/invalidation cases. [1432-binding audit](results/2026-10-18/rocev2-rnic-write-native-gateway-diagnostics-001.json).
+This is boundary elaboration/MR-island runtime, NOT integrated WRITE
+frontend/backend/ACK/CQ or live generated-WRITE payload runtime. That
+insertion, all34 old regressions and original timing still remain.
+157–159 local/unpushed after public fbea645; no capability/default change.
+
+Progress158 connects actual message-MR/late-RQ, typed packet memory/unpad,
+physical nonce, paged backend/staging RAM/fence and shared ACK/MAC/DONE.
+ALL14 short cases pass (max2.700s, original10s/4ns): ordinary/Immediate8193
+bytes, every host byte/sentinel,5 scattered write descriptors,3 fences,
+3 nonces and3 actual XGMII/FCS/SFD/CDC ACKs. Zero-capacity notification
+still yields one8193-byte whole CQ ticket with a separate genuine RQ.
+[398-binding scope/failure audit](results/2026-10-18/rocev2-rnic-remote-write-memory-diagnostics-001.json).
+HLS traces/descriptor engine/host ordering/CQ consumers remain MODELS;
+this is NOT complete native PCIe/TLP/live-generated-HLS/board proof.
+Both157/158 stay local after public fbea645; original timing remains open.
+
+Progress157 adds ONE shared RECV/WRITE ACK tag allocator. Distinct424 WRITE
+and genuine620 RQ identities bind to the SAME actual ACK/EOF/SFD/1024-tail;
+LAST Immediate publishes two independent proofs and cannot retire either
+alone. ALL58 bounded cases and two unchanged legacy fixtures pass; five
+mixed frames pass actual MAC FIFO/XGMII/FCS/SFD/receipt-CDC byte/tag checks
+(max1.663s/case, original10s/4ns). [800-binding scope/failure audit](results/2026-10-18/rocev2-rnic-receive-write-ack-diagnostics-001.json).
+HLS receipts/ACKs here replay checked actual C++ traces, NOT live generated
+HLS/native DMA/CQ proof. Full integration and original timing remain open.
+This addition is local/unpushed; publication fbea645 below covers154–156.
+
 Publication update: this snapshot includes progress154–156 source and both
 successful and failed reports. References below to local/unpushed work or
 the previous public HEAD are historical. Native integration and original

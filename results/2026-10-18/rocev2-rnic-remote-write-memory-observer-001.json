@@ -1,0 +1,34 @@
+{
+  "scope": "Read-only exact failing003 early-data shape observation; no DUT or fixture drive/assertion changes.",
+  "compile_exit": 0,
+  "simulation_exit": 1,
+  "stdout": "XGMII_TX d5555555555555fb 01\nXGMII_TX f38ad0c5670383b8 00\nACTUAL_MAC_SFD 6001 01234567890000000323d6d8\nXGMII_TX 024500083175b9fb 00\nXGMII_TX 1164004000003000 00\nXGMII_TX 12c6020b12c69374 00\nXGMII_TX 1c00b712b712010b 00\nXGMII_TX 0000ffff40110000 00\nXGMII_TX 000002000000c400 00\nXGMII_TX a14576517ab10200 00\nXGMII_TX 0707070707fd0b6c fc\nXGMII_TX d5555555555555fb 01\nXGMII_TX f38ad0c5670383b8 00\nACTUAL_MAC_SFD 6002 012345678900000041666250\nXGMII_TX 024500083175b9fb 00\nXGMII_TX 1164004000003000 00\nXGMII_TX 12c6020b12c69374 00\nXGMII_TX 1c00b712b712010b 00\nXGMII_TX 0000ffff40110000 00\nXGMII_TX 000003000000c400 00\nXGMII_TX a1454b3153010200 00\nXGMII_TX 0707070707fd0b6c fc\nWRITE_MEMORY_OBSERVE packet=2 remaining=1 wire_remaining=4 KEEP=ffffffffffffffff LAST=0 pad_zero=1 known=1 issued=0 raw_seen=0 fault=0\nFATAL: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/remote-write-memory-p4kqsxk3/tb.v:435: connected WRITE fault mode5 backend00 execb3 guard00 ack00 nonce00 rq00\n       Time: 32086000  Scope: tb\nWRITE_MEMORY_OBSERVE packet=2 remaining=1 wire_remaining=4 KEEP=ffffffffffffffff LAST=0 pad_zero=1 known=1 issued=0 raw_seen=0 fault=1\n",
+  "stderr": "",
+  "source_sha256": {
+    "rdma/rnic/build/remote-write-memory-p4kqsxk3/tb.v": "57c5b083865419b6bcf3c1a3fa3a9e9b0a1ac3f12c01c38c281be7761bc3f4a6",
+    "rdma/rnic/build/remote-write-memory-p4kqsxk3/ack.v": "47567232fd5820c3d038a9447c725975d8983683a27122222c5f158258b97652",
+    "rdma/rnic/build/remote-write-memory-p4kqsxk3/rq.v": "d060a8674c6d4eae284f545a251d32417231ba9eadcfce9108c05ecdf0a9cec9",
+    "rdma/rnic/rtl/rocev2_remote_write_memory.v": "0b385038be11c1a4fe3af1444024b6684bc8f5faf3179ca0e5779db0f19ae78c",
+    "rdma/rnic/rtl/rocev2_memory_command_nonce.v": "f61b5d9d62a6ca82548d883a83b4ddea2ff74ce10005cf70aef5c7ea7eeeb439",
+    "rdma/rnic/rtl/rocev2_remote_write_message_guard.v": "138a27297c8f6655911f98140ae46a07db2f453a0a3d504c412ab3d199dd22ca",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/rtl/rocev2_paged_memory_backend.v": "268d72371e5717fc13e009a5e881b34b91c459a1193afc42d760246d8e4e3bd6",
+    "rdma/rnic/rtl/rocev2_page_dma_engine.v": "a8801822361c399716c6336c4887612804d019701d2f357d1964788e9d6c9b24",
+    "rdma/rnic/rtl/rocev2_mr_page_table.v": "7cebd68efbf32f25f2a44f933c8d90231d5e9a185348ab0ab73def4235406239",
+    "rdma/rnic/rtl/rocev2_corundum_dma_backend.v": "f713c19873b8a52f4f038ab22bcc816dfc0d65b7fca72a75c73e2499cd2dd943",
+    "external/corundum/fpga/lib/pcie/rtl/dma_client_axis_sink.v": "a1e03efa7a8810a967b1e4a6b68fc75b0cbfc6f6a2ac137b9aa7321001029dd5",
+    "external/corundum/fpga/lib/pcie/rtl/dma_client_axis_source.v": "e2dc4b2ab3ed88e2d6256e3ebcb7470fe0b11249a1616bbd1746460399ba5044",
+    "external/corundum/fpga/lib/pcie/rtl/dma_psdpram.v": "5d06400fe8c45ff27a0eaabb33206b684b2f2c5adf59353fcabe891e9ac29513",
+    "external/corundum/fpga/lib/axis/rtl/axis_register.v": "599fde2d6c2d806643bbffb7c444297e69a71871f962d4b741ec1914342e0d39",
+    "external/corundum/fpga/lib/eth/rtl/axis_xgmii_tx_64.v": "097750af9f48497c3c5743c37e743eef22a314de139c2088756346c167915f7b",
+    "rdma/rnic/build/remote-write-memory-p4kqsxk3/lfsr_constant_masks.v": "7ba699196856ac80edcb79aeebc9ecb6eedacba5a6fa1b47cee1ac30eca1bb4e",
+    "external/corundum/fpga/lib/axis/rtl/axis_async_fifo_adapter.v": "9dc661b88d459a318e40722df277720fe64ef4309230462e8538b1a44da1d57c",
+    "external/corundum/fpga/lib/axis/rtl/axis_async_fifo.v": "faeeaeadcba90268689f9fd227b1c8088d856ec8290ef6ab10b6d25e018858d4",
+    "external/corundum/fpga/lib/axis/rtl/axis_adapter.v": "4b9b6649f12e374c24d36f2d42680ecf1f38cca8ae4fda7fd68dbf722b6c8140",
+    "rdma/rnic/tests/remote_write_memory_observe.v": "80ca527f5dda3f0732b50f5a808f89919cc1e9491c9d19fa3639ca2dc198d8a4"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-write-memory-observe-yj3kgxca/test": "9cd60d7ec34ce22f807ef1517f767fbb9a2a514613c39ea36b97f23ed9ea2346"
+  },
+  "hardware_verified": false
+}

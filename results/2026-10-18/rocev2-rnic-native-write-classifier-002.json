@@ -1,0 +1,39 @@
+{
+  "scope": "Actual native WRITE selector: every256 opcode x2 held-message states.\n\nClassification is NOT integrity/QP/MR authorization. Every data/KEEP/EOF\nbit is preserved; stalls and changing force AFTER header cannot reroute a\nframe. The upstream checker and downstream real native owners are separate.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/native-write-classifier-7g_2ep9s",
+  "source_sha256": {
+    "rdma/rnic/tests/probe_native_write_classifier.py": "a037c3bd0c1dd5a858d8d3761f998ca8d411d228dd2b9be4206a8158ba8cee3c",
+    "rdma/rnic/fpga/derive_write_controller_leaves.py": "ebb665acf843ed99c99b0f6342c79216eed6884a7993c413d44a78000ce77753",
+    "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64"
+  },
+  "compile_limit_seconds": 10,
+  "runtime_limit_seconds": 10,
+  "clock_ns": 4,
+  "cycle_limit": 100000,
+  "hardware_verified": false,
+  "complete_native": false,
+  "compile_seconds": 0.010384631983470172,
+  "exit": 0,
+  "simulation_seconds": 0.06876188598107547,
+  "source_unchanged": true,
+  "summary": {
+    "pass_test": true,
+    "frames": 512,
+    "opcodes": 256,
+    "force_states": 2,
+    "WRITE_frames": 260,
+    "other_frames": 252,
+    "every_byte_KEEP_EOF": true,
+    "cycles": 3932
+  },
+  "artifact_sha256": {
+    "rdma/rnic/build/native-write-classifier-7g_2ep9s/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/native-write-classifier-7g_2ep9s/tb.v": "1c817f199b0258496c8e4bde48897089cc2d72245ec632e6f49dfb2fbaa88c84",
+    "rdma/rnic/build/native-write-classifier-7g_2ep9s/simulation.log": "31e29959e487768720d8441e79bfd9c1ce3f926fa357e376400ebed327e66ebb",
+    "rdma/rnic/build/native-write-classifier-7g_2ep9s/router.v": "c86006518c7958f80416b5a585bce4701a420f93af7c0f4b346d1cc55ed93af1"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-native-write-classifier-ouu839ij/test": "09331cfbdf361ab9ae619b51973c5df1a41b6b2a37d57a29f9b8745865418322"
+  }
+}

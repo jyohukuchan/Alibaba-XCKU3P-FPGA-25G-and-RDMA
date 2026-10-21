@@ -1,0 +1,115 @@
+{
+  "scope": "Audit shared WRITE/RQ ACK execution, actual MAC, scope and exact failures.\n\nActual HLS C++ trace replay is NOT live generated-HLS/native/DMA/CQ proof.\nThe original timing failure and all eleven requirements remain open.\n",
+  "audit_passed": true,
+  "overall_goal_complete": false,
+  "hardware_verified": false,
+  "actual_shared_ACK": {
+    "bindings_verified": 145,
+    "report_sha256": "2916f5c190d2ae35bf3007b279c8ab88a41a974f8bad8db2d27835bdd27cc482",
+    "exact_preimage_resolutions": []
+  },
+  "failed_compile": {
+    "bindings_verified": 86,
+    "report_sha256": "53989c006c6f9b2f444a71956c3e326461a311ce8a4dd147c945f9a7eeaf8c4d",
+    "exact_preimage_resolutions": [
+      "rdma/rnic/tests/probe_receive_write_ack.py"
+    ]
+  },
+  "failed_fixture_transfer": {
+    "bindings_verified": 89,
+    "report_sha256": "a5eca1925a629f55ce32b57494d783bc339713764b1e3ea5eeda2b21d29853e3",
+    "exact_preimage_resolutions": [
+      "rdma/rnic/tests/probe_receive_write_ack.py"
+    ]
+  },
+  "read_only_observer": {
+    "bindings_verified": 9,
+    "report_sha256": "1e2dc43f60c39f922e4b96e36d44beccf7084d4b0664caa5ce78ba8b41da2a4c",
+    "exact_preimage_resolutions": []
+  },
+  "prior_HLS_consumers": {
+    "bindings_verified": 4,
+    "report_sha256": "e9dd4bce184023592152aa34e858d44636346ea6a9a75a7dab88a8c59feb3361",
+    "exact_preimage_resolutions": []
+  },
+  "prior_generated": {
+    "bindings_verified": 6,
+    "report_sha256": "7f34a2933955c257dd94564142af0ef962e5ca675b59ef386abbc2ed8625b623",
+    "exact_preimage_resolutions": []
+  },
+  "exact_CRC_masks": {
+    "bindings_verified": 461,
+    "report_sha256": "6de6a932ca77e40e1aaab9d7b903b1ff3419c40c55b78f5f15faaed670a7975a",
+    "exact_preimage_resolutions": [
+      "rdma/rnic/tests/probe_segmented_write_rx_frontend.py"
+    ]
+  },
+  "verified_bindings": 800,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_receive_write_ack.py": "c39aac92dbe555a9fcd396f04718495e511b72816fc1ccef3f040c2b9e248e21"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "modes": 58,
+  "unchanged_legacy_tests": 2,
+  "maximum_seconds": 1.6626497819670476,
+  "actual_MAC_frames": 5,
+  "actual_MAC_tags": [
+    24577,
+    24578,
+    24579,
+    24580,
+    24581
+  ],
+  "actual_elaborated_modules": {
+    "rocev2_receive_write_ack_tx": 1,
+    "axis_xgmii_tx_64": 1,
+    "axis_async_fifo_adapter": 1,
+    "axis_async_fifo": 2
+  },
+  "qualified_parent_reconstructed_byte_for_byte": true,
+  "separate_remote424_and_posted620": true,
+  "one_ACK_sequence_without_tag_class_collision": true,
+  "dual_proofs_independently_backpressured": true,
+  "no_unpaired_retirement_transfer": true,
+  "actual_EOF_SFD_receipt_and_1024tail_required": true,
+  "HLS_receipts_are_exact_trace_replay_not_live_generated_RTL": true,
+  "modeled_boundaries": [
+    "privileged owner/posted-RQ admission",
+    "HLS receipt and ACK trace replay",
+    "backend visibility/fence",
+    "whole CQ and retire consumers",
+    "clocks/PTP and PHY pins"
+  ],
+  "native_backend_generated_HLS_MAC_CQ_whole_graph": false,
+  "full_native_1MiB": false,
+  "live_Linux": false,
+  "original_timing_met": false,
+  "original_HLS_estimate_ns": 15.571,
+  "leaf_lint": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "%Warning-WIDTHTRUNC: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/receive-write-ack-rbcl7s71/rocev2_receive_write_ack_tx.v:162:30: Operator ASSIGNW expects 32 bits on the Assign RHS, but Assign RHS's SHIFTR generates 752 bits.\n                                                                                                                                                : ... note: In instance 'rocev2_receive_write_ack_tx'\n  162 | wire [31:0] core_notification=s_core_data>>(OWNER_WIDTH+84);\n      |                              ^\n                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.020\n                     ... Use \"/* verilator lint_off WIDTHTRUNC */\" and lint_on around source to disable this message.\n%Warning-WIDTHTRUNC: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/receive-write-ack-rbcl7s71/rocev2_receive_write_ack_tx.v:163:35: Operator ASSIGNW expects 8 bits on the Assign RHS, but Assign RHS's SHIFTR generates 752 bits.\n                                                                                                                                                : ... note: In instance 'rocev2_receive_write_ack_tx'\n  163 | wire [7:0] core_notification_flags=s_core_data>>(OWNER_WIDTH+116);\n      |                                   ^\n%Warning-WIDTHTRUNC: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/receive-write-ack-rbcl7s71/rocev2_receive_write_ack_tx.v:164:22: Logical operator LOGNOT expects 1 bit on the LHS, but LHS's VARREF 'IMMEDIATE_ENABLE' generates 32 bits.\n                                                                                                                                                : ... note: In instance 'rocev2_receive_write_ack_tx'\n  164 | wire notification_ok=!IMMEDIATE_ENABLE ||\n      |                      ^\n%Warning-WIDTHTRUNC: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/receive-write-ack-rbcl7s71/rocev2_receive_write_ack_tx.v:168:42: Logical operator LOGAND expects 1 bit on the LHS, but LHS's VARREF 'IMMEDIATE_ENABLE' generates 32 bits.\n                                                                                                                                                : ... note: In instance 'rocev2_receive_write_ack_tx'\n  168 | wire write_notification=IMMEDIATE_ENABLE && core_notification_flags==3;\n      |                                          ^~\n",
+    "no_combinational_latch_or_driver_warnings": true,
+    "not_board_timing": true
+  },
+  "inherited_source_check": {
+    "exit": 1,
+    "stdout": "Tcl completeness checks passed: 28 files (not Vivado elaboration).\nLFC source allowlist tests passed: 14 cases; no hardware/Vivado access.\nSource check passed: 122 HDL, 12 constraints, 3 IP generators.\n",
+    "stderr": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v\n",
+    "overall_suite_passed": false
+  },
+  "remaining": [
+    "All original11 requirements stay open; this is an actual shared ACK/MAC leaf, not the native endpoint.",
+    "Join actual424/456 generated HLS, native backend/DMA/physical nonce/fence and472 ACK proof before remote DONE; independently retire true RQ packet and whole CQ.",
+    "Integrate SAME MR/PTE/data/native graph with all prior paths; retain full1MiB/matched software/multiSGE/live Linux and short peer/RNR/MSN/congestion qualification.",
+    "Privileged partial-WRITE HLS state teardown is unproved; modeled drained/cancel is not safe unpin/reset proof.",
+    "Original4ns/default1.08ns full-board fit/setup/hold/CDC/DRC/routing and short physical qualification remain; timing estimate still fails.",
+    "No reboot needed; restore archived RAM caches and prove authenticated exact-thread/goal revival before any necessary reboot."
+  ],
+  "hardware_install_load_network_fan_BIOS_flash_reboot_actions": [],
+  "commit_or_push": false
+}

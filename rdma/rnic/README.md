@@ -16,6 +16,86 @@ passes; this does not relabel the old suite or qualify a hardware release.
 
 ## Latest functional milestone (2026-10-21)
 
+Publication update: progress157–160 and the current progress161 integration
+sources/reports are included. Earlier local/unpushed statements are history,
+not the current publication state. Successful and failed evidence is retained.
+
+Progress161 adds `derive_segmented_write_native.py` and
+`check_segmented_write_native.py`. The actual checked-frame controller is now
+inserted in the complete native graph, using the actual typed generated HLS,
+native expected-PSN commit, SAME MR/PTE/backend/global physical nonce, ONE
+dual-owner ACK allocator, genuine late RQ and whole-CQ retirement. The new
+native-only first-header admission gate holds the next frame while terminal
+WRITE completion is pending; already accepted frames retain their drain path.
+[Native elaboration001](../../results/2026-10-18/rocev2-rnic-segmented-write-native-elaboration-001.json)
+passes8.225s, all original11 feature switches enabled, no behavioral HLS,
+missing-leaf waiver or port-width coercion. This is COMPILE ONLY: no fresh
+34-case old native regression or new WRITE/Immediate payload runtime has run,
+and the added first-header gate has no separate runtime evidence yet.
+Full1MiB native/multiSGE/matched Linux-provider lifetimes, real-peer recovery/
+NAK/RNR/MSN/congestion, partial-HLS cleanup and original full-board timing
+remain. The previous15.571ns HLS estimate still FAILS the original4ns target
+with default1.08ns uncertainty. No image/driver/capability/default is changed;
+the historical TX-padding hash failure in `scripts/check.sh` is not waived.
+
+Progress160 adds `rocev2_segmented_write_controller.v`: real checked raw
+frontend/MR -> packet memory -> HLS/ACK joins, genuine680 late-RQ owner/
+parsed Immediate placement, real EOF/fenced-status TX visibility and paired
+frontend DONE/native-PSN commit. No ACK SFD can escape before actual backend
+visibility. ALL14 cases pass, max5.283s under original10s/4ns/100000cycles;
+8193 host bytes/sentinels,8344/8348 unchanged replay bytes,5 scattered page
+writes/3 fences/nonces/MAC ACKs and3 native commits match. Bad status/DMA/
+fence/HLS MSN emit0 positive ACKs/commits. Full derived selector512 frames
+passes every opcode/force/byte/KEEP/EOF/stall. [447-binding audit](../../results/2026-10-18/rocev2-rnic-segmented-write-controller-diagnostics-001.json).
+HLS/PSN endpoint/descriptor-host/CQ producers/consumers remain models or
+checked C++ traces. This actual controller is NOT yet placed in the native
+boundary graph; real generated-HLS runtime/all34 old regressions plus new
+WRITE/Immediate/full1MiB/matched software/all11/timing still remain.
+No cancellation/drain/unpin substitute; partial HLS state cleanup unproved.
+
+Progress159 adds `derive_segmented_write_native_gateway.py`: real typed
+424/456/sticky-fault ports traverse9 native leaves to actual new HLS002.
+The ENTIRE old007 generated module/data set is replaced, never mixed.
+A real new query client sits BELOW existing normal/SQ/Atomic arbitration
+and ABOVE the SAME MR table; external native identity/held/QP/MR guards
+quarantine unprotected/wrong-PD/non-WRITE/unknown offers. Full elaboration
+passes8.172s with one native HLS/MR/PTE/backend/nonce and3->4 MR arbiters,
+original native/READ/whole-RQ/drain0/geometry gates unchanged. Exact native
+MR-island8 cases pass (four clients/same tags/stalls/high64 translations/
+denial zeroing/invalidation). [1432-binding audit](../../results/2026-10-18/rocev2-rnic-write-native-gateway-diagnostics-001.json).
+WRITE frontend/packet-memory/ACK/whole-CQ insertion and expected-PSN
+completion updates remain; boundary ports are NOT an integrated feature.
+No live generated-WRITE payload or new34-case native runtime claimed.
+All11/original timing/software qualification remain;157–159 local/unpushed.
+
+Progress158 adds `rocev2_remote_write_memory.v`: actual guarded424 MR tuple
+fanout to HLS/ACK,96-bit command assertion (never DMA authority), exact
+wire-padding removal and shared MR-relative backend command. Real data
+EOF/ordered backend status/HLS456/actual ACK472 join before frontend DONE;
+ACK retire is separate and true late-RQ ownership remains through whole CQ.
+Connected actual MR/guard/RQ/nonce/PTE/staging RAM/fence/ACK/MAC graph passes
+ALL14 cases, max2.700s with original10s/4ns/100000cycles. Normal/Immediate8193
+bytes and every host sentinel match, with5 scattered writes/3 real fences/
+3 nonce commands/3 actual XGMII/FCS/SFD/CDC ACKs. Actual notification CQ
+ticket is8193, not zero RQ capacity or LAST1 byte. [398-binding audit](../../results/2026-10-18/rocev2-rnic-remote-write-memory-diagnostics-001.json).
+The HLS96/456/data/ACK/whole producers and descriptor-engine/host-order/CQ
+consumer boundaries are models/checked actual C++ traces, NOT live generated
+HLS/complete native PCIe TLP/physical proof. Full integration/1MiB/matched
+software/all11/original timing remain.157/158 local after public fbea645.
+
+Progress157 adds `derive_receive_write_ack.py`: ONE class6000 ACK sequence
+for legacy RECV and typed WRITE424, with no invented posted620 RQ for
+FIRST/MID/plain LAST. LAST Immediate holds both actual identities, requires
+the same456 WRITE/752 RQ PSN/MSN/extent/ACK, and emits independent472/768
+proofs only after actual accepted EOF/SFD receipt/1024-tail. Neither owner
+can retire alone or before both proof consumers accept. Actual MAC/FIFO/
+XGMII/FCS/SFD/receipt CDC verifies five mixed full frames, shared6001..6005
+tags and all six proofs. ALL58 cases plus both unchanged legacy fixtures
+pass (max1.663s, original10s/4ns/100000cycles). [800-binding audit](../../results/2026-10-18/rocev2-rnic-receive-write-ack-diagnostics-001.json).
+Exact actual C++8193 WRITE traces supply HLS inputs; this is NOT live new
+generated-HLS/native backend/DMA/CQ/physical proof. The same original timing
+and all11 remain open. Published baseline fbea645;157 stays local/unpushed.
+
 Explicit publication now includes progress154–156 source and successful/
 failed reports. Local/unpushed and old-public-HEAD notes below are history.
 This does not qualify native integration, timing or hardware, and the

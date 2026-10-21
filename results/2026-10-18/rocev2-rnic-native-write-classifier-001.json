@@ -1,0 +1,30 @@
+{
+  "scope": "Actual native WRITE selector: every256 opcode x2 held-message states.\n\nClassification is NOT integrity/QP/MR authorization. Every data/KEEP/EOF\nbit is preserved; stalls and changing force AFTER header cannot reroute a\nframe. The upstream checker and downstream real native owners are separate.\n",
+  "pass_test": false,
+  "directory": "rdma/rnic/build/native-write-classifier-hjmev7g0",
+  "source_sha256": {
+    "rdma/rnic/tests/probe_native_write_classifier.py": "f9b7c107aed55d63a5d2f3b53ad7be463bfc7c037c7de9c1c04da6e38d233b3e",
+    "rdma/rnic/fpga/derive_write_controller_leaves.py": "ebb665acf843ed99c99b0f6342c79216eed6884a7993c413d44a78000ce77753",
+    "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64"
+  },
+  "compile_limit_seconds": 10,
+  "runtime_limit_seconds": 10,
+  "clock_ns": 4,
+  "cycle_limit": 100000,
+  "hardware_verified": false,
+  "complete_native": false,
+  "compile_seconds": 0.010067756986245513,
+  "exit": 1,
+  "simulation_seconds": 0.007441462017595768,
+  "error_type": "ValueError",
+  "error": "actual512-frame classifier failed",
+  "artifact_sha256": {
+    "rdma/rnic/build/native-write-classifier-hjmev7g0/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/native-write-classifier-hjmev7g0/tb.v": "de95ca771be974452c3ae288816bf9c1d49a1b95a5b3365dedaca71d20d2f4e0",
+    "rdma/rnic/build/native-write-classifier-hjmev7g0/simulation.log": "d0d9f7159bdc3860ce79d7ea5945e6bad56396a52096577035d919a49a27e795",
+    "rdma/rnic/build/native-write-classifier-hjmev7g0/router.v": "c86006518c7958f80416b5a585bce4701a420f93af7c0f4b346d1cc55ed93af1"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-native-write-classifier-shz71ah6/test": "377c8d66b9fa3d7cdaea61e49b32260d8c344d0451f9082bf7cc977ca4bcaf88"
+  }
+}

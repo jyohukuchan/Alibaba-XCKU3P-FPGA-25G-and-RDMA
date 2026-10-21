@@ -1,0 +1,21 @@
+{
+  "scope": "Read-only exact failing002 DUT/fixture paired retirement observation, no source/assertion/drive change.",
+  "compile_exit": 0,
+  "simulation_exit": 1,
+  "stdout": "ACK_RETIRE_OBSERVE cycle=2215 held=1 wr_sent=1 rq_sent=0 wr_VALID=1 wr_READY=1 rq_VALID=0 rq_READY=0 fault=0\nACK_RETIRE_OBSERVE cycle=4431 held=1 wr_sent=1 rq_sent=0 wr_VALID=1 wr_READY=1 rq_VALID=0 rq_READY=0 fault=0\nACK_RETIRE_OBSERVE cycle=6697 held=1 wr_sent=1 rq_sent=1 wr_VALID=1 wr_READY=0 rq_VALID=0 rq_READY=1 fault=0\nFATAL: /home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/receive-write-ack-j_gyiyon/tb.v:264: WRITE retired without real RQ retire\n       Time: 26808000  Scope: tb.retire\n",
+  "stderr": "",
+  "source_sha256": {
+    "rdma/rnic/build/receive-write-ack-j_gyiyon/tb.v": "8e9279ef92eabc63210b3ff1de7a04672d5e1549910bbbc7ba428f6c2e8ad80a",
+    "rdma/rnic/build/receive-write-ack-j_gyiyon/rocev2_receive_write_ack_tx.v": "47567232fd5820c3d038a9447c725975d8983683a27122222c5f158258b97652",
+    "rdma/rnic/tests/receive_write_ack_observe.v": "ec6ea64c33d54ea42e1870e0a1ba8c72c60cfca45fe9982fad97eb520d00fc39",
+    "external/corundum/fpga/lib/eth/rtl/axis_xgmii_tx_64.v": "097750af9f48497c3c5743c37e743eef22a314de139c2088756346c167915f7b",
+    "rdma/rnic/build/receive-write-ack-j_gyiyon/lfsr_constant_masks.v": "7ba699196856ac80edcb79aeebc9ecb6eedacba5a6fa1b47cee1ac30eca1bb4e",
+    "external/corundum/fpga/lib/axis/rtl/axis_async_fifo_adapter.v": "9dc661b88d459a318e40722df277720fe64ef4309230462e8538b1a44da1d57c",
+    "external/corundum/fpga/lib/axis/rtl/axis_async_fifo.v": "faeeaeadcba90268689f9fd227b1c8088d856ec8290ef6ab10b6d25e018858d4",
+    "external/corundum/fpga/lib/axis/rtl/axis_adapter.v": "4b9b6649f12e374c24d36f2d42680ecf1f38cca8ae4fda7fd68dbf722b6c8140"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-receive-write-ack-observe-yl7minpt/test": "0639656be267e353ef50eca6da18adc9996becbced7830fdd9fac741de217476"
+  },
+  "hardware_verified": false
+}

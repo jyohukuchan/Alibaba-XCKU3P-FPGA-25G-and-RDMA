@@ -1,0 +1,33 @@
+{
+  "scope": "Compile actual typed-WRITE HLS/native MR gateway; NOT WRITE runtime.\n\nReplace the ENTIRE old generated module/data set, keep all old native\npaths, ONE MR table/backend/nonce/HLS domain and both global drains0.\nWRITE frontend/packet-memory/shared ACK insertion and runtime still remain;\nnew ports are real boundary ports, not fake completion/ready/drain tieoffs.\n",
+  "pass_test": false,
+  "directory": "rdma/rnic/build/segmented-write-native-gateway-edo1c1_t",
+  "source_sha256": {
+    "rdma/rnic/tests/check_segmented_write_native_gateway.py": "92efd0f563a66aef9c678637df8a3739eb53ddd5410ff59cf4631f60be50cd63",
+    "rdma/rnic/fpga/derive_segmented_write_native_gateway.py": "86b52796e901f88f7c67acec6d4ce1be41b707ddaf2e147c41bb152f436d2249"
+  },
+  "actual_generated_HLS": true,
+  "HLS_stub": false,
+  "compile_only": true,
+  "runtime_test": false,
+  "unknown_leaves_ignored": false,
+  "protected_WRITE_controller_inserted": false,
+  "complete_WRITE_native_runtime": false,
+  "typed_WRITE_native_boundary_ports": true,
+  "additional_MR_client_not_namespace": true,
+  "RNC_features": 65535,
+  "CQC_features": 255,
+  "SQC_features": 13,
+  "RQC_features": 31,
+  "new_WRITE_software_capability_advertised": false,
+  "hardware_verified": false,
+  "full_board_timing": false,
+  "original_HLS_timing_met": false,
+  "HLS_top": "rocev2_native_segmented_write_owned_top",
+  "root_and_RAM_guard_bytes": 1073741824,
+  "compile_limit_seconds": 180,
+  "error_type": "ValueError",
+  "error": "source derivation anchor changed:     .m_recv_message_data(m_recv_message_data),",
+  "artifact_sha256": {},
+  "RAM_artifact_sha256": {}
+}

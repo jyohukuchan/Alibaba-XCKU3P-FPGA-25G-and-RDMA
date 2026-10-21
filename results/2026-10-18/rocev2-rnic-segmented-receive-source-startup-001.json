@@ -1,0 +1,14 @@
+{
+  "scope": "Strict new receive source generator startup failure before output or compilation",
+  "pass_test": false,
+  "exit_code": 1,
+  "error": "ValueError: QP transport anchor changed: (saved.flags!=0 && saved.flags!=1 && saved.flags!=3) || (saved.flags==0 && saved.immediate!=0) || !as02_recv_owner_valid(saved.owner,saved.flags==3)",
+  "cause": "Inherited JOIN constant names the request retire header, not the receive retire header",
+  "preimage_root": "rdma/rnic/build/segmented-receive-source-startup-001-preimages-mDAzntQS",
+  "source_sha256": {
+    "rdma/rnic/hls/segmented_receive_transport.py": "3c7eccabd9a19f1926f778d7838c368af59d87f0b02ed45d585203e5d9cf8094"
+  },
+  "correction": "Select the explicit receive header; strict single-anchor check unchanged",
+  "compiled_or_simulated": false,
+  "hardware_verified": false
+}

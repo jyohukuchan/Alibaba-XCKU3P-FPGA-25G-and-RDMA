@@ -1,0 +1,151 @@
+{
+  "scope": "Exact-source actual segmented SEND/Immediate receive C++/compatibility/whole-message consumer audit. HLS generation RUNNING, not generated RTL/native/Linux/physical/timing proof.",
+  "audit_passed": true,
+  "overall_goal_complete": false,
+  "hardware_verified": false,
+  "successful": {
+    "segmented-receive-hls-004": {
+      "bindings_verified": 353,
+      "report_sha256": "627aa8f2d6471d95f1b69f223b2a825e9d060e9d959becbf6875e08467f44693",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-receive-compat-001": {
+      "bindings_verified": 313,
+      "report_sha256": "5c7d11f900f086c2fc144a01053952931ee285ea83c0522a61ec93593ebe429f",
+      "exact_preimage_resolutions": []
+    },
+    "receive-message-join-003": {
+      "bindings_verified": 282,
+      "report_sha256": "9a7dea20ecf514cb81d4047d00ae5e2dbbb89d0587ccbadac1e80b862720e632",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "historical": {
+    "segmented-receive-source-startup-001": {
+      "bindings_verified": 1,
+      "report_sha256": "fec312e3f278e6e292b66c0d7c45259246acdd4105d1038cd5cb13e05cb1a8f2",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_transport.py"
+      ]
+    },
+    "segmented-receive-source-startup-002": {
+      "bindings_verified": 1,
+      "report_sha256": "d96ff39131e228097a3a471b216c8894708152214eddc86a7b0bb6491edf10b2",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_transport.py"
+      ]
+    },
+    "segmented-receive-hls-001": {
+      "bindings_verified": 308,
+      "report_sha256": "4fd2be8b6d195debd349e5b4f4f5a412d176b9d59942172a289e1af4fabc8889",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_transport.py",
+        "rdma/rnic/hls/test_segmented_receive.cpp"
+      ]
+    },
+    "segmented-receive-hls-002": {
+      "bindings_verified": 308,
+      "report_sha256": "5d7230aa1879a2c4a3386f89ff81ee4ac2db3eda6146d0f36787725d50d60867",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_transport.py",
+        "rdma/rnic/hls/test_segmented_receive.cpp"
+      ]
+    },
+    "segmented-receive-hls-003": {
+      "bindings_verified": 331,
+      "report_sha256": "1d05cc3f843ba36f2145a83cc2338948595851faa77aaf311c307efbf3980776",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_transport.py",
+        "rdma/rnic/hls/test_segmented_receive.cpp"
+      ]
+    },
+    "receive-message-join-001": {
+      "bindings_verified": 263,
+      "report_sha256": "444009d024884a1cab4c99647cc1b6879c183c4db0ea9812ad029726f0107110",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/test_receive_message_join.cpp"
+      ]
+    },
+    "receive-message-join-002": {
+      "bindings_verified": 263,
+      "report_sha256": "261239bdf320ab72d645dc33584cd591a2f59598c02032c90b4946b57e21d5f8",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/test_receive_message_join.cpp"
+      ]
+    }
+  },
+  "successful_bindings_verified": 948,
+  "historical_bindings_verified": 1475,
+  "auditor_source_sha256": {
+    "rdma/rnic/tests/audit_segmented_receive.py": "856f1f67bd6dc15fdabe40cadfede0235d3691f9da49fcb15a8b0a01192ed319"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "all44_modes_pass": true,
+  "all21_prior_modes_retained": true,
+  "new_receive_opcodes": [
+    "SEND",
+    "SEND_WITH_IMMEDIATE"
+  ],
+  "actual_HLS_CPP_per_opcode": {
+    "messages": 6,
+    "packets": 284,
+    "max_bytes": 1048576,
+    "seconds": [
+      4.672287487017456,
+      4.737915948033333
+    ],
+    "actual_payload_ACK_MSN_SAME_PSN_consumers": true,
+    "full620_identity": true,
+    "actual_length_not_capacity": true,
+    "packet_done752_and_whole772_separate": true,
+    "full_payload_zero_padding_and_ACK_independent_oracles": true,
+    "packet_RQ_connection_memory_endpoints_modeled": true
+  },
+  "actual_whole_consumer_unit": {
+    "cases": 18,
+    "interleaved_QPs": 2,
+    "PSN_MSN_wrap": true,
+    "packet_producers_modeled": true
+  },
+  "original_runtime_limits": {
+    "whole_modes_seconds": 30,
+    "group_unit_seconds": 10
+  },
+  "inherited_source_check": {
+    "exit": 1,
+    "stdout": "Tcl completeness checks passed: 28 files (not Vivado elaboration).\nLFC source allowlist tests passed: 14 cases; no hardware/Vivado access.\nSource check passed: 122 HDL, 12 constraints, 3 IP generators.\n",
+    "stderr": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v\n",
+    "overall_suite_passed": false,
+    "verifier_sha256": "06f945e8af42040d4fcaabed0de5746ee0f5aa3a942384fdb4539c2500a62caf"
+  },
+  "live_HLS": {
+    "status": "RUNNING at observation; revalidate, never infer future completion",
+    "session_id": 74092,
+    "observed_UTC": "2026-10-21T07:59:27.800720+00:00",
+    "ps": "2872461 vitis-run           827  0.2\n2872554 vitis_hls           825 76.0\n",
+    "source": "rdma/rnic/build/native-segmented-receive-transport-004",
+    "directory": "rdma/rnic/build/native-zero-service-hls-q2o7jvqf",
+    "report_pending": "results/2026-10-18/rocev2-rnic-segmented-receive-generated-hls-001.json",
+    "original_clock_ns": 4,
+    "uncertainty_ns": 1.08,
+    "MAX_QPS": 8,
+    "metadata_entries": 2000,
+    "free_space_guard_bytes": 1572864000,
+    "timing_warnings_present": true
+  },
+  "remaining": [
+    "All original11 requirements retained",
+    "Native whole RQ/MR/PTE/DMA/status/fence/per-packet ACK-MAC release/one CQ not implemented or proved for new receiver",
+    "Existing native/software profile6 incoming RQ remains4096/single SGE/IB_ATOMIC_NONE; no new capability advertisement",
+    "Segmented WRITE_WITH_IMMEDIATE remote MR and late notification RQ remain distinct pending path",
+    "Real peer nonterminal ACK-MSN/recovery/loss/retry/RNR/congestion/multi-SGE/live API/original full-board timing/physical qualification remain",
+    "No reboot needed; authenticated exact thread/goal restoration unproved; restore all archived caches before any reboot"
+  ],
+  "primary_behavioral_reference": "https://raw.githubusercontent.com/torvalds/linux/v6.17/drivers/infiniband/sw/rxe/rxe_resp.c",
+  "hardware_or_install_load_network_fan_BIOS_flash_reboot_actions": [],
+  "new_commit_or_push": false
+}

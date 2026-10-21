@@ -16,6 +16,52 @@ passes; this does not relabel the old suite or qualify a hardware release.
 
 ## Latest functional milestone (2026-10-21)
 
+Publication after progress147 includes the separate 1 MiB RECV C128 codec,
+typed standard RECV adapter and actual full-range MR-to-message-RQ posting
+tests: 37 codec methods, 78 MR/staging cases, four handoff/denial cases and
+real-header/ASan/UBSan adapter execution pass. No installed or matched new
+kernel/provider profile is claimed. Balanced KEEP candidate007 passes
+103,665 finite old/new comparisons plus all44 C++ modes and old compatibility;
+candidate005 is rejected by an actual short-beat counterexample and006's
+compile failures remain. These do not prove a synthesis/timing improvement.
+Original source004 synthesis was still active at 09:16 UTC, not restarted.
+[Publication scope and integrity](../../results/2026-10-18/rocev2-rnic-segmented-receive-publication-diagnostics-001.json).
+Native/software profile6 incoming RQ4096 and all original11 requirements
+remain; no hardware, installation or module changes accompany publication.
+
+Progress146: new whole-message RQ retains full620 ownership through packet
+leases and whole CQ commit/retire. ALL48 four-state cases PASS, max0.161s;
+certificate producers are explicit models. Additional actual RQ/ACK/CQC
+coupling PASSES0.167s:8193 bytes/3 actual fresh-tag ACK/EOF/receipt/1024-tail
+lifetimes,one actual CQ publication,all24 AXI context words/actual bytes/
+Immediate and RQ-to-CQ guard until exact host ACK. HLS/MR/backend/PHY/host
+endpoints remain MODELS, not live native payload proof. New coordinated
+source65535/255/13/31 changes15 of40 bodies for actual saved-MR offsets,
+packet/whole retire split and separate whole HLS output. Explicit-profile
+syntax002 ignores missing HLS/vendor leaves (`-i`), NOT full elaboration.
+SAME new HLS generation74092 is still running; no new generated RTL/timing/
+native/Linux/physical proof. Profile6 incoming RQ4096/defaults unchanged;
+no matched new software or installation. [Component audit](../../results/2026-10-18/rocev2-rnic-receive-message-native-components-diagnostics-001.json)
+rechecks328 fresh/165 historical bindings/failures. All11 scope remains.
+
+Progress145: separate new full-duplex HLS source adds segmented incoming
+SEND/SEND_WITH_IMMEDIATE<=1MiB. [C++004](../../results/2026-10-18/rocev2-rnic-segmented-receive-hls-004.json)
+ALL44 modes PASS, all21 old retained, each new operation6 messages/284
+packets/all bytes,4.672/4.738s. Full620 posted owner/capacity stays distinct
+from actual cumulative bytes; exact fragment/offset/PSN/padding/identity
+checks, real payload EOF/ACK/MSN/SAME PSN consumers and separate packet752/
+whole772 receipts. [Unchanged compatibility001](../../results/2026-10-18/rocev2-rnic-segmented-receive-compat-001.json)
+PASSES actual Atomic RTL service/Immediate TX/RX. [Whole unit003](../../results/2026-10-18/rocev2-rnic-receive-message-join-003.json)
+ALL18 PASS with two interleaved QPs/PSN+MSN wrap; packet certificates are
+explicit models in that unit. Actual HLS generation is RUNNING with original
+4ns/default1.08ns/8QP/2000/1500MiB guards and timing warnings; no generated
+RTL or timing success is claimed yet. Native MR/PTE/DMA/MAC/whole CQ wiring
+is NOT implemented/proved for this new receiver. Native/software profile6
+RQ4096/single SGE/Atomic_NONE/defaults remain unchanged. WRITE Immediate's
+remote-MR and late notification-RQ ownership is a distinct pending path,
+not a SEND destination alias. All11 scope and physical/live API/recovery/
+original timing gaps remain. No hardware or new Git action.
+
 Progress143: actual generated-HLS complete-native Immediate001 PASSES ALL32:
 new8193 SEND/WRITE Immediate and ALL30 old cases. Compile633.005s; all cases
 4.125..6.430s/original1200s build/30s runtime. Per new WR:one actual whole MR

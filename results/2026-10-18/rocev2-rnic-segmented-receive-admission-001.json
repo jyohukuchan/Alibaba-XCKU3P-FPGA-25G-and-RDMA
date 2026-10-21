@@ -1,0 +1,1609 @@
+{
+  "scope": "Actual C128 RECV -> real full-range local-write MR/SQ admission.\n\nThe fetched record/privileged context/MMIO management and work consumer\nare models, NOT actual PCIe/RQ posting/HLS/DMA/CQ/Linux/physical proof. All\nold25 MR/HLS-staging methods remain, and RECV is never sent to a TX HLS SQ.\n",
+  "pass_test": true,
+  "methods": 31,
+  "seconds": 62.09224999399157,
+  "source_sha256": {
+    "rdma/rnic/tests/probe_segmented_receive_admission.py": "08ea0b675baba288837e36c94149821169524b1e0fc4df38262a9b10bcf36c76",
+    "rdma/rnic/tests/test_wqe_codec.py": "7d5e8718e585bd9b5aedd57fa7c8b5d0f66b7af9b35e809cf59860b3fa043aed",
+    "rdma/rnic/tests/test_atomic_wqe.py": "da6e83a20073aa3a397f969130cb773bd5e603de0b64a5ffeb3ccb644915f38f",
+    "rdma/rnic/tests/test_wqe_admission_rtl.py": "92a9cb51c8e788efcc367064b8fe7ffcf4055b939d0e7163e40d2ab18b132ed4",
+    "rdma/rnic/tests/test_sq_wqe_admission_rtl.py": "3649c22a64d1cbb79b82a210adb5dac7b180655b64c853ec597fb05944c7c154",
+    "rdma/rnic/fpga/derive_atomic128_fetch.py": "4123c117771f568fc4a002a614ade421f6c94eb08dd17b27dff2a6a8d9dbe433",
+    "rdma/rnic/fpga/derive_atomic128_admission.py": "da4e91e41d7bb9861534cfe2b98e7690076850d192c401cc1290d1942b8d83e3",
+    "rdma/rnic/tests/test_atomic128_admission_rtl.py": "09efe75e3b7b81a7346b39ae2555ab9563fbd71860d02202bc484cdabc3c49cf",
+    "rdma/rnic/tests/test_zero_wqe.py": "15f995aa9227b08da7f4c75a35d980dec29306d1e9231c142a1f0827f4269a9d",
+    "rdma/rnic/tests/test_segmented_wqe.py": "3db40989b94fde5d3e3dc08b6eb99edb23e5d72d239ac5f7458519bd35a10608",
+    "rdma/rnic/tests/test_segmented_read_wqe.py": "903488e234f0405a3aa65fbb3a5d706c313532b7b4ac4722ddc588777da49bcd",
+    "rdma/rnic/fpga/derive_shared_responder.py": "3d97aec6c1f5efe8f1d1b3d0c830a684ed4045dacdd3bcaa4923cf751e1fd477",
+    "rdma/rnic/fpga/prepare_wrkey_transport.py": "11aff17a0d9eb097abc4a5eec097409171b997d59c451ffb6e8fad3d4984e8c3",
+    "rdma/rnic/fpga/derive_qp_tx_bridge.py": "51afb390ce130f69e8b55cbfb2af2055e7fa3746004790b5b509f4f6273d28a7",
+    "rdma/rnic/fpga/derive_duplex_transport.py": "ff81dfb2ba41ffc59d482bee177fc106537a22a786bf11d588880c3990c85a53",
+    "rdma/rnic/fpga/derive_immediate_bridge.py": "a9758360ee8466e011819fe3ebf79b80fd175ee7f59c91af4fa949047a4b0667",
+    "rdma/rnic/fpga/derive_immediate_native.py": "9281857caf2714945f280e126eb39553e8f9324c8416b5b71bbd79c5ed6fdac4",
+    "rdma/rnic/fpga/derive_atomic_owner_lookup.py": "10f497b1ae2c5358e960ae8695903bf4655896c99b977bd26ffba287d270b453",
+    "rdma/rnic/fpga/derive_atomic_native_authority.py": "0b881da1ad4a9d72f43c90e54492c3299b43b3109d0529eb81851319a4f88451",
+    "rdma/rnic/fpga/derive_atomic_native_bridge.py": "332a5064cb3adfbadd2e2196eb950885e9945a9af528ccd45776944631db331c",
+    "rdma/rnic/fpga/derive_atomic_native_owned_stage.py": "aa9869c3c51c2fe25b5dfa53429bd62b7180fcfde20140e1e4397d76b5463576",
+    "rdma/rnic/fpga/derive_atomic_native_rx.py": "9f9e8db656cffc70f59761ba0c42e402f4dd9d392c065d0a7a79abb6b752fec0",
+    "rdma/rnic/fpga/derive_atomic_native.py": "b3758f15718303cf12b95af02052dcad8bc6d1e806ef64075ff75e3e6856c90e",
+    "rdma/rnic/fpga/derive_atomic128_response.py": "eaa3439ece1fd0fad5ff30e81aab0d14346c3739058c1272a4fdc4b8e431063e",
+    "rdma/rnic/fpga/derive_atomic128_executor.py": "bc01f0d68fc39c78e6a3ff5d96d93a2e82396f4b9db67a7e03bee35cf114b004",
+    "rdma/rnic/fpga/derive_atomic128_lifetime.py": "09148e2f11eb3c2ea9bd72fc28cf357e8991de64acef1af9ad79b17dfebc90cb",
+    "rdma/rnic/fpga/derive_atomic_request_bridge.py": "a626d9f3d20ecfc7c477100c63472fa8547792fafacb612d28846f6f6f0a4463",
+    "rdma/rnic/fpga/derive_atomic128_native.py": "9be2756604ed23cc9b41b2fd8d1a3b8db9bf2e2176663878463c12abc03b20ad",
+    "rdma/rnic/fpga/derive_atomic_access_native.py": "ab42d555c459c2e7b7da71686539c3d75a31e075a3a8c11c66e09a59e6e903ee",
+    "rdma/rnic/fpga/derive_zero_native.py": "d652f5e0a805b96d2a963f33d9112d8121f1170a15b111e3e400c81eface97a7",
+    "rdma/rnic/fpga/derive_zero_rq_native.py": "92ed231ada071d15feab574127c7974d4d17516f48db5d8f4e6a79f118d225f8",
+    "rdma/rnic/fpga/derive_zero_service_native.py": "0f92353804e547ef8df2ee70ff294e356447667f4668450d11020cc302a84b86",
+    "rdma/rnic/fpga/derive_segmented_native.py": "78f20feaa504ef5ab12cdee9ce420b5f3a8ec5a4f6eeca209d3dbd4cb70682a2",
+    "rdma/rnic/fpga/derive_segmented_source.py": "138c80829c920c6d8d32a7a7ac29cb05e33bec051028dd741558979b5314ad62",
+    "rdma/rnic/fpga/derive_segmented_executor.py": "a2340b3346215f952ff882fca09a6c8ba886c46a29215ff676e998119252497c",
+    "rdma/rnic/fpga/derive_segmented_wire.py": "94bba46ee3e380bcd6f2578f25f4ef00eda0407a22eefa90c1824003a2aa8386",
+    "rdma/rnic/fpga/derive_segmented_padding.py": "ac8d48a5918a095e6f712853ae7d55ab9510c11edbdf74888e68dfe137119ae8",
+    "rdma/rnic/fpga/derive_segmented_profile.py": "2eeb93fba67c67ff6dd907fc1bf46741371af9548b3c0908c38d3c4d466fbd55",
+    "rdma/rnic/fpga/derive_segmented_read_executor.py": "a7e261df5ad7bf7e4f182b4a34a4673f2e3f4241b40cab01c921721129c7d19c",
+    "rdma/rnic/fpga/derive_segmented_read_memory_native.py": "d6aa6356c022aeb2e8f3c37c6d84a4ba9b63646bca881e065d074edb509940d1",
+    "rdma/rnic/fpga/derive_expected_remote_msn_native.py": "799f29a49803a525ed61a68d444791ff5fc23398ea9ac951c7d1175d2d67c759",
+    "rdma/rnic/fpga/derive_segmented_read_response.py": "623ad265109287439858a9ec0b899c110bbfca926ce3405b2a8d027699847271",
+    "rdma/rnic/fpga/derive_segmented_read_lifetime.py": "7149ac3d6feacb6223e6667b413bb14497158689325a67dbe53ded7e0db86057",
+    "rdma/rnic/fpga/derive_segmented_read_profile.py": "5e51f25d6d7a063c03e963fef1d71ad0a9c2655c75e960d870d325fd3e37d361",
+    "rdma/rnic/tests/test_segmented_read_admission_rtl.py": "cdd0f75f5eb02b21b1bed23694fa224335f7e5f7bc78414dbcd7b2fac61cee3d",
+    "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "2f092ca9eeee90d6a1ab57439227ad39b5d9b623947201e274b2654bf46c8af4",
+    "rdma/rnic/tests/test_atomic128_hls_sq_rtl.py": "1f672210e88699b630421c7643020024d2f5e15b3121d47bc6b8e93ec85bc798",
+    "rdma/rnic/tests/test_segmented_read_hls_sq_rtl.py": "18ac1164fc1a67b1192adb296005dcf61fa3553cd98a8c95bd9afd89ad74e288",
+    "rdma/rnic/tests/test_segmented_immediate_wqe.py": "a9566401d18c2c35b7baadfe4679b5670e97f983827fcaa33a26c81917fbd2b9",
+    "rdma/rnic/fpga/derive_segmented_read_route.py": "9d017a1173e799ac9a1a3e79d77e3defe73ae24d6c70021c45c0a52fc3ba17f6",
+    "rdma/rnic/fpga/derive_segmented_read_command_queue.py": "6b988072bb63f71306860159933f7fbe122842568b6e027f4735ae24b9c307ef",
+    "rdma/rnic/fpga/derive_segmented_immediate.py": "5389927b412ed1ae9f75b632725cc6c7a82e552a40d1761cb3a704b3918d6d02",
+    "rdma/rnic/tests/probe_segmented_immediate_admission.py": "7b403a6ce2bec60d6e85297dd3c6702c9ace2a3c04205a5979f6224eea471c11",
+    "rdma/rnic/tests/test_segmented_receive_wqe.py": "6a7b9ffcc11d5caadff85adf83611555865b52c70899f55e581b1e5583734cca",
+    "rdma/rnic/fpga/derive_receive_message_ack.py": "978db9218fe5c50deaa75185c6c09347247a57f58f0f429cb956c29b3c31f9a9",
+    "rdma/rnic/fpga/derive_segmented_receive.py": "159d0d668b297e049caddad890409157d3980907ce5293283dda7a77c89aacea",
+    "rdma/rnic/rtl/rocev2_native_rx_refs.v": "64e37e154052bdbf1ee90ae464e89216109f635b485dd26b588d1c0dfa98b18d",
+    "rdma/rnic/rtl/rocev2_atomic_qp_binding.v": "21666b9b9a6168a2fd6f914b6ab759e85b1f4d154b4d29dfc06dcee6c42b0f11",
+    "rdma/rnic/rtl/rocev2_wqe_response_guard.v": "e0d2780a1bc6a0b4a5855a72ac8759b47cff86f734387420e7ddc26cfe3d25a2",
+    "rdma/rnic/rtl/rocev2_zero_service_mac.v": "d3082ba0190aea6941965126fdfa853d1194d2c2fc487c5dc04c8f44023754b0",
+    "rdma/rnic/rtl/rocev2_retrans_pool.v": "d8e85255df334e8423e7d7bb5509884c962cba6c4e08593a516f528a4b0d2d92",
+    "rdma/rnic/rtl/rocev2_cq_mmio.v": "8f71ae4440734e68ddee0cf5c815a6813744c4ce3a9b76bb6ede40a2c8dd9154",
+    "rdma/rnic/rtl/rocev2_paged_memory_backend.v": "268d72371e5717fc13e009a5e881b34b91c459a1193afc42d760246d8e4e3bd6",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4",
+    "rdma/rnic/rtl/rocev2_atomic_owner_reservation.v": "eccb782acd0cc5c948ccdb7086e15ee831796fb29d3c8d44584402a50939d987",
+    "rdma/rnic/rtl/rocev2_memory_client_arbiter.v": "1c1f0b98d23d9a9cd9400c10545a1d4ce4202812cc400a1ae28e6505760e4e09",
+    "rdma/rnic/rtl/rocev2_expected_remote_msn.v": "1fcc95a8deb83fb4e5efb79937d837a24b92d50cf5a12d461b191947e91c90af",
+    "rdma/rnic/rtl/rocev2_sq_control_regs.v": "e3f0ddee0a3c0b442294dc37359e02b17b7bddba567f7b9228d197355743583f",
+    "rdma/rnic/rtl/rocev2_dual_ethernet_endpoint.v": "34884c95f736263f25c5360c8581e67af5796d67bd49de9e990dea7497703868",
+    "rdma/rnic/rtl/rocev2_ethernet_config_regs.v": "78116b1045c48d4b997a16f3f2f1053359c93301e99640e05b4014d19359bb84",
+    "rdma/rnic/rtl/rocev2_wqe_replay.v": "e5039d76ae682c982bb9597f3cd217a12adac1d230e6d875cd22cc89f0723008",
+    "rdma/rnic/rtl/rocev2_mr_control.v": "f671dffc66a0281a20530e610600def9f8ab0bb76ed3ac0ab269e2216ba89ee2",
+    "rdma/rnic/rtl/rocev2_sq_fetch.v": "b696d8a93cfb827ed8079d1d78963c1694beaf619767d3e21d7a5825e2ca1044",
+    "rdma/rnic/rtl/rocev2_native_sq_endpoint.v": "0eca6b755b5420c6c11f51bf64859aaaa90d53532c4d3817dd71faa741fe7661",
+    "rdma/rnic/rtl/rocev2_owned_retrans.v": "42450615bedfc4cfc3feef2ed9591ab800f10603202ffb188de2bb64fdfb13c7",
+    "rdma/rnic/rtl/rocev2_segmented_tx_padding.v": "4c0c1f0d72de2e06900b691995729eb0109a8f1d865ad254ca209b050b1ea3af",
+    "rdma/rnic/rtl/rocev2_wqe_lifetime.v": "cdde69a02513bfe3a41cc4784cb3b931640d6a16216245b28b4f6cb8e609248d",
+    "rdma/rnic/rtl/rocev2_corundum_dma_backend.v": "f713c19873b8a52f4f038ab22bcc816dfc0d65b7fca72a75c73e2499cd2dd943",
+    "rdma/rnic/rtl/rocev2_segmented_source_executor.v": "8cb1125d8d3d2375a7352fb82101c492835e3ae900901334702a6e954f784e10",
+    "rdma/rnic/rtl/rocev2_parent_rx_admission.v": "02315cd80cb92f1433f8901a42d35d3b22b830247693c24e84003220d019676c",
+    "rdma/rnic/rtl/rocev2_wqe_read_unpad.v": "72da7101861287cf8c041f8deb393e6930922ddc722b1861d88e91572ebb154f",
+    "rdma/rnic/rtl/rocev2_memory_origin_router.v": "398baf6ad88581237baae3e374dcec06aded745713a9f6c76f888e51c7d248c8",
+    "rdma/rnic/rtl/rocev2_pcie_parent_guard.v": "dd4e1ae98ef2525122fdc95274db860f3be83a703e73a097c3cd4b013da26ce6",
+    "rdma/rnic/rtl/rocev2_receive_ack_tx.v": "10da4a247b29956e3695ebefecc4540c9d8917c4cf8bef2ca1fe5485091e0702",
+    "rdma/rnic/rtl/rocev2_controlled_responder.v": "80a5add0502e97d809268f87088b5abe274ab87b3a9275a6027bb693024b9ef4",
+    "rdma/rnic/rtl/rocev2_atomic_responder.v": "34df53f431c2fec7f0938b760c733553b6f50a388afb469eae795b5aed450c38",
+    "rdma/rnic/rtl/rocev2_native_atomic_rx_router.v": "24dbab6d8f9dc81da85d441e4c4147966eb21b509ea8c4ca9f8ea3a3c88c5f64",
+    "rdma/rnic/rtl/rocev2_memory_command_nonce.v": "f61b5d9d62a6ca82548d883a83b4ddea2ff74ce10005cf70aef5c7ea7eeeb439",
+    "rdma/rnic/rtl/rocev2_wqe_mac_tx.v": "a696169c573ccbfaca9c9ee3dd67bada68993ae692293dffff1e11c44b271494",
+    "rdma/rnic/rtl/rocev2_atomic_owned_service_adapter.v": "598f4f934c1bc665e7b38939bfd217df908b1bcd301e651e23ce1deafb85d5c8",
+    "rdma/rnic/rtl/rocev2_sq_dma_fetch.v": "f6b79cb4352b60be7d0002494311e0ef79a09cc16a1bde0a0259499386ff88b3",
+    "rdma/rnic/rtl/rocev2_dma_client_router.v": "df343291efdcb5b8c16b5af0104c182a03450a235d83d9487e718df77b40aeae",
+    "rdma/rnic/rtl/rocev2_owned_rx_lookup.v": "f4be078ee86136836f4d5be70af9ed1381f99342c29e2e5cd3d7a35ebd809309",
+    "rdma/rnic/rtl/rocev2_control_regs.v": "478de9ce6f416e2b9e76e0ea7c862d8ed8f31ec6ee31a7a0171c1aa8864788bf",
+    "rdma/rnic/rtl/rocev2_wqe_admission.v": "6ae0a43038a1f34998b0474d3385a54510bddd9e3502867e9d2fe4712b53ec84",
+    "rdma/rnic/rtl/rocev2_mr_page_table.v": "7cebd68efbf32f25f2a44f933c8d90231d5e9a185348ab0ab73def4235406239",
+    "rdma/rnic/rtl/rocev2_atomic_service_adapter.v": "cbe7fe31520ccd0a04e75fbc71c5bc05e6be47f396a63d57b108f30e08e92f6c",
+    "rdma/rnic/rtl/rocev2_mr_table.v": "3ce189ee4cbd04babf890c7371561aab919e3cfbe22b47918108716714af0539",
+    "rdma/rnic/rtl/rocev2_atomic_mac_tx.v": "f10b53946fb8d9ab354e3ca3f40c577c962b8955193c21ee4429bb70a1f9f0a5",
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rnic/rtl/rocev2_sq_paged_dma.v": "089c61692f327aec8ffa293163058faf6a8720bdd721dcad7af1d5701257067a",
+    "rdma/rnic/rtl/rocev2_sq_controlled_dma.v": "809aeb1aef38241c632a69989f9b029e9f7d07955925df0e93b7981ffdded945",
+    "rdma/rnic/rtl/rocev2_zero_rx_padding.v": "d292473098725df210bfa51eb9d8ed63f81e454aced2467e8fd6b7305c86a5fe",
+    "rdma/rnic/rtl/rocev2_duplex_tx_router.v": "75fd83dc14feaf807d331b908ea7a78d2a3e2b7b3a650a39739d8da297b61260",
+    "rdma/rnic/rtl/rocev2_wqe_hls_sq.v": "fcb802395ddd34e33491b7c4dd5136a5b5810a52d903e02863dcc88365a4c20b",
+    "rdma/rnic/rtl/rocev2_paged_responder.v": "b09899668429f56f3b3a25484f97e9a6361603128c7fda9cf7c203f9e843f3f4",
+    "rdma/rnic/rtl/rocev2_owned_retrans_fenced.v": "4b713a218da3eb408cafa83618c5bca08e89d0e0e79ebf4b1e025e217feeec9d",
+    "rdma/rnic/rtl/rocev2_page_dma_engine.v": "a8801822361c399716c6336c4887612804d019701d2f357d1964788e9d6c9b24",
+    "rdma/rnic/rtl/rocev2_sq_wqe_admission.v": "4c3cbd9a10f7b36daf7d4f968538941725808a389680a42e21ad914384711f0b",
+    "rdma/rnic/rtl/rocev2_queue_cfg_arbiter.v": "12e206c2e645f63a47cab01aaffaef58205f474f1859ccc1b10a58bfd2339023",
+    "rdma/rnic/rtl/rocev2_receive_queue.v": "0a61c59c719fdb489430e15ac0fb7ca7feed4092d6063fdc29332ccad04a53c1",
+    "rdma/rnic/rtl/rocev2_wqe_memory_executor.v": "3118235f95cfdf6baf2158acf51cc432452f5309ec4155b48f3f51fc338a6c42",
+    "rdma/rnic/rtl/rocev2_owned_wire_rx.v": "4c0d516181d0665346c71845530085ed86e661abc3299a619a019ac4e407b1cc",
+    "rdma/rnic/rtl/rocev2_duplex_rx_mux.v": "97cf1769991205f13b23fb1da3ad8ce95eeea131acc74e54f6878608514003c3",
+    "rdma/rnic/rtl/rocev2_mr_query_arbiter.v": "abeb223c0d54652bbac141187f660e136dc99055a66e83eaa72deb30d3aa96cc",
+    "rdma/rnic/rtl/rocev2_owned_timer_retrans.v": "c0f7f230e6aa30989dfb6246a64df028a5335de3b8e7ce4265749fc9f2341ff0",
+    "rdma/rnic/rtl/rocev2_zero_service_owner.v": "56732fc20484dbe54bb40a473d8cbfe8cd2bc6d4ba54b41beebf82a90dcd5fd6",
+    "rdma/rnic/rtl/rocev2_wrkey_sq_adapter.v": "9d7df0577d515ca814fe2b688b69603c411b12d0957242a49e4bdd10d7e2eab9",
+    "rdma/rnic/rtl/rocev2_segmented_read_executor.v": "ca8897cc84f5429b755e263991cdc910171c338f1de7bfbfcd1a5c93692ecf8f",
+    "rdma/rnic/rtl/rocev2_retry_mmio.v": "45e3b07ea5d3460dfb08c8bd29e0b2df637140f5705004989362e509e159428a",
+    "rdma/rnic/rtl/rocev2_wqe_tx_lifetime.v": "a0b8543fca05cf433f70ab670dafb4be768f3cbd3849efdb1766f9ceb85ed172",
+    "rdma/rnic/rtl/rocev2_atomic_packet_guard.v": "6959371ff29a89c2a450a4029ba84a857a613ff713965163a37c1aec969cc403",
+    "rdma/rnic/rtl/rocev2_native_rnic_endpoint.v": "72ea385f940c2b5ef10a82668fa9fd8a3304ed3f2c9cb5375613bc83c7f79f28",
+    "rdma/rnic/rtl/rocev2_atomic_memory_bridge.v": "5d088b5090b58ba18b8dd62dee8cfbe4c64cc58bbdefe8e9c609710e868eb1b4",
+    "rdma/rnic/rtl/rocev2_native_endpoint.v": "d5b90b20e313128c3c9425d5d0dad255bcbb0e34f4af9888b6bd3a4bcdf39a53",
+    "rdma/rnic/rtl/rocev2_shared_hls_transport.v": "1fde8810405394cb02865cfc9ca9774b40517b18e47bc37a2f27957a0cf14170",
+    "rdma/rnic/rtl/rocev2_receive_message_queue.v": "fd989c8f471342e0794c0a1bbf661d766d7335be06b2702e12cc196dd4dcd572",
+    "rdma/rnic/kernel/wqe.c": "4b3618b01a20876084cd56c5c14c27c3cb8d2c6390aa328bdbf795cd64104211",
+    "rdma/rnic/kernel/wqe_atomic.c": "965050dda10092921a48d9caa6e9557562c9704c0d39f9289b54f997c6046f72",
+    "rdma/rnic/kernel/wqe_zero.c": "dbeb8076d21f809253fd96871c0861e316559b34478c02c7352d20e681352348",
+    "rdma/rnic/kernel/wqe_segmented.c": "5d5d67ecb00a70b988ddb16c780febcd4b3180815dc5c8bf8368f5fef0938d61",
+    "rdma/rnic/kernel/wqe_segmented_read.c": "11b3086bf4f4fd23014587f4a50b171e7ba75247b7e392b47bd6dff30e25eac9",
+    "rdma/rnic/kernel/wqe_segmented_immediate.c": "5bcf912f2fc6e86d5dcef989e801d8f7d20e485a185e9664e05e372e271ba413",
+    "rdma/rnic/kernel/wqe_segmented_receive.c": "6c49eac02e4d54be5efd1bca87ea919522270e56d99d9a3f0a64473a4aeb2c7a",
+    "rdma/rnic/kernel/wqe_atomic.h": "f971b72123b3b3a24c78c28a2c1a856d5c9a9597977fae0a09f654b13f952f68",
+    "rdma/rnic/kernel/wqe_zero.h": "70087a973c4eee08b25c93c8d5aab60ff2e9d9a0e9888363201bf4d375697f9b",
+    "rdma/rnic/kernel/wqe_segmented.h": "78d950a46d3978fe1929716c4595ba1e9dec61ffa7d9574ef06419d7914a9c5a",
+    "rdma/rnic/kernel/wqe_segmented_read.h": "74aa2cd9c47751c6ef019fe9fea17fd166ad2bab9b2355368db959209d8889b8",
+    "rdma/rnic/kernel/wqe.h": "646e0f6c09f85af72cd9d93016f1368ee7378b6f0cc1f869e4ace0e8e68e8a2a",
+    "rdma/rnic/kernel/wqe_segmented_immediate.h": "c6c3e086486a0a6ec7bc10943928c35360e5ab66adfddaa7c5615bd8c09cf7fd",
+    "rdma/rnic/kernel/wqe_segmented_receive.h": "c61554c6a9fd0b77f89e4bde51e80458753492cd817aa3d79b63682fc417be8e"
+  },
+  "source_unchanged": true,
+  "all25_prior_methods_retained": true,
+  "actual_C128_receive_codec": true,
+  "actual_MR_table": true,
+  "real_query_full_capacity_key_VA_local_write_monitored": true,
+  "RECV_never_TX_SQ": true,
+  "receive_source_limit": 1048576,
+  "native_or_hardware_runtime": false,
+  "raw_SQ_MMIO_context_and_work_HLS_endpoints_modeled": true,
+  "four_state": true,
+  "hardware_verified": false,
+  "tests": {
+    "MR": {
+      "test_CAS_FADD_full_operands_keys_real_local_write_MR_and_stalls": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-5kufjc59",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.023210357991047204,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-5kufjc59/tb.v:218: $finish called at 1184000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-5kufjc59/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-5kufjc59/test.vvp": "e9bd1b3cf3a5653b9db570b53456a2833d1e4086db03706c9bad4773f2fcb12b",
+            "rdma/rnic/build/segmented-read-admission-5kufjc59/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-5kufjc59/tb.v": "dab5d138b37742d87248d51a90ed77243537239c49cf7358ebdf0e7e6293a67b",
+            "rdma/rnic/build/segmented-read-admission-5kufjc59/simulation.log": "c404277b7409ce80fb18daf66d19154135f8aabce8c0487f95605b4da7cd2a96",
+            "rdma/rnic/build/segmented-read-admission-5kufjc59/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_Immediate_actual_C_full_range_MR_values_and_stalls": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-7bjbagdf",
+          "registered_MR_extent": 1052672,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.024989034980535507,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-7bjbagdf/tb.v:246: $finish called at 1728000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-7bjbagdf/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-7bjbagdf/test.vvp": "b3e65fbb77dd473bbeb52cb95a8610fc4406e5adb334f740d395d502617356f4",
+            "rdma/rnic/build/segmented-read-admission-7bjbagdf/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-7bjbagdf/tb.v": "76832496b7df0efed2062436fba311a5a911db3163d154e048c52e53fe4c57c6",
+            "rdma/rnic/build/segmented-read-admission-7bjbagdf/simulation.log": "4dbc6cf3bf5eba272ef15252f1d47882deaf007ae0255d917e42b2d403c43da4",
+            "rdma/rnic/build/segmented-read-admission-7bjbagdf/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-umqry7t9",
+          "registered_MR_extent": 1052672,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.02523047901922837,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-umqry7t9/tb.v:246: $finish called at 1728000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-umqry7t9/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-umqry7t9/test.vvp": "ada505e967ba0c629175edaa7e45d6746a959645ecc9a5a374aa8e29483ffc46",
+            "rdma/rnic/build/segmented-read-admission-umqry7t9/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-umqry7t9/tb.v": "084c25a79883c9121409348adcc0da3abfe4655caafcd53b2071ccc0edf908a4",
+            "rdma/rnic/build/segmented-read-admission-umqry7t9/simulation.log": "76ae764ad8ac5b2b3b0677d557795a7e6319a0bda929933e0cfa0a7644be64af",
+            "rdma/rnic/build/segmented-read-admission-umqry7t9/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_Immediate_oversize_reserved_or_atomic_operands_fail_before_MR": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-v1bkfwhi",
+          "registered_MR_extent": 1052672,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.021047412999905646,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-v1bkfwhi/tb.v:190: $finish called at 624000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-v1bkfwhi/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-v1bkfwhi/test.vvp": "69236d117dcd33fb8a0ca9a174a185dd6869d948c94353c89c4db2a37f135b50",
+            "rdma/rnic/build/segmented-read-admission-v1bkfwhi/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-v1bkfwhi/tb.v": "a8849fc673bb84c21f95f191883c24d2bb6aa63c37539b4e666ce1e8fd199ec3",
+            "rdma/rnic/build/segmented-read-admission-v1bkfwhi/simulation.log": "50170f792e106421756122cb01c9c29243a6d35a84cb61dfab8cfb2b26b89253",
+            "rdma/rnic/build/segmented-read-admission-v1bkfwhi/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-ussmdh2x",
+          "registered_MR_extent": 1052672,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.02068891399540007,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-ussmdh2x/tb.v:190: $finish called at 624000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-ussmdh2x/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-ussmdh2x/test.vvp": "582b8fb8d0cdf7bf1bbe38feabc77b4ea55d244e46180cc5450a1cf85728b30e",
+            "rdma/rnic/build/segmented-read-admission-ussmdh2x/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-ussmdh2x/tb.v": "1e872ac308cd9ba207c23f3bd8bd3a85e1b692462c40e0d14498df1698620a8d",
+            "rdma/rnic/build/segmented-read-admission-ussmdh2x/simulation.log": "18e139e3c388ebf0243da15f083b876fbb453d02adf38e28c04705b938035922",
+            "rdma/rnic/build/segmented-read-admission-ussmdh2x/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_Immediate_real_MR_rejects_bad_key_PD_and_final_byte": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-6jyozfoo",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.021052024967502803,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-6jyozfoo/tb.v:190: $finish called at 640000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-6jyozfoo/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-6jyozfoo/test.vvp": "48f46b689fab2daa585c20e3f855fcb2f1d77b07362da016b904697c7d0131a7",
+            "rdma/rnic/build/segmented-read-admission-6jyozfoo/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-6jyozfoo/tb.v": "e81e50be42fda6b193eac75886c7ac7ff693b985dfa3ecfe143abf81e51c624f",
+            "rdma/rnic/build/segmented-read-admission-6jyozfoo/simulation.log": "1039b07697d2cf6de86f87c3162d7b4d0f380659a555613b2d04f69cdd2629a4",
+            "rdma/rnic/build/segmented-read-admission-6jyozfoo/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-ovw2stp6",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.02098777104401961,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-ovw2stp6/tb.v:190: $finish called at 640000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-ovw2stp6/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-ovw2stp6/test.vvp": "43d329530eb256989645fbfa802b75e931b9926abeeca23cc97f104c31c957bb",
+            "rdma/rnic/build/segmented-read-admission-ovw2stp6/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-ovw2stp6/tb.v": "e4ecbc41323977767d040d8ff6c29b3ade753b8e427fa562207a88af708b325e",
+            "rdma/rnic/build/segmented-read-admission-ovw2stp6/simulation.log": "b09d0b3d89ab1cd3c9f965c3f35b3819f900d67086c558b9c74159ad00675c8b",
+            "rdma/rnic/build/segmented-read-admission-ovw2stp6/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_Immediate_source_MR_does_not_require_local_write_permission": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-8ra44zkh",
+          "registered_MR_extent": 1052672,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.019267135008703917,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-8ra44zkh/tb.v:169: $finish called at 232000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-8ra44zkh/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-8ra44zkh/test.vvp": "e8303c12840b9a78882b3cb27b16ff5691bc3662f14d9f84ff9307a3c01f7c9d",
+            "rdma/rnic/build/segmented-read-admission-8ra44zkh/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-8ra44zkh/tb.v": "9991659046b52ea5d2ea9c74e73ba85d8fa8515312877d93a08cf8a9f58a49d7",
+            "rdma/rnic/build/segmented-read-admission-8ra44zkh/simulation.log": "b42e5a2d94da387c2ac914f4de17908adb5c8ef3874e18778e6a36087f55bf56",
+            "rdma/rnic/build/segmented-read-admission-8ra44zkh/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-rnl4trtl",
+          "registered_MR_extent": 1052672,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.01856165798380971,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-rnl4trtl/tb.v:169: $finish called at 232000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-rnl4trtl/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-rnl4trtl/test.vvp": "fcaf8490fca7b3f7d6741b453dcc54016a44c23605c0e7c78f612e3a08971854",
+            "rdma/rnic/build/segmented-read-admission-rnl4trtl/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-rnl4trtl/tb.v": "d1aa69d085555ae45fb6a457966f570e66ccf07a764f1822f3ee21fcb9b27e80",
+            "rdma/rnic/build/segmented-read-admission-rnl4trtl/simulation.log": "c56d444d31cd82debe99accf51ca76bdb6c84d6734b2ec8d27a469504f7b7cdf",
+            "rdma/rnic/build/segmented-read-admission-rnl4trtl/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_actual_table_denies_keys_PD_readonly_and_range_without_authority": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-0arogt_r",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.021776293986476958,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-0arogt_r/tb.v:204: $finish called at 912000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-0arogt_r/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-0arogt_r/test.vvp": "c3080d98dcccf80814a1beb478da54536a4b2b5021fb050d28284a11391d8089",
+            "rdma/rnic/build/segmented-read-admission-0arogt_r/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-0arogt_r/tb.v": "c02e0cba9cd25c03d99df62c7fba06ef51841977e9c9a4ce7f88f16dc3e466b4",
+            "rdma/rnic/build/segmented-read-admission-0arogt_r/simulation.log": "23694e868377a303cfb1691cc1e23bb39aea8184ef6fa9eea98189c63525f972",
+            "rdma/rnic/build/segmented-read-admission-0arogt_r/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_canonical_extension_length_and_remote_alignment_before_any_MR_query": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-2dpp4jwr",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.02195558202220127,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-2dpp4jwr/tb.v:204: $finish called at 888000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-2dpp4jwr/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-2dpp4jwr/test.vvp": "0a1b39cdcc26d30dc73264de53b440822721ce7054e44d04739ceb5d1f381db3",
+            "rdma/rnic/build/segmented-read-admission-2dpp4jwr/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-2dpp4jwr/tb.v": "eac2f8dc514b76e059f212b0b9d2d8e957b56aa74e6ce3719cdb50864a08f722",
+            "rdma/rnic/build/segmented-read-admission-2dpp4jwr/simulation.log": "81dd990efe59cc8a496c62c5702744331f158ea6d04e221ebea270e38fbd29cc",
+            "rdma/rnic/build/segmented-read-admission-2dpp4jwr/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_failed_fetch_all_real_status_codes_erase_old_operands_while_disabled": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-u828a2v8",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.022421222005505115,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-u828a2v8/tb.v:184: $finish called at 1072000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-u828a2v8/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-u828a2v8/test.vvp": "9156b6bf2b192e8d7d90c3b5724b2f00225dc849b1b13550643473126b3de089",
+            "rdma/rnic/build/segmented-read-admission-u828a2v8/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-u828a2v8/tb.v": "46e5defd43ed0e8ae1f1c16451bfc485d129492763301d2c4c1b71b7c5408dc3",
+            "rdma/rnic/build/segmented-read-admission-u828a2v8/simulation.log": "0cbd291b6692f6d80185732af371b15deb31e33b3315a183265e23063f740790",
+            "rdma/rnic/build/segmented-read-admission-u828a2v8/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_large_READ_actual_C_and_real_MR_full_range_with_stalls": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-t2rl1reu",
+          "registered_MR_extent": 1052672,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.02380927000194788,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-t2rl1reu/tb.v:232: $finish called at 1456000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-t2rl1reu/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-t2rl1reu/test.vvp": "3a3260594926f11520572c7e764a6ab8c166bdeb22009c4468678370251fd7f7",
+            "rdma/rnic/build/segmented-read-admission-t2rl1reu/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-t2rl1reu/tb.v": "031a86131b1f00fcf24e3a99f8b7e3539b3e8db4f39f4e3f89b50090351ae4bf",
+            "rdma/rnic/build/segmented-read-admission-t2rl1reu/simulation.log": "77bc3ffca23346862a93761c0190bbe47136581aa3c03f3ad09cedf8f087b6a3",
+            "rdma/rnic/build/segmented-read-admission-t2rl1reu/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_large_READ_actual_MR_denies_key_PD_readonly_and_last_byte_range": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-84kszl29",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.02065560797927901,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-84kszl29/tb.v:190: $finish called at 640000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-84kszl29/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-84kszl29/test.vvp": "f9b898f478e81005530c39d656fc860cbceebc92d3656dc0f9e84de4dc97ca80",
+            "rdma/rnic/build/segmented-read-admission-84kszl29/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-84kszl29/tb.v": "ffab392babd7e131803e28b5cc130e0b2328af079b641e4a21d272d87c4d28bd",
+            "rdma/rnic/build/segmented-read-admission-84kszl29/simulation.log": "3ec9ddba79219c543b7cf6df024c3b7d4af5dfba7a24670f51fa18ef47ddd8ea",
+            "rdma/rnic/build/segmented-read-admission-84kszl29/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_large_READ_size_epoch_sequence_reserved_and_operands_fail_before_MR": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-sqaw5jbx",
+          "registered_MR_extent": 1052672,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.021620341984089464,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-sqaw5jbx/tb.v:197: $finish called at 756000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-sqaw5jbx/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-sqaw5jbx/test.vvp": "b9ec89e2a1e3d9004143b743602041f6310886ccc939071013fc4974d4c9b346",
+            "rdma/rnic/build/segmented-read-admission-sqaw5jbx/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-sqaw5jbx/tb.v": "58ad375115e13fbe5b4810c1dd828abeb38ec9a7b828cc80112ebfb6bffdf930",
+            "rdma/rnic/build/segmented-read-admission-sqaw5jbx/simulation.log": "a16ab782b8e73412026467e3c40cdabd8a8d2e0002ad7af097f79b00418fcfd4",
+            "rdma/rnic/build/segmented-read-admission-sqaw5jbx/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_normal_WRITE_READ_SEND_RECV_Immediate_remain_canonical": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-r3nz7ozy",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.021891680953558534,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-r3nz7ozy/tb.v:204: $finish called at 912000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-r3nz7ozy/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-r3nz7ozy/test.vvp": "57fbd5e1eb5ab83337f34e30803fabe1816018ea579954abdc4c50faa09216f0",
+            "rdma/rnic/build/segmented-read-admission-r3nz7ozy/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-r3nz7ozy/tb.v": "b962707ccd32f2c2db65960dd922f8841ab35ecdf4f7c660d12c4c6a8b7bb014",
+            "rdma/rnic/build/segmented-read-admission-r3nz7ozy/simulation.log": "8b66b48f80afd2b2d3485a4f990244d05338150099567efaf868bd86b9637338",
+            "rdma/rnic/build/segmented-read-admission-r3nz7ozy/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-8lviixss",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.019300738000310957,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-8lviixss/tb.v:176: $finish called at 364000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-8lviixss/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-8lviixss/test.vvp": "acf2d0755239e2961a2d58aba62959d02beb9fccc29fa9919794c2a9919f9920",
+            "rdma/rnic/build/segmented-read-admission-8lviixss/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-8lviixss/tb.v": "38306c07480c8f831b71347850723d13dfac9fc42827a34a5b0dd7c7b47ab1a7",
+            "rdma/rnic/build/segmented-read-admission-8lviixss/simulation.log": "2fabbec329b3307839812ecc00ccd9cbbb97cc2352d3c5f3f261fa61637effcc",
+            "rdma/rnic/build/segmented-read-admission-8lviixss/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_receive_actual_MR_denies_readonly_stale_full_key_PD_and_final_byte": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-ebot9mqu",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.021053225034847856,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-ebot9mqu/tb.v:204: $finish called at 912000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-ebot9mqu/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-ebot9mqu/test.vvp": "addc98ca6ffa706eb55723eb7445b6ddfa70d1a9fb6d442094611d2077f060e0",
+            "rdma/rnic/build/segmented-read-admission-ebot9mqu/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-ebot9mqu/tb.v": "93c03fde0d3d9b80e7360d3a8b0b029f4dccc9580bfc8c09458d72efc6663e58",
+            "rdma/rnic/build/segmented-read-admission-ebot9mqu/simulation.log": "fea41bea01202631ef77cdce216e972bd8998add88c4a3e419bffb86b40415dd",
+            "rdma/rnic/build/segmented-read-admission-ebot9mqu/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-7rppabzq",
+          "registered_MR_extent": 1048576,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.018929038022179157,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-7rppabzq/tb.v:176: $finish called at 368000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-7rppabzq/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-7rppabzq/test.vvp": "6225ca50d4681100e1c4214f89dcc493ef08193f0882aade95243c2deb175ab7",
+            "rdma/rnic/build/segmented-read-admission-7rppabzq/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-7rppabzq/tb.v": "3b601c678e541d1565ef88bcfbf49bd7a333e659321028050735c46fd682c7b1",
+            "rdma/rnic/build/segmented-read-admission-7rppabzq/simulation.log": "9a4c58c84529b3c81b7dd2fc338dd3ee0a5ebd8640e3eb574b6ad63ab7fb2a85",
+            "rdma/rnic/build/segmented-read-admission-7rppabzq/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_receive_full_bytes_no_remote_Immediate_Atomic_or_reserved_authority": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-3417g2rl",
+          "registered_MR_extent": 1052672,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.022554419992957264,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-3417g2rl/tb.v:218: $finish called at 1152000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-3417g2rl/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-3417g2rl/test.vvp": "2a762b834f18210729c1d79d98af7ec7c226f74932d3127637719e1c4eb2ea00",
+            "rdma/rnic/build/segmented-read-admission-3417g2rl/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-3417g2rl/tb.v": "c7ebb8b6ddb6cb8f555186eabde7af3d4c93a61463d33abfa27e68254f5690ff",
+            "rdma/rnic/build/segmented-read-admission-3417g2rl/simulation.log": "ab9ecaf1329d98e17b6345584f1e4afc3beefd48dd5219facc44d46e00bf3bc2",
+            "rdma/rnic/build/segmented-read-admission-3417g2rl/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_receive_full_posted_capacity_real_MR_query_and_stalls": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-7hictfi3",
+          "registered_MR_extent": 1052672,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.022342659009154886,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-7hictfi3/tb.v:218: $finish called at 1184000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-7hictfi3/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-7hictfi3/test.vvp": "bf96764dc2c7a60e2b948e7139d9a37ae3cca1960010e83a57606bb92514864e",
+            "rdma/rnic/build/segmented-read-admission-7hictfi3/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-7hictfi3/tb.v": "6f870c28af65c77fd8ff7cd06ecda502c362c50adb41de52ab6aaef7c98b4efa",
+            "rdma/rnic/build/segmented-read-admission-7hictfi3/simulation.log": "e0a477dda9eadaa866869d9f2616f6478c98039df49e6adfe90881cd20b7dcf2",
+            "rdma/rnic/build/segmented-read-admission-7hictfi3/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_receive_revoked_registered_MR_never_reuses_old_grant": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-hhsmfds_",
+          "registered_MR_extent": 1052672,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.019166227022651583,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-hhsmfds_/tb.v:177: $finish called at 388000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-hhsmfds_/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-hhsmfds_/test.vvp": "dd0a228bd8e893a42ac6229debf71e578f21d80244f21744e3245063768ce7c2",
+            "rdma/rnic/build/segmented-read-admission-hhsmfds_/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-hhsmfds_/tb.v": "0b60d32d634a979a5352fdf966f284b9ef6fd427d91709534706d836f25d9a29",
+            "rdma/rnic/build/segmented-read-admission-hhsmfds_/simulation.log": "d39db8c61518dd174ebae37fecb15a0308daeb3d6d95ef9c5c016052be708c02",
+            "rdma/rnic/build/segmented-read-admission-hhsmfds_/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_receive_unknown_capacity_key_or_trusted_epoch_never_gains_MR": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-h6urhhn3",
+          "registered_MR_extent": 1052672,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.01839572499739006,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-h6urhhn3/tb.v:169: $finish called at 228000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-h6urhhn3/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-h6urhhn3/test.vvp": "8d54a44c710209839ad6035d17549840825e35ad708b3f90a89f4328e2a6b936",
+            "rdma/rnic/build/segmented-read-admission-h6urhhn3/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-h6urhhn3/tb.v": "d3c2bf01faa71927e34affa0373d18449ad93f13efdbf529f140b4caed9a6695",
+            "rdma/rnic/build/segmented-read-admission-h6urhhn3/simulation.log": "b2dbde09b60e52958c04be2472234b579cb779a34af9eff6706d44d388988c51",
+            "rdma/rnic/build/segmented-read-admission-h6urhhn3/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-ybboh8cr",
+          "registered_MR_extent": 1052672,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.018881271011196077,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-ybboh8cr/tb.v:169: $finish called at 228000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-ybboh8cr/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-ybboh8cr/test.vvp": "56dd4ff589ea3ef38b6c9f4bb94a84ee2fbddea82a8d75a79e680f4fe2e3ac8e",
+            "rdma/rnic/build/segmented-read-admission-ybboh8cr/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-ybboh8cr/tb.v": "0beb028e4c759b5b3d7428527734864acd3ca776746db2e1b2368487832b8d8a",
+            "rdma/rnic/build/segmented-read-admission-ybboh8cr/simulation.log": "cf197bd4fd65108ffd47910dd034fddbdc2bde9f59128abbefb8ef5228c7b935",
+            "rdma/rnic/build/segmented-read-admission-ybboh8cr/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-i0zkn4_b",
+          "registered_MR_extent": 1052672,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.019040093990042806,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-i0zkn4_b/tb.v:169: $finish called at 228000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-i0zkn4_b/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-i0zkn4_b/test.vvp": "68311d99e1705cd8fac578923a706d4603ac3a6a773df5dea2914c1fc5468d6c",
+            "rdma/rnic/build/segmented-read-admission-i0zkn4_b/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-i0zkn4_b/tb.v": "c3099bd24fd8b0144d1a5d11c956a0c9879b647baed09a8103d2da60487135e6",
+            "rdma/rnic/build/segmented-read-admission-i0zkn4_b/simulation.log": "7e16bddc19ca768a7feeded792c4a27a2231c5e63bdda5e44f817e3841d5d889",
+            "rdma/rnic/build/segmented-read-admission-i0zkn4_b/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-q9pz1nk9",
+          "registered_MR_extent": 1052672,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.018316735979169607,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-q9pz1nk9/tb.v:169: $finish called at 228000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-q9pz1nk9/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-q9pz1nk9/test.vvp": "c7d8edd9b66be688e5b804b8a39472bab9526f64538a90339fe2ae7b89701071",
+            "rdma/rnic/build/segmented-read-admission-q9pz1nk9/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-q9pz1nk9/tb.v": "d02d83ed07391e7c9213095dcdcc4b0523795046d951653cf2171d267b2b813d",
+            "rdma/rnic/build/segmented-read-admission-q9pz1nk9/simulation.log": "459f41e74a853b125c300409c16c26f5e89a3585481326f532091a7e0e0025fd",
+            "rdma/rnic/build/segmented-read-admission-q9pz1nk9/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-i9zn28hr",
+          "registered_MR_extent": 1052672,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.018892797990702093,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-i9zn28hr/tb.v:169: $finish called at 228000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-i9zn28hr/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-i9zn28hr/test.vvp": "b6a09b15239550f071fb794d5317008c413cb28a1eba6a5c874d4941e8de13e0",
+            "rdma/rnic/build/segmented-read-admission-i9zn28hr/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-i9zn28hr/tb.v": "32858d56ecfee25cb41e9595e1892c1d16c7f5c04c9e1f1c5f0bb7dea4dea5d8",
+            "rdma/rnic/build/segmented-read-admission-i9zn28hr/simulation.log": "2bb07ccc59803ff5ab568935a1c28ace4010f6ca5409a396bb066401a1e25f69",
+            "rdma/rnic/build/segmented-read-admission-i9zn28hr/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-5qsn_3tn",
+          "registered_MR_extent": 1052672,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.01874857401708141,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-5qsn_3tn/tb.v:169: $finish called at 228000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-5qsn_3tn/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-5qsn_3tn/test.vvp": "f13bb11d08c77fa34c156c7add560d5d69d7813ef1b167735a315f8be29d48b6",
+            "rdma/rnic/build/segmented-read-admission-5qsn_3tn/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-5qsn_3tn/tb.v": "596c1384775c1339b0697d5b5827b2f087bb1dc4f410e22fc0ec48233316cb5a",
+            "rdma/rnic/build/segmented-read-admission-5qsn_3tn/simulation.log": "3e955556f0d974f86786fa7384ed7d88f508b852081319ef7f947fb9785b3a77",
+            "rdma/rnic/build/segmented-read-admission-5qsn_3tn/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_unknown_header_operand_or_reserved_bytes_never_query_or_invent_WRID": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-o0gsn7ts",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.01880633400287479,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-o0gsn7ts/tb.v:169: $finish called at 228000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-o0gsn7ts/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-o0gsn7ts/test.vvp": "ea907ca833fc26798aab329e3b8c7dc161367e042f470913353f1b02be2d6e80",
+            "rdma/rnic/build/segmented-read-admission-o0gsn7ts/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-o0gsn7ts/tb.v": "82aa18ebfe52cd12bab51a2519137bf20aaa147e1ded5ee5c7ffb66e727bb386",
+            "rdma/rnic/build/segmented-read-admission-o0gsn7ts/simulation.log": "7825f563968b810b178f625e01074b11a81b761bd46d2740862214567f92b01e",
+            "rdma/rnic/build/segmented-read-admission-o0gsn7ts/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-71c8cc7x",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.01861482800450176,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-71c8cc7x/tb.v:169: $finish called at 228000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-71c8cc7x/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-71c8cc7x/test.vvp": "49c7539b1b73fa094b848d03120c0275ef8a3eb352447b3f909ca0a15f68d792",
+            "rdma/rnic/build/segmented-read-admission-71c8cc7x/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-71c8cc7x/tb.v": "2705971b5e82d036a4db7021a0f03c1106cc0565e79adb0b9a0a60ae01c63d43",
+            "rdma/rnic/build/segmented-read-admission-71c8cc7x/simulation.log": "84b9084afa1389e6139e91e1f7f4f8c4114636327c89d1f84f2c3c1aade3494b",
+            "rdma/rnic/build/segmented-read-admission-71c8cc7x/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-fyahkrg9",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.018533322028815746,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-fyahkrg9/tb.v:169: $finish called at 228000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-fyahkrg9/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-fyahkrg9/test.vvp": "0b685299b02b37390a30eadad80b0e15580835eb5fb90c4428ca02a6468fe613",
+            "rdma/rnic/build/segmented-read-admission-fyahkrg9/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-fyahkrg9/tb.v": "f0b652cea7a0635054bbaf8d44875bb6166bbd429c6c0e2ffcd87258cc35fa0c",
+            "rdma/rnic/build/segmented-read-admission-fyahkrg9/simulation.log": "ea9a1db3d366ffe87fea9c9fb046a5fdbfa375434cf6f8533e03478bec11b62d",
+            "rdma/rnic/build/segmented-read-admission-fyahkrg9/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-k07yz1u0",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.019034442026168108,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-k07yz1u0/tb.v:169: $finish called at 228000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-k07yz1u0/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-k07yz1u0/test.vvp": "a0d475d9097b96c542950bed7cc9a0afcfa88ae6bac430d052560b09a197b19c",
+            "rdma/rnic/build/segmented-read-admission-k07yz1u0/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-k07yz1u0/tb.v": "6b7a37c9d0c83023007c6be106338c6569a5278761c8f77fa06dab4b2f0ea8c8",
+            "rdma/rnic/build/segmented-read-admission-k07yz1u0/simulation.log": "3130167cb3db18a03534e1c947b212e5c2fbac2a397bcab4fd3694dda2c64222",
+            "rdma/rnic/build/segmented-read-admission-k07yz1u0/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-2x6fbfqg",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.01890279003418982,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-2x6fbfqg/tb.v:169: $finish called at 228000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-2x6fbfqg/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-2x6fbfqg/test.vvp": "c9e7b5d3c78e441f4ab7af948eb3a91496f15e63767bd6cd43b345a58d03d868",
+            "rdma/rnic/build/segmented-read-admission-2x6fbfqg/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-2x6fbfqg/tb.v": "f1c6690469e205ed6ee453eac77ca2cede0c6d4a435b1407e74eae5e6246a401",
+            "rdma/rnic/build/segmented-read-admission-2x6fbfqg/simulation.log": "fbdacf6103f6a589c64993249d4413ff320afa3ec459ae8670b240867265bbe5",
+            "rdma/rnic/build/segmented-read-admission-2x6fbfqg/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-blli4aq4",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.018555046000983566,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-blli4aq4/tb.v:169: $finish called at 228000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-blli4aq4/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-blli4aq4/test.vvp": "716bdb20dc71880aa94a0b4bb93003ea410d14cb9997f544b5b2550c78551456",
+            "rdma/rnic/build/segmented-read-admission-blli4aq4/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-blli4aq4/tb.v": "ba4ccb1ea4005886e4d734162fc7706f5b7013dfd86dd5475901710f18740adc",
+            "rdma/rnic/build/segmented-read-admission-blli4aq4/simulation.log": "39f2801bad0639373eca64da51cc87f24ea8167a7074f89f1c702f9c92b5786e",
+            "rdma/rnic/build/segmented-read-admission-blli4aq4/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-_g5yohfe",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.018638789013493806,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-_g5yohfe/tb.v:169: $finish called at 228000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-_g5yohfe/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-_g5yohfe/test.vvp": "c4da4cbfb52899777d5c4ac32e3e0ecee7561411a931be4550db7232cb24903f",
+            "rdma/rnic/build/segmented-read-admission-_g5yohfe/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-_g5yohfe/tb.v": "475f92a353553234ed5574d0773c5a0967e8e210a12fae049966b77b68e2bd3c",
+            "rdma/rnic/build/segmented-read-admission-_g5yohfe/simulation.log": "739c2974ebee4d4bb7361e7d55ffb8a60cb54d33c7dd242ca6042b96facffa70",
+            "rdma/rnic/build/segmented-read-admission-_g5yohfe/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-kyty35jq",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.01912831497611478,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-kyty35jq/tb.v:169: $finish called at 228000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-kyty35jq/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-kyty35jq/test.vvp": "984dd807013fad84cd6ebd1912052fd60bd335c52e71e66c369e6b14315b195c",
+            "rdma/rnic/build/segmented-read-admission-kyty35jq/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-kyty35jq/tb.v": "c691fbc74e21ca6d54ad18da3b1ccbb159b09c9899047705dd1f081cc3e5b5ed",
+            "rdma/rnic/build/segmented-read-admission-kyty35jq/simulation.log": "d5deb946ac0d58d1d01dd7c9422d822f7ddac828aea4fc4f8ab46cf1e0845519",
+            "rdma/rnic/build/segmented-read-admission-kyty35jq/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_untrusted_unknown_queue_context_never_aliases_or_completes": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-wjy05cnu",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.01876513403840363,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-wjy05cnu/tb.v:169: $finish called at 140000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-wjy05cnu/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-wjy05cnu/test.vvp": "397e13b5d90c16a9c712dd92061fe0829e830a85857b3cacce97be8adaf3fdf7",
+            "rdma/rnic/build/segmented-read-admission-wjy05cnu/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-wjy05cnu/tb.v": "b8c80e726f016da546e1ed19122f85305fbbd9a52afd212392e4f7a395e6a4cf",
+            "rdma/rnic/build/segmented-read-admission-wjy05cnu/simulation.log": "4e98c2215e20ef33c82e9f3d4689a859c59e6d8f6e3cd83e5a97f9ad0a9857df",
+            "rdma/rnic/build/segmented-read-admission-wjy05cnu/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-jbyae6rw",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.01870374399004504,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-jbyae6rw/tb.v:169: $finish called at 140000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-jbyae6rw/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-jbyae6rw/test.vvp": "be97bed7edaa710a54837e11a5963fdddc479b3fa395fe206b81258b10ae8967",
+            "rdma/rnic/build/segmented-read-admission-jbyae6rw/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-jbyae6rw/tb.v": "af6966a0b276487b8e2e2daf4887b1ecd74d336bfbc8338559b11a8a52adade4",
+            "rdma/rnic/build/segmented-read-admission-jbyae6rw/simulation.log": "3644ece9e807e80d44fbb59777fb88abc49520f0ae6683e4bb6775d577d296e0",
+            "rdma/rnic/build/segmented-read-admission-jbyae6rw/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-cgoq3c6o",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.01828923000721261,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-cgoq3c6o/tb.v:169: $finish called at 140000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-cgoq3c6o/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-cgoq3c6o/test.vvp": "fe4462870bac0ae2b298efdd102f8b844839dce846413e72d7c0bef9bea14a58",
+            "rdma/rnic/build/segmented-read-admission-cgoq3c6o/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-cgoq3c6o/tb.v": "eadf5368dc0420ec88b01d61cc3236d90eb903813376381aeab9ad1049ca2430",
+            "rdma/rnic/build/segmented-read-admission-cgoq3c6o/simulation.log": "9562975e32f9ac83f068b8cd891c5ae93abd487037797c41e1404f1770ec083b",
+            "rdma/rnic/build/segmented-read-admission-cgoq3c6o/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-yb6b9xjc",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.01905554294353351,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-yb6b9xjc/tb.v:169: $finish called at 140000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-yb6b9xjc/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-yb6b9xjc/test.vvp": "4a644980dd7015a69fc2b818eecdb21ba800abf0371fedb8b71e84a3d9fddd61",
+            "rdma/rnic/build/segmented-read-admission-yb6b9xjc/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-yb6b9xjc/tb.v": "8f72e5f4ea0113ec9534a2247af0fd5d9b0832956bc210e7cf8fc0a9948d791e",
+            "rdma/rnic/build/segmented-read-admission-yb6b9xjc/simulation.log": "8e62daafcd8ea95770ee5490474c88ee38c9b4715454a08d9f32d20e807b9bf8",
+            "rdma/rnic/build/segmented-read-admission-yb6b9xjc/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-utwznf7p",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.018874022993259132,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-utwznf7p/tb.v:169: $finish called at 140000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-utwznf7p/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-utwznf7p/test.vvp": "8b13dabe96270e13b669675ccc686d4c76ee147bc1a356a3b52d4bc19c8ef64c",
+            "rdma/rnic/build/segmented-read-admission-utwznf7p/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-utwznf7p/tb.v": "8c059b5e9e0f6013b34c882d7661283de97677440a606605c988b8cd2bd23a53",
+            "rdma/rnic/build/segmented-read-admission-utwznf7p/simulation.log": "9bdb948de72a40f5597feb2d6d3012cee71d915c745a3e449f30ad1bc70c55b8",
+            "rdma/rnic/build/segmented-read-admission-utwznf7p/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-5mq_kif2",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.01884210598655045,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-5mq_kif2/tb.v:169: $finish called at 140000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-5mq_kif2/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-5mq_kif2/test.vvp": "cf93245980041b6d1e0f703843ce44d19d9ac280fb85ecf47b7809d35c40262f",
+            "rdma/rnic/build/segmented-read-admission-5mq_kif2/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-5mq_kif2/tb.v": "d9eaa961d78c31e62c67fd750900f0504d91838a8e1319df761a6f2e4945a59b",
+            "rdma/rnic/build/segmented-read-admission-5mq_kif2/simulation.log": "0e0cf04be2d2ce0055c35b359561c287d0b480efd55449c629505b40b4eb0ef6",
+            "rdma/rnic/build/segmented-read-admission-5mq_kif2/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ],
+      "test_wrong_tag_length_or_invalid_MR_status_holds_uncertain_owner": [
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-xftny9q_",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.019189013983123004,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-xftny9q_/tb.v:170: $finish called at 220000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-xftny9q_/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-xftny9q_/test.vvp": "307ddcf7da604e1b312d8c97c8cc02d4fad8d1c79bbdffdc16ec912ac67f23f4",
+            "rdma/rnic/build/segmented-read-admission-xftny9q_/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-xftny9q_/tb.v": "cbeb5d4ebad3723d731dca1e28a435f8fc08e8c1be782c2d2f424bb029087ee6",
+            "rdma/rnic/build/segmented-read-admission-xftny9q_/simulation.log": "e3d865ef971d3c582a4cc054e208a1df2ac54493a397d46b1d4094452a399925",
+            "rdma/rnic/build/segmented-read-admission-xftny9q_/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-2uvwyi3x",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.018813332018908113,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-2uvwyi3x/tb.v:170: $finish called at 220000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-2uvwyi3x/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-2uvwyi3x/test.vvp": "796e5f2860a06111f1718c454fd75551b804512e4db5fb3d32da251c9f3f476f",
+            "rdma/rnic/build/segmented-read-admission-2uvwyi3x/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-2uvwyi3x/tb.v": "d36eeab83fee747ea69620713a0e9877d532e55250dbedba3d56dcad1c03ebb2",
+            "rdma/rnic/build/segmented-read-admission-2uvwyi3x/simulation.log": "adf903d56831214951d836e1b19b5cb57c0c4fcb8294b29b32f0ccf2f9716b8e",
+            "rdma/rnic/build/segmented-read-admission-2uvwyi3x/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        },
+        {
+          "pass_test": true,
+          "directory": "rdma/rnic/build/segmented-read-admission-h6i0s7hr",
+          "registered_MR_extent": 8192,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.0187490779790096,
+          "observed_summary": "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/segmented-read-admission-h6i0s7hr/tb.v:170: $finish called at 220000 (1ps)",
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-admission-h6i0s7hr/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-admission-h6i0s7hr/test.vvp": "41016d5e565eefc5cc74569a45c73822a7b4d19a04c8dde6700d5c1990052876",
+            "rdma/rnic/build/segmented-read-admission-h6i0s7hr/rocev2_wqe_admission.v": "6af6985e962a2f479c519e0e675688c634db6689247dfe8020ad5291641343eb",
+            "rdma/rnic/build/segmented-read-admission-h6i0s7hr/tb.v": "771090c104f03d06f4b93c85404bc9a65c9010827b685bc9104e551508b26865",
+            "rdma/rnic/build/segmented-read-admission-h6i0s7hr/simulation.log": "98980cadf43558dd9b70ab8edb12912f1ded226d169ed50983dfdeb4e64db3fd",
+            "rdma/rnic/build/segmented-read-admission-h6i0s7hr/rocev2_sq_wqe_admission.v": "406fc0d5e85055f99e0823cc62445e3c681478fa2aff79a391406fcbcb3635f4"
+          }
+        }
+      ]
+    },
+    "HLS_SQ": {
+      "test_CAS_FADD_full_operands_keys_and_owner_before_SQ": [
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-65x5ehlo",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.014248079969547689,
+          "summary": {
+            "pass_test": true,
+            "owners": 16,
+            "SQ": 16,
+            "fault": 0,
+            "cycles": 400
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-65x5ehlo/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-65x5ehlo/test.vvp": "51c5227d716d742d5b7a97fe4a6d44bac3b70332ca6d3b31551ec63ea20eda33",
+            "rdma/rnic/build/segmented-read-hls-sq-65x5ehlo/tb.v": "12ec7e0691188f5d45e8ef278913719d112de338a47c95c5922a9bf4f8780db9",
+            "rdma/rnic/build/segmented-read-hls-sq-65x5ehlo/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-65x5ehlo/simulation.log": "1ea25c0f1324c3e87e8932cc2987a23d26dd652d9616a535a8112dd5e2405b1b"
+          }
+        }
+      ],
+      "test_Immediate_full_owner_before_SQ_and_full_values": [
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-eyiy8fvv",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.012916602019686252,
+          "summary": {
+            "pass_test": true,
+            "owners": 12,
+            "SQ": 12,
+            "fault": 0,
+            "cycles": 300
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-eyiy8fvv/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-eyiy8fvv/test.vvp": "8a7475a17e904696db0357461cc4ac2c3e8a2ac9f48ac989c53493676902e669",
+            "rdma/rnic/build/segmented-read-hls-sq-eyiy8fvv/tb.v": "6827ff724b54315eb8222ad9ab167f3f3c92eb554751560bb84b3de792583a6a",
+            "rdma/rnic/build/segmented-read-hls-sq-eyiy8fvv/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-eyiy8fvv/simulation.log": "53694440089ab61f791954b5f08848bb49b1f90dfdf5eedf4fa87198076225d9"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-1ab2oft7",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.01310266403015703,
+          "summary": {
+            "pass_test": true,
+            "owners": 12,
+            "SQ": 12,
+            "fault": 0,
+            "cycles": 300
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-1ab2oft7/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-1ab2oft7/test.vvp": "5468b300568fc7031042ac64322fb7d5b18a196391021228bff78d0c1f342710",
+            "rdma/rnic/build/segmented-read-hls-sq-1ab2oft7/tb.v": "678c07536f19c399c31a5e93fb59f835627939b0d4937a6ef47cf9899bc130c7",
+            "rdma/rnic/build/segmented-read-hls-sq-1ab2oft7/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-1ab2oft7/simulation.log": "8dc35bdc1b300ed93389053e800dc4e124ac8ac32909faca2098bc67d7edc6d6"
+          }
+        }
+      ],
+      "test_Immediate_oversize_or_atomic_operand_never_gets_SQ": [
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-xh3eryh3",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009990900987759233,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-xh3eryh3/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-xh3eryh3/test.vvp": "5cd0618a50574e7634ac6582f3ca4b4ea2ae4722d5b55ee5e9ba8170a66477cb",
+            "rdma/rnic/build/segmented-read-hls-sq-xh3eryh3/tb.v": "8168023a73f296b4e4e19364511d45ecfed7b94ef297b73a40ab05fad245a4d5",
+            "rdma/rnic/build/segmented-read-hls-sq-xh3eryh3/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-xh3eryh3/simulation.log": "0d9a38f4299c9adf69658adee8a77fd5aadec04e1bc537087c86461c20cbcee5"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-fchd0bok",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009398497000802308,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-fchd0bok/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-fchd0bok/test.vvp": "2f0cac266dcc0ed9d09c3da067e96febebc9257af5a9e03ae4e6bf1c108aa034",
+            "rdma/rnic/build/segmented-read-hls-sq-fchd0bok/tb.v": "b30e58211bea2428649f499b93414502b61b5cfcae6326e7620f09b3f86a1cb2",
+            "rdma/rnic/build/segmented-read-hls-sq-fchd0bok/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-fchd0bok/simulation.log": "d29b23f0ae4552f7a6a48ea44314732f6bda7f6befe44ab9e29a6617f5835771"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-xfmc9x7y",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009560812031850219,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-xfmc9x7y/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-xfmc9x7y/test.vvp": "3fe38479c5e3a3149a3c05c2b8573833b01ee52248cbda217cb06cfe42d71ab0",
+            "rdma/rnic/build/segmented-read-hls-sq-xfmc9x7y/tb.v": "03519c4b3edf6a91c4a26c59a9dccbd101435bedfc00c32e75a01f4f89974e25",
+            "rdma/rnic/build/segmented-read-hls-sq-xfmc9x7y/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-xfmc9x7y/simulation.log": "7ca7513c3e44030403ea6ec2f1e9ba9e9aa9e1b2368179fe783559ede8d13027"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-idpfbqo5",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.00986609299434349,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-idpfbqo5/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-idpfbqo5/test.vvp": "bad228f3acdb3162313d81ce229ec02c064565227c81b8f276f3caf437d31fd5",
+            "rdma/rnic/build/segmented-read-hls-sq-idpfbqo5/tb.v": "63da1ad9f33ec211c7551b8f07420935351bb06ec367e3ef030f2c81e23ddc2f",
+            "rdma/rnic/build/segmented-read-hls-sq-idpfbqo5/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-idpfbqo5/simulation.log": "5b1d92ada1b157a170ed7274603f92c562b435905aaaf698d8c9f2236c048ac6"
+          }
+        }
+      ],
+      "test_failed_DMA_and_denied_MR_keep_identity_but_no_HLS_SQ": [
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-0d0qk6r9",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.012931413017213345,
+          "summary": {
+            "pass_test": true,
+            "owners": 16,
+            "SQ": 0,
+            "fault": 0,
+            "cycles": 288
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-0d0qk6r9/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-0d0qk6r9/test.vvp": "93b800aeb0f35b63b2b28e0967632654dd3347dcd06078575633c8d999bf705c",
+            "rdma/rnic/build/segmented-read-hls-sq-0d0qk6r9/tb.v": "5c4b0a17bbb9f0edc35625ef0921f796e55f5775b3aaa5f83d29c7c9c0a5f5e4",
+            "rdma/rnic/build/segmented-read-hls-sq-0d0qk6r9/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-0d0qk6r9/simulation.log": "38ff5417bad0e346bf38c7d324f81f5e5a8f6a20070be5029332a21bb8a143f5"
+          }
+        }
+      ],
+      "test_large_READ_exact_guard_required_and_late_loss_retains_offered_SQ": [
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-5qgh78eq",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009700009017251432,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 10
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-5qgh78eq/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-5qgh78eq/test.vvp": "673e8bddeb0e29ae2e5fb1c1638d48302dce6ce945bca03cac7cb841485e9b42",
+            "rdma/rnic/build/segmented-read-hls-sq-5qgh78eq/tb.v": "4a33fdc98ce50b3afdcdd5f88dd1144e169f9e81107da90d1dcf1fe82b0ececb",
+            "rdma/rnic/build/segmented-read-hls-sq-5qgh78eq/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-5qgh78eq/simulation.log": "6b68e16c88d64a8580036299eaf7d58f75266bf3c9e9e7a6e28faa91debc1f4f"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-zjet_nvo",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.01036225602729246,
+          "summary": {
+            "pass_test": true,
+            "owners": 1,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 19
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-zjet_nvo/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-zjet_nvo/test.vvp": "8c79ca58f6ece723520096789b0407299ab51eacca9f83cbf4f490759afde03e",
+            "rdma/rnic/build/segmented-read-hls-sq-zjet_nvo/tb.v": "bd6cd22aa483d22a8ccd5d036740a23f3663d8ef62403565b48511b0889be944",
+            "rdma/rnic/build/segmented-read-hls-sq-zjet_nvo/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-zjet_nvo/simulation.log": "c192b795af6d464bbdce4f8982ca73131bea6bf3a0c812714e4adf4be7cec940"
+          }
+        }
+      ],
+      "test_large_READ_full_length_keys_and_exact_owner_before_SQ": [
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-yt45swzs",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.01191911700880155,
+          "summary": {
+            "pass_test": true,
+            "owners": 8,
+            "SQ": 8,
+            "fault": 0,
+            "cycles": 200
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-yt45swzs/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-yt45swzs/test.vvp": "7f2657a2778482cd27a24096bc26336f581501dd40ce3fc6118bc4877708d2b0",
+            "rdma/rnic/build/segmented-read-hls-sq-yt45swzs/tb.v": "3ce401072e95f01309324474b431c6eb9d1e7298005a805f67c40141ce59bec1",
+            "rdma/rnic/build/segmented-read-hls-sq-yt45swzs/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-yt45swzs/simulation.log": "bedb525fbdaeb66c9e3fabcc6b29eb6da882b280f5b45d361903617a5ffbee10"
+          }
+        }
+      ],
+      "test_large_READ_noncanonical_length_operands_Immediate_or_QPN_never_gets_SQ": [
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-ex2kc0kz",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009866933978628367,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-ex2kc0kz/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-ex2kc0kz/test.vvp": "ae118c61951b4e205589fe49b8a3b596d7a5d294ed0fd28ecbf9a966b6a73a35",
+            "rdma/rnic/build/segmented-read-hls-sq-ex2kc0kz/tb.v": "375e741d6c464b14de58a2418e5f7f1c6a51ac6c09acd84f4cf4aefde2aa64c7",
+            "rdma/rnic/build/segmented-read-hls-sq-ex2kc0kz/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-ex2kc0kz/simulation.log": "f6aaf121436e8eb4f140484c6b5fdfb22bca4ed8ea287c53b944e9ed6383a87e"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-hkjuj8g4",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009863162995316088,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-hkjuj8g4/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-hkjuj8g4/test.vvp": "c3d47851b53af81a155f3bb04c11945b24240d54af831019f4ef3b2ef88a0aa2",
+            "rdma/rnic/build/segmented-read-hls-sq-hkjuj8g4/tb.v": "f3b1c8bacc71dca2ec4541a4703dfaca7bbe524eb2ae194a7d91c58d5e04feae",
+            "rdma/rnic/build/segmented-read-hls-sq-hkjuj8g4/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-hkjuj8g4/simulation.log": "9c31eae2bdd5d4c47d62edac1e62be40bf5a185c5d9120179ae4e054a584b873"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-4w6qgb5_",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009335572947748005,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-4w6qgb5_/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-4w6qgb5_/test.vvp": "19bca1bce089335b7441a6b0ae7c3f12cd88404bf82c628323c7999f0891f8e2",
+            "rdma/rnic/build/segmented-read-hls-sq-4w6qgb5_/tb.v": "4408d7dbd697b99681f38731d46b7625b510777eebf14a66459f1d76283f7c70",
+            "rdma/rnic/build/segmented-read-hls-sq-4w6qgb5_/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-4w6qgb5_/simulation.log": "9df1b50032df9b67bf1714f5d3c3b832adc1182de50a8fb26deff9f02fc21f22"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-ytdf33sk",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009681921976152807,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-ytdf33sk/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-ytdf33sk/test.vvp": "c5553e16aa6a53fd39c7a2cc709f7ab6e39c2ff834c4214a805ae43b83523332",
+            "rdma/rnic/build/segmented-read-hls-sq-ytdf33sk/tb.v": "a5f539044444aa3235872da413e79f635e590f0e1b80ba393d53bc494124abf0",
+            "rdma/rnic/build/segmented-read-hls-sq-ytdf33sk/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-ytdf33sk/simulation.log": "545c33628b83ae07c50743bcf08636ffe0bf06d118715e7e84d03e9cdb4b7a87"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-s663dksy",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.00936770101543516,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-s663dksy/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-s663dksy/test.vvp": "b7451eee6581c1c2ae2aa532d5cd90fd37f3a99eed10d4771748ae68cf4aa6b0",
+            "rdma/rnic/build/segmented-read-hls-sq-s663dksy/tb.v": "8ef024bcaa27e66e8b596e9a3c4c935ff1bc9de530082b380bfb7c23f89f1140",
+            "rdma/rnic/build/segmented-read-hls-sq-s663dksy/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-s663dksy/simulation.log": "6f3f78e099e64a9764dd16e320d923a5df9a13260534ccd8a5115946d3cd2720"
+          }
+        }
+      ],
+      "test_noncanonical_or_unknown_operands_never_become_HLS_authority": [
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-f3nvldw3",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009396267007105052,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-f3nvldw3/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-f3nvldw3/test.vvp": "243b5c4b75e3ebeb75c562be42a2770f3f9ef80d50085b48906fbf74738ef645",
+            "rdma/rnic/build/segmented-read-hls-sq-f3nvldw3/tb.v": "ea8a0478fa723785ce00ab876e0fc05448c91f109d776997623c767b0716d211",
+            "rdma/rnic/build/segmented-read-hls-sq-f3nvldw3/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-f3nvldw3/simulation.log": "1e51269aa487c7eaa7f2ee144525ddcf405ac26eba884728c65ec406cd40702e"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-wbsqte5l",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009631358028855175,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-wbsqte5l/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-wbsqte5l/test.vvp": "5039aafa5ebc49de53267f7157e7e71e630556f88ce3f81827f328bd6a491294",
+            "rdma/rnic/build/segmented-read-hls-sq-wbsqte5l/tb.v": "e1559d7eda7946fc98dcb7b5b5a8020e12a8a605fa0c41a49f8892c688b3c467",
+            "rdma/rnic/build/segmented-read-hls-sq-wbsqte5l/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-wbsqte5l/simulation.log": "1df718d10760f955b508e683be948b9c2198f04018abe11874153c1ea7018073"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-1p2s1giy",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009897109004668891,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-1p2s1giy/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-1p2s1giy/test.vvp": "0f84df6157078fa8051f68f3dfcf8444fecce2f81f726601d748bb2834955f51",
+            "rdma/rnic/build/segmented-read-hls-sq-1p2s1giy/tb.v": "6550f1dcd6071af2145e977fdabcdd6802200e3730222075fdc3b9895befbe8f",
+            "rdma/rnic/build/segmented-read-hls-sq-1p2s1giy/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-1p2s1giy/simulation.log": "893c60bfb7f245d942cb9969d7e4248e8c049fb612150596ff43f310793da66f"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-kojac9y9",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.00987070903647691,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-kojac9y9/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-kojac9y9/test.vvp": "451320ac7be10f51f9e7245c0a21ddd91f6c8960f6431f053ed717c450599da5",
+            "rdma/rnic/build/segmented-read-hls-sq-kojac9y9/tb.v": "9968f174bf87556a78393f88fdaafcef6abe32fe80550e4d58bd35759ddbbe72",
+            "rdma/rnic/build/segmented-read-hls-sq-kojac9y9/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-kojac9y9/simulation.log": "a5eb9455e7508dd48ca0db7aaf3f4fcc7ff624a0e411a013399cb8dab999c5ad"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-0ttfj9a0",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.00983557803556323,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-0ttfj9a0/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-0ttfj9a0/test.vvp": "a6f4f4d9a64b833dbcf8e81e5f750c7372c7a1c4b5471d810b59dd838384bee8",
+            "rdma/rnic/build/segmented-read-hls-sq-0ttfj9a0/tb.v": "d13ad121c1f7158093e9e42343d517aa9eba22a75f18db5e28463c9cf0a10e95",
+            "rdma/rnic/build/segmented-read-hls-sq-0ttfj9a0/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-0ttfj9a0/simulation.log": "e54ccb59c3e59e3cbe20bf5f49b97d5297e72ebf6f1666eb0621657ec7a84fe1"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-2du8g2s6",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009795490012038499,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-2du8g2s6/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-2du8g2s6/test.vvp": "451f54fbfa059ce846c5a1aba35dc9c1b34e0ea3c867003a20288713fe2db521",
+            "rdma/rnic/build/segmented-read-hls-sq-2du8g2s6/tb.v": "f35d4574502ee3a4e59131f9722d733da236a837b7c1f3f5e998afee13e61a79",
+            "rdma/rnic/build/segmented-read-hls-sq-2du8g2s6/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-2du8g2s6/simulation.log": "0f4599bacc60c127b14c3d50c948b9edf746dea60af6ef23eb190a77378f86a5"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-i5l6nia_",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009650007996242493,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-i5l6nia_/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-i5l6nia_/test.vvp": "cb8ea753822519f048114a513253b40809259384ad97a6c151b1bec74ffd3e4a",
+            "rdma/rnic/build/segmented-read-hls-sq-i5l6nia_/tb.v": "0734b183b48edb3633c4edf4592169f648169b370e00ea2e9637614d703d5a14",
+            "rdma/rnic/build/segmented-read-hls-sq-i5l6nia_/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-i5l6nia_/simulation.log": "5a1a526d9130301907d2139b7e6e2577dcadf8ada4d63c5de0195f560750f8d7"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-0_6ocy4o",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009802055021282285,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-0_6ocy4o/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-0_6ocy4o/test.vvp": "3ab5880a9f5f59385dc82a3a09e641099382c57e95fd6143aa5bb1c48f2dc4a0",
+            "rdma/rnic/build/segmented-read-hls-sq-0_6ocy4o/tb.v": "19d70c53088c31da4b5d5bb248851f4307e845eb4fa57936b11770d2e493f86b",
+            "rdma/rnic/build/segmented-read-hls-sq-0_6ocy4o/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-0_6ocy4o/simulation.log": "91e66af72c3e4d9754049dcaa6684c87ecad2a306f611a34a9510cbd609de88e"
+          }
+        }
+      ],
+      "test_normal_Immediate_have_zero_extension_and_exact_lower_ABI": [
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-hsvvgjpw",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.010999017977155745,
+          "summary": {
+            "pass_test": true,
+            "owners": 5,
+            "SQ": 5,
+            "fault": 0,
+            "cycles": 125
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-hsvvgjpw/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-hsvvgjpw/test.vvp": "be207094914366cfe6b85705bfc098afa424e553e4e5d7130ba278396642efeb",
+            "rdma/rnic/build/segmented-read-hls-sq-hsvvgjpw/tb.v": "9b3abb5a6dc25db89cd394fdd76daf3d09947fd88ba9096d97fa22545e3731e2",
+            "rdma/rnic/build/segmented-read-hls-sq-hsvvgjpw/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-hsvvgjpw/simulation.log": "07e1899f4e1478f84d16a15ee96655892b3728d92b10a7e4b5bb46974b1f7994"
+          }
+        }
+      ],
+      "test_real_downstream_guard_required_and_late_loss_does_not_retract_SQ": [
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-ypepdqhl",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009729558951221406,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 10
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-ypepdqhl/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-ypepdqhl/test.vvp": "ecb119954680d2e803428205ab49d2e25d9891537a646ebe5641ec90b285e5ab",
+            "rdma/rnic/build/segmented-read-hls-sq-ypepdqhl/tb.v": "8ecfb4f7ef2420d8c73b8d257e7258444080ec5b41b45026a96ab0041fefa2db",
+            "rdma/rnic/build/segmented-read-hls-sq-ypepdqhl/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-ypepdqhl/simulation.log": "1c0baa864bb34b3dd11d261f940dc5b06a6df252aecc209c3eede53acf1530ae"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-euxf67re",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009837188001256436,
+          "summary": {
+            "pass_test": true,
+            "owners": 1,
+            "SQ": 1,
+            "fault": 1,
+            "cycles": 20
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-euxf67re/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-euxf67re/test.vvp": "b6275cc25584d079b689c9d8f41b6e78c76da1881fa4101af6841bbc4b065f03",
+            "rdma/rnic/build/segmented-read-hls-sq-euxf67re/tb.v": "32b62000192b41bcc339122e1f0e134dc0334d02fd5bf05c7649b06276a924d8",
+            "rdma/rnic/build/segmented-read-hls-sq-euxf67re/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-euxf67re/simulation.log": "b645dc31ae0cf2db992fee3d47ac27363d47dcc7645246f49a0a8348b0106c37"
+          }
+        }
+      ],
+      "test_receive_owner_can_never_be_transmitted_as_SEND_SQ": [
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-hwzrdue3",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009679832961410284,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-hwzrdue3/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-hwzrdue3/test.vvp": "c54215444e6ccf0ac5165140216c292f35569ebf6356eedbb2178437af512c52",
+            "rdma/rnic/build/segmented-read-hls-sq-hwzrdue3/tb.v": "80612c31494b787d9de3c48afb9afc3c5aa4f5807b9cf7a46b83e1317a97a9e6",
+            "rdma/rnic/build/segmented-read-hls-sq-hwzrdue3/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-hwzrdue3/simulation.log": "2a2534caeb6751211bb406dd5efd932323ef3ac140d4ae8beefdd86021c886d4"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-3p39bixq",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.00950362003641203,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-3p39bixq/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-3p39bixq/test.vvp": "d9df7ebe96eceae9572c3f0151fe64e5019c3a7700ac200b15b07c99353ca7c6",
+            "rdma/rnic/build/segmented-read-hls-sq-3p39bixq/tb.v": "e49200a35315e9dc63dd1143ad588b7406483c377b6f8e7132fa540d703be36f",
+            "rdma/rnic/build/segmented-read-hls-sq-3p39bixq/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-3p39bixq/simulation.log": "ba89e1d57a8895c4d5fbf603d6a48ba5791b461355d3c62a9479a5bf86b7eb50"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-h0gsn4hx",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009776285965926945,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-h0gsn4hx/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-h0gsn4hx/test.vvp": "02f80f6bc0649891aa4a078c2e09722cfbf86464f4b4f2fd830500a3da8f43e7",
+            "rdma/rnic/build/segmented-read-hls-sq-h0gsn4hx/tb.v": "7e1f9a18c0f231e32de45c8cda315837ef05e97195a5f5137f00420607f1ac8e",
+            "rdma/rnic/build/segmented-read-hls-sq-h0gsn4hx/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-h0gsn4hx/simulation.log": "d9ea6dc4027f9246dc21d26d6999cd0f799fcf2d92fffc6cbceabb0b61723528"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-dsodm9jg",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009531138988677412,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-dsodm9jg/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-dsodm9jg/test.vvp": "65703cd5044848e3bafe68165bf8149448b9d2613ecd1524f18a0201056a6a17",
+            "rdma/rnic/build/segmented-read-hls-sq-dsodm9jg/tb.v": "06c74a47ce84bef9154e216f3038f198d0dfe4ae91e9c48a37e3531346a4e163",
+            "rdma/rnic/build/segmented-read-hls-sq-dsodm9jg/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-dsodm9jg/simulation.log": "dad5622c977d56d1cdb42db92b8e8e8e66dddbae7882f6e61c44a0aa7006727a"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-hs185rrx",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009725860960315913,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-hs185rrx/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-hs185rrx/test.vvp": "ae17ff8a92d04654c6c1c83b9f2f86e64d927596049b92585a621af36e51b2bd",
+            "rdma/rnic/build/segmented-read-hls-sq-hs185rrx/tb.v": "3380f33106c582bab9574567ccc9188358c0d79205a1636bd8f09b650354fe67",
+            "rdma/rnic/build/segmented-read-hls-sq-hs185rrx/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-hs185rrx/simulation.log": "07dbdcff572b6224b9931b323c51c689612b81f90ac42bc1d3108d49a58aae0e"
+          }
+        },
+        {
+          "directory": "rdma/rnic/build/segmented-read-hls-sq-18m7_nfc",
+          "pass_test": true,
+          "runtime_limit_seconds": 10,
+          "seconds": 0.009870015957858413,
+          "summary": {
+            "pass_test": true,
+            "owners": 0,
+            "SQ": 0,
+            "fault": 1,
+            "cycles": 8
+          },
+          "artifact_sha256": {
+            "rdma/rnic/build/segmented-read-hls-sq-18m7_nfc/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "rdma/rnic/build/segmented-read-hls-sq-18m7_nfc/test.vvp": "69596744242027853e30373b11bc82801eb9719a208ba184390f83e74cdbadb9",
+            "rdma/rnic/build/segmented-read-hls-sq-18m7_nfc/tb.v": "1036e943de5a0444267e48c6682f5b8fae7007e918b437880ae853042356eaee",
+            "rdma/rnic/build/segmented-read-hls-sq-18m7_nfc/rocev2_wqe_hls_sq.v": "15952620d21e6b8d39b3f27d8a8e096bea4dcf3dfbc92698467817fef8bb0a77",
+            "rdma/rnic/build/segmented-read-hls-sq-18m7_nfc/simulation.log": "b41a88760b8b1692832a475114327224712e3483e8a4c8ef170e06dcaf442159"
+          }
+        }
+      ]
+    }
+  },
+  "failures": []
+}

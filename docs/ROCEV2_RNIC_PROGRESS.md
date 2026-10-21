@@ -32,6 +32,149 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+Publication checkpoint (2026-10-21, after progress147): the user explicitly
+requested commit/push of progress145..147, including successful and failed
+public reports. This is a source-development checkpoint, not a release or
+completion of the original eleven requirements. No further automatic push
+is authorized by this checkpoint.
+
+Progress147 adds full posted-RECV capacity through 1 MiB to a separate
+128-byte C codec and a correctly typed standard `ib_recv_wr` adapter.
+[Codec001](../results/2026-10-18/rocev2-rnic-segmented-receive-wqe-001.json)
+passes 37 methods (all 26 old plus six prior Immediate methods retained),
+including independent complete-byte oracles, full-64-bit inclusive ranges,
+reserved fields, canonical zero and null/alias failure clearing.
+[Admission001](../results/2026-10-18/rocev2-rnic-segmented-receive-admission-001.json)
+passes 78 actual MR/admission and TX-SQ staging cases across 31 methods,
+retaining all 25 old methods. The real MR query covers the full posted
+capacity/key/VA/local-write permission; RECV never becomes a TX SEND.
+[MR-to-RQ001](../results/2026-10-18/rocev2-rnic-receive-mr-post-001.json)
+passes four real MR-to-message-RQ handoff/denial cases, preserving the full
+620-bit admitted owner and blocking MR modification while the RQ owns it.
+Record fetch, privileged configuration and error consumers are models;
+this is not PCIe DMA, HLS payload, MAC/CQ retirement or physical proof.
+[Adapter001](../results/2026-10-18/rocev2-rnic-segmented-receive-verbs-adapter-001.json)
+builds against real kernel headers and executes ASan/UBSan base-only RECV
+and all inherited adapter assertions. It does not register/post a callback,
+pin an MR, install/load a driver or advertise a new provider profile.
+
+Separate balanced KEEP-prefix candidate007 preserves the extent consumer's
+short nonterminal beats and split-padding checks. [Conformance003](../results/2026-10-18/rocev2-rnic-receive-extent-conformance-003.json)
+passes 103,665 finite comparisons of actual old/new accept/reject and
+copied-byte side effects, not a formal equivalence or timing proof.
+[C++007](../results/2026-10-18/rocev2-rnic-segmented-receive-hls-007.json)
+passes all 44 modes (all 21 old retained); new SEND/Immediate receive modes
+take 4.646/4.690 seconds, each six messages/284 packets through 1 MiB.
+[Compatibility003](../results/2026-10-18/rocev2-rnic-segmented-receive-compat-003.json)
+passes unchanged actual Atomic RTL service and Immediate TX/RX.
+Candidate005's normal 44-mode pass is NOT semantic equivalence: its
+conformance001 fails on a legal short nonfinal beat, so it is rejected.
+Candidate006's AP ternary compile failures and exact generator preimage
+remain. Candidate007 fixes the explicit AP cast only; old assertions,
+timeouts, clocks and frozen sources were not changed. Neither005 nor007
+has a new HLS synthesis result. The original source004 job remained live
+at 2026-10-21T09:16:25Z (PID2872554, CPU01:27:24), still scheduling with
+timing/II warnings. It is not restarted or waited out for publication.
+
+[Publication audit](../results/2026-10-18/rocev2-rnic-segmented-receive-publication-diagnostics-001.json)
+records exact report/source/artifact checks, named historical preimages and
+the inherited failing source gate. Generated/vendor outputs, private cache
+archives and local progress checkpoints remain excluded from Git. Existing
+native/software profile6 RQ4096, one SGE and `IB_ATOMIC_NONE` are unchanged.
+Actual new generated-HLS full-native integration, matched software/profile,
+segmented WRITE Immediate, multi-SGE, recovery/real-peer MSN policy and
+original full-board/physical gates remain open. No hardware, installation,
+module, network, fan, BIOS, flash or reboot change accompanies this push.
+
+Progress146: previous145 was PROGRESS (actual large incoming SEND/Immediate
+C++44 modes and separate whole-receive consumer18 cases). The SAME HLS
+generation job74092 remains authoritatively LIVE, CPU active in scheduling;
+not restarted, no generated-HLS/timing/native qualification inferred.
+New `rocev2_receive_message_queue.v` retains one full620 posted RQ through
+all packet DMA/HLS/ACK-MAC leases and one whole CQ commit/retire. Packet
+release is independent and cannot pop/unpin the RQ. [Four-state RQ003](../results/2026-10-18/rocev2-rnic-receive-message-queue-003.json)
+ALL48 PASS (zero/small/exact-multiple/8193/1MiB metadata, PSN/MSN wrap,
+full identity/sequence/epoch/PD/key/range/padding/unknown/stale proof checks,
+held packet/ticket backpressure). Maximum case0.161s, original10s bounds.
+ALL placement/MR/backend/HLS/whole/MAC certificate producers are MODELS in
+that unit; it is not a native payload transfer.
+[RQ+actual ACK001](../results/2026-10-18/rocev2-rnic-receive-message-ack-001.json)
+PASSES0.138s: one8193-byte owner/capacity1MiB,3 actual header/proof/tag/EOF/
+receipt/1024-tail ACK lifetimes,3 per-packet releases,one whole CQ TICKET.
+Timestamp-without-EOF, EOF-without-receipt and receipt/bridge stalls block
+progress. [RQ+ACK+actual CQC001](../results/2026-10-18/rocev2-rnic-receive-message-cq-001.json)
+PASSES0.167s: actual publisher commit/retire,one visible event, complete24
+AXI context words independently checked, bytes8193 distinct from capacity
+1MiB, wire Immediate unchanged. RQ guard hands off to actual CQ guard until
+the exact modeled host ACK; CQ is no longer a manual success source in this
+additional test. HLS/MR/backend/PHY pins/upstream frame/host AXI are still
+models. These tests do not prove live generated HLS/MR/PCIe/native coupling.
+New `fpga/derive_segmented_receive.py` coordinates40 bodies/15 changed
+leaves: full saved native offset and same-MR authority, packet vs whole
+retire fanouts, genuine whole776-bit HLS port/backpressure, new private
+65535/255/13/31 source identity, posted capacity<=1MiB and one whole CQ.
+[Syntax002](../results/2026-10-18/rocev2-rnic-receive-message-graph-syntax-002.json)
+selects all11 complete-profile parameters, but uses Icarus `-i`: missing
+HLS/vendor leaves are ignored. It is explicitly NOT full elaboration or
+runtime. Earlier default-parameter Syntax001 remains historical/subset-only.
+No matched codec/kernel/provider or live capability is advertised. Current
+native/software profile6 and its4096-byte incoming RQ are unchanged.
+[Component audit001](../results/2026-10-18/rocev2-rnic-receive-message-native-components-diagnostics-001.json)
+rechecks328 fresh/165 historical bindings. Failed reserved-Verilog-name and
+fixture delta-settling assertions/preimages remain; only fixture names and
+post-VALID combinational settling changed, no functional checks removed.
+All11 requirements and original clock/fit/CDC/DRC/routing/physical gates
+remain. Next finish the SAME live HLS job, verify actual new ports, then
+actual protected shared MR/PTE/backend/nonces/status/fences/native large RX
+and every old regression, followed by matched software source. WRITE IMM's
+independent remote MR/late notification RQ, multi-SGE and recovery/real peer
+MSN policy remain. No install/load/program/network/fan/BIOS/flash/reboot/Git.
+
+Progress145: previous explicit publication144 was PROGRESS, remote/main
+verified at45dc8a2. New separate `rocev2_native_segmented_receive_top` adds
+owned segmented SEND/SEND_WITH_IMMEDIATE RX<=1MiB in the SAME full duplex
+READ/WRITE/SEND/Immediate/Atomic source. [Actual C++004](../results/2026-10-18/rocev2-rnic-segmented-receive-hls-004.json)
+ALL44 modes PASS, ALL21 prior modes retained. Each new operation6 messages/
+284 packets (4097/8192/8193/12289/65537/1MiB), runtime4.672/4.738s; compile
+70.354s. Full620 posted identity is unchanged across fragments, actual bytes
+accumulate independently of capacity, exact offset/PSN/pad/opcode/sequence/
+epoch/PD/key/range checks precede raw commands. Actual data EOF, ACK/MSN and
+SAME PSN readback remain required. Packet752 and whole-message772-bit
+receipts are distinct; neither grants DMA authority or native CQ retirement.
+MSN advances only on LAST; parsed BTH padding now survives both actual RX
+forwarding paths. Independent full-data/ACK/whole-byte oracles and21 new
+negative cases retain original30s limits. [Compatibility001](../results/2026-10-18/rocev2-rnic-segmented-receive-compat-001.json)
+PASSES unchanged actual Atomic RTL service/Immediate TX/RX (compile25.090s,
+runtime0.978s). [Whole-message unit003](../results/2026-10-18/rocev2-rnic-receive-message-join-003.json)
+ALL18 PASS, two interleaved QPs/PSN+MSN wrap/small WRITE notification/zero;
+packet-proof producers on this UNIT boundary are models, not substitutes
+for the actual44-mode receive execution. Its maximum case0.005s.
+Fresh HLS generation is RUNNING from exact source004/frozen inputs with the
+original1500MiB guard/4ns/default1.08ns/8QP/2000-entry gates; timing warnings
+are present. No generated RTL/runtime/timing success is claimed yet. Initial
+header selection, missing prototypes/scope/fixture imports and lost padding
+failures remain in separate reports with exact preimages; no check relaxed.
+The current native/software profile6 STILL receives<=4096 and is unchanged.
+Large native RX requires genuine same RQ/MR/PTE/DMA/status/fence ownership,
+per-packet actual ACK-MAC release and one whole CQ/retire, not limit changes.
+Segmented WRITE_WITH_IMMEDIATE must retain remote MR separately and acquire
+its notification RQ at the appropriate packet; not faked as a SEND buffer.
+Real peer/nonterminal ACK-MSN policy/recovery/RNR/congestion, multi-SGE,
+live Linux/device and original full-board physical/timing gates remain open.
+All11 requirements retained. Three terminal scratch DBs were losslessly
+archived/hashed and relocated to RAM; restore them before ANY reboot. No
+reboot needed or performed, authenticated exact thread/goal restoration is
+still unproved. No program/install/load/network/fan/BIOS/flash or new Git
+action. Next verify the live HLS job, then wire actual native large receive.
+[Consumer audit](../results/2026-10-18/rocev2-rnic-segmented-receive-consumer-diagnostics-001.json)
+rechecks948 fresh/1475 historical bindings and records the live generation
+observation separately; it is not a generated-HLS or native-runtime result.
+
+Protocol behavior was cross-checked against the primary
+[Linux v6.17 RXE responder](https://raw.githubusercontent.com/torvalds/linux/v6.17/drivers/infiniband/sw/rxe/rxe_resp.c):
+SEND/WRITE MSN advancement is at message end, and SEND completion byte count
+is actual consumed data, not posted capacity. No Linux source was copied.
+
 Publication checkpoint (2026-10-21, after progress143): the user explicitly
 requested this commit/push of progress142..143 source, documentation and
 public success/failure reports. Rechecked all241 checkpoint source hashes,

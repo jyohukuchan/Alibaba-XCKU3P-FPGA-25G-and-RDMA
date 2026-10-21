@@ -1,0 +1,426 @@
+{
+  "scope": "Read-only publication integrity checkpoint for progress145..147. Recheck recorded top-level source/artifact hash maps and nested-report digests using existing auditors with explicitly named immutable preimages; not new execution, full native integration, formal equivalence, synthesis or hardware proof.",
+  "created_UTC": "2026-10-21T09:19:47.501468+00:00",
+  "integrity_passed": true,
+  "overall_goal_complete": false,
+  "hardware_verified": false,
+  "user_explicit_commit_push_requested": true,
+  "previous_HEAD": "45dc8a26b95f9406a32d04b76e979d121760780d",
+  "report_count": 31,
+  "report_bindings_verified": 6499,
+  "public_reports": {
+    "results/2026-10-18/rocev2-rnic-receive-extent-conformance-001.json": {
+      "bindings_verified": 523,
+      "report_sha256": "b9324a8386a8c3657a5ef6968dcb0b8062452c7076fbf400c17b5e6d8de62a99",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_receive_extent_conformance.py"
+      ],
+      "pass_test": false,
+      "scope": "Compare actual frozen old/new C++ extent consumers, not timing proof.\n\nInclude contiguous short nonterminal beats, all65536 low16 KEEP patterns,\nevery receive length1..4096/final pad, single-bit holes and request edge\ncases. Compare actual accept/reject AND copied-byte side effect. This is a\nfinite semantic regression, not a formal proof or native/physical result.\n",
+      "exact_preimage_roots": {
+        "rdma/rnic/tests/probe_receive_extent_conformance.py": "rdma/rnic/build/receive-extent-conformance-001-preimages-2MJu6j2Y"
+      }
+    },
+    "results/2026-10-18/rocev2-rnic-receive-extent-conformance-002.json": {
+      "bindings_verified": 521,
+      "report_sha256": "912d233c89f8f17b8a1fb3a99127f65f2700bda54925def5a398bf3fc36f0f02",
+      "exact_preimage_resolutions": [],
+      "pass_test": false,
+      "scope": "Compare actual frozen old/new C++ extent consumers, not timing proof.\n\nInclude contiguous short nonterminal beats, all65536 low16 KEEP patterns,\nevery receive length1..4096/final pad, single-bit holes and request edge\ncases. Compare actual accept/reject AND copied-byte side effect. This is a\nfinite semantic regression, not a formal proof or native/physical result.\n"
+    },
+    "results/2026-10-18/rocev2-rnic-receive-extent-conformance-003.json": {
+      "bindings_verified": 523,
+      "report_sha256": "80f2a52cab23d40b18289c0b793f79fc5c4c58679637112d1372d521c87e61b2",
+      "exact_preimage_resolutions": [],
+      "pass_test": true,
+      "scope": "Compare actual frozen old/new C++ extent consumers, not timing proof.\n\nInclude contiguous short nonterminal beats, all65536 low16 KEEP patterns,\nevery receive length1..4096/final pad, single-bit holes and request edge\ncases. Compare actual accept/reject AND copied-byte side effect. This is a\nfinite semantic regression, not a formal proof or native/physical result.\n"
+    },
+    "results/2026-10-18/rocev2-rnic-receive-message-ack-001.json": {
+      "bindings_verified": 56,
+      "report_sha256": "40c9120d58b3fd02b2b8f579c5b345814cdaaf41b54e5cda8166dd40ea19a513",
+      "exact_preimage_resolutions": [],
+      "pass_test": true,
+      "scope": "Actual message RQ + fresh-tag ACK capture/EOF/receipt/1024-tail coupling.\n\nOne retained8193-byte owner, three actual ACK frames and packet releases,\none whole CQ ticket. Posted placement/core/whole-HLS/upstream-frame, memory\nvisibility, MAC timestamp pins and CQ consumer are MODELS. No actual MR/\nPCIe/generated-HLS/board MAC/native hierarchy/Linux/physical qualification.\n"
+    },
+    "results/2026-10-18/rocev2-rnic-receive-message-cq-001.json": {
+      "bindings_verified": 65,
+      "report_sha256": "6fd85bb7e7e45bb3c944f2bce95873983a4dbc00f33f892ff957169a426dec7b",
+      "exact_preimage_resolutions": [],
+      "pass_test": true,
+      "scope": "Actual message RQ + ACK lifetime + CQC publisher and host-ACK guard handoff.\n\nReuses ALL three actual ACK/EOF/receipt/tail and retained-RQ checks, then\nconnects real commit/retire to the actual CQ publisher (not manual success).\nHLS/placement/MR/backend/PHY pins remain producer models; AXI host is modeled.\nThis is not live generated-HLS/native/PCIe/kernel/provider/physical proof.\n"
+    },
+    "results/2026-10-18/rocev2-rnic-receive-message-graph-syntax-001.json": {
+      "bindings_verified": 153,
+      "report_sha256": "95b6d550d629f94c7b90138b3bc90ee9d30195086ba0e402b040073bcd7ef489",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/check_receive_message_graph.py"
+      ],
+      "pass_test": true,
+      "scope": "WIP source graph syntax/bindings only, explicitly NOT full elaboration.\n\nNew actual HLS is still a separate synthesis job. Icarus -i ignores missing\nHLS/vendor leaves here, so a success cannot qualify generated HLS ports,\nnative operation or hardware/timing. It catches native wiring/syntax errors\nbefore the mandatory later real generated-HLS elaboration/runtime.\n",
+      "exact_preimage_roots": {
+        "rdma/rnic/tests/check_receive_message_graph.py": "rdma/rnic/build/receive-message-graph-syntax-001-preimages-KmtsTO2P"
+      }
+    },
+    "results/2026-10-18/rocev2-rnic-receive-message-graph-syntax-002.json": {
+      "bindings_verified": 153,
+      "report_sha256": "d78d874b340c8ede08fa76eab637a810cafd8032a5fad677264623ba3e5685e8",
+      "exact_preimage_resolutions": [],
+      "pass_test": true,
+      "scope": "WIP source graph syntax/bindings only, explicitly NOT full elaboration.\n\nNew actual HLS is still a separate synthesis job. Icarus -i ignores missing\nHLS/vendor leaves here, so a success cannot qualify generated HLS ports,\nnative operation or hardware/timing. It catches native wiring/syntax errors\nbefore the mandatory later real generated-HLS elaboration/runtime.\n"
+    },
+    "results/2026-10-18/rocev2-rnic-receive-message-join-001.json": {
+      "bindings_verified": 263,
+      "report_sha256": "444009d024884a1cab4c99647cc1b6879c183c4db0ea9812ad029726f0107110",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/test_receive_message_join.cpp"
+      ],
+      "pass_test": false,
+      "scope": "Real HLS whole-receive consumer: two-QP interleave/owner/PSN/MSN failures.\n\nPacket certificates are explicitly modeled on this unit boundary. Full\nactual receive consumers are a separate44-mode execution, never replaced\nby these unit inputs. No native DMA/MAC/CQ or physical claim.\n",
+      "exact_preimage_roots": {
+        "rdma/rnic/hls/test_receive_message_join.cpp": "rdma/rnic/build/receive-message-join-001-preimages-4xsmX9sz"
+      }
+    },
+    "results/2026-10-18/rocev2-rnic-receive-message-join-002.json": {
+      "bindings_verified": 263,
+      "report_sha256": "261239bdf320ab72d645dc33584cd591a2f59598c02032c90b4946b57e21d5f8",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/test_receive_message_join.cpp"
+      ],
+      "pass_test": false,
+      "scope": "Real HLS whole-receive consumer: two-QP interleave/owner/PSN/MSN failures.\n\nPacket certificates are explicitly modeled on this unit boundary. Full\nactual receive consumers are a separate44-mode execution, never replaced\nby these unit inputs. No native DMA/MAC/CQ or physical claim.\n",
+      "exact_preimage_roots": {
+        "rdma/rnic/hls/test_receive_message_join.cpp": "rdma/rnic/build/receive-message-join-002-preimages-dzp8pnIC"
+      }
+    },
+    "results/2026-10-18/rocev2-rnic-receive-message-join-003.json": {
+      "bindings_verified": 282,
+      "report_sha256": "9a7dea20ecf514cb81d4047d00ae5e2dbbb89d0587ccbadac1e80b862720e632",
+      "exact_preimage_resolutions": [],
+      "pass_test": true,
+      "scope": "Real HLS whole-receive consumer: two-QP interleave/owner/PSN/MSN failures.\n\nPacket certificates are explicitly modeled on this unit boundary. Full\nactual receive consumers are a separate44-mode execution, never replaced\nby these unit inputs. No native DMA/MAC/CQ or physical claim.\n"
+    },
+    "results/2026-10-18/rocev2-rnic-receive-message-native-components-diagnostics-001.json": {
+      "bindings_verified": 4,
+      "report_sha256": "599841bd38744966b7b529decbd5755dcc9cf9f793448646217e9068bc3bd084",
+      "exact_preimage_resolutions": [],
+      "pass_test": true,
+      "scope": "Exact message-RQ/real ACK/real CQ component evidence, not full native proof.\n\nRetain failed fixture evidence/preimages and label -i syntax results as\nsyntax only. Actual new generated HLS, MR/DMA/physical integration and the\noriginal timing gates remain separate mandatory work, never inferred here.\n"
+    },
+    "results/2026-10-18/rocev2-rnic-receive-message-queue-001.json": {
+      "bindings_verified": 5,
+      "report_sha256": "74f860b892406c087c939eab91a54f386eec194f1361bb7e52802c9a34a62d96",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_receive_message_queue.py"
+      ],
+      "pass_test": false,
+      "scope": "Real four-state message RQ: whole owner vs per-packet ACK/CQ lifetimes.\n\nPosted MR-admitted owners, memory visibility, HLS/core/whole certificates,\nand ACK-MAC certificates are explicit producer models in this component\ntest. They are NOT injected into the production native hierarchy. Actual\ngenerated-HLS/native/DMA/MAC/CQ/standard Linux/physical proof remains separate.\n",
+      "exact_preimage_roots": {
+        "rdma/rnic/tests/probe_receive_message_queue.py": "rdma/rnic/build/receive-message-queue-001-preimages-EW54l6kg"
+      }
+    },
+    "results/2026-10-18/rocev2-rnic-receive-message-queue-002.json": {
+      "bindings_verified": 7,
+      "report_sha256": "07c63f442e7110a8c0e25e7fad4d9544aba739fc36f63667487fa1d37281ad68",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_receive_message_queue.py"
+      ],
+      "pass_test": false,
+      "scope": "Real four-state message RQ: whole owner vs per-packet ACK/CQ lifetimes.\n\nPosted MR-admitted owners, memory visibility, HLS/core/whole certificates,\nand ACK-MAC certificates are explicit producer models in this component\ntest. They are NOT injected into the production native hierarchy. Actual\ngenerated-HLS/native/DMA/MAC/CQ/standard Linux/physical proof remains separate.\n",
+      "exact_preimage_roots": {
+        "rdma/rnic/tests/probe_receive_message_queue.py": "rdma/rnic/build/receive-message-queue-002-preimages-AUngYnYw"
+      }
+    },
+    "results/2026-10-18/rocev2-rnic-receive-message-queue-003.json": {
+      "bindings_verified": 54,
+      "report_sha256": "07071de8ec45595ee90b589050a48410429c7cfeed23fef9c5044f3da6d44bc8",
+      "exact_preimage_resolutions": [],
+      "pass_test": true,
+      "scope": "Real four-state message RQ: whole owner vs per-packet ACK/CQ lifetimes.\n\nPosted MR-admitted owners, memory visibility, HLS/core/whole certificates,\nand ACK-MAC certificates are explicit producer models in this component\ntest. They are NOT injected into the production native hierarchy. Actual\ngenerated-HLS/native/DMA/MAC/CQ/standard Linux/physical proof remains separate.\n"
+    },
+    "results/2026-10-18/rocev2-rnic-receive-mr-post-001.json": {
+      "bindings_verified": 81,
+      "report_sha256": "da7d12618b6f834b908df4f5c0d05055473fff12bd7aa337aa4971f04b67a6bc",
+      "exact_preimage_resolutions": [],
+      "pass_test": true,
+      "scope": "Actual C descriptor -> real local-write MR -> actual whole posted RQ.\n\nFetched record/context/MMIO management and error-result consumer are models.\nNo MR success is invented, no HLS/MAC/CQ proof is injected and no RQ retire\nis synthesized. This proves the admitted owner handoff/guard, not PCIe DMA,\nHLS receive execution, CQ completion, installed Linux or physical operation.\n"
+    },
+    "results/2026-10-18/rocev2-rnic-segmented-receive-admission-001.json": {
+      "bindings_verified": 141,
+      "report_sha256": "a0967c4b658dcfe1f39b0ce7c9aa210b4210b2d123fbc8eb93d3e25331699ec0",
+      "exact_preimage_resolutions": [],
+      "pass_test": true,
+      "scope": "Actual C128 RECV -> real full-range local-write MR/SQ admission.\n\nThe fetched record/privileged context/MMIO management and work consumer\nare models, NOT actual PCIe/RQ posting/HLS/DMA/CQ/Linux/physical proof. All\nold25 MR/HLS-staging methods remain, and RECV is never sent to a TX HLS SQ.\n"
+    },
+    "results/2026-10-18/rocev2-rnic-segmented-receive-compat-001.json": {
+      "bindings_verified": 313,
+      "report_sha256": "5c7d11f900f086c2fc144a01053952931ee285ea83c0522a61ec93593ebe429f",
+      "exact_preimage_resolutions": [],
+      "pass_test": true,
+      "scope": "Unchanged old owned Atomic RTL service and Immediate TX/RX on new RX HLS.\n\nSame actual service RTL/consumer assertions and30s limit. Only the existing\nREAD-capable harness supplies the current internal type signatures. No new\nnative, physical, live Linux or whole-board timing qualification.\n"
+    },
+    "results/2026-10-18/rocev2-rnic-segmented-receive-compat-002.json": {
+      "bindings_verified": 313,
+      "report_sha256": "3e5accd630d4fc5f8445d61838b267a432e7cd74b1bece8529fa39b055fea0a5",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_prefix_transport.py"
+      ],
+      "pass_test": false,
+      "scope": "Unchanged old owned Atomic RTL service and Immediate TX/RX on new RX HLS.\n\nSame actual service RTL/consumer assertions and30s limit. Only the existing\nREAD-capable harness supplies the current internal type signatures. No new\nnative, physical, live Linux or whole-board timing qualification.\n",
+      "exact_preimage_roots": {
+        "rdma/rnic/hls/segmented_receive_prefix_transport.py": "rdma/rnic/build/receive-prefix-006-preimages-MBD20WSw"
+      }
+    },
+    "results/2026-10-18/rocev2-rnic-segmented-receive-compat-003.json": {
+      "bindings_verified": 315,
+      "report_sha256": "ee704f56e2b4f216fba5d304f99019e186f56abd7183f066797632fb62be7f14",
+      "exact_preimage_resolutions": [],
+      "pass_test": true,
+      "scope": "Unchanged old owned Atomic RTL service and Immediate TX/RX on new RX HLS.\n\nSame actual service RTL/consumer assertions and30s limit. Only the existing\nREAD-capable harness supplies the current internal type signatures. No new\nnative, physical, live Linux or whole-board timing qualification.\n"
+    },
+    "results/2026-10-18/rocev2-rnic-segmented-receive-consumer-diagnostics-001.json": {
+      "bindings_verified": 4,
+      "report_sha256": "a618688c55a8e86b7461047fff3b7b4e80832c1c453919e219a64234b5be4b81",
+      "exact_preimage_resolutions": [],
+      "pass_test": true,
+      "scope": "Exact-source actual segmented SEND/Immediate receive C++/compatibility/whole-message consumer audit. HLS generation RUNNING, not generated RTL/native/Linux/physical/timing proof."
+    },
+    "results/2026-10-18/rocev2-rnic-segmented-receive-hls-001.json": {
+      "bindings_verified": 308,
+      "report_sha256": "4fd2be8b6d195debd349e5b4f4f5a412d176b9d59942172a289e1af4fabc8889",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_transport.py",
+        "rdma/rnic/hls/test_segmented_receive.cpp"
+      ],
+      "pass_test": false,
+      "scope": "Actual new READ HLS consumers and every prior segmented WRITE/SEND case.\n\nOne genuine READ request/whole receipt, FIRST/MIDDLE/LAST response payloads,\nactual pointer/pool/timer/common-state consumers. Peer/connection/memory are\nmodels; no CRC/native DMA/CQ/Linux/physical/timing or trusted MSN-wiring claim.\n",
+      "exact_preimage_roots": {
+        "rdma/rnic/hls/segmented_receive_transport.py": "rdma/rnic/build/segmented-receive-hls-001-preimages-h1cqzflB",
+        "rdma/rnic/hls/test_segmented_receive.cpp": "rdma/rnic/build/segmented-receive-hls-001-preimages-h1cqzflB"
+      }
+    },
+    "results/2026-10-18/rocev2-rnic-segmented-receive-hls-002.json": {
+      "bindings_verified": 308,
+      "report_sha256": "5d7230aa1879a2c4a3386f89ff81ee4ac2db3eda6146d0f36787725d50d60867",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_transport.py",
+        "rdma/rnic/hls/test_segmented_receive.cpp"
+      ],
+      "pass_test": false,
+      "scope": "Actual new READ HLS consumers and every prior segmented WRITE/SEND case.\n\nOne genuine READ request/whole receipt, FIRST/MIDDLE/LAST response payloads,\nactual pointer/pool/timer/common-state consumers. Peer/connection/memory are\nmodels; no CRC/native DMA/CQ/Linux/physical/timing or trusted MSN-wiring claim.\n",
+      "exact_preimage_roots": {
+        "rdma/rnic/hls/segmented_receive_transport.py": "rdma/rnic/build/segmented-receive-hls-002-preimages-441H6GAi",
+        "rdma/rnic/hls/test_segmented_receive.cpp": "rdma/rnic/build/segmented-receive-hls-003-preimages-Nv49LmFc"
+      }
+    },
+    "results/2026-10-18/rocev2-rnic-segmented-receive-hls-003.json": {
+      "bindings_verified": 331,
+      "report_sha256": "1d05cc3f843ba36f2145a83cc2338948595851faa77aaf311c307efbf3980776",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_transport.py",
+        "rdma/rnic/hls/test_segmented_receive.cpp"
+      ],
+      "pass_test": false,
+      "scope": "Actual new READ HLS consumers and every prior segmented WRITE/SEND case.\n\nOne genuine READ request/whole receipt, FIRST/MIDDLE/LAST response payloads,\nactual pointer/pool/timer/common-state consumers. Peer/connection/memory are\nmodels; no CRC/native DMA/CQ/Linux/physical/timing or trusted MSN-wiring claim.\n",
+      "exact_preimage_roots": {
+        "rdma/rnic/hls/segmented_receive_transport.py": "rdma/rnic/build/segmented-receive-hls-003-preimages-Nv49LmFc",
+        "rdma/rnic/hls/test_segmented_receive.cpp": "rdma/rnic/build/segmented-receive-hls-003-preimages-Nv49LmFc"
+      }
+    },
+    "results/2026-10-18/rocev2-rnic-segmented-receive-hls-004.json": {
+      "bindings_verified": 353,
+      "report_sha256": "627aa8f2d6471d95f1b69f223b2a825e9d060e9d959becbf6875e08467f44693",
+      "exact_preimage_resolutions": [],
+      "pass_test": true,
+      "scope": "Actual new READ HLS consumers and every prior segmented WRITE/SEND case.\n\nOne genuine READ request/whole receipt, FIRST/MIDDLE/LAST response payloads,\nactual pointer/pool/timer/common-state consumers. Peer/connection/memory are\nmodels; no CRC/native DMA/CQ/Linux/physical/timing or trusted MSN-wiring claim.\n"
+    },
+    "results/2026-10-18/rocev2-rnic-segmented-receive-hls-005.json": {
+      "bindings_verified": 354,
+      "report_sha256": "8d3ef5fd8020c6868a3d7fe5879c60d5f7999972da22ac7925fa33c07d0ea956",
+      "exact_preimage_resolutions": [],
+      "pass_test": true,
+      "scope": "Actual new READ HLS consumers and every prior segmented WRITE/SEND case.\n\nOne genuine READ request/whole receipt, FIRST/MIDDLE/LAST response payloads,\nactual pointer/pool/timer/common-state consumers. Peer/connection/memory are\nmodels; no CRC/native DMA/CQ/Linux/physical/timing or trusted MSN-wiring claim.\n"
+    },
+    "results/2026-10-18/rocev2-rnic-segmented-receive-hls-006.json": {
+      "bindings_verified": 310,
+      "report_sha256": "0c349749420aae4dbeecad8f8cf54a0c9b65968adcc5179497c628f553aea93c",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_prefix_transport.py"
+      ],
+      "pass_test": false,
+      "scope": "Actual new READ HLS consumers and every prior segmented WRITE/SEND case.\n\nOne genuine READ request/whole receipt, FIRST/MIDDLE/LAST response payloads,\nactual pointer/pool/timer/common-state consumers. Peer/connection/memory are\nmodels; no CRC/native DMA/CQ/Linux/physical/timing or trusted MSN-wiring claim.\n",
+      "exact_preimage_roots": {
+        "rdma/rnic/hls/segmented_receive_prefix_transport.py": "rdma/rnic/build/receive-prefix-006-preimages-MBD20WSw"
+      }
+    },
+    "results/2026-10-18/rocev2-rnic-segmented-receive-hls-007.json": {
+      "bindings_verified": 355,
+      "report_sha256": "bb119681797f91eccb27553972dc0f96cc10c5dd15e7c2e22b48ad44fef15b5c",
+      "exact_preimage_resolutions": [],
+      "pass_test": true,
+      "scope": "Actual new READ HLS consumers and every prior segmented WRITE/SEND case.\n\nOne genuine READ request/whole receipt, FIRST/MIDDLE/LAST response payloads,\nactual pointer/pool/timer/common-state consumers. Peer/connection/memory are\nmodels; no CRC/native DMA/CQ/Linux/physical/timing or trusted MSN-wiring claim.\n"
+    },
+    "results/2026-10-18/rocev2-rnic-segmented-receive-source-startup-001.json": {
+      "bindings_verified": 1,
+      "report_sha256": "fec312e3f278e6e292b66c0d7c45259246acdd4105d1038cd5cb13e05cb1a8f2",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_transport.py"
+      ],
+      "pass_test": false,
+      "scope": "Strict new receive source generator startup failure before output or compilation",
+      "exact_preimage_roots": {
+        "rdma/rnic/hls/segmented_receive_transport.py": "rdma/rnic/build/segmented-receive-source-startup-001-preimages-mDAzntQS"
+      }
+    },
+    "results/2026-10-18/rocev2-rnic-segmented-receive-source-startup-002.json": {
+      "bindings_verified": 1,
+      "report_sha256": "d96ff39131e228097a3a471b216c8894708152214eddc86a7b0bb6491edf10b2",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/hls/segmented_receive_transport.py"
+      ],
+      "pass_test": false,
+      "scope": "New receive generator strict forwarding-anchor startup failure before source output or compilation",
+      "exact_preimage_roots": {
+        "rdma/rnic/hls/segmented_receive_transport.py": "rdma/rnic/build/segmented-receive-source-startup-002-preimages-Ji3q58M3"
+      }
+    },
+    "results/2026-10-18/rocev2-rnic-segmented-receive-verbs-adapter-001.json": {
+      "bindings_verified": 119,
+      "report_sha256": "7ca2b46b5fec01c476fe41beb5d6f777d9d5fbe8fcd6daa731d4e6659c3e62ce",
+      "exact_preimage_resolutions": [],
+      "pass_test": true,
+      "scope": "Real-header standard RECV adapter plus actual ASan/UBSan codec execution.\n\nRetain every old WRITE/READ/SEND/Atomic/zero/Immediate adapter assertion,\nincluding base-only SEND allocations. New RECV allocation is also base-only.\nNo actual post_recv/MR/ref/DMA/CQ/kernel callback, installation or API claim.\n"
+    },
+    "results/2026-10-18/rocev2-rnic-segmented-receive-wqe-001.json": {
+      "bindings_verified": 20,
+      "report_sha256": "7037f852b586a7a88a436896beebd8ecca4c96aaa5e21e632d285aca749583f2",
+      "exact_preimage_resolutions": [],
+      "pass_test": true,
+      "scope": "Actual full-range RECV C128 codec/UBSan and ALL26 old codec methods.\n\nCheck complete independent bytes, full64 inclusive ranges, canonical zero\nand null/alias failure clearing. No MR/DMA or installed API/capability claim.\n"
+    }
+  },
+  "current_publication_source_sha256": {
+    "README.ja.md": "77f8e11a7099cf52ccc2d5bc36ae1be75c88babb57e12aa9bab31d4fb41cdb6a",
+    "README.md": "ba92ad550777a07db06789ebe87c5e826d45797038dadae0803d9afea87cdfd5",
+    "docs/ROCEV2_ATOMIC.md": "5b7aace513696a1702476a2ba89d8a63aade3b3b1f87a0ad4c6821ce3d05b120",
+    "docs/ROCEV2_RNIC_PROGRESS.md": "d4b389652904a11ab30875a80acb55c8dfbce1e234f43103371b0b86a8bde9b0",
+    "rdma/rnic/README.md": "9e8b7e9061c413118b52291e6c99711c234c1e6e7ca334ea6373518601794948",
+    "rdma/rnic/fpga/derive_receive_message_ack.py": "978db9218fe5c50deaa75185c6c09347247a57f58f0f429cb956c29b3c31f9a9",
+    "rdma/rnic/fpga/derive_segmented_receive.py": "159d0d668b297e049caddad890409157d3980907ce5293283dda7a77c89aacea",
+    "rdma/rnic/hls/build_native_segmented_receive.py": "d1997bb1a51bbe56d422cd7b432fc05b9137a020cc7a476ce9102413607ba43d",
+    "rdma/rnic/hls/segmented_receive_extent_transport.py": "8677984d87ef1007beeda8109a5e7c36fd4c1060fca0d36dfabf0bf8ed5cab9c",
+    "rdma/rnic/hls/segmented_receive_prefix_transport.py": "9a8a50219a51c277b60ca2e05ab21d22340f814e36525f28fa80c42d94a577bd",
+    "rdma/rnic/hls/segmented_receive_transport.py": "e2714975c25665012cc011d9bdd5e7c0edd48831a1d02186321d7544a0220a4c",
+    "rdma/rnic/hls/test_receive_message_join.cpp": "3837926316332bcdb90fbb9648341580a23b042633b1cb53b1151f98e453a582",
+    "rdma/rnic/hls/test_segmented_receive.cpp": "938f38eff473c0725d46d6d9b42a76644a06a662c79ddc6a2b7ca206d220bdff",
+    "rdma/rnic/kernel/verbs_segmented_receive_wqe.c": "4c34a78d2bf631b52d685b44a778cc9f086614c4d25230c8686aa2b3c4cd38e3",
+    "rdma/rnic/kernel/verbs_segmented_receive_wqe.h": "d7ba6c34f25b1edc9b27c2eb9088dbd0f6013ddaa1e8ae3329fe545498e3335e",
+    "rdma/rnic/kernel/wqe_segmented_receive.c": "6c49eac02e4d54be5efd1bca87ea919522270e56d99d9a3f0a64473a4aeb2c7a",
+    "rdma/rnic/kernel/wqe_segmented_receive.h": "c61554c6a9fd0b77f89e4bde51e80458753492cd817aa3d79b63682fc417be8e",
+    "rdma/rnic/rtl/rocev2_receive_message_queue.v": "fd989c8f471342e0794c0a1bbf661d766d7335be06b2702e12cc196dd4dcd572",
+    "rdma/rnic/tests/audit_receive_message_components.py": "ed9e853ad7a8ecf2bcdffab5acc260bbb264ec9ef9ad0f3d1503d92578226612",
+    "rdma/rnic/tests/audit_segmented_receive.py": "856f1f67bd6dc15fdabe40cadfede0235d3691f9da49fcb15a8b0a01192ed319",
+    "rdma/rnic/tests/check_receive_message_graph.py": "5e6727807c596b802fdbe66fe79365024e1d908205d7f360c3a5cde16ef9c45c",
+    "rdma/rnic/tests/kernel_segmented_receive_wqe.c": "d306ddcc56c291c4d065aee591816e11a4c848610f166323092226cdbe173bc7",
+    "rdma/rnic/tests/probe_receive_extent_conformance.py": "3791d6a3c79af6a5ed5d297f0ca0b3b21f9ff244b9c15ab842f7adcceaa6cef3",
+    "rdma/rnic/tests/probe_receive_message_ack.py": "ab73c226b71cf5a82281e5d9f5d42869a95b1aa89227d4a8680df696cfa2e713",
+    "rdma/rnic/tests/probe_receive_message_cq.py": "dd7a093e9bf0209d13f9ca7f49c5577055691b0344473b58d40c0457b0fada0e",
+    "rdma/rnic/tests/probe_receive_message_join.py": "7a2abccb59e5d703cfe11a8d2f6d6b07514dfeb53ec62e81886c066707bd713b",
+    "rdma/rnic/tests/probe_receive_message_queue.py": "c3e3e278dd75f3d926feebdbbe3820b7290a85cc410fa8917d3e4e1869d95ff4",
+    "rdma/rnic/tests/probe_receive_mr_post.py": "05a229facd7de3a55bbb0405a8edbba9997407ee5f71fda9cb79b447932c7393",
+    "rdma/rnic/tests/probe_segmented_receive_admission.py": "08ea0b675baba288837e36c94149821169524b1e0fc4df38262a9b10bcf36c76",
+    "rdma/rnic/tests/probe_segmented_receive_compat.py": "700ff2a2b8ff1a9b5c4579c228a0a6fe661914edcac1185933020816b5e96edb",
+    "rdma/rnic/tests/probe_segmented_receive_hls.py": "04b3d5815eafb424e7bf18573d70cbab0d68bcdf6cb83bab21b60f3ceb81e3c0",
+    "rdma/rnic/tests/probe_segmented_receive_verbs_adapter.py": "596ea00c0fd5e740f69114e318e3371624b67c8e63a0a97e4c8d9e92d3288f14",
+    "rdma/rnic/tests/test_segmented_receive_wqe.py": "6a7b9ffcc11d5caadff85adf83611555865b52c70899f55e581b1e5583734cca"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "prior_checkpoint146": {
+    "public_reports_verified": 75,
+    "authored_sources_recorded": 257,
+    "intentional_publication_documentation_changes": [
+      "README.ja.md",
+      "README.md",
+      "docs/ROCEV2_ATOMIC.md",
+      "docs/ROCEV2_RNIC_PROGRESS.md",
+      "rdma/rnic/README.md"
+    ]
+  },
+  "audit_procedure": {
+    "binding_verifier": "rdma/rnic/tests/audit_segmented_receive.py:bindings",
+    "component_preimages": "rdma/rnic/tests/audit_receive_message_components.py:HISTORICAL",
+    "source_sha256": {
+      "rdma/rnic/tests/audit_segmented_receive.py": "856f1f67bd6dc15fdabe40cadfede0235d3691f9da49fcb15a8b0a01192ed319",
+      "rdma/rnic/tests/audit_receive_message_components.py": "ed9e853ad7a8ecf2bcdffab5acc260bbb264ec9ef9ad0f3d1503d92578226612",
+      "scripts/check.sh": "06f945e8af42040d4fcaabed0de5746ee0f5aa3a942384fdb4539c2500a62caf"
+    },
+    "original_reports_not_rewritten": true,
+    "failed_run_preimages_and_raw_artifacts_retained_locally": true,
+    "generated_vendor_and_RAM_artifacts_not_published": true
+  },
+  "functional_evidence": {
+    "codec_methods": 37,
+    "admission_staging_cases": 78,
+    "MR_to_RQ_cases": 4,
+    "actual_kernel_header_adapter_build": true,
+    "adapter_ASan_UBSan": true,
+    "message_RQ_cases": 48,
+    "actual_ACK_frames": 3,
+    "actual_component_CQ_events": 1,
+    "component_received_bytes": 8193,
+    "posted_capacity": 1048576,
+    "balanced_KEEP_finite_comparisons": 103665,
+    "balanced_KEEP_all_CPP_modes": 44,
+    "all21_old_CPP_modes_retained": true,
+    "Atomic_Immediate_compatibility": true
+  },
+  "candidate_status": {
+    "source004": "Original live HLS synthesis; no generated-HLS/native/timing success report yet.",
+    "source005": "Rejected: normal44 C++ modes passed, but actual conformance001 rejects a legal short nonfinal beat.",
+    "source006": "AP ternary compile failures retained with the exact pre-correction generator.",
+    "source007": "Finite conformance, full44 C++ modes and compatibility passed; no synthesis/timing result or formal equivalence claim."
+  },
+  "live_HLS_observation": {
+    "observed_UTC": "2026-10-21T09:16:25Z",
+    "PID": 2872554,
+    "elapsed": "01:30:43",
+    "CPU_time": "01:27:24",
+    "state": "authoritatively live, CPU advancing, scheduling",
+    "directory": "rdma/rnic/build/native-zero-service-hls-q2o7jvqf",
+    "source": "rdma/rnic/build/native-segmented-receive-transport-004",
+    "warnings_present": true,
+    "original_timeout_seconds": 7200,
+    "stopped_or_restarted_for_publication": false,
+    "qualification_inferred": false
+  },
+  "inherited_source_check": {
+    "command": [
+      "bash",
+      "scripts/check.sh"
+    ],
+    "exit": 1,
+    "stdout": "Tcl completeness checks passed: 28 files (not Vivado elaboration).\nLFC source allowlist tests passed: 14 cases; no hardware/Vivado access.\nSource check passed: 122 HDL, 12 constraints, 3 IP generators.\n",
+    "stderr": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v\n",
+    "overall_suite_passed": false,
+    "original_gate_unchanged": true
+  },
+  "publication_hygiene": {
+    "diff_check_exit": 0,
+    "new_Python_sources_AST_parsed": true,
+    "credential_pattern_scan_hits": [],
+    "no_bitstreams_binaries_vendor_sources_credentials_or_private_cache_checkpoints_selected": true
+  },
+  "remaining": [
+    "All11 original requirements retained; goal incomplete.",
+    "Actual new generated-HLS full native shared MR/PTE/DMA/status/fence/MAC/whole-CQ runtime and all old regressions remain.",
+    "New codec/typed adapter not integrated into a matched driver/provider/profile or actual live callback; installed/profile6 incoming RQ4096/singleSGE/IB_ATOMIC_NONE unchanged.",
+    "Segmented WRITE Immediate distinct remote MR/notification RQ, multi-SGE, recovery/RNR/congestion and real-peer/nonterminal ACK-MSN policy remain.",
+    "Original4ns/default1.08ns/full-board fit/timing/CDC/DRC/routing and short physical qualification remain.",
+    "Exact authenticated same-thread/active-goal reboot recovery remains unproved; no reboot needed. Restore every archived RAM-backed cache before any reboot."
+  ],
+  "hardware_install_load_network_fan_BIOS_flash_reboot_actions": [],
+  "future_automatic_push_authorized": false
+}

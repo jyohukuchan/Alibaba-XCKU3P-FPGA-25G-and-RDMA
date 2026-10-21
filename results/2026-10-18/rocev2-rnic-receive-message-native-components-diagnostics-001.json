@@ -1,0 +1,143 @@
+{
+  "scope": "Exact message-RQ/real ACK/real CQ component evidence, not full native proof.\n\nRetain failed fixture evidence/preimages and label -i syntax results as\nsyntax only. Actual new generated HLS, MR/DMA/physical integration and the\noriginal timing gates remain separate mandatory work, never inferred here.\n",
+  "audit_passed": true,
+  "overall_goal_complete": false,
+  "hardware_verified": false,
+  "successful": {
+    "receive-message-queue-003": {
+      "bindings_verified": 54,
+      "report_sha256": "07071de8ec45595ee90b589050a48410429c7cfeed23fef9c5044f3da6d44bc8",
+      "exact_preimage_resolutions": []
+    },
+    "receive-message-ack-001": {
+      "bindings_verified": 56,
+      "report_sha256": "40c9120d58b3fd02b2b8f579c5b345814cdaaf41b54e5cda8166dd40ea19a513",
+      "exact_preimage_resolutions": []
+    },
+    "receive-message-cq-001": {
+      "bindings_verified": 65,
+      "report_sha256": "6fd85bb7e7e45bb3c944f2bce95873983a4dbc00f33f892ff957169a426dec7b",
+      "exact_preimage_resolutions": []
+    },
+    "receive-message-graph-syntax-002": {
+      "bindings_verified": 153,
+      "report_sha256": "d78d874b340c8ede08fa76eab637a810cafd8032a5fad677264623ba3e5685e8",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "historical": {
+    "receive-message-queue-001": {
+      "bindings_verified": 5,
+      "report_sha256": "74f860b892406c087c939eab91a54f386eec194f1361bb7e52802c9a34a62d96",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_receive_message_queue.py"
+      ]
+    },
+    "receive-message-queue-002": {
+      "bindings_verified": 7,
+      "report_sha256": "07c63f442e7110a8c0e25e7fad4d9544aba739fc36f63667487fa1d37281ad68",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_receive_message_queue.py"
+      ]
+    },
+    "receive-message-graph-syntax-001": {
+      "bindings_verified": 153,
+      "report_sha256": "95b6d550d629f94c7b90138b3bc90ee9d30195086ba0e402b040073bcd7ef489",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/check_receive_message_graph.py"
+      ],
+      "scope": "Historical default-parameter syntax-only subset; current002 explicitly selects all11 complete-profile flags. Neither includes actual new HLS."
+    }
+  },
+  "successful_bindings_verified": 328,
+  "historical_bindings_verified": 165,
+  "message_RQ": {
+    "cases": 48,
+    "four_state": true,
+    "owner_max_bytes": 1048576,
+    "per_packet_max_bytes": 4096,
+    "genuine_whole_owner_vs_packet_release": true,
+    "full620_owner_retained": true,
+    "payload_and_HLS_MR_backend_and_MAC_producers_modeled": true
+  },
+  "actual_RQ_ACK": {
+    "bytes": 8193,
+    "posted_capacity": 1048576,
+    "frames": 3,
+    "fresh_MAC_receipts": 3,
+    "packet_releases": 3,
+    "actual_ACK_capture_full_proof_tag_EOF_receipt_1024_tail": true,
+    "simulation_seconds": 0.1371817599865608,
+    "whole_CQ_field_in_this_prior_report_means_ticket_only": true
+  },
+  "actual_RQ_ACK_CQ": {
+    "bytes": 8193,
+    "frames": 3,
+    "fresh_receipts": 3,
+    "whole_published_events": 1,
+    "host_ACKs": 1,
+    "full24word_CQ_AXI_snapshot": true,
+    "posted_capacity_preserved": 1048576,
+    "actual_count_not_capacity": true,
+    "actual_commit_retire_and_RQ_to_CQ_guard_handoff": true,
+    "simulation_seconds": 0.16683975799242035,
+    "HLS_MR_DMA_PHY_and_host_boundaries_modeled": true
+  },
+  "source_graph": {
+    "cohort_RNC": 65535,
+    "CQC": 255,
+    "SQC": 13,
+    "RQC": 31,
+    "derived_bodies": 40,
+    "changed_leaves": [
+      "rocev2_control_regs.v",
+      "rocev2_controlled_responder.v",
+      "rocev2_cq_mmio.v",
+      "rocev2_dual_ethernet_endpoint.v",
+      "rocev2_integrity_transport.v",
+      "rocev2_native_endpoint.v",
+      "rocev2_native_rnic_endpoint.v",
+      "rocev2_native_sq_endpoint.v",
+      "rocev2_paged_responder.v",
+      "rocev2_protected_responder.v",
+      "rocev2_receive_ack_tx.v",
+      "rocev2_shared_hls_transport.v",
+      "rocev2_sq_control_regs.v",
+      "rocev2_wqe_admission.v",
+      "rocev2_wqe_hls_sq.v"
+    ],
+    "whole776_port_forwarded_no_constant_ready": true,
+    "packet_and_whole_retire_fanouts_distinct": true,
+    "native_fullrange_MR_and_saved_offset_authority": true,
+    "syntax_only": true,
+    "unknown_leaves_ignored": true,
+    "actual_generated_HLS_elaboration": false,
+    "native_runtime": false,
+    "matched_kernel_provider": false
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "auditor_source_sha256": {
+    "rdma/rnic/tests/audit_receive_message_components.py": "ed9e853ad7a8ecf2bcdffab5acc260bbb264ec9ef9ad0f3d1503d92578226612"
+  },
+  "inherited_source_check": {
+    "exit": 1,
+    "stdout": "Tcl completeness checks passed: 28 files (not Vivado elaboration).\nLFC source allowlist tests passed: 14 cases; no hardware/Vivado access.\nSource check passed: 122 HDL, 12 constraints, 3 IP generators.\n",
+    "stderr": "Stale source/test identity: results/2026-10-17/rocev2-transport-rx-rtl.json -> rdma/rtl/rocev2_tx_padding.v\n",
+    "overall_suite_passed": false
+  },
+  "remaining": [
+    "All11 original requirements retained",
+    "Actual new HLS generation still separate; revalidate live job74092, no new native-HLS port/RTL/timing qualification inferred",
+    "Actual protected same MR/PTE/backend/physical nonce/status/fence native large RX and all old regressions not executed",
+    "New source graph65535/255/13/31 is not installed or matched to new codec/kernel/provider; current native/software profile6 RQ4096 unchanged",
+    "Segmented WRITE Immediate remote MR plus late notification RQ, multi-SGE, recovery/loss/RNR/congestion/real peer MSN policy remain",
+    "Live Linux/pins/page tables/original full-board timing/CDC/DRC/routing and physical qualification remain",
+    "No reboot needed; authenticated exact-thread/goal restoration unproved; restore all archived caches first"
+  ],
+  "hardware_install_load_network_fan_BIOS_flash_reboot_actions": [],
+  "commit_or_push": false
+}

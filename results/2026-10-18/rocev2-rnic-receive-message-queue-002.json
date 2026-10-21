@@ -1,0 +1,43 @@
+{
+  "scope": "Real four-state message RQ: whole owner vs per-packet ACK/CQ lifetimes.\n\nPosted MR-admitted owners, memory visibility, HLS/core/whole certificates,\nand ACK-MAC certificates are explicit producer models in this component\ntest. They are NOT injected into the production native hierarchy. Actual\ngenerated-HLS/native/DMA/MAC/CQ/standard Linux/physical proof remains separate.\n",
+  "pass_test": false,
+  "directory": "rdma/rnic/build/receive-message-queue-q6kv2dl2",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_receive_message_queue.v": "fd989c8f471342e0794c0a1bbf661d766d7335be06b2702e12cc196dd4dcd572",
+    "rdma/rnic/tests/probe_receive_message_queue.py": "5de12469e5430f73a58381ddc41e378a761aebde85e415d1266e52ae275d3772"
+  },
+  "tests": {
+    "0": {
+      "exit": 1,
+      "seconds": 0.021697527030482888
+    }
+  },
+  "case_limit_seconds": 10,
+  "four_state": true,
+  "actual_message_RQ_RTL": true,
+  "all_proof_and_owner_producers_modeled": true,
+  "generated_HLS_or_native_integration": false,
+  "hardware_verified": false,
+  "compile_command": [
+    "iverilog",
+    "-g2012",
+    "-s",
+    "tb",
+    "-o",
+    "/dev/shm/as02-receive-message-queue-iry8n80p/test",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/receive-message-queue-q6kv2dl2/tb.v",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/receive-message-queue-q6kv2dl2/rocev2_receive_message_queue.v"
+  ],
+  "compile_seconds": 0.022936313995160162,
+  "error_type": "ValueError",
+  "error": "actual message RQ failure:/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/receive-message-queue-q6kv2dl2/0.log",
+  "artifact_sha256": {
+    "rdma/rnic/build/receive-message-queue-q6kv2dl2/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/receive-message-queue-q6kv2dl2/0.log": "62a1984df7e2ad072294c43d3090a0934b79a70e5e7e9e0303d60d4b5388c67f",
+    "rdma/rnic/build/receive-message-queue-q6kv2dl2/tb.v": "84ec06c5557131819e2e1270c1760475d3e2bba705e8213793799a7cf9452766",
+    "rdma/rnic/build/receive-message-queue-q6kv2dl2/rocev2_receive_message_queue.v": "fd989c8f471342e0794c0a1bbf661d766d7335be06b2702e12cc196dd4dcd572"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-receive-message-queue-iry8n80p/test": "417f5b357c15d1c330aeae0b8d2db096e1f7fbf680401d923fa832ed41f66f79"
+  }
+}

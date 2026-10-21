@@ -1,0 +1,35 @@
+{
+  "scope": "Real four-state message RQ: whole owner vs per-packet ACK/CQ lifetimes.\n\nPosted MR-admitted owners, memory visibility, HLS/core/whole certificates,\nand ACK-MAC certificates are explicit producer models in this component\ntest. They are NOT injected into the production native hierarchy. Actual\ngenerated-HLS/native/DMA/MAC/CQ/standard Linux/physical proof remains separate.\n",
+  "pass_test": false,
+  "directory": "rdma/rnic/build/receive-message-queue-0kkusxud",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_receive_message_queue.v": "fd989c8f471342e0794c0a1bbf661d766d7335be06b2702e12cc196dd4dcd572",
+    "rdma/rnic/tests/probe_receive_message_queue.py": "36b098062d89dab5c0c385ffa7f588ad96e795d9d6e4a3edab8526b65c19fab8"
+  },
+  "tests": {},
+  "case_limit_seconds": 10,
+  "four_state": true,
+  "actual_message_RQ_RTL": true,
+  "all_proof_and_owner_producers_modeled": true,
+  "generated_HLS_or_native_integration": false,
+  "hardware_verified": false,
+  "compile_command": [
+    "iverilog",
+    "-g2012",
+    "-s",
+    "tb",
+    "-o",
+    "/dev/shm/as02-receive-message-queue-s24oegv2/test",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/receive-message-queue-0kkusxud/tb.v",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/receive-message-queue-0kkusxud/rocev2_receive_message_queue.v"
+  ],
+  "compile_seconds": 0.010314750950783491,
+  "error_type": "ValueError",
+  "error": "message RQ compile failed:/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/receive-message-queue-0kkusxud/compile.log",
+  "artifact_sha256": {
+    "rdma/rnic/build/receive-message-queue-0kkusxud/compile.log": "32b893c6afe387d0a98f85d61d138759c054fa92a6f842d59648b02c3398e099",
+    "rdma/rnic/build/receive-message-queue-0kkusxud/tb.v": "a897afb1c78da9eb12d5a36f412560338a2f21fe1101f89c698ab78009a439e6",
+    "rdma/rnic/build/receive-message-queue-0kkusxud/rocev2_receive_message_queue.v": "fd989c8f471342e0794c0a1bbf661d766d7335be06b2702e12cc196dd4dcd572"
+  },
+  "RAM_artifact_sha256": {}
+}

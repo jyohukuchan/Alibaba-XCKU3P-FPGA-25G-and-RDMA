@@ -1,0 +1,15 @@
+{
+  "scope": "New receive generator strict forwarding-anchor startup failure before source output or compilation",
+  "pass_test": false,
+  "exit_code": 1,
+  "error": "QP transport anchor changed: b.request_owned=meta.request_owned;b.request_token=meta.request_token;metaOut.write(b);",
+  "cause": "Two actual forwarding sites exist: fresh and duplicate requests; single-anchor requirement rejected both",
+  "preimage_root": "rdma/rnic/build/segmented-receive-source-startup-002-preimages-Ji3q58M3",
+  "source_sha256": {
+    "rdma/rnic/hls/segmented_receive_transport.py": "9b9e1b748dd8d33d4b778e09698ea69c7f395574cf8dd58a3c3bffa1d71ff5c8"
+  },
+  "correction": "Require exactly both known forwarding sites, retaining actual parsed wire padding through each",
+  "subsequent_runner_without_generated_source": "FileNotFoundError; no compiled or runtime result produced",
+  "compiled_or_simulated": false,
+  "hardware_verified": false
+}

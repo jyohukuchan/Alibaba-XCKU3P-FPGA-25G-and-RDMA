@@ -5,6 +5,23 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+The progress147 publication additionally includes the 1 MiB posted-RECV
+codec/typed adapter and real MR-to-RQ component tests, plus a separately
+regressed KEEP checker. These do not enable native Atomic or qualify a new
+hardware/software profile. [Publication scope](../results/2026-10-18/rocev2-rnic-segmented-receive-publication-diagnostics-001.json).
+
+## Large incoming SEND/Immediate source and actual RQ/ACK/CQ components (146)
+
+The separate new receiver passes44 HLS C++ modes and real message-RQ/ACK/
+CQ-publisher component coupling, including8193 bytes/3 packet releases/one
+actual event and complete AXI owner/actual-length/Immediate/host-ACK guard
+checks. MR/backend/PHY/host and HLS proof producers remain models in those
+component tests; no live native/Linux/physical proof is claimed. New source
+65535/255/13/31 coordinates15 changed leaves/40 bodies, while actual new HLS
+generation is still running. Its syntax-only check ignores missing leaves,
+not complete elaboration. Existing profile6 incoming RQ4096/Atomic_NONE and
+all original11 requirements remain. [Current component evidence](../results/2026-10-18/rocev2-rnic-receive-message-native-components-diagnostics-001.json).
+
 ## Actual native large Immediate and matched software source (143)
 
 [Fresh complete-native001](../results/2026-10-18/rocev2-rnic-segmented-immediate-native-full-001.json)

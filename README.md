@@ -190,6 +190,30 @@ is retained separately, not relabeled as a native-runtime result.
 This is a **work-in-progress source snapshot**, separate from the earlier
 hardware-tested READ/WRITE images. Its latest HLS estimate13.885ns misses the original
 4ns target; no new FPGA image, installation or hardware claim is published.
+
+A separate incoming SEND/Immediate HLS candidate now passes44 C++ modes
+(all21 previous retained), testing full payloads through1MiB. Actual message
+RQ/ACK/CQC component coupling also passes8193-byte/3-packet ACK lifetimes and
+one CQ publication/full AXI snapshot; queue units pass48 cases. HLS/MR/DMA/
+PHY/host boundaries remain models in those RTL component executions. The
+SAME new full HLS synthesis is still running; the new native source graph's
+syntax check ignores missing leaves and is NOT complete native elaboration.
+[Evidence and remaining work](results/2026-10-18/rocev2-rnic-receive-message-native-components-diagnostics-001.json).
+Existing native/software profile6 incoming RQ4096/defaults are unchanged;
+actual new generated-HLS/MR/PTE/DMA/native/standard API/timing work remains.
+
+The current source checkpoint also adds a 1 MiB posted-RECV codec and a
+correctly typed `ib_recv_wr` adapter: 37 codec methods, 78 admission/staging
+cases, four actual MR-to-message-RQ handoff cases, and a real-kernel-header
+adapter build pass. These are not installed callbacks or a matched new
+driver/provider profile. A separate balanced KEEP checker passes 103,665
+finite old/new behavioral comparisons, all 44 C++ modes and unchanged
+Atomic/Immediate compatibility. Candidate 005 is rejected for narrowing
+short-beat acceptance; candidate 006 compile failures are retained, not
+relabeled by candidate 007's success. No new synthesis/timing benefit is
+claimed for 007. Original source004 synthesis was still active at
+2026-10-21 09:16 UTC; it was not stopped or restarted for publication.
+[Publication integrity and scope](results/2026-10-18/rocev2-rnic-segmented-receive-publication-diagnostics-001.json).
 The recorded-data part of `bash scripts/check.sh` currently detects a stale
 historical `rocev2_tx_padding.v` SHA after adding44-byte SEND support. The old
 evidence and strict check are retained, not relabeled or waived. See

@@ -1,0 +1,11 @@
+{
+  "pass_test": false,
+  "stage": "source derivation, before output/CPP/HLS/runtime",
+  "error": "QP transport anchor changed: writeFence_req,writeFence_rsp);",
+  "exception": "Traceback (most recent call last):\n  File \"<stdin>\", line 5, in <module>\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/hls/segmented_write_abort_transport.py\", line 199, in derive\n    out[CPP]=once(out[CPP],'writeFence_req,writeFence_rsp);','writeFence_req,writeFence_rsp,writeAbortFence_req,writeAbortFence_rsp);')\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/hls/qp_tx_transport.py\", line 22, in once\n    if text.count(a)!=1:raise ValueError('QP transport anchor changed: '+a)\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: QP transport anchor changed: writeFence_req,writeFence_rsp);\n",
+  "source_sha256": {
+    "rdma/rnic/hls/segmented_write_abort_transport.py": "75f4667de4f4211c40e9c81f12c1fa2383470d3be0a895f317596234e2ed3a89"
+  },
+  "exact_preimage_root": "rdma/rnic/build/write-abort-source-startup-001-preimages-9_dcy6bb",
+  "hardware_actions": []
+}

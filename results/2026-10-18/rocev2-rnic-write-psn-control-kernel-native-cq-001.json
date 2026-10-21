@@ -1,0 +1,1659 @@
+{
+  "scope": "Same actual profile8 C consumes native38 PSN-control CQ plus all old100.\n\nUNEDITED whole8193 CQ/genuine zero-SGE C128 RQ; one positive/four corrupt\nowner variants. Linux/MMIO/pins/DMA primitive boundaries remain MODELS.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7",
+  "source_sha256": {
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/mr.c": "fafe25e2d81236cd155436dd4a5d723662ac6cd4872824655ecf438b1c43feab",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/mr_contract.c": "fba5388020b03409654f46dfce12aed7a9f4776dc22c32a964a3aecf69da6adf",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe.c": "4b3618b01a20876084cd56c5c14c27c3cb8d2c6390aa328bdbf795cd64104211",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_wqe.c": "82ccb5072a8955058abab1edfd7bca9f2fd26f60329ebd5ee59608d626ae49ba",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/sq.c": "398412c6c4015cf87cf57ffa5dcb7c878e52fe5106eb9b11ff990e3b0f6b3fbb",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/sq_io.c": "0d304dbc5ab1dbbbb076600a11852eb44f1a40ac54f3df050753b194accb5dc6",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/sq_hw.c": "868e0095a0e7e382b6064aff5f86d5067db096e77195902ef9dec2377140803d",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/cq_io.c": "261214485514e969a0f250c5a3ff21c5a7a61b2f915c7550875a3e5c15a77dd8",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/cq_hw.c": "62727e3661de59f10456deffcc864920746a196fc80ec9226498b6945684fe33",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/cq.c": "3fea3dd751d491b6241f8a55db4b65fa92a7c2ff72263d948ad45f1d912404c5",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/rnic_io.c": "3cdcf0756e7f2fde7ac857d8e0711e447be64b9119014517fc2568c4abf59b38",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/qp_hw.c": "e7ae309e2d4536cdc41ab3ce4d213a33cd3b403dd5820afad310e468b035274c",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/retry_io.c": "9455b9bb7cd157d6fbbf667144612a8034e4c72d24dad979529b440f7b8eb489",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs.c": "d0733a719e505f6bdfb6ac32e1f9ad275b585fbb84898eb9dc849c281e6abb21",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_atomic.c": "965050dda10092921a48d9caa6e9557562c9704c0d39f9289b54f997c6046f72",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_atomic_wqe.c": "93a0b279add531f5de82006c8435fd1ed13cd2c7450f0bed2c58fbe1d6971ec7",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_zero.c": "dbeb8076d21f809253fd96871c0861e316559b34478c02c7352d20e681352348",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_zero_wqe.c": "b12d5f111360932a0b0a1ae30117b468deedaa5727a541b9a70eb20987d80b66",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_segmented.c": "5d5d67ecb00a70b988ddb16c780febcd4b3180815dc5c8bf8368f5fef0938d61",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_segmented_wqe.c": "b3cfab36d45a28124169ce98e9a601d3b5ef3979cd8809ddcd2a95e0ccdcbcb4",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_segmented_read.c": "11b3086bf4f4fd23014587f4a50b171e7ba75247b7e392b47bd6dff30e25eac9",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_segmented_read_wqe.c": "a93f93311d841eba6b80cb0be8d4d6ee8fdae79e9cca2af5938b7e0f38a17659",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_segmented_immediate.c": "5bcf912f2fc6e86d5dcef989e801d8f7d20e485a185e9664e05e372e271ba413",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_segmented_immediate_wqe.c": "78a43b0105f50a7401d6c22abc60417fb859fa6c925b7abb28505899ef75442f",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_segmented_receive.c": "6c49eac02e4d54be5efd1bca87ea919522270e56d99d9a3f0a64473a4aeb2c7a",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_segmented_receive_wqe.c": "4c34a78d2bf631b52d685b44a778cc9f086614c4d25230c8686aa2b3c4cd38e3",
+    "rdma/rnic/tests/kernel_queue_model.c": "040e9a6c3ec021996f8af51f50d180043cf440933f13d116bbdb04f0b92ce240",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/models/kernel_segmented_native_cq.c": "acc7a89291f40ddd37bb1210ed3fafe225deeb9c7f6e1439d39b45c169e61b26",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/rnic_regs.h": "902b3976b72d377fadf410549b262fad97ccdae978095374f100b0caf060b9de",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_segmented_wqe.h": "74270ba9c7a1661af95523c1115ee9f1c5bda1d6448849a9bbe01b5f48d625f7",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/qp_hw.h": "8ba44af36588003ed00ebe8e51737b070f99a33b4140d842e6bb966e9265f474",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_atomic.h": "f971b72123b3b3a24c78c28a2c1a856d5c9a9597977fae0a09f654b13f952f68",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_zero.h": "70087a973c4eee08b25c93c8d5aab60ff2e9d9a0e9888363201bf4d375697f9b",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/atomic_profile.h": "fa9b8b94fa682a3a9225ba92b14682fb1df8d69cc36e88e1f077099d601d6792",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_segmented_immediate_wqe.h": "a3b79f974662d573065071a7a4804436ced1c671aec8679fa6a72a2735b19d08",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/rnic_hw.h": "87f084df23fa172ddc76fbcffb30338a5d9a28e68fd08ec3f54157317f9960f7",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_segmented_receive_wqe.h": "d7ba6c34f25b1edc9b27c2eb9088dbd0f6013ddaa1e8ae3329fe545498e3335e",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/cq_regs.h": "d8b0c553cde7baee136c919837d0bcc8d8308de1a2ac2155207a7cb771c20033",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_segmented_read_wqe.h": "0a46c998b11badd6be31e6035730728f849e8baf3f4422d22c13f0f264d5591f",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/sq.h": "98bdd9260c2a40853ef4a12102eb64dfec66d19a8560c858f83c0ad74c23c242",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/sq_io.h": "9ab44b2186598290b57ac0999b861f01b212ef7e6ed7e890870bbdc1d9731d60",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/mqnic_graph.h": "c7e78ac4f98d8841fbc1e9f7a531cffa9f675be00710295da7183fd22864dc2b",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/cq_hw.h": "9cfbf94b2a7ebcfcc4465b761fb6ccf4c93844b7dd67d8e3f7e81983e5e0e673",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/native_attach.h": "c75bc0317787962e5b803f04fee05e8f556614df85fcb40ea851148fa45d923b",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_segmented.h": "78d950a46d3978fe1929716c4595ba1e9dec61ffa7d9574ef06419d7914a9c5a",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/retry_io.h": "aad5018d4cb7292ef0240f09f1495453030f5211c98999fa0edec5b0fbee9167",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/cq.h": "8fa35025b2c276de11d026dcb1cf9d324637dba1fb3e743c0261f447447a44a4",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_segmented_read.h": "74aa2cd9c47751c6ef019fe9fea17fd166ad2bab9b2355368db959209d8889b8",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe.h": "646e0f6c09f85af72cd9d93016f1368ee7378b6f0cc1f869e4ace0e8e68e8a2a",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/native_regs.h": "1958df9642bd0c865d97c584cda9902fa689d9049b3f415c75f342dddd7b0b97",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/device.h": "830ced5f865bb1af7f7e73ed3e952fa1f745934f1500d4e2f2090e2511274f41",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs.h": "9f2623733d2dd8c326c62489130ca427a46790e2b63284ee3022ab0ca3c341e6",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_segmented_immediate.h": "c6c3e086486a0a6ec7bc10943928c35360e5ab66adfddaa7c5615bd8c09cf7fd",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/rnic_io.h": "92999a3752af6fce6c8556c9c2724ce85918949966f35d2420695e8671d0ffc3",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_segmented_receive.h": "c61554c6a9fd0b77f89e4bde51e80458753492cd817aa3d79b63682fc417be8e",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/mr.h": "427c947b5e8491e4444cf1fd0e726cfbcdfdae00113020ec67b7e7f314c5cfc3",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/sq_hw.h": "3b314f585820e35d33e17dc362c92b070b14171d29e59cbedb25699863d50fd8",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/cq_io.h": "40b5077954e39163671de8a4ae4a2a48df67d4a6559ee7350cb3ebefb0837fe0",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/native_graph.h": "d2d0d4722d0e336fcc9649c3d0dc6b758c587a6398555424da1d16d773b39555",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/models/kernel_sq_hw_cases.c": "08abab5f2df9f3f1d1769f0140a34f04d45bd21e84d00cceff49038d54255931",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/models/kernel_segmented_receive_native_cq.c": "d74bb18d9a450d1da7820d112479bf856e39ef0903dc81a702a7177341e827a5",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/models/kernel_cq_model.h": "7a97b34bdb70fab41fc3f1ac926ae96aed15dce09f230733bac487cd3bd64615",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/models/kernel_segmented_send_native_cq.c": "1e3ba8749dc25f7a9e6a2798260b49cc380cc90ab9dd37bda704eeb93109947a",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/models/kernel_queue_model.h": "fa79e208e46cefa0180ad8356b7a6f8437c15ff63073f2831cba8cf06ff5bc14",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/models/kernel_atomic128_model.h": "a14dedef503777dc1c1cb74fb441cdd336affea8f6fdd183740dd268578b1f86",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/models/kernel_verbs_cases.c": "b6f951705fd206b219607a5d781146bc00ad49f9e822f827cc2593c7713573c2",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/models/kernel_sq_hw_model.h": "3e4db9a8dfb956b8c748912fa99ba8ded276bf10529463198f398a077d65c771",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/models/kernel_verbs_model.h": "035149fed01b1b6e8b195bc8be290879932496cb8d383130574d6da95b5d7b7a",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/CAS-event.hex": "6f7311697ab5fda97c87732950839e2ebcb2933d6ba4749b5441513a20e525a3",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/CAS-records.hex": "643d74541adeba971f276fc0690515e4dd1d3fa803f853971dd81bbf1fa1b240",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/FADD-event.hex": "62f9db87da9229f4b92ab4554aa4e12411d18c2c7015b40d211ca5b210d85951",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/FADD-records.hex": "333673538788f41b204e993db95d762ad77267d352aa56a5186f7566564c68bf",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/READ-event.hex": "847ae423c49630e4c507ca8795069754efaa862c8fc7994712bb4a82aea0ee0c",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/READ-records.hex": "38bd14a1ffd0bf2fc3851788a0774d9e992baafd0047b3189e54195adacaf35f",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/SEND_IMM-event.hex": "c6dcc4c5b6f7f8ec67b8d66e937f17bc2eff988ef068c1de98818c00ce57b62a",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/SEND_IMM-records.hex": "1fce85a4ad3ef030c2c601d88967e5847f25a0386bd26614212f6a5f9d47c97b",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/WRITE-event.hex": "0831b1d0f0b0f89783e3b2f2bd9f43b6ab70ea24d96f151f40bfa174439d6bde",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/WRITE-records.hex": "fd8e6a466a8c0e74445773153dcfeb23cc9837c551493db9dc9be0d0c949f348",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/SEND-event.hex": "781f8ab0b759a1dd1acf8e8d1234dd22c9e0438b369f13856d74826c7ab367d0",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/SEND-records.hex": "a459cdee22f1580f0de1f7802d040926743c77d51535adf6bfb0830da345ce70",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_WRITE-event.hex": "b0495c5b4dcabd151d460cb132f92daabe634cadc8978ba95afa3a879883943a",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_WRITE-records.hex": "d9f3f970386f2b22bdade92a6743415a88c7e346a1be84ced3476a6822bb8bbc",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_SEND-event.hex": "b83aaf85c39d8b482d9fc7cbd79477275d7d08029440666f5d8e4c32df082f25",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_SEND-records.hex": "8bce1a6b1f09038b0614fe289695eecb63f95507b3080163228157b3244c6f65",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/ZERO_WRITE-event.hex": "8d09bbb418c20c944575a7d194fba76882ee83abe4bb168391f758a78e7ee0e5",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/ZERO_WRITE-records.hex": "66f780864bd2e72df116780e8f93ef5be9df1edfb7c48dc65d8a8a7591837c6f",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/ZERO_READ-event.hex": "9132f88f288d5f9a63b7bc6f7e26d10a089384dd255ac5925c1df1714f34a0a9",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/ZERO_READ-records.hex": "ef04e2a11c8731f1a10b1caf866e5ab4a7d784d1ef27e211006d2a0a8f3c98bf",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/ZERO_SEND-event.hex": "0d8fa966b6bc525327934f4d90b333f4304e92fd638be2d150a8dde0c02209b7",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/ZERO_SEND-records.hex": "2afe79bf4e8edf93f21419f5b941486bb68fb345261e31c812653cb462c84609",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/ZERO_SEND_IMM-event.hex": "64290ccfaec32cd8d79757c1736a5e72005a58df0558658c783a903ddb8db61c",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/ZERO_SEND_IMM-records.hex": "4eaa1f6a8066b733fb47bd287c74a33853e8aa18d4fe9a1b4cd6ede36d906451",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/ZERO_WRITE_IMM-event.hex": "0d520ab44d657618e0f50b0b379907a78d55ef0a00a2a8359df91c5ecd622ade",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/ZERO_WRITE_IMM-records.hex": "f1cb7e7cd627970a6ca5bd963e54fa8b25c20bd17d2d0308f86673ebcdf2aea5",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_READ-event.hex": "646d0175e05b8d4c5f156bf2d73c21a922657d90334c4b6b24c56c7ab5abe939",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_READ-records.hex": "9c1ae50198663d87239f04c4b2ed3ef5c458ebacf7a42436978aeef8a27fa569",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_SEND_IMM-event.hex": "90920e46d70a52e22a7562867bef51dc92932ec40512264ce79303f451638593",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_SEND_IMM-records.hex": "30232b18af7fe021176bf52b8f39130246e73df725024924c8654c23fbc33cb0",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_WRITE_IMM-event.hex": "381eb87637f2a23efde60baba38db48547d1ba663c9fbcd4753baed46495cecd",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_WRITE_IMM-records.hex": "4fbb6f146209e476e62e37bf7d4b12f9a6c44615dd59ec44df8627b5db243ee7",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_RX_SEND-event.hex": "e5e31a250409a179574dec46a6c65de1b5cf47e185ec27d179400586b7914b00",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_RX_SEND-receive-records.hex": "b23326c4f56c3f80e6a9206bcc678a1f1a1a187949c4211087449bf82cbf7255",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_RX_SEND_IMM-event.hex": "a5e8f91560a03339b91feec555e7e4acbb0331d7950e292c1f44957e84529eba",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_RX_SEND_IMM-receive-records.hex": "b23326c4f56c3f80e6a9206bcc678a1f1a1a187949c4211087449bf82cbf7255",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_RX_WRITE_IMM-event.hex": "35752f31f0d2bf3301bfcbe7e9edae87b9bb9805a2670d8e0188872d21324d8f",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_RX_WRITE_IMM-receive-records.hex": "fbdc435d11e27ee2605a1f229a422e0f84df1a7bbaab3bb623f56f68a6102f85",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_RX_WRITE_RNR-event.hex": "35752f31f0d2bf3301bfcbe7e9edae87b9bb9805a2670d8e0188872d21324d8f",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_RX_WRITE_RNR-receive-records.hex": "fbdc435d11e27ee2605a1f229a422e0f84df1a7bbaab3bb623f56f68a6102f85",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_RX_WRITE_PSN-event.hex": "35752f31f0d2bf3301bfcbe7e9edae87b9bb9805a2670d8e0188872d21324d8f",
+    "rdma/rnic/build/write-psn-control-native-full-ydlp6b0d/LARGE_RX_WRITE_PSN-receive-records.hex": "fbdc435d11e27ee2605a1f229a422e0f84df1a7bbaab3bb623f56f68a6102f85",
+    "rdma/rnic/tests/probe_kernel_write_psn_control_native_cq.py": "88facd790cfcc79d1536d7e483e4e9899d745f913a2c368295d0604a7e3a94d2",
+    "rdma/rnic/tests/segmented_write_kernel_models.py": "e6fbbe1c3c2d6ae9efbf2a357e286346478516e3e8b481845c051c2bf9e43c7d",
+    "rdma/rnic/tests/test_kernel_verbs.py": "0ee8ea79e8c26a8d80fb388beccbbbf7ba101d7317e8703605e18b800b7e9b00",
+    "rdma/rnic/tests/kernel_segmented_native_cq.c": "7a8ad5b6629a17dc0f057f5d809edea6c16dca159882e1e55b508efc9456848b",
+    "rdma/rnic/tests/kernel_sq_hw_cases.c": "86f4f6f8f7a5f0bb663f61d04b1b746b0d6694d79f82449f97776ad30157f798",
+    "rdma/rnic/tests/kernel_verbs_cases.c": "525d56e92d9f152d6bfc340579ef2a4aacf552f55731629985cd4bb5039fad07",
+    "results/2026-10-18/rocev2-rnic-write-psn-control-native-full-001.json": "0ab87192de1ed5846a636c6992a2e44e309d19fece8f3c0386fe772430408a9a",
+    "results/2026-10-18/rocev2-rnic-write-psn-control-kernel-build-001.json": "9cf4bd19c9d72f392b5705a03e34ae6e02a175e75f42c57d48359d960521fd51",
+    "rdma/rnic/tests/kernel_verbs_model.h": "035149fed01b1b6e8b195bc8be290879932496cb8d383130574d6da95b5d7b7a",
+    "rdma/rnic/tests/kernel_cq_model.h": "7a97b34bdb70fab41fc3f1ac926ae96aed15dce09f230733bac487cd3bd64615",
+    "rdma/rnic/tests/kernel_sq_hw_model.h": "3e4db9a8dfb956b8c748912fa99ba8ded276bf10529463198f398a077d65c771",
+    "rdma/rnic/tests/kernel_queue_model.h": "fa79e208e46cefa0180ad8356b7a6f8437c15ff63073f2831cba8cf06ff5bc14",
+    "rdma/rnic/kernel/derive_atomic128.py": "604eac54786c59739746716e3203d96d3ee099826252db96a42c8c1f81fb9983",
+    "rdma/rnic/tests/atomic128_kernel_models.py": "f3ecb9d09300aad83770f77e532210f3d5065805c306c61f7ac600e07df9cef7",
+    "rdma/rnic/tests/test_kernel_queue_lifecycle.py": "e93700d7567d51a66f86cd324cf66642d602ab239b4b32bedbab81ed17ca983f",
+    "rdma/rnic/kernel/build_frozen.py": "e4f6c8e37657614f186def1f50010ecfbf229d006c8b7f4ccaeb1d4b1d792f44",
+    "rdma/rnic/kernel/build_atomic128.py": "e6292304751bf62d59c6c0b65151edf9457883c6969a370ef1c4ef6e23609dee",
+    "rdma/rnic/tests/probe_kernel_atomic128_native_cq.py": "b24bba3f83bcfdd37e82ebd9b854549f863656cd4a218125072de10de0eaad8a",
+    "rdma/rnic/tests/probe_kernel_segmented_native_cq.py": "30101013d2fb3b9e9585931c464f2873be92656ca307e6f0e9dd5d714a0dc982",
+    "rdma/rnic/tests/atomic_access_kernel_models.py": "bf2cab7bd570e8535822241a2ff7aa5ddd0e0d8079dcb2e206b61c3169c343b9",
+    "rdma/rnic/tests/zero_kernel_models.py": "a98c01cb7aa2ba5cb168c8f6a7aa10ffac67b851e1f5b10b0b31652b3b8d09d7",
+    "rdma/rnic/tests/segmented_kernel_models.py": "4398157c359978b82189054871784f203010c08286152d8e004572d31d323038",
+    "rdma/rnic/tests/segmented_read_kernel_models.py": "4961e959e1e2943ba643a7b083ec0c7f8f639b75a415f75925cc70cf67cf216e",
+    "rdma/rnic/tests/probe_kernel_segmented_read_native_cq.py": "41caf2e544765d4030e5e8292edb4426df862dbfbaa8dac7ff758ff067e4ce6d",
+    "rdma/rnic/tests/segmented_immediate_kernel_models.py": "a47c2d604bb43e1ae44f079ab0bedc52ead55f33b395f287cb25787974c56e3f",
+    "rdma/rnic/tests/probe_kernel_segmented_immediate_native_cq.py": "b735490b759aa63e90dc57fcf0267ac8e49a7cd1cb0a089d81a8bf972f44837b",
+    "rdma/rnic/tests/segmented_receive_kernel_models.py": "aaa84c8517749df4cc86a9e15dc9f099aafd7b781ffd537d86ad12e1db54cbc5",
+    "rdma/rnic/tests/probe_kernel_segmented_receive_native_cq.py": "1b74ddeddc8e5dec65930b7ce5e7cac94350a9f4a736ae602bbcb324b5b32d14",
+    "rdma/rnic/tests/probe_kernel_segmented_write_native_cq.py": "0c9b6735af408d646aef226719e55c63fdba88a406c63c8dec9cc65e732e5ba8",
+    "rdma/rnic/tests/probe_kernel_segmented_write_rnr_native_cq.py": "c4d2c8da2b661ef1487d064ac53025566c3ebc87b6712dc7f7ebfec7840e4648",
+    "rdma/rnic/kernel/derive_atomic_access.py": "9694c7f0c16c68d0d8b315049a792c52d512ad77f516daad1a7cc0fd3f107486",
+    "rdma/rnic/kernel/derive_zero_kernel.py": "280aeb2234f9f0c42133e6c8d082a822d7fdd110700243c05fb7194b1c595f33",
+    "rdma/rnic/kernel/build_zero.py": "ed796e8837a0df01bdb42dfa54d2c4b3845573a1bee0c318d5c42747ff676173",
+    "rdma/rnic/tests/kernel_segmented_receive_native_cq.c": "b9730523a718495fa523e0d8646b39d5f8b54df493581b2007588717aeb39ffd",
+    "rdma/rnic/tests/kernel_segmented_write_native_cq.c": "acc7a89291f40ddd37bb1210ed3fafe225deeb9c7f6e1439d39b45c169e61b26"
+  },
+  "actual_standard_C_bodies": true,
+  "native_RTL_snapshots_consumed": true,
+  "live_kernel_RTL_coupling": false,
+  "Linux_primitives_pins_DMA_MMIO_peer_models": true,
+  "hardware_verified": false,
+  "simulation_limit_seconds": 10,
+  "RNC_features": 131071,
+  "CQC_features": 511,
+  "software_profile": 8,
+  "actual_Linux_runtime": false,
+  "standard_provider_execution": false,
+  "page_tables_live_coupled": false,
+  "tests": {
+    "CAS-0": {
+      "seconds": 0.014590582984965295,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 7,
+        "bytes": 8,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "CAS-1": {
+      "seconds": 0.013287874986417592,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 7,
+        "bytes": 8,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "CAS-2": {
+      "seconds": 0.012622271955478936,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 7,
+        "bytes": 8,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "CAS-3": {
+      "seconds": 0.013213772035669535,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 7,
+        "bytes": 8,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "CAS-4": {
+      "seconds": 0.012552010011859238,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 7,
+        "bytes": 8,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "FADD-0": {
+      "seconds": 0.014105175039730966,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 8,
+        "bytes": 8,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "FADD-1": {
+      "seconds": 0.013264336972497404,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 8,
+        "bytes": 8,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "FADD-2": {
+      "seconds": 0.012297293986193836,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 8,
+        "bytes": 8,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "FADD-3": {
+      "seconds": 0.013129120983649045,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 8,
+        "bytes": 8,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "FADD-4": {
+      "seconds": 0.01338642300106585,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 8,
+        "bytes": 8,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "READ-0": {
+      "seconds": 0.013969889027066529,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "bytes": 65,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "READ-1": {
+      "seconds": 0.013356249954085797,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "bytes": 65,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "READ-2": {
+      "seconds": 0.012580646958667785,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "bytes": 65,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "READ-3": {
+      "seconds": 0.01306332997046411,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "bytes": 65,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "READ-4": {
+      "seconds": 0.012237578048370779,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "bytes": 65,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "SEND_IMM-0": {
+      "seconds": 0.013858699996490031,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "bytes": 65,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "SEND_IMM-1": {
+      "seconds": 0.01236029202118516,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "bytes": 65,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "SEND_IMM-2": {
+      "seconds": 0.013344378035981208,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "bytes": 65,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "SEND_IMM-3": {
+      "seconds": 0.013301074970513582,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "bytes": 65,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "SEND_IMM-4": {
+      "seconds": 0.013216704013757408,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "bytes": 65,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "WRITE-0": {
+      "seconds": 0.013699667993932962,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 1,
+        "bytes": 65,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "WRITE-1": {
+      "seconds": 0.013239054009318352,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 1,
+        "bytes": 65,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "WRITE-2": {
+      "seconds": 0.013137503003235906,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 1,
+        "bytes": 65,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "WRITE-3": {
+      "seconds": 0.013225225964561105,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 1,
+        "bytes": 65,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "WRITE-4": {
+      "seconds": 0.012939987995196134,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 1,
+        "bytes": 65,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "SEND-0": {
+      "seconds": 0.014195063035003841,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 3,
+        "bytes": 65,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "SEND-1": {
+      "seconds": 0.012534341018181294,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 3,
+        "bytes": 65,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "SEND-2": {
+      "seconds": 0.012702313018962741,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 3,
+        "bytes": 65,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "SEND-3": {
+      "seconds": 0.013315392017830163,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 3,
+        "bytes": 65,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "SEND-4": {
+      "seconds": 0.013152379950042814,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 3,
+        "bytes": 65,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_WRITE-0": {
+      "seconds": 0.012955004000104964,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 1,
+        "bytes": 8193,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "LARGE_WRITE-1": {
+      "seconds": 0.013300096965394914,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 1,
+        "bytes": 8193,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_WRITE-2": {
+      "seconds": 0.012160960002802312,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 1,
+        "bytes": 8193,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_WRITE-3": {
+      "seconds": 0.013212374993599951,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 1,
+        "bytes": 8193,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_WRITE-4": {
+      "seconds": 0.013223759015090764,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 1,
+        "bytes": 8193,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_SEND-0": {
+      "seconds": 0.01304922200506553,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 3,
+        "bytes": 8193,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "LARGE_SEND-1": {
+      "seconds": 0.013386283011641353,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 3,
+        "bytes": 8193,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_SEND-2": {
+      "seconds": 0.01321349199861288,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 3,
+        "bytes": 8193,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_SEND-3": {
+      "seconds": 0.01325728400843218,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 3,
+        "bytes": 8193,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_SEND-4": {
+      "seconds": 0.013297581986989826,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 3,
+        "bytes": 8193,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_WRITE-0": {
+      "seconds": 0.013957876013591886,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 1,
+        "bytes": 0,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "ZERO_WRITE-1": {
+      "seconds": 0.012652235047426075,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 1,
+        "bytes": 0,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_WRITE-2": {
+      "seconds": 0.01227152202045545,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 1,
+        "bytes": 0,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_WRITE-3": {
+      "seconds": 0.013158525980543345,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 1,
+        "bytes": 0,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_WRITE-4": {
+      "seconds": 0.012613262981176376,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 1,
+        "bytes": 0,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_READ-0": {
+      "seconds": 0.013997338013723493,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "bytes": 0,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "ZERO_READ-1": {
+      "seconds": 0.012460167985409498,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "bytes": 0,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_READ-2": {
+      "seconds": 0.012977703008800745,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "bytes": 0,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_READ-3": {
+      "seconds": 0.012498441035859287,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "bytes": 0,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_READ-4": {
+      "seconds": 0.012509685999248177,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "bytes": 0,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_SEND-0": {
+      "seconds": 0.013848642003722489,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 3,
+        "bytes": 0,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "ZERO_SEND-1": {
+      "seconds": 0.013186741969548166,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 3,
+        "bytes": 0,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_SEND-2": {
+      "seconds": 0.013247016002424061,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 3,
+        "bytes": 0,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_SEND-3": {
+      "seconds": 0.012602646020241082,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 3,
+        "bytes": 0,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_SEND-4": {
+      "seconds": 0.01341910898918286,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 3,
+        "bytes": 0,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_SEND_IMM-0": {
+      "seconds": 0.013738779991399497,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "bytes": 0,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "ZERO_SEND_IMM-1": {
+      "seconds": 0.01325288403313607,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "bytes": 0,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_SEND_IMM-2": {
+      "seconds": 0.013244432979263365,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "bytes": 0,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_SEND_IMM-3": {
+      "seconds": 0.012551032996270806,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "bytes": 0,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_SEND_IMM-4": {
+      "seconds": 0.013442786002997309,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "bytes": 0,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_WRITE_IMM-0": {
+      "seconds": 0.01392037101322785,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 6,
+        "bytes": 0,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "ZERO_WRITE_IMM-1": {
+      "seconds": 0.012591960956342518,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 6,
+        "bytes": 0,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_WRITE_IMM-2": {
+      "seconds": 0.012453672010451555,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 6,
+        "bytes": 0,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_WRITE_IMM-3": {
+      "seconds": 0.013313366973306984,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 6,
+        "bytes": 0,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "ZERO_WRITE_IMM-4": {
+      "seconds": 0.013235353049822152,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 6,
+        "bytes": 0,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_READ-0": {
+      "seconds": 0.013893062015995383,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "bytes": 8193,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "LARGE_READ-1": {
+      "seconds": 0.013403535005636513,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "bytes": 8193,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_READ-2": {
+      "seconds": 0.0127093669725582,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "bytes": 8193,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_READ-3": {
+      "seconds": 0.012450669019017369,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "bytes": 8193,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_READ-4": {
+      "seconds": 0.012531268002931029,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 2,
+        "bytes": 8193,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_SEND_IMM-0": {
+      "seconds": 0.013966957048978657,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "bytes": 8193,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "LARGE_SEND_IMM-1": {
+      "seconds": 0.01320909202331677,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "bytes": 8193,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_SEND_IMM-2": {
+      "seconds": 0.013013672025408596,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "bytes": 8193,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_SEND_IMM-3": {
+      "seconds": 0.01344711595447734,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "bytes": 8193,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_SEND_IMM-4": {
+      "seconds": 0.012224517995491624,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 5,
+        "bytes": 8193,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_WRITE_IMM-0": {
+      "seconds": 0.013785156013909727,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 6,
+        "bytes": 8193,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "LARGE_WRITE_IMM-1": {
+      "seconds": 0.012574150983709842,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 6,
+        "bytes": 8193,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_WRITE_IMM-2": {
+      "seconds": 0.013283893000334501,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 6,
+        "bytes": 8193,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_WRITE_IMM-3": {
+      "seconds": 0.013473586994223297,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 6,
+        "bytes": 8193,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_WRITE_IMM-4": {
+      "seconds": 0.01264580903807655,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 6,
+        "bytes": 8193,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_SEND-0": {
+      "seconds": 0.014402915025129914,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 4,
+        "bytes": 8193,
+        "capacity": 8194,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "LARGE_RX_SEND-1": {
+      "seconds": 0.013456893968395889,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 4,
+        "bytes": 8193,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_SEND-2": {
+      "seconds": 0.012943478999659419,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 4,
+        "bytes": 8193,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_SEND-3": {
+      "seconds": 0.013893480994738638,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 4,
+        "bytes": 8193,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_SEND-4": {
+      "seconds": 0.013131845043972135,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 4,
+        "bytes": 8193,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_SEND_IMM-0": {
+      "seconds": 0.014280062052421272,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 4,
+        "bytes": 8193,
+        "capacity": 8194,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_C_callbacks_CQ_MR_release": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "LARGE_RX_SEND_IMM-1": {
+      "seconds": 0.013679972034879029,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 4,
+        "bytes": 8193,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_SEND_IMM-2": {
+      "seconds": 0.013910104986280203,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 4,
+        "bytes": 8193,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_SEND_IMM-3": {
+      "seconds": 0.01348580897320062,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 4,
+        "bytes": 8193,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_SEND_IMM-4": {
+      "seconds": 0.013021423947066069,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 4,
+        "bytes": 8193,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_WRITE_IMM-0": {
+      "seconds": 0.01451103197177872,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 40,
+        "bytes": 8193,
+        "capacity": 0,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_WRITE_notification_CQ_MR_lifetime": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "LARGE_RX_WRITE_IMM-1": {
+      "seconds": 0.01390689198160544,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 40,
+        "bytes": 8193,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_WRITE_IMM-2": {
+      "seconds": 0.013722437026444823,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 40,
+        "bytes": 8193,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_WRITE_IMM-3": {
+      "seconds": 0.013190863013733178,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 40,
+        "bytes": 8193,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_WRITE_IMM-4": {
+      "seconds": 0.012663060973864049,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 40,
+        "bytes": 8193,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_WRITE_RNR-0": {
+      "seconds": 0.014279154012911022,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 40,
+        "bytes": 8193,
+        "capacity": 0,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_WRITE_notification_CQ_MR_lifetime": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "LARGE_RX_WRITE_RNR-1": {
+      "seconds": 0.013918904995080084,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 40,
+        "bytes": 8193,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_WRITE_RNR-2": {
+      "seconds": 0.013871410978026688,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 40,
+        "bytes": 8193,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_WRITE_RNR-3": {
+      "seconds": 0.01316187804332003,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 40,
+        "bytes": 8193,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_WRITE_RNR-4": {
+      "seconds": 0.012707061949186027,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 40,
+        "bytes": 8193,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_WRITE_PSN-0": {
+      "seconds": 0.014499019016511738,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 40,
+        "bytes": 8193,
+        "capacity": 0,
+        "mutation": 0,
+        "native_RTL_CQ_unedited": true,
+        "full128_kernel_native_record_identical": true,
+        "actual_standard_WRITE_notification_CQ_MR_lifetime": true,
+        "profile8_CQC511": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "LARGE_RX_WRITE_PSN-1": {
+      "seconds": 0.013718385947868228,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 40,
+        "bytes": 8193,
+        "mutation": 1,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_WRITE_PSN-2": {
+      "seconds": 0.012881180038675666,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 40,
+        "bytes": 8193,
+        "mutation": 2,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_WRITE_PSN-3": {
+      "seconds": 0.0138265720452182,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 40,
+        "bytes": 8193,
+        "mutation": 3,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    },
+    "LARGE_RX_WRITE_PSN-4": {
+      "seconds": 0.013839213002938777,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "opcode": 40,
+        "bytes": 8193,
+        "mutation": 4,
+        "owners_intentionally_retained": true,
+        "hardware_verified": false
+      }
+    }
+  },
+  "compile_command": [
+    "cc",
+    "-std=c11",
+    "-D_GNU_SOURCE",
+    "-D__KERNEL__",
+    "-O1",
+    "-g",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pthread",
+    "-fsanitize=address,undefined",
+    "-fno-sanitize-recover=undefined",
+    "-I",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/include",
+    "-I",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/models",
+    "-I",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel",
+    "-include",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/models/kernel_atomic128_model.h",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/mr.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/mr_contract.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/sq.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/sq_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/sq_hw.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/cq_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/cq_hw.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/cq.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/rnic_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/qp_hw.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/retry_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_atomic.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_atomic_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_zero.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_zero_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_segmented.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_segmented_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_segmented_read.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_segmented_read_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_segmented_immediate.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_segmented_immediate_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/wqe_segmented_receive.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/kernel/verbs_segmented_receive_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/kernel_queue_model.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/models/kernel_segmented_native_cq.c",
+    "-o",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/cases"
+  ],
+  "compile_seconds": 7.415681309008505,
+  "source_unchanged": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/SEND_IMM-4.log": "86e3efe9ecc6bcf4e97333a0e772094741904bcb2e43794794ed4153d4613936",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_SEND_IMM-4.log": "2aabac9e68dcd1cba4cec64af7e3787ee7b2b42e0d2006e9a0ca8635bffedab0",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/SEND_IMM-1.log": "6e9dc0d5d5d40f83dd807a425cffb0c7baf6f649f39bb5593596f0c8f33b11a2",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/CAS-0.log": "dcbcb947e5ed68839fae511b039049e0f5557ebf88f620f06ed3011cdef8dd0f",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_WRITE-3.log": "c3143e8639340358e459b69a2b94067f9ae7d315892ddb813021fdad3e05279b",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_SEND-4.log": "642a128d5a399722296e00e16abff9d26fc2a47caffe94d5ae67b90b3105e717",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_READ-2.log": "d4f76e473d8b443e1a94e9c66a73cf0d8d01ca784922763164c4d95cebd24e93",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_SEND-2.log": "491e5fce20a34b566af4a062eb6e66c39bd0e80fcaa981032879642165c750df",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_READ-0.log": "ff6bb43c7d8dd85d59e1a1af5effd8c9851c61ebec8e96a429ad8f0593c42603",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_SEND-3.log": "eaf16ee56c61c325570fe0863ab3fb94805fa4b4345140b6904a455fe8b40e6c",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_READ-3.log": "c3f65c6a4de1f72246d3c7ad3247892fb6758bef14ae4b4951ea342116cfc967",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_WRITE_IMM-2.log": "2d37bb63397c7156d95e55019ea4eee0fab92fdf0c0986b4726547a581926d56",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_WRITE-0.log": "2d0592caf15d443097f7a5c4e9dc1f0cba91fcb669ece001f9a2e237c4c72877",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/SEND-1.log": "a62d80f7b98cd5f3a50c0b3e594756282f86aae3c6d593225b7eb33048eeb2ba",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_WRITE-0.log": "a0d812bbdcc7ad3344deadc24daea39d80ff1aaea4ba8d6fa982703ac26e5c03",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_SEND_IMM-3.log": "bf9d4f0115f1ad6ee5c8f96fba972ca2ce1e38a107794059677a848a8bd75cdf",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_SEND_IMM-0.log": "03f46bf72775a0fb446b8bd5ec6b068454e9144e618d2e58359d0aa1ed1aa66b",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/SEND-4.log": "e5f98c1e23e551605fe4e4a379ff7063ba64498fa4d18533c35d2ddcc7dc991d",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_WRITE_IMM-2.log": "1469c848b793be5e4c7eeb1b9b9da329d3ef33b5b2fe3a8dccc23fecac17948f",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_WRITE_IMM-2.log": "2d5fa54999b645574c1668d281efaea3736cbe1392e8ed35d4aa074e808ca880",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_WRITE_IMM-0.log": "d9570a7dfefb0bf5632b00e83f3d5835d68d9b717ef3ca951d1b29561a7d1c9b",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/CAS-4.log": "fec2e01e7306bb06da6cb7c07c56f51d4932e982c2ddd6338d1443a304756f74",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/READ-4.log": "1d3011d2bcd5a54ae6094b674155f062c39a2b618e4db6cac8f2c073f74001b0",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_WRITE_IMM-1.log": "fc9f07c3c36348f633c578944a06fceb2bcbb8370c5ba226fbd131a2bc0d0d5a",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_READ-1.log": "3dbe4f35fed7b22bfce4766ec494d1f3ad373b278ffdb4b455c0a4b113676313",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_READ-4.log": "a3cd9684ea9983797eb64850df232dcef24f19a54ba82dda3f540f42680c67e6",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_WRITE-1.log": "383457a81be1bd133dc68ca42ee4bee90355c21b9ece3173793f0128227f0bce",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_SEND-3.log": "2f235e39a83a344eff3ece4848cd5c7bc35d250e1e5b05fa4d3a3b7ac4b41410",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_WRITE_PSN-3.log": "75d7a1193720cfba4f53730060f80d3f057fad988aac8542d24275393ac74c37",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_READ-0.log": "8e209510bc4ae6870dd89ae9802fd820acaf9d84c84766bfc97ee114ed6235c4",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_WRITE_RNR-3.log": "75d7a1193720cfba4f53730060f80d3f057fad988aac8542d24275393ac74c37",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_WRITE_RNR-4.log": "7886b61b5529abcd0413e35b965102e3fb3d4227bc2711007e1207aeabd29fe0",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_WRITE-1.log": "917db47efd788ece290ecfb9a08b8a0dac0f30db06a42bf9357f3231a265c898",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_SEND_IMM-1.log": "8d33f94d94123d0bc348fbec8f4cba461f9ab31cec5beae2a9eb87d25cb2d0ae",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_WRITE-2.log": "51f10060b850b2daba56f6f9f1651d4a773d463b20ddf812656cbf3bd1f2f88c",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_SEND-0.log": "4803142e907a6667ca7384d03fbcea11a600bb412578321e9af38a6caac8a6ce",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_SEND-2.log": "707e9ff738b837a2eb4f0e119ebcc5bd7581dd3fea7e50d1b0f9e4ff3ca39ac4",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_WRITE_PSN-2.log": "2d5fa54999b645574c1668d281efaea3736cbe1392e8ed35d4aa074e808ca880",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_READ-4.log": "d3e8a7e0c826ff87f5e01492f55c2f02594ce7b5306b5f3edf8f37f4d9b0a126",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/CAS-2.log": "88ad5b3cdbaf3cff55bfd8c77677c9c7afb3b0eca238254ff58b522dac40bac4",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_WRITE_PSN-4.log": "7886b61b5529abcd0413e35b965102e3fb3d4227bc2711007e1207aeabd29fe0",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_SEND_IMM-4.log": "642a128d5a399722296e00e16abff9d26fc2a47caffe94d5ae67b90b3105e717",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_WRITE_IMM-4.log": "7886b61b5529abcd0413e35b965102e3fb3d4227bc2711007e1207aeabd29fe0",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_WRITE-4.log": "866be6483cfde99b585db467a506586547ec9a10d98650d1b1178872b9b33172",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_SEND-0.log": "03f46bf72775a0fb446b8bd5ec6b068454e9144e618d2e58359d0aa1ed1aa66b",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_SEND-1.log": "4ff6f774247adfe57fac17f59db36528f8a7be66c97bf259093b8bdaaf815725",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/READ-2.log": "34ab0f19026886b1d13fa3c922aa867b1a7c02a20337db8cf08b186b4613b1d7",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/FADD-0.log": "e1d0b5bb92bd94e779402cc955f909a17c6b566bf77d67932f64cdf0bda50de5",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/SEND-3.log": "5ae1e39a00ddd99280b85b9093281f3982962da36628f953e44faa55dad59937",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_SEND-1.log": "80cf884392fb21036a4732fa58069f49850b653bb0ff4a95a7c3f7489a4ffd08",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_SEND_IMM-0.log": "76aaec3ffc858db7c271e1408879e792d28043dde34de6401ec4bdd4a4b478f8",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/SEND-0.log": "eaf88b96ffaf5b449ba7aac3d12fae1f21babb9bbd889b4db486396c2e83e042",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/WRITE-3.log": "6a6a14b96f1c59962a9926cde231744dafeee44887ba32af19c87f91168a8f28",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/WRITE-1.log": "d7a0c4ed146d1447be71126475be8ebd0b32e356f1ed84b6a6bafca60f167bab",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_WRITE-2.log": "a7773046fe2d6917dd32431b7541ff8078150fe1f654acbdfcd6dee6e22cb3ea",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/WRITE-0.log": "3d6a799beabcec254d99bdb380f2c48ba68cdeb774bed7bc144c141eefb85e21",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_SEND_IMM-2.log": "f6b063f0ef7e0205d2c074572a864f5560a919d330cdfad1c795938a4192c099",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/SEND_IMM-3.log": "65b4b00e023252ed7fdb61b09d3dc18a4da8e40743526abcfae9ca546f7ed474",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_SEND_IMM-2.log": "32912107fe57a59868c9f92acd7f87d970b375fd188585c0aaef263d5fc592a2",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/WRITE-2.log": "4d48ff3827bbf9903bdec66d75066f0bc638fe9547fbf4f34adce63d5ec667e4",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/SEND_IMM-0.log": "b866fa7bf9abfd293b5f1f3b37f89d27962d7855b667ae15e8fb2fad5839645a",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/CAS-1.log": "875d06db9fb4279d61f137d07465ce9ba165900aa3505c86df75ec0d7526758c",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_WRITE_IMM-3.log": "d59feab899b92da008288d7339299757a41f2edf4e7a0f3320c87f2fc874796b",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_SEND_IMM-1.log": "80cf884392fb21036a4732fa58069f49850b653bb0ff4a95a7c3f7489a4ffd08",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_WRITE_RNR-1.log": "fc9f07c3c36348f633c578944a06fceb2bcbb8370c5ba226fbd131a2bc0d0d5a",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_WRITE_IMM-4.log": "4fbde9cc04012c7c396f4912e8f0e59e0a3038740be07dee426e4ed8d3ff2cdb",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/SEND-2.log": "e0cb64b46098c6cb4c7e4dc6336ad044729a6d9c098f770ee269d5f09fe402e3",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/READ-0.log": "2d85520abf900cb0ee369096f6eded10e7cc0b4068a23e39a7cff4f1de7cc676",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_WRITE_PSN-0.log": "d9570a7dfefb0bf5632b00e83f3d5835d68d9b717ef3ca951d1b29561a7d1c9b",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_SEND-4.log": "0e0c5dc51e594f91ea1ddbb7c626cb755c97d552eeedbb9887c89f30cfd358c9",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/WRITE-4.log": "37fb8f37fc723108337f5e34465edf78c867d971c3203bd1593f8ba46256e5e2",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/CAS-3.log": "92bae0dd1a9d34d9bc9369c5e7e9251426a0f321f1e899674193f366fc61f092",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_WRITE_PSN-1.log": "fc9f07c3c36348f633c578944a06fceb2bcbb8370c5ba226fbd131a2bc0d0d5a",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/cases": "3bc5218417bf08ed89bd8811be94e86b02886a86c0e95e7c5025cb8f7d56f335",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_SEND_IMM-2.log": "491e5fce20a34b566af4a062eb6e66c39bd0e80fcaa981032879642165c750df",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_SEND_IMM-3.log": "eaf16ee56c61c325570fe0863ab3fb94805fa4b4345140b6904a455fe8b40e6c",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_SEND-4.log": "b313e8955bf0efa84315054554b12b45d714582709ddd9c9d731e21c8686a9cd",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_WRITE_IMM-0.log": "731c5d286975608b9f9eb2c3c5b2f661545118a3589d0a846c1281a74e0fa218",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/READ-3.log": "6134079c438de05b46a209291fc52c376a8483364dfcccd4e773cfaddab9bf08",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_WRITE_IMM-4.log": "e569b574cd2ebe354bfd69fd30ec6d36edbdb40d805808cd8aa09899af560c93",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_READ-2.log": "61f889c0dea752388b2671f4fe9071218b1aee0893df0899a97dad2d4066d798",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/READ-1.log": "0a62dddff42b61896914f7bf41c2b2962441953234add99e532d5b51473cf157",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_READ-1.log": "3f695fce8d9cf7d699a00ef70ee9310dfac6241e5550eda1a342a41e86623bed",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_WRITE-4.log": "19d27f41573ccefb7df887547c339030684b6329845acc6ca19a59908bc49ed6",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_WRITE_IMM-1.log": "38c8154b7013ca4c2f2ec8b7ba192d8b750a70b3a95d64a607daa16c3ffd5873",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_WRITE_RNR-0.log": "d9570a7dfefb0bf5632b00e83f3d5835d68d9b717ef3ca951d1b29561a7d1c9b",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_SEND_IMM-3.log": "f008fae29d628b03b373191967aa5014cfe44003e0c6b76405e356432d087b89",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_SEND_IMM-4.log": "26b5e4229eabb9710e3434ce76109e62661fd5f0a266f041b240e98707cd6213",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_WRITE_IMM-3.log": "aa5b52d171c7527bdb4dbd56ae723155cbecf25bb3c2fb6216e9a2024e56a8d8",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_SEND-2.log": "a4b2c4d1e2010015fe7a3c23b06265a5c49b43e13b3116f22f59aa4e20430281",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_WRITE_IMM-1.log": "f8140ac01601d2507c1ef49a9085d13075df94e5f6c0ddad18296ce78ca7ec8e",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_WRITE-3.log": "aa03b762b1e1e20b271ba869535c2a0f2b4e5c70708a6edfc382624c77083311",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/FADD-3.log": "cfc788f9ca5dfa2626c0ed4000631f7f9a145d96858e8993dde038042f326a29",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_READ-3.log": "af647911ba2ddc17110b65da7119662a1d6cbeaa535583e0b91b5aa89e3fe421",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/SEND_IMM-2.log": "9c761e4e4756940cff9c23a5f38a61783953e5fffecb734404c4475b3210d24e",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_SEND_IMM-1.log": "2d21969c8bd8631bc806d0f041c37398390cef22b0164fa3c6dd8e7230067c01",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_SEND-3.log": "66c40ac3d927f706e71fb4243e463fa9bc637d709a48be9fe7310cab2dc06b69",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_WRITE_IMM-3.log": "75d7a1193720cfba4f53730060f80d3f057fad988aac8542d24275393ac74c37",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_SEND_IMM-0.log": "245884cb9a9cef3483a352dcfc70c0c112d730e8dac2ef33bd65096cbff03d46",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_SEND-1.log": "5db304b81f6674241ce3d0adce6e2392ca075771b8bfe99e33d32a901ae5fbfd",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_WRITE_IMM-0.log": "85472ccfb4215da13ceeab1d0c48bbd852837199540363dda15423a349ffed36",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/LARGE_RX_WRITE_RNR-2.log": "2d5fa54999b645574c1668d281efaea3736cbe1392e8ed35d4aa074e808ca880",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/ZERO_SEND-0.log": "0dc4b6a9f304e6b7134df8e79b675d93b6a00f388e72122f4738f86a817b4000",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/FADD-4.log": "6ced98b1a277250782569a61e8564e16b0ecb6ae410802c8e46f75397541328e",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/FADD-2.log": "d119ee72db01de822999a631ec9f9db07277a71da3606333c0218824d446a877",
+    "rdma/rnic/build/write-psn-control-kernel-native-cq-kbxowy_7/FADD-1.log": "8b1092b4cd4efa9e8b9df83728caccd43a880078e83dda02b097fd6791220a9d"
+  }
+}

@@ -16,6 +16,53 @@ passes; this does not relabel the old suite or qualify a hardware release.
 
 ## Latest functional milestone (2026-10-21)
 
+Publication update: the user-requested snapshot adds progress170–172 and the
+unfinished progress173 WRITE-abort source, with successful AND failed reports.
+Native38/CQ105 below remain the latest completed regressions. The separate
+abort candidate FAILED C++ compilation (helper declarations after template
+use); none of its planned140 cases ran. [Failure record](../../results/2026-10-18/rocev2-rnic-write-abort-hls-001.json).
+No abort HLS generation/native integration/safe fatal-QP drain is claimed.
+Earlier unpushed/no-Git/live-build statements describe their checkpoint times;
+no jobs are currently live. No hardware, driver or default change accompanies
+this publication. Original4ns timing and physical qualification remain unmet.
+
+Progress172: actual fresh native38 TERMINAL PASS, including real NAK60,
+suppressed repeated future MID, correct retry, identical MID and post-LAST
+duplicate ACK1f WITHOUT second MR/DMA/RQ/CQ/native-PSN execution. Actual shared
+HLS/MSN/MAC/host/CQ proofs and every37 old input/summary/wire/host/owner oracle
+pass unchanged. Compile1039.639s/max12.389s retain original1200s/30s/4ns.
+[Runtime audit3657](../../results/2026-10-18/rocev2-rnic-write-psn-control-native-runtime-diagnostics-001.json).
+Real-header module build10.843s keeps all68 prior inputs identical; actual
+standard C consumes unedited wholeCQ in105 cases, all100 old outcomes identical.
+[Software audit1707](../../results/2026-10-18/rocev2-rnic-write-psn-control-native-software-diagnostics-001.json).
+All jobs terminal, not a physical/real-peer/live-Linux/timing/fatal-QP pass.
+Proper error/quarantine/teardown/full1MiB/multiSGE/live refs/all11 remain.
+No install/load/program/default/Git changes; old live-build notes are history.
+
+Progress171 starts a FRESH native38 compile: all37 old recipes/raw inputs and
+378 fatal messages remain, plus actual NAK/suppression/retry/duplicate MID and
+post-LAST with no second DMA/RQ/CQ. [Fixture preflight002](../../results/2026-10-18/rocev2-rnic-write-psn-control-native-fixture-diagnostics-002.json)
+passes1920 evidence bindings;117 direct file bindings are consumed by the
+runner BEFORE build/object creation. Old malformed nested-manifest001 and
+startup rejection remain unqualified, not rewritten/waived. New whole bench
+elaboration passes; native38 compilation is LIVE, not a runtime pass. Retain
+original1200s/30s/4ns/root1GiB/RAM4GiB/all11. No hardware/default/Git change.
+
+Progress170: ONE shared ACK tag sequence now handles distinct control480/
+HLS512/MAC528 without an invented RQ/WRITE/RNR/data/PSN/CQ receipt. Actual
+component144+2 PASS, all78 old summaries identical; actual mixed control/
+WRITE/RECV/RNR/control and five-syndrome MAC frames/FCS/SFD/CDC are checked.
+[Component audit770](../../results/2026-10-18/rocev2-rnic-receive-control-ack-diagnostics-001.json).
+The certified PSN controller46 and native full hierarchy8.372s PASS; entire
+actual new197-file HLS replaces the old cohort, with one ACK/MSN/state table
+and original native MR/PTE/backend/nonce/RQ/CQ namespaces. This is NOT fresh
+native runtime: all37 prior cases plus NAK suppression/retry/duplicate without
+second data/RQ/CQ still need actual execution. Full fatal-QP recovery/timing/
+physical/all11 remain. No hardware/default/Git actions; local afterd0ec4b6.
+Actual checked frontend47 PASS; every old input/protection/replay result is
+identical. [Native-source audit922](../../results/2026-10-18/rocev2-rnic-write-psn-control-native-diagnostics-001.json)
+binds the actual same tested frontend in the selected native hierarchy.
+
 Publication update: this user-requested snapshot includes progress167–169,
 successful and failed reports alike. RNR/same-PSN retry native37 is the latest
 completed integration; control ACK/NAK HLS generation is NOT native/MAC or

@@ -32,6 +32,292 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+### User-requested publication: progress170–173 (2026-10-21)
+
+This checkpoint publishes the completed control ACK/NAK/native38/software
+work below AND the unfinished typed WRITE-abort candidate, including original
+failures. Earlier local/unpushed/live-build/no-Git statements are historical.
+The latest completed integration remains native38 and standard C CQ105, not
+the new abort path. No relevant build/test process is currently running.
+
+Progress173 adds `segmented_write_abort_transport.py`, `test_write_abort.cpp`
+and `probe_write_abort_hls.py`. The candidate proposes a distinct960-bit
+owner/992-bit receipt for partial-WRITE teardown in the same HLS parser,
+positive-retirement join and PSN/MSN tables. Its intended checks distinguish
+empty state from a positive WRITE, require actual positive retirement and
+table readback for partial state, clear only the selected state and verify
+that clear. These are SOURCE INTENT, NOT passed functional evidence. Privileged
+native/MAC/fence/management inputs remain models; enclosing native quarantine,
+error CQ/STOP/cancel coordination and safe reference release remain absent.
+Even a future HLS abort receipt must not be treated as a QP/global DMA drain
+or permission to unpin memory. Both original global HLS drains remain0.
+
+The [first derivation failure](../results/2026-10-18/rocev2-rnic-write-abort-source-startup-001.json)
+was a mismatched source-text anchor, before compilation; its exact preimage
+is retained. After correcting that anchor, [C++ probe001](../results/2026-10-18/rocev2-rnic-write-abort-hls-001.json)
+FAILED compilation after34.248s under the original600s limit. The actual compiler
+reports missing prior declarations for `as02_abort_control`, `as02_abort_packet`
+and `as02_write_abort_valid` at template use. No compiler permissiveness or
+other waiver was applied. ZERO of the planned140 modes (old105 plus35 new)
+ran; no abort HLS was generated and no abort-native/runtime/physical/error
+recovery pass is claimed. The source and failed report are published as-is;
+generated inputs, compile log and exact failure preimage remain locally.
+
+Before publication, all409 authored/222 report hashes from progress172 and
+both653-file native38 manifests revalidated, as did568 old-native/543
+control-HLS/515 control-elaboration bindings. The failed abort probe's312
+source and15 artifact bindings match; its earlier derivation failure resolves
+to the exact preserved preimage, not silently to the corrected current source.
+Read-only `scripts/check.sh` still FAILS the historical TX-padding source SHA
+mismatch (`rocev2-transport-rx-rtl.json` -> `rocev2_tx_padding.v`); this is not an
+all-green source suite. Long builds/runtime tests were not repeated to publish.
+
+Two terminal HLS database caches were separately moved to RAM only after
+durable archives and all3288 file hashes were verified. They and ALL earlier
+RAM-backed archives must be restored before any reboot. No hardware/install/
+load/JTAG/flash/network/fan/BIOS/default/reboot action is part of publication;
+BIOS Medium, management networking and IB_ATOMIC_NONE stay unchanged.
+The new RNIC HLS estimate15.571ns still fails original4ns/default1.08ns; fatal-QP
+cleanup, native1MiB/multiSGE/live registered references, real-peer recovery,
+original board timing/physical qualification and all eleven requirements remain.
+
+Progress172 classifies171 as PROGRESS plus verified live wait: actual new38
+fixture/preflight and fresh compile were running. All405 authored/216 report/
+653 live-input/568 old-native/543 control-HLS/515 new-elaboration hashes
+revalidate. SAME session78705/runner2926721/compiler2926732 was observed live,
+never restarted because an observation poll expired. It is now TERMINAL0;
+runner/compiler PIDs are gone. All original eleven requirements remain intact.
+
+[Actual native full001](../results/2026-10-18/rocev2-rnic-write-psn-control-native-full-001.json)
+PASSES ALL38 cases, compile1039.638676s under original1200s, maximum12.388889s
+under30s. Every37 old raw input/summary and independent actual wire/host/owner
+oracle is identical. The new case executes genuine8193 WRITE Immediate,
+future MID NAK60, identical future locally suppressed WITHOUT wire proof,
+correct MID retry, identical MID duplicate ACK1f, LAST and identical post-LAST
+duplicate after genuine host-CQ ACK/retirement. Actual shared MACtags6001..6006,
+syndromes00/60/00/1f/00/1f, PSNs987654/987655/987655/987655/987656/987656 and
+actual AETH MSNs0/0/0/0/1/1 are all checked with every wire byte/FCS/SFD/CDC.
+Full native356 context and serial1/2/3 typed480 owners -> actual shared-HLS512
+receipts -> real528 MAC EOF/SFD/tail proof -> exact480 ACK retirement ->
+independently stalled local rejection are verified, not a header-only model.
+Native MR queries4, actual data/HLS owners/commits/visibility fences3,8193 host
+bytes, one genuine zero-SGE RQ and one whole8193/flags3 CQ stay exact. Both
+duplicates perform NO repeated MR/DMA/RQ/CQ or positive PSN commit. The positive LAST
+actual MAC receipt is held1100 cycles; local rejects are held71 cycles. Full
+payload/pad/sentinel/RQ/CQ ownership and one whole event remain independent
+byte/count oracles, not rewritten observed output.
+
+[Runtime diagnostics001](../results/2026-10-18/rocev2-rnic-write-psn-control-native-runtime-diagnostics-001.json)
+PASSES3657 bindings: actual old37 compatibility, exact preflight bench/frozen
+runner, fresh executable, actual same449RTL/8data native namespaces and every
+197 same-generation new HLS RTL/data file. Fresh binary SHA
+`2818b1de3e53a1a6961f17d33e47ac5f77b3212fd099fae38dcf6afbc669a3b3`.
+No old executable/object was used. Host/root/peer/PHY/PTP remain MODELS;
+manual source replay is not physical ConnectX/RXE interoperability or live
+registered kernel/provider reference proof.13 UNOPTFLAT warnings remain
+unwaived; this is not full-board timing/CDC/DRC/routing/fit qualification.
+
+`build_write_psn_control.py` requires every actual38 case, exact profile8,
+original bounds and the SAME actual native runtime audit before compiling.
+The real-header [kernel build001](../results/2026-10-18/rocev2-rnic-write-psn-control-kernel-build-001.json)
+PASSES10.842791s under180s. ALL68 frozen kernel inputs, including parent headers
+and Makefile, are identical to previous RNR/profile8; no kernel ABI/capability/
+default change and no install/load. Two actual negative qualification checks
+reject the old successful37 report BEFORE any module/CQ build directory or
+report creation. [Negative-only record](../results/2026-10-18/rocev2-rnic-write-psn-control-kernel-negative-001.json)
+is not a new kernel or callback runtime pass.
+
+`probe_kernel_write_psn_control_native_cq.py` consumes the UNEDITED actual
+native38 wholeCQ/real C128 zero-RQ with unchanged standard C callbacks and
+explicit Linux/MMIO/pin/coherent-DMA primitive models.
+[Native-CQ105](../results/2026-10-18/rocev2-rnic-write-psn-control-kernel-native-cq-001.json)
+PASSES, compile7.415681s under original30s and all runtime cases under10s.
+Every100 old callback outcome remains identical; five new cases prove the
+whole8193 WRITE notification/zero capacity/BE Immediate and retained references
+for four malformed full owners. The actual new CQ/RQ bytes match the old ABI
+exactly. This is NOT installed/live Linux/native/provider memory/ref/order or
+physical proof. Prior202 callback runs remain retained but were NOT reexecuted.
+[Software diagnostics001](../results/2026-10-18/rocev2-rnic-write-psn-control-native-software-diagnostics-001.json)
+PASSES1707 bindings, all68 frozen inputs and all100 previous outcomes.
+
+All native/kernel/CQ/audit jobs this turn are TERMINAL, not stopped or blocked.
+Next broad work remains proper fatal-QP61/62/63 error/CQ/quarantine/lifetime and
+safe partial-HLS teardown, full1MiB native/multiSGE/live registered refs and
+short real-peer recovery/congestion/original board timing/physical/all11.
+Control header rendering and successful duplicate handling alone do NOT prove
+safe error flush/unpin/drain. Both original global HLS drains stay0. Native
+HLS15.571ns still FAILS original4ns/default1.08ns; old TX-padding SHA mismatch
+still fails `scripts/check.sh`. No waiver, install/load/JTAG/flash/network/
+fan/BIOS/reboot/commit/push action. BIOS Medium, management networking and
+IB_ATOMIC_NONE remain unchanged. No reboot is needed; authenticated exact
+thread/goal revival remains unproved. Restore ALL archived RAM-backed caches
+before any necessary reboot. Older building/not-native-qualified notes below
+describe their checkpoint times, not this completed native38 milestone.
+
+Progress171 classifies170 as PROGRESS: actual control144+2, controller46,
+checked frontend47 and actual new-HLS/native hierarchy449RTL/8data all passed
+their stated scopes. All402 authored/213 public-report/568 completed-native/
+543 completed-control-HLS/515 completed-control-elaboration input hashes
+revalidate; no prior live process was restarted. Original all11 remain.
+
+`write_psn_control_native_fixture.py` extends the actual native graph with one
+new combined scenario while retaining all37 old cases. Genuine8193 WRITE
+Immediate and a preposted genuine zero-SGE notification RQ execute FIRST,
+future MID (PSN987658 vs expected987655) NAK60, identical future suppressed,
+correct MID retry, byte-identical MID duplicate ACK1f, LAST and byte-identical
+post-LAST duplicate ACK1f AFTER actual host-CQ retirement. The expected shared
+tags are6001..6006, syndromes00/60/00/1f/00/1f and actual MSNs0/0/0/0/1/1.
+Negative ownership remains full480 -> actual HLS512 -> actual MAC528 -> exact
+ACK-retire480 -> independent local error; one suppressed local drop cannot
+invent wire proof. Native MR queries4, data/HLS owners/commits/fences3, host
+bytes8193 and exactly one RQ/wholeCQ must remain despite replay/retry. Full
+host/pad/sentinel/RQ/CQ and every wire byte/FCS/SFD/tag are independent oracles.
+The original LAST real-MAC receipt is still blocked1100 cycles (now6005);
+local reject consumers are independently blocked71 cycles. Old37 branches
+retain their old conditions; only the new runtime flag adds actual observed
+control lifecycle counts to shared frame/receipt cardinalities. No proof,
+frontier, DMA, MR, RQ or CQ is internally injected or observed-output-normalized.
+
+`probe_write_psn_control_native_full.py` requires a strict fixture preflight
+before build/object creation and uses only the exact new actual449RTL/8data
+source selector/new197-file HLS cohort. Fresh object/binary directories only,
+original1200s compile/30s case/4ns/root1GiB/RAM4GiB/180s bench elaboration gates.
+[Fixture diagnostics002](../results/2026-10-18/rocev2-rnic-write-psn-control-native-fixture-diagnostics-002.json)
+PASSES1920 prior evidence bindings, all37 exact recipes/raw input hashes,
+every378 original fatal message, thirteen additional fatal descriptions and
+unchanged old independent verification functions. All old WRITE/Immediate
+positive frame and real C128 RQ inputs are identical. The new future MID
+changes only independently authored PSN/checksum/ICRC, preserving every payload
+byte/extent; actual observed output is never rewritten. The runner separately
+consumes117 direct file bindings, including all frozen old37 input files.
+
+The first preflight001 recorded success for fixture semantics but used a
+nested dictionary under a SHA-manifest name; the strict generic verifier
+correctly REJECTED it before any bench/compiler. Its original JSON/source
+and [startup failure](../results/2026-10-18/rocev2-rnic-write-psn-control-native-full-startup-001.json)
+remain immutable. Preflight001 is NOT qualified/consumable evidence. Corrected
+002 retains the per-case metadata separately and binds every actual file in a
+flat manifest; no generic verifier, RTL, assertion, stimulus, clock/deadline/
+geometry or proof gate changes. The failed runner created only its frozen
+runner directory; no native-full001 result or compile was produced by that
+startup attempt. Actual full001 is now the separate fresh execution below.
+
+New full001/session78705/runner2926721/compiler2926732 is VERIFIED LIVE at this
+checkpoint. Run `rdma/rnic/build/write-psn-control-native-full-ydlp6b0d`, object
+directory `/dev/shm/as02-write-psn-control-native-obj-isa3vvjw`, frozen runner
+`rdma/rnic/build/write-psn-control-native-runner-iity8dw6/native_runner.py`.
+The complete actual bench elaboration passed (compiler launch proves the
+unchanged error/width gate was crossed). Native compilation is still running;
+NO native38, real-peer NAK/suppression/retry/duplicate or physical pass is
+claimed. Observe the SAME session/process until terminal; do not restart on
+an observational timeout. Compiler warnings are retained, not timing waivers.
+
+Next: finish this actual native38 execution and inspect every old/new raw
+input, independent summary, full owner/MSN/MAC/host/CQ result. If it fails,
+preserve exact failures and diagnose actual controller/core/fixture behavior
+without fabricated status/normalization/relaxed gates. Then qualify matching
+software/native CQ boundaries as needed and continue broad missing functions.
+Proper fatal-QP61/62/63 error/quarantine/teardown/full1MiB/multiSGE/live refs/
+real-peer recovery/congestion/full original board timing/physical/all11 remain.
+HLS15.571ns still FAILS4ns/default1.08ns; historical TX-padding SHA mismatch
+still fails `scripts/check.sh`. No install/load/JTAG/flash/network/fan/BIOS/
+reboot/Git action. No reboot needed; exact authenticated thread/goal revival
+unproven. Restore ALL archived RAM caches before any necessary reboot.
+
+Progress170 classifies the explicit user-requested publication as PROGRESS:
+commitd0ec4b6 and remote main match, all41 reviewed files published. Its private
+publication record retains exact169 documentation preimages; no subsequent
+automatic push is authorized. All392 authored/203 report/568 completed native/
+543 completed control-HLS input hashes revalidate, with only those five docs
+resolved to the exact publication preimages. Original all11 remain intact.
+
+`derive_receive_control_ack.py` extends the ONE actual RECV/WRITE/RNR ACK
+allocator with distinct480-bit control owner, full512-bit HLS header receipt,
+and528-bit same-tag real MAC proof. Full native context/route, reserved/type/
+signed24 PSN relationship, nonzero monotonically increasing64 serial and
+complete HLS owner/error are checked. The same single nonwrapping class6000
+sequence has four alternatives, NOT another allocator. Real full ACK capture,
+independent HLS proof, accepted EOF/SFD/1024-tail, backpressured528 proof and
+exact480 retirement are all required. Control masks all old positive/RQ/RNR
+proof outputs and cannot synthesize data/DMA/PSN/CQ authority. Serial history
+survives every retirement and traffic-mode switch; reset is never drain/unpin.
+[Actual component003](../results/2026-10-18/rocev2-rnic-receive-control-ack-003.json)
+PASSES144 modes plus both original legacy benches under unchanged10s/4ns/
+2.56nsMAC/100000 gates (maximum1.638320s). All78 old summaries are identical.
+Actual MAC control/WRITE/RECV/RNR/control5 and five-control-syndrome5 full
+frames/FCS/SFD/CDC are checked independently. Control owner/header inputs are
+MODELS, not live generated HLS or native execution. Failed001 parser-None
+and002 missing174-stimulus fixtures remain exact with source preimages; the
+production derived ACK is byte-identical across all three runs.
+[Component diagnostics001](../results/2026-10-18/rocev2-rnic-receive-control-ack-diagnostics-001.json)
+PASSES770 bindings and retains all old fatal messages.
+
+`rocev2_write_psn_control.v` retains actual checked PSN18 metadata through
+ACK-owner acceptance -> same480 HLS event -> actual528 MAC proof -> exact480
+ACK retirement -> independently backpressured local reject consumption.
+Future PSN emits60 naming the genuine native expected PSN; duplicate emits1f
+naming the last accepted PSN. Only the actual HLS MSN receipt supplies AETH
+MSN; local-error MSN0 is NOT reused as authority. Repeated future NAKs are
+suppressed per full QPN/epoch/QP-cookie/native frontier; suppression clears
+only upon genuine trusted context/frontier observation, not READY/idle or a
+positive execution claim. Half-window ambiguous and uncertified/malformed
+rejects remain local-only. Serial64 cannot wrap/reuse. No RQ/message/DMA/
+PSN/CQ execution or fatal-QP cleanup is invented.
+[Controller001](../results/2026-10-18/rocev2-rnic-write-psn-control-001.json)
+PASSES46 four-state cases under original10s/4ns/100000, maximum0.013223s.
+Actual checked frontend/native/HLS/MAC/local-consumer inputs are MODELS here.
+
+`derive_write_psn_control_native.py` adds explicit full-context/receivedPSN/
+expectedPSN certificate ports on the actual frontend/controller, latched ONLY
+after real checked-frame enable/trusted-peer/format checks select PSN18.
+Local16/17 is not NAK authority. It inserts the controller BEFORE the existing
+RNR helper and original independent reject mux; positive WRITE and old RNR
+paths remain. All9 native/shared/integrity flow leaves, frontend/controller
+and sole ACK replacement use actual ports, no hierarchical production taps.
+The entire SAME actual new197 HLS RTL/data cohort replaces the old197, never
+an old/new mixture. Protected native context and actual MAC ownership remain
+required, both original global drains stay0, original HLS role/visibility gates
+stay intact. An initial overly specific source anchor failed before compile;
+its exact source/startup record is retained.
+[Full native elaboration001](../results/2026-10-18/rocev2-rnic-write-psn-control-native-elaboration-001.json)
+PASSES8.371358s under180s/root+RAM1GiB. Selected449 RTL/8 data files have one
+actual native MR/PTE/backend/nonce/ACK and one HLS control merger/ACK/MSN/state
+table each. Profile131071/511/13/63/software8 is unchanged. The strict new
+source selector verifies every same-generation file and requires actual old37
+runtime evidence, but this compilation is NOT new native packet runtime.
+
+The actual new frontend is also executed behind the real IPv4/ICRC checker,
+real MR/RQ and registered byte-exact replay. All47 old raw stimuli and every
+old independent protection/replay outcome remain identical.
+[Frontend002](../results/2026-10-18/rocev2-rnic-write-psn-front-002.json)
+PASSES under original10s/4ns/100000, maximum2.093232s. Only old17 genuinely
+disagrees with the modeled native expected PSN and certifies. Old22 supplies
+native expected=received=0, then the message guard rejects relative position
+with16; it must NOT certify. Initial frontend001 failed only a wrong extra
+count expectation for22 (its actual old assertions passed); the exact source,
+raw failure/log and independent stimulus definition are retained. Corrected
+count does not change the DUT or any old assertion/stimulus/gate.
+[Native-source diagnostics001](../results/2026-10-18/rocev2-rnic-write-psn-control-native-diagnostics-001.json)
+PASSES922 bindings, actual selected/independently tested frontend equality,
+all47 identical raw inputs/oracles, controller46, sole real namespaces and
+entire new HLS. Context/frontier/backend/HLS/MAC remain models in the frontend
+component; hierarchy compilation is not packet runtime or safe fatal-QP cleanup.
+All jobs this turn are terminal; no long native build was started yet.
+
+Next authoritative step is fresh native38: preserve every37 old recipe/raw
+input/oracle and add real future-PSN NAK, repeated-future suppression, genuine
+same-PSN retry and duplicate-no-second-DMA/RQ/CQ (including post-LAST duplicate).
+Use independent full wire bytes/MSN/tags/FCS/SFD, full host/sentinels and whole
+CQ/PSN/MR/backend counts; original1200s compile/30s cases/4ns/root1GiB/RAM4GiB
+remain. Do not reuse an old binary or interpret elaboration/component models
+as runtime proof. Proper fatal-QP quarantine/partial-HLS teardown/full1MiB/
+multiSGE/live registered Linux/provider references/real-peer recovery/congestion/
+original board timing/physical and all11 remain. HLS15.571ns still FAILS4ns/
+default1.08ns, historical TX-padding SHA mismatch still fails the source suite.
+No install/load/JTAG/flash/reboot/network/BIOS/fan/commit/push action this turn.
+Restore ALL archived RAM-backed caches before any necessary reboot; exact
+authenticated goal/thread revival remains unproved. No reboot is needed.
+
 Explicit publication update (2026-10-21): at the user's request, this snapshot
 includes progress167–169 sources and successful AND failed reports. Earlier
 local/unpushed/live-build statements below describe their checkpoint times.

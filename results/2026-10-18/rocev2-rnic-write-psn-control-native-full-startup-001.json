@@ -1,0 +1,15 @@
+{
+  "pass_test": false,
+  "stage": "strict source-preflight binding before build directory/bench/elaboration/compilation",
+  "error_type": "ValueError",
+  "error": "malformed binding:old37_runtime_input_sha256",
+  "exception": "Traceback (most recent call last):\n  File \"<stdin>\", line 8, in <module>\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/audit_segmented_receive.py\", line 44, in bindings\n    if not isinstance(h,str)or not re.fullmatch('[0-9a-f]{64}',h):raise ValueError('malformed binding:'+key)\n                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: malformed binding:old37_runtime_input_sha256\n",
+  "source_sha256": {
+    "rdma/rnic/tests/audit_write_psn_control_native_sources.py": "e007e093314c00b4f017239525699326c3957b70c6362c3edf13d67cf3254637",
+    "rdma/rnic/tests/probe_write_psn_control_native_full.py": "c2c7fd3c3732e5e3a334d4499a310e7976bab8bc348acd130dda42e331c017c0"
+  },
+  "exact_preimage_root": "rdma/rnic/build/write-psn-native-fixture-001-preimages-nl65i1u4",
+  "frozen_runner": "rdma/rnic/build/write-psn-control-native-runner-o4tpozih/native_runner.py",
+  "bench_or_compiler_started": false,
+  "hardware_actions": []
+}

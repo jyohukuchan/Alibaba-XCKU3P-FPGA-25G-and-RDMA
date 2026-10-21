@@ -1,0 +1,80 @@
+{
+  "scope": "Actual native38 PSN control, same-source kernel and unedited-CQ105 audit.\n\nRequire all68 frozen kernel inputs identical and every100 prior CQ outcome.\nLinux/MMIO/pins/DMA primitives remain MODELS, not installed/live hardware.\n",
+  "audit_passed": true,
+  "evidence": {
+    "write-psn-control-native-full-001": {
+      "bindings_verified": 884,
+      "report_sha256": "0ab87192de1ed5846a636c6992a2e44e309d19fece8f3c0386fe772430408a9a",
+      "exact_preimage_resolutions": []
+    },
+    "write-psn-control-native-runtime-diagnostics-001": {
+      "bindings_verified": 6,
+      "report_sha256": "38ab8f297fe781adaabb3a021d3612335c1befc86145a9c87e902e610a6976f5",
+      "exact_preimage_resolutions": []
+    },
+    "write-psn-control-kernel-build-001": {
+      "bindings_verified": 157,
+      "report_sha256": "9cf4bd19c9d72f392b5705a03e34ae6e02a175e75f42c57d48359d960521fd51",
+      "exact_preimage_resolutions": []
+    },
+    "write-psn-control-kernel-native-cq-001": {
+      "bindings_verified": 254,
+      "report_sha256": "e7df1eac1584471292dbf2e686ef127553846d50878aaa4501e3bd3266125a23",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-rnr-kernel-build-001": {
+      "bindings_verified": 156,
+      "report_sha256": "772f38d1d9bb088306e3a8ae7230413b45846b892a84dc9f32536c16c364acd6",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-rnr-kernel-native-cq-001": {
+      "bindings_verified": 246,
+      "report_sha256": "ff55f04cc15d21ff1ef73c6291dbafc6976adc7f7049253e53eaebbff15a228e",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-rnr-native-software-diagnostics-001": {
+      "bindings_verified": 4,
+      "report_sha256": "605511ea7c84035cd8237971db3f3fef3a1d131b26d48e1813551994b6cb47f1",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 1707,
+  "actual_native_cases": 38,
+  "actual_standard_C_native_CQ_cases": 105,
+  "all100_previous_CQ_outcomes_identical": true,
+  "exact_frozen_kernel_input_files": 68,
+  "all_frozen_kernel_inputs_byte_identical": true,
+  "kernel_compile_seconds": 10.842790529015474,
+  "CQ_compile_seconds": 7.415681309008505,
+  "new_PSN_CQ_summary": {
+    "pass_test": true,
+    "opcode": 40,
+    "bytes": 8193,
+    "capacity": 0,
+    "mutation": 0,
+    "native_RTL_CQ_unedited": true,
+    "full128_kernel_native_record_identical": true,
+    "actual_standard_WRITE_notification_CQ_MR_lifetime": true,
+    "profile8_CQC511": true,
+    "Linux_Hardware_boundaries_modeled": true
+  },
+  "malformed_native_CQ_mutations_retain_owner": true,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_write_psn_control_native_software.py": "59b1d05852f034b603664f0a0ea53dcc81dc94b4fea5df7dd09f1aac54fc87e8"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "previous202_callback_runs_not_reexecuted": true,
+  "primitive_Linux_MMIO_pins_DMA_models": true,
+  "installed_kernel_or_physical": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "remaining": [
+    "All11/full1MiB native/multiSGE/live registered Linux/provider refs/real-peer NAK/RNR/retry/MSN/congestion/safe partial-HLS teardown/original timing/physical remain."
+  ],
+  "install_load_program_reboot_network_fan_BIOS_actions": [],
+  "commit_or_push": false
+}

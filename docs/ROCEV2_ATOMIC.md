@@ -5,6 +5,42 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+Publication update (2026-10-21): this explicit user-requested checkpoint adds
+progress170–172 and unfinished173, preserving successful AND failed evidence.
+Native38/CQ105 remain the latest completed regressions. The separate typed
+WRITE-abort candidate failed C++ compilation before any planned140 case ran;
+it is not a new Atomic regression, generated HLS or safe fatal-QP drain.
+[Failure record](../results/2026-10-18/rocev2-rnic-write-abort-hls-001.json).
+Older no-Git/unpushed/live-build notes are history. No jobs are live; no
+hardware/default/driver change or new Atomic advertisement accompanies this
+publication. Original timing/global-drain gates remain unmet/unchanged.
+
+Progress172 completes fresh native38: every37 old case including actual
+CAS/FADD/mixed/denials plus new PSN NAK/suppression/retry/duplicate PASS.
+All old raw/summary and independent data/wire/owner oracles stay identical;
+original1200s/30s/4ns gates remain (1039.639s/max12.389s).
+[Runtime audit3657](../results/2026-10-18/rocev2-rnic-write-psn-control-native-runtime-diagnostics-001.json).
+Same-input real-header module build and unedited-native-CQ105 also PASS,
+not installed/live Linux/physical/Atomic advertisement. IB_ATOMIC_NONE,
+both zero drains/defaults/timing/all11 remain; all jobs terminal.
+
+Progress171 starts fresh native38 after exact old37/378-fatal/raw-input
+compatibility checks. Existing Atomic/CAS/FADD/mixed/denial cases are retained
+but have NOT yet been executed in this new binary. Actual NAK/retry/duplicate
+coverage must pass, not just compilation. No advertisement/install/hardware/
+default/Git action; IB_ATOMIC_NONE/original timing/drains/all11 unchanged.
+
+Progress170 connects distinct control480/HLS512/MAC528 to the SAME native
+ACK/MSN/state domains. Component144+2 and controller46 PASS; actual full
+hierarchy elaboration8.372s passes with the entire new197-file HLS. This is
+NOT execution of the old37 Atomic/other native regressions in this new graph;
+they and new PSN NAK/retry/duplicate tests remain required. No new advertised
+Atomic capability, drain, default, physical qualification or timing claim.
+IB_ATOMIC_NONE and all11 remain. New work is local afterd0ec4b6.
+Actual checked frontend47 preserves all old raw/protection/replay outcomes;
+[native-source audit922](../results/2026-10-18/rocev2-rnic-write-psn-control-native-diagnostics-001.json)
+passes without claiming new native packet execution.
+
 Publication update: the user-requested snapshot includes progress167–169 and
 both successful and failed evidence. Earlier local/unpushed/building statements
 are checkpoint history. RNR native37 is complete; control ACK/NAK HLS is not yet

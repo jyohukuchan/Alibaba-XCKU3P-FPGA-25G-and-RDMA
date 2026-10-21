@@ -1,0 +1,51 @@
+{
+  "scope": "Negative qualification gates ONLY: existing successful native37 cannot qualify new native38 kernel/CQ work; no actual new module or callbacks executed.",
+  "pass_test": true,
+  "tests": {
+    "module": {
+      "exit": 1,
+      "seconds": 0.1763226219918579,
+      "command": [
+        "python3",
+        "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/kernel/build_write_psn_control.py",
+        "--native-report",
+        "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/results/2026-10-18/rocev2-rnic-segmented-write-rnr-native-full-002.json",
+        "--report",
+        "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/results/2026-10-18/rocev2-rnic-write-psn-control-negative-module-must-not-create.json"
+      ],
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/kernel/build_write_psn_control.py\", line 39, in <module>\n    exec(compile(runner_source(),str(Path(__file__).resolve()),'exec'),dict(__name__='__main__',__file__=str(Path(__file__).resolve())))\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/kernel/build_write_psn_control.py\", line 116, in <module>\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/kernel/build_write_psn_control.py\", line 50, in main\nValueError: exact matching profile8/native38 PSN control plus all37 old cases required\n",
+      "expected_old37_rejected": true,
+      "no_build_directory_or_report_created": true
+    },
+    "CQ": {
+      "exit": 1,
+      "seconds": 0.5908301959862001,
+      "command": [
+        "python3",
+        "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/probe_kernel_write_psn_control_native_cq.py",
+        "--native-report",
+        "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/results/2026-10-18/rocev2-rnic-segmented-write-rnr-native-full-002.json",
+        "--report",
+        "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/results/2026-10-18/rocev2-rnic-write-psn-control-negative-CQ-must-not-create.json",
+        "--kernel-build-report",
+        "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/results/2026-10-18/rocev2-rnic-segmented-write-rnr-kernel-build-001.json"
+      ],
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/probe_kernel_write_psn_control_native_cq.py\", line 36, in <module>\n    exec(compile(runner_source(),str(Path(__file__).resolve()),'exec'),dict(__name__='__main__',__file__=str(Path(__file__).resolve()),\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/probe_kernel_write_psn_control_native_cq.py\", line 111, in <module>\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/probe_kernel_write_psn_control_native_cq.py\", line 37, in main\n    send_fixture_source=parent.parent.send_fixture_source,receive_fixture_source=parent.parent.receive_fixture_source))\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: exact native38 profile8 and PSN-control-matched kernel required\n",
+      "expected_old37_rejected": true,
+      "no_build_directory_or_report_created": true
+    }
+  },
+  "source_sha256": {
+    "results/2026-10-18/rocev2-rnic-segmented-write-rnr-native-full-002.json": "2714ed78a5509f861c0a24da646ec2f6ffe7aeebd27ed73dcc03cb00004577f1",
+    "results/2026-10-18/rocev2-rnic-segmented-write-rnr-kernel-build-001.json": "772f38d1d9bb088306e3a8ae7230413b45846b892a84dc9f32536c16c364acd6",
+    "rdma/rnic/kernel/build_write_psn_control.py": "a1f5e365b032ab3c1bef2d4a242d92ae7911ba8b6106f841bc6c6313f817edaf",
+    "rdma/rnic/tests/probe_kernel_write_psn_control_native_cq.py": "88facd790cfcc79d1536d7e483e4e9899d745f913a2c368295d0604a7e3a94d2"
+  },
+  "actual_new_native38_runtime": false,
+  "actual_module_build": false,
+  "actual_C105_callbacks": false,
+  "hardware_actions": [],
+  "overall_goal_complete": false
+}

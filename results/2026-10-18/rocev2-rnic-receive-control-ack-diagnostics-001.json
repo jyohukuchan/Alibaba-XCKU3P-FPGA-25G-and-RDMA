@@ -1,0 +1,75 @@
+{
+  "scope": "Actual control144+2 ACK/MAC component evidence, not live HLS/native/physical.",
+  "audit_passed": true,
+  "evidence": {
+    "receive-control-ack-003": {
+      "bindings_verified": 249,
+      "report_sha256": "c7f1119b2a091d35e57b9b2e5a023556094b953424259174bd163e3381351e8d",
+      "exact_preimage_resolutions": []
+    },
+    "receive-write-rnr-ack-002": {
+      "bindings_verified": 173,
+      "report_sha256": "ec67dd07f4e3453f0836c418f467b35a3542965eefe3c5a19d6fc5fad44f26e5",
+      "exact_preimage_resolutions": []
+    },
+    "receive-control-ack-001": {
+      "bindings_verified": 100,
+      "report_sha256": "ecc9a05d50c74cba2cd48d7804650a3f2b5bcbcf99ca88e85792da17f9d368f2",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_receive_control_ack.py"
+      ]
+    },
+    "receive-control-ack-002": {
+      "bindings_verified": 248,
+      "report_sha256": "5a2629a39fd09a9146ec7f76e24feefd0f10e46b210b043f0678e550e9cad8dc",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/probe_receive_control_ack.py"
+      ]
+    }
+  },
+  "verified_bindings": 770,
+  "old78_summaries_identical": true,
+  "both_original_legacy_summaries_identical": true,
+  "retained_old_fatal_messages": 55,
+  "additional_fatal_messages": 19,
+  "actual_component_modes": 144,
+  "new_control_modes": 66,
+  "actual_MAC_mixed_control_WRITE_RECV_RNR_control_frames": 5,
+  "actual_MAC_control_five_syndromes_frames": 5,
+  "one_shared_nonwrapping_tag_allocator": true,
+  "distinct_control_owner_HLS_MAC_bits": [
+    480,
+    512,
+    528
+  ],
+  "serial_replay_and_wrap_rejected": true,
+  "no_RQ_WRITE_RNR_data_completion_for_control": true,
+  "clock_ns": 4,
+  "MAC_clock_ns": 2.56,
+  "runtime_seconds": 10,
+  "cycle_limit": 100000,
+  "maximum_case_seconds": 1.6383197880350053,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_receive_control_ack.py": "9cb10128f0d26b8e41a2004d464e09bcbd7e4c29250b0eea519c8445a0695129",
+    "rdma/rnic/tests/probe_receive_control_ack.py": "45e315b0d76ce0b245c7319a9a3e53ea561bea5815778171fdab3863d682a30f",
+    "rdma/rnic/fpga/derive_receive_control_ack.py": "42a991c4f7d0e7411842a7978f323da0dd0e10a89339e87f225507408a3bbd8d"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "control_producers_modeled": true,
+  "live_generated_HLS": false,
+  "native_control_integration": false,
+  "live_Linux_or_physical": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "remaining": [
+    "Actual native checked receive/full-context certification, nonwrapping serial, real same-generation control HLS and this shared ACK/MAC proof must be connected and executed.",
+    "Retain all37 prior native cases; add future-PSN NAK suppression/retry and duplicate-no-second-data/CQ; proper fatal-QP teardown remains separate.",
+    "All11/full1MiB native/multiSGE/live registered refs/real peer recovery/congestion/original timing/physical remain."
+  ],
+  "hardware_or_default_actions": [],
+  "commit_or_push": false
+}

@@ -1,0 +1,12 @@
+{
+  "pass_test": false,
+  "stage": "source derivation; no elaboration/runtime",
+  "error": "source derivation anchor changed: assign atomic_rx_guard=write_external_guard ||",
+  "exception": "Traceback (most recent call last):\n  File \"<stdin>\", line 5, in <module>\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/fpga/derive_write_psn_control_native.py\", line 152, in derive\n    p=RTL/'rocev2_protected_responder.v';out[p]=protected(out[p])\n                                                ^^^^^^^^^^^^^^^^^\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/fpga/derive_write_psn_control_native.py\", line 117, in protected\n    t=once(t,'assign atomic_rx_guard=write_external_guard ||','assign atomic_rx_guard=control_external_guard || write_external_guard ||')\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/fpga/derive_shared_responder.py\", line 23, in once\n    if text.count(old)!=1:raise ValueError('source derivation anchor changed: '+old)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: source derivation anchor changed: assign atomic_rx_guard=write_external_guard ||\n",
+  "source_sha256": {
+    "rdma/rnic/fpga/derive_write_psn_control_native.py": "f64a9426b18880589cfbf9f49c4376725bccc56c2434886973ea615b4958ed3d"
+  },
+  "exact_preimage_root": "rdma/rnic/build/write-psn-native-source-startup-001-preimages-e6kft8t5",
+  "native_runtime": false,
+  "hardware_actions": []
+}

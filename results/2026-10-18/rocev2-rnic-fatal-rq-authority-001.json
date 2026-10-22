@@ -1,0 +1,459 @@
+{
+  "scope": "Four-state fatal RQC cancellation-authority RTL on qualified native seeds.\n\nActual completed native1000 records are replayed. Producer/handshake/current\ncontext/other leases are MODELS; not native cancellation/CQ/STOP/drain/unpin.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/fatal-rq-authority-0r1lbc1w",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_fatal_rq_cancel_authority.v": "d2232b0f56eea7fbdf4c50d0c73bb5cf8032910622accdb56a8ffe40580ff424",
+    "rdma/rnic/tests/tb_fatal_rq_cancel_authority.v": "979f5a86deca866e19eea9ffd422fa0c12ed2a44250b639c0edc67211b73fa91",
+    "rdma/rnic/tests/probe_fatal_rq_cancel_authority.py": "6277d7a7262479eb028ccca3462d566be9b67dfc35b4598dd2e6b2b3015b3ba5",
+    "rdma/rnic/build/fatal-event-native-full-l_azlncx/LARGE_RX_WRITE_FATAL_ACCESS-mmio.hex": "4673af6c4116488feed1fcbe1313918a5c7f56c751de0c0bc13776d92bd91139",
+    "rdma/rnic/build/fatal-event-native-full-l_azlncx/LARGE_RX_WRITE_FATAL_PARTIAL-mmio.hex": "2b67344cddde8bb971671ff44d250041227cec6880f1321ccbf9ba15ef1cf4d5"
+  },
+  "evidence": {
+    "fatal-event-native-full-001": {
+      "bindings_verified": 930,
+      "report_sha256": "c354b1a09bded313a0a33b39092696f21c8cec6116a1c81cdb1b3773f3731d40",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-native-runtime-diagnostics-001": {
+      "bindings_verified": 18,
+      "report_sha256": "64a53c5d9ddbc4e8e917f826b2c5fa5d2cf73b9158120d02f46149670a4f72a6",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "clock_ns": 4,
+  "compile_limit_seconds": 10,
+  "runtime_limit_seconds": 10,
+  "cycle_limit": 100000,
+  "four_state": true,
+  "producer_live_context_and_lease_signals_modeled": true,
+  "actual_new_native_wiring": false,
+  "cancellation_receipt_or_CQ_STOP_global_drain_unpin": false,
+  "hardware_verified": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false,
+  "tests": {
+    "0": {
+      "exit": 0,
+      "seconds": 0.015862327010836452,
+      "summary": {
+        "pass_test": true,
+        "mode": 0,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "1": {
+      "exit": 0,
+      "seconds": 0.007805693021509796,
+      "summary": {
+        "pass_test": true,
+        "mode": 1,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "2": {
+      "exit": 0,
+      "seconds": 0.01588956598425284,
+      "summary": {
+        "pass_test": true,
+        "mode": 2,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "3": {
+      "exit": 0,
+      "seconds": 0.007729495002422482,
+      "summary": {
+        "pass_test": true,
+        "mode": 3,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "4": {
+      "exit": 0,
+      "seconds": 0.015836207021493465,
+      "summary": {
+        "pass_test": true,
+        "mode": 4,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "5": {
+      "exit": 0,
+      "seconds": 0.007683748030103743,
+      "summary": {
+        "pass_test": true,
+        "mode": 5,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "6": {
+      "exit": 0,
+      "seconds": 0.015927699976600707,
+      "summary": {
+        "pass_test": true,
+        "mode": 6,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "7": {
+      "exit": 0,
+      "seconds": 0.015939223987516016,
+      "summary": {
+        "pass_test": true,
+        "mode": 7,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "8": {
+      "exit": 0,
+      "seconds": 0.015900322003290057,
+      "summary": {
+        "pass_test": true,
+        "mode": 8,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "9": {
+      "exit": 0,
+      "seconds": 0.015894524985924363,
+      "summary": {
+        "pass_test": true,
+        "mode": 9,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "10": {
+      "exit": 0,
+      "seconds": 0.01592134399106726,
+      "summary": {
+        "pass_test": true,
+        "mode": 10,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "11": {
+      "exit": 0,
+      "seconds": 0.015908912988379598,
+      "summary": {
+        "pass_test": true,
+        "mode": 11,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "12": {
+      "exit": 0,
+      "seconds": 0.007761062995996326,
+      "summary": {
+        "pass_test": true,
+        "mode": 12,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "13": {
+      "exit": 0,
+      "seconds": 0.007741856970824301,
+      "summary": {
+        "pass_test": true,
+        "mode": 13,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "14": {
+      "exit": 0,
+      "seconds": 0.015886701992712915,
+      "summary": {
+        "pass_test": true,
+        "mode": 14,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "15": {
+      "exit": 0,
+      "seconds": 0.0158985749585554,
+      "summary": {
+        "pass_test": true,
+        "mode": 15,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "16": {
+      "exit": 0,
+      "seconds": 0.015877693018410355,
+      "summary": {
+        "pass_test": true,
+        "mode": 16,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "17": {
+      "exit": 0,
+      "seconds": 0.015898925019428134,
+      "summary": {
+        "pass_test": true,
+        "mode": 17,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "18": {
+      "exit": 0,
+      "seconds": 0.007743462978396565,
+      "summary": {
+        "pass_test": true,
+        "mode": 18,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "19": {
+      "exit": 0,
+      "seconds": 0.007711544982157648,
+      "summary": {
+        "pass_test": true,
+        "mode": 19,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "20": {
+      "exit": 0,
+      "seconds": 0.015825240989215672,
+      "summary": {
+        "pass_test": true,
+        "mode": 20,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "21": {
+      "exit": 0,
+      "seconds": 0.007743044989183545,
+      "summary": {
+        "pass_test": true,
+        "mode": 21,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "22": {
+      "exit": 0,
+      "seconds": 0.01588607399025932,
+      "summary": {
+        "pass_test": true,
+        "mode": 22,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "23": {
+      "exit": 0,
+      "seconds": 0.007750866992864758,
+      "summary": {
+        "pass_test": true,
+        "mode": 23,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "24": {
+      "exit": 0,
+      "seconds": 0.0077900480246171355,
+      "summary": {
+        "pass_test": true,
+        "mode": 24,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "25": {
+      "exit": 0,
+      "seconds": 0.015902348037343472,
+      "summary": {
+        "pass_test": true,
+        "mode": 25,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "26": {
+      "exit": 0,
+      "seconds": 0.015822588000446558,
+      "summary": {
+        "pass_test": true,
+        "mode": 26,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "27": {
+      "exit": 0,
+      "seconds": 0.015892709023319185,
+      "summary": {
+        "pass_test": true,
+        "mode": 27,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "28": {
+      "exit": 0,
+      "seconds": 0.007739552005659789,
+      "summary": {
+        "pass_test": true,
+        "mode": 28,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "29": {
+      "exit": 0,
+      "seconds": 0.015981618023943156,
+      "summary": {
+        "pass_test": true,
+        "mode": 29,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "30": {
+      "exit": 0,
+      "seconds": 0.007767767994664609,
+      "summary": {
+        "pass_test": true,
+        "mode": 30,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "31": {
+      "exit": 0,
+      "seconds": 0.015981687989551574,
+      "summary": {
+        "pass_test": true,
+        "mode": 31,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    },
+    "32": {
+      "exit": 0,
+      "seconds": 0.01591659599216655,
+      "summary": {
+        "pass_test": true,
+        "mode": 32,
+        "recorded_native_seed": true,
+        "producer_and_live_context_modeled": true,
+        "cancellation_CQ_STOP_drain_unpin": false
+      }
+    }
+  },
+  "compile_command": [
+    "iverilog",
+    "-g2012",
+    "-s",
+    "tb",
+    "-o",
+    "/dev/shm/as02-fatal-rq-authority-9lvl2nd3/test",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/tb_fatal_rq_cancel_authority.v",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_fatal_rq_cancel_authority.v"
+  ],
+  "compile_seconds": 0.016238078009337187,
+  "compile_exit": 0,
+  "component_cases": 33,
+  "real_join_receipt_not_host_ACK_is_required": true,
+  "no_other_lease_can_be_hidden": true,
+  "current_full_owner_PSN_quarantine_required": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/31.log": "fc0dd5db04185c96260d5ec54d6eb13ab555aa5134bbdcf9b494e047ad110cbb",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/6.log": "8b1e29a5776bfa4ecd167fd1974f52b58c0fc0c61863151483ba7ab113b60740",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/23.log": "c04cff7816735472772e983b66002e0c78ac62e81dabb11a55c7a26d51baa59a",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/seed1.hex": "2b67344cddde8bb971671ff44d250041227cec6880f1321ccbf9ba15ef1cf4d5",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/10.log": "ad10948680983207659c09ecb9ce86b51a4c592e8528326247865aa269dc9b94",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/26.log": "55b80b89a9a14d2beb036235cb336e544dde4039f24e96a5fa3529d6d2b91622",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/12.log": "0e4590c2534ea45c36270d98edff03a5490bf80e395b4c0344b7ef9f003b7294",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/15.log": "1af297be608d3703e69ab4a24bcd95f71f2cbb4e33f8e04e504d0de19f4a213c",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/4.log": "276243429ab89dbce9ac8024a6eb135530ff02d9d0115db4858bf7022dc0becd",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/18.log": "d56fff708d4c9a65fb71fd2afd4b3e9383f0cd6fde9fe0dcc363f63d405f9a47",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/24.log": "74a520dcad950c1f3f5e2bbf898eed6554b000a0af79494a4cf9da5348f8055e",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/29.log": "b1ddbd90bccd7e69ce0ee29987f00a41b1ed4abb9903c5ce47207e8dad208f86",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/1.log": "637ee9ff11d7d76460dc4df7522c9db46a05f21865b2d8535e6a8c2435d8e599",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/22.log": "8baf7188aff9f6187c2fac91e9a608f39239bd6cae837e711c5871526c9a43d8",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/14.log": "ddcf4a9357c99f2f91da3395b67bff18ca4545fc1e82d8c5042fd17deb395a29",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/2.log": "ee25137443348facebeed4a68e1216a2eeb18b74c8d320ed5c138872eeda52ce",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/25.log": "3b900c65094e2b31086cbe6656d248edd5b9f4d0ae9efb3955b528c5c8aa161d",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/17.log": "215887a6502747d23cef2cbfd5b6b870cc26bd8bd02d19828b507b482a1567f6",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/11.log": "d646ab209ef0d3646f4d56c7a35124bc2ddb4b504b3ba599b3c9ec49f8665303",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/3.log": "9e0334f052f99bbfb669f2635f64ea38084ec0899968775fddb9a23140c47fe0",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/0.log": "0fc9ead467c187a44b5d0ea678b363afd3935825b5cfca7c6b693024486f332a",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/32.log": "fa6bab31baa68f7f9890a79b0dfc668fbadcc55b389dc89bbd792753412c4151",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/21.log": "1d8dd50ff3572af71953f038d44a986cd7e1c731c9f4a8df55d04dfe326a2379",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/28.log": "bc75214c017183adba4c743c4d32be3e6e2222c6413263483c20a3326ae82cef",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/30.log": "bd0177eb70f2ebc1276104b6e505bcf3d265b96c0c824e4a8aa3df49984030cb",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/8.log": "cbae98a552360aa0089686cb2208e457091fd0e8e7534205c18c3e53fce3e9cb",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/13.log": "0254e89eaa5a42021b963b94d3a01a917e5a12c42fe603a528b61fa9fe75fcfb",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/9.log": "030bc121cc9c1938c2955ece0aafce15fbbcfe4eee47fd93bffe7a57ca741f92",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/20.log": "9afe90012e51b367d2f619275410cdaa4b5d07a28c7d53667a252f59a37cddb1",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/16.log": "995adc9a032f7421a38d23ef1ca85159b6e93aff40c30f2abbab9be59067aed7",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/27.log": "126ef4d08d9195fb965a5e8569c3da7853a46f0513b2128d7484606e166b6771",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/19.log": "980ee03ee3f161740975d806f4453eecb33c66dba7ce76163d00930457440f30",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/7.log": "0d6c5bae2a026c9269de49f0332d859f22e5773228498e48ed08e46f56cdcb1b",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/seed0.hex": "4673af6c4116488feed1fcbe1313918a5c7f56c751de0c0bc13776d92bd91139",
+    "rdma/rnic/build/fatal-rq-authority-0r1lbc1w/5.log": "44605c7ee9d5404f07bcce8944cfde1fe2e43755798169d1f936769da5b0c7c9"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-fatal-rq-authority-9lvl2nd3/test": "2c899a5882a40972e8af7c6d2b3b6e78406c0e777680be5ee877df429d1e57a0"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "scope": "Actual optional parent75/source/model36/callback220/native40 source audit.\n\nModels include threaded workqueue cancellation, IB core/MMIO/certificates/\npins/DMA. This is NOT running-kernel/native or physical lifetime proof.\nLogical poll stop never certifies whole-device STOP/drain/unpin/safe removal.\n",
+  "audit_passed": true,
+  "evidence": {
+    "fatal-parent-kernel-build-001": {
+      "bindings_verified": 160,
+      "report_sha256": "f1e5c57054a4430f9a9461d791100370798fa6974bc80d3da4c4d84c022ba8b3",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-parent-graph-002": {
+      "bindings_verified": 129,
+      "report_sha256": "806427751bb22a3af123c77fd6fc4b34fa3b3772f05ce03ccc27afffe6b38e48",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-parent-callbacks-001": {
+      "bindings_verified": 442,
+      "report_sha256": "877fb24f5884abfe26c7b1b0991526613001d028f0e60e44a5b7ac5095d6b5bc",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-parent-graph-001": {
+      "bindings_verified": 92,
+      "report_sha256": "4b22edc056d5941166f87fbe2214db81a91cbc45d85a2a3dfbf2c369884720e2",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/fatal_parent_kernel_models.py",
+        "rdma/rnic/tests/kernel_fatal_parent_cases.c"
+      ]
+    },
+    "immediate-profile-native-graph-001": {
+      "bindings_verified": 51,
+      "report_sha256": "2c4870e8a3041ef8c4339e938fd544730d2cd339d05f28820117e208ca5c99d3",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-verbs-kernel-build-001": {
+      "bindings_verified": 152,
+      "report_sha256": "8cc0d8ae989f8c4f2b37857d9f5f411d44ffe70a80a27edf94ddcc3b3f57ca06",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-verbs-callbacks-002": {
+      "bindings_verified": 344,
+      "report_sha256": "b1cb581836dc230a49b1b650964ceae8446520c0adf6c8b57a10d971ad0c6579",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-native-full-001": {
+      "bindings_verified": 930,
+      "report_sha256": "c354b1a09bded313a0a33b39092696f21c8cec6116a1c81cdb1b3773f3731d40",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-native-runtime-diagnostics-001": {
+      "bindings_verified": 18,
+      "report_sha256": "64a53c5d9ddbc4e8e917f826b2c5fa5d2cf73b9158120d02f46149670a4f72a6",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-native-software-diagnostics-001": {
+      "bindings_verified": 9,
+      "report_sha256": "2ba2bb0c0c69631c995c8dad2c851250e8eca8520806e29caad0f742a41b7f70",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-native-elaboration-002": {
+      "bindings_verified": 483,
+      "report_sha256": "fae4260e57ebd30fdeb8465427be1f26b0670b3b167ed3163ee1669b75c55f2f",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 2810,
+  "full_kernel_inputs": 75,
+  "new_parent_cases": 16,
+  "all20_old_graph_full_summaries_identical": true,
+  "callback_cases": 220,
+  "all220_old_full_callback_summaries_identical": true,
+  "entire_original_graph_work_reference_assertion_body_unchanged": true,
+  "real_parent_readonly_FEC_preflight_before_epoch_bind_before_publish_start_after_publish": true,
+  "dedicated_poll_progress_without_CQ_arming": true,
+  "worker_self_stop_rejected_without_deadlock": true,
+  "threaded_model_stop_joins_active_handler_and_excludes_requeue": true,
+  "unknown_event_halts_unacked_retains_refs": true,
+  "ambiguous_ACK_no_duplicate_handler": true,
+  "logical_stop_retains_complete_graph_lease_parent_netdev_BAR_and_refs": true,
+  "default_disabled_path_never_probes_FEC_and_normal_close_preserved": true,
+  "immutable_first_model_compile_failure_preserved": true,
+  "real_header_compile_seconds": 11.644964532984886,
+  "graph_compile_seconds": 9.383882032998372,
+  "maximum_graph_case_seconds": 0.032455965992994606,
+  "callback_compile_seconds": 9.050701074011158,
+  "maximum_callback_case_seconds": 0.015758563007693738,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_fatal_parent.py": "080210f8a6ead6ad6cfc07d4a2ff728bf8d54ba09e87c734577b0c90009ca75d",
+    "rdma/rnic/kernel/fatal_parent_candidate.py": "40ece78e8c61772d1cbd4e72ef63d1d1d2c2fc2b1500e65d846902fc840368f9",
+    "rdma/rnic/tests/fatal_parent_kernel_models.py": "423e5b1b58e458b8c0f2122873a7b5fd62777320f7a88018d95cc08f27cc6d61",
+    "rdma/rnic/tests/kernel_fatal_parent_cases.c": "5285f8373647650f383e23d07d28121ea96085c93afdc6c17932023b3a576642"
+  },
+  "primary_reference": {
+    "url": "https://docs.kernel.org/6.17/core-api/workqueue.html",
+    "use": "current_work context and cancel_delayed_work_sync semantics; no source copied. No graph/device/lease lock held across cancellation."
+  },
+  "Linux_workqueue_MMIO_IB_core_certificate_pins_DMA_execution_modeled": true,
+  "installed_or_running_kernel_native_coupling": false,
+  "hardware_verified": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false,
+  "remaining": [
+    "Real registered Linux/native/provider/physical lifetime and poll delivery remain unqualified.",
+    "Whole-device STOP/reference retirement/safe unbind/removal is not implemented; bound FEC graphs deliberately remain retained after logical stop.",
+    "Standard error/flush CQ/full QP STOP/recovery/quarantine release/original11/timing/physical/reboot-revival remain."
+  ]
+}

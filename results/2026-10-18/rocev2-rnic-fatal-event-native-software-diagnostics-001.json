@@ -1,0 +1,82 @@
+{
+  "scope": "Couple actual native FEC readback and identical C/kernel source boundaries.\n\nNative40 proves packet-to-AXI/ACK. Unchanged C277 replays those exact AXI\nsnapshots. Separate actual driver callback220 uses SYNTHETIC certificate/\nLinux/MMIO/pin/DMA/workqueue primitives. This is NOT live Linux-FPGA coupling.\n",
+  "audit_passed": true,
+  "evidence": {
+    "fatal-event-native-full-001": {
+      "bindings_verified": 930,
+      "report_sha256": "c354b1a09bded313a0a33b39092696f21c8cec6116a1c81cdb1b3773f3731d40",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-native-runtime-diagnostics-001": {
+      "bindings_verified": 18,
+      "report_sha256": "64a53c5d9ddbc4e8e917f826b2c5fa5d2cf73b9158120d02f46149670a4f72a6",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-native-C-readback-001": {
+      "bindings_verified": 11,
+      "report_sha256": "d4ef9edf6a3a1aa373cf940d4662f7d2f918c09bdf7834037ba99d95ee6aaeb1",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-verbs-kernel-build-001": {
+      "bindings_verified": 152,
+      "report_sha256": "8cc0d8ae989f8c4f2b37857d9f5f411d44ffe70a80a27edf94ddcc3b3f57ca06",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-verbs-callbacks-002": {
+      "bindings_verified": 344,
+      "report_sha256": "b1cb581836dc230a49b1b650964ceae8446520c0adf6c8b57a10d971ad0c6579",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-verbs-diagnostics-001": {
+      "bindings_verified": 6,
+      "report_sha256": "fe86953eaec05cd46141c931114ab11fef00ab82e84c5f5e33d5d52fb15230ad",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-native-source-diagnostics-002": {
+      "bindings_verified": 6,
+      "report_sha256": "7d338e522dea56c6dea52702070968cd1289bb48282b014747814062ad80e0cc",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 1467,
+  "private_identity": [
+    131071,
+    511,
+    13,
+    63,
+    8
+  ],
+  "actual_native_cases": 40,
+  "all40_old_full_outcomes_except_seconds_identical": true,
+  "actual_native_packet_HLS_abort_cancel_AXI_ACK_quarantine_and_RQ_proof": true,
+  "actual_native_AXI_snapshots_consumed_by_same_C_decoder_277_assertions": true,
+  "same_decoder_source_in_actual_full73_input_kernel_build_and_callback220": true,
+  "all202_old_callback_full_summaries_identical": true,
+  "actual_callback_new_fatal_cases": 18,
+  "separate_driver_callback_certificate_producer_is_synthetic": true,
+  "notification_ACK_not_WC_STOP_reference_retirement_or_unpin": true,
+  "source_sha256": {
+    "rdma/rnic/kernel/fatal_io.c": "04e95416e15a7fcec8c2c9c4caf17dca5dfa34b5d31273a60f83a5f126b80265",
+    "rdma/rnic/build/fatal-verbs-kernel-aoqk1gaf/fatal_io.c": "04e95416e15a7fcec8c2c9c4caf17dca5dfa34b5d31273a60f83a5f126b80265",
+    "rdma/rnic/kernel/fatal_io.h": "b0cbf69f482cf03b0e2905d8f6de9129c6140eb3ac34bf5350c09642cd3f7fa3",
+    "rdma/rnic/build/fatal-verbs-kernel-aoqk1gaf/fatal_io.h": "b0cbf69f482cf03b0e2905d8f6de9129c6140eb3ac34bf5350c09642cd3f7fa3",
+    "rdma/rnic/kernel/fatal_regs.h": "40c6941a7820273bc51bb152b0c4aa79bff987cb289c2ee9a8d9516ab7d25e2d",
+    "rdma/rnic/build/fatal-verbs-kernel-aoqk1gaf/fatal_regs.h": "40c6941a7820273bc51bb152b0c4aa79bff987cb289c2ee9a8d9516ab7d25e2d",
+    "rdma/rnic/build/fatal-event-native-full-l_azlncx/LARGE_RX_WRITE_FATAL_ACCESS-mmio.hex": "4673af6c4116488feed1fcbe1313918a5c7f56c751de0c0bc13776d92bd91139",
+    "rdma/rnic/build/fatal-event-native-full-l_azlncx/LARGE_RX_WRITE_FATAL_PARTIAL-mmio.hex": "2b67344cddde8bb971671ff44d250041227cec6880f1321ccbf9ba15ef1cf4d5",
+    "rdma/rnic/tests/audit_fatal_event_native_software.py": "b7d3b765f5e42500a5c976a49987eb2c415c3814a0de33a706f7627e48305876"
+  },
+  "installed_standard_API_runtime": false,
+  "live_Linux_FPGA_coupling": false,
+  "standard_error_flush_CQ_full_QP_STOP_recovery_retirement": false,
+  "hardware_verified": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false,
+  "remaining": [
+    "Explicit real parent FEC attachment/polling and live registered Linux/provider object/ref/async event behavior remain unqualified.",
+    "Error/flush WC, whole-QP STOP/recovery and legitimate reference/quarantine release remain.",
+    "All original11/native1MiB/multiSGE/timing/full-board/physical/authenticated reboot revival remain."
+  ]
+}

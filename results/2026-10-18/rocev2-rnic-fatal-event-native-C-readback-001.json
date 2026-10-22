@@ -1,0 +1,72 @@
+{
+  "scope": "Run the real C decoder/reader on actual new native FEC AXI snapshots.\n\nNative packet-to-AXI is proved by the separate new native40 execution/audit.\nThis second stage replays that exact readback into unchanged C tests; C IO,\ndelivery and reference callbacks remain MODELS, not live Linux attachment.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/fatal-event-native-C-zyrkafvz",
+  "source_sha256": {
+    "rdma/rnic/tests/probe_fatal_event_native_readback.py": "5e0dc6e7a1349c74f82490a9edcddaf201fcb190ef6d2769c13c30d58bf64b5e",
+    "rdma/rnic/tests/test_fatal_io.c": "d9c4f3907a1eb0a156b35b378bf0b02b95f86f0d22c9600953b79d712145e82b",
+    "rdma/rnic/kernel/fatal_io.c": "04e95416e15a7fcec8c2c9c4caf17dca5dfa34b5d31273a60f83a5f126b80265",
+    "rdma/rnic/kernel/fatal_io.h": "b0cbf69f482cf03b0e2905d8f6de9129c6140eb3ac34bf5350c09642cd3f7fa3",
+    "rdma/rnic/kernel/fatal_regs.h": "40c6941a7820273bc51bb152b0c4aa79bff987cb289c2ee9a8d9516ab7d25e2d",
+    "rdma/rnic/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/build/fatal-event-native-full-l_azlncx/LARGE_RX_WRITE_FATAL_ACCESS-mmio.hex": "4673af6c4116488feed1fcbe1313918a5c7f56c751de0c0bc13776d92bd91139",
+    "rdma/rnic/build/fatal-event-native-full-l_azlncx/LARGE_RX_WRITE_FATAL_PARTIAL-mmio.hex": "2b67344cddde8bb971671ff44d250041227cec6880f1321ccbf9ba15ef1cf4d5"
+  },
+  "evidence": {
+    "fatal-event-native-full-001": {
+      "bindings_verified": 930,
+      "report_sha256": "c354b1a09bded313a0a33b39092696f21c8cec6116a1c81cdb1b3773f3731d40",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-native-runtime-diagnostics-001": {
+      "bindings_verified": 18,
+      "report_sha256": "64a53c5d9ddbc4e8e917f826b2c5fa5d2cf73b9158120d02f46149670a4f72a6",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "C_compile_limit_seconds": 30,
+  "runtime_limit_seconds": 10,
+  "actual_native_AXI_snapshot_inputs": true,
+  "C_MMIO_delivery_callbacks_modeled": true,
+  "live_Linux_QP_callbacks": false,
+  "standard_error_CQ_STOP_global_drain_unpin": false,
+  "hardware_verified": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false,
+  "compile_command": [
+    "gcc",
+    "-std=gnu11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-I/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/kernel",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/test_fatal_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/kernel/fatal_io.c",
+    "-o",
+    "/dev/shm/as02-fatal-event-native-C-0jfnutz9/C-test"
+  ],
+  "compile_seconds": 0.415124494000338,
+  "compile_exit": 0,
+  "runtime_seconds": 0.0017530759796500206,
+  "runtime_exit": 0,
+  "C_summary": {
+    "pass_test": true,
+    "assertions": 277,
+    "accepted_callbacks": 16,
+    "actual_recorded_native_seeds": 2,
+    "MMIO_is_model": true,
+    "native_wiring_or_standard_verbs": false,
+    "drain_unpin_or_reference_release": false
+  },
+  "actual_native_packet_AXI_snapshot_C_decode_chain": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/fatal-event-native-C-zyrkafvz/runtime.log": "b583db0eb3c869214f4375697aba245081f61f63169510990f0ba3d483a9e440",
+    "rdma/rnic/build/fatal-event-native-C-zyrkafvz/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-fatal-event-native-C-0jfnutz9/C-test": "080ea6fcfed2c4eb700c609e26fd856f5816e52efa78f74894d31341742f8543"
+  }
+}

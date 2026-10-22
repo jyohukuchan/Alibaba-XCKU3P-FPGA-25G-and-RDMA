@@ -28,11 +28,56 @@ inbound SEND/WRITE target, READ responder, native InfiniBand or production-relia
 
 ### RNIC development snapshot (2026-10-22)
 
-Publication checkpoint: this explicit push includes progress182–184 source,
-tests, and successful AND failed reports. Native40 PASS is simulation-only;
-the new FEC-native packet/MMIO path and Linux callbacks remain untested,
-and timing is unresolved. Entries below describe their checkpoint-time state,
-including historical live-job/no-publication notes.
+Publication checkpoint: this explicit push includes progress185–187 and the
+in-progress188 RQ-cancellation groundwork, with successful AND failed reports.
+The FEC-native packet/MMIO simulation now passes all40 cases; optional Linux
+notification/polling source builds and modeled callbacks pass, but live
+Linux-FPGA coupling, error/flush CQ, STOP/recovery and timing remain unqualified.
+Entries below retain their historical checkpoint-time state, including
+live-job/no-publication notes. No hardware/default settings are changed.
+
+In-progress188: cancellation-authority RTL passes [33 four-state component
+cases](results/2026-10-18/rocev2-rnic-fatal-rq-authority-001.json) using recorded
+native fatal records and MODELED producer/context/lease signals. The companion
+native derivation is a draft: no new integrated elaboration or runtime has
+been performed. This is NOT successful RQ cancellation, error CQ, STOP, global
+drain, quarantine release or permission to unpin memory. Generated builds,
+credentials and private administrative checkpoints remain unpublished.
+
+Local187: optional real parent bootstrap/FEC polling source is wired, still
+default-denied and never installed/loaded. Read-only FEC preflight precedes
+the MR epoch command; binding precedes publication; a dedicated work item
+starts only after publication and progresses without CQ polling/arming.
+Full75-input real-header build11.645s and parent36/model-callback220 pass.
+[Audit2810](results/2026-10-18/rocev2-rnic-fatal-parent-diagnostics-001.json)
+keeps all20 old graph and all220 callback full summaries identical; threaded
+model cancellation joins an active handler and prevents requeue. Logical
+poll stop still RETAINS graph/lease/BAR/device/refs; whole-device STOP/safe
+unbind/error CQ/recovery are NOT implemented. Linux/MMIO/certificate/IB-core/
+workqueue execution remains modeled, not live native coupling. Timing and
+physical remain unqualified. Jobs ended; no hardware/default/Git changes.
+
+Local186: SAME fresh FEC-native40 build finishes1010.068s; ALL40 cases PASS,
+max13.791s. [Runtime audit3155](results/2026-10-18/rocev2-rnic-fatal-event-native-runtime-diagnostics-001.json)
+retains every prior40 full outcome except time, adding only the two fatal
+mailbox results. Actual packet/HLS-abort/native-cancel/AXI32-word readback/
+ACK/observer retirement retain native/SQC/RQC quarantine and queued RQ.
+Unchanged C277 consumes those exact new AXI snapshots. New optional Linux
+QP event/ERR/posting/lifetime-hook candidate builds full73 inputs11.495s
+and passes callback220 (all202 old summaries identical), [audit1100](results/2026-10-18/rocev2-rnic-fatal-verbs-diagnostics-001.json).
+[Cross-audit1467](results/2026-10-18/rocev2-rnic-fatal-event-native-software-diagnostics-001.json)
+binds the same C source, but Linux primitives/certificate/MMIO execution
+remain MODELS, not live Linux-FPGA coupling. No driver install/load or parent
+FEC polling/IRQ hookup yet. Error WC/full STOP/recovery/ref retirement and
+original15.571ns timing/physical remain. All task jobs terminal; no further Git.
+
+Local185 after publication `8c13d42`: new FEC-native fixture [preflight1455](results/2026-10-18/rocev2-rnic-fatal-event-native-fixture-diagnostics-001.json)
+retains all40 raw inputs/all419 old assertions and adds25 actual AXI/ACK/
+SQC-RQC quarantine checks. Whole new bench elaborates without diagnostics;
+a fresh FEC-native40 binary is compiling under original1200s/30s/180s/4ns
+gates. No new FEC-native runtime PASS yet. Runtime audit and unchanged-C
+decoder-on-native-readback runner are prepared, not executed. No hardware,
+defaults, reboot or automatic further publication changes.
 
 Local184: the SAME fresh event-status native build finishes967.520s under1200
 and ALL40 cases PASS, including previously stuck SEND Immediate. [Runtime

@@ -16,10 +16,47 @@ passes; this does not relabel the old suite or qualify a hardware release.
 
 ## Latest functional milestone (2026-10-22)
 
-Publication checkpoint: this explicit push includes progress182–184 source,
-tests and successful AND failed reports. Entries below retain their historical
-checkpoint-time state. Native40 simulation is not FEC-native packet/MMIO,
-Linux callback or original-timing qualification; those remain open.
+Publication checkpoint: this explicit push includes progress185–187 and
+in-progress188 cancellation groundwork, with successful AND failed reports.
+Actual FEC-native40 packet/MMIO simulation passes; optional Linux polling/
+callback source builds and modeled execution pass. Live Linux-native coupling,
+error/flush CQ, whole STOP/recovery and original timing remain unqualified.
+Entries below retain their historical checkpoint-time state.
+
+In-progress188: fatal RQC authority passes [33 four-state component cases](../../results/2026-10-18/rocev2-rnic-fatal-rq-authority-001.json)
+on recorded native fatal records, with producer/context/lease MODELS. The
+companion native derivation is a draft, not integrated/elaborated/runtime
+qualified. No actual RQC cancellation receipt, CQ, STOP, global-drain,
+quarantine-release or unpin proof is added. No hardware/default changes.
+
+Local187: optional parent bootstrap/FEC polling/stop source builds75 inputs
+and passes parent36/all220 old callback cases, [audit2810](../../results/2026-10-18/rocev2-rnic-fatal-parent-diagnostics-001.json).
+All20 old graph and220 callback full summaries stay identical. Read-only FEC
+preflight before epoch/bind before publish/start after publish and polling
+without CQ users are checked. Threaded model stop joins a live handler and
+prevents requeue; self-stop refuses. Logical poll stop still retains complete
+graph/lease/BAR/refs. Linux/MMIO/IB-core/certificate/workqueue execution remains
+modeled, NOT installed/native coupling or safe device STOP/unbind/recovery.
+No default/hardware/Git changes; all original11/timing/physical remain open.
+
+Local186: actual FEC-native40 PASS1010.068s compile/max13.791s; [runtime3155](../../results/2026-10-18/rocev2-rnic-fatal-event-native-runtime-diagnostics-001.json)
+checks all40 previous full results except seconds, two added fatal-mailbox
+results only. Real AXI32-word readback/ACK/observer retirement preserve native/
+SQC/RQC quarantine and queued RQ; exact new snapshots pass unchanged C277.
+Optional actual QP ERR/event-handler/lifetime hooks compile full73 inputs and
+pass callback220/all202 old summaries, [audit1100](../../results/2026-10-18/rocev2-rnic-fatal-verbs-diagnostics-001.json).
+[Cross-audit1467](../../results/2026-10-18/rocev2-rnic-fatal-event-native-software-diagnostics-001.json)
+binds identical C source; Linux/certificate/MMIO execution is modeled, NOT
+live Linux-native coupling. Real parent FEC attachment/polling, error/flush
+CQ/STOP/recovery/ref retirement and15.571ns timing/physical remain. Jobs ended;
+no default driver install/load/hardware or further Git action.
+
+Local185 after `8c13d42`: new FEC-native40 fixture [preflight1455](../../results/2026-10-18/rocev2-rnic-fatal-event-native-fixture-diagnostics-001.json)
+preserves all40 raw inputs/419 checks, adding25 actual AXI/ACK/SQC-RQC guard
+checks. Entire new bench elaborates without diagnostics; fresh compiler is
+LIVE under original gates, not a new packet/MMIO PASS. Runtime audit and
+unchanged-C decoder/readback runner are prepared, unexecuted. No further
+Git/hardware/default action; timing/Linux/error CQ/STOP/lifetimes remain.
 
 Local184: actual event-status native40 PASS, compile967.520s/max13.841s under
 original1200s/30s/180s/4ns. [Runtime audit3155](../../results/2026-10-18/rocev2-rnic-write-abort-event-native-runtime-diagnostics-001.json)

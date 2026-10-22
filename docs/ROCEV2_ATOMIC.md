@@ -5,10 +5,38 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
-Publication checkpoint (2026-10-22): this explicit push includes progress182–184
-source/tests and successful AND failed reports. The entries below retain their
-checkpoint-time status; live-job/no-Git statements are historical. Native40
-simulation does not qualify the FEC-native path, Linux callbacks or timing.
+Publication checkpoint (2026-10-22): this explicit push includes progress185–187
+and in-progress188 cancellation groundwork, with successful AND failed reports.
+Actual FEC-native40 simulation retains Atomic outcomes; Linux polling/callback
+execution is modeled, not live native coupling or standard Atomic qualification.
+The new RQC-authority component passes33 cases, but its companion native
+derivation is a draft with no integrated elaboration/runtime. Error/flush CQ,
+STOP/recovery, original timing and physical qualification remain open.
+IB_ATOMIC_NONE/global drains/defaults are unchanged. Entries below retain
+their historical checkpoint-time status; live-job/no-Git notes are historical.
+
+Local187: optional actual parent FEC bootstrap/work-item/stop hooks build75
+inputs11.645s and pass parent36/all220 prior callback cases. Audit2810 keeps
+all20 original graph and all220 callback full summaries identical. Parent
+execution/IB-core/MMIO/certificates/workqueue remain models, not standard API
+or Atomic/native coupling qualification. Logical poll stop retains graph/BAR/
+refs; error CQ/whole STOP/recovery/safe release remain. IB_ATOMIC_NONE/defaults/
+global drains/timing/hardware/Git unchanged; all jobs terminal.
+
+Local186: SAME fresh FEC-native40 finishes1010.068s/max13.791s; runtime3155
+requires ALL40 original full outcomes except time unchanged, including Atomic,
+with only two added fatal mailbox results. Actual AXI snapshots pass same C277.
+New optional fatal-QP Linux source hooks compile full73 inputs and callback220
+passes all202 old summaries; actual Linux/MMIO/certificate execution is modeled,
+not native-coupled standard API/Atomic qualification. No IB_ATOMIC_NONE/default/
+global-drain/hardware/Git changes.15.571ns timing/error CQ/STOP/lifetimes remain.
+
+Local185 after `8c13d42`: new actual-FEC native40 selector/extended fixture/
+preflight1455 keep all40 raw recipes and419 assertions, adding25 AXI/ACK/
+quarantine checks. Whole bench elaborates with no diagnostics; a new binary
+is compiling under original gates. No new Atomic/FEC runtime result yet;
+IB_ATOMIC_NONE/global drains/defaults/error CQ/STOP/unpin remain unchanged.
+Runtime and C-readback auditors are prepared, not executed. No hardware/Git.
 
 Local184: actual new native40 PASS967.520s compile/max13.841s per case,
 [runtime audit3155](../results/2026-10-18/rocev2-rnic-write-abort-event-native-runtime-diagnostics-001.json).

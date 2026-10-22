@@ -32,19 +32,250 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
-### Publication checkpoint (2026-10-22): progress182–184
+### Publication checkpoint (2026-10-22): progress185–187 and in-progress188
 
-This explicit user-requested commit/push includes the event-status metadata
-fix, actual native40 simulation result, and optional fatal-notification RTL/C/
-native-source candidates, together with successful AND failed public reports.
-Native40 success is not FEC-native packet/MMIO or Linux callback qualification.
-Original timing remains unmet. `scripts/check.sh` was rerun before publication
-and still fails the existing TX-padding source-identity check; no old evidence
-was rewritten. All466 authored-source and286 public-report checkpoint hashes
-matched before the publication-only documentation edits; exact document
-preimages are retained locally. Generated builds, credentials and private
-administrative checkpoints are not added. Hardware/defaults are unchanged.
-Live-job/no-Git statements below refer to their historical checkpoints.
+This explicit user-requested commit/push includes actual FEC-native40 packet/
+MMIO simulation, optional Linux QP ERR/event-handler and parent polling source,
+and in-progress fatal RQC cancellation groundwork. Successful AND failed
+reports are retained. All490 authored-source and301 public-report hashes from
+progress187 matched before publication-only documentation edits; exact
+document preimages are retained locally. The added33-case authority report
+is separately hash-checked against its current component/test and native seeds.
+
+The qualified FEC-native configuration passes all40 simulation cases, runtime
+audit3155 and unchanged C277 on actual AXI readback. Linux candidates build
+full73/75 inputs; callback220 and parent36/model tests pass with prior outcomes
+retained. This is not live registered Linux/FPGA operation. Standard error/
+flush CQ, whole QP/device STOP, legitimate reference retirement/recovery,
+original timing and physical qualification remain incomplete.
+
+`scripts/check.sh` was rerun before publication and still fails the existing
+TX-padding source-identity check; no old evidence or gate was rewritten.
+Generated builds, credentials and private administrative checkpoints are not
+added. Hardware/defaults are unchanged. Live-job/no-Git statements below refer
+to their historical checkpoints, not the publication status of this push.
+
+### In-progress188: fatal RQC cancellation-authority component only
+
+New `rocev2_fatal_rq_cancel_authority.v` consumes a completed selected1000
+fatal record and the full current QP context/PSN, retaining quarantine and
+requiring other leases to be absent. [33 four-state component cases](../results/2026-10-18/rocev2-rnic-fatal-rq-authority-001.json)
+pass under the original4ns/10s/100000-cycle gates, including both recorded
+native fatal seeds, stale/replayed/malformed records, unknown signals and
+other-lease/context changes. Producer handshakes and live context/lease inputs
+are explicitly MODELS, not new native hardware wiring.
+
+`derive_fatal_rq_cancel_native.py` is an UNINTEGRATED draft for an explicit
+FEC feature31 variant; published qualified FEC hardware/software still use15.
+No checker/source audit/full-graph elaboration/new packet runtime has been
+completed for this derivation. The component pass is not a real RQC command4
+cancellation receipt, WC/CQ, QP STOP, global drain, reference release, reset/
+reuse or quarantine removal. Existing qualified native40 and permanent guard
+behavior are not replaced by this draft. All task jobs are terminal; no new
+build, hardware/default change or automatic future push is authorized.
+
+### Local progress187: optional real parent bootstrap and independent fatal polling
+
+Previous186 is PROGRESS: actual FEC-native40/AXI/ACK/runtime3155, same C277 and
+actual optional driver ERR/handler/lifetime source/full73 build/callback220/
+audit1100/coupling1467. All prior481 authored/296 public report hashes are
+revalidated unchanged before this turn's documentation edits. No previous
+live job is restarted or reclassified. Native RTL/binary/evidence remain exact.
+
+New `fatal_parent.c`/`.h` add a dedicated delayed work item independent of CQ
+notify users. Optional private parent derivation changes only native_graph.c,
+native_graph.h,mqnic_graph.c,Makefile in the qualified73-input parent and adds
+two source files. Both native attach and fatal-events module gates remain
+default false; no authored default driver/layout/parameter/capability change.
+Only explicit reviewed FEC-native0x406000/4KiB opt-in can access the aperture.
+No alias/legacy fallback is probed. Read-only ID/ABI/features/fresh metadata
+preflight occurs BEFORE the real MR epoch command; actual FEC/QP-object binding
+occurs BEFORE device publication; polling starts only AFTER publication.
+Wrong ABI/nonempty metadata rejects before an epoch write. Failed publication
+after binding retains the complete owned graph; it never starts the worker.
+
+Each work invocation polls one retained event, then requeues with1ms requested
+delay; this is not an actual scheduler latency/throughput claim. It does not
+hold graph/lease/parent locks across the genuine QP-specific handler. Unknown
+or stale events halt polling unacked and stop new posting, retaining refs.
+Ambiguous ACK retries cannot repeat an accepted handler. Logical stop excludes
+future enqueues BEFORE cancel_delayed_work_sync and joins without graph/device/
+lease locks. Self-stop from its own handler returns EDEADLK instead of joining
+itself. Workqueue API/context was checked against [Linux6.17 documentation](https://docs.kernel.org/6.17/core-api/workqueue.html);
+no upstream source was copied.
+
+This is only POLLING stop: attached graph close deliberately returns EBUSY
+before unpublish/teardown, even after a logical stop or empty metadata. The
+full graph/lease/device/netdev/BAR/storage and outstanding QP/MR/RQ references
+remain owned. Native whole-device STOP/reference retirement/safe unbind or
+surprise-removal recovery still does not exist; no ACK/idle/empty heuristic
+or fabricated drain is substituted to make closure appear successful.
+
+Actual full75-input W=1 running-header support/auxiliary module build PASS
+11.645s under180. Same actual production C/header bodies run parent36 short
+ASan/UBSan scenarios:16 new FEC-parent cases plus ALL20 original graph cases,
+compile9.384s under30/max0.033s under10. Real RNC MR adapters/queue/device/
+mqnic-parent/worker/QP C execute; Linux/IB-core/BAR hardware/certificate/pins/
+DMA/workqueue execution remain explicit MODELS. Modeled cancellation uses
+real pthread synchronization, waits for a still-running event handler, then
+confirms no requeue or reference release. It is not actual Linux scheduling,
+PCIe visibility, native-certificate-to-Linux or physical reference proof.
+
+Cases cover no CQ polling/arming, six empty ticks, stop before first tick,
+duplicate start/stop without read/rearm, actual parent-to-QP handler/error,
+self-stop refusal, another thread's stop during handler/ambiguous ACK, stale
+owner/malformed/gapped/unbound-QP events retained unacked, disabled FEC with
+zero FEC probes/normal close, pre-epoch ABI/metadata rejection, and publication
+failure retaining attachment. All220 unchanged prior callback cases reexecute
+on the same75-input cohort, compile9.051s/max0.016s. [Audit2810](../results/2026-10-18/rocev2-rnic-fatal-parent-diagnostics-001.json)
+requires every old20 graph and old220 callback full summary identical, the
+ENTIRE old graph work/ref/CQ/cleanup assertion body unchanged, exact75/73
+source derivation and same actual qualified native40/aperture/profile8.
+
+First graph001 fails strict model compilation before any case: misleading
+while indentation and a renamed C-main's missing explicit return0. Its false
+report/logs/generated inputs and exact public source preimages remain. Only
+model wait braces and the original main's implicit successful return after
+renaming are corrected. Production parent/kernel code, assertions and all
+compiler/runtime gates remain unchanged; no warning is disabled.
+
+All task jobs are terminal. No install/load/probe on actual hardware, no
+fan/BIOS/network/flash/reboot/default/Git/cache-relocation/artifact deletion.
+scripts/check.sh still fails the same historical TX-padding source identity.
+All original11/real registered Linux-provider-native execution, standard error/
+flush CQ, full QP/device STOP/recovery/reference retirement/quarantine release,
+original15.571ns-vs4ns/default1.08/effective2.92 timing/full-board/physical remain.
+Before ANY necessary reboot, ALL RAM-backed archived DBs still need restore/
+verification and authenticated exact-thread/goal revival; none is needed.
+
+### Local progress186: real native FEC AXI/ACK and optional Linux QP error hooks
+
+Previous185 is PROGRESS plus VERIFIED WAIT: additive all40/419+25 preflight1455
+and actual fresh compiler52849/2962113/2962135. SAME build, no restart, finishes
+1010.068s under1200, then ALL40 real native packet cases PASS, max13.791s
+under30. Whole bench elaboration10.031s under180. [Runtime audit3155](../results/2026-10-18/rocev2-rnic-fatal-event-native-runtime-diagnostics-001.json)
+requires every prior40 full outcome except seconds identical, with ONLY one
+new mailbox result for each fatal case. All old raw inputs/wire/MR/nonce/host/
+RQ and full480/512/528/960/992/1000 ownership proofs remain; no binary reuse,
+oracle weakening or deadline/clock/optimization change. The actual new binary
+SHA256 is `704edbc45a9124f5d798b1acc80bb5512b175fb8fc131e5f1c48f0054920c7bc`.
+
+Both real fatal paths now traverse actual HLS abort/native cancel/join/fanout/
+native crossbar/FEC register readback. All32 actual AXI words equal the genuine
+selected1000. Exact host ACK/duplicate ACK while observer remains stalled77
+cycles cannot redeliver, retire the upstream lease, release actual SQC/RQC/
+native quarantine, consume the posted zero-RQ, invent a WC or unpin memory.
+The original observer later retires exactly one real upstream lease. The
+unchanged277-assertion C reader/decoder consumes those exact actual new AXI
+snapshots; its C IO/delivery callbacks remain models, NOT Linux attachment.
+Observed185 and final actual input manifests remain separate:612 common
+identical hashes,nine only-observed,63 only-actual;621 versus675 total. They
+are NOT declared identical. All original inputs/artifacts/failures remain.
+
+The next broad function adds optional `fatal_verbs.c`/`.h` and exact private
+kernel candidate derivation. It uses the SAME actual live QP/SQC full cookie,
+epoch,PD,QPN under device control/fast-QP locks, records the decoded error,
+closes posting and sets ERR before accepting notification. Per-QP handler
+gets request/access/fatal event once OUTSIDE all driver locks. The derived
+actual provider destroy and error-progress paths refuse while notification
+is pending/active; the attachment excludes device unbind. This is not merely
+incrementing IB-core usecnt or retaining an unprotected QPN pointer. Actual
+QP-specific notification/provider-destroy conventions were checked against
+[Linux mlx5](https://github.com/torvalds/linux/blob/v6.17/drivers/infiniband/hw/mlx5/qp.c)
+and [RDMA core](https://github.com/torvalds/linux/blob/v6.17/drivers/infiniband/core/verbs.c);
+no upstream implementation was copied.
+
+After the external handler returns, only the original genuine error worker
+may attempt actual CQ/RQ cancel/RNC STOP/flush/close. Notification ACK or ERR
+is never that proof. Ambiguous ACK cannot repeat an accepted handler. Unknown
+reader state stops new posting; terminal detach does NO MMIO/ACK, deliberately
+retains device/BAR/attachment/storage ownership and does not invent safe unbind.
+Surprise removal, legitimate whole-device retirement and recovery are not done.
+
+Exact old68 private profile8 kernel inputs are retained. Only verbs.c,verbs.h,
+Makefile are derived and five fatal files added: real full73-input running-
+kernel W=1 build PASS11.495s under180, including support/auxiliary modules.
+No authored default driver/Makefile/capability is changed, installed or loaded.
+Actual same C driver bodies pass18 new fatal plus ALL202 prior cases (220 total),
+ASan/UBSan compile9.231s under30, max0.016s under10. [Audit1100](../results/2026-10-18/rocev2-rnic-fatal-verbs-diagnostics-001.json)
+requires all202 full prior summaries identical and exact kernel/test sources.
+Tests cover actual ERR/post closure, lock-free handler query/reentry, real
+provider destruction/error-worker exclusion during handler, high64-bit stale
+cookie/epoch/PD/QPN rejection, malformed/replayed events left unacked,
+ambiguous ACK exactly-once notification, failed STOP retaining actual modeled
+MR/QP/PD/RQ ownership and empty logical attachment retaining unbind exclusion.
+Linux primitives/certificate producer/MMIO/pins/DMA/workqueue execution remain
+explicit MODELS, not a running-kernel or native-coupled reference proof.
+
+First callback startup failed repository-root lookup before a build; exact
+sources/failed startup report remain. First callback001 compiles and passes
+five cases, then its new owner-mutation expectation fails at FATAL5. That
+false report/log/binary/test source remain. Only new mutation construction
+changes: preserve nonzero full64 cookie/epoch and consistent inner PD, so the
+intended stale-owner tests reach identity checking, not the earlier decoder.
+All assertions/production C/deadlines and first five summaries are unchanged.
+
+[Cross-audit1467](../results/2026-10-18/rocev2-rnic-fatal-event-native-software-diagnostics-001.json)
+binds actual native40/AXI snapshots/same C277 decoder, compiled full73-input
+kernel and callback220 source. It explicitly does NOT join separate modeled
+Linux certificates to the native producer or claim live Linux-FPGA coupling.
+Parent FEC attachment/poll/IRQ integration and registered Linux/provider
+execution, standard error/flush WC, whole-QP STOP/recovery/reference retirement
+and legitimate quarantine release remain. Original all11/timing/full-board/
+physical remain: actual HLS15.571ns still fails4ns/default1.08/effective2.92ns.
+All task jobs are terminal. No source/artifact/cache deletion/relocation,
+hardware/default/fan/BIOS/network/install/load/JTAG/flash/reboot/further Git.
+`scripts/check.sh` still fails the existing TX-padding source identity. ALL
+archived RAM-backed DBs still need restoration/verification plus authenticated
+exact-thread/goal revival before ANY necessary reboot; none is needed.
+
+### Local progress185: real FEC-native extended fixture and fresh build
+
+Previous goal checkpoint184 is PROGRESS: actual event-status native40 and
+runtime audit3155, then FEC RTL/C/kernel-support/fanout and separate source
+integration. Explicit intervening publication `8c13d42` is complete/verified;
+its exact pre-publication documents and private receipt remain locally.
+Publication is not a native FEC runtime result or further auto-push authority.
+
+New `fatal_event_native_sources.py` selects ONLY the reviewed tracked-fanout
+graph002:463 RTL/eight data, whole qualified207 HLS, exact two derived native
+leaves, same tested FEC/fanout, unchanged profile8 and both global drains0.
+It revalidates actual native40/old38/component/source evidence, not an old
+binary. The new fixture adds only declarations/tasks and two fatal-case calls
+to the actual prior bench. Removing those additions restores the entire
+previous bench byte-identically. All419 original assertions, all40 raw recipes
+and bytes, every old generator/oracle, original1100/71 stalls and original
+compile/runtime/space/clock gates remain. [Preflight1455](../results/2026-10-18/rocev2-rnic-fatal-event-native-fixture-diagnostics-001.json)
+PASS with25 additional assertions; this is NOT actual packet execution.
+
+The new fatal cases must read the actual optional0x406000 AXI aperture through
+the real native crossbar/32-word snapshot, match all1000 certificate bits and
+the genuine still-active SQC cookie/epoch/PD, ACK it while the original
+observer remains stalled, and retain actual native/SQC/RQC guards/queued RQ.
+Another77 cycles and an idempotent duplicate ACK must not redeliver the event
+or finish the upstream lease. Only the original observer's later handshake
+may complete that sole upstream lease; neither ACK is a CQ/drain/unpin proof.
+All existing full480/512/528/960/992/1000/wire/nonce/host/RQ checks remain.
+
+The whole new bench passes actual Icarus elaboration with an empty diagnostic
+log. Fresh native40 compiler/session52849 is LIVE under unchanged1200s compile,
+30s per case,180s elaboration,4ns/j4/O1/output geometry/root1GiB/RAM4GiB.
+No native FEC packet/readback/ACK case has yet run or passed at this checkpoint.
+New runtime auditor is AST-valid but UNEXECUTED: it requires every old40 full
+outcome except wall time unchanged, with ONLY one added mailbox result for
+the two fatal cases, fresh binary/objects and exact actual hierarchy/cohort.
+A separate C-readback runner is prepared, not executed: unchanged277-assertion
+C tests must consume those new actual native AXI snapshots; C transport/
+delivery/reference callbacks remain models, not live Linux attachment.
+
+No artifact/source/cache deletion, hardware/default/fan/BIOS/network/install/
+load/JTAG/flash/reboot/automatic Git action. `scripts/check.sh` still fails
+the same historical TX-padding source identity. Original15.571ns HLS timing
+remains unmet; full original11/Linux callbacks/error/flush CQ/STOP/reference
+retirement/recovery/physical remain open. ALL archived RAM-backed DBs still
+need restoration/verification and authenticated exact thread+goal revival
+before ANY necessary reboot; none is needed. Poll the SAME live job, never
+restart just because an observation expires.
 
 ### Local progress184: actual native40 closes SEND regression; retained error-notification path
 

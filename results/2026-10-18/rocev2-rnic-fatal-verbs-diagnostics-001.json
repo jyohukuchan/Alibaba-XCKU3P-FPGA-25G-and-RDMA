@@ -1,0 +1,87 @@
+{
+  "scope": "Bind real profile8 kernel build and actual fatal/old202 callback C tests.\n\nLinux object/locking/MMIO/certificate/pins/DMA/workqueue execution primitives\nremain MODELS. No running-kernel/native coupling, event IRQ registration,\nstandard error WC/whole-QP STOP/reference retirement or physical proof.\n",
+  "audit_passed": true,
+  "evidence": {
+    "fatal-verbs-kernel-build-001": {
+      "bindings_verified": 152,
+      "report_sha256": "8cc0d8ae989f8c4f2b37857d9f5f411d44ffe70a80a27edf94ddcc3b3f57ca06",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-verbs-callbacks-002": {
+      "bindings_verified": 344,
+      "report_sha256": "b1cb581836dc230a49b1b650964ceae8446520c0adf6c8b57a10d971ad0c6579",
+      "exact_preimage_resolutions": []
+    },
+    "segmented-write-kernel-post-001": {
+      "bindings_verified": 315,
+      "report_sha256": "e004633dfdc186424debabac5834c2a11ab40f0d2f8c7e4e6818f9cd901a6cc0",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-verbs-callbacks-001": {
+      "bindings_verified": 130,
+      "report_sha256": "3cf0a0fed43a3ffa4da4477325d071650e0b2d9aead82ed864d65ca0109fc8cf",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/kernel_fatal_verbs_cases.c"
+      ]
+    },
+    "fatal-verbs-callback-startup-001": {
+      "bindings_verified": 2,
+      "report_sha256": "13e468073f4288f6ed235ab595d552b6b7219df7ae2beeada9691f3079cc0001",
+      "exact_preimage_resolutions": []
+    },
+    "write-psn-control-kernel-build-001": {
+      "bindings_verified": 157,
+      "report_sha256": "9cf4bd19c9d72f392b5705a03e34ae6e02a175e75f42c57d48359d960521fd51",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 1100,
+  "exact_parent_inputs": 68,
+  "exact_candidate_inputs": 73,
+  "actual_new_fatal_cases": 18,
+  "all202_previous_full_summaries_identical": true,
+  "actual_same_driver_reader_QP_callback_and_lifetime_guards_tested": true,
+  "real_header_build_seconds": 11.494844086992089,
+  "callback_compile_seconds": 9.230945564981084,
+  "maximum_case_seconds": 0.015665407991036773,
+  "accepted_callback_not_repeated_after_ambiguous_ACK": true,
+  "actual_ERR_and_posting_closure": true,
+  "handler_outside_driver_locks_with_reentry_and_real_destroy_progress_exclusion": true,
+  "stale_full_cookie_epoch_PD_QPN_and_malformed_event_unacked": true,
+  "actual_error_worker_failed_STOP_preserves_QP_PD_MR_RQ_refs": true,
+  "logical_detach_performs_no_MMIO_and_retains_attachment": true,
+  "immutable_failed_startup_and_bad_new_owner_mutation_preserved": true,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_fatal_verbs.py": "4a2c93c3e2e44107ae42b20d26eaca7f849e8e537e194b51449c2f03d1390e24",
+    "rdma/rnic/kernel/fatal_verbs_candidate.py": "07afea1267f2a09ec36a41bc12e207eaa4d85c9047f68c0770deefb476c3fa84",
+    "rdma/rnic/tests/kernel_fatal_verbs_cases.c": "1875683b51e91a64de7df61686ec173190b3f84c0865d334c27454ead8807c58"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "primary_references": [
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.17/drivers/infiniband/hw/mlx5/qp.c",
+      "use": "QP-specific event_handler and device/element/event convention; no source copied."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.17/drivers/infiniband/core/verbs.c",
+      "use": "Provider destroy return controls deallocation. Real device-lock/driver destroy guards required, not only core usecnt."
+    }
+  ],
+  "Linux_primitives_MMIO_certificate_producer_DMA_pins_workqueue_execution_modeled": true,
+  "live_Linux_native_attachment": false,
+  "standard_error_WC_STOP_reference_retirement": false,
+  "hardware_verified": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false,
+  "remaining": [
+    "Actual privileged FEC attachment/poll source and registered Linux/provider event/ref behavior remain unqualified.",
+    "Standard error/flush CQ, full QP STOP/recovery and legitimate reference retirement/quarantine release remain.",
+    "Original11/timing/full-board/physical and authenticated exact reboot revival remain."
+  ]
+}

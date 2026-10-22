@@ -1,0 +1,21 @@
+{
+  "scope": "Actual first fatal-verbs callback probe startup failure before report creation, compilation or case execution. Exact sources preserved; no passed result inferred.",
+  "pass_test": false,
+  "command": ["python3", "rdma/rnic/tests/probe_fatal_verbs_callbacks.py", "--kernel-build-report", "results/2026-10-18/rocev2-rnic-fatal-verbs-kernel-build-001.json", "--report", "results/2026-10-18/rocev2-rnic-fatal-verbs-callbacks-001.json"],
+  "exit_status": 1,
+  "error_type": "AttributeError",
+  "error": "module 'segmented_read_kernel_models' has no attribute 'ROOT'",
+  "failing_expression": "ROOT=parent.models.base.ROOT",
+  "first_probe_line": 14,
+  "compilation_started": false,
+  "callback_cases_executed": 0,
+  "exact_preimage_root": "rdma/rnic/build/fatal-verbs-callback-startup-001-preimages-8pson98n",
+  "preserved_source_sha256": {
+    "rdma/rnic/build/fatal-verbs-callback-startup-001-preimages-8pson98n/rdma/rnic/tests/probe_fatal_verbs_callbacks.py": "0e7306974f6fb035447319587af87a7d678fa18f99eabc7fc185a6487d80dc2a",
+    "rdma/rnic/build/fatal-verbs-callback-startup-001-preimages-8pson98n/rdma/rnic/tests/fatal_verbs_kernel_models.py": "cf93c42cdc3c54d05a55c95ca46db33df1edcc697e040b47352baea9c7980c8c"
+  },
+  "correction_scope": "Resolve repository root from this module path. No production driver, input/oracle/assertion/deadline change.",
+  "hardware_or_default_actions": [],
+  "commit_or_push": false,
+  "overall_goal_complete": false
+}

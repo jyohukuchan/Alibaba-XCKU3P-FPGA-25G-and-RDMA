@@ -1,0 +1,2723 @@
+{
+  "scope": "Actual optional fatal reader/QP callbacks and all202 prior callback cases.\n\nReal full73-input kernel build required. Linux/QP-certificate/MMIO/pins/DMA/\nworkqueue execution boundaries are MODELS. No live Linux/native coupling.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv",
+  "source_sha256": {
+    "rdma/rnic/tests/kernel_fatal_verbs_cases.c": "1875683b51e91a64de7df61686ec173190b3f84c0865d334c27454ead8807c58",
+    "rdma/rnic/build/fatal-verbs-callback-runner-cv120bbs/runner.py": "afb8e8db6a691db02b2a28d7971fcf94fff3b4a2af8b8c1ed60d29eea42362bf",
+    "rdma/rnic/tests/fatal_verbs_kernel_models.py": "8b25aa3363c3c2cc3ca81fcb13dfdde832a6ab315bba9df06b3ae55adc376c10",
+    "rdma/rnic/tests/test_kernel_verbs.py": "0ee8ea79e8c26a8d80fb388beccbbbf7ba101d7317e8703605e18b800b7e9b00",
+    "rdma/rnic/tests/kernel_atomic128_post.c": "b4bb7d9b8f9aaa99786dcbd43dc461fe459945924171b883ee805731e2a2424c",
+    "rdma/rnic/tests/kernel_atomic_access_post.c": "b13ec26be0ac274d8be3394bb0bb721d7d1a2fc5befb4659d5c2ae33fcdff056",
+    "rdma/rnic/tests/kernel_zero_post.c": "e6af1e3b2035fb1ec2fd92fc524db30858a19badc3a565cc25e86f2ad52c6cd3",
+    "rdma/rnic/tests/atomic_access_kernel_models.py": "bf2cab7bd570e8535822241a2ff7aa5ddd0e0d8079dcb2e206b61c3169c343b9",
+    "rdma/rnic/tests/atomic128_kernel_models.py": "f3ecb9d09300aad83770f77e532210f3d5065805c306c61f7ac600e07df9cef7",
+    "rdma/rnic/tests/kernel_sq_hw_cases.c": "86f4f6f8f7a5f0bb663f61d04b1b746b0d6694d79f82449f97776ad30157f798",
+    "rdma/rnic/tests/kernel_verbs_cases.c": "525d56e92d9f152d6bfc340579ef2a4aacf552f55731629985cd4bb5039fad07",
+    "results/2026-10-18/rocev2-rnic-fatal-verbs-kernel-build-001.json": "8cc0d8ae989f8c4f2b37857d9f5f411d44ffe70a80a27edf94ddcc3b3f57ca06",
+    "rdma/rnic/tests/kernel_verbs_model.h": "035149fed01b1b6e8b195bc8be290879932496cb8d383130574d6da95b5d7b7a",
+    "rdma/rnic/tests/kernel_cq_model.h": "7a97b34bdb70fab41fc3f1ac926ae96aed15dce09f230733bac487cd3bd64615",
+    "rdma/rnic/tests/kernel_sq_hw_model.h": "3e4db9a8dfb956b8c748912fa99ba8ded276bf10529463198f398a077d65c771",
+    "rdma/rnic/tests/kernel_queue_model.h": "fa79e208e46cefa0180ad8356b7a6f8437c15ff63073f2831cba8cf06ff5bc14",
+    "rdma/rnic/tests/kernel_segmented_write_post.c": "482d5bf9fb102723e5952066bec1672ee7ab3dbf3b485e694961ddcbb21d11fb",
+    "rdma/rnic/tests/kernel_segmented_receive_post.c": "d70173f5a8736206bc7145501d79423e26f051562daabb5c2577467047a700fe",
+    "rdma/rnic/tests/kernel_segmented_immediate_post.c": "97240264a5db618c1315f5082551f28652ebf54689ee3cecd964d9627c951e20",
+    "rdma/rnic/tests/segmented_write_kernel_models.py": "e6fbbe1c3c2d6ae9efbf2a357e286346478516e3e8b481845c051c2bf9e43c7d",
+    "rdma/rnic/tests/kernel_segmented_read_post.c": "274c059dc9a1c297c5c7713bc3f9190ff6363e1f6cdbbd23779fa1ef5a23ba8b",
+    "rdma/rnic/tests/kernel_segmented_post.c": "1cea9848d5bc1166e549ec39a33c76848479a8b52f399727b3aaa2707ab4bd70",
+    "rdma/rnic/tests/segmented_read_kernel_models.py": "4961e959e1e2943ba643a7b083ec0c7f8f639b75a415f75925cc70cf67cf216e",
+    "rdma/rnic/tests/segmented_kernel_models.py": "4398157c359978b82189054871784f203010c08286152d8e004572d31d323038",
+    "rdma/rnic/tests/zero_kernel_models.py": "a98c01cb7aa2ba5cb168c8f6a7aa10ffac67b851e1f5b10b0b31652b3b8d09d7",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/mr.c": "fafe25e2d81236cd155436dd4a5d723662ac6cd4872824655ecf438b1c43feab",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/mr_contract.c": "fba5388020b03409654f46dfce12aed7a9f4776dc22c32a964a3aecf69da6adf",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe.c": "4b3618b01a20876084cd56c5c14c27c3cb8d2c6390aa328bdbf795cd64104211",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_wqe.c": "82ccb5072a8955058abab1edfd7bca9f2fd26f60329ebd5ee59608d626ae49ba",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/sq.c": "398412c6c4015cf87cf57ffa5dcb7c878e52fe5106eb9b11ff990e3b0f6b3fbb",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/sq_io.c": "0d304dbc5ab1dbbbb076600a11852eb44f1a40ac54f3df050753b194accb5dc6",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/sq_hw.c": "868e0095a0e7e382b6064aff5f86d5067db096e77195902ef9dec2377140803d",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/cq_io.c": "261214485514e969a0f250c5a3ff21c5a7a61b2f915c7550875a3e5c15a77dd8",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/cq_hw.c": "62727e3661de59f10456deffcc864920746a196fc80ec9226498b6945684fe33",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/cq.c": "3fea3dd751d491b6241f8a55db4b65fa92a7c2ff72263d948ad45f1d912404c5",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/rnic_io.c": "3cdcf0756e7f2fde7ac857d8e0711e447be64b9119014517fc2568c4abf59b38",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/qp_hw.c": "e7ae309e2d4536cdc41ab3ce4d213a33cd3b403dd5820afad310e468b035274c",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/retry_io.c": "9455b9bb7cd157d6fbbf667144612a8034e4c72d24dad979529b440f7b8eb489",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs.c": "037c19439ff61080ef88f6fd718e5117e66dba6313e5a3b9213cb56f2d77c8cc",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_atomic.c": "965050dda10092921a48d9caa6e9557562c9704c0d39f9289b54f997c6046f72",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_atomic_wqe.c": "93a0b279add531f5de82006c8435fd1ed13cd2c7450f0bed2c58fbe1d6971ec7",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_zero.c": "dbeb8076d21f809253fd96871c0861e316559b34478c02c7352d20e681352348",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_zero_wqe.c": "b12d5f111360932a0b0a1ae30117b468deedaa5727a541b9a70eb20987d80b66",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_segmented.c": "5d5d67ecb00a70b988ddb16c780febcd4b3180815dc5c8bf8368f5fef0938d61",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_segmented_wqe.c": "b3cfab36d45a28124169ce98e9a601d3b5ef3979cd8809ddcd2a95e0ccdcbcb4",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_segmented_read.c": "11b3086bf4f4fd23014587f4a50b171e7ba75247b7e392b47bd6dff30e25eac9",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_segmented_read_wqe.c": "a93f93311d841eba6b80cb0be8d4d6ee8fdae79e9cca2af5938b7e0f38a17659",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_segmented_immediate.c": "5bcf912f2fc6e86d5dcef989e801d8f7d20e485a185e9664e05e372e271ba413",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_segmented_immediate_wqe.c": "78a43b0105f50a7401d6c22abc60417fb859fa6c925b7abb28505899ef75442f",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_segmented_receive.c": "6c49eac02e4d54be5efd1bca87ea919522270e56d99d9a3f0a64473a4aeb2c7a",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_segmented_receive_wqe.c": "4c34a78d2bf631b52d685b44a778cc9f086614c4d25230c8686aa2b3c4cd38e3",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/fatal_io.c": "04e95416e15a7fcec8c2c9c4caf17dca5dfa34b5d31273a60f83a5f126b80265",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/fatal_verbs.c": "aec8fdfd99d46591396872f9c9da631e7cf64ee9e11dfe6fd85dbdb32fbec07f",
+    "rdma/rnic/tests/kernel_queue_model.c": "040e9a6c3ec021996f8af51f50d180043cf440933f13d116bbdb04f0b92ce240",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_fatal_verbs_cases.c": "1875683b51e91a64de7df61686ec173190b3f84c0865d334c27454ead8807c58",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/fatal_io.h": "b0cbf69f482cf03b0e2905d8f6de9129c6140eb3ac34bf5350c09642cd3f7fa3",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/rnic_regs.h": "902b3976b72d377fadf410549b262fad97ccdae978095374f100b0caf060b9de",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_segmented_wqe.h": "74270ba9c7a1661af95523c1115ee9f1c5bda1d6448849a9bbe01b5f48d625f7",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/qp_hw.h": "8ba44af36588003ed00ebe8e51737b070f99a33b4140d842e6bb966e9265f474",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_atomic.h": "f971b72123b3b3a24c78c28a2c1a856d5c9a9597977fae0a09f654b13f952f68",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_zero.h": "70087a973c4eee08b25c93c8d5aab60ff2e9d9a0e9888363201bf4d375697f9b",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/atomic_profile.h": "fa9b8b94fa682a3a9225ba92b14682fb1df8d69cc36e88e1f077099d601d6792",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_segmented_immediate_wqe.h": "a3b79f974662d573065071a7a4804436ced1c671aec8679fa6a72a2735b19d08",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/rnic_hw.h": "87f084df23fa172ddc76fbcffb30338a5d9a28e68fd08ec3f54157317f9960f7",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_segmented_receive_wqe.h": "d7ba6c34f25b1edc9b27c2eb9088dbd0f6013ddaa1e8ae3329fe545498e3335e",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/cq_regs.h": "d8b0c553cde7baee136c919837d0bcc8d8308de1a2ac2155207a7cb771c20033",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_segmented_read_wqe.h": "0a46c998b11badd6be31e6035730728f849e8baf3f4422d22c13f0f264d5591f",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/sq.h": "98bdd9260c2a40853ef4a12102eb64dfec66d19a8560c858f83c0ad74c23c242",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/fatal_verbs.h": "90698cb69cdf188a56cd85c57bc71f3f93af83835d8c5d4703370897194b19de",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/sq_io.h": "9ab44b2186598290b57ac0999b861f01b212ef7e6ed7e890870bbdc1d9731d60",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/mqnic_graph.h": "c7e78ac4f98d8841fbc1e9f7a531cffa9f675be00710295da7183fd22864dc2b",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/cq_hw.h": "9cfbf94b2a7ebcfcc4465b761fb6ccf4c93844b7dd67d8e3f7e81983e5e0e673",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/native_attach.h": "c75bc0317787962e5b803f04fee05e8f556614df85fcb40ea851148fa45d923b",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_segmented.h": "78d950a46d3978fe1929716c4595ba1e9dec61ffa7d9574ef06419d7914a9c5a",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/retry_io.h": "aad5018d4cb7292ef0240f09f1495453030f5211c98999fa0edec5b0fbee9167",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/cq.h": "8fa35025b2c276de11d026dcb1cf9d324637dba1fb3e743c0261f447447a44a4",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_segmented_read.h": "74aa2cd9c47751c6ef019fe9fea17fd166ad2bab9b2355368db959209d8889b8",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe.h": "646e0f6c09f85af72cd9d93016f1368ee7378b6f0cc1f869e4ace0e8e68e8a2a",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/native_regs.h": "1958df9642bd0c865d97c584cda9902fa689d9049b3f415c75f342dddd7b0b97",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/fatal_regs.h": "40c6941a7820273bc51bb152b0c4aa79bff987cb289c2ee9a8d9516ab7d25e2d",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/device.h": "830ced5f865bb1af7f7e73ed3e952fa1f745934f1500d4e2f2090e2511274f41",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs.h": "5a560b02d51a9353e11efa5d3de6e9d53eef8006c7401fc9d8bfbea55adbf417",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_segmented_immediate.h": "c6c3e086486a0a6ec7bc10943928c35360e5ab66adfddaa7c5615bd8c09cf7fd",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/rnic_io.h": "92999a3752af6fce6c8556c9c2724ce85918949966f35d2420695e8671d0ffc3",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_segmented_receive.h": "c61554c6a9fd0b77f89e4bde51e80458753492cd817aa3d79b63682fc417be8e",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/mr.h": "427c947b5e8491e4444cf1fd0e726cfbcdfdae00113020ec67b7e7f314c5cfc3",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/sq_hw.h": "3b314f585820e35d33e17dc362c92b070b14171d29e59cbedb25699863d50fd8",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/cq_io.h": "40b5077954e39163671de8a4ae4a2a48df67d4a6559ee7350cb3ebefb0837fe0",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/native_graph.h": "d2d0d4722d0e336fcc9649c3d0dc6b758c587a6398555424da1d16d773b39555",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_segmented_receive_post.c": "988465949b5b4915a40c61b16be5525817569bdcad623a41162ec151518f5e35",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_segmented_immediate_post.c": "1f2de40a31437ae26fe25f591d6ba5b036f22ff90d62a8070662b91a97b2d84a",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_sq_hw_cases.c": "08abab5f2df9f3f1d1769f0140a34f04d45bd21e84d00cceff49038d54255931",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_segmented_read_post.c": "ff239dbdd5ad70832b8de944a8c60fa8a37d1615128a69b800db25151ed1dd5c",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_cq_model.h": "7a97b34bdb70fab41fc3f1ac926ae96aed15dce09f230733bac487cd3bd64615",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_queue_model.h": "fa79e208e46cefa0180ad8356b7a6f8437c15ff63073f2831cba8cf06ff5bc14",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_zero_post.c": "28061d602fcb3dbf4c1f5f1f8c1efab13b1a9d1f6acef6e1d27ecff0d5585328",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_atomic128_model.h": "a14dedef503777dc1c1cb74fb441cdd336affea8f6fdd183740dd268578b1f86",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_verbs_cases.c": "84ae396cdeee16063dc1d865aaf99b2f597768d23e51b6680b8792d881501785",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_sq_hw_model.h": "3e4db9a8dfb956b8c748912fa99ba8ded276bf10529463198f398a077d65c771",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_atomic_access_post.c": "baac431b2e44595ff8f3c4caed4cfe2515af890703f3851dd61f3f6d3cbb1348",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_atomic128_post.c": "e829391206ea0defcff154223b984e70b915d8947e9dc2e957a210a1a04d4449",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_segmented_post.c": "e3396d2457cfc4ee874debb3713c9746411200308d4517829cb33c19443b46c9",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_verbs_model.h": "c7254624a76d8bc3e8615d5fddc84a8f032d03e6f6404d97a9783a4a3a939329",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_segmented_write_post.c": "389cb2f902afdbc5c6a33bb82ebfa279674c87f515bc303ecf2696a46bece04d",
+    "rdma/rnic/tests/probe_fatal_verbs_callbacks.py": "d76ce03199ed83edc5ee9b67b6fa509b649709e93e595488fe0832f1bea7987d",
+    "rdma/rnic/kernel/derive_atomic128.py": "604eac54786c59739746716e3203d96d3ee099826252db96a42c8c1f81fb9983",
+    "rdma/rnic/tests/test_kernel_queue_lifecycle.py": "e93700d7567d51a66f86cd324cf66642d602ab239b4b32bedbab81ed17ca983f",
+    "rdma/rnic/kernel/build_frozen.py": "e4f6c8e37657614f186def1f50010ecfbf229d006c8b7f4ccaeb1d4b1d792f44",
+    "rdma/rnic/kernel/derive_atomic_access.py": "9694c7f0c16c68d0d8b315049a792c52d512ad77f516daad1a7cc0fd3f107486",
+    "rdma/rnic/kernel/derive_zero_kernel.py": "280aeb2234f9f0c42133e6c8d082a822d7fdd110700243c05fb7194b1c595f33",
+    "rdma/rnic/kernel/build_zero.py": "ed796e8837a0df01bdb42dfa54d2c4b3845573a1bee0c318d5c42747ff676173",
+    "rdma/rnic/tests/probe_kernel_zero_post.py": "467f719daad0ad3ccd9df61346eefb11d2c0ab9c0bff418ba6240a00d370164e",
+    "rdma/rnic/tests/probe_kernel_segmented_post.py": "0529b7fa37d887bebc051af97130f8ad9c3091d96e5f7f9bca329070b678946d",
+    "rdma/rnic/tests/probe_kernel_segmented_read_post.py": "200966f37682b7dbd527dc6f7dde8663a4a5ce2f90fc4012559fb48018640156",
+    "rdma/rnic/tests/segmented_immediate_kernel_models.py": "a47c2d604bb43e1ae44f079ab0bedc52ead55f33b395f287cb25787974c56e3f",
+    "rdma/rnic/tests/probe_kernel_segmented_immediate_post.py": "94e1ab4d14ce3c23a75612f79d9ca885c86e223a5d95787e08c9e83987699622",
+    "rdma/rnic/tests/segmented_receive_kernel_models.py": "aaa84c8517749df4cc86a9e15dc9f099aafd7b781ffd537d86ad12e1db54cbc5",
+    "rdma/rnic/tests/probe_kernel_segmented_receive_post.py": "c950953de6a19bd04ff6411e80b67864691690f236f47b0be00b4970c2e2be8c",
+    "rdma/rnic/tests/probe_kernel_segmented_write_post.py": "433b6dc3c17ae6c4eaa6b19e848c1750d898070c316961bb7d1e578a97eb6bf8",
+    "rdma/rnic/tests/audit_segmented_receive.py": "856f1f67bd6dc15fdabe40cadfede0235d3691f9da49fcb15a8b0a01192ed319"
+  },
+  "actual_standard_callbacks_and_CSR_C_bodies": true,
+  "actual_running_kernel_callback_execution": false,
+  "Linux_MMIO_DMA_pins_hardware_completion_models": true,
+  "actual_RTL_executed": false,
+  "hardware_verified": false,
+  "atomic_cap_advertised": false,
+  "simulation_limit_seconds": 10,
+  "tests": {
+    "FATAL0": {
+      "seconds": 0.015118251030799001,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true,
+        "QP_ERR": true,
+        "handler_calls": 1,
+        "references_retained": true,
+        "no_fake_WC_STOP_unpin": true
+      }
+    },
+    "FATAL1": {
+      "seconds": 0.014079393993597478,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true,
+        "QP_ERR": true,
+        "handler_calls": 1,
+        "references_retained": true,
+        "no_fake_WC_STOP_unpin": true
+      }
+    },
+    "FATAL2": {
+      "seconds": 0.01395758701255545,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true,
+        "QP_ERR": true,
+        "handler_calls": 0,
+        "references_retained": true,
+        "no_fake_WC_STOP_unpin": true
+      }
+    },
+    "FATAL3": {
+      "seconds": 0.01369315799092874,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true,
+        "QP_ERR": true,
+        "handler_calls": 1,
+        "references_retained": true,
+        "no_fake_WC_STOP_unpin": true
+      }
+    },
+    "FATAL4": {
+      "seconds": 0.012889605015516281,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "stale_or_malformed_unacked": true,
+        "references_retained": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL5": {
+      "seconds": 0.012868862017057836,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "stale_or_malformed_unacked": true,
+        "references_retained": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL6": {
+      "seconds": 0.013357349031139165,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "stale_or_malformed_unacked": true,
+        "references_retained": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL7": {
+      "seconds": 0.01365711900871247,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "stale_or_malformed_unacked": true,
+        "references_retained": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL8": {
+      "seconds": 0.013307899003848433,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "stale_or_malformed_unacked": true,
+        "references_retained": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL9": {
+      "seconds": 0.01292431796900928,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "stale_or_malformed_unacked": true,
+        "references_retained": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL10": {
+      "seconds": 0.014029804966412485,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true,
+        "QP_ERR": true,
+        "handler_calls": 1,
+        "references_retained": true,
+        "no_fake_WC_STOP_unpin": true
+      }
+    },
+    "FATAL11": {
+      "seconds": 0.014346058014780283,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true,
+        "QP_ERR": true,
+        "handler_calls": 1,
+        "references_retained": true,
+        "no_fake_WC_STOP_unpin": true
+      }
+    },
+    "FATAL12": {
+      "seconds": 0.014116272970568389,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true,
+        "QP_ERR": true,
+        "handler_calls": 1,
+        "references_retained": true,
+        "no_fake_WC_STOP_unpin": true
+      }
+    },
+    "FATAL13": {
+      "seconds": 0.011513821955304593,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "bind_rejected": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL14": {
+      "seconds": 0.010951998003292829,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 14,
+        "bind_rejected": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL15": {
+      "seconds": 0.01362219697330147,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 15,
+        "stale_or_malformed_unacked": true,
+        "references_retained": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL16": {
+      "seconds": 0.01147491903975606,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 16,
+        "empty_attachment_retained_after_logical_detach": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL17": {
+      "seconds": 0.01156452897703275,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 17,
+        "bind_rejected": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV0": {
+      "seconds": 0.011251907038968056,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "rejected_before_queues": true
+      }
+    },
+    "WRITE_RECV1": {
+      "seconds": 0.011539246013853699,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "rejected_before_queues": true
+      }
+    },
+    "WRITE_RECV2": {
+      "seconds": 0.011609159002546221,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "rejected_before_queues": true
+      }
+    },
+    "WRITE_RECV3": {
+      "seconds": 0.011539105034898967,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "rejected_before_queues": true
+      }
+    },
+    "WRITE_RECV4": {
+      "seconds": 0.010980844032019377,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "rejected_before_queues": true
+      }
+    },
+    "WRITE_RECV5": {
+      "seconds": 0.01123982499120757,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "rejected_before_queues": true
+      }
+    },
+    "WRITE_RECV6": {
+      "seconds": 0.01110907702241093,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "rejected_before_queues": true
+      }
+    },
+    "WRITE_RECV7": {
+      "seconds": 0.010858686990104616,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "rejected_before_queues": true
+      }
+    },
+    "WRITE_RECV8": {
+      "seconds": 0.013658794981893152,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "capacity": 0,
+        "WRITE_bytes": 0,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV9": {
+      "seconds": 0.014297935995273292,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "capacity": 0,
+        "WRITE_bytes": 1,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV10": {
+      "seconds": 0.014324405987281352,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "capacity": 0,
+        "WRITE_bytes": 4096,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV11": {
+      "seconds": 0.01408197800628841,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "capacity": 0,
+        "WRITE_bytes": 4097,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV12": {
+      "seconds": 0.014394390978850424,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "capacity": 128,
+        "WRITE_bytes": 8193,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV13": {
+      "seconds": 0.01428256998769939,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "capacity": 128,
+        "WRITE_bytes": 8193,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV14": {
+      "seconds": 0.012942756991833448,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 14,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV15": {
+      "seconds": 0.013450311031192541,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 15,
+        "capacity": 0,
+        "WRITE_bytes": 1048576,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV16": {
+      "seconds": 0.013465886993799359,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 16,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV17": {
+      "seconds": 0.013016302022151649,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 17,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV18": {
+      "seconds": 0.012688036018516868,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 18,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV19": {
+      "seconds": 0.013297004043124616,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 19,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV20": {
+      "seconds": 0.01361185999121517,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 20,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV21": {
+      "seconds": 0.013160039961803705,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 21,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV22": {
+      "seconds": 0.013686383026652038,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 22,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV23": {
+      "seconds": 0.013628133980091661,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 23,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV24": {
+      "seconds": 0.013611230999231339,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 24,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV25": {
+      "seconds": 0.013601941987872124,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 25,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV26": {
+      "seconds": 0.015665407991036773,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 26,
+        "capacity": 128,
+        "WRITE_bytes": 8193,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV27": {
+      "seconds": 0.015093946014530957,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 27,
+        "capacity": 128,
+        "WRITE_bytes": 8193,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV28": {
+      "seconds": 0.012921384011860937,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 28,
+        "bad_WR_before_owner": true
+      }
+    },
+    "WRITE_RECV29": {
+      "seconds": 0.012800903001334518,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 29,
+        "bad_WR_before_owner": true
+      }
+    },
+    "WRITE_RECV30": {
+      "seconds": 0.013796805986203253,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "ambiguous_RQ_owner_retained": true
+      }
+    },
+    "WRITE_RECV31": {
+      "seconds": 0.014373646990861744,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 31,
+        "capacity": 0,
+        "WRITE_bytes": 8193,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV0": {
+      "seconds": 0.01374721695901826,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "capacity": 8194,
+        "received_bytes": 8193,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV1": {
+      "seconds": 0.014329993980936706,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "capacity": 1048576,
+        "received_bytes": 1048575,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV2": {
+      "seconds": 0.01432238199049607,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "capacity": 4097,
+        "received_bytes": 4097,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV3": {
+      "seconds": 0.014469611982349306,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "capacity": 65537,
+        "received_bytes": 65536,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV4": {
+      "seconds": 0.013192866987083107,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "refused_before_RQ_producer_and_MR_ref": true
+      }
+    },
+    "RECV5": {
+      "seconds": 0.01347105496097356,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "refused_before_RQ_producer_and_MR_ref": true
+      }
+    },
+    "RECV6": {
+      "seconds": 0.010998722980730236,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "rejected_before_queues": true
+      }
+    },
+    "RECV7": {
+      "seconds": 0.010858547000680119,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "rejected_before_queues": true
+      }
+    },
+    "RECV8": {
+      "seconds": 0.010934188030660152,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "rejected_before_queues": true
+      }
+    },
+    "RECV9": {
+      "seconds": 0.011238567007239908,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "rejected_before_queues": true
+      }
+    },
+    "RECV10": {
+      "seconds": 0.011802556982729584,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "rejected_before_queues": true
+      }
+    },
+    "RECV11": {
+      "seconds": 0.011385448975488544,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "rejected_before_queues": true
+      }
+    },
+    "RECV12": {
+      "seconds": 0.012462022015824914,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "rejected_before_queues": true
+      }
+    },
+    "RECV13": {
+      "seconds": 0.013226042967289686,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "refused_before_RQ_producer_and_MR_ref": true
+      }
+    },
+    "RECV14": {
+      "seconds": 0.012920267006848007,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 14,
+        "refused_before_RQ_producer_and_MR_ref": true
+      }
+    },
+    "RECV15": {
+      "seconds": 0.013823416957166046,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 15,
+        "refused_before_RQ_producer_and_MR_ref": true
+      }
+    },
+    "RECV16": {
+      "seconds": 0.013633373018819839,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 16,
+        "refused_before_RQ_producer_and_MR_ref": true
+      }
+    },
+    "RECV17": {
+      "seconds": 0.013505837006960064,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 17,
+        "refused_before_RQ_producer_and_MR_ref": true
+      }
+    },
+    "RECV18": {
+      "seconds": 0.013525393034797162,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 18,
+        "refused_before_RQ_producer_and_MR_ref": true
+      }
+    },
+    "RECV19": {
+      "seconds": 0.01443504000781104,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 19,
+        "capacity": 0,
+        "received_bytes": 0,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV20": {
+      "seconds": 0.014089033007621765,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 20,
+        "capacity": 1,
+        "received_bytes": 1,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV21": {
+      "seconds": 0.014467796019744128,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 21,
+        "capacity": 4096,
+        "received_bytes": 4095,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV22": {
+      "seconds": 0.013033622992224991,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 22,
+        "bad_full_CQ_retains_RQ_MR": true
+      }
+    },
+    "RECV23": {
+      "seconds": 0.013562270964030176,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 23,
+        "bad_full_CQ_retains_RQ_MR": true
+      }
+    },
+    "RECV24": {
+      "seconds": 0.012875915970653296,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 24,
+        "bad_full_CQ_retains_RQ_MR": true
+      }
+    },
+    "RECV25": {
+      "seconds": 0.013632114976644516,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 25,
+        "bad_full_CQ_retains_RQ_MR": true
+      }
+    },
+    "RECV26": {
+      "seconds": 0.013575751043390483,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 26,
+        "bad_full_CQ_retains_RQ_MR": true
+      }
+    },
+    "RECV27": {
+      "seconds": 0.013081606011837721,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 27,
+        "bad_full_CQ_retains_RQ_MR": true
+      }
+    },
+    "RECV28": {
+      "seconds": 0.014912143000401556,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 28,
+        "capacity": 8194,
+        "received_bytes": 8193,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV29": {
+      "seconds": 0.01381510600913316,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "ambiguous_RQ_producer_retains_MR_queue": true
+      }
+    },
+    "RECV30": {
+      "seconds": 0.014091128017753363,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 30,
+        "capacity": 8194,
+        "received_bytes": 8193,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV31": {
+      "seconds": 0.014578219037503004,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 31,
+        "capacity": 8194,
+        "received_bytes": 8193,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV32": {
+      "seconds": 0.013593770971056074,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 32,
+        "capacity": 8194,
+        "received_bytes": 8193,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV33": {
+      "seconds": 0.014248695981223136,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 33,
+        "capacity": 8194,
+        "received_bytes": 0,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV34": {
+      "seconds": 0.014236123999580741,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 34,
+        "capacity": 8194,
+        "received_bytes": 8193,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV35": {
+      "seconds": 0.013683939003385603,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 35,
+        "capacity": 8194,
+        "received_bytes": 8194,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE0": {
+      "seconds": 0.013691830972675234,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "bytes": 8193,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE1": {
+      "seconds": 0.013766283984296024,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "bytes": 1048576,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE2": {
+      "seconds": 0.013708314974792302,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "bytes": 4097,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE3": {
+      "seconds": 0.012969854986295104,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "bytes": 65537,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE4": {
+      "seconds": 0.012852239015046507,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE5": {
+      "seconds": 0.013651043002028018,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE6": {
+      "seconds": 0.011329643020872027,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "rejected_before_queues": true
+      }
+    },
+    "IMMEDIATE7": {
+      "seconds": 0.011800600972492248,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "rejected_before_queues": true
+      }
+    },
+    "IMMEDIATE8": {
+      "seconds": 0.011235773039516062,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "rejected_before_queues": true
+      }
+    },
+    "IMMEDIATE9": {
+      "seconds": 0.011287876986898482,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "rejected_before_queues": true
+      }
+    },
+    "IMMEDIATE10": {
+      "seconds": 0.01246684102807194,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "IMMEDIATE11": {
+      "seconds": 0.012603665003553033,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "IMMEDIATE12": {
+      "seconds": 0.013313208008185029,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "bytes": 8193,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE13": {
+      "seconds": 0.01290951098781079,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "ambiguous_producer_retains_MR_queue": true
+      }
+    },
+    "IMMEDIATE14": {
+      "seconds": 0.013329830020666122,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 14,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE15": {
+      "seconds": 0.013139156973920763,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 15,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE16": {
+      "seconds": 0.013711108011193573,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 16,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE17": {
+      "seconds": 0.013705590972676873,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 17,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE18": {
+      "seconds": 0.013708942977245897,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 18,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE19": {
+      "seconds": 0.013810286007355899,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 19,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE20": {
+      "seconds": 0.013016721000894904,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 20,
+        "bytes": 8193,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE21": {
+      "seconds": 0.013618075987324119,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 21,
+        "bytes": 0,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE22": {
+      "seconds": 0.013783954957034439,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 22,
+        "bytes": 8193,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE23": {
+      "seconds": 0.013712644984479994,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 23,
+        "bytes": 1048576,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE24": {
+      "seconds": 0.013516942039132118,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 24,
+        "bytes": 4097,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE25": {
+      "seconds": 0.013129238970577717,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 25,
+        "bytes": 65537,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE26": {
+      "seconds": 0.012779951037373394,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 26,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE27": {
+      "seconds": 0.01373422605684027,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 27,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE28": {
+      "seconds": 0.011259520018938929,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 28,
+        "rejected_before_queues": true
+      }
+    },
+    "IMMEDIATE29": {
+      "seconds": 0.011519338993821293,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 29,
+        "rejected_before_queues": true
+      }
+    },
+    "IMMEDIATE30": {
+      "seconds": 0.011253653967287391,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 30,
+        "rejected_before_queues": true
+      }
+    },
+    "IMMEDIATE31": {
+      "seconds": 0.01155677594942972,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 31,
+        "rejected_before_queues": true
+      }
+    },
+    "IMMEDIATE32": {
+      "seconds": 0.013197476975619793,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 32,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "IMMEDIATE33": {
+      "seconds": 0.012848747021052986,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 33,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "IMMEDIATE34": {
+      "seconds": 0.01395514199975878,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 34,
+        "bytes": 8193,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE35": {
+      "seconds": 0.012406286026816815,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "ambiguous_producer_retains_MR_queue": true
+      }
+    },
+    "IMMEDIATE36": {
+      "seconds": 0.013727939978707582,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 36,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE37": {
+      "seconds": 0.01353824499528855,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 37,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE38": {
+      "seconds": 0.013044798048213124,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 38,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE39": {
+      "seconds": 0.013546905014663935,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 39,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE40": {
+      "seconds": 0.013706987025216222,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 40,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE41": {
+      "seconds": 0.01361109095159918,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 41,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE42": {
+      "seconds": 0.013267180998809636,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 42,
+        "bytes": 8193,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE43": {
+      "seconds": 0.012983474996872246,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 43,
+        "bytes": 0,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "READ0": {
+      "seconds": 0.013801206019707024,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "bytes": 8193,
+        "actual_standard_READ_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "READ1": {
+      "seconds": 0.01362205803161487,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "bytes": 1048576,
+        "actual_standard_READ_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "READ2": {
+      "seconds": 0.013567649002652615,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "bytes": 4097,
+        "actual_standard_READ_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "READ3": {
+      "seconds": 0.013808051007799804,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "bytes": 65537,
+        "actual_standard_READ_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "READ4": {
+      "seconds": 0.013488235999830067,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ5": {
+      "seconds": 0.013076228031422943,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ6": {
+      "seconds": 0.01160943805007264,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "rejected_before_queues": true
+      }
+    },
+    "READ7": {
+      "seconds": 0.011568368994630873,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "rejected_before_queues": true
+      }
+    },
+    "READ8": {
+      "seconds": 0.011499574000481516,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "rejected_before_queues": true
+      }
+    },
+    "READ9": {
+      "seconds": 0.01100521901389584,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "rejected_before_queues": true
+      }
+    },
+    "READ10": {
+      "seconds": 0.01181903894757852,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "rejected_before_queues": true
+      }
+    },
+    "READ11": {
+      "seconds": 0.011186463991180062,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "rejected_before_queues": true
+      }
+    },
+    "READ12": {
+      "seconds": 0.0125871819909662,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "READ13": {
+      "seconds": 0.013513870013412088,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "READ14": {
+      "seconds": 0.013201877009123564,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 14,
+        "bytes": 8193,
+        "actual_standard_READ_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "READ15": {
+      "seconds": 0.012456923024728894,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 15,
+        "ambiguous_producer_retains_full_MR_queue": true
+      }
+    },
+    "READ16": {
+      "seconds": 0.013649506028741598,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 16,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ17": {
+      "seconds": 0.01388264400884509,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 17,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ18": {
+      "seconds": 0.012993112963158637,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 18,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ19": {
+      "seconds": 0.01290643698303029,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 19,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ20": {
+      "seconds": 0.013749592006206512,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 20,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ21": {
+      "seconds": 0.013722074043471366,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 21,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ22": {
+      "seconds": 0.014015347987879068,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 22,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ23": {
+      "seconds": 0.013241478009149432,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 23,
+        "bytes": 65,
+        "actual_standard_READ_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "READ24": {
+      "seconds": 0.01384422997944057,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 24,
+        "bytes": 0,
+        "actual_standard_READ_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Large0": {
+      "seconds": 0.013722003030125052,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "bytes": 8193,
+        "actual_standard_callbacks_and_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Large1": {
+      "seconds": 0.014088194991927594,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "bytes": 8193,
+        "actual_standard_callbacks_and_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Large2": {
+      "seconds": 0.01416635001078248,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "bytes": 1048576,
+        "actual_standard_callbacks_and_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Large3": {
+      "seconds": 0.013249790004920214,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "bytes": 1048576,
+        "actual_standard_callbacks_and_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Large4": {
+      "seconds": 0.012974395009223372,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "Large5": {
+      "seconds": 0.013104234996717423,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "Large6": {
+      "seconds": 0.011772383993957192,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "rejected_before_queues": true
+      }
+    },
+    "Large7": {
+      "seconds": 0.011880641046445817,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "rejected_before_queues": true
+      }
+    },
+    "Large8": {
+      "seconds": 0.011869048001244664,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "rejected_before_queues": true
+      }
+    },
+    "Large9": {
+      "seconds": 0.011038114957045764,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "rejected_before_queues": true
+      }
+    },
+    "Large10": {
+      "seconds": 0.01117549801710993,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "rejected_before_queues": true
+      }
+    },
+    "Large11": {
+      "seconds": 0.011733970022760332,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "rejected_before_queues": true
+      }
+    },
+    "Large12": {
+      "seconds": 0.01275620301021263,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "Large13": {
+      "seconds": 0.013321031001396477,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "Large14": {
+      "seconds": 0.014136037963908166,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 14,
+        "bytes": 8193,
+        "actual_standard_callbacks_and_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Large15": {
+      "seconds": 0.012780438992194831,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 15,
+        "ambiguous_producer_retains_full_MR_queue": true
+      }
+    },
+    "Large16": {
+      "seconds": 0.013166117016226053,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 16,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "Large17": {
+      "seconds": 0.013172822014894336,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 17,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "Zero0": {
+      "seconds": 0.013963664008770138,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero1": {
+      "seconds": 0.013883762003388256,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero2": {
+      "seconds": 0.013901781989261508,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero3": {
+      "seconds": 0.013855125987902284,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero4": {
+      "seconds": 0.014060047979000956,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero5": {
+      "seconds": 0.012999119993764907,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "legacy_zero_refused_before_post": true
+      }
+    },
+    "Zero6": {
+      "seconds": 0.012712061987258494,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "mismatched_offset_retains_queue_and_CQ": true
+      }
+    },
+    "Zero7": {
+      "seconds": 0.014509982021991163,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "actual_RECV_zero_length_WC": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero8": {
+      "seconds": 0.014455713040661067,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "actual_RECV_zero_length_WC": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero9": {
+      "seconds": 0.013587274996098131,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access0": {
+      "seconds": 0.013481531001161784,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 14,
+        "MR_access": 15,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access1": {
+      "seconds": 0.013946063001640141,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 15,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access2": {
+      "seconds": 0.013023564999457449,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access3": {
+      "seconds": 0.013948437001090497,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access4": {
+      "seconds": 0.013944456994067878,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access5": {
+      "seconds": 0.013261243992019445,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access6": {
+      "seconds": 0.014033855986781418,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access7": {
+      "seconds": 0.013766704010777175,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Atomic0": {
+      "seconds": 0.013111079984810203,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "actual_standard_callbacks": true,
+        "two_128_byte_rings": true,
+        "full_operands_and_result_permissions": true,
+        "exact_bad_WR_tail": true,
+        "actual_CQ_MR_ref_lifecycle": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "Atomic1": {
+      "seconds": 0.014379652973730117,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "actual_standard_callbacks": true,
+        "two_128_byte_rings": true,
+        "full_operands_and_result_permissions": true,
+        "exact_bad_WR_tail": true,
+        "actual_CQ_MR_ref_lifecycle": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "Atomic2": {
+      "seconds": 0.013695742993149906,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "result_LOCAL_WRITE_required": true
+      }
+    },
+    "Atomic3": {
+      "seconds": 0.013305664993822575,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "operand_mismatch_retains_owners": true,
+        "owners_intentionally_retained": true
+      }
+    },
+    "Atomic4": {
+      "seconds": 0.012577822024468333,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "operand_mismatch_retains_owners": true,
+        "owners_intentionally_retained": true
+      }
+    },
+    "Atomic5": {
+      "seconds": 0.013482579030096531,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "actual_standard_callbacks": true,
+        "two_128_byte_rings": true,
+        "full_operands_and_result_permissions": true,
+        "exact_bad_WR_tail": true,
+        "actual_CQ_MR_ref_lifecycle": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "Atomic6": {
+      "seconds": 0.013874193013180047,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "actual_standard_callbacks": true,
+        "two_128_byte_rings": true,
+        "full_operands_and_result_permissions": true,
+        "exact_bad_WR_tail": true,
+        "actual_CQ_MR_ref_lifecycle": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "Atomic7": {
+      "seconds": 0.014101954002398998,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "actual_standard_callbacks": true,
+        "two_128_byte_rings": true,
+        "full_operands_and_result_permissions": true,
+        "exact_bad_WR_tail": true,
+        "actual_CQ_MR_ref_lifecycle": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "Atomic8": {
+      "seconds": 0.014008222962729633,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "normal_READ_SEND_IMM_preserved": true
+      }
+    },
+    "Atomic9": {
+      "seconds": 0.013877546007279307,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "legacy_still_refuses_Atomic": true
+      }
+    },
+    "Atomic10": {
+      "seconds": 0.01119826699141413,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "rejected_before_queues": true
+      }
+    },
+    "Atomic11": {
+      "seconds": 0.010923432011622936,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "rejected_before_queues": true
+      }
+    },
+    "Atomic12": {
+      "seconds": 0.011893143004272133,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "rejected_before_queues": true
+      }
+    },
+    "Atomic13": {
+      "seconds": 0.011674880981445312,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "rejected_before_queues": true
+      }
+    },
+    "Legacy0": {
+      "seconds": 0.01179892400978133,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "completed_WRs": 2,
+        "notifications": 1,
+        "TX_PSN": 0,
+        "payload_CPU_copy": false,
+        "retry_policy_actual_transport": false
+      }
+    },
+    "Legacy1": {
+      "seconds": 0.012100160995032638,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "completed_WRs": 1,
+        "notifications": 1,
+        "TX_PSN": 0,
+        "payload_CPU_copy": false,
+        "retry_policy_actual_transport": false
+      }
+    },
+    "Legacy2": {
+      "seconds": 0.011311414011288434,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "failed_MR_retained_until_real_cleanup_model": true
+      }
+    },
+    "Legacy3": {
+      "seconds": 0.007470773009117693,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "unknown_QP_close_retains_SQ_PD_CQ": true
+      }
+    },
+    "Legacy4": {
+      "seconds": 0.012042540009133518,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "failed_QP_creation_owns_cleanup_handle_and_PD": true
+      }
+    },
+    "Legacy5": {
+      "seconds": 0.012047288997564465,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "completed_WRs": 2,
+        "notifications": 1,
+        "TX_PSN": 9022413,
+        "payload_CPU_copy": false,
+        "retry_policy_actual_transport": false
+      }
+    },
+    "Legacy6": {
+      "seconds": 0.011851655959617347,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "completed_WRs": 2,
+        "notifications": 1,
+        "TX_PSN": 9022413,
+        "payload_CPU_copy": false,
+        "retry_policy_actual_transport": true
+      }
+    },
+    "Legacy7": {
+      "seconds": 0.007000375015195459,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "retry_bad_epoch_retains_full_SQ_PD_CQ_owner": true
+      }
+    },
+    "Legacy8": {
+      "seconds": 0.01166377600748092,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "SEND_base_WR_no_overread": true,
+        "real_SQ_and_CQ_path": true,
+        "modeled_core_completion": true
+      }
+    },
+    "Legacy9": {
+      "seconds": 0.0073947139899246395,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "real_post_recv_coherent_WQEs": true,
+        "exact_bad_wr": true,
+        "receive_quota": true,
+        "CQ_unproved_references_retained": true
+      }
+    },
+    "Legacy10": {
+      "seconds": 0.0074929139809682965,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "real_post_recv_coherent_WQEs": true,
+        "exact_bad_wr": true,
+        "receive_quota": true,
+        "CQ_unproved_references_retained": true
+      }
+    },
+    "Legacy11": {
+      "seconds": 0.006989549961872399,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "real_post_recv_coherent_WQEs": true,
+        "exact_bad_wr": true,
+        "receive_quota": true,
+        "CQ_unproved_references_retained": true
+      }
+    },
+    "Legacy12": {
+      "seconds": 0.011878057033754885,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "RECV_completions": 3,
+        "SEND_completions": 1,
+        "distinct_recv_cq": true,
+        "posted_capacity": 128,
+        "received_bytes": 65,
+        "receive_quota_reused": true,
+        "hardware_completion_producer_modeled": true
+      }
+    },
+    "Legacy13": {
+      "seconds": 0.012118320039007813,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "RECV_completions": 3,
+        "SEND_completions": 1,
+        "distinct_recv_cq": true,
+        "posted_capacity": 128,
+        "received_bytes": 65,
+        "receive_quota_reused": true,
+        "hardware_completion_producer_modeled": true
+      }
+    },
+    "Legacy14": {
+      "seconds": 0.015119927003979683,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "independent_physical_queues": true,
+        "SEND_before_RECV_same_WQE_sequence": true,
+        "SEND_completions": 2,
+        "RECV_completions": 2,
+        "hardware_completion_producer_modeled": true
+      }
+    }
+  },
+  "compiler_command": [
+    "cc",
+    "-std=c11",
+    "-D_GNU_SOURCE",
+    "-D__KERNEL__",
+    "-O1",
+    "-g",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pthread",
+    "-fsanitize=address,undefined",
+    "-fno-sanitize-recover=undefined",
+    "-I",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/include",
+    "-I",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models",
+    "-I",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel",
+    "-include",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_atomic128_model.h",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/mr.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/mr_contract.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/sq.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/sq_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/sq_hw.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/cq_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/cq_hw.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/cq.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/rnic_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/qp_hw.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/retry_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_atomic.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_atomic_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_zero.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_zero_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_segmented.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_segmented_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_segmented_read.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_segmented_read_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_segmented_immediate.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_segmented_immediate_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/wqe_segmented_receive.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/verbs_segmented_receive_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/fatal_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/kernel/fatal_verbs.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/kernel_queue_model.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/models/kernel_fatal_verbs_cases.c",
+    "-o",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/cases"
+  ],
+  "compile_seconds": 9.230945564981084,
+  "source_unchanged": true,
+  "fatal_cases": 18,
+  "all202_prior_cases_retained": true,
+  "WRITE_receive_cases": 32,
+  "all170_prior_cases_retained": true,
+  "RECV_cases": 36,
+  "all134_prior_cases_retained": true,
+  "Immediate_cases": 44,
+  "READ_cases": 25,
+  "large_cases": 18,
+  "zero_cases": 10,
+  "access_permission_cases": 8,
+  "Atomic_and_geometry_cases": 14,
+  "legacy_cases": 15,
+  "artifact_sha256": {
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Legacy10.log": "8682d02b9925aa37262e842af1993870ca0eebaaad54289e097c8808438d8228",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV33.log": "7fa8a138c3223bd0ab2696df12751aa90b772603cc98457984837f4d5d973ea0",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV5.log": "2c95c11dabc87e2337a87553d2d5fc216f83f0f2ba0d60c899536ce53861eaea",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large1.log": "1cdcfc7073fead3fe66b699e75b09308e33b21f6668afdc1e2c80c45d406b557",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Atomic12.log": "72b04569d6a3920da7205d39faaa95aeb3079e2c0d33988d1302f01917ecd219",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV0.log": "6008fd1bc05f1748a39ba3bf5f4665988fb3863783aa87fa648a4b0c4ac266e9",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ18.log": "278ee5da5bef6b3930504706e38be3ccf8450f66a4b74fd6f2bbbef7f5227284",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Legacy14.log": "a9e4f20c09bbad668c3ccdd346043fe9da42ac285b6f80fba1839fc78f4611d2",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Zero6.log": "292d4ff0fdc7d4816075f4edcfdbe10ec68fdc0023c3968f5a69c034100dce49",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE2.log": "7a5699b0d83042e900d32ae1c1aac720b955205c193099c1868512c1c442f1f0",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Legacy6.log": "0ddec3b6c2173276c47373f6ec6c45396348ca53ff0b685290efe1008f1a280e",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV27.log": "953a757e07b93df9e678d195dfa349ceb937ab80ec99fce3fd92fe2634fa7b23",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL3.log": "7c294469ac5db1f73bf40a833de107f282f73d2455b806bc35905e7ce4927ba0",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ23.log": "926c6ce410389321d92924b1dbfe408f97ee519d87cf286a66439044b695b024",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large6.log": "6b1373db49968e460d652ac4db97d92b764a82e2b83bce9b693115163469bad6",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ17.log": "51ee023a3736458e389a099cb9c80d7c76099d022c57a4b1c936a40bc2fa8921",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Legacy8.log": "c9cf0c1215796c485fcdab16c08fe5b937a4b530ffe90a69467163b87ddeffdd",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV7.log": "238f6862691b1c7ea9b69e298a6632716af8eb8625881329d2a485274ab99b26",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE37.log": "a19e8768bb4b1776d501d7c4390a306458d3ce26e9a2a2edb7b85235191a0714",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Legacy2.log": "6936972f5bedefb8e706b510839c43ce1e40c3834ccbf4090a649fcf40ce9d4e",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL13.log": "59dba00208801ba2c46b7acc7fe96cbfaba410ca8c3fa45b334b51ddccb2e355",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ1.log": "b2469bac01016cb468d38cad828771faf0f686efd80b4a9ea3102d3899e28cf4",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Legacy7.log": "062d94f71e6a42d2b447c20d756af039395a989f320774bba022ef76b9b1fff9",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV13.log": "f2c642930fb66a55e18438ae24a2696e2786ee8f6749f04478f75aeb618ad179",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV2.log": "eacadc8e89fd5599dd4231cb893505bb8a093c2eb7a95075cc14eb1ad89137be",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Atomic9.log": "fea6e9cae43e7864b321c646b0a883932f2dea9a519c9787a86ac78cf55f20ee",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large13.log": "6bdc309bcf93d33d2b6bd8d095f4abc3cfab87b85b94290c70c606a68237199b",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL7.log": "7e0bd4995d884fe0ae08c9a6113ec51e94dd4edb17139c2c3c77cadc246de6f2",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Atomic8.log": "359eddba8aed10da1da80e157b81a3fa215f95a4eb17c9613800b71598a92c6a",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE41.log": "3a5c415abe763d1e46bbcedcf92d3dfdba70524f09597f8ecf46da9e1c9108da",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE15.log": "605c87ae2bc92fc2b31b7e635d6c5c93edfad077c68a632b5c01eeb6822594ce",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV18.log": "98605a093c26cb84d8dc160aebe9f8ea7457d69bbcd811448ad7febeafc3ef42",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE6.log": "3dcbaccac2808372cae1b3670041139620e73707098dd3e06ea73593d41a7c88",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV3.log": "54d4697bb43410b4c3a66eca5c3fc19fdbc4a4d6400bc17ac7cbf62b68937883",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE26.log": "09b98280c4c43bb60371d94d3172833277df8b8364a70707ceab27f57c441f90",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Atomic10.log": "c64d383af4377774dcb6eb901f1f3c81318fd5e92bf2d7d4fdad8336eb73b742",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL2.log": "5b78283210d966bad0a138926cb2e18731ab220b32611103d90b35c15e39804e",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Zero1.log": "33dd9b04c5b3a0573cc694859fb98d311db013f2304afcfebe8455bc5e7a2199",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV29.log": "2b42a7979986c02c420c09b84f065ecd21949e9d05b6c9831dc70195b4f701ef",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Atomic5.log": "62b77f8d71ecdc5357687794f9c7201e463864c67ef394a189a7965b88336026",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV10.log": "41ff8aeb8fd67b91cd33c9203d1da50af8e8d4d09a9d015d10f0154752d214e7",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV6.log": "b2242515299add5e6b8c7f271b0b05a632e7a70320740f1bb26709e79402466d",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Legacy13.log": "567b92a639a0d071281111b4c721d4f01525d6755c9123574f47574521fe60bf",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Atomic1.log": "e13d41cba55b3d7061c17e0dc7d77d67b2da04a9a81a39c228d34a51cfc47efe",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large8.log": "240fac5456b3cbc7516cafd58348b84cc4d85cfdfc513fd1204473593a2d34a4",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV8.log": "2249551c00ae54e7bc379981eba99d1602e26c8f23e61f725b9025e67acb0984",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large2.log": "c8f4d68e7665125e91a9dcf13bb2becee31981644ed82944fdbe47c4678f6f5d",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV34.log": "e22117009700c8286fd438effe30024f0560a4d0ae4bf2ac0fa13c509143abf3",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE36.log": "5f6be67b7f8ea6c0989f66b42f61131ec33bc418676f229e8191e14154b9ff23",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Atomic6.log": "609204219f8b03e0b2522ab8edbf77c008b778f651d1f21026c58f0e8b6f8c4e",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV16.log": "35ae875795e5678bb404ffeeffd38414c3e43b123a62b7cb9a12990699c68a00",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Legacy12.log": "567b92a639a0d071281111b4c721d4f01525d6755c9123574f47574521fe60bf",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large7.log": "27f359f9a5b1e3d9737b1e57adf1284ac16a11498a019de0773a460aeda205f5",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Atomic4.log": "b4ef23ec78f4ae0bb4845453b976ed9202cae58c13a63ef43a64018f0cce26fa",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL6.log": "dc954039740c1122ed7d15e98a97e89d869c98f7e9c4eb23622b0fbb5c05d5dd",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV14.log": "2a22209a65ceb4d694b42db3804e5a7dc2f6af9461b5824756d5104a070caaa6",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Zero8.log": "23961173ff416fb69a0d41583f7c8d95a7c8e7d1a59d819b6d98184a3b03e777",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV26.log": "882b740e3c87bb0b239f31e05effa01503adbf3a35d679867b4e92486d8130bc",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE21.log": "eeb71f7f5abb4ce75c9b3354b3476042d14488b174be6e3d493900d14c0f80a3",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Legacy3.log": "1c564adbf80a9274c6a8bba7702acfecd1e24b0fdabf21b88eb3c0f3810585e6",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL4.log": "228370056be9de754bc7a70b52e00ed52afd2a395380ea8af08794823dfdb412",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE40.log": "5645888cbb07b5f3d293d63fe093b4b15edf041fe520cbd98a839b82819cbc16",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE1.log": "d941bb3713dc2c16a41c6f5328d1d9027d9965f524ab1b4cd41e84a09860dc00",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV28.log": "c029de4e1961066686596b1a9c9f4701293aa378f78a4443ccd2961905d301fb",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large15.log": "028433c850b482b016790ce73f0ea5f6b6b28c8163422cd5d9f6f990d9ee2cc5",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large11.log": "fda79041271b361257533686c4df9a4a72a58b44f16f020d6fc12ad8c2ba3052",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ9.log": "6234284ec67390960e9959db3e51b532502daffa18de0537875ee6165e49c501",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV19.log": "207ae5051a37878c3edfbffa933a18ad5e4265fc1f834951f31dd53d35f43ac4",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE29.log": "c5d23d95a991a310912bacb8fa4cd0d96a1a6bcd7fc3a8d3613b5c61078f4f73",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE13.log": "a64b3fea3cb644383875e74bbf0db9525dbbf18a834896fe6139f6acc00a7927",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large16.log": "ad9c4cd5a209713e205cad1b2d5623a353434b7d206db0a406ee3c96cbed3567",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV22.log": "0cd5b6be86a4e0f74bdf307fa4757f586e15a3a10c51d74904f4fb2e874473fe",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Access7.log": "5cc887b94f9f20d499d9f475ef4940352ae7fee3e4ec61c50082dd85cadf6088",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE12.log": "c69bd7157a91de96635bfafa59927fba2fc952bb116170e69efa5b3bffa972df",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Legacy5.log": "709e7425bdbda732f8ce0d5e1c47bcb6e0f158fbcb17da4567f5fa378c758a91",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ8.log": "3af53fc9a0b15b517be5d15104da25e3936d78b4ebf31d601025418dc2fd8f25",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV17.log": "454b7ba9d6b1071a6ae34be9490ad45681e75a7875e5dff061575e0128925153",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV4.log": "9023f11c7ae3de9a00ce9e6f402ec9382dce97a9acf25484c8295ea4ccf5c048",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV11.log": "6eba023c9fd1b2e05701e34d05c3773cfcf472e2b055aaa11291e7ee39823b9f",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV25.log": "2d3057db6cf02054628db154a1656596a12c587d1102a1bdcd434c70aceacea3",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Atomic0.log": "24126c36daecacc399126656ba692a3a61570188a8f4067ed69b1d890092ff58",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ24.log": "789ade6b4570458a1f881c8482d2f0c949761bdcde7f2fed65b7d7e652c5d8ea",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV12.log": "f073b89e0bee032eeb10185b99422c2c46bc0172912420c6e60c079c3dceebd1",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV21.log": "e970a65e0a316800ea6c884a4454abab50dd75c86e113ef2af81cace4459c582",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large0.log": "0022204bf321f44aa1f92df1fcfc948121375fdd93537054206b546fd77d4e9e",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE18.log": "ea3cfe72c836c021a3ee8ac381c1638e05821e21a54eea4e9e5238e655604084",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Access3.log": "90a904d748fd7ca613c52e25f91139d29b92ba8022a19de49dd8fd401325b990",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ10.log": "f50d4cb83793ede7f5a4c8f36e555cdc6157450ba52b44a64688154ec7ac5103",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL12.log": "6e8ffcfa949cca2207094f19104178da516a6fc0acc782d95ab29dcd9adae5dc",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV17.log": "7af4dfa3b1d4200eb7b07d7d70ea11c19eca003fcc7dcc941531e7d2979e86a0",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV31.log": "42ef9ab8065e1a94b3ce5fa031a262a7ae488a3e5b3d2a1a17ce6f0b140cf3f7",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV31.log": "e5ea8432f30f07f7aaed34365ab7ecdef5f58a7877c4cda57c402ce6e29f60d7",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV11.log": "d2a2b0ce3d33a2a20e6092b4ad8d203e5a271d70c211a2358626ff13511f5d44",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV7.log": "d90e5e5afcfa828408f760975cc5f350a3e72721d85d316f447be8b35ab4004d",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV12.log": "437ac4536177888d77471743a66a2fd3bbdd4051e9956409e1236c3151fa6bd9",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV29.log": "a7a1c3120fdf160caaf3e9f2eea983d0a6e0839da489064da269b0ae4dc74969",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE25.log": "ac82364b91d7c7a574003613a069af85515606b61bcb02dc9513287f25afc570",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Atomic13.log": "7f983718f6332d72aa13baa61cedabc08c6ce7e664ac5c766adcd762428c08c9",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV24.log": "5d9816b416d67fec18afaaa5cc126e44764e28f3036fba1bb83e40cbc380dd4c",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE10.log": "e958c0e595f839a8496529dcac44d726d3d0d7eaae23a16936780e598bd67bc2",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV15.log": "4b587795b2e9881659a4e934c50f4200732cba7a1bc203d15e152144c5188b0b",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL10.log": "60af5c027e7c2b7029bc55a8a7314bf9af5522877891ebf5b561f284a0bd38db",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Legacy11.log": "8682d02b9925aa37262e842af1993870ca0eebaaad54289e097c8808438d8228",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE20.log": "df81d04f376b521bc6b9c28a1108ed4063402d22a1f89b5c96e4f1cd71f4168e",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL14.log": "60b189b5029f84f439c73c92715451e24357a6aaf083c3c1cbb15096dfd9c3f6",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE30.log": "6fb409f0d75214b97d5d7da763e8065d988a4cf53d004299adadf9040e79c281",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL16.log": "fe8dbd0fda76c54ac98bae0c4a0b41859866df1744f77e04458a3d524a62a16a",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ2.log": "bfad30c8f4cca99d6a5724a6b780e62ad6da40ce085c4dc9aa8a712ee31079f6",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ21.log": "b1de04289826cce9a88197e0802f787e48b48bef3f335f1a0a081d7c039dbe44",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE38.log": "20afcbdfc33ef5387b0fd8b4374ad85ca6ab3bfca67fafcb3db09bef08d45b90",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Zero3.log": "ae50d93dbdf457b302191b85afb48c166e591e6e28eb492bc6dc1de62543ba60",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Zero4.log": "2b0837574497fee4661e0658094286c1b341cca907c49059c80dd473ce56a510",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE9.log": "9e3d27a0b8826a1bdc1f07041718cb59f80a3943db565d0954a341cde6163319",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV3.log": "58d42000b4f275da28534fa85b9e5fa89e846d05fdd8bd2da58cc4b8f645f7dd",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Zero5.log": "e2e98b52c891e71027ddf8ab208c9f7dd1d0b15a4a1e3c45a94457cc88c46ea4",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV20.log": "f540b829446a1dbdec45b16e1d57d328a4c659aa9968eb687b16b6895f15685a",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE35.log": "a64b3fea3cb644383875e74bbf0db9525dbbf18a834896fe6139f6acc00a7927",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ15.log": "2692553bb662aec85bf9ae713eba5396bfa4a80481b83844b74a0b4b9571a853",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Legacy1.log": "d3ee11ca1a0d2e35037c3d05602bb26ee5bb472ab202f1246093bd3baf3db05e",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV13.log": "8ddd4cbd5c3a6985885956776e317c12be44db08d22b6b62845f95c0a0478686",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL15.log": "af64eb03efbeb8561cfc268b868f860a6ae15dbc9e098bc51a6aa0947c56bda2",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV8.log": "57777cf48a68b4bcd9b607744ff80be0c80c4f0bf046a23455763ff64f0337c8",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV10.log": "75b1a610c47cbd2ace7a10d17c94a980134f61ae52bb47f27f71943f355e3b7e",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large4.log": "f172b09909f62ab1e195d568a5d965c9cd563d72c34f509df8cce783bc37c91a",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE31.log": "a14b10f63f2fddcd5770655ae7cf58f012d0ace2c619e6aa5def7d7a630f1684",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE19.log": "c0750b965a21b2bbace9e2ca58e4cbcb3f30b8bb52e80ca146e9f7b9c8fea9f2",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL8.log": "bc1f22e7ff480882a2b310074d76751460cb99c479eb39f27c7456c9afa235b6",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Atomic3.log": "7c811a80d267d88419b75413e12f14ce715f16f6127b65c0dd56a682d091e972",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV23.log": "8df7cc66585c0d7dc53c77ee218081d90ec0d144098164280cf2291ea53c1fc1",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL11.log": "cf809c0a940dcb1e2e6a485fee02a894238082d38ca2c25298fc6ef139283f1f",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV5.log": "34ee33887800e2c89609f98a9d5f14d97362c36a7f4535a3b3c22f7294a41dc9",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Access4.log": "f8ef985da191788f94a7106dc82d69001796a525ec00aaf3a7a8c5fe40f0f1d9",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ22.log": "36e71e3f6893f48c79fe159001493759609f7a49a5074eb49129cdd2fe8ddf72",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ20.log": "c05d9393fe81b2d59b0c4c1c2f708fae5cc3fbb35e184c414045763965a02515",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ6.log": "6b306fc5352d00fd05e2510d795447729cbcdfd60892be457494cded203ae63d",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV0.log": "4a0df04ca351b650f5fceea344c3aeb97641d49f6225db242fe67eb7d6fdf1f5",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV20.log": "61df09989b6458ad55ea946783d7802f291c98220eca6c4af774c3a0598dfe72",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV25.log": "79e3439aa3e3ac2b59de2d309516ad9fad16e6b8daafc1ecd02ab0ceca00983f",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Access5.log": "811a0910b1806b74c915909f09f5a8b61c85cc3bc879383820b79b3d7610e670",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large9.log": "b4599ae2cfb1a4ce35317845d6e9b8ad7960c557acffb827472c1f0d8a9d8b67",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV21.log": "c1dcf6f78b5f55937305e9c19feeba002c53ad1a565e1027962e868476e84a56",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE33.log": "da493d56cf83116b5a652a773a2de2f273acdbca01b06ace50b5ecd776adc98a",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV4.log": "9808bae9440e0dd732dedf6e79d1fc70a5e47a334712ea0fd73c7ab60623d29e",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV18.log": "aabf8e574c6e110bcdec417d1156104aabd2446da369295e9ce335cd7347cc85",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV35.log": "cec9cf7e41432d9ec95aef9c2f717ed62e76c3b4eb81ba267eca0b4020c9433a",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ14.log": "57a75a2b31150b0d6be02ea96735adf83075cf7ffe0b3777d218897f158c12f0",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ12.log": "4ddba7a8ae34c5fc77a9e4ce81fa09a9973b3ed43cfa4078950e0a1a5bd486a1",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/cases": "c5cc99a911cdc2d2cb068d942065e87d785dacc96c58551414af36a09f251d9a",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV16.log": "91412d6c8f77e31a00aa9ce81d27185932e846d5e7d36d8914948aa725ef4aaf",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Zero2.log": "33b53cd83c11e6efc579f0ec386cdc9de66b57cd7a90559c58d8357627afe59e",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV30.log": "8013f54619ecb8636d0c8590c6264099873d51b100fbc14c28fe859b230e86c4",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV1.log": "b616a2fa0988cb2d05ae339e2777f69cc2945d64abdede15ffb0f3afb49500d3",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE24.log": "43a9c7dae37caf47dd6490bacef64675310e61c5154802ea40fc5d9bb31bad38",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV26.log": "f687f28a59e4964e7977ee23691031638e3f68592d36f2c5f48dc40b8708901f",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Legacy9.log": "8682d02b9925aa37262e842af1993870ca0eebaaad54289e097c8808438d8228",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE23.log": "e59890e9ef1e3a63f4852bf0a4723e448c56d23e24d8c652dd9100f3eaef8ea6",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Atomic11.log": "5ebe987529a9e7c92ac5b6fc564ff7793342bae8fbee4feb950540132c7ea6f5",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Atomic2.log": "374b266169843c052653ba651f3ff27b9faed157d738eaf42784ed711a063962",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE0.log": "9432346b6256a279a26b5420824a695b3019e8076067929388fbbf2f6f91391f",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE27.log": "4ab0d815adfb0b1ac5bfe0a1760b712e80b4f5676ffb186b2c1fc70bbc7e02a8",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Legacy0.log": "9e9f28a1f3422fc7923bee8b9a3d14202f48135f96727dd9883d65d0b8423617",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV9.log": "d2fd70a87f497d23b6378b17f11b62d0301b2b92ad3fcb47659e3e712dec710c",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large3.log": "c4b310aa4a09108bc31ad9f88dba22e371a662c901c574520a56ace44200c4b2",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL1.log": "86aad0c4a324b1f69fab6809a187a259df4bfc356d4005873a3d81e54b5b654d",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV23.log": "df6f19a018591c3d60f1f6822b9de0858ff5b2b9e1dce08abc84e27287b8b741",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL5.log": "237d66489518b26133e293d36a9fb27f05cd6609b8a5692a6214300ac098b06c",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Access0.log": "79d6c6a56cd60263098838c219435cec4489bb98d9d385594975b84d6115643a",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ16.log": "4db706fd7f20a9be5883addb464c0f28e93609043d221a25c0d80de24094ccdf",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV19.log": "d298e463fe4ac8058df60f1ede54b5c3fa9d9ebc70fe443665ccc270b2d9d84b",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large14.log": "a040d2f0f8e8a5b1b41f8c1ca0d0fd40b72902d4f50b1e0bf1fa89df76237586",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV14.log": "7e770b701eea7548c4ff15795ca5ac88310c98b6e9749058bf0abad4cf750adc",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE3.log": "3ee243b912e2c5ccec9b5ed9737f4c0b9401d2f81e32979174d8fecc7c0bc0fb",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ3.log": "3e6c7a72636568696ff00de71f838a2e34e7097eb2f5ca355e1489f2518e83ab",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Zero0.log": "a962615821b192bee86b70d599a332a5365257647f0ad6b5e31dc5620692a53f",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE17.log": "7afd97b58009333cf22b3af5760c32679803a6fbdf24bb1dd58a4b79b197a76c",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE11.log": "c9f5a4558344654a1423ba9c55d85b0c57730dc5fa26abbc57618a59e25d443a",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ13.log": "520559306567c6c1a4e20a8c934abe3c93046975f8f711759f51b7ca698d898d",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ4.log": "6f05556d421765e8e97970ec4f0c0fc6fda46f46a35503e04c1fb94dd8dcec8d",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV24.log": "18e83807b5199b827edd6840fb8114bf22f14f24cfaebb2fda420941dbaee03b",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV6.log": "e6b283e48d33ebbdec25f79877f85d4975f12fb548d410913ca7875dd5532484",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL0.log": "db15fc2302a3f2659bd8787c294d42b3997fbd801423f9d4aab0327d15328822",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Legacy4.log": "0ea1d252507ed42c16a8408b0140fa3ef43da1d61975bb73e16ea626ace42386",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE22.log": "586f62b05169721c54bfc3034e8b82afbd462de61c2fcc750dca2d47c7ffbd92",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ7.log": "a72d11f38e0bd218bdfb5897430710cfd522e82e7a8fcce2c47d64f95bbf3bb0",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE42.log": "b01bbde8f0350b295ee220f2a673cca576e6c91efdf0d4a575bd2b22bbdb35b3",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Atomic7.log": "30e397d5aa168b8ae1b139ba69b9d2ce11d6c29c6be28ee1e323d18bfb8a7bf7",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE8.log": "979905fe87d7bb990d3eb1f6fa8b95ec9fd72c4a97d0d7bcd4f6fcba22cf64bf",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE32.log": "7e6fee2204d5e038a18abe9f49e90c9304d68162d2493892613663ec96738d7a",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Access6.log": "a621de8376d95705c9def3086e0de89961cda7825fd0f647fc065486513c131a",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV28.log": "34644c4101117e2417138fb982e722b33ccec36b38a37dd02c734fdcc68465ae",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV22.log": "8ca601830b060a6ec06b7ea7aa054589ec06a429eb8b6259306c009ca1abc091",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Zero9.log": "6dafbb4d024bee9d1ee25446fd7287e04873e88c07534431ac334b0b372a17cc",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL17.log": "17cf04ef165d28492d13e6e03ce1c86328ee06802d7c6e87db83a6022d0e1165",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Access1.log": "a2e5ee526826bafd9421d25656cc537ad653f6223f1bff972ac0dff1ec3b8224",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV1.log": "1241ab4aef9a65b9761cc0cc4e5e7530081e14e80e2456e95c0a39df02cba744",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large12.log": "97528b14e3c229aba22ba92d7348650b2ea3c881f0b71e41a638f9f047e29499",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Access2.log": "e354192268caf9b8b9f068e56bda63c495a06564fe8a14364411b746f2455d8d",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Zero7.log": "7550f7d65addab0ae6505daf50755008eb76c3c24ac88c0a9d46b4e8c1f7cf3a",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV15.log": "d177be4331741e8215f23629eb3d9244e25afd8cea4033f62b8a9dd2eb66690f",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE7.log": "31ea8318794e8c47556c1086ed98d61c64c8bee127d99f9e2586d9b7c4d7521c",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV32.log": "ffe6cf054fe6800321a0efbafd11be959a868f6d1d27f7024ceb9712c8aa70a1",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE28.log": "ed354387ca6da5d5e5ed2926dd660c37a01f7b9268a2f87a9e59a6a7da7db468",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ19.log": "d9ff7d88e8d958e608f52f684a5430f77892561cab0f7be90e90a8e3339fe83b",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE39.log": "de420792a75641cd1dbd0bd62a0db9ee82d6bb5b86b63c1f42e16bcc287fcf99",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ0.log": "bdd814c75193cb74fd449c47b577d4febe1b9c100be4bb443d112bef9709fbcb",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE14.log": "38602ab070cff945533bb0de9d9d0b428f5fcee4c00e5128474aa5769d3ce312",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV2.log": "c258504f04516cabe11fff8d4c6088359ee6d646b4767248fd130c99a1bc0a22",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/FATAL9.log": "1d4af28362055a39606bd9166d7758231568e2ad958262745b9db679973c8141",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ5.log": "f2e286ac5682e6200de07d35e55cd6e38c3abdcfd505efb3eb70dd2b7e86377e",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large10.log": "a3c962e432ae5f3c4cd2da8a8d246c0adba78249cdae71a22226d36ed3b02086",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE43.log": "dbd397794a2ac05bfc0147ba73bb6420712d66450d173f53869f4833e3eaad27",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large17.log": "c96a42cdef2cf3ef163a2c6a551cb3fd59534f4553976b2f7987c243f6362d7f",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE16.log": "d52bf72fd92935650549bc91d4f80a2b3d784380acb6de7c0247c3c0a99d614a",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE34.log": "2b70aaaa2269db92ccb4a0da78a2149e3dc011828045edb17639dcd5f34b5f00",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/Large5.log": "8565aad3ccd20120fcecdbc1b972c2b19801773a1868b9c309b660bc1b68500f",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE5.log": "05bf43989e87cc7a11d6386b0df91f871ef663ea20544d63061e54e41ee865ba",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/READ11.log": "be71b02c2f1132f452a1a10ef348109d2e81c1de1064833f0b2d15c9d75bc5fb",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV27.log": "d609f2cbbab88fe5b6be4f7d6ca29fcd2ff4e106a5aaa4f58e3c6efe3dd8256b",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/RECV30.log": "1b7c7c06b73ae8687c82c8b02145bba8b516a1990819971347bb3b76e43efa79",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/WRITE_RECV9.log": "7e0b504cf1db91f78d0b814b5d82611383d982340890c4df2b8f6547c8a82b64",
+    "rdma/rnic/build/fatal-verbs-callbacks-jwb959qv/IMMEDIATE4.log": "8371c24c6eab300d3b94f37d1c47e5ed4e75dbe7d090b4a34ea2b9f98645933a"
+  }
+}

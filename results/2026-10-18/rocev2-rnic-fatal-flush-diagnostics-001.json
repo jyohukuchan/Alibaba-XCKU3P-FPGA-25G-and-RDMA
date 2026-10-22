@@ -1,0 +1,86 @@
+{
+  "scope": "Bind paired75 source, actual-C flush236/parent36 and distinct native42 proof.\n\nLinux/IB-core/MMIO/certificate/pins/DMA/workqueue executions are MODELS.\nNo live Linux/native coupling or whole QP/SQ/device STOP/unpin inference.\n",
+  "audit_passed": true,
+  "evidence": {
+    "fatal-flush-kernel-build-001": {
+      "bindings_verified": 159,
+      "report_sha256": "070be0e7898101af684451282519b4795b88643de2189e5526dfbb38aa85f147",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-flush-callbacks-002": {
+      "bindings_verified": 461,
+      "report_sha256": "e3359ba63d728a52c699dce669ff6d35e0e607b90955fcdb93431881e7a884cf",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-flush-parent-graph-001": {
+      "bindings_verified": 129,
+      "report_sha256": "e7a3f056167f2556e249fb23a4919bfdd9e98c34bb085af1fe5c272bb1af3062",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-parent-kernel-build-001": {
+      "bindings_verified": 160,
+      "report_sha256": "f1e5c57054a4430f9a9461d791100370798fa6974bc80d3da4c4d84c022ba8b3",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-parent-callbacks-001": {
+      "bindings_verified": 442,
+      "report_sha256": "877fb24f5884abfe26c7b1b0991526613001d028f0e60e44a5b7ac5095d6b5bc",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-parent-graph-002": {
+      "bindings_verified": 129,
+      "report_sha256": "806427751bb22a3af123c77fd6fc4b34fa3b3772f05ce03ccc27afffe6b38e48",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-rq-lease-native-full-001": {
+      "bindings_verified": 978,
+      "report_sha256": "68b4c9a49882550c79cbb0591dc06eda250e67caf56c6111b1c874330969c316",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-rq-lease-native-runtime-diagnostics-001": {
+      "bindings_verified": 20,
+      "report_sha256": "bb47af81f8ccde4d3b53007b6038a8c949edb230fc2d874781eadb1ec979527a",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-flush-callbacks-001": {
+      "bindings_verified": 226,
+      "report_sha256": "5a0698bbb66826872b012f9d7b6209149500864735ad558bec1ee8e88afd1969",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/kernel_fatal_flush_cases.c"
+      ]
+    },
+    "fatal-flush-counter-diagnostic-001": {
+      "bindings_verified": 3,
+      "report_sha256": "6a138294d0ac51bf046f07ae8a94200c6d110483a94c4c82264ad563bcdb6592",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 2707,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_fatal_flush.py": "c1ac49eef9ac6e7149ab7c7ce0cefe91135df3464ff3a7068e3c624b72dd6463",
+    "rdma/rnic/kernel/fatal_flush_candidate.py": "8206ac2e19446ec5f0d32ea6dac8b529dddfa88022ea332575bb38fa0202d74a",
+    "rdma/rnic/tests/kernel_fatal_flush_cases.c": "a83c0ca92eb9e56404d0a32a69881c9cab47c54cd36f22a87f332a079f61e4e7",
+    "rdma/rnic/tests/probe_fatal_flush_callbacks.py": "0f473413081030b7a289214bcaacb8d875ef34d0db8a4ebab2ed6bd5d2f771ee",
+    "rdma/rnic/tests/probe_fatal_flush_parent_graph.py": "44cede3b0e2c07184673b4825509f79d2a0f9c70d73efd5035a79e4074eb6ebb"
+  },
+  "exact75_inputs_only_five_parent_files_changed": true,
+  "all220_old_full_callback_summaries_identical": true,
+  "all36_old_full_parent_summaries_identical": true,
+  "whole_original_fatal_assertion_body_preserved": true,
+  "old15_behavior_retained_and_unknown_features_rejected": true,
+  "per_RQ_standard_flush_CQ_and_WR_refs_under_explicit_models": true,
+  "full_CQ_retains_unreported_refs_and_no_duplicate_retired_RQC": true,
+  "pending_SEND_and_QP_SQ_parent_refs_remain": true,
+  "whole_original_STOP_and_lifecycle_code_preserved": true,
+  "immutable_first_failure_only_new_counter_baseline_corrected": true,
+  "native_RQC_receipts_independently_proven": true,
+  "actual_native42_to_running_Linux_execution": false,
+  "live_Linux_FPGA_coupling": false,
+  "whole_QP_device_STOP_global_drain_unpin_recovery_proven": false,
+  "original_timing_met": false,
+  "hardware_verified": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false
+}

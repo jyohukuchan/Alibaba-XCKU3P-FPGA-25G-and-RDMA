@@ -16,6 +16,57 @@ passes; this does not relabel the old suite or qualify a hardware release.
 
 ## Latest functional milestone (2026-10-22)
 
+Publication checkpoint (progress188–190): this user-requested push includes
+integrated fatal-RQ cancellation/lease-export sources, native42 results and
+the paired optional Linux per-RQ flush candidate with236 callback/36 parent
+modeled cases. Successful AND failed attempts remain. Live Linux–FPGA,
+whole QP/device STOP, complete reference release/recovery, original timing
+and physical qualification remain unproven. No hardware/default changes;
+historical local/in-progress/no-Git notes below retain their original meaning.
+
+Local190: SAME fresh native42 PASS971.526s compile/max13.891s, [runtime3212](../../results/2026-10-18/rocev2-rnic-fatal-rq-lease-native-runtime-diagnostics-001.json).
+All40 old entire outcomes except seconds identical; both new real RQC19-word/
+full owner/nonce/flags63/consumer certificates pass with SQC/quarantine retained.
+Actual/observed700 input maps IDENTICAL. Paired optional exact FEC15/31 driver
+build75 PASS11.544s; actual-C callback236/parent36 PASS, [audit2707](../../results/2026-10-18/rocev2-rnic-fatal-flush-diagnostics-001.json).
+All220 old callbacks and all36 parent full summaries identical. Ordered per-RQ
+flush WCs/ref puts, full-CQ retention/retry, pending SEND and QP/SQ/parent refs
+are tested under EXPLICIT Linux/MMIO/certificate/pin/DMA/workqueue models.
+This is not installed/running Linux-native coupling or global STOP/unpin.
+Original lifecycle/whole STOP code remains; failed new counter-oracle001 is
+retained with exact preimage, only its initialization baseline corrected.
+All jobs terminal. No hardware/default/Git action; original11/timing/physical/
+whole STOP/recovery remain. Historical compiling/unbuilt notes below stay history.
+
+Local189: prior fresh native42 compile953.788s; all40 controls PASS/full
+outcomes except seconds identical, new access case FAILS pre-command and
+partial is unrun. [Failure2443](../../results/2026-10-18/rocev2-rnic-fatal-rq-cancel-failure-diagnostics-001.json)
+and read-only original-O1 inspection9.351s confirm certified/current owner
+but aggregate atomic_rx_guard contains permanent control quarantine. All686
+actual/observed inputs match identically; failed model/binary/logs remain.
+New actual RX/reference/memory lease export keeps original aggregate guards,
+live control-owner VALID and every other work term; full465/eight-data
+elaboration9.863s/[source2252](../../results/2026-10-18/rocev2-rnic-fatal-rq-lease-native-source-diagnostics-001.json)/
+[fixture1477](../../results/2026-10-18/rocev2-rnic-fatal-rq-lease-native-fixture-diagnostics-001.json)
+pass, exact SAME42 bench elaborates without diagnostics. Fresh simulator
+compiles under original gates; no actual new RQC receipt yet. Paired per-RQ
+Linux flush candidate remains UNBUILT and gated on actual native42/runtime
+audit success. Whole STOP/error CQ/recovery/refs/timing/physical remain.
+No default/hardware/Git change; all failed evidence remains false.
+
+Local188 after `9279e4e`: actual full fatal-RQC source elaboration465 RTL/
+eight data PASS9.782s, [source audit2729](../../results/2026-10-18/rocev2-rnic-fatal-rq-cancel-native-source-diagnostics-001.json).
+All207 HLS and both complete SQC/RQC quarantine configuration guards remain;
+only actual RQC command4 may distinguish permanent quarantine from a lease
+after both fatal receivers accept and the live full owner/frontier match.
+[Fixture1460](../../results/2026-10-18/rocev2-rnic-fatal-rq-cancel-native-fixture-diagnostics-001.json)
+retains all40 raw inputs/oracles/444 assertions and adds two genuine full19-word
+RQC receipt cases. Extended bench elaborates without diagnostics; fresh native42
+compilation is LIVE under original1200/30/180s/4ns/j4/O1 gates. No new packet/
+RQC runtime proof yet. Explicit optional FEC31 is NOT accepted by old FEC15
+software. Error CQ/whole STOP/global drain/unpin/recovery/timing/live Linux/
+physical remain. Defaults/hardware/Git unchanged since the requested push.
+
 Publication checkpoint: this explicit push includes progress185–187 and
 in-progress188 cancellation groundwork, with successful AND failed reports.
 Actual FEC-native40 packet/MMIO simulation passes; optional Linux polling/

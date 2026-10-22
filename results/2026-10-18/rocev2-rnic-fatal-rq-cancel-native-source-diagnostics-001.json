@@ -1,0 +1,70 @@
+{
+  "scope": "Bind exact full fatal RQC variant and unchanged guards/core/defaults.\n\nSource/elaboration proof only. Authority33 has modeled inputs, and the new\nfull native cancellation receipt/runtime/error CQ/STOP/unpin remain unproven.\n",
+  "audit_passed": true,
+  "evidence": {
+    "fatal-rq-cancel-native-elaboration-001": {
+      "bindings_verified": 496,
+      "report_sha256": "b5dc2c6bfb6c5b5a8bf483b6f8fd0897fcaf9ee71c77e4c77bd8ae5a0b32b1d6",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-native-elaboration-002": {
+      "bindings_verified": 483,
+      "report_sha256": "fae4260e57ebd30fdeb8465427be1f26b0670b3b167ed3163ee1669b75c55f2f",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-native-full-001": {
+      "bindings_verified": 930,
+      "report_sha256": "c354b1a09bded313a0a33b39092696f21c8cec6116a1c81cdb1b3773f3731d40",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-native-runtime-diagnostics-001": {
+      "bindings_verified": 18,
+      "report_sha256": "64a53c5d9ddbc4e8e917f826b2c5fa5d2cf73b9158120d02f46149670a4f72a6",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-rq-authority-001": {
+      "bindings_verified": 42,
+      "report_sha256": "fb0564f12e68a2a2d29b774e20cfb4888b5b40a794d8169f23b56dfceab1a5b4",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-generated-hls-002": {
+      "bindings_verified": 758,
+      "report_sha256": "4efcb5cd27926965b08c8ce76067f2c3a7c0b5e1013d3bb5d66d6f31ea08b2c3",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "failed_startup": {
+    "bindings_verified": 2,
+    "report_sha256": "cce1183bcce395ec3c73ebaf8a6fa2680289eb8b99d8053a953155fa511484bd",
+    "exact_preimage_resolutions": [
+      "rdma/rnic/tests/check_fatal_rq_cancel_native.py"
+    ]
+  },
+  "verified_bindings": 2729,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_fatal_rq_cancel_native.py": "d84abc329117c1976e3e69f654f784183073f72dcf4b907a4853146fd398c06a",
+    "rdma/rnic/tests/check_fatal_rq_cancel_native.py": "ed7d98538ebc3c34b491ea68d39dfa937cc09682096ff1786387dbd39d4f78be",
+    "rdma/rnic/fpga/derive_fatal_rq_cancel_native.py": "b966679a95186c6ab2719bf0056e8a284de34e8e9ce51c21b1d54283c3f43eb6",
+    "rdma/rnic/rtl/rocev2_fatal_rq_cancel_authority.v": "d2232b0f56eea7fbdf4c50d0c73bb5cf8032910622accdb56a8ffe40580ff424",
+    "rdma/rnic/build/fatal-rq-cancel-native-36gd52x0/rocev2_native_rnic_endpoint.v": "7ce7c9dc6558113d74a57754a03f61e0a3f071973acfe5f206d29bae13eba971",
+    "rdma/rnic/build/fatal-rq-cancel-native-36gd52x0/rocev2_native_sq_endpoint.v": "233cf89b7b7d11b0478603b0c9e1d5787f8dce5c0bbc9346d8970b82d99f6334",
+    "rdma/rnic/build/fatal-rq-cancel-native-36gd52x0/rocev2_fatal_rq_control_regs.v": "f9e39cde095c53d64014b63fa6b69a3670ac147f2f1d58df14476541fec90ffe",
+    "rdma/rnic/build/fatal-rq-cancel-native-36gd52x0/rocev2_fatal_event_mmio.v": "2402de8c10dec43b3f171b55134c859c376c94978ee5006e0a76e31bebbc0630"
+  },
+  "exact_four_leaf_derivation": true,
+  "whole_qualified_HLS207_unchanged": true,
+  "both_full_SQC_RQC_configuration_guards_unchanged": true,
+  "all_other_actual_leases_unchanged": true,
+  "actual_join_after_both_receivers": true,
+  "only_RQC_command4_distinction": true,
+  "parent_fetch_work_wire_CQ_and_full_owner_nonce_proofs_retained": true,
+  "FEC_features": 31,
+  "actual_new_native_packet_runtime": false,
+  "actual_RQC_cancellation_receipt": false,
+  "error_CQ_STOP_global_drain_unpin": false,
+  "hardware_verified": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false
+}

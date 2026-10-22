@@ -1,0 +1,69 @@
+{
+  "scope": "Bind native001 failure, all40 unchanged controls and actual quarantine alias.\n\nAll old40 PASS does not turn native42 green. GDB reads the original unchanged\nO1 archive at the same assertion; no DUT rebuild/force/receipt or CQ proof.\n",
+  "audit_passed": true,
+  "evidence": {
+    "fatal-rq-cancel-native-full-001": {
+      "bindings_verified": 947,
+      "report_sha256": "cea0bb84af1da3bb5b4e07cb0353a0963042ee2b417e7e170fbe78a718363368",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-rq-cancel-native-diagnostic-001": {
+      "bindings_verified": 45,
+      "report_sha256": "9a9033ef681b50706661df5c5d88856ca5942da08a7867bd3369f469a905d163",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-native-full-001": {
+      "bindings_verified": 930,
+      "report_sha256": "c354b1a09bded313a0a33b39092696f21c8cec6116a1c81cdb1b3773f3731d40",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-native-runtime-diagnostics-001": {
+      "bindings_verified": 18,
+      "report_sha256": "64a53c5d9ddbc4e8e917f826b2c5fa5d2cf73b9158120d02f46149670a4f72a6",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-rq-cancel-native-elaboration-001": {
+      "bindings_verified": 496,
+      "report_sha256": "b5dc2c6bfb6c5b5a8bf483b6f8fd0897fcaf9ee71c77e4c77bd8ae5a0b32b1d6",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-rq-cancel-native-fixture-diagnostics-001": {
+      "bindings_verified": 7,
+      "report_sha256": "2c218b4267785280fe9808f0bb2ed3b71c727e01fdb0ca93c87f28471798cc9f",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 2443,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_fatal_rq_cancel_failure.py": "b7ad1458b7b488259f319915449c16f30ddaa8e3faff1eb11a5511da1a78bc6d",
+    "rdma/rnic/build/fatal-rq-cancel-native-36gd52x0/rocev2_native_rnic_endpoint.v": "7ce7c9dc6558113d74a57754a03f61e0a3f071973acfe5f206d29bae13eba971",
+    "rdma/rnic/build/write-fatal-native-7lxqk925/rocev2_shared_protected_responder.v": "d5094f6ee199976357f9d9b19746c205bc7b023d3c60eeddbd002a05d2602898",
+    "results/2026-10-18/rocev2-rnic-progress-188.json": "d0f8170628fb7607d670ddd1102dad18a365d7ec01b5fb8123104068071c14bc"
+  },
+  "original_failed_run_still_false": true,
+  "old40_full_outcomes_except_seconds_identical": true,
+  "attempted_cases": 41,
+  "passed_old_cases": 40,
+  "new_access_failed": true,
+  "new_partial_unrun": true,
+  "compilation_seconds": 953.7880532300333,
+  "maximum_attempt_seconds": 13.890896281984169,
+  "actual_and_observed_input_manifests_identical": true,
+  "observed_inputs": 686,
+  "actual_inputs": 686,
+  "common_inputs": 686,
+  "only_observed": 0,
+  "only_actual": 0,
+  "actual_guard_alias": "atomic_rx_guard contains control_external_guard, which includes permanent s_control_held; it is incorrectly treated as a noncontrol lease by the new predicate.",
+  "actual_certificate_bit4_and_current_full_context_match": true,
+  "actual_authorized_zero": true,
+  "correction_requirement": "Export every genuine other RX/memory/reference/Atomic lease separately from the permanent control-held alias; keep original aggregate guards byte-identical. Do not mask atomic_rx_guard wholesale or bypass parent/fetch/work/wire/CQ/full-owner RQC proof.",
+  "only_blocker_or_success_after_fix_inferred": false,
+  "actual_RQC_receipt": false,
+  "error_CQ_STOP_global_drain_unpin": false,
+  "hardware_verified": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false
+}

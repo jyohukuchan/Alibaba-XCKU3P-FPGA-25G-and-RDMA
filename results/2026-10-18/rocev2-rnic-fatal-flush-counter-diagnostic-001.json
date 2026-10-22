@@ -1,0 +1,29 @@
+{
+  "scope": "Read-only debugger at original failed C-model FLUSH0 abort; not successful callback qualification.",
+  "diagnostic_completed": true,
+  "original_test_still_failed": true,
+  "original_inferior_exit": "SIGABRT",
+  "ASAN_OPTIONS": "detect_leaks=1:halt_on_error=1",
+  "original_binary_sha256": {
+    "rdma/rnic/build/fatal-flush-callbacks-7oh_4w6i/cases": "bc6d8da77137ea3445cacdbc9a3ac3527b1f813b99b4f9473ac81b846dd3201e"
+  },
+  "failed_report_sha256": {
+    "results/2026-10-18/rocev2-rnic-fatal-flush-callbacks-001.json": "5a0698bbb66826872b012f9d7b6209149500864735ad558bec1ee8e88afd1969"
+  },
+  "failed_case_preimage_sha256": {
+    "rdma/rnic/build/fatal-flush-callbacks-001-preimages-qgXGTFUg/rdma/rnic/tests/kernel_fatal_flush_cases.c": "17e64b3ce76e7fa40046e51c5df7815270f97edf55c111fa83386c47360788c7"
+  },
+  "actual_control_command_counts": [0, 0, 0, 0, 0, 0, 1, 1, 2, 1],
+  "STOP_index_from_rnic_regs_h": 8,
+  "actual_STOP_count": 2,
+  "actual_ctl_qp_pd": 1,
+  "actual_send_CQ_pending": 0,
+  "actual_recv_CQ_pending": 0,
+  "cause": "Mandatory QP-open STOP already increments the counter before the tested error path. The new fixture incorrectly expected absolute count1, not one additional STOP after activation.",
+  "production_logic_or_assertion_suppression": false,
+  "new_callback_suite_pass": false,
+  "hardware_verified": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false
+}

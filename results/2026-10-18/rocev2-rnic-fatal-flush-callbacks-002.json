@@ -1,0 +1,3009 @@
+{
+  "scope": "Actual paired FEC15/31 flush C callbacks plus all220 unchanged old cases.\n\nRequires new actual full75-input kernel build after real native42 receipts.\nLinux/MMIO/IB-core/certificates/pins/DMA/workqueue boundaries are MODELS.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/fatal-flush-callbacks-cleh83n0",
+  "source_sha256": {
+    "rdma/rnic/tests/kernel_fatal_flush_cases.c": "a83c0ca92eb9e56404d0a32a69881c9cab47c54cd36f22a87f332a079f61e4e7",
+    "rdma/rnic/tests/kernel_fatal_verbs_cases.c": "1875683b51e91a64de7df61686ec173190b3f84c0865d334c27454ead8807c58",
+    "rdma/rnic/build/fatal-flush-callback-runner-mwpp7o54/runner.py": "e20dd62431064d1ecbd95658b35fea42a9ad9c5fbd8e31f03d04f2e5aece82bf",
+    "rdma/rnic/tests/fatal_verbs_kernel_models.py": "8b25aa3363c3c2cc3ca81fcb13dfdde832a6ab315bba9df06b3ae55adc376c10",
+    "rdma/rnic/tests/test_kernel_verbs.py": "0ee8ea79e8c26a8d80fb388beccbbbf7ba101d7317e8703605e18b800b7e9b00",
+    "rdma/rnic/tests/kernel_atomic128_post.c": "b4bb7d9b8f9aaa99786dcbd43dc461fe459945924171b883ee805731e2a2424c",
+    "rdma/rnic/tests/kernel_atomic_access_post.c": "b13ec26be0ac274d8be3394bb0bb721d7d1a2fc5befb4659d5c2ae33fcdff056",
+    "rdma/rnic/tests/kernel_zero_post.c": "e6af1e3b2035fb1ec2fd92fc524db30858a19badc3a565cc25e86f2ad52c6cd3",
+    "rdma/rnic/tests/atomic_access_kernel_models.py": "bf2cab7bd570e8535822241a2ff7aa5ddd0e0d8079dcb2e206b61c3169c343b9",
+    "rdma/rnic/tests/atomic128_kernel_models.py": "f3ecb9d09300aad83770f77e532210f3d5065805c306c61f7ac600e07df9cef7",
+    "rdma/rnic/tests/kernel_sq_hw_cases.c": "86f4f6f8f7a5f0bb663f61d04b1b746b0d6694d79f82449f97776ad30157f798",
+    "rdma/rnic/tests/kernel_verbs_cases.c": "525d56e92d9f152d6bfc340579ef2a4aacf552f55731629985cd4bb5039fad07",
+    "results/2026-10-18/rocev2-rnic-fatal-flush-kernel-build-001.json": "070be0e7898101af684451282519b4795b88643de2189e5526dfbb38aa85f147",
+    "rdma/rnic/tests/kernel_verbs_model.h": "035149fed01b1b6e8b195bc8be290879932496cb8d383130574d6da95b5d7b7a",
+    "rdma/rnic/tests/kernel_cq_model.h": "7a97b34bdb70fab41fc3f1ac926ae96aed15dce09f230733bac487cd3bd64615",
+    "rdma/rnic/tests/kernel_sq_hw_model.h": "3e4db9a8dfb956b8c748912fa99ba8ded276bf10529463198f398a077d65c771",
+    "rdma/rnic/tests/kernel_queue_model.h": "fa79e208e46cefa0180ad8356b7a6f8437c15ff63073f2831cba8cf06ff5bc14",
+    "rdma/rnic/tests/kernel_segmented_write_post.c": "482d5bf9fb102723e5952066bec1672ee7ab3dbf3b485e694961ddcbb21d11fb",
+    "rdma/rnic/tests/kernel_segmented_receive_post.c": "d70173f5a8736206bc7145501d79423e26f051562daabb5c2577467047a700fe",
+    "rdma/rnic/tests/kernel_segmented_immediate_post.c": "97240264a5db618c1315f5082551f28652ebf54689ee3cecd964d9627c951e20",
+    "rdma/rnic/tests/segmented_write_kernel_models.py": "e6fbbe1c3c2d6ae9efbf2a357e286346478516e3e8b481845c051c2bf9e43c7d",
+    "rdma/rnic/tests/kernel_segmented_read_post.c": "274c059dc9a1c297c5c7713bc3f9190ff6363e1f6cdbbd23779fa1ef5a23ba8b",
+    "rdma/rnic/tests/kernel_segmented_post.c": "1cea9848d5bc1166e549ec39a33c76848479a8b52f399727b3aaa2707ab4bd70",
+    "rdma/rnic/tests/segmented_read_kernel_models.py": "4961e959e1e2943ba643a7b083ec0c7f8f639b75a415f75925cc70cf67cf216e",
+    "rdma/rnic/tests/segmented_kernel_models.py": "4398157c359978b82189054871784f203010c08286152d8e004572d31d323038",
+    "rdma/rnic/tests/zero_kernel_models.py": "a98c01cb7aa2ba5cb168c8f6a7aa10ffac67b851e1f5b10b0b31652b3b8d09d7",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/mr.c": "fafe25e2d81236cd155436dd4a5d723662ac6cd4872824655ecf438b1c43feab",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/mr_contract.c": "fba5388020b03409654f46dfce12aed7a9f4776dc22c32a964a3aecf69da6adf",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe.c": "4b3618b01a20876084cd56c5c14c27c3cb8d2c6390aa328bdbf795cd64104211",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_wqe.c": "82ccb5072a8955058abab1edfd7bca9f2fd26f60329ebd5ee59608d626ae49ba",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/sq.c": "398412c6c4015cf87cf57ffa5dcb7c878e52fe5106eb9b11ff990e3b0f6b3fbb",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/sq_io.c": "0d304dbc5ab1dbbbb076600a11852eb44f1a40ac54f3df050753b194accb5dc6",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/sq_hw.c": "868e0095a0e7e382b6064aff5f86d5067db096e77195902ef9dec2377140803d",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/cq_io.c": "261214485514e969a0f250c5a3ff21c5a7a61b2f915c7550875a3e5c15a77dd8",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/cq_hw.c": "62727e3661de59f10456deffcc864920746a196fc80ec9226498b6945684fe33",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/cq.c": "3fea3dd751d491b6241f8a55db4b65fa92a7c2ff72263d948ad45f1d912404c5",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/rnic_io.c": "3cdcf0756e7f2fde7ac857d8e0711e447be64b9119014517fc2568c4abf59b38",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/qp_hw.c": "e7ae309e2d4536cdc41ab3ce4d213a33cd3b403dd5820afad310e468b035274c",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/retry_io.c": "9455b9bb7cd157d6fbbf667144612a8034e4c72d24dad979529b440f7b8eb489",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs.c": "67c5e22799719334960e187bb62160a29f0caa43e5419292bc17ee5869be2039",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_atomic.c": "965050dda10092921a48d9caa6e9557562c9704c0d39f9289b54f997c6046f72",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_atomic_wqe.c": "93a0b279add531f5de82006c8435fd1ed13cd2c7450f0bed2c58fbe1d6971ec7",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_zero.c": "dbeb8076d21f809253fd96871c0861e316559b34478c02c7352d20e681352348",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_zero_wqe.c": "b12d5f111360932a0b0a1ae30117b468deedaa5727a541b9a70eb20987d80b66",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_segmented.c": "5d5d67ecb00a70b988ddb16c780febcd4b3180815dc5c8bf8368f5fef0938d61",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_segmented_wqe.c": "b3cfab36d45a28124169ce98e9a601d3b5ef3979cd8809ddcd2a95e0ccdcbcb4",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_segmented_read.c": "11b3086bf4f4fd23014587f4a50b171e7ba75247b7e392b47bd6dff30e25eac9",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_segmented_read_wqe.c": "a93f93311d841eba6b80cb0be8d4d6ee8fdae79e9cca2af5938b7e0f38a17659",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_segmented_immediate.c": "5bcf912f2fc6e86d5dcef989e801d8f7d20e485a185e9664e05e372e271ba413",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_segmented_immediate_wqe.c": "78a43b0105f50a7401d6c22abc60417fb859fa6c925b7abb28505899ef75442f",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_segmented_receive.c": "6c49eac02e4d54be5efd1bca87ea919522270e56d99d9a3f0a64473a4aeb2c7a",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_segmented_receive_wqe.c": "4c34a78d2bf631b52d685b44a778cc9f086614c4d25230c8686aa2b3c4cd38e3",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/fatal_io.c": "8e678fb16e1c452992f0d5f613b4a41147c9fb99e7ffa1dcc8e25b9c328ef8a6",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/fatal_verbs.c": "aec8fdfd99d46591396872f9c9da631e7cf64ee9e11dfe6fd85dbdb32fbec07f",
+    "rdma/rnic/tests/kernel_queue_model.c": "040e9a6c3ec021996f8af51f50d180043cf440933f13d116bbdb04f0b92ce240",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_fatal_flush_cases.c": "a83c0ca92eb9e56404d0a32a69881c9cab47c54cd36f22a87f332a079f61e4e7",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/fatal_io.h": "53909154dd24e2683127677189942b85176f08882fbb00eff96d430a03c69e0c",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/rnic_regs.h": "902b3976b72d377fadf410549b262fad97ccdae978095374f100b0caf060b9de",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_segmented_wqe.h": "74270ba9c7a1661af95523c1115ee9f1c5bda1d6448849a9bbe01b5f48d625f7",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/qp_hw.h": "8ba44af36588003ed00ebe8e51737b070f99a33b4140d842e6bb966e9265f474",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_atomic.h": "f971b72123b3b3a24c78c28a2c1a856d5c9a9597977fae0a09f654b13f952f68",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_zero.h": "70087a973c4eee08b25c93c8d5aab60ff2e9d9a0e9888363201bf4d375697f9b",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/atomic_profile.h": "fa9b8b94fa682a3a9225ba92b14682fb1df8d69cc36e88e1f077099d601d6792",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_segmented_immediate_wqe.h": "a3b79f974662d573065071a7a4804436ced1c671aec8679fa6a72a2735b19d08",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/fatal_parent.h": "0bb5f7c532e562afbbc780503cfe14368c0a289e9014be5c7bad8e35a2cd3db6",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/rnic_hw.h": "87f084df23fa172ddc76fbcffb30338a5d9a28e68fd08ec3f54157317f9960f7",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_segmented_receive_wqe.h": "d7ba6c34f25b1edc9b27c2eb9088dbd0f6013ddaa1e8ae3329fe545498e3335e",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/cq_regs.h": "d8b0c553cde7baee136c919837d0bcc8d8308de1a2ac2155207a7cb771c20033",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_segmented_read_wqe.h": "0a46c998b11badd6be31e6035730728f849e8baf3f4422d22c13f0f264d5591f",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/sq.h": "98bdd9260c2a40853ef4a12102eb64dfec66d19a8560c858f83c0ad74c23c242",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/fatal_verbs.h": "90698cb69cdf188a56cd85c57bc71f3f93af83835d8c5d4703370897194b19de",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/sq_io.h": "9ab44b2186598290b57ac0999b861f01b212ef7e6ed7e890870bbdc1d9731d60",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/mqnic_graph.h": "c7e78ac4f98d8841fbc1e9f7a531cffa9f675be00710295da7183fd22864dc2b",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/cq_hw.h": "9cfbf94b2a7ebcfcc4465b761fb6ccf4c93844b7dd67d8e3f7e81983e5e0e673",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/native_attach.h": "c75bc0317787962e5b803f04fee05e8f556614df85fcb40ea851148fa45d923b",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_segmented.h": "78d950a46d3978fe1929716c4595ba1e9dec61ffa7d9574ef06419d7914a9c5a",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/retry_io.h": "aad5018d4cb7292ef0240f09f1495453030f5211c98999fa0edec5b0fbee9167",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/cq.h": "8fa35025b2c276de11d026dcb1cf9d324637dba1fb3e743c0261f447447a44a4",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_segmented_read.h": "74aa2cd9c47751c6ef019fe9fea17fd166ad2bab9b2355368db959209d8889b8",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe.h": "646e0f6c09f85af72cd9d93016f1368ee7378b6f0cc1f869e4ace0e8e68e8a2a",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/native_regs.h": "1958df9642bd0c865d97c584cda9902fa689d9049b3f415c75f342dddd7b0b97",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/fatal_regs.h": "0b3b434bbc3a78330389dc27a6c4cd7f17da690abe1f6f7b7218ada5be666af5",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/device.h": "830ced5f865bb1af7f7e73ed3e952fa1f745934f1500d4e2f2090e2511274f41",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs.h": "5a560b02d51a9353e11efa5d3de6e9d53eef8006c7401fc9d8bfbea55adbf417",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/sq_regs.h": "1c55d3718dea18fecdae110c26b951e08b1511826e2e43efc247dd55e95e772b",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_segmented_immediate.h": "c6c3e086486a0a6ec7bc10943928c35360e5ab66adfddaa7c5615bd8c09cf7fd",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/rnic_io.h": "92999a3752af6fce6c8556c9c2724ce85918949966f35d2420695e8671d0ffc3",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_segmented_receive.h": "c61554c6a9fd0b77f89e4bde51e80458753492cd817aa3d79b63682fc417be8e",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/mr.h": "427c947b5e8491e4444cf1fd0e726cfbcdfdae00113020ec67b7e7f314c5cfc3",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/sq_hw.h": "3b314f585820e35d33e17dc362c92b070b14171d29e59cbedb25699863d50fd8",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/cq_io.h": "40b5077954e39163671de8a4ae4a2a48df67d4a6559ee7350cb3ebefb0837fe0",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/native_graph.h": "a3d1e6f641bb6aeb073015920f5083d56ff4e9d6df08a25a2863bbff1f0ad2b9",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_segmented_receive_post.c": "988465949b5b4915a40c61b16be5525817569bdcad623a41162ec151518f5e35",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_segmented_immediate_post.c": "1f2de40a31437ae26fe25f591d6ba5b036f22ff90d62a8070662b91a97b2d84a",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_sq_hw_cases.c": "08abab5f2df9f3f1d1769f0140a34f04d45bd21e84d00cceff49038d54255931",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_segmented_read_post.c": "ff239dbdd5ad70832b8de944a8c60fa8a37d1615128a69b800db25151ed1dd5c",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_cq_model.h": "7a97b34bdb70fab41fc3f1ac926ae96aed15dce09f230733bac487cd3bd64615",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_queue_model.h": "fa79e208e46cefa0180ad8356b7a6f8437c15ff63073f2831cba8cf06ff5bc14",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_zero_post.c": "28061d602fcb3dbf4c1f5f1f8c1efab13b1a9d1f6acef6e1d27ecff0d5585328",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_atomic128_model.h": "a14dedef503777dc1c1cb74fb441cdd336affea8f6fdd183740dd268578b1f86",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_verbs_cases.c": "84ae396cdeee16063dc1d865aaf99b2f597768d23e51b6680b8792d881501785",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_sq_hw_model.h": "3e4db9a8dfb956b8c748912fa99ba8ded276bf10529463198f398a077d65c771",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_atomic_access_post.c": "baac431b2e44595ff8f3c4caed4cfe2515af890703f3851dd61f3f6d3cbb1348",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_atomic128_post.c": "e829391206ea0defcff154223b984e70b915d8947e9dc2e957a210a1a04d4449",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_segmented_post.c": "e3396d2457cfc4ee874debb3713c9746411200308d4517829cb33c19443b46c9",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_verbs_model.h": "c7254624a76d8bc3e8615d5fddc84a8f032d03e6f6404d97a9783a4a3a939329",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_segmented_write_post.c": "389cb2f902afdbc5c6a33bb82ebfa279674c87f515bc303ecf2696a46bece04d",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_fatal_verbs_cases.c": "7b04cf060b4f1d0699721955a238071c5be9c75601b9306147c06a3a02c681d3",
+    "rdma/rnic/tests/probe_fatal_flush_callbacks.py": "0f473413081030b7a289214bcaacb8d875ef34d0db8a4ebab2ed6bd5d2f771ee",
+    "rdma/rnic/kernel/derive_atomic128.py": "604eac54786c59739746716e3203d96d3ee099826252db96a42c8c1f81fb9983",
+    "rdma/rnic/tests/test_kernel_queue_lifecycle.py": "e93700d7567d51a66f86cd324cf66642d602ab239b4b32bedbab81ed17ca983f",
+    "rdma/rnic/kernel/build_frozen.py": "e4f6c8e37657614f186def1f50010ecfbf229d006c8b7f4ccaeb1d4b1d792f44",
+    "rdma/rnic/kernel/derive_atomic_access.py": "9694c7f0c16c68d0d8b315049a792c52d512ad77f516daad1a7cc0fd3f107486",
+    "rdma/rnic/kernel/derive_zero_kernel.py": "280aeb2234f9f0c42133e6c8d082a822d7fdd110700243c05fb7194b1c595f33",
+    "rdma/rnic/kernel/build_zero.py": "ed796e8837a0df01bdb42dfa54d2c4b3845573a1bee0c318d5c42747ff676173",
+    "rdma/rnic/tests/probe_kernel_zero_post.py": "467f719daad0ad3ccd9df61346eefb11d2c0ab9c0bff418ba6240a00d370164e",
+    "rdma/rnic/tests/probe_kernel_segmented_post.py": "0529b7fa37d887bebc051af97130f8ad9c3091d96e5f7f9bca329070b678946d",
+    "rdma/rnic/tests/probe_kernel_segmented_read_post.py": "200966f37682b7dbd527dc6f7dde8663a4a5ce2f90fc4012559fb48018640156",
+    "rdma/rnic/tests/segmented_immediate_kernel_models.py": "a47c2d604bb43e1ae44f079ab0bedc52ead55f33b395f287cb25787974c56e3f",
+    "rdma/rnic/tests/probe_kernel_segmented_immediate_post.py": "94e1ab4d14ce3c23a75612f79d9ca885c86e223a5d95787e08c9e83987699622",
+    "rdma/rnic/tests/segmented_receive_kernel_models.py": "aaa84c8517749df4cc86a9e15dc9f099aafd7b781ffd537d86ad12e1db54cbc5",
+    "rdma/rnic/tests/probe_kernel_segmented_receive_post.py": "c950953de6a19bd04ff6411e80b67864691690f236f47b0be00b4970c2e2be8c",
+    "rdma/rnic/tests/probe_kernel_segmented_write_post.py": "433b6dc3c17ae6c4eaa6b19e848c1750d898070c316961bb7d1e578a97eb6bf8",
+    "rdma/rnic/tests/probe_fatal_verbs_callbacks.py": "d76ce03199ed83edc5ee9b67b6fa509b649709e93e595488fe0832f1bea7987d",
+    "rdma/rnic/tests/test_wqe_codec.py": "7d5e8718e585bd9b5aedd57fa7c8b5d0f66b7af9b35e809cf59860b3fa043aed",
+    "rdma/rnic/tests/test_atomic_wqe.py": "da6e83a20073aa3a397f969130cb773bd5e603de0b64a5ffeb3ccb644915f38f",
+    "rdma/rnic/tests/test_zero_wqe.py": "15f995aa9227b08da7f4c75a35d980dec29306d1e9231c142a1f0827f4269a9d",
+    "rdma/rnic/tests/test_segmented_wqe.py": "3db40989b94fde5d3e3dc08b6eb99edb23e5d72d239ac5f7458519bd35a10608",
+    "rdma/rnic/tests/protected_sim.py": "b718a5ce78468b98058d9f51194f157fff7872062955a1db51d78d5ce6d1488e",
+    "rdma/rnic/tests/probe_protected_responder.py": "45908371b011a0785598a0800acb9e970cbc71d60160ce5788d3cf333639bf3f",
+    "rdma/rnic/tests/test_corundum_dma_backend_rtl.py": "cf9ce4a872f203dcb1d9d4bc7c170c01a8f252c1d5ce8b290bd88c223139986a",
+    "rdma/rnic/tests/test_paged_memory_backend_rtl.py": "860ebddc40c0bbff2f8eed74da2a1339b0c7b982bbcfa4b00fa73913e2d63ba2",
+    "rdma/rnic/tests/probe_protected_paged_dma.py": "d4b4167a0978d3f7f994580ca093f6a6a711ed65f741998699f00dc6a65c206a",
+    "rdma/rnic/tests/test_control_regs_rtl.py": "8f05463fe7d2bc07553f451800281240870c5147c5d50ec31f027227cf6d5c17",
+    "rdma/rnic/tests/probe_controlled_responder.py": "d53d6787bf0d43e724246994d6f15075f8bc07c56b336b9a45bec5f12f0f36ac",
+    "rdma/rnic/tests/probe_controlled_pcie.py": "cb48d7f353752fa4718e298c5f016cac1ef18064b0db75ee6053dd3023500b1d",
+    "rdma/rnic/tests/probe_dual_ethernet.py": "d6a755eab6c8fd7e5d5f9756ad37c8354c192084817809bf81bcbfcdfb4546c7",
+    "rdma/rnic/tests/probe_native_control.py": "7e4fbc6cd322400e133c488b4cc12de94867df14f642167914fefa6fc25b4151",
+    "rdma/rnic/tests/probe_parent_guard_transport.py": "3ccae45d0bc7e4c703c631c7333721c24a8b3d67c90b504dee43b779a1e38c27",
+    "rdma/rnic/tests/shared_mr_fixture.py": "4b3cf706014295316a3d972ead69c6d4cb4c4097c981115bbdb810a2f00d37d2",
+    "rdma/rnic/tests/test_protected_responder_rtl.py": "f9bfb4a13a78f7732e936be2ff87bf8dcc3bde21826477ed992cf8262e0127e8",
+    "rdma/rnic/tests/test_shared_mr_responder_rtl.py": "285b0e78c189a6e1c4a7cf2bdb3ee757e2b48b8406808809669db46ea0acd1d4",
+    "rdma/rnic/tests/fast_transport_sim.py": "940518b5ea3ebb73ee9a5e2f04244e9378e2304096946644fffdfd11dfd5cf1a",
+    "rdma/rnic/tests/bounded_transport_sim.py": "673b9a5567f4adc8ee155c4c72a5b2496e7350fbdc731048981db1ddd4696a2f",
+    "rdma/rnic/tests/wrkey_delivery_sim.py": "1c9a4d21ab3a933f5ace6e51405232da216b4751381c55d063546fae3e0c8afe",
+    "rdma/rnic/tests/probe_native_shared_mr.py": "41434e74db2c51fa5abfcb9faf3fa16dc856b29afbaa22d6d2a8f0b79a6da460",
+    "rdma/rnic/tests/test_native_shared_mr_rtl.py": "9a1ad7c52d262fb10688d293d59256499f2f536c95426793ee742204d953bc21",
+    "rdma/rnic/tests/native_sq_fixture.py": "37fd88a4b1cb34d4e3b979d834cb22a3c8e80cdcc6bea06b06f9b402d0ee3420",
+    "rdma/rnic/tests/test_native_sq_rtl.py": "9e675253967de6528fb6fefbdcbcc7dbe7cd0cce3ff745ec5b9fd1a06ce8e8d3",
+    "rdma/rnic/tests/test_wqe_hls_sq_rtl.py": "2f092ca9eeee90d6a1ab57439227ad39b5d9b623947201e274b2654bf46c8af4",
+    "rdma/rnic/tests/test_wqe_response_guard_rtl.py": "022eee2383a8be45e8858946659fc05182537f0a09562b6011bde5285536de16",
+    "rdma/rnic/tests/test_native_rnic_rtl.py": "53c14e42e279a61347376852af85f6ed302ade1db05b9a19c6ccb9ce91b6c27c",
+    "rdma/rnic/tests/test_native_qp_tx_rtl.py": "15adbf255ef2b159f1113eed466a320ab85e341978def44d8f2277473208de37",
+    "rdma/rnic/tests/native_send_fixture.py": "80393226e43c34346e46f4f1147869083fa282976415135dcabf1f3a0203e8a0",
+    "rdma/rnic/tests/native_request_cq_fixture.py": "3103dd0e908980c14ccac9aacde590f2043f491a6d38546a882cc3075320e5d5",
+    "rdma/rnic/tests/native_duplex_request_fixture.py": "d9a8fc5bb521951953bc1abc1ab5a525952398ebfc35c396753d0f96e52d6621",
+    "rdma/rnic/tests/probe_native_retry.py": "4ae4563af3b9a2ec9abc1b4a023d1421003ad834a3a82475adbf684570e27164",
+    "rdma/rnic/fpga/derive_shared_responder.py": "3d97aec6c1f5efe8f1d1b3d0c830a684ed4045dacdd3bcaa4923cf751e1fd477",
+    "rdma/rnic/fpga/prepare_wrkey_transport.py": "11aff17a0d9eb097abc4a5eec097409171b997d59c451ffb6e8fad3d4984e8c3",
+    "rdma/rnic/fpga/derive_qp_tx_bridge.py": "51afb390ce130f69e8b55cbfb2af2055e7fa3746004790b5b509f4f6273d28a7",
+    "rdma/rnic/fpga/derive_duplex_transport.py": "ff81dfb2ba41ffc59d482bee177fc106537a22a786bf11d588880c3990c85a53",
+    "rdma/rnic/fpga/derive_immediate_bridge.py": "a9758360ee8466e011819fe3ebf79b80fd175ee7f59c91af4fa949047a4b0667",
+    "rdma/rnic/fpga/derive_immediate_native.py": "9281857caf2714945f280e126eb39553e8f9324c8416b5b71bbd79c5ed6fdac4",
+    "rdma/rnic/tests/check_immediate_native_elaboration.py": "0e828878b5d6a7f67f804dc3ccf26f03b248724eee25b347f8627ae90374a710",
+    "rdma/rnic/tests/native_immediate_request_fixture.py": "3ef553ab6064c1b679b8d21128035d6e53bba49dea73bb0fb594f00075c643fe",
+    "rdma/rnic/fpga/derive_atomic_owner_lookup.py": "10f497b1ae2c5358e960ae8695903bf4655896c99b977bd26ffba287d270b453",
+    "rdma/rnic/fpga/derive_atomic_native_authority.py": "0b881da1ad4a9d72f43c90e54492c3299b43b3109d0529eb81851319a4f88451",
+    "rdma/rnic/fpga/derive_atomic_native_bridge.py": "332a5064cb3adfbadd2e2196eb950885e9945a9af528ccd45776944631db331c",
+    "rdma/rnic/fpga/derive_atomic_native_owned_stage.py": "aa9869c3c51c2fe25b5dfa53429bd62b7180fcfde20140e1e4397d76b5463576",
+    "rdma/rnic/tests/atomic_native_owned_fixture.py": "b1d36c63a99f7ced742fd74f80f1a05f378696650a95bc8c7e2a15a8f37ebc60",
+    "rdma/rnic/fpga/derive_atomic_native_rx.py": "9f9e8db656cffc70f59761ba0c42e402f4dd9d392c065d0a7a79abb6b752fec0",
+    "rdma/rnic/fpga/derive_atomic_native.py": "b3758f15718303cf12b95af02052dcad8bc6d1e806ef64075ff75e3e6856c90e",
+    "rdma/rnic/tests/atomic_native_full_sources.py": "0a7d852bbc45f740a7a1730a3c196eff67f21fb75aac6f0a82a649e84286618f",
+    "rdma/rnic/tests/atomic_mac_wire_fixture.py": "8e17dcb56ccb2bbbaac04f4f96f080e855355f4f8bba2f5c9a83513c71a1977d",
+    "rdma/rnic/tests/atomic_native_full_fixture.py": "80ca5fc615f7c576b6a192fe60ac58fbe656c174a9b64746773b8e905e5e2c1a",
+    "rdma/rnic/tests/atomic_native_full_memory_fixture.py": "876ff4543beea8edfcfcca517728d37bce951488a52b09d8e5d7ec19e88de858",
+    "rdma/rnic/fpga/derive_atomic128_response.py": "eaa3439ece1fd0fad5ff30e81aab0d14346c3739058c1272a4fdc4b8e431063e",
+    "rdma/rnic/tests/test_atomic128_response_rtl.py": "f45f24ac5941fa1591fd03f114d05d6d092f970a4bcc9d74036f57fa3a55bcc1",
+    "rdma/rnic/tests/atomic128_native_fixture.py": "088aad4fe69b61405c644ecf787635a4799c346ea735d6c6ef0b57e16d9272b2",
+    "rdma/rnic/tests/atomic_access_native_fixture.py": "68e024ec13668421b83fb97b33a549f1045db1115851ac352665b07acc793764",
+    "rdma/rnic/tests/zero_native_fixture.py": "112d3235fb02062fd8e24faa07b27ff3e8d18358080319d561c6abed5f62e8c7",
+    "rdma/rnic/tests/native_receive_fixture.py": "c60cf68bd4c1e38bbb0744b42213c574d9c68e96927847ea3d18cd2442a6e791",
+    "rdma/rnic/tests/native_receive_cq_fixture.py": "057b674d73700e22218b149b30b6bbcd2b1efe8c40a7ad20518610f4fd895dfb",
+    "rdma/rnic/tests/native_independent_queues_fixture.py": "634a797866160cdcc540d0d35921c4beca67b0201e96bf07788cde22e2b943d8",
+    "rdma/rnic/tests/zero_rq_native_fixture.py": "1492b3bf08e9e25684c836e607446d2a56f7a66c8d55a0f73b239b01709c6e04",
+    "rdma/rnic/tests/zero_service_native_fixture.py": "471a3cb57fcbc31fac16b3c226ff20c33db2bc49f03e1afddb1c2772ab602fcc",
+    "rdma/rnic/tests/segmented_native_fixture.py": "114485d82c3bea6f3e0783bd08a3bf7c0f3dec0da93c0293f73268ddc2eb50f3",
+    "rdma/rnic/tests/segmented_executor_native_fixture.py": "38d40aef1ef4cbc0571a7e6489d3149b82e38266b19bd60c18ed592f4bf1d92a",
+    "rdma/rnic/tests/segmented_board_tx_fixture.py": "327df0db8cb2198c5ce6f1af2d1284f5aa6f06d09d4b0242eb63608d92298937",
+    "rdma/rnic/tests/segmented_pcie_request_fixture.py": "17e4eeea823f1bcbfd44575ae47922577de75ee60a2778a54ed7fa18819de562",
+    "rdma/rnic/tests/segmented_wire_native_fixture.py": "f2203f889a687cdaae6d3a0aa58a63530c949380a570ba62ce15d010d7f0f58a",
+    "rdma/rnic/fpga/derive_atomic128_fetch.py": "4123c117771f568fc4a002a614ade421f6c94eb08dd17b27dff2a6a8d9dbe433",
+    "rdma/rnic/fpga/derive_atomic128_admission.py": "da4e91e41d7bb9861534cfe2b98e7690076850d192c401cc1290d1942b8d83e3",
+    "rdma/rnic/fpga/derive_atomic128_executor.py": "bc01f0d68fc39c78e6a3ff5d96d93a2e82396f4b9db67a7e03bee35cf114b004",
+    "rdma/rnic/fpga/derive_atomic128_lifetime.py": "09148e2f11eb3c2ea9bd72fc28cf357e8991de64acef1af9ad79b17dfebc90cb",
+    "rdma/rnic/fpga/derive_atomic_request_bridge.py": "a626d9f3d20ecfc7c477100c63472fa8547792fafacb612d28846f6f6f0a4463",
+    "rdma/rnic/fpga/derive_atomic128_native.py": "9be2756604ed23cc9b41b2fd8d1a3b8db9bf2e2176663878463c12abc03b20ad",
+    "rdma/rnic/tests/atomic128_native_sources.py": "613399e31c29e53175f2dd5085fbf03b2453ce3c9bc22733253d1aaedacf6b15",
+    "rdma/rnic/tests/atomic_native_full_oracle.py": "6625ae71b835bfb53b844c8c61c0a0754a49c869177a713017023ee82da49c59",
+    "rdma/rnic/tests/test_immediate_wqe.py": "fcc13dce8260b62701cd08b290dbde03a6408ea133be2113db6597b8836c467a",
+    "rdma/rnic/tests/probe_immediate_native_request.py": "919086deef43c6c8b5d767d1d1908fbceda1c5555839377c377c6d0bbcb543a5",
+    "rdma/rnic/tests/probe_atomic128_native_full.py": "5b3d7d4ee88b1730122f2177403de5e247b2fcea561ef4aa169f361930ebc845",
+    "rdma/rnic/fpga/derive_atomic_access_native.py": "ab42d555c459c2e7b7da71686539c3d75a31e075a3a8c11c66e09a59e6e903ee",
+    "rdma/rnic/tests/atomic_access_native_sources.py": "706d5149d1c849d6ece6c25cc73b11761ce4573ae72861639621aa61b50dd152",
+    "rdma/rnic/fpga/derive_zero_native.py": "d652f5e0a805b96d2a963f33d9112d8121f1170a15b111e3e400c81eface97a7",
+    "rdma/rnic/tests/zero_native_sources.py": "455f9c52f3c0e8f049ba4e4ee6f3be00987905755c0c82ad7a8f0000051c3602",
+    "rdma/rnic/tests/atomic_access_native_oracle.py": "b234dcc493d5241d17efe868e70c5e661ad640e3244b472ad0c194354e545b52",
+    "rdma/rnic/tests/probe_zero_native_full.py": "863c9b3630d70d2a35ff332b86cf110d59fa22d41c77997e47c6aa33f35e2408",
+    "rdma/rnic/tests/segmented_profile_native_fixture.py": "ee3d9efeaa3efc8ceae214211ef1990a3da37f08aa0b237ea3653789127d7898",
+    "rdma/rnic/tests/test_segmented_read_wqe.py": "903488e234f0405a3aa65fbb3a5d706c313532b7b4ac4722ddc588777da49bcd",
+    "rdma/rnic/tests/segmented_read_native_fixture.py": "50edb25cabdb4a1dd9016e921577714faa6d48206c74f64e02e449f61fc38c04",
+    "rdma/rnic/tests/segmented_read_route_native_fixture.py": "629c7f8468153e506e7ceb3b322daace7065c78b456f164b3940983f58daaf7a",
+    "rdma/rnic/tests/segmented_read_route_progress_native_fixture.py": "5c1eb7cb19800e241ca74c0e0b9e49026fb15e0d491f7b59110f37a1ce6f8841",
+    "rdma/rnic/tests/segmented_read_command_queue_native_fixture.py": "d7d641b1bbddd98ea6e76220c4fe1e766e28b1f6ee13dac8d5d030b5eca263db",
+    "rdma/rnic/tests/test_segmented_immediate_wqe.py": "a9566401d18c2c35b7baadfe4679b5670e97f983827fcaa33a26c81917fbd2b9",
+    "rdma/rnic/tests/segmented_immediate_native_fixture.py": "766093ed6eb5404b356cf97b1fff542096c71f0c1d2469f3172299a3e64b891b",
+    "rdma/rnic/tests/segmented_receive_native_fixture.py": "4f0a9fa40f2899aa915d9972ba0d5525cd2c8f248c1b10963244790aa0ec002d",
+    "rdma/rnic/tests/test_segmented_receive_wqe.py": "6a7b9ffcc11d5caadff85adf83611555865b52c70899f55e581b1e5583734cca",
+    "rdma/rnic/tests/segmented_receive_payload_native_fixture.py": "82c98edb0851e30f7515f8e51bc17d1d7022f74f6c84bc629796d9bb279f3faa",
+    "rdma/rnic/tests/segmented_write_payload_native_fixture.py": "c3ec0f10441eb7a6e542ed9bf5afb0aece03c66a99f19286ecdecc3de4ef504a",
+    "rdma/rnic/tests/probe_fatal_parent_callbacks.py": "39527a8451d212d6abe927eb99f59354f6767dacddd7d8479826bf055f999149",
+    "rdma/rnic/tests/audit_segmented_receive.py": "856f1f67bd6dc15fdabe40cadfede0235d3691f9da49fcb15a8b0a01192ed319"
+  },
+  "actual_standard_callbacks_and_CSR_C_bodies": true,
+  "actual_running_kernel_callback_execution": false,
+  "Linux_MMIO_DMA_pins_hardware_completion_models": true,
+  "actual_RTL_executed": false,
+  "hardware_verified": false,
+  "atomic_cap_advertised": false,
+  "simulation_limit_seconds": 10,
+  "tests": {
+    "FLUSH0": {
+      "seconds": 0.014953493024222553,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "real_RQC_certificate_before_ordered_flush": true,
+        "QP_STOP_still_unproved": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FLUSH1": {
+      "seconds": 0.01396165502956137,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "real_RQC_certificate_before_ordered_flush": true,
+        "QP_STOP_still_unproved": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FLUSH2": {
+      "seconds": 0.013881126011256129,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "real_RQC_certificate_before_ordered_flush": true,
+        "QP_STOP_still_unproved": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FLUSH3": {
+      "seconds": 0.013017798017244786,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "real_RQC_certificate_before_ordered_flush": true,
+        "QP_STOP_still_unproved": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FLUSH4": {
+      "seconds": 0.013924917962867767,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "invalid_or_legacy_authority_retains_WR_refs": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FLUSH5": {
+      "seconds": 0.013292980031110346,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "invalid_or_legacy_authority_retains_WR_refs": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FLUSH6": {
+      "seconds": 0.013617329008411616,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "invalid_or_legacy_authority_retains_WR_refs": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FLUSH7": {
+      "seconds": 0.013572211028076708,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "invalid_or_legacy_authority_retains_WR_refs": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FLUSH8": {
+      "seconds": 0.014116635953541845,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "invalid_or_legacy_authority_retains_WR_refs": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FLUSH9": {
+      "seconds": 0.01423767302185297,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "real_RQC_certificate_before_ordered_flush": true,
+        "QP_STOP_still_unproved": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FLUSH10": {
+      "seconds": 0.014195418974850327,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "real_RQC_certificate_before_ordered_flush": true,
+        "QP_STOP_still_unproved": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FLUSH11": {
+      "seconds": 0.014317574037704617,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "real_RQC_certificate_before_ordered_flush": true,
+        "QP_STOP_still_unproved": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FLUSH12": {
+      "seconds": 0.014132630021777004,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "invalid_or_legacy_authority_retains_WR_refs": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FLUSH13": {
+      "seconds": 0.014021440001670271,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "manual_ERR_no_fatal_authority": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FLUSH14": {
+      "seconds": 0.011580642021726817,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 14,
+        "unknown_capability_rejected": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FLUSH15": {
+      "seconds": 0.011512823984958231,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 15,
+        "unknown_capability_rejected": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL0": {
+      "seconds": 0.013881474966183305,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true,
+        "QP_ERR": true,
+        "handler_calls": 1,
+        "references_retained": true,
+        "no_fake_WC_STOP_unpin": true
+      }
+    },
+    "FATAL1": {
+      "seconds": 0.01375806302530691,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true,
+        "QP_ERR": true,
+        "handler_calls": 1,
+        "references_retained": true,
+        "no_fake_WC_STOP_unpin": true
+      }
+    },
+    "FATAL2": {
+      "seconds": 0.014039319008588791,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true,
+        "QP_ERR": true,
+        "handler_calls": 0,
+        "references_retained": true,
+        "no_fake_WC_STOP_unpin": true
+      }
+    },
+    "FATAL3": {
+      "seconds": 0.01421867695171386,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true,
+        "QP_ERR": true,
+        "handler_calls": 1,
+        "references_retained": true,
+        "no_fake_WC_STOP_unpin": true
+      }
+    },
+    "FATAL4": {
+      "seconds": 0.013479948043823242,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "stale_or_malformed_unacked": true,
+        "references_retained": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL5": {
+      "seconds": 0.013634859991725534,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "stale_or_malformed_unacked": true,
+        "references_retained": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL6": {
+      "seconds": 0.01366349501768127,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "stale_or_malformed_unacked": true,
+        "references_retained": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL7": {
+      "seconds": 0.012930215976666659,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "stale_or_malformed_unacked": true,
+        "references_retained": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL8": {
+      "seconds": 0.013511447992641479,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "stale_or_malformed_unacked": true,
+        "references_retained": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL9": {
+      "seconds": 0.013646453968249261,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "stale_or_malformed_unacked": true,
+        "references_retained": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL10": {
+      "seconds": 0.01418822497362271,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true,
+        "QP_ERR": true,
+        "handler_calls": 1,
+        "references_retained": true,
+        "no_fake_WC_STOP_unpin": true
+      }
+    },
+    "FATAL11": {
+      "seconds": 0.014184173953253776,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true,
+        "QP_ERR": true,
+        "handler_calls": 1,
+        "references_retained": true,
+        "no_fake_WC_STOP_unpin": true
+      }
+    },
+    "FATAL12": {
+      "seconds": 0.014121803978923708,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true,
+        "QP_ERR": true,
+        "handler_calls": 1,
+        "references_retained": true,
+        "no_fake_WC_STOP_unpin": true
+      }
+    },
+    "FATAL13": {
+      "seconds": 0.011116117995698005,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "bind_rejected": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL14": {
+      "seconds": 0.011355887982062995,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 14,
+        "bind_rejected": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL15": {
+      "seconds": 0.013569417002145201,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 15,
+        "stale_or_malformed_unacked": true,
+        "references_retained": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL16": {
+      "seconds": 0.011879010999109596,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 16,
+        "empty_attachment_retained_after_logical_detach": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "FATAL17": {
+      "seconds": 0.011581340979319066,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 17,
+        "bind_rejected": true,
+        "actual_driver_bodies": true,
+        "boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV0": {
+      "seconds": 0.011566463974304497,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "rejected_before_queues": true
+      }
+    },
+    "WRITE_RECV1": {
+      "seconds": 0.011647411971352994,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "rejected_before_queues": true
+      }
+    },
+    "WRITE_RECV2": {
+      "seconds": 0.011022388003766537,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "rejected_before_queues": true
+      }
+    },
+    "WRITE_RECV3": {
+      "seconds": 0.010746020008809865,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "rejected_before_queues": true
+      }
+    },
+    "WRITE_RECV4": {
+      "seconds": 0.010818936047144234,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "rejected_before_queues": true
+      }
+    },
+    "WRITE_RECV5": {
+      "seconds": 0.011666339996736497,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "rejected_before_queues": true
+      }
+    },
+    "WRITE_RECV6": {
+      "seconds": 0.01168491702992469,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "rejected_before_queues": true
+      }
+    },
+    "WRITE_RECV7": {
+      "seconds": 0.011158860987052321,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "rejected_before_queues": true
+      }
+    },
+    "WRITE_RECV8": {
+      "seconds": 0.014226358965970576,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "capacity": 0,
+        "WRITE_bytes": 0,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV9": {
+      "seconds": 0.014439379971008748,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "capacity": 0,
+        "WRITE_bytes": 1,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV10": {
+      "seconds": 0.014284328033681959,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "capacity": 0,
+        "WRITE_bytes": 4096,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV11": {
+      "seconds": 0.013748982979450375,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "capacity": 0,
+        "WRITE_bytes": 4097,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV12": {
+      "seconds": 0.013527791015803814,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "capacity": 128,
+        "WRITE_bytes": 8193,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV13": {
+      "seconds": 0.014413188968319446,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "capacity": 128,
+        "WRITE_bytes": 8193,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV14": {
+      "seconds": 0.01338775601470843,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 14,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV15": {
+      "seconds": 0.013315120013430715,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 15,
+        "capacity": 0,
+        "WRITE_bytes": 1048576,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV16": {
+      "seconds": 0.01292399998055771,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 16,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV17": {
+      "seconds": 0.013604268955532461,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 17,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV18": {
+      "seconds": 0.013742069015279412,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 18,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV19": {
+      "seconds": 0.013477852975483984,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 19,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV20": {
+      "seconds": 0.013702118012588471,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 20,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV21": {
+      "seconds": 0.012693099037278444,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 21,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV22": {
+      "seconds": 0.012869731988757849,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 22,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV23": {
+      "seconds": 0.013773985963780433,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 23,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV24": {
+      "seconds": 0.012890963989775628,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 24,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV25": {
+      "seconds": 0.013538477011024952,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 25,
+        "bad_owner_or_old_profile_retained": true
+      }
+    },
+    "WRITE_RECV26": {
+      "seconds": 0.015613017953000963,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 26,
+        "capacity": 128,
+        "WRITE_bytes": 8193,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV27": {
+      "seconds": 0.015519777953159064,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 27,
+        "capacity": 128,
+        "WRITE_bytes": 8193,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "WRITE_RECV28": {
+      "seconds": 0.01380639401031658,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 28,
+        "bad_WR_before_owner": true
+      }
+    },
+    "WRITE_RECV29": {
+      "seconds": 0.013730683946050704,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 29,
+        "bad_WR_before_owner": true
+      }
+    },
+    "WRITE_RECV30": {
+      "seconds": 0.013025202031712979,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "ambiguous_RQ_owner_retained": true
+      }
+    },
+    "WRITE_RECV31": {
+      "seconds": 0.013687102007679641,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 31,
+        "capacity": 0,
+        "WRITE_bytes": 8193,
+        "actual_standard_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV0": {
+      "seconds": 0.013287740992382169,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "capacity": 8194,
+        "received_bytes": 8193,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV1": {
+      "seconds": 0.014223704987671226,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "capacity": 1048576,
+        "received_bytes": 1048575,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV2": {
+      "seconds": 0.0138573789736256,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "capacity": 4097,
+        "received_bytes": 4097,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV3": {
+      "seconds": 0.01347624696791172,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "capacity": 65537,
+        "received_bytes": 65536,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV4": {
+      "seconds": 0.01311634696321562,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "refused_before_RQ_producer_and_MR_ref": true
+      }
+    },
+    "RECV5": {
+      "seconds": 0.013443979027215391,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "refused_before_RQ_producer_and_MR_ref": true
+      }
+    },
+    "RECV6": {
+      "seconds": 0.011708175006788224,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "rejected_before_queues": true
+      }
+    },
+    "RECV7": {
+      "seconds": 0.011007371998857707,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "rejected_before_queues": true
+      }
+    },
+    "RECV8": {
+      "seconds": 0.010964208981022239,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "rejected_before_queues": true
+      }
+    },
+    "RECV9": {
+      "seconds": 0.01156101597007364,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "rejected_before_queues": true
+      }
+    },
+    "RECV10": {
+      "seconds": 0.010738896031398326,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "rejected_before_queues": true
+      }
+    },
+    "RECV11": {
+      "seconds": 0.011579175014048815,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "rejected_before_queues": true
+      }
+    },
+    "RECV12": {
+      "seconds": 0.0116626379895024,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "rejected_before_queues": true
+      }
+    },
+    "RECV13": {
+      "seconds": 0.01307960896519944,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "refused_before_RQ_producer_and_MR_ref": true
+      }
+    },
+    "RECV14": {
+      "seconds": 0.013517523009795696,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 14,
+        "refused_before_RQ_producer_and_MR_ref": true
+      }
+    },
+    "RECV15": {
+      "seconds": 0.013608320034109056,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 15,
+        "refused_before_RQ_producer_and_MR_ref": true
+      }
+    },
+    "RECV16": {
+      "seconds": 0.01303134800400585,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 16,
+        "refused_before_RQ_producer_and_MR_ref": true
+      }
+    },
+    "RECV17": {
+      "seconds": 0.013670759974047542,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 17,
+        "refused_before_RQ_producer_and_MR_ref": true
+      }
+    },
+    "RECV18": {
+      "seconds": 0.013163210998754948,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 18,
+        "refused_before_RQ_producer_and_MR_ref": true
+      }
+    },
+    "RECV19": {
+      "seconds": 0.013738785986788571,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 19,
+        "capacity": 0,
+        "received_bytes": 0,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV20": {
+      "seconds": 0.013691711996216327,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 20,
+        "capacity": 1,
+        "received_bytes": 1,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV21": {
+      "seconds": 0.014120967010967433,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 21,
+        "capacity": 4096,
+        "received_bytes": 4095,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV22": {
+      "seconds": 0.013520037988200784,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 22,
+        "bad_full_CQ_retains_RQ_MR": true
+      }
+    },
+    "RECV23": {
+      "seconds": 0.013415693014394492,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 23,
+        "bad_full_CQ_retains_RQ_MR": true
+      }
+    },
+    "RECV24": {
+      "seconds": 0.012688908958807588,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 24,
+        "bad_full_CQ_retains_RQ_MR": true
+      }
+    },
+    "RECV25": {
+      "seconds": 0.013158811954781413,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 25,
+        "bad_full_CQ_retains_RQ_MR": true
+      }
+    },
+    "RECV26": {
+      "seconds": 0.013697438989765942,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 26,
+        "bad_full_CQ_retains_RQ_MR": true
+      }
+    },
+    "RECV27": {
+      "seconds": 0.013042313978075981,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 27,
+        "bad_full_CQ_retains_RQ_MR": true
+      }
+    },
+    "RECV28": {
+      "seconds": 0.015726584009826183,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 28,
+        "capacity": 8194,
+        "received_bytes": 8193,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV29": {
+      "seconds": 0.013886294036637992,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "ambiguous_RQ_producer_retains_MR_queue": true
+      }
+    },
+    "RECV30": {
+      "seconds": 0.013668244995642453,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 30,
+        "capacity": 8194,
+        "received_bytes": 8193,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV31": {
+      "seconds": 0.013694995024707168,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 31,
+        "capacity": 8194,
+        "received_bytes": 8193,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV32": {
+      "seconds": 0.01432337099686265,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 32,
+        "capacity": 8194,
+        "received_bytes": 8193,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV33": {
+      "seconds": 0.01448875799542293,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 33,
+        "capacity": 8194,
+        "received_bytes": 0,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV34": {
+      "seconds": 0.014115169004071504,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 34,
+        "capacity": 8194,
+        "received_bytes": 8193,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "RECV35": {
+      "seconds": 0.014515228976961225,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 35,
+        "capacity": 8194,
+        "received_bytes": 8194,
+        "independent_128_byte_RQ_oracle": true,
+        "actual_standard_RECV_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE0": {
+      "seconds": 0.013543783978093415,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "bytes": 8193,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE1": {
+      "seconds": 0.013689127983525395,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "bytes": 1048576,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE2": {
+      "seconds": 0.013220203050877899,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "bytes": 4097,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE3": {
+      "seconds": 0.013890834001358598,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "bytes": 65537,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE4": {
+      "seconds": 0.013118511997163296,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE5": {
+      "seconds": 0.013946918013971299,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE6": {
+      "seconds": 0.011581479979213327,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "rejected_before_queues": true
+      }
+    },
+    "IMMEDIATE7": {
+      "seconds": 0.011161515023559332,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "rejected_before_queues": true
+      }
+    },
+    "IMMEDIATE8": {
+      "seconds": 0.011343595979269594,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "rejected_before_queues": true
+      }
+    },
+    "IMMEDIATE9": {
+      "seconds": 0.011613258975557983,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "rejected_before_queues": true
+      }
+    },
+    "IMMEDIATE10": {
+      "seconds": 0.012950609030667692,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "IMMEDIATE11": {
+      "seconds": 0.013017030025366694,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "IMMEDIATE12": {
+      "seconds": 0.013350530003663152,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "bytes": 8193,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE13": {
+      "seconds": 0.01301717001479119,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "ambiguous_producer_retains_MR_queue": true
+      }
+    },
+    "IMMEDIATE14": {
+      "seconds": 0.01374164898879826,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 14,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE15": {
+      "seconds": 0.013756805041339248,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 15,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE16": {
+      "seconds": 0.013806533999741077,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 16,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE17": {
+      "seconds": 0.013446633995044976,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 17,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE18": {
+      "seconds": 0.01395543897524476,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 18,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE19": {
+      "seconds": 0.01400600397028029,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 19,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE20": {
+      "seconds": 0.01390710799023509,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 20,
+        "bytes": 8193,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE21": {
+      "seconds": 0.013201485038734972,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 21,
+        "bytes": 0,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE22": {
+      "seconds": 0.013119699025992304,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 22,
+        "bytes": 8193,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE23": {
+      "seconds": 0.013873443996999413,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 23,
+        "bytes": 1048576,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE24": {
+      "seconds": 0.013225929986219853,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 24,
+        "bytes": 4097,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE25": {
+      "seconds": 0.013843620021361858,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 25,
+        "bytes": 65537,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE26": {
+      "seconds": 0.013288300018757582,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 26,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE27": {
+      "seconds": 0.013748353987466544,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 27,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE28": {
+      "seconds": 0.01155947899678722,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 28,
+        "rejected_before_queues": true
+      }
+    },
+    "IMMEDIATE29": {
+      "seconds": 0.011098098009824753,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 29,
+        "rejected_before_queues": true
+      }
+    },
+    "IMMEDIATE30": {
+      "seconds": 0.010798542003612965,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 30,
+        "rejected_before_queues": true
+      }
+    },
+    "IMMEDIATE31": {
+      "seconds": 0.0117697769892402,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 31,
+        "rejected_before_queues": true
+      }
+    },
+    "IMMEDIATE32": {
+      "seconds": 0.01303504902170971,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 32,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "IMMEDIATE33": {
+      "seconds": 0.012578836001921445,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 33,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "IMMEDIATE34": {
+      "seconds": 0.01295333297457546,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 34,
+        "bytes": 8193,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE35": {
+      "seconds": 0.012169067980721593,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "ambiguous_producer_retains_MR_queue": true
+      }
+    },
+    "IMMEDIATE36": {
+      "seconds": 0.01309336896520108,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 36,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE37": {
+      "seconds": 0.01287057000445202,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 37,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE38": {
+      "seconds": 0.013518780993763357,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 38,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE39": {
+      "seconds": 0.013751706981565803,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 39,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE40": {
+      "seconds": 0.013697020011022687,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 40,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE41": {
+      "seconds": 0.013925825012847781,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 41,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "IMMEDIATE42": {
+      "seconds": 0.013705889985430986,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 42,
+        "bytes": 8193,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "IMMEDIATE43": {
+      "seconds": 0.013194989005569369,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 43,
+        "bytes": 0,
+        "actual_standard_Immediate_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "READ0": {
+      "seconds": 0.0130004080128856,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "bytes": 8193,
+        "actual_standard_READ_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "READ1": {
+      "seconds": 0.013131851970683783,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "bytes": 1048576,
+        "actual_standard_READ_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "READ2": {
+      "seconds": 0.012928679003380239,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "bytes": 4097,
+        "actual_standard_READ_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "READ3": {
+      "seconds": 0.013608599023427814,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "bytes": 65537,
+        "actual_standard_READ_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "READ4": {
+      "seconds": 0.013696460984647274,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ5": {
+      "seconds": 0.013159369002096355,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ6": {
+      "seconds": 0.011708733974955976,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "rejected_before_queues": true
+      }
+    },
+    "READ7": {
+      "seconds": 0.01179359300294891,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "rejected_before_queues": true
+      }
+    },
+    "READ8": {
+      "seconds": 0.011664033983834088,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "rejected_before_queues": true
+      }
+    },
+    "READ9": {
+      "seconds": 0.011305949999950826,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "rejected_before_queues": true
+      }
+    },
+    "READ10": {
+      "seconds": 0.010964280052576214,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "rejected_before_queues": true
+      }
+    },
+    "READ11": {
+      "seconds": 0.011517085018567741,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "rejected_before_queues": true
+      }
+    },
+    "READ12": {
+      "seconds": 0.012377828010357916,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "READ13": {
+      "seconds": 0.013132969965226948,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "READ14": {
+      "seconds": 0.01326029299525544,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 14,
+        "bytes": 8193,
+        "actual_standard_READ_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "READ15": {
+      "seconds": 0.012980921019334346,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 15,
+        "ambiguous_producer_retains_full_MR_queue": true
+      }
+    },
+    "READ16": {
+      "seconds": 0.01395041000796482,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 16,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ17": {
+      "seconds": 0.013623266015201807,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 17,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ18": {
+      "seconds": 0.013747166958637536,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 18,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ19": {
+      "seconds": 0.01271000102860853,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 19,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ20": {
+      "seconds": 0.013858356978744268,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 20,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ21": {
+      "seconds": 0.013732360035646707,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 21,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ22": {
+      "seconds": 0.013766304007731378,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 22,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "READ23": {
+      "seconds": 0.013800038024783134,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 23,
+        "bytes": 65,
+        "actual_standard_READ_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "READ24": {
+      "seconds": 0.013827836024574935,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 24,
+        "bytes": 0,
+        "actual_standard_READ_callbacks_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Large0": {
+      "seconds": 0.013923520047683269,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "bytes": 8193,
+        "actual_standard_callbacks_and_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Large1": {
+      "seconds": 0.013610903988592327,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "bytes": 8193,
+        "actual_standard_callbacks_and_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Large2": {
+      "seconds": 0.013336212025023997,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "bytes": 1048576,
+        "actual_standard_callbacks_and_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Large3": {
+      "seconds": 0.014013688021805137,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "bytes": 1048576,
+        "actual_standard_callbacks_and_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Large4": {
+      "seconds": 0.013928689004387707,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "Large5": {
+      "seconds": 0.012864074029494077,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "Large6": {
+      "seconds": 0.011041805031709373,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "rejected_before_queues": true
+      }
+    },
+    "Large7": {
+      "seconds": 0.011410854000132531,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "rejected_before_queues": true
+      }
+    },
+    "Large8": {
+      "seconds": 0.011764747963752598,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "rejected_before_queues": true
+      }
+    },
+    "Large9": {
+      "seconds": 0.011938308016397059,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "rejected_before_queues": true
+      }
+    },
+    "Large10": {
+      "seconds": 0.011125196993816644,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "rejected_before_queues": true
+      }
+    },
+    "Large11": {
+      "seconds": 0.011128688987810165,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "rejected_before_queues": true
+      }
+    },
+    "Large12": {
+      "seconds": 0.013493428006768227,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "Large13": {
+      "seconds": 0.012427975947503,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "wrong_full_owner_retains_MR_queue_CQ": true
+      }
+    },
+    "Large14": {
+      "seconds": 0.014151975978165865,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 14,
+        "bytes": 8193,
+        "actual_standard_callbacks_and_refs": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Large15": {
+      "seconds": 0.013248350005596876,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 15,
+        "ambiguous_producer_retains_full_MR_queue": true
+      }
+    },
+    "Large16": {
+      "seconds": 0.013638840988278389,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 16,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "Large17": {
+      "seconds": 0.013189612014684826,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 17,
+        "refused_before_producer_and_MR_ref": true
+      }
+    },
+    "Zero0": {
+      "seconds": 0.01406984101049602,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero1": {
+      "seconds": 0.013907736050896347,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero2": {
+      "seconds": 0.014113143959548324,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero3": {
+      "seconds": 0.014158751990180463,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero4": {
+      "seconds": 0.014100851956754923,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero5": {
+      "seconds": 0.014012708968948573,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "legacy_zero_refused_before_post": true
+      }
+    },
+    "Zero6": {
+      "seconds": 0.013402213982772082,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "mismatched_offset_retains_queue_and_CQ": true
+      }
+    },
+    "Zero7": {
+      "seconds": 0.013797315012197942,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "actual_RECV_zero_length_WC": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero8": {
+      "seconds": 0.014392236014828086,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "actual_RECV_zero_length_WC": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Zero9": {
+      "seconds": 0.01315608702134341,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "actual_standard_zero_SQ_CQ": true,
+        "no_registered_MR": true,
+        "no_local_reference": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access0": {
+      "seconds": 0.01277495501562953,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 14,
+        "MR_access": 15,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access1": {
+      "seconds": 0.014017878042068332,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 15,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access2": {
+      "seconds": 0.013807790994178504,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": true,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access3": {
+      "seconds": 0.014085415983572602,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access4": {
+      "seconds": 0.014038202993106097,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access5": {
+      "seconds": 0.013771402009297162,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access6": {
+      "seconds": 0.01407382299657911,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Access7": {
+      "seconds": 0.013962492987047881,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "actual_standard_MR_QP_SQ_CQ_callbacks": true,
+        "QP_access": 6,
+        "MR_access": 7,
+        "legacy_remote_Atomic_refused": false,
+        "Linux_HW_boundaries_modeled": true
+      }
+    },
+    "Atomic0": {
+      "seconds": 0.013981909025460482,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 0,
+        "actual_standard_callbacks": true,
+        "two_128_byte_rings": true,
+        "full_operands_and_result_permissions": true,
+        "exact_bad_WR_tail": true,
+        "actual_CQ_MR_ref_lifecycle": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "Atomic1": {
+      "seconds": 0.01323850202606991,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 1,
+        "actual_standard_callbacks": true,
+        "two_128_byte_rings": true,
+        "full_operands_and_result_permissions": true,
+        "exact_bad_WR_tail": true,
+        "actual_CQ_MR_ref_lifecycle": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "Atomic2": {
+      "seconds": 0.013776082021649927,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 2,
+        "result_LOCAL_WRITE_required": true
+      }
+    },
+    "Atomic3": {
+      "seconds": 0.013509212993085384,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 3,
+        "operand_mismatch_retains_owners": true,
+        "owners_intentionally_retained": true
+      }
+    },
+    "Atomic4": {
+      "seconds": 0.012765177001710981,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 4,
+        "operand_mismatch_retains_owners": true,
+        "owners_intentionally_retained": true
+      }
+    },
+    "Atomic5": {
+      "seconds": 0.013285437016747892,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 5,
+        "actual_standard_callbacks": true,
+        "two_128_byte_rings": true,
+        "full_operands_and_result_permissions": true,
+        "exact_bad_WR_tail": true,
+        "actual_CQ_MR_ref_lifecycle": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "Atomic6": {
+      "seconds": 0.014055663021281362,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 6,
+        "actual_standard_callbacks": true,
+        "two_128_byte_rings": true,
+        "full_operands_and_result_permissions": true,
+        "exact_bad_WR_tail": true,
+        "actual_CQ_MR_ref_lifecycle": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "Atomic7": {
+      "seconds": 0.014115240017417818,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 7,
+        "actual_standard_callbacks": true,
+        "two_128_byte_rings": true,
+        "full_operands_and_result_permissions": true,
+        "exact_bad_WR_tail": true,
+        "actual_CQ_MR_ref_lifecycle": true,
+        "Linux_Hardware_boundaries_modeled": true
+      }
+    },
+    "Atomic8": {
+      "seconds": 0.013385032012593001,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 8,
+        "normal_READ_SEND_IMM_preserved": true
+      }
+    },
+    "Atomic9": {
+      "seconds": 0.013770703983027488,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 9,
+        "legacy_still_refuses_Atomic": true
+      }
+    },
+    "Atomic10": {
+      "seconds": 0.011826000001747161,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 10,
+        "rejected_before_queues": true
+      }
+    },
+    "Atomic11": {
+      "seconds": 0.011680797033477575,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 11,
+        "rejected_before_queues": true
+      }
+    },
+    "Atomic12": {
+      "seconds": 0.011422448034863919,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 12,
+        "rejected_before_queues": true
+      }
+    },
+    "Atomic13": {
+      "seconds": 0.01199802296468988,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "case": 13,
+        "rejected_before_queues": true
+      }
+    },
+    "Legacy0": {
+      "seconds": 0.012291712977457792,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "completed_WRs": 2,
+        "notifications": 1,
+        "TX_PSN": 0,
+        "payload_CPU_copy": false,
+        "retry_policy_actual_transport": false
+      }
+    },
+    "Legacy1": {
+      "seconds": 0.011785909999161959,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "completed_WRs": 1,
+        "notifications": 1,
+        "TX_PSN": 0,
+        "payload_CPU_copy": false,
+        "retry_policy_actual_transport": false
+      }
+    },
+    "Legacy2": {
+      "seconds": 0.011044039973057806,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "failed_MR_retained_until_real_cleanup_model": true
+      }
+    },
+    "Legacy3": {
+      "seconds": 0.007491553027648479,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "unknown_QP_close_retains_SQ_PD_CQ": true
+      }
+    },
+    "Legacy4": {
+      "seconds": 0.012205036997329444,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "failed_QP_creation_owns_cleanup_handle_and_PD": true
+      }
+    },
+    "Legacy5": {
+      "seconds": 0.011899264995008707,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "completed_WRs": 2,
+        "notifications": 1,
+        "TX_PSN": 9022413,
+        "payload_CPU_copy": false,
+        "retry_policy_actual_transport": false
+      }
+    },
+    "Legacy6": {
+      "seconds": 0.012244918034411967,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "completed_WRs": 2,
+        "notifications": 1,
+        "TX_PSN": 9022413,
+        "payload_CPU_copy": false,
+        "retry_policy_actual_transport": true
+      }
+    },
+    "Legacy7": {
+      "seconds": 0.007083810982294381,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "retry_bad_epoch_retains_full_SQ_PD_CQ_owner": true
+      }
+    },
+    "Legacy8": {
+      "seconds": 0.01239773299312219,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "SEND_base_WR_no_overread": true,
+        "real_SQ_and_CQ_path": true,
+        "modeled_core_completion": true
+      }
+    },
+    "Legacy9": {
+      "seconds": 0.007145202020183206,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "real_post_recv_coherent_WQEs": true,
+        "exact_bad_wr": true,
+        "receive_quota": true,
+        "CQ_unproved_references_retained": true
+      }
+    },
+    "Legacy10": {
+      "seconds": 0.007578018005006015,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "real_post_recv_coherent_WQEs": true,
+        "exact_bad_wr": true,
+        "receive_quota": true,
+        "CQ_unproved_references_retained": true
+      }
+    },
+    "Legacy11": {
+      "seconds": 0.00752326101064682,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "real_post_recv_coherent_WQEs": true,
+        "exact_bad_wr": true,
+        "receive_quota": true,
+        "CQ_unproved_references_retained": true
+      }
+    },
+    "Legacy12": {
+      "seconds": 0.012089027964975685,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "RECV_completions": 3,
+        "SEND_completions": 1,
+        "distinct_recv_cq": true,
+        "posted_capacity": 128,
+        "received_bytes": 65,
+        "receive_quota_reused": true,
+        "hardware_completion_producer_modeled": true
+      }
+    },
+    "Legacy13": {
+      "seconds": 0.012678082042839378,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "RECV_completions": 3,
+        "SEND_completions": 1,
+        "distinct_recv_cq": true,
+        "posted_capacity": 128,
+        "received_bytes": 65,
+        "receive_quota_reused": true,
+        "hardware_completion_producer_modeled": true
+      }
+    },
+    "Legacy14": {
+      "seconds": 0.014785240986384451,
+      "exit": 0,
+      "summary": {
+        "pass_test": true,
+        "actual_callbacks": true,
+        "independent_physical_queues": true,
+        "SEND_before_RECV_same_WQE_sequence": true,
+        "SEND_completions": 2,
+        "RECV_completions": 2,
+        "hardware_completion_producer_modeled": true
+      }
+    }
+  },
+  "compiler_command": [
+    "cc",
+    "-std=c11",
+    "-D_GNU_SOURCE",
+    "-D__KERNEL__",
+    "-O1",
+    "-g",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pthread",
+    "-fsanitize=address,undefined",
+    "-fno-sanitize-recover=undefined",
+    "-I",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/include",
+    "-I",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models",
+    "-I",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel",
+    "-include",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_atomic128_model.h",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/mr.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/mr_contract.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/sq.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/sq_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/sq_hw.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/cq_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/cq_hw.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/cq.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/rnic_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/qp_hw.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/retry_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_atomic.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_atomic_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_zero.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_zero_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_segmented.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_segmented_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_segmented_read.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_segmented_read_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_segmented_immediate.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_segmented_immediate_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/wqe_segmented_receive.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/verbs_segmented_receive_wqe.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/fatal_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/kernel/fatal_verbs.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/kernel_queue_model.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/models/kernel_fatal_flush_cases.c",
+    "-o",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/build/fatal-flush-callbacks-cleh83n0/cases"
+  ],
+  "compile_seconds": 9.120375132013578,
+  "source_unchanged": true,
+  "fatal_cases": 18,
+  "all202_prior_cases_retained": true,
+  "per_RQ_flush_cases": 16,
+  "all220_prior_cases_retained": true,
+  "WRITE_receive_cases": 32,
+  "all170_prior_cases_retained": true,
+  "RECV_cases": 36,
+  "all134_prior_cases_retained": true,
+  "Immediate_cases": 44,
+  "READ_cases": 25,
+  "large_cases": 18,
+  "zero_cases": 10,
+  "access_permission_cases": 8,
+  "Atomic_and_geometry_cases": 14,
+  "legacy_cases": 15,
+  "artifact_sha256": {
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Legacy10.log": "8682d02b9925aa37262e842af1993870ca0eebaaad54289e097c8808438d8228",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV33.log": "7fa8a138c3223bd0ab2696df12751aa90b772603cc98457984837f4d5d973ea0",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV5.log": "2c95c11dabc87e2337a87553d2d5fc216f83f0f2ba0d60c899536ce53861eaea",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FLUSH11.log": "936317fc667a7365ba9f196ab69679beac52c96a9ddfb823be350e23af8c5d23",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large1.log": "1cdcfc7073fead3fe66b699e75b09308e33b21f6668afdc1e2c80c45d406b557",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Atomic12.log": "72b04569d6a3920da7205d39faaa95aeb3079e2c0d33988d1302f01917ecd219",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV0.log": "6008fd1bc05f1748a39ba3bf5f4665988fb3863783aa87fa648a4b0c4ac266e9",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ18.log": "278ee5da5bef6b3930504706e38be3ccf8450f66a4b74fd6f2bbbef7f5227284",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Legacy14.log": "a9e4f20c09bbad668c3ccdd346043fe9da42ac285b6f80fba1839fc78f4611d2",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Zero6.log": "292d4ff0fdc7d4816075f4edcfdbe10ec68fdc0023c3968f5a69c034100dce49",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE2.log": "7a5699b0d83042e900d32ae1c1aac720b955205c193099c1868512c1c442f1f0",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Legacy6.log": "0ddec3b6c2173276c47373f6ec6c45396348ca53ff0b685290efe1008f1a280e",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV27.log": "953a757e07b93df9e678d195dfa349ceb937ab80ec99fce3fd92fe2634fa7b23",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL3.log": "7c294469ac5db1f73bf40a833de107f282f73d2455b806bc35905e7ce4927ba0",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ23.log": "926c6ce410389321d92924b1dbfe408f97ee519d87cf286a66439044b695b024",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large6.log": "6b1373db49968e460d652ac4db97d92b764a82e2b83bce9b693115163469bad6",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ17.log": "51ee023a3736458e389a099cb9c80d7c76099d022c57a4b1c936a40bc2fa8921",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Legacy8.log": "c9cf0c1215796c485fcdab16c08fe5b937a4b530ffe90a69467163b87ddeffdd",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV7.log": "238f6862691b1c7ea9b69e298a6632716af8eb8625881329d2a485274ab99b26",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE37.log": "a19e8768bb4b1776d501d7c4390a306458d3ce26e9a2a2edb7b85235191a0714",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Legacy2.log": "6936972f5bedefb8e706b510839c43ce1e40c3834ccbf4090a649fcf40ce9d4e",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FLUSH10.log": "3d0a4eda51e476b1dc9c046ce208137d0287c9eff0847bf35639a318c0f94893",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL13.log": "59dba00208801ba2c46b7acc7fe96cbfaba410ca8c3fa45b334b51ddccb2e355",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ1.log": "b2469bac01016cb468d38cad828771faf0f686efd80b4a9ea3102d3899e28cf4",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Legacy7.log": "062d94f71e6a42d2b447c20d756af039395a989f320774bba022ef76b9b1fff9",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV13.log": "f2c642930fb66a55e18438ae24a2696e2786ee8f6749f04478f75aeb618ad179",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV2.log": "eacadc8e89fd5599dd4231cb893505bb8a093c2eb7a95075cc14eb1ad89137be",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Atomic9.log": "fea6e9cae43e7864b321c646b0a883932f2dea9a519c9787a86ac78cf55f20ee",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large13.log": "6bdc309bcf93d33d2b6bd8d095f4abc3cfab87b85b94290c70c606a68237199b",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL7.log": "7e0bd4995d884fe0ae08c9a6113ec51e94dd4edb17139c2c3c77cadc246de6f2",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Atomic8.log": "359eddba8aed10da1da80e157b81a3fa215f95a4eb17c9613800b71598a92c6a",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE41.log": "3a5c415abe763d1e46bbcedcf92d3dfdba70524f09597f8ecf46da9e1c9108da",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE15.log": "605c87ae2bc92fc2b31b7e635d6c5c93edfad077c68a632b5c01eeb6822594ce",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV18.log": "98605a093c26cb84d8dc160aebe9f8ea7457d69bbcd811448ad7febeafc3ef42",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE6.log": "3dcbaccac2808372cae1b3670041139620e73707098dd3e06ea73593d41a7c88",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV3.log": "54d4697bb43410b4c3a66eca5c3fc19fdbc4a4d6400bc17ac7cbf62b68937883",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE26.log": "09b98280c4c43bb60371d94d3172833277df8b8364a70707ceab27f57c441f90",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Atomic10.log": "c64d383af4377774dcb6eb901f1f3c81318fd5e92bf2d7d4fdad8336eb73b742",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL2.log": "5b78283210d966bad0a138926cb2e18731ab220b32611103d90b35c15e39804e",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Zero1.log": "33dd9b04c5b3a0573cc694859fb98d311db013f2304afcfebe8455bc5e7a2199",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV29.log": "2b42a7979986c02c420c09b84f065ecd21949e9d05b6c9831dc70195b4f701ef",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FLUSH2.log": "33294c4b10ce041665d8405d16dae641c933df8b60dc912822cd7333cc1d13a6",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Atomic5.log": "62b77f8d71ecdc5357687794f9c7201e463864c67ef394a189a7965b88336026",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV10.log": "41ff8aeb8fd67b91cd33c9203d1da50af8e8d4d09a9d015d10f0154752d214e7",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV6.log": "b2242515299add5e6b8c7f271b0b05a632e7a70320740f1bb26709e79402466d",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Legacy13.log": "567b92a639a0d071281111b4c721d4f01525d6755c9123574f47574521fe60bf",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Atomic1.log": "e13d41cba55b3d7061c17e0dc7d77d67b2da04a9a81a39c228d34a51cfc47efe",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large8.log": "240fac5456b3cbc7516cafd58348b84cc4d85cfdfc513fd1204473593a2d34a4",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV8.log": "2249551c00ae54e7bc379981eba99d1602e26c8f23e61f725b9025e67acb0984",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large2.log": "c8f4d68e7665125e91a9dcf13bb2becee31981644ed82944fdbe47c4678f6f5d",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV34.log": "e22117009700c8286fd438effe30024f0560a4d0ae4bf2ac0fa13c509143abf3",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FLUSH4.log": "b7ca153c98b1e376abe579de9c9c587ea3dbcd4031145c1760dc9c03c6aaf273",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE36.log": "5f6be67b7f8ea6c0989f66b42f61131ec33bc418676f229e8191e14154b9ff23",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FLUSH1.log": "850d5084dedcb783b6501a4d65c68ca7d019b931b4cdbbe801053fdc6c3f5de3",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Atomic6.log": "609204219f8b03e0b2522ab8edbf77c008b778f651d1f21026c58f0e8b6f8c4e",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV16.log": "35ae875795e5678bb404ffeeffd38414c3e43b123a62b7cb9a12990699c68a00",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Legacy12.log": "567b92a639a0d071281111b4c721d4f01525d6755c9123574f47574521fe60bf",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large7.log": "27f359f9a5b1e3d9737b1e57adf1284ac16a11498a019de0773a460aeda205f5",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Atomic4.log": "b4ef23ec78f4ae0bb4845453b976ed9202cae58c13a63ef43a64018f0cce26fa",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL6.log": "dc954039740c1122ed7d15e98a97e89d869c98f7e9c4eb23622b0fbb5c05d5dd",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV14.log": "2a22209a65ceb4d694b42db3804e5a7dc2f6af9461b5824756d5104a070caaa6",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Zero8.log": "23961173ff416fb69a0d41583f7c8d95a7c8e7d1a59d819b6d98184a3b03e777",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV26.log": "882b740e3c87bb0b239f31e05effa01503adbf3a35d679867b4e92486d8130bc",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE21.log": "eeb71f7f5abb4ce75c9b3354b3476042d14488b174be6e3d493900d14c0f80a3",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Legacy3.log": "1c564adbf80a9274c6a8bba7702acfecd1e24b0fdabf21b88eb3c0f3810585e6",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL4.log": "228370056be9de754bc7a70b52e00ed52afd2a395380ea8af08794823dfdb412",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE40.log": "5645888cbb07b5f3d293d63fe093b4b15edf041fe520cbd98a839b82819cbc16",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE1.log": "d941bb3713dc2c16a41c6f5328d1d9027d9965f524ab1b4cd41e84a09860dc00",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV28.log": "c029de4e1961066686596b1a9c9f4701293aa378f78a4443ccd2961905d301fb",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large15.log": "028433c850b482b016790ce73f0ea5f6b6b28c8163422cd5d9f6f990d9ee2cc5",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FLUSH13.log": "a248af52247d371e3cfd4dd5434024b932c033ccf1bde662ed33c5bddcc8344d",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large11.log": "fda79041271b361257533686c4df9a4a72a58b44f16f020d6fc12ad8c2ba3052",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ9.log": "6234284ec67390960e9959db3e51b532502daffa18de0537875ee6165e49c501",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV19.log": "207ae5051a37878c3edfbffa933a18ad5e4265fc1f834951f31dd53d35f43ac4",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE29.log": "c5d23d95a991a310912bacb8fa4cd0d96a1a6bcd7fc3a8d3613b5c61078f4f73",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE13.log": "a64b3fea3cb644383875e74bbf0db9525dbbf18a834896fe6139f6acc00a7927",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large16.log": "ad9c4cd5a209713e205cad1b2d5623a353434b7d206db0a406ee3c96cbed3567",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV22.log": "0cd5b6be86a4e0f74bdf307fa4757f586e15a3a10c51d74904f4fb2e874473fe",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Access7.log": "5cc887b94f9f20d499d9f475ef4940352ae7fee3e4ec61c50082dd85cadf6088",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE12.log": "c69bd7157a91de96635bfafa59927fba2fc952bb116170e69efa5b3bffa972df",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Legacy5.log": "709e7425bdbda732f8ce0d5e1c47bcb6e0f158fbcb17da4567f5fa378c758a91",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ8.log": "3af53fc9a0b15b517be5d15104da25e3936d78b4ebf31d601025418dc2fd8f25",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV17.log": "454b7ba9d6b1071a6ae34be9490ad45681e75a7875e5dff061575e0128925153",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV4.log": "9023f11c7ae3de9a00ce9e6f402ec9382dce97a9acf25484c8295ea4ccf5c048",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV11.log": "6eba023c9fd1b2e05701e34d05c3773cfcf472e2b055aaa11291e7ee39823b9f",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV25.log": "2d3057db6cf02054628db154a1656596a12c587d1102a1bdcd434c70aceacea3",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Atomic0.log": "24126c36daecacc399126656ba692a3a61570188a8f4067ed69b1d890092ff58",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ24.log": "789ade6b4570458a1f881c8482d2f0c949761bdcde7f2fed65b7d7e652c5d8ea",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV12.log": "f073b89e0bee032eeb10185b99422c2c46bc0172912420c6e60c079c3dceebd1",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV21.log": "e970a65e0a316800ea6c884a4454abab50dd75c86e113ef2af81cace4459c582",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large0.log": "0022204bf321f44aa1f92df1fcfc948121375fdd93537054206b546fd77d4e9e",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE18.log": "ea3cfe72c836c021a3ee8ac381c1638e05821e21a54eea4e9e5238e655604084",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Access3.log": "90a904d748fd7ca613c52e25f91139d29b92ba8022a19de49dd8fd401325b990",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ10.log": "f50d4cb83793ede7f5a4c8f36e555cdc6157450ba52b44a64688154ec7ac5103",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL12.log": "6e8ffcfa949cca2207094f19104178da516a6fc0acc782d95ab29dcd9adae5dc",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV17.log": "7af4dfa3b1d4200eb7b07d7d70ea11c19eca003fcc7dcc941531e7d2979e86a0",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV31.log": "42ef9ab8065e1a94b3ce5fa031a262a7ae488a3e5b3d2a1a17ce6f0b140cf3f7",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV31.log": "e5ea8432f30f07f7aaed34365ab7ecdef5f58a7877c4cda57c402ce6e29f60d7",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV11.log": "d2a2b0ce3d33a2a20e6092b4ad8d203e5a271d70c211a2358626ff13511f5d44",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV7.log": "d90e5e5afcfa828408f760975cc5f350a3e72721d85d316f447be8b35ab4004d",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV12.log": "437ac4536177888d77471743a66a2fd3bbdd4051e9956409e1236c3151fa6bd9",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV29.log": "a7a1c3120fdf160caaf3e9f2eea983d0a6e0839da489064da269b0ae4dc74969",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE25.log": "ac82364b91d7c7a574003613a069af85515606b61bcb02dc9513287f25afc570",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Atomic13.log": "7f983718f6332d72aa13baa61cedabc08c6ce7e664ac5c766adcd762428c08c9",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV24.log": "5d9816b416d67fec18afaaa5cc126e44764e28f3036fba1bb83e40cbc380dd4c",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE10.log": "e958c0e595f839a8496529dcac44d726d3d0d7eaae23a16936780e598bd67bc2",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV15.log": "4b587795b2e9881659a4e934c50f4200732cba7a1bc203d15e152144c5188b0b",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL10.log": "60af5c027e7c2b7029bc55a8a7314bf9af5522877891ebf5b561f284a0bd38db",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Legacy11.log": "8682d02b9925aa37262e842af1993870ca0eebaaad54289e097c8808438d8228",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE20.log": "df81d04f376b521bc6b9c28a1108ed4063402d22a1f89b5c96e4f1cd71f4168e",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL14.log": "60b189b5029f84f439c73c92715451e24357a6aaf083c3c1cbb15096dfd9c3f6",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE30.log": "6fb409f0d75214b97d5d7da763e8065d988a4cf53d004299adadf9040e79c281",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL16.log": "fe8dbd0fda76c54ac98bae0c4a0b41859866df1744f77e04458a3d524a62a16a",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ2.log": "bfad30c8f4cca99d6a5724a6b780e62ad6da40ce085c4dc9aa8a712ee31079f6",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ21.log": "b1de04289826cce9a88197e0802f787e48b48bef3f335f1a0a081d7c039dbe44",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE38.log": "20afcbdfc33ef5387b0fd8b4374ad85ca6ab3bfca67fafcb3db09bef08d45b90",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Zero3.log": "ae50d93dbdf457b302191b85afb48c166e591e6e28eb492bc6dc1de62543ba60",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Zero4.log": "2b0837574497fee4661e0658094286c1b341cca907c49059c80dd473ce56a510",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE9.log": "9e3d27a0b8826a1bdc1f07041718cb59f80a3943db565d0954a341cde6163319",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV3.log": "58d42000b4f275da28534fa85b9e5fa89e846d05fdd8bd2da58cc4b8f645f7dd",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FLUSH12.log": "4b1399c7383387a39fa542a20544e728b87a0d3656f0439cd4594fee7f7f2c73",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Zero5.log": "e2e98b52c891e71027ddf8ab208c9f7dd1d0b15a4a1e3c45a94457cc88c46ea4",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV20.log": "f540b829446a1dbdec45b16e1d57d328a4c659aa9968eb687b16b6895f15685a",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE35.log": "a64b3fea3cb644383875e74bbf0db9525dbbf18a834896fe6139f6acc00a7927",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ15.log": "2692553bb662aec85bf9ae713eba5396bfa4a80481b83844b74a0b4b9571a853",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Legacy1.log": "d3ee11ca1a0d2e35037c3d05602bb26ee5bb472ab202f1246093bd3baf3db05e",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV13.log": "8ddd4cbd5c3a6985885956776e317c12be44db08d22b6b62845f95c0a0478686",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL15.log": "af64eb03efbeb8561cfc268b868f860a6ae15dbc9e098bc51a6aa0947c56bda2",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV8.log": "57777cf48a68b4bcd9b607744ff80be0c80c4f0bf046a23455763ff64f0337c8",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV10.log": "75b1a610c47cbd2ace7a10d17c94a980134f61ae52bb47f27f71943f355e3b7e",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large4.log": "f172b09909f62ab1e195d568a5d965c9cd563d72c34f509df8cce783bc37c91a",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE31.log": "a14b10f63f2fddcd5770655ae7cf58f012d0ace2c619e6aa5def7d7a630f1684",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE19.log": "c0750b965a21b2bbace9e2ca58e4cbcb3f30b8bb52e80ca146e9f7b9c8fea9f2",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL8.log": "bc1f22e7ff480882a2b310074d76751460cb99c479eb39f27c7456c9afa235b6",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Atomic3.log": "7c811a80d267d88419b75413e12f14ce715f16f6127b65c0dd56a682d091e972",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV23.log": "8df7cc66585c0d7dc53c77ee218081d90ec0d144098164280cf2291ea53c1fc1",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL11.log": "cf809c0a940dcb1e2e6a485fee02a894238082d38ca2c25298fc6ef139283f1f",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV5.log": "34ee33887800e2c89609f98a9d5f14d97362c36a7f4535a3b3c22f7294a41dc9",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Access4.log": "f8ef985da191788f94a7106dc82d69001796a525ec00aaf3a7a8c5fe40f0f1d9",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ22.log": "36e71e3f6893f48c79fe159001493759609f7a49a5074eb49129cdd2fe8ddf72",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ20.log": "c05d9393fe81b2d59b0c4c1c2f708fae5cc3fbb35e184c414045763965a02515",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ6.log": "6b306fc5352d00fd05e2510d795447729cbcdfd60892be457494cded203ae63d",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV0.log": "4a0df04ca351b650f5fceea344c3aeb97641d49f6225db242fe67eb7d6fdf1f5",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV20.log": "61df09989b6458ad55ea946783d7802f291c98220eca6c4af774c3a0598dfe72",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV25.log": "79e3439aa3e3ac2b59de2d309516ad9fad16e6b8daafc1ecd02ab0ceca00983f",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Access5.log": "811a0910b1806b74c915909f09f5a8b61c85cc3bc879383820b79b3d7610e670",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large9.log": "b4599ae2cfb1a4ce35317845d6e9b8ad7960c557acffb827472c1f0d8a9d8b67",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV21.log": "c1dcf6f78b5f55937305e9c19feeba002c53ad1a565e1027962e868476e84a56",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE33.log": "da493d56cf83116b5a652a773a2de2f273acdbca01b06ace50b5ecd776adc98a",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV4.log": "9808bae9440e0dd732dedf6e79d1fc70a5e47a334712ea0fd73c7ab60623d29e",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV18.log": "aabf8e574c6e110bcdec417d1156104aabd2446da369295e9ce335cd7347cc85",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV35.log": "cec9cf7e41432d9ec95aef9c2f717ed62e76c3b4eb81ba267eca0b4020c9433a",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ14.log": "57a75a2b31150b0d6be02ea96735adf83075cf7ffe0b3777d218897f158c12f0",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ12.log": "4ddba7a8ae34c5fc77a9e4ce81fa09a9973b3ed43cfa4078950e0a1a5bd486a1",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/cases": "eae68c7399f2eb9bf872ad425d32a9dc5d9ad2f6234bf5ef0cf4bf1fcc227ef9",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV16.log": "91412d6c8f77e31a00aa9ce81d27185932e846d5e7d36d8914948aa725ef4aaf",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Zero2.log": "33b53cd83c11e6efc579f0ec386cdc9de66b57cd7a90559c58d8357627afe59e",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV30.log": "8013f54619ecb8636d0c8590c6264099873d51b100fbc14c28fe859b230e86c4",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV1.log": "b616a2fa0988cb2d05ae339e2777f69cc2945d64abdede15ffb0f3afb49500d3",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE24.log": "43a9c7dae37caf47dd6490bacef64675310e61c5154802ea40fc5d9bb31bad38",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FLUSH0.log": "24cb1890a610642a75664a9a9127b6bbc2385627bc63bc443f62b5e6d32cf9a1",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FLUSH9.log": "42c6159cd50b56695f3ab98bb25dc30a69cf12f780e1f04876e142ec7fcd6a4f",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV26.log": "f687f28a59e4964e7977ee23691031638e3f68592d36f2c5f48dc40b8708901f",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Legacy9.log": "8682d02b9925aa37262e842af1993870ca0eebaaad54289e097c8808438d8228",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE23.log": "e59890e9ef1e3a63f4852bf0a4723e448c56d23e24d8c652dd9100f3eaef8ea6",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Atomic11.log": "5ebe987529a9e7c92ac5b6fc564ff7793342bae8fbee4feb950540132c7ea6f5",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Atomic2.log": "374b266169843c052653ba651f3ff27b9faed157d738eaf42784ed711a063962",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE0.log": "9432346b6256a279a26b5420824a695b3019e8076067929388fbbf2f6f91391f",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FLUSH8.log": "c78bab66862b373677e514de04445eff59afcd0864f522ada98413fd276dedec",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE27.log": "4ab0d815adfb0b1ac5bfe0a1760b712e80b4f5676ffb186b2c1fc70bbc7e02a8",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Legacy0.log": "9e9f28a1f3422fc7923bee8b9a3d14202f48135f96727dd9883d65d0b8423617",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV9.log": "d2fd70a87f497d23b6378b17f11b62d0301b2b92ad3fcb47659e3e712dec710c",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large3.log": "c4b310aa4a09108bc31ad9f88dba22e371a662c901c574520a56ace44200c4b2",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL1.log": "86aad0c4a324b1f69fab6809a187a259df4bfc356d4005873a3d81e54b5b654d",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV23.log": "df6f19a018591c3d60f1f6822b9de0858ff5b2b9e1dce08abc84e27287b8b741",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL5.log": "237d66489518b26133e293d36a9fb27f05cd6609b8a5692a6214300ac098b06c",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Access0.log": "79d6c6a56cd60263098838c219435cec4489bb98d9d385594975b84d6115643a",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ16.log": "4db706fd7f20a9be5883addb464c0f28e93609043d221a25c0d80de24094ccdf",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV19.log": "d298e463fe4ac8058df60f1ede54b5c3fa9d9ebc70fe443665ccc270b2d9d84b",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FLUSH5.log": "88fda01bdc778db830d91e9062ba7d3c70ddac0051aee42d3c18d60fe0dabebc",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large14.log": "a040d2f0f8e8a5b1b41f8c1ca0d0fd40b72902d4f50b1e0bf1fa89df76237586",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV14.log": "7e770b701eea7548c4ff15795ca5ac88310c98b6e9749058bf0abad4cf750adc",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE3.log": "3ee243b912e2c5ccec9b5ed9737f4c0b9401d2f81e32979174d8fecc7c0bc0fb",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ3.log": "3e6c7a72636568696ff00de71f838a2e34e7097eb2f5ca355e1489f2518e83ab",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FLUSH14.log": "deaa5a96023be24bb4df43f6fcec33b3864ec8075ef7d83a93bd903e4b0ee4e3",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Zero0.log": "a962615821b192bee86b70d599a332a5365257647f0ad6b5e31dc5620692a53f",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE17.log": "7afd97b58009333cf22b3af5760c32679803a6fbdf24bb1dd58a4b79b197a76c",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE11.log": "c9f5a4558344654a1423ba9c55d85b0c57730dc5fa26abbc57618a59e25d443a",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ13.log": "520559306567c6c1a4e20a8c934abe3c93046975f8f711759f51b7ca698d898d",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ4.log": "6f05556d421765e8e97970ec4f0c0fc6fda46f46a35503e04c1fb94dd8dcec8d",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV24.log": "18e83807b5199b827edd6840fb8114bf22f14f24cfaebb2fda420941dbaee03b",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV6.log": "e6b283e48d33ebbdec25f79877f85d4975f12fb548d410913ca7875dd5532484",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL0.log": "db15fc2302a3f2659bd8787c294d42b3997fbd801423f9d4aab0327d15328822",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Legacy4.log": "0ea1d252507ed42c16a8408b0140fa3ef43da1d61975bb73e16ea626ace42386",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE22.log": "586f62b05169721c54bfc3034e8b82afbd462de61c2fcc750dca2d47c7ffbd92",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ7.log": "a72d11f38e0bd218bdfb5897430710cfd522e82e7a8fcce2c47d64f95bbf3bb0",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FLUSH6.log": "1a56202b0a2858863408acc8c78044b99fa52f8eadf963e9a3d3741c7c3564e9",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE42.log": "b01bbde8f0350b295ee220f2a673cca576e6c91efdf0d4a575bd2b22bbdb35b3",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Atomic7.log": "30e397d5aa168b8ae1b139ba69b9d2ce11d6c29c6be28ee1e323d18bfb8a7bf7",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE8.log": "979905fe87d7bb990d3eb1f6fa8b95ec9fd72c4a97d0d7bcd4f6fcba22cf64bf",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE32.log": "7e6fee2204d5e038a18abe9f49e90c9304d68162d2493892613663ec96738d7a",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Access6.log": "a621de8376d95705c9def3086e0de89961cda7825fd0f647fc065486513c131a",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV28.log": "34644c4101117e2417138fb982e722b33ccec36b38a37dd02c734fdcc68465ae",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV22.log": "8ca601830b060a6ec06b7ea7aa054589ec06a429eb8b6259306c009ca1abc091",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Zero9.log": "6dafbb4d024bee9d1ee25446fd7287e04873e88c07534431ac334b0b372a17cc",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL17.log": "17cf04ef165d28492d13e6e03ce1c86328ee06802d7c6e87db83a6022d0e1165",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Access1.log": "a2e5ee526826bafd9421d25656cc537ad653f6223f1bff972ac0dff1ec3b8224",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV1.log": "1241ab4aef9a65b9761cc0cc4e5e7530081e14e80e2456e95c0a39df02cba744",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FLUSH15.log": "4fb583becad265474771925c7411089b761140b699be3b699b3c592e4d5b012e",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large12.log": "97528b14e3c229aba22ba92d7348650b2ea3c881f0b71e41a638f9f047e29499",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Access2.log": "e354192268caf9b8b9f068e56bda63c495a06564fe8a14364411b746f2455d8d",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Zero7.log": "7550f7d65addab0ae6505daf50755008eb76c3c24ac88c0a9d46b4e8c1f7cf3a",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV15.log": "d177be4331741e8215f23629eb3d9244e25afd8cea4033f62b8a9dd2eb66690f",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE7.log": "31ea8318794e8c47556c1086ed98d61c64c8bee127d99f9e2586d9b7c4d7521c",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV32.log": "ffe6cf054fe6800321a0efbafd11be959a868f6d1d27f7024ceb9712c8aa70a1",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE28.log": "ed354387ca6da5d5e5ed2926dd660c37a01f7b9268a2f87a9e59a6a7da7db468",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ19.log": "d9ff7d88e8d958e608f52f684a5430f77892561cab0f7be90e90a8e3339fe83b",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE39.log": "de420792a75641cd1dbd0bd62a0db9ee82d6bb5b86b63c1f42e16bcc287fcf99",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ0.log": "bdd814c75193cb74fd449c47b577d4febe1b9c100be4bb443d112bef9709fbcb",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE14.log": "38602ab070cff945533bb0de9d9d0b428f5fcee4c00e5128474aa5769d3ce312",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV2.log": "c258504f04516cabe11fff8d4c6088359ee6d646b4767248fd130c99a1bc0a22",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FATAL9.log": "1d4af28362055a39606bd9166d7758231568e2ad958262745b9db679973c8141",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FLUSH3.log": "8800e548abca1cf3ce59d07c2ca5c982d690f3aa76b6ff7cf6ddae10dde1d06a",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ5.log": "f2e286ac5682e6200de07d35e55cd6e38c3abdcfd505efb3eb70dd2b7e86377e",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large10.log": "a3c962e432ae5f3c4cd2da8a8d246c0adba78249cdae71a22226d36ed3b02086",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/FLUSH7.log": "f424f621a2d9b30cda39036dc50370c6ce9c4dd5808558eebc64ecc468de4182",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE43.log": "dbd397794a2ac05bfc0147ba73bb6420712d66450d173f53869f4833e3eaad27",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large17.log": "c96a42cdef2cf3ef163a2c6a551cb3fd59534f4553976b2f7987c243f6362d7f",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE16.log": "d52bf72fd92935650549bc91d4f80a2b3d784380acb6de7c0247c3c0a99d614a",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE34.log": "2b70aaaa2269db92ccb4a0da78a2149e3dc011828045edb17639dcd5f34b5f00",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/Large5.log": "8565aad3ccd20120fcecdbc1b972c2b19801773a1868b9c309b660bc1b68500f",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE5.log": "05bf43989e87cc7a11d6386b0df91f871ef663ea20544d63061e54e41ee865ba",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/READ11.log": "be71b02c2f1132f452a1a10ef348109d2e81c1de1064833f0b2d15c9d75bc5fb",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV27.log": "d609f2cbbab88fe5b6be4f7d6ca29fcd2ff4e106a5aaa4f58e3c6efe3dd8256b",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/RECV30.log": "1b7c7c06b73ae8687c82c8b02145bba8b516a1990819971347bb3b76e43efa79",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/WRITE_RECV9.log": "7e0b504cf1db91f78d0b814b5d82611383d982340890c4df2b8f6547c8a82b64",
+    "rdma/rnic/build/fatal-flush-callbacks-cleh83n0/IMMEDIATE4.log": "8371c24c6eab300d3b94f37d1c47e5ed4e75dbe7d090b4a34ea2b9f98645933a"
+  }
+}

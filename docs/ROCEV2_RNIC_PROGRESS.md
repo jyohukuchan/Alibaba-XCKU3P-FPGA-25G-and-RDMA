@@ -32,6 +32,252 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+### Publication checkpoint: progress188–190 (2026-10-22)
+
+The explicit user-requested push publishes integrated fatal-RQ cancellation
+and lease-export sources, all42 native simulation cases, and the paired
+optional Linux per-RQ flush candidate with236 callback/36 parent modeled
+cases. Both successful and failed attempts are included; generated builds,
+credentials and private agent/cache checkpoints remain local. No new feature
+build, installation, hardware or default change is part of this publication.
+Live Linux–FPGA execution, whole QP/device STOP, complete reference release/
+recovery, original timing and physical qualification remain unproven. Earlier
+local/live/no-Git statements below retain their checkpoint-time meaning.
+
+### Local progress190: actual native42 RQC receipts and paired per-RQ Linux flush source
+
+Previous189 is PROGRESS: actual old40 complete outcomes retained in false
+native42; exact aggregate-guard alias diagnosed, seven-leaf correction with
+source2252/fixture1477 and same42 bench, fresh actual build live. All513
+authored/313 public/700 live input hashes revalidate unchanged before new
+documentation edits. SAME session5613 completes without restart, compile
+971.526s under original1200s, bench elaboration10.150s without diagnostics.
+
+[Actual native full001](../results/2026-10-18/rocev2-rnic-fatal-rq-lease-native-full-001.json)
+passes ALL42, max13.891s under30 per case. [Runtime audit3212](../results/2026-10-18/rocev2-rnic-fatal-rq-lease-native-runtime-diagnostics-001.json)
+requires every old40 entire outcome except seconds identical and both new
+fatal-access/partial RQC cases. It independently rechecks all raw inputs,
+full480/512/528/960/992/1000 record bits, genuine actual XGMII/NAK/host data,
+shared physical nonce, FEC AXI/ACK and all19 RQC owner/layout/producer/nonce/
+error0/flags63/consumer1 words. Actual observed/runner input maps are exactly
+700/700/common700, no differing hashes or only-observed/only-actual entries.
+Every selected lease-export RTL is hash-bound AND present in actual compile
+arguments; sole native namespaces and all207 HLS remain. Fresh binary is
+ca5e96e3efe07165d8e4f5c4eaf7c163265a557b05d15ed5667e0a36cb57dd0b.
+
+The two new scenarios obtain actual queued-owner cancellation and fetch
+retirement exactly once, no native CQ; SQC/permanent ingress/configuration
+quarantine remain during another1100-cycle real peer replay. The retained-RQ
+snapshot/legacy summary is explicitly BEFORE command4, not the final state.
+This is per-RQ authority only, NOT global HLS drain/whole QP STOP/quarantine
+release/reset/rearm/unpin or physical/live-Linux proof. Original native001
+pre-command failure remains false with all objects/logs/evidence preserved.
+
+Paired optional `fatal_flush_candidate.py` now generates an exact75-input
+cohort only AFTER actual new native42/runtime proofs. It changes ONLY
+fatal_regs.h/fatal_io.h/fatal_io.c/fatal_parent.c/verbs.c; the other70 inputs
+are exact parent75. Reader/preflight accept only explicit15 or31, cache exact
+immutable attachment features, and keep entire record/owner decoder unchanged.
+Old15 retains old behavior. New31 allows the existing genuinely certified
+RQ-cancel/ordered software flush path before whole QP STOP only for the same
+live full owner, notified/closing/pending ERR QP, with no callback active and
+no detached/uncertain attachment. Mode2 preparation retains ALL refs even
+after real RQC proof; mode1 publishes standard WR_FLUSH_ERR in WQE order and puts
+only successfully reported WR refs. CQ full retains remaining refs without
+reissuing an already retired RQC. Remaining SQ/other work/MR/PD/parent/graph
+ownership and original full STOP/lifecycle code are not bypassed. In particular
+hw_owned is cleared only by the original real QP STOP path, not by FEC or RQC.
+
+[Full real-header75 kernel build](../results/2026-10-18/rocev2-rnic-fatal-flush-kernel-build-001.json)
+passes11.544s under180, both actual modules link W=1 for6.17.0-1033-oem;
+no install/load, default native/fatal gates remain false. [Actual-C model236](../results/2026-10-18/rocev2-rnic-fatal-flush-callbacks-002.json)
+passes compile9.120s/max0.016s:16 new paired cases and all220 old callbacks.
+New cases include access/partial ERR, ordered two-RQ/full-CQ retry with exact
+per-WR refs, ACK ambiguity/no duplicate, invalid RQC flags/nonce/stale owner,
+uncertain/detached reader, absent handler, pending SEND, CQ notification,
+legacy15/manual ERR without fatal authority, and unknown feature rejection.
+[Parent36 regression](../results/2026-10-18/rocev2-rnic-fatal-flush-parent-graph-001.json)
+passes compile9.533s/max0.033s, using real threaded workqueue models. Linux/
+IB-core/MMIO/certificates/pins/DMA/workqueue are EXPLICIT MODELS, not an actual
+registered running Linux device or real Linux-FPGA execution. Hardware RQC
+receipts and these constructed software certificate inputs are distinct;
+the audit does not combine them into a live coupling claim.
+
+[Cross/source audit2707](../results/2026-10-18/rocev2-rnic-fatal-flush-diagnostics-001.json)
+binds exact five-file derivation/all75 kernel/model inputs, every old220/36
+full summary identical, whole original fatal assertions, exact15 behavior,
+unknown-capability rejection and untouched full STOP/reference lifecycle.
+First new callback001 compiles9.359s but FLUSH0 aborts at a new counter oracle;
+all later cases are unrun in that false report. Read-only GDB on the same
+ASan/UBSan model sees STOP counter2, PD1, send/recv CQ pending0. Actual QP-open
+already issues mandatory STOP before the tested error path. Exact failed
+source/binary/log/report are preserved; ONLY the new test's initialization
+baseline was captured (asserted1) and subsequent STOP deltas checked. Production
+logic and every old assertion/gate are unchanged; failed001 is never relabeled.
+
+All task jobs are terminal. No new HLS/cache relocation or hardware/default/
+fan/network/driver-install/module-load/flash/reboot/Git action this turn.
+Native support still has original15.571ns timing failure/unwaived warnings;
+whole QP/device STOP/quarantine recovery/reference lifetime closure, full1MiB/
+multiSGE, real-peer retry/RNR/loss/MSN/congestion, live Linux/provider and
+full-board/physical qualification remain. Keep all original11 requirements.
+Before ANY necessary reboot restore/verify ALL archived RAM-backed DBs,
+including189 and every older archive, and prove exact authenticated thread+
+goal revival; none is needed. Next broad feature is genuine whole-QP/device
+STOP/recovery/owner retirement, not replacing fixed global drain0 with idle,
+empty queues, host ACK, reset or a fabricated completion certificate.
+
+### Local progress189: original40 regression preserved, real alias diagnosed, new lease-export42 live
+
+Previous188 is PROGRESS: full465/eight-data fatal RQC source9.782s/audit2729/
+fixture1460, unchanged old40 raw/oracles/444 checks and fresh native42 live.
+All501 authored/307 public-report and686 live-input hashes revalidate before
+new documentation edits. SAME session30881 completes; no observation timeout
+or missing output triggers a restart. All686 observed and actual runner inputs
+are IDENTICAL, with zero only-observed/only-actual entries.
+
+The original [full native001](../results/2026-10-18/rocev2-rnic-fatal-rq-cancel-native-full-001.json)
+compiles953.788s (under1200), whole bench elaborates10.089s without diagnostics.
+All40 prior cases pass, every whole result except seconds matches prior FEC40,
+including all raw inputs/wire/host/owner/nonce/cardinality results. First NEW
+FATAL_RQC_ACCESS exits-6 at the pre-command authority assertion; new partial
+case is UNRUN. This is41 attempts/40 PASS, NOT successful native42. The original
+report, model, objects, binary, inputs, logs and artifacts remain unchanged.
+
+Existing diagnostic-main/debug-type tooling relinks the SAME immutable O1
+model archive/runtime objects, without rebuilding RTL or changing any DUT
+state/assertion. A separate run copies exact failed raw inputs and HLS data,
+so original artifacts are never overwritten. [Read-only debugger inspection](../results/2026-10-18/rocev2-rnic-fatal-rq-cancel-native-diagnostic-001.json)
+reaches the SAME assertion in9.351s under30, then lets that assertion abort.
+Actual cert bit4/current full356 context/RQ620/cookie64/epoch64 match and fault0,
+but authorized0/atomic_rx_guard1. The source shows atomic_rx_guard includes
+control_external_guard, which itself includes permanent s_control_held.
+Treating that aggregate as a noncontrol lease prevents the intended operation.
+[Failure audit2443](../results/2026-10-18/rocev2-rnic-fatal-rq-cancel-failure-diagnostics-001.json)
+binds the actual observed boundary and exact entire40 outcomes; it does not
+claim this is the only possible blocker after correction or a RQC receipt.
+
+New seven-leaf derivation adds a separate fatal_rx_noncontrol_guard output
+through actual protected/paged/controlled/Ethernet/native/SQ hierarchy. It
+retains EVERY original RX/write/reference/Atomic/state/lease/fault term and
+live control-owner VALID, removing only the permanent control-held alias from
+this extra observation. Paged atomic-memory guard/fault remain included.
+Original core and paged atomic_rx_guard assignments, original full FEC40
+atomic_lease_guard, and BOTH complete SQC/RQC configuration guards stay
+BYTE-IDENTICAL. The extra predicate is consumed ONLY by fatal RQC authority;
+parent/fetch/work/active wire/CQ/full owner/layout/producer/nonce/consumer and
+actual cancel/retirement proofs stay required. Never mask atomic_rx_guard
+wholesale. In particular, pending posted-RQ guards clear only by real RQC
+cancel, not by the source distinction. Both global HLS drains remain0.
+
+New [whole465/eight-data elaboration](../results/2026-10-18/rocev2-rnic-fatal-rq-lease-native-elaboration-001.json)
+passes9.863s; [source2252](../results/2026-10-18/rocev2-rnic-fatal-rq-lease-native-source-diagnostics-001.json)
+requires exact seven leaves, original aggregates and sole namespaces/all207
+HLS unchanged. [Fixture1477](../results/2026-10-18/rocev2-rnic-fatal-rq-lease-native-fixture-diagnostics-001.json)
+retains the EXACT same42 bench, all40 original recipes/order/raw/oracles/444
+checks and both new19-word RQC receipt scenarios. Whole extended bench
+elaborates with an empty diagnostics log. A FRESH simulator/object cohort is
+LIVE under original1200/30/180s/4ns/j4/O1/cfunc500000/process-group/root1GiB/
+RAM4GiB gates. New runtime auditor is prepared, not executed; it additionally
+requires every exact selected lease-export RTL to be actually compiled. No
+new RQC packet receipt or standard flush CQ/whole STOP/recovery is claimed.
+
+Paired Linux per-RQ flush candidate source/build runner are UNBUILT drafts.
+Generation is deliberately gated on successful new native42 and its actual
+runtime audit. Intended policy accepts only explicit FEC15/31, caches exact
+attachment capability, preserves old15 behavior, and uses the existing real
+RQC cancellation/ordered software flush path only for a matched/notified ERR
+QP. It would not clear hw_owned/SQ/other refs or bypass whole STOP/graph gates.
+No production C file is modified or driver installed/loaded. Linux6.17 RXE
+[responder](https://raw.githubusercontent.com/torvalds/linux/v6.17/drivers/infiniband/sw/rxe/rxe_resp.c)
+and [QP error transition](https://raw.githubusercontent.com/torvalds/linux/v6.17/drivers/infiniband/sw/rxe/rxe_qp.c)
+were checked as primary behavioral references; no upstream code was copied
+and no RXE execution substitutes for native FPGA work.
+
+Root space fell just below the unchanged1GiB start guard. Using the existing
+lossless archival procedure, ONLY terminal successful event HLS scratch DB
+native-zero-service-hls-t91my3mz/project/solution1/.autopilot/db was archived/
+fsynced/verified and moved to RAM with a path-preserving symlink. All1696
+files match original/archive/RAM manifests; durable compressed archive35,612,075
+bytes, root free1,415,581,696 immediately after. Exact process audits found no
+project user. Sources/generated RTL/reports/logs and all previous objects/
+failed artifacts remain. Before ANY reboot restore/verify this AND ALL older
+archived RAM-backed DBs from durable archives. No reboot is needed and exact
+authenticated thread/goal revival remains unproven.
+
+All original11/full1MiB/multiSGE/live registered Linux/provider/real-peer loss/
+RNR/retry/MSN/congestion/error CQ/STOP/reference retirement/quarantine recovery/
+15.571ns/full-board/physical requirements remain where previously incomplete.
+BIOS Medium/management/AtomicNONE/clock/defaults/flash are unchanged. No Git
+action after explicit publication9279e4e; no automatic future push is implied.
+
+### Local progress188 after publication9279e4e: actual fatal-RQC graph and fresh42 build
+
+Previous goal work is PROGRESS: actual native40/FEC/C277, optional Linux
+ERR/handler/parent polling source builds and modeled callbacks, plus the new
+four-state authority33 component. The user-requested push9279e4e preserved
+those sources and both failed/successful reports. No old live job is restarted.
+All490 authored/301 report progress187 identities are revalidated against exact
+publication-only documentation preimages. Current publication inputs are
+separately preserved before these local documentation updates.
+
+The new checker derives only native top/SQ/FEC replacements plus a distinct
+RQC control variant and authority. Original SQC remains unchanged. Actual
+full465 RTL/eight-data [elaboration](../results/2026-10-18/rocev2-rnic-fatal-rq-cancel-native-elaboration-001.json)
+passes9.782s. [Source audit2729](../results/2026-10-18/rocev2-rnic-fatal-rq-cancel-native-source-diagnostics-001.json)
+checks exact four-leaf derivation, sole actual HLS/MR/PTE/backend/nonce/ACK
+namespaces and all207 qualified HLS files. Both original complete SQC/RQC
+configuration quarantine guards and every actual noncontrol lease are retained.
+Only RQC command4's final safe-transfer check distinguishes the completed fatal
+join/current full SQC context/PSN certificate from permanent quarantine. Parent/
+fetch/work/active wire/CQ checks and real posted-RQ cancel/fetch retirement/full
+owner/layout/producer/nonce/consumer proofs remain required. No allocation,
+posting, ordinary retirement, admission or SQC guard is relaxed. Both original
+global HLS drains stay0; notification ACK never grants cancellation authority.
+
+Optional FEC feature31 explicitly distinguishes this new graph; ABI/signature
+are unchanged, but old feature15 readers correctly refuse it. This is not yet
+paired with a new kernel capability/policy and no driver is installed/loaded.
+The authored default FEC/source/profile8/RNC131071/CQC511/SQC13/RQC63/AtomicNONE
+and hardware are untouched. Existing qualified native40 remains its own graph.
+
+[Fixture preflight1460](../results/2026-10-18/rocev2-rnic-fatal-rq-cancel-native-fixture-diagnostics-001.json)
+preserves all40 exact old recipes/order/raw bytes/oracles and all444 old checks
+(419 native +25 FEC). The complete old fatal/replay task is byte-identical;
+only the explicit FEC capability read expectation changes15 to31. Two new
+separate scenarios clone the pre-replay fatal proofs and then exercise genuine
+AXI RQC command4. They require all19 reply words/full64 owner/nonce/producer,
+flags63/consumer1, real posted-owner cancellation and fetch retirement, zero
+native CQ, retained SQC/permanent quarantine, and another1100-cycle real peer
+replay probe. The old retained-RQ snapshot/summary occurs BEFORE command4 in
+these new cases, not after cancellation. No internal context/proof/guard force.
+Actual new outcomes are not yet known.
+
+The entire extended bench Icarus-elaborates with an empty diagnostics log. A
+fresh native42 simulator is compiling under the ORIGINAL1200s compile/30s per
+case/180s elaboration/4ns/j4/O1/cfunc500000/process-group/root1GiB/RAM4GiB gates.
+No old binary or partial diagnostic is substituted. A new full runtime auditor
+is prepared, not executed; it requires every old40 full result except seconds
+to be identical, both new independent full-record/wire/host/RQC/nonce proofs,
+and the same complete graph. No new RQC cancellation runtime PASS is claimed.
+
+First checker startup failed on an incorrect existing report-field name before
+source generation/compiler launch; exact source preimage and false startup
+record are retained. First fixture audit failed because its legacy pure-input
+extractor skipped a new case-category declaration; only the new audit extractor
+was extended, with exact failed source preimage and false record retained.
+No production logic, assertion, clock, deadline or source-identity gate was
+weakened to fix either. All earlier failures/caches/artifacts remain.
+
+All original11 requirements remain incomplete/unproven where previously open.
+Standard error/flush CQ, whole QP/device STOP/recovery/reference retirement,
+live registered Linux/native coupling, full1MiB/multiSGE, real-peer retry/RNR/
+loss/MSN/congestion and original15.571ns/full-board/physical qualification
+remain. BIOS Medium/management network/SRAM-only policy stay unchanged. No
+reboot is needed; exact authenticated thread/goal revival remains unproven and
+ALL archived RAM-backed databases must be restored/verified before any reboot.
+No automatic further commit/push, install/load, hardware or fan/default action.
+
 ### Publication checkpoint (2026-10-22): progress185–187 and in-progress188
 
 This explicit user-requested commit/push includes actual FEC-native40 packet/

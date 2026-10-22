@@ -1,0 +1,20 @@
+{
+  "scope": "Preserved first checker startup failure before native source generation or compiler launch.",
+  "pass_test": false,
+  "exit": 1,
+  "error_type": "KeyError",
+  "error": "all40_old_entire_results_except_seconds_identical",
+  "source_sha256": {
+    "rdma/rnic/tests/check_fatal_rq_cancel_native.py": "d242633961f19bec80b051d038e20f50b0ae965c03d287c5b1fde085581cac68"
+  },
+  "report_input_sha256": {
+    "results/2026-10-18/rocev2-rnic-fatal-event-native-runtime-diagnostics-001.json": "64a53c5d9ddbc4e8e917f826b2c5fa5d2cf73b9158120d02f46149670a4f72a6"
+  },
+  "exact_source_preimage_root": "rdma/rnic/build/fatal-rq-cancel-startup-001-preimages-RMZkqC0y",
+  "correction": "Use the existing full-outcome field all40_old_full_outcomes_except_seconds_identical; no source, assertion or gate weakened.",
+  "native_compile_started": false,
+  "source_cohort_generated": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false
+}

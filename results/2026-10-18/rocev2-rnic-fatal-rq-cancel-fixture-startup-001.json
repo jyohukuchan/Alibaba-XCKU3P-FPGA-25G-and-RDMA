@@ -1,0 +1,14 @@
+{
+  "scope": "Preserved fixture-auditor startup failure; no compiler or packet runtime started.",
+  "pass_test": false,
+  "exit": 1,
+  "error_type": "NameError",
+  "error": "name 'is_fatal_cancel' is not defined",
+  "cause": "Legacy pure-input extractor begins at is_fatal, omitting the new preceding is_fatal_cancel descriptor. New runner and fixture were not executed or weakened.",
+  "native_compile_started": false,
+  "native_runtime_started": false,
+  "source_cohort_generated": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false
+}

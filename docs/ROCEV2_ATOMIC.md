@@ -5,6 +5,45 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+Publication checkpoint (progress188–190, 2026-10-22): the user-requested push
+includes native42 cancellation/lease-export results and the paired optional
+Linux flush candidate/model236/parent36, with failed attempts preserved.
+Atomic remains IB_ATOMIC_NONE by default; this is not live Linux–FPGA,
+standard Atomic, whole STOP/recovery or timing/physical qualification.
+Historical local/in-progress/no-Git notes below describe their original time.
+
+Local190: same lease-export native42 PASS971.526s/max13.891s/runtime3212;
+all40 old entire outcomes except seconds—including Atomic—are identical.
+Both new RQC full19-word owner/nonce/flags63/consumer receipts succeed while
+SQC/quarantine remain. Paired optional driver75 builds11.544s and model236/
+parent36 PASS/audit2707, preserving all220/36 full summaries. Per-RQ flush
+WCs/ref retirement use actual C bodies with modeled Linux/MMIO/certificates;
+not native-coupled standard Atomic/Linux qualification or full STOP/unpin.
+Original AtomicNONE/defaults/global drains/timing/physical gates remain.
+First new counter-oracle failure kept false; no production fix or weaker gate.
+All task jobs terminal; no install/load/hardware/Git changes.
+
+Local189: prior native42 finishes953.788s; all40 old cases including Atomic
+have identical entire outcomes except seconds. New RQC access case FAILS
+pre-command, partial unrun; failure audit2443/read-only9.351s original-O1
+inspection confirm an aggregate RX guard also contains permanent control
+quarantine. New lease-only export preserves original aggregate guards and
+every genuine RX/write/reference/Atomic term plus control-owner VALID.
+Full465/eight-data elaboration9.863s/source2252/fixture1477 PASS; SAME42 bench
+elaborates without diagnostics, fresh native42 compile LIVE under original
+gates. No new runtime/Atomic/error-CQ/STOP/unpin qualification. Paired Linux
+flush source is an UNBUILT gated draft; AtomicNONE/defaults/drains/timing/
+hardware/Git unchanged. Prior failure is not relabeled green.
+
+Local188 after `9279e4e`: full optional fatal-RQC source465 RTL/eight data
+elaborates9.782s/source audit2729. All207 HLS and both complete SQC/RQC guards
+remain; only completed fatal-join/current-owner RQC command4 gains a private
+FEC31 distinction. Fixture1460 retains all40 raw inputs/oracles/444 assertions,
+including Atomic, plus two genuine RQC receipt cases. Extended bench elaborates
+without diagnostics; fresh native42 compiles under original gates. No new
+runtime/Atomic qualification yet; IB_ATOMIC_NONE/global drains/defaults and
+unmet timing remain. No hardware/Git action after the user-requested push.
+
 Publication checkpoint (2026-10-22): this explicit push includes progress185–187
 and in-progress188 cancellation groundwork, with successful AND failed reports.
 Actual FEC-native40 simulation retains Atomic outcomes; Linux polling/callback

@@ -1,0 +1,58 @@
+{
+  "scope": "Exact lease-only export, every aggregate guard and whole native/HLS retained.\n\nSource/elaboration only. Original failed native42 remains false; a fresh\nwhole42 runtime and all old40 outcomes are still required after this fix.\n",
+  "audit_passed": true,
+  "evidence": {
+    "fatal-rq-lease-native-elaboration-001": {
+      "bindings_verified": 511,
+      "report_sha256": "ce281eea55755d616daad0474e25313adf3254e963b5a16009509c0f7842bdd0",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-rq-cancel-native-elaboration-001": {
+      "bindings_verified": 496,
+      "report_sha256": "b5dc2c6bfb6c5b5a8bf483b6f8fd0897fcaf9ee71c77e4c77bd8ae5a0b32b1d6",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-native-elaboration-002": {
+      "bindings_verified": 483,
+      "report_sha256": "fae4260e57ebd30fdeb8465427be1f26b0670b3b167ed3163ee1669b75c55f2f",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-rq-cancel-failure-diagnostics-001": {
+      "bindings_verified": 4,
+      "report_sha256": "27653501542c6b4e87b82adfeb53e947c68e3693a7f41055db462a7983af6e83",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-generated-hls-002": {
+      "bindings_verified": 758,
+      "report_sha256": "4efcb5cd27926965b08c8ce76067f2c3a7c0b5e1013d3bb5d66d6f31ea08b2c3",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 2252,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_fatal_rq_lease_native.py": "9941a4be433bf2365a64b7bd36a7cb10ecb0897d68282e40bf0de8dc1f44b710",
+    "rdma/rnic/tests/check_fatal_rq_lease_native.py": "9d9ea91d2232419cc3e6d50130b1127dbe04a169e3ad94aab63b5e6013539e3c",
+    "rdma/rnic/fpga/derive_fatal_rq_cancel_lease_native.py": "85994999c7e97ba08d731a2bcf3696eda9b5beff5bf7caa011dac239c952858f",
+    "rdma/rnic/build/fatal-rq-lease-native-v6jjgugq/rocev2_shared_protected_responder.v": "1fece8b119f8d6ed47efb7946ee9d525231225552158a84be9f29f9adfaa700b",
+    "rdma/rnic/build/fatal-rq-lease-native-v6jjgugq/rocev2_paged_responder.v": "f7516feb4d8608d9c237040e6f041fd12302d3cb9d8989ec22c3858316586179",
+    "rdma/rnic/build/fatal-rq-lease-native-v6jjgugq/rocev2_controlled_responder.v": "1e8a0ec45f959816497e1a8888dedddfa8d3899b946e8d672654caa222a9a562",
+    "rdma/rnic/build/fatal-rq-lease-native-v6jjgugq/rocev2_dual_ethernet_endpoint.v": "7a99ec3654f4d3f661a57fcf30d8acbce6fddf27e5a54388dbc249db56d14ee6",
+    "rdma/rnic/build/fatal-rq-lease-native-v6jjgugq/rocev2_native_endpoint.v": "b48697d6a65a6f2238cf9bba8f524b5dbcdbeca1505a4a3820d7344dcb98163d",
+    "rdma/rnic/build/fatal-rq-lease-native-v6jjgugq/rocev2_native_sq_endpoint.v": "71eae164f5f65bfe2e329492b95a8c05fdeea1e98e7a7c4a93b835295aa15f54",
+    "rdma/rnic/build/fatal-rq-lease-native-v6jjgugq/rocev2_native_rnic_endpoint.v": "0a21ceecfa4c566598792039dd9dddf64ceddee6eee27bf3ed21f576e4ef21bd"
+  },
+  "exact_seven_leaf_derivation": true,
+  "original_core_paged_and_aggregate_lease_guards_byte_identical": true,
+  "all_actual_RX_write_Atomic_memory_reference_work_retained": true,
+  "live_control_owner_VALID_retained": true,
+  "both_full_SQC_RQC_guards_unchanged": true,
+  "whole_qualified_HLS207_unchanged": true,
+  "actual_new_native_packet_runtime": false,
+  "actual_RQC_cancellation_receipt": false,
+  "error_CQ_STOP_global_drain_unpin": false,
+  "hardware_verified": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false
+}

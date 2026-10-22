@@ -1,0 +1,252 @@
+{
+  "scope": "Retained fatal-event RTL/register readback/C decoder using real recorded seeds.\n\nThe producer and C MMIO/delivery are MODELS. No live native wiring, Linux verbs\ncallbacks, error WC, QP recovery/STOP/global drain/unpin or hardware proof.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/fatal-event-mmio-vjpkpodk",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_fatal_event_mmio.v": "e00d00156e9e2457890abf496c7edc1f3c2dfd72b45d3f115f77a5d8a44ae058",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+    "rdma/rnic/kernel/fatal_io.c": "04e95416e15a7fcec8c2c9c4caf17dca5dfa34b5d31273a60f83a5f126b80265",
+    "rdma/rnic/kernel/fatal_io.h": "b0cbf69f482cf03b0e2905d8f6de9129c6140eb3ac34bf5350c09642cd3f7fa3",
+    "rdma/rnic/kernel/fatal_regs.h": "40c6941a7820273bc51bb152b0c4aa79bff987cb289c2ee9a8d9516ab7d25e2d",
+    "rdma/rnic/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/tests/test_fatal_io.c": "d9c4f3907a1eb0a156b35b378bf0b02b95f86f0d22c9600953b79d712145e82b",
+    "rdma/rnic/tests/tb_fatal_event_mmio.v": "46fd0f8bf51c878887d3d07c79ab038db48acaef32522e7edb06d62d44d09760",
+    "rdma/rnic/tests/probe_fatal_event_mmio.py": "b6d01ca92a3ca573c7f7cae7a0381f550c94910bd419de333d298dc0f25912e9",
+    "rdma/rnic/build/write-abort-scheduled-mac-native-full-bragjvtr/LARGE_RX_WRITE_FATAL_ACCESS-selected.hex": "898f7829ac5b0bf48d629ed0e3ceb8cb089ddc2bc242dfc07b4a5fbf1987ef18",
+    "rdma/rnic/build/write-abort-scheduled-mac-native-full-bragjvtr/LARGE_RX_WRITE_FATAL_PARTIAL-selected.hex": "7243539f5fa635efc9730deba74c225c6539d6d40670809a45144e2aebc5697c"
+  },
+  "native_record_evidence": {
+    "bindings_verified": 774,
+    "report_sha256": "3c163047f0157f89348cf37f8e7600dc7c641ae4832cb31520849e1a2a7cb7e8",
+    "exact_preimage_resolutions": []
+  },
+  "actual_recorded_native_selected1000": {
+    "LARGE_RX_WRITE_FATAL_ACCESS": "0700000000000000000000000629876549876540000000000000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef912345670000000100110000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "LARGE_RX_WRITE_FATAL_PARTIAL": "0700000000000f60010000000619876559876550000000000000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001000000000000000100000008fedcba98765432100000200198765400000000000010009876540001"
+  },
+  "clock_ns": 4,
+  "RTL_compile_limit_seconds": 10,
+  "runtime_limit_seconds": 10,
+  "C_compile_limit_seconds": 30,
+  "cycle_limit": 100000,
+  "four_state": true,
+  "live_native_wiring": false,
+  "kernel_callbacks_or_standard_verbs": false,
+  "error_CQ_QP_STOP_global_drain_unpin": false,
+  "hardware_verified": false,
+  "full_board_timing": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false,
+  "tests": {
+    "0": {
+      "exit": 0,
+      "seconds": 0.016024057986214757,
+      "summary": {
+        "pass_test": true,
+        "mode": 0,
+        "checks": 43,
+        "full_record_bits": 1000,
+        "clock_ns": 4,
+        "native_live_wiring": false,
+        "QP_drain_unpin": false
+      }
+    },
+    "1": {
+      "exit": 0,
+      "seconds": 0.01591566199203953,
+      "summary": {
+        "pass_test": true,
+        "mode": 1,
+        "checks": 43,
+        "full_record_bits": 1000,
+        "clock_ns": 4,
+        "native_live_wiring": false,
+        "QP_drain_unpin": false
+      }
+    },
+    "2": {
+      "exit": 0,
+      "seconds": 0.015949953987728804,
+      "summary": {
+        "pass_test": true,
+        "mode": 2,
+        "checks": 7,
+        "full_record_bits": 1000,
+        "clock_ns": 4,
+        "native_live_wiring": false,
+        "QP_drain_unpin": false
+      }
+    },
+    "3": {
+      "exit": 0,
+      "seconds": 0.015942481986712664,
+      "summary": {
+        "pass_test": true,
+        "mode": 3,
+        "checks": 5,
+        "full_record_bits": 1000,
+        "clock_ns": 4,
+        "native_live_wiring": false,
+        "QP_drain_unpin": false
+      }
+    },
+    "4": {
+      "exit": 0,
+      "seconds": 0.0158847919665277,
+      "summary": {
+        "pass_test": true,
+        "mode": 4,
+        "checks": 5,
+        "full_record_bits": 1000,
+        "clock_ns": 4,
+        "native_live_wiring": false,
+        "QP_drain_unpin": false
+      }
+    },
+    "5": {
+      "exit": 0,
+      "seconds": 0.01589114696253091,
+      "summary": {
+        "pass_test": true,
+        "mode": 5,
+        "checks": 5,
+        "full_record_bits": 1000,
+        "clock_ns": 4,
+        "native_live_wiring": false,
+        "QP_drain_unpin": false
+      }
+    },
+    "6": {
+      "exit": 0,
+      "seconds": 0.015873686003033072,
+      "summary": {
+        "pass_test": true,
+        "mode": 6,
+        "checks": 7,
+        "full_record_bits": 1000,
+        "clock_ns": 4,
+        "native_live_wiring": false,
+        "QP_drain_unpin": false
+      }
+    },
+    "7": {
+      "exit": 0,
+      "seconds": 0.015879344020504504,
+      "summary": {
+        "pass_test": true,
+        "mode": 7,
+        "checks": 9,
+        "full_record_bits": 1000,
+        "clock_ns": 4,
+        "native_live_wiring": false,
+        "QP_drain_unpin": false
+      }
+    },
+    "8": {
+      "exit": 0,
+      "seconds": 0.01592362398514524,
+      "summary": {
+        "pass_test": true,
+        "mode": 8,
+        "checks": 9,
+        "full_record_bits": 1000,
+        "clock_ns": 4,
+        "native_live_wiring": false,
+        "QP_drain_unpin": false
+      }
+    },
+    "9": {
+      "exit": 0,
+      "seconds": 0.01588409300893545,
+      "summary": {
+        "pass_test": true,
+        "mode": 9,
+        "checks": 7,
+        "full_record_bits": 1000,
+        "clock_ns": 4,
+        "native_live_wiring": false,
+        "QP_drain_unpin": false
+      }
+    },
+    "10": {
+      "exit": 0,
+      "seconds": 0.015885839005932212,
+      "summary": {
+        "pass_test": true,
+        "mode": 10,
+        "checks": 12,
+        "full_record_bits": 1000,
+        "clock_ns": 4,
+        "native_live_wiring": false,
+        "QP_drain_unpin": false
+      }
+    }
+  },
+  "RTL_compile_command": [
+    "iverilog",
+    "-g2012",
+    "-s",
+    "tb",
+    "-o",
+    "/dev/shm/as02-fatal-event-mmio-hipb188a/test",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/tb_fatal_event_mmio.v",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_fatal_event_mmio.v",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/external/corundum/fpga/lib/axi/rtl/axil_reg_if.v",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v"
+  ],
+  "RTL_compile_seconds": 0.016300915041938424,
+  "C_compile_command": [
+    "gcc",
+    "-std=gnu11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-I/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/kernel",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/test_fatal_io.c",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/kernel/fatal_io.c",
+    "-o",
+    "/dev/shm/as02-fatal-event-mmio-hipb188a/C-test"
+  ],
+  "C_compile_seconds": 0.4147107600001618,
+  "C_seconds": 0.0017633239622227848,
+  "C_summary": {
+    "pass_test": true,
+    "assertions": 277,
+    "accepted_callbacks": 16,
+    "actual_recorded_native_seeds": 2,
+    "MMIO_is_model": true,
+    "native_wiring_or_standard_verbs": false,
+    "drain_unpin_or_reference_release": false
+  },
+  "actual_1000bit_native_seed_RTL_MMIO_readback_C_chain": true,
+  "original_native_SEND_failure_preserved": true,
+  "notification_ACK_is_not_QP_rearm_or_drain": true,
+  "artifact_sha256": {
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/6.log": "68f74105c834210c6dff56e883221c5af3fed9cb1e679bce8c8d96e47a789bc3",
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/seed1.hex": "2b67344cddde8bb971671ff44d250041227cec6880f1321ccbf9ba15ef1cf4d5",
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/10.log": "8da7c1adb9f5541b5ac555d8568a10a1f2be8c4824d4dd9ae25e59c275b56aaf",
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/4.log": "e6809fc0006b06ef2de781d22e44e466ed4b3e5a213252b5427a147bf6701e83",
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/1.log": "090b27e56a85c3d6ce5cbd3540d2ea337a65f689beeafadbb40ed17afe6399ac",
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/C-runtime.log": "b583db0eb3c869214f4375697aba245081f61f63169510990f0ba3d483a9e440",
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/RTL-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/2.log": "81f44e1983358afd940d4c29731bacc97d500042f98ae35bbacc45221700ee54",
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/C-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/3.log": "1688f3f189e955bf1f344b2a65dd236419e77565c8dba54212d25fb51b919db2",
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/0.log": "31f7a1020709613ba79b0196b29b6b46b7c699608a632ae167369b1d507a8cee",
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/8.log": "20e38459359c708d30b44bc3229e3122f30da88d67909f6662164c47737e08f2",
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/readback-1.hex": "2b67344cddde8bb971671ff44d250041227cec6880f1321ccbf9ba15ef1cf4d5",
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/9.log": "4ab3fff6d606b6611eb21b6ff155064f0a7eb3acedba194061aa722ed9094444",
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/readback-0.hex": "4673af6c4116488feed1fcbe1313918a5c7f56c751de0c0bc13776d92bd91139",
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/7.log": "d02b0f1cdecb2813809fd782c0c0ea2a95664f5df660bdaf3f64778e0a5c7540",
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/seed0.hex": "4673af6c4116488feed1fcbe1313918a5c7f56c751de0c0bc13776d92bd91139",
+    "rdma/rnic/build/fatal-event-mmio-vjpkpodk/5.log": "f364f335233e93bcc0d181da34c41006ca5e8459197f236817159371013f9264"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-fatal-event-mmio-hipb188a/C-test": "080ea6fcfed2c4eb700c609e26fd856f5816e52efa78f74894d31341742f8543",
+    "/dev/shm/as02-fatal-event-mmio-hipb188a/test": "b410e9732975fe9fdfddfb2ad73fbeaf74531370674b5c6460b741713666a511"
+  }
+}

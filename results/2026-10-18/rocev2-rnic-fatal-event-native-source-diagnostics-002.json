@@ -1,0 +1,70 @@
+{
+  "scope": "Exact real selected1000/mailbox/SQC-RQC guard and optional AXI source graph.\n\nSource/elaboration proof ONLY. New FEC-native packet/MMIO and actual Linux\ndelivery/async callbacks are not inferred from a compiled graph or replay.\n",
+  "audit_passed": true,
+  "evidence": {
+    "fatal-event-native-elaboration-002": {
+      "bindings_verified": 483,
+      "report_sha256": "fae4260e57ebd30fdeb8465427be1f26b0670b3b167ed3163ee1669b75c55f2f",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-mmio-diagnostics-001": {
+      "bindings_verified": 5,
+      "report_sha256": "43b43744b830f0be3dd2dbfc008cb202c492ee02bef7302e41edb33f43a339e9",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-native-elaboration-001": {
+      "bindings_verified": 538,
+      "report_sha256": "f9612b93a46dc71d8f882bc2dcd52fd3a74eab65830f9399153a9b7059ba298a",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-native-full-001": {
+      "bindings_verified": 938,
+      "report_sha256": "10663ad9c841dd9d6a80b81da61c3e548335239c876de04dc37669f85054b79a",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-native-runtime-diagnostics-001": {
+      "bindings_verified": 20,
+      "report_sha256": "f5cf8089cde35b52f024029c15ec86c9117f3cedcac9fce7ea9441e4d9ee3ce1",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-generated-hls-002": {
+      "bindings_verified": 758,
+      "report_sha256": "4efcb5cd27926965b08c8ce76067f2c3a7c0b5e1013d3bb5d66d6f31ea08b2c3",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-fanout-001": {
+      "bindings_verified": 6,
+      "report_sha256": "f601f7e3c54520699175c8aad6db552503277a41cd04e024d91c5dbc0fc27cac",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 2748,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_fatal_event_native_sources.py": "b5be547c617628a8e647448643dba5ef3aee1444b379eb8947f357c0f202f8b8",
+    "rdma/rnic/tests/check_fatal_event_native.py": "79ec00b439b0b97fceb54281cf45eaddbfd57c85109e2e9c842f1aa6635c2852",
+    "rdma/rnic/build/fatal-event-native-dc8w2j3o/rocev2_native_rnic_endpoint.v": "603675262340b89674e0d0665c2219f5b516e9de64027197378fb5ab2d99e1a5",
+    "rdma/rnic/build/fatal-event-native-dc8w2j3o/rocev2_native_sq_endpoint.v": "85608516031c44628506bbe7918f1928af767ba17da9ca798d5560efb02b4162",
+    "rdma/rnic/rtl/rocev2_fatal_event_mmio.v": "e00d00156e9e2457890abf496c7edc1f3c2dfd72b45d3f115f77a5d8a44ae058",
+    "rdma/rnic/rtl/rocev2_fatal_event_fanout.v": "618635cfea3ac01ad709e87d717ddfb5a81c4a2343640dcda17154d10c76a18b"
+  },
+  "only_two_native_leaves_changed": true,
+  "all_other_parent_RTL_and_HLS207_unchanged": true,
+  "actual_selected1000_join_tracked_fanout": true,
+  "actual_SQC_RQC_guards_retain_native_quarantine_after_notification_ACK": true,
+  "optional_native_aperture": 4218880,
+  "aperture_bytes": 4096,
+  "software_metadata_bytes": 192,
+  "actual_mailbox_native_packet_MMIO_runtime": false,
+  "actual_Linux_QP_callbacks": false,
+  "standard_error_CQ_STOP_global_drain_unpin": false,
+  "full_board_timing": false,
+  "hardware_verified": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false,
+  "remaining": [
+    "New real mailbox-native AXI route/readback/ACK/persistent-quarantine runtime with all40 previous regressions.",
+    "Actual Linux object/SQC cookie+epoch reference binding and async QP error delivery, genuine error/flush WC/STOP/recovery/lifetime retirement.",
+    "All original11/original timing/full-board/physical remain."
+  ]
+}

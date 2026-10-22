@@ -32,6 +32,217 @@ baselines. No automatic commit/push is implied by this new implementation goal.
 
 ## Current evidence and remaining work
 
+### Publication checkpoint (2026-10-22): progress182–184
+
+This explicit user-requested commit/push includes the event-status metadata
+fix, actual native40 simulation result, and optional fatal-notification RTL/C/
+native-source candidates, together with successful AND failed public reports.
+Native40 success is not FEC-native packet/MMIO or Linux callback qualification.
+Original timing remains unmet. `scripts/check.sh` was rerun before publication
+and still fails the existing TX-padding source-identity check; no old evidence
+was rewritten. All466 authored-source and286 public-report checkpoint hashes
+matched before the publication-only documentation edits; exact document
+preimages are retained locally. Generated builds, credentials and private
+administrative checkpoints are not added. Hardware/defaults are unchanged.
+Live-job/no-Git statements below refer to their historical checkpoints.
+
+### Local progress184: actual native40 closes SEND regression; retained error-notification path
+
+Previous183 is PROGRESS plus VERIFIED WAIT: completed HLS/source/fixture
+qualification and actual new compiler44372. SAME builder2954540/compiler
+2954553 finishes967.520s under1200, then ALL40 actual packet cases PASS,
+maximum13.841s under30. Previously stalled LARGE_SEND_IMM now passes8.682s;
+no old binary/input/assertion/time-limit substitution. [Runtime audit3155](../results/2026-10-18/rocev2-rnic-write-abort-event-native-runtime-diagnostics-001.json)
+requires ALL old38 entire results except seconds identical, actual full
+native MR/PTE/backend/nonces/fences/MAC/PSN/HLS/abort/cancel namespaces and
+real fatal61/62 full480/512/528/960/992/1000/host/RQ proofs. Queued zero-RQ620
+is retained with no fake error/success CQ; quarantine persists after selected
+ACK. This qualifies only this event-status native40 simulation, NOT the new
+mailbox-native variant or standard Linux/physical/original timing. Source/
+objects/binary/logs/snapshots and all earlier failures remain immutable.
+
+The next broad feature is host-visible fatal-error notification. New
+`rocev2_fatal_event_mmio.v` retains one actual privileged selected1000,
+zero-extends to32 words, uses a separate nonwrapping32-bit event sequence and
+strictly increasing actual64-bit control serial, and requires exact ACK.
+It does NOT produce a WC, clear native quarantine, revoke/close QP authority,
+certify STOP/global drain, retire references or permit unpin. Only ACK is
+writable. Snapshot/AXI responses remain stable under independent host stalls.
+
+New `fatal_regs.h`/`fatal_io.h`/`fatal_io.c` provide the explicit optional
+FEC1 metadata ABI and bounded serialized poller. Decoder validates reserved
+bits, flags, actual MSN, full native context, distinct empty/partial owner,
+partial packet range/PSN/tag/MAC and matching QPN/PD/epoch. Caller must match
+the SAME live SQC cookie+epoch/QPN/PD and atomically retain/record the error
+before returning delivery success. Native binding actually reads the SQC
+owner arrays, not the unrelated RNC command cookie or message cookie. The
+poller never creates an ib_event/WC or releases an MR/QP reference itself.
+Callback backpressure leaves the slot visible. Ambiguous ACK retries compare
+the entire retained record and never redeliver an already accepted event;
+unknown state freezes the reader. Logical detach performs NO MMIO/ACK and
+retains pending/uncertain old-attachment state, never adopting a new device.
+
+The actual recorded native fatal seeds traverse new RTL AXI register readback
+unchanged and the real C decoder/reader. RTL11 four-state4ns/10s/100000-cycle
+tests and C277 assertions PASS. Producer/C MMIO/callbacks remain MODELS;
+successor/replay/exhaustion software scenarios do not claim native QP rearm.
+Actual W=1 Linux6.17.0-1033-oem support-module build PASS3.371s, not installed,
+loaded, registered, or selected in the existing driver Kbuild. [Audit1846](../results/2026-10-18/rocev2-rnic-fatal-event-mmio-diagnostics-001.json)
+binds current qualified native40 certificates bit-identically to the replay
+seeds, exact RTL readback, C/kernel source and real test artifacts. MMIO001's
+before-delta testbench READY failure stays false; only test settling changed
+by1ns within the unchanged4ns clock. Its exact old TB and258-assertion C test
+are preserved; C277 strengthens independent field/sequence boundary checks.
+
+Separate native source integration002 wires the real upstream certificate
+join to FEC1 at optional0x406000/4KiB and retains the original observer.
+A tested tracked fanout accepts each receiver ONCE, keeps each VALID stable
+under independent71/77-cycle stalls and holds the upstream lease until BOTH
+accept. It avoids coupling one receiver's VALID to the other's READY. The
+earlier simultaneous-rendezvous source-only prototype001/audit and exact
+source preimages remain, NOT relabeled as a functional handshake proof.
+Fanout component001 PASS3 full1000-bit events under original4ns/10s/100000.
+SQC/RQC configuration guards include actual persistent native quarantine,
+not just mailbox visibility, so notification ACK cannot rearm/reconfigure it.
+
+The new full463RTL/8data graph elaborates9.903s under180s/root+RAM1GiB;
+all207 HLS files and other260 non-HLS leaves stay exact, only two native
+leaves plus FEC/fanout components are added/changed. [Source audit2748](../results/2026-10-18/rocev2-rnic-fatal-event-native-source-diagnostics-002.json)
+checks real join/fanout/quarantine/decoder bindings and sole namespaces.
+This is source/elaboration ONLY: FEC-native packet/MMIO/host-ACK runtime and
+actual Linux QP/async-event hooks are NEXT. Do not reuse the qualified
+event-status40 result as mailbox-native qualification. RNC/CQC/profile8 and
+IB_ATOMIC_NONE/default advertisement stay unchanged; no default source edit.
+
+All jobs are terminal at this checkpoint. No hardware/fan/BIOS/network/
+install/load/JTAG/flash/reboot/Git or cache-relocation action. Read-only
+scripts/check.sh still fails the existing TX-padding source-identity check;
+old evidence is not rewritten. Actual HLS15.571ns still contradicts original
+4ns/default1.08ns/effective2.92ns. All original11, standard error/flush CQ,
+full QP STOP/recovery/authority and reference retirement, physical/full-board
+timing remain. ALL archived RAM DBs still require restoration/verification
+and authenticated exact thread+goal revival before ANY necessary reboot;
+none is needed. No automatic further push is authorized.
+
+### Local progress183: actual independent metadata HLS and fresh native40 build
+
+Previous182 is PROGRESS plus VERIFIED WAIT: actual ACK-stall cause and
+event-status source/C++140/compatibility/component/audit4738. SAME HLS002
+builder2950563/tool2950809/session64023 completes860.083s, exit0. No restart
+or gate waiver. Its source/frozen inputs and full actual207-file cohort pass
+[audit2323](../results/2026-10-18/rocev2-rnic-write-abort-event-generated-diagnostics-001.json).
+All121 original port directions/widths match; one actual metadata engine and
+sticky collector, no second legacy metadata RAM, and actual generated engine
+ap_start/ap_continue both constant1. Thus normal initialization no longer
+rendezvous on mf_full_n. Original2000-entry sweep/real faults/owner readback
+remain; runtime reset/startup and packet progress are not inferred from this
+structural result. Metadata reports II1/3.828ns estimate, not timing signoff.
+Whole HLS119269LUT/166254FF/306BRAM18K/0DSP and15.571ns still FAIL original
+4ns/default1.08ns/effective2.92ns; no full-board timing/fit/CDC/routing proof.
+
+Observed182 and final actual HLS input manifests are separately preserved:
+526 common paths with identical hashes,2 only-observed and23 only-actual.
+They are NOT declared identical. All actual sources/frozen inputs/outputs
+are rechecked; failed guard attempt001 remains false with absent-parent
+semantics intact. No scratch/source/log/object/binary deletion in this turn.
+
+`check_write_abort_event_native.py` retains every actual262 non-HLS leaf,
+replaces the ENTIRE old HLS cohort, and requires one real event engine/
+collector plus zero old metadata engines in the actual hierarchy. The new
+461RTL/8data graph elaborates9.860s under original180s/root+RAM1GiB/profile8/
+clock/drain conditions. No RTL stub/unknown-leaf or mixed-cohort exception.
+
+`write_abort_event_native_sources.py` and the fresh40 runner select only that
+qualified actual graph. [Preflight2341](../results/2026-10-18/rocev2-rnic-write-abort-event-native-fixture-diagnostics-001.json)
+requires ENTIRE previous fixed-MAC40 bench byte-identical, all419 original
+assertions/partial1100/local-selected71 stalls and all40 recipes/raw inputs
+identical to actual old38/previous9-case executions. Previous SEND failure
+stays false; no modified input, old executable or relaxed deadline is used.
+Prepared runtime auditor preserves every old38 complete outcome except wall
+time and full actual fatal480/512/528/960/992/1000/wire/host/RQ/nonce checks.
+It is AST-valid but NOT executed or declared qualified before a complete run.
+Its timing verdict now follows the factual estimate against unchanged2.92ns,
+not an assumption that a future candidate must fail or pass; full-board
+qualification remains false regardless of a component estimate.
+
+Fresh build44372/builder2954540 has passed whole-bench elaboration without
+diagnostics and is actually compiling in NEW object/artifact directories.
+Original1200s build/30s each case/180s bench/4ns/root1GiB/RAM4GiB/j4/O1/
+output-split-cfuncs500000/owned process group remain. No packet case or all40/
+old38 regression equivalence is yet qualified on the new executable. All11,
+fatal63/error CQ/full QP STOP/recovery/ref lifetimes and physical/original
+timing remain. No hardware/fan/BIOS/network/install/load/JTAG/flash/reboot/
+automatic Git action. Existing archived RAM DB restoration/authenticated
+thread+goal revival remain mandatory before ANY necessary reboot; none needed.
+
+### Local progress182: real SEND-stall cause and independent metadata fault events
+
+Previous work is PROGRESS: explicit publication `e29c8da` and the final
+fixed-MAC40 failure changed the next action. The same terminal native40
+record remains false: compile966.875s, first8 cases pass (including genuine
+fatal access/partial), case9 SEND Immediate fails, remaining31 unexecuted.
+All40 runtime qualification and old38 regression equivalence are NOT claimed.
+
+New diagnostic executables link the unchanged actual RTL/testbench archive
+and support objects with an observational main only; no DUT signal writes,
+input changes, proof substitution or deadline relaxation. Diagnostics001–003
+reproduce the actual failure. ACK has arrived and the actual HLS ACK-consumed
+FIFO is pending, while the real request-retirement join waits in INSERT.
+Metadata remains in reset sweep, clear_index1698/clear_complete0 at100.8us;
+abort quarantine and parser faults stay0. The actual prior-core baseline
+diagnostic003 passes8.031s and the original independent full wire/owner/
+payload oracle, with init first observed complete55.6us and all3 frames.
+The earlier observer selector startup failure is preserved. Baseline002's
+mixed stderr/stdout log fails the real wire parser: it is NOT normalized or
+relabeled. A new separate observation file avoids that logging interference.
+
+Actual synthesis reports show old parser II7 versus new II15, while the
+metadata process itself remains II1. Generated top ties metadata ap_continue
+to mf_full_n; the scalar-fault collector waits jointly on mf and the parser's
+request_exh_fault. Thus repeated successful status reports impose the slower
+parser cadence on the2000-entry sweep. Top already disables start propagation;
+this is scalar-status backpressure, not a missing start-FIFO pragma.
+[AMD's description](https://docs.amd.com/r/2023.1-English/ug1399-vitis-hls/Specifying-Compiler-Created-FIFO-Depth)
+distinguishes scalar propagation FIFOs from start propagation.
+
+`segmented_write_abort_event_transport.py` creates a separate actual source
+cohort. ONLY the metadata header changes: same original one-entry-per-call
+2000-clear/no-admission loop, RAM/insertion/readback checks, sticky halt and
+both real error sites. A real one-shot fault-event stream plus sticky
+collector replaces successful per-call scalar status rendezvous. The legacy
+component API calls that SAME engine/collector, not a shadow RAM or C++-only
+implementation; actual native synthesis calls the engine and collector
+directly. No event certifies data/CQ/drain/STOP or permits unpin.
+
+All140 real C++ cases PASS96.440s compile/max9.063s runtime under600/30;
+real owned Atomic/Immediate compatibility PASS29.754s compile/1.194s runtime.
+The new metadata component PASS4.624s compile/0.004s runtime verifies all2000
+calls forbid admission,2001 actual zero reads/all stored fields, no successful
+status tokens without a collector, and exactly one actual invalid-index fault
+with sticky halt/no fake insertion. C++ does NOT prove RTL reset/scheduling.
+[Audit4738](../results/2026-10-18/rocev2-rnic-write-abort-event-diagnostics-001.json)
+binds real failed/baseline objects, every source, all160 original C++ outcome/
+oracle fields, unchanged services and the exact new source/reset sweep.
+
+HLS attempt001 fails the unchanged1500MiB guard before actual synthesis;
+its original wrapper record, absent-parent semantics and explicit startup
+record are retained. The extra mixed-output auditor failure is also retained.
+Exact completed scratch DBs were losslessly archived/fsynced/hash-verified,
+checked twice for live project use, moved to RAM and symlinked; no sources,
+generated RTL, logs, reports, objects or binaries were deleted. ALL archived
+RAM-backed DBs must be restored/verified before ANY reboot; authenticated
+thread/goal revival is still unproved and no reboot is needed.
+
+Actual new generation002 is now LIVE: session64023, builder2950563,
+HLS2950809, `native-zero-service-hls-t91my3mz`, source/frozen inputs bound,
+start free1710964736B above original1572864000B, original7200s/4ns/default
+1.08ns/8QP/2000 retained. The generated-domain auditor is prepared/AST-valid,
+NOT executed; it requires all121 original ports, one real metadata RAM engine/
+event collector and actual non-scalar-blocking metadata ap_continue. New
+candidate RTL/native40/original timing remain unproven. Existing15.571ns
+still contradicts4ns; all11/error CQ/STOP/lifetimes/recovery/physical remain.
+No hardware/fan/network/BIOS/install/load/JTAG/flash/reboot/Git action here.
+
 ### Publication checkpoint: latest fixed-MAC native run ended, regression incomplete
 
 This explicit user-requested publication includes progress176–181 and all

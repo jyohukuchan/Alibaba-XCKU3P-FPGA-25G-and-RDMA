@@ -1,0 +1,12 @@
+{
+  "scope": "Preserved extra diagnostic auditor failure; raw wire output remains rejected, not normalized.",
+  "pass_test": false,
+  "error_type": "ValueError",
+  "error": "invalid literal for int() with base 16: 'ac8bAS02_ACK_OBSERVATION'",
+  "cause": "Observer stderr snapshots interleaved with buffered native stdout in baseline diagnostic002. Exact raw log and auditor source preserved; no successful wire equivalence inferred from that log.",
+  "source_sha256": {
+    "rdma/rnic/build/write-abort-ack-baseline-diagnostic-002-preimages-SwQxqee6/rdma/rnic/tests/audit_write_abort_event.py": "9292f370e5e17f492cac96353b5fe334d87e46de96c490afe4a6e6bdc2849d59"
+  },
+  "failed_before_audit_report_written": true,
+  "fix": "New separate observer file and fresh baseline diagnostic003; no stripping or normalization of original corrupted log."
+}

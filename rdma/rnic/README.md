@@ -14,7 +14,56 @@ full RNIC suite was not green (native MAC-lifetime ERROR and QP-TX FAIL before
 the remaining run was interrupted). The new bounded30-case native batch below
 passes; this does not relabel the old suite or qualify a hardware release.
 
-## Latest functional milestone (2026-10-21)
+## Latest functional milestone (2026-10-22)
+
+Publication checkpoint: this explicit push includes progress182–184 source,
+tests and successful AND failed reports. Entries below retain their historical
+checkpoint-time state. Native40 simulation is not FEC-native packet/MMIO,
+Linux callback or original-timing qualification; those remain open.
+
+Local184: actual event-status native40 PASS, compile967.520s/max13.841s under
+original1200s/30s/180s/4ns. [Runtime audit3155](../../results/2026-10-18/rocev2-rnic-write-abort-event-native-runtime-diagnostics-001.json)
+checks every old38 full outcome except wall time and genuine fatal61/62
+owner/wire/HLS-abort/cancel/host/RQ/quarantine. Prior failures stay false.
+This is simulation, not physical/Linux/timing (15.571ns still fails) signoff.
+
+New optional FEC1 fatal-notification candidate retains selected1000 in32
+AXI-Lite words: signature/ABI/features at0/4/8, status0xc, exact sequence ACK
+0x10, last-ACK0x14, sequence0x18, fault0x1c, record0x40–0xbc. Empty/partial
+owners, full SQC cookie+epoch and actual inner packet relationships are
+validated; RNC command cookie/WR id/message cookie are not QP identity.
+The C poller handles delivery backpressure/ambiguous ACK without duplicate
+accepted callbacks and terminal detach never ACKs or releases references.
+RTL11/C277/kernel-support build pass [audit1846](../../results/2026-10-18/rocev2-rnic-fatal-event-mmio-diagnostics-001.json),
+using actual recorded native seeds and exact RTL readback, NOT live Linux IO.
+
+A separate native FEC graph adds optional0x406000/4KiB aperture, same207 HLS,
+two native leaf edits, tested tracked two-consumer fanout and persistent
+native-quarantine SQC/RQC guards. Elaboration9.903s/[audit2748](../../results/2026-10-18/rocev2-rnic-fatal-event-native-source-diagnostics-002.json)
+PASS; new FEC-native packet/MMIO and Linux QP callbacks remain unexecuted.
+No driver/default capability advertisement, hardware action or further Git
+publication. ACK never means error WC/STOP/global drain/unpin/recovery.
+
+Local183: actual HLS207 generation860.083s PASS; [audit2323](../../results/2026-10-18/rocev2-rnic-write-abort-event-generated-diagnostics-001.json)
+keeps all121 ports and verifies the real independent metadata engine/collector
+and no duplicate old RAM. Actual metadata ap_continue=1, not scalar mf_full_n;
+this structural proof is not packet execution. Native461RTL/8data hierarchy
+elaborates9.860s, all262 non-HLS leaves unchanged. [Preflight2341](../../results/2026-10-18/rocev2-rnic-write-abort-event-native-fixture-diagnostics-001.json)
+retains the ENTIRE previous40-case bench/419 assertions/raw bytes. A fresh
+native40 executable is compiling under original gates; no new runtime pass.
+Timing15.571ns still FAILS4ns/default1.08ns; all11/error CQ/STOP/lifetimes/
+physical remain. No hardware/default/Git action; older live notes are history.
+
+Local182 after `e29c8da`: actual unchanged-object observers find the SEND
+stall at unfinished metadata init; ACK is pending inside the real HLS join.
+Old init completes55.6us, new only1698/2000 at100.8us. Actual generated scalar
+fault rendezvous throttles the II1 table behind the II15 parser. Separate
+sticky-event metadata source retains identical reset sweep/RAM/owner checks,
+passes C++140/legacy services/new2001-read+fault-event component and
+[audit4738](../../results/2026-10-18/rocev2-rnic-write-abort-event-diagnostics-001.json),
+including all160 old outcome/oracle fields. Actual HLS002 is LIVE under
+original gates; no candidate native40/timing/reset-RTL/physical success yet.
+Failed attempts/logs remain; no hardware/default or further Git action.
 
 Publication checkpoint: this explicit request includes progress176–181 source,
 tests and successful/failed reports. The [latest fixed-MAC native40 run](../../results/2026-10-18/rocev2-rnic-write-abort-scheduled-mac-native-full-001.json)

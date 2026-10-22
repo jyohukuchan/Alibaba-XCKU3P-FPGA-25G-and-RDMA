@@ -1,0 +1,14 @@
+{
+  "scope": "Preserved original1500MiB guard rejection before actual HLS launch/cohort allocation.",
+  "pass_test": false,
+  "error_type": "RuntimeError",
+  "error": "unchanged1500MiB HLS guard: insufficient space",
+  "HLS_free_space_guard_bytes": 1572864000,
+  "actual_HLS_started": false,
+  "failed_before_HLS_cohort_allocation": true,
+  "source_sha256": {
+    "rdma/rnic/build/write-abort-builder-runner-tobl5yui/builder.py": "eb4b7a08fa59b234c03a94c09e9684e7a895160ef4d6ba312ee41c6a70e25d2f",
+    "rdma/rnic/hls/build_native_zero_service.py": "32dc4b9595debb3331e8726d94bc207da9ef287174f41ae88710ba48cf015d25"
+  },
+  "fix": "Lossless verified terminal scratch archival; keep the original guard unchanged."
+}

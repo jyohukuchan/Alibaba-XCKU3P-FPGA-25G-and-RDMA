@@ -1,0 +1,261 @@
+{
+  "scope": "Actual event-status native40, every old38 outcome and genuine fatal2 proof.\n\nNo binary/cohort/oracle substitution, error CQ/STOP/global drain/unpin or\nphysical qualification. Preserve original timing constraints and factual\nHLS estimate verdict, without assuming a timing improvement or failure.\n",
+  "audit_passed": true,
+  "evidence": {
+    "write-abort-event-native-full-001": {
+      "bindings_verified": 938,
+      "report_sha256": "10663ad9c841dd9d6a80b81da61c3e548335239c876de04dc37669f85054b79a",
+      "exact_preimage_resolutions": []
+    },
+    "write-psn-control-native-full-001": {
+      "bindings_verified": 884,
+      "report_sha256": "0ab87192de1ed5846a636c6992a2e44e309d19fece8f3c0386fe772430408a9a",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-native-elaboration-001": {
+      "bindings_verified": 538,
+      "report_sha256": "f9612b93a46dc71d8f882bc2dcd52fd3a74eab65830f9399153a9b7059ba298a",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-native-fixture-diagnostics-001": {
+      "bindings_verified": 8,
+      "report_sha256": "0e599a3b9bf4ee03f8570d5149b7584a301f52f3e32c2655f6296b2d2c7edce0",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-generated-hls-002": {
+      "bindings_verified": 758,
+      "report_sha256": "4efcb5cd27926965b08c8ce76067f2c3a7c0b5e1013d3bb5d66d6f31ea08b2c3",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-generated-diagnostics-001": {
+      "bindings_verified": 12,
+      "report_sha256": "b3b37e36de272fc7cceb6563f55d4185bfb39991ba8222e39d2d15b98e4f8144",
+      "exact_preimage_resolutions": []
+    },
+    "write-fatal-native-source-diagnostics-001": {
+      "bindings_verified": 11,
+      "report_sha256": "3b6151715a359c9268b9956c7b4ad4759dbe4c6e4c0cbc94f07e1df050394289",
+      "exact_preimage_resolutions": []
+    },
+    "write-psn-control-native-runtime-diagnostics-001": {
+      "bindings_verified": 6,
+      "report_sha256": "38ab8f297fe781adaabb3a021d3612335c1befc86145a9c87e902e610a6976f5",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 3155,
+  "actual_native_cases": 40,
+  "all38_old_entire_results_except_seconds_identical": true,
+  "actual_fatal_cases": {
+    "LARGE_RX_WRITE_FATAL_ACCESS": {
+      "summary": {
+        "pass_test": true,
+        "partial": 0,
+        "MR_queries": 1,
+        "bytes": 0,
+        "commands": 0,
+        "fences": 0,
+        "native_PSN_commits": 0,
+        "NAK": 1,
+        "HLS_aborts": 1,
+        "native_cancels": 0,
+        "selected_proofs": 1,
+        "retained_RQ": 1,
+        "CQ": 0,
+        "quarantine": 4,
+        "replay_words_accepted": 260
+      },
+      "actual_common_nonce_backend": {
+        "admitted": 0,
+        "issued": 0,
+        "backend_completed": 0,
+        "logical_completed": 0,
+        "translated": 0,
+        "active": 0,
+        "fault": 0
+      },
+      "full_control_owner480": "0629876549876540000000000000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef91234567000000010011000002",
+      "full_abort_owner960": "000000000000000629876549876540000000000000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef912345670000000100110000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "full_selected1000": "0700000000000000000000000629876549876540000000000000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef912345670000000100110000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "full_retained_RQ620": "00000000f123456789abc00100000000000000019123456700000001000002001100010004000100000000000000000000000000000000000000000000000000000000000000000000000000003",
+      "actual_XGMII_frames": [
+        {
+          "tag": 24577,
+          "frame_hex": "b8830367c5d08af3fbb975310800450200300000400064117493c6120b02c6120b0112b712b7001c00001140ffff000000c40098765462000000f9c87fbf"
+        }
+      ],
+      "host_snapshot_sha256": "2df6aa76daab71305f7306907732d3d2eb1e263fdf36e3ebaf1301757a310029"
+    },
+    "LARGE_RX_WRITE_FATAL_PARTIAL": {
+      "summary": {
+        "pass_test": true,
+        "partial": 1,
+        "MR_queries": 2,
+        "bytes": 4096,
+        "commands": 1,
+        "fences": 1,
+        "native_PSN_commits": 1,
+        "NAK": 1,
+        "HLS_aborts": 1,
+        "native_cancels": 1,
+        "selected_proofs": 1,
+        "retained_RQ": 1,
+        "CQ": 0,
+        "quarantine": 4,
+        "replay_words_accepted": 260
+      },
+      "actual_common_nonce_backend": {
+        "admitted": 1,
+        "issued": 1,
+        "backend_completed": 1,
+        "logical_completed": 1,
+        "translated": 0,
+        "active": 0,
+        "fault": 0
+      },
+      "full_control_owner480": "0619876559876550000000000000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef91234567000000010011000002",
+      "full_abort_owner960": "000f60010000000619876559876550000000000000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001000000000000000100000008fedcba98765432100000200198765400000000000010009876540001",
+      "full_selected1000": "0700000000000f60010000000619876559876550000000000000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001000000000000000100000008fedcba98765432100000200198765400000000000010009876540001",
+      "full_retained_RQ620": "00000000f123456789abc00100000000000000019123456700000001000002001100010004000100000000000000000000000000000000000000000000000000000000000000000000000000003",
+      "actual_XGMII_frames": [
+        {
+          "tag": 24577,
+          "frame_hex": "b8830367c5d08af3fbb975310800450200300000400064117493c6120b02c6120b0112b712b7001c00001140ffff000000c4009876540000000071f7502e"
+        },
+        {
+          "tag": 24578,
+          "frame_hex": "b8830367c5d08af3fbb975310800450200300000400064117493c6120b02c6120b0112b712b7001c00001140ffff000000c40098765561000000a74eaa90"
+        }
+      ],
+      "host_snapshot_sha256": "840ce6d9fa7d15ca6e6a663858826e8e83273b406be613c894d77de94b315d70"
+    }
+  },
+  "actual_full480_512_528_960_992_1000_same_owner_proofs": true,
+  "actual_generated_HLS_MR_PTE_PCIe_nonce_fence_MAC_PSN_cancel": true,
+  "genuine_queued_zero_RQ_preserved_without_error_CQ": true,
+  "quarantine_persists_after_selected_ACK": true,
+  "actual_native_module_counts": {
+    "rocev2_top": 1,
+    "rocev2_native_rnic_endpoint": 1,
+    "rocev2_native_sq_endpoint": 1,
+    "rocev2_mr_table": 1,
+    "rocev2_mr_page_table": 1,
+    "rocev2_shared_hls_transport": 1,
+    "rocev2_shared_protected_responder": 1,
+    "rocev2_atomic_request_integrity_transport": 1,
+    "rocev2_wqe_memory_executor": 1,
+    "rocev2_wqe_response_guard": 0,
+    "rocev2_wqe_tx_lifetime": 1,
+    "rocev2_wqe_replay": 1,
+    "rocev2_receive_queue": 0,
+    "rocev2_receive_ack_tx": 0,
+    "rocev2_cq_mmio": 1,
+    "rocev2_duplex_rx_mux": 1,
+    "rocev2_duplex_tx_router": 1,
+    "rocev2_memory_origin_router": 2,
+    "rocev2_sq_control_regs": 2,
+    "rocev2_sq_dma_fetch": 1,
+    "rocev2_sq_fetch": 1,
+    "rocev2_queue_cfg_arbiter": 1,
+    "rocev2_wqe_admission": 2,
+    "rocev2_native_atomic_request_top": 0,
+    "rocev2_native_zero_request_top": 0,
+    "rocev2_zero_ipv4_icrc": 3,
+    "rocev2_zero_rx_padding": 1,
+    "rocev2_native_zero_rq_top": 0,
+    "rocev2_zero_service_owner": 1,
+    "rocev2_zero_service_mac": 1,
+    "rocev2_memory_command_nonce": 1,
+    "rocev2_native_zero_service_top": 0,
+    "rocev2_paged_memory_backend": 1,
+    "rocev2_segmented_source_executor": 1,
+    "rocev2_segmented_executor_mux": 1,
+    "rocev2_segmented_child_executor": 2,
+    "rocev2_native_segmented_read_top": 0,
+    "rocev2_segmented_read_executor_mux": 1,
+    "rocev2_segmented_read_unpad_route": 1,
+    "rocev2_segmented_read_executor": 1,
+    "rocev2_segmented_read_child_unpad": 1,
+    "rocev2_wqe_read_unpad": 1,
+    "rocev2_native_segmented_request_top": 0,
+    "rocev2_expected_remote_msn": 1,
+    "rocev2_segmented_read_response_guard": 1,
+    "rocev2_native_segmented_immediate_top": 0,
+    "rocev2_native_segmented_receive_top": 0,
+    "rocev2_receive_message_queue": 0,
+    "rocev2_native_segmented_write_owned_top": 0,
+    "rocev2_mr_query_arbiter": 4,
+    "rocev2_receive_write_ack_tx": 0,
+    "rocev2_write_notice_binding_queue": 1,
+    "rocev2_segmented_write_native_controller": 1,
+    "rocev2_segmented_write_native_frontend": 1,
+    "rocev2_native_write_rx_router": 1,
+    "rocev2_remote_write_memory": 1,
+    "rocev2_remote_write_message_guard": 0,
+    "rocev2_memory_client_arbiter": 3,
+    "rocev2_receive_write_rnr_ack_tx": 0,
+    "rocev2_segmented_write_rnr_control": 1,
+    "rocev2_native_control_response_top": 0,
+    "rocev2_receive_control_ack_tx": 1,
+    "rocev2_write_psn_control": 0,
+    "rocev2_native_control_response_top_as02_native_control_merger_0_s": 0,
+    "rocev2_native_control_response_top_generate_exh_512_0_s": 0,
+    "rocev2_native_control_response_top_msn_table_0_s": 0,
+    "rocev2_native_control_response_top_state_table_0_s": 0,
+    "rocev2_native_write_abort_top": 1,
+    "rocev2_write_error_control": 1,
+    "rocev2_write_abort_control": 1,
+    "rocev2_fatal_write_message_guard": 1,
+    "rocev2_native_write_abort_top_as02_native_control_merger_0_s": 1,
+    "rocev2_native_write_abort_top_rx_exh_fsm_512_0_s": 1,
+    "rocev2_native_write_abort_top_as02_write_packet_retire_join_0_s": 1,
+    "rocev2_native_write_abort_top_generate_exh_512_0_s": 1,
+    "rocev2_native_write_abort_top_msn_table_0_s": 1,
+    "rocev2_native_write_abort_top_state_table_0_s": 1,
+    "rocev2_native_write_abort_top_as02_retrans_meta_table_event_0_s": 1,
+    "rocev2_native_write_abort_top_as02_retrans_meta_fault_collect_0_s": 1,
+    "rocev2_native_write_abort_top_retrans_meta_table_0_s": 0
+  },
+  "compilation_seconds": 967.5199970510439,
+  "maximum_case_seconds": 13.841112728987355,
+  "fresh_binary_sha256": "b66088607bde1ec644d3f48c3eba8046ea2f95ebf904d6a9810ba1a0aa2ed43b",
+  "source_sha256": {
+    "rdma/rnic/build/write-abort-event-native-runtime-audit-137dvj0y/audit.py": "39c94891e6bc54bb26e3f3ec20d69f2f581b8f98658cb73b0ed15eb8985e38af",
+    "rdma/rnic/tests/audit_write_abort_event_native_runtime.py": "5300dfb5e0dd9abc0c02a1575195bdfc361e46121df808146ca0474b091802f5",
+    "rdma/rnic/tests/audit_write_abort_scheduled_mac_native_runtime.py": "0ceadd4a6551fcbeed94b0dd208d5905751e55ccac36edcc2711b6762ff46dd1",
+    "rdma/rnic/tests/audit_write_abort_scheduled_native_runtime.py": "065e4ff747a3018e1948d605b56cb9f59231681e59f28369caf2df04b9c85446",
+    "rdma/rnic/tests/audit_write_fatal_native_runtime.py": "ad265f013ff33d180ad69452ce4f250b80c88d23111d6d5dda66065eb65cbc46",
+    "rdma/rnic/build/write-abort-event-native-full-b1in5x1o/LARGE_RX_WRITE_FATAL_ACCESS.log": "88575c421f317fb6aa3d37890c91287615921505e66b38f7f51a4c88e032515e",
+    "rdma/rnic/build/write-abort-event-native-full-b1in5x1o/LARGE_RX_WRITE_FATAL_ACCESS-selected.hex": "898f7829ac5b0bf48d629ed0e3ceb8cb089ddc2bc242dfc07b4a5fbf1987ef18",
+    "rdma/rnic/build/write-abort-event-native-full-b1in5x1o/LARGE_RX_WRITE_FATAL_ACCESS-rq-owner.hex": "70bf9e1fc8b95d04340dc8d2696996b771738631e50857d34e3c868c9e839986",
+    "rdma/rnic/build/write-abort-event-native-full-b1in5x1o/LARGE_RX_WRITE_FATAL_ACCESS-host.hex": "932e8e1cfb8d48a4952dd87deaa4f54dd36ba7470e6b64670dae29d9029a9ee5",
+    "rdma/rnic/build/write-abort-event-native-full-b1in5x1o/LARGE_RX_WRITE_FATAL_ACCESS-receive-records.hex": "fbdc435d11e27ee2605a1f229a422e0f84df1a7bbaab3bb623f56f68a6102f85",
+    "rdma/rnic/build/write-abort-event-native-full-b1in5x1o/LARGE_RX_WRITE_FATAL_ACCESS-write-fatal-input.hex": "8e4f435560e87ff8cb526b8689510b43195d6ce6258a4519f1f36c6c848fa97b",
+    "rdma/rnic/build/write-abort-event-native-full-b1in5x1o/LARGE_RX_WRITE_FATAL_PARTIAL.log": "5df282ac2ac5d3b4f1db0428aaaf62c22ea71c53f3ca4f4b2047642a0dd22462",
+    "rdma/rnic/build/write-abort-event-native-full-b1in5x1o/LARGE_RX_WRITE_FATAL_PARTIAL-selected.hex": "7243539f5fa635efc9730deba74c225c6539d6d40670809a45144e2aebc5697c",
+    "rdma/rnic/build/write-abort-event-native-full-b1in5x1o/LARGE_RX_WRITE_FATAL_PARTIAL-rq-owner.hex": "70bf9e1fc8b95d04340dc8d2696996b771738631e50857d34e3c868c9e839986",
+    "rdma/rnic/build/write-abort-event-native-full-b1in5x1o/LARGE_RX_WRITE_FATAL_PARTIAL-host.hex": "85312454b2e5c7aa07f385ae715d9bae073019d169970600c9ab140d9776f070",
+    "rdma/rnic/build/write-abort-event-native-full-b1in5x1o/LARGE_RX_WRITE_FATAL_PARTIAL-receive-records.hex": "fbdc435d11e27ee2605a1f229a422e0f84df1a7bbaab3bb623f56f68a6102f85",
+    "rdma/rnic/build/write-abort-event-native-full-b1in5x1o/LARGE_RX_WRITE_FATAL_PARTIAL-write-fatal-input.hex": "d66c59e96b251fa07fff6a9cd05721a9da3087cbaefeb5db46c7bdb94a00f212"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "UNOPTFLAT_warnings": 13,
+  "warnings_not_timing_or_drain_qualification": true,
+  "live_Linux_or_physical": false,
+  "real_peer_fatal_recovery": false,
+  "fatal63_implemented": false,
+  "standard_error_CQ_STOP_global_drain_or_unpin": false,
+  "original_timing_met": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "remaining": [
+    "All original11/full1MiB native/multiSGE/live registered Linux-provider refs/real-peer error-RNR-retry-MSN-congestion/original timing/physical remain.",
+    "Fatal63, standard error CQ/full QP STOP/recovery, reference retirement and legitimate quarantine release remain; selected1000 alone is not lifetime release."
+  ],
+  "hardware_or_default_actions": [],
+  "commit_or_push": false
+}

@@ -5,6 +5,36 @@ native Atomic support. Default native RTL and `IB_ATOMIC_NONE` are unchanged.
 The original protected responder, legacy images, clocks and all timing/drain
 gates are untouched. Nothing is programmed, installed or loaded.
 
+Publication checkpoint (2026-10-22): this explicit push includes progress182–184
+source/tests and successful AND failed reports. The entries below retain their
+checkpoint-time status; live-job/no-Git statements are historical. Native40
+simulation does not qualify the FEC-native path, Linux callbacks or timing.
+
+Local184: actual new native40 PASS967.520s compile/max13.841s per case,
+[runtime audit3155](../results/2026-10-18/rocev2-rnic-write-abort-event-native-runtime-diagnostics-001.json).
+Every old38 entire outcome except seconds, including Atomic, is identical;
+real fatal61/62 proofs also pass. NOT physical/standard-API/timing qualification.
+New fatal-notification RTL/C/kernel-support component and separate FEC-native
+source graph are added, not native FEC runtime or Linux async callbacks yet.
+IB_ATOMIC_NONE/global drains/error CQ/STOP/unpin/defaults remain unchanged;
+15.571ns still fails original4ns. All jobs terminal, no hardware/Git action.
+
+Local183: actual event-status HLS207 generation860.083s PASS, full121-port/
+single-engine/collector audit2323 PASS. Same native graph with262 non-HLS
+leaves unchanged elaborates9.860s; exact40/419-check preflight2341 PASS.
+Fresh native40 is compiling, not new Atomic/native runtime qualification.
+All38 old complete results still require execution on that new binary.
+15.571ns still FAILS original timing; IB_ATOMIC_NONE/error CQ/STOP/unpin/
+global drains/defaults/physical remain unchanged. No hardware or Git action.
+
+Local182 after `e29c8da`: genuine ACK observation identifies unfinished metadata
+initialization behind a scalar-fault rendezvous, not a new Atomic result.
+An event-status metadata candidate keeps the same RAM/reset/owner checks;
+all140 old C++ outcomes/oracles and real owned Atomic/Immediate compatibility
+pass, with [audit4738](../results/2026-10-18/rocev2-rnic-write-abort-event-diagnostics-001.json).
+Actual HLS generation002 is LIVE; new RTL/native40/Atomic/timing qualification
+is unproven. No IB_ATOMIC_NONE/default/global-drain/hardware/Git changes.
+
 Publication checkpoint: progress176–181 sources and successful/failed reports
 are included by explicit request. The latest fixed-MAC native build has ended:
 compile966.875s PASS; first8 cases PASS, then `LARGE_SEND_IMM` fails its

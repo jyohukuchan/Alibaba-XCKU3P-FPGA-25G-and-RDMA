@@ -26,7 +26,50 @@ inbound SEND/WRITE target, READ responder, native InfiniBand or production-relia
 | Incremental RNIC source | Offline native queue/MR/DMA/kernel/provider development, SEND/RECV/Immediate and Atomic responder candidates; not a new hardware-qualified image |
 | Persistence | SRAM programming only; flash was not modified |
 
-### RNIC development snapshot (2026-10-21)
+### RNIC development snapshot (2026-10-22)
+
+Publication checkpoint: this explicit push includes progress182–184 source,
+tests, and successful AND failed reports. Native40 PASS is simulation-only;
+the new FEC-native packet/MMIO path and Linux callbacks remain untested,
+and timing is unresolved. Entries below describe their checkpoint-time state,
+including historical live-job/no-publication notes.
+
+Local184: the SAME fresh event-status native build finishes967.520s under1200
+and ALL40 cases PASS, including previously stuck SEND Immediate. [Runtime
+audit3155](results/2026-10-18/rocev2-rnic-write-abort-event-native-runtime-diagnostics-001.json)
+requires every old38 complete outcome except seconds identical and genuine
+fatal61/62 wire/abort/cancel/retained-RQ/quarantine proofs. This remains CPU
+simulation, NOT Linux/physical/original timing qualification (still15.571ns).
+Next feature: retained fatal-event mailbox/C reader passes RTL11/C277 and
+kernel support build; [audit1846](results/2026-10-18/rocev2-rnic-fatal-event-mmio-diagnostics-001.json).
+A separate FEC-native source graph wires optional0x406000 aperture and tracked
+two-consumer fanout, elaborates9.903s/[audit2748](results/2026-10-18/rocev2-rnic-fatal-event-native-source-diagnostics-002.json),
+but has NOT run native packet/MMIO or Linux QP callbacks. ACK cannot clear
+native quarantine/free references. No live jobs/hardware/default/Git action;
+all11/error CQ/STOP/lifetime/recovery/physical requirements remain open.
+
+Local183: actual event-status HLS generation002 PASS860.083s,207 RTL/data.
+[Audit2323](results/2026-10-18/rocev2-rnic-write-abort-event-generated-diagnostics-001.json)
+preserves all121 ports and confirms one real metadata engine/sticky collector,
+no duplicate old RAM, and actual metadata ap_continue=1 rather than mf_full_n.
+Timing still FAILS15.571ns versus4ns/default1.08ns. Whole native461RTL/8data
+elaborates9.860s with all262 non-HLS leaves unchanged. [Preflight2341](results/2026-10-18/rocev2-rnic-write-abort-event-native-fixture-diagnostics-001.json)
+keeps the ENTIRE previous40 bench/419 checks/all raw inputs byte-identical.
+A fresh actual native40 binary is now compiling under original1200s/30s/
+180s/4ns/j4/O1 gates. No new packet or all40/old38 regression PASS yet; no
+hardware/default/Git action. All11/error CQ/STOP/lifetimes/physical remain.
+
+Local182 after publication `e29c8da`: actual old-object/new-object observations
+locate the SEND stall at unfinished2000-entry initialization, NOT a lost ACK
+or abort quarantine. Old init completes55.6us; new is only1698 at100.8us.
+Generated scalar fault FIFOs throttle the II1 table behind the II15 parser.
+A separate real sticky-fault-event/collector source candidate preserves the
+exact reset sweep/RAM/owner checks and passes C++140, legacy services and
+the2001-zero-read/error-event component. [Audit4738](results/2026-10-18/rocev2-rnic-write-abort-event-diagnostics-001.json)
+retains all160 original outcome/oracle fields. Actual HLS generation002 is
+LIVE under original gates; candidate RTL/native40/timing are NOT qualified.
+Failed observers/audits/space-guard attempts remain recorded; no raw-log
+normalization, hardware/default or further Git action. Older notes are history.
 
 Publication update: this user-requested checkpoint includes progress176–181,
 the scheduled WRITE-abort implementation/tests, and successful AND failed

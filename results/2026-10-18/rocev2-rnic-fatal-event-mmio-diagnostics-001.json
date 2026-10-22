@@ -1,0 +1,83 @@
+{
+  "scope": "Bind recorded native certificates through actual RTL readback/C/kernel build.\n\nNative producer replay and software IO/delivery are modeled. No live native\nMMIO attachment, verbs callback, error CQ, STOP/reference retirement or unpin.\n",
+  "audit_passed": true,
+  "evidence": {
+    "fatal-event-mmio-001": {
+      "bindings_verified": 18,
+      "report_sha256": "dee16fed2c566912564ba25c7f6416bd72169bb589a1e8ca5c60c3afdb4b0a0c",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/test_fatal_io.c",
+        "rdma/rnic/tests/tb_fatal_event_mmio.v"
+      ]
+    },
+    "fatal-event-mmio-002": {
+      "bindings_verified": 33,
+      "report_sha256": "a013d24da6a3f732107e2f18933f54d1baa7feed468651462e77d8eb46f1497d",
+      "exact_preimage_resolutions": [
+        "rdma/rnic/tests/test_fatal_io.c"
+      ]
+    },
+    "fatal-event-mmio-003": {
+      "bindings_verified": 33,
+      "report_sha256": "628f9838dcd92d0d43758390a2f4a6898920ae7214b9e60dbe3fc619841c0b37",
+      "exact_preimage_resolutions": []
+    },
+    "fatal-event-kernel-build-001": {
+      "bindings_verified": 30,
+      "report_sha256": "25a93a69357d76fb091485cfec8eb68704d91822ed5206366f59fb8a33a07d1f",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-native-full-001": {
+      "bindings_verified": 938,
+      "report_sha256": "10663ad9c841dd9d6a80b81da61c3e548335239c876de04dc37669f85054b79a",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-native-runtime-diagnostics-001": {
+      "bindings_verified": 20,
+      "report_sha256": "f5cf8089cde35b52f024029c15ec86c9117f3cedcac9fce7ea9441e4d9ee3ce1",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-scheduled-mac-native-full-001": {
+      "bindings_verified": 774,
+      "report_sha256": "3c163047f0157f89348cf37f8e7600dc7c641ae4832cb31520849e1a2a7cb7e8",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 1846,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_fatal_event_mmio.py": "b18a255ccc6d88e09b70d69a9a5451760a24349eb970515fa1278fdb25e7552e",
+    "rdma/rnic/tests/tb_fatal_event_mmio.v": "46fd0f8bf51c878887d3d07c79ab038db48acaef32522e7edb06d62d44d09760",
+    "rdma/rnic/tests/test_fatal_io.c": "d9c4f3907a1eb0a156b35b378bf0b02b95f86f0d22c9600953b79d712145e82b",
+    "rdma/rnic/kernel/fatal_io.c": "04e95416e15a7fcec8c2c9c4caf17dca5dfa34b5d31273a60f83a5f126b80265",
+    "rdma/rnic/rtl/rocev2_fatal_event_mmio.v": "e00d00156e9e2457890abf496c7edc1f3c2dfd72b45d3f115f77a5d8a44ae058"
+  },
+  "actual_recorded_native_seed_readback_proofs": {
+    "LARGE_RX_WRITE_FATAL_ACCESS": {
+      "selected1000": "0700000000000000000000000629876549876540000000000000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef912345670000000100110000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "real_RTL_readback": "rdma/rnic/build/fatal-event-mmio-vjpkpodk/readback-0.hex"
+    },
+    "LARGE_RX_WRITE_FATAL_PARTIAL": {
+      "selected1000": "0700000000000f60010000000619876559876550000000000000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001000000000000000100000008fedcba98765432100000200198765400000000000010009876540001",
+      "real_RTL_readback": "rdma/rnic/build/fatal-event-mmio-vjpkpodk/readback-1.hex"
+    }
+  },
+  "actual_RTL_cases": 11,
+  "actual_C_assertions": 277,
+  "actual_kernel_support_build": true,
+  "original_failed_test_control_and_SEND_reports_preserved": true,
+  "only_failed_TB_delta_control_fixed": true,
+  "new_mailbox_native_wiring": false,
+  "live_Linux_QP_callbacks": false,
+  "standard_error_CQ_STOP_global_drain_unpin": false,
+  "firmware_capability_or_driver_advertisement_changed": false,
+  "hardware_verified": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false,
+  "remaining": [
+    "Wire this actual privileged selected1000 producer to retained optional native AXI-Lite aperture and prove real route/guard/fanout/MMIO ownership.",
+    "Bind actual Linux QP/SQC cookie+epoch and kernel async error work; no RNC command/message/WR-id cookie substitutions.",
+    "Standard error CQ/full QP STOP/recovery/reference lifetime/quarantine release and all original11/timing/physical remain."
+  ]
+}

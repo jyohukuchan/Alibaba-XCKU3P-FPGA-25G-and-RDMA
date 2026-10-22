@@ -1,0 +1,14 @@
+{
+  "scope": "Preserved baseline observer startup failure, before any observer compilation or diagnostic runtime.",
+  "pass_test": false,
+  "error_type": "ValueError",
+  "error": "one real HLS parser state required:pe_fsmState",
+  "cause": "The observer selector also matched the Verilator __Vdly__ shadow field in the old header; exact observer source preserved before filtering canonical DUT field names.",
+  "failed_before_observer_compilation": true,
+  "actual_native_failure": false,
+  "hardware_verified": false,
+  "source_sha256": {
+    "rdma/rnic/build/write-abort-ack-diagnostic-003-preimages-I5TCmWTn/rdma/rnic/tests/probe_write_abort_native_ack_diagnostic.py": "9c2a39a579778f9b90d56c67be413f2ab74d258a91e13aca314a1ee38975ca00"
+  },
+  "fix": "Only canonical diagnostic signal-name selection; no RTL/testbench/input/deadline/owner or assertion changes."
+}

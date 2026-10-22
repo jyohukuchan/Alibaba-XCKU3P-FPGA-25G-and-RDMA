@@ -1,0 +1,129 @@
+{
+  "scope": "Bind actual native ACK stall to metadata/status rendezvous and new C++ proof.\n\nAll140 prior outcomes/oracles and the original2000-call initialization gate\nremain. The candidate is NOT generated/native/physical/timing qualified.\n",
+  "audit_passed": true,
+  "evidence": {
+    "write-abort-event-hls-001": {
+      "bindings_verified": 470,
+      "report_sha256": "95528f67ee7ce6a7b6547a55d6a366e9fa03f2af45144d2936b411e84b32a713",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-compat-001": {
+      "bindings_verified": 326,
+      "report_sha256": "75b389dcbb48d08e125f28510bc09e08ed0d22b53bcc60555a146cb0bcca4967",
+      "exact_preimage_resolutions": []
+    },
+    "retrans-meta-events-001": {
+      "bindings_verified": 526,
+      "report_sha256": "c20f563bf094b9a633b67eb22252426d0b67dd31aa373815b27d5ae1c3ecb229",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-scheduled-hls-001": {
+      "bindings_verified": 469,
+      "report_sha256": "93fa0116f6242ade9c3f3d59bd5ffe008e686e298f6c2de45553d69e0d0e2895",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-scheduled-compat-001": {
+      "bindings_verified": 325,
+      "report_sha256": "9e4e355a0eae9d1bb08d7dc2ec8160db67bd334e819ea950eae7e465a06e4706",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-scheduled-mac-native-full-001": {
+      "bindings_verified": 774,
+      "report_sha256": "3c163047f0157f89348cf37f8e7600dc7c641ae4832cb31520849e1a2a7cb7e8",
+      "exact_preimage_resolutions": []
+    },
+    "write-psn-control-native-full-001": {
+      "bindings_verified": 884,
+      "report_sha256": "0ab87192de1ed5846a636c6992a2e44e309d19fece8f3c0386fe772430408a9a",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-scheduled-generated-hls-001": {
+      "bindings_verified": 757,
+      "report_sha256": "e13b337552bdb736c2041e51255b8604fd306436ab7466796175080ad0673a42",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-native-ack-baseline-startup-001": {
+      "bindings_verified": 1,
+      "report_sha256": "7d4b5fbaaed498d1394f7b2895983642d9a6a07cdf2f062662f0a87249b56db8",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-audit-startup-001": {
+      "bindings_verified": 1,
+      "report_sha256": "355da8b53b91bda11782b5a51c29dc31a020173828de5aa035c275081bc667f2",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-generated-source-startup-001": {
+      "bindings_verified": 2,
+      "report_sha256": "d71c055bdc7ad209c89627c5d3be6c0335e8b9a66f891add88bd97a310d0da3a",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-native-ack-diagnostic-001": {
+      "report_sha256": "2649c59bcf999d531a37c4e01b6e50c33ac913d4eab2d22f835b3256846a20d7",
+      "bindings_verified": 40,
+      "exact_preimage_paths": [
+        "rdma/rnic/build/write-abort-ack-diagnostic-001-preimages-RlwO5MIE/rdma/rnic/tests/probe_write_abort_native_ack_diagnostic.py"
+      ]
+    },
+    "write-abort-native-ack-diagnostic-002": {
+      "report_sha256": "0fc0aa3c3530e12de8686376db23b13cc25334e210b201ec1de4c1477bb12228",
+      "bindings_verified": 40,
+      "exact_preimage_paths": [
+        "rdma/rnic/build/write-abort-ack-diagnostic-002-preimages-yhgEzJNA/rdma/rnic/tests/probe_write_abort_native_ack_diagnostic.py"
+      ]
+    },
+    "write-abort-native-ack-diagnostic-003": {
+      "report_sha256": "ff6fe914aec619fd26d85e6e1622d7c1b3965f14f5b67084d75ab233b9b23521",
+      "bindings_verified": 40,
+      "exact_preimage_paths": [
+        "rdma/rnic/build/write-abort-ack-diagnostic-003-preimages-I5TCmWTn/rdma/rnic/tests/probe_write_abort_native_ack_diagnostic.py"
+      ]
+    },
+    "write-abort-native-ack-baseline-diagnostic-003": {
+      "report_sha256": "273ff866032e30ba6083556e9db14eec21499332fb08adf8a2328e9c67c3dcde",
+      "bindings_verified": 42,
+      "exact_preimage_paths": []
+    },
+    "write-abort-native-ack-baseline-diagnostic-002": {
+      "report_sha256": "7b7a285517e48b3afa80896376dbd0aa0131c25fe019bac27ea6643e807790e6",
+      "bindings_verified": 41,
+      "exact_preimage_paths": [
+        "rdma/rnic/build/write-abort-ack-baseline-diagnostic-002-preimages-SwQxqee6/rdma/rnic/tests/probe_write_abort_native_ack_diagnostic.py"
+      ]
+    }
+  },
+  "verified_bindings": 4738,
+  "source_sha256": {
+    "rdma/rnic/tests/audit_write_abort_event.py": "79b388ef9bf6a1dc0ebf7ca4e5a6caad245c15be60afd025a48f17ec1d2c3024",
+    "rdma/rnic/hls/segmented_write_abort_event_transport.py": "a5de577f8bd39aa3a58700f16b42e4a01dd85b68ee4baa01f3a387a14c583136",
+    "rdma/rnic/build/native-write-abort-event-transport-001/source.json": "da022b32509096fd09a2e04defea3323103318e39c5a3aa4009cdbc70180c6a3",
+    "rdma/rnic/build/native-write-abort-event-transport-001/fns/hls/ib_transport_protocol/retransmitter/retransmitter.hpp": "cc221c4c6bf698cd280a4ebb872e0ea64f5ed7aed03bff54633d2b6222c50e47",
+    "rdma/rnic/build/native-zero-service-hls-wxmohldc/project/solution1/syn/verilog/rocev2_native_write_abort_top.v": "98e85afdf5e2aa160161c6208b074df70c7f32303cce0cb3fa49927a7f2a075b"
+  },
+  "actual_failed_native_observation": true,
+  "actual_unchanged_old_binary_baseline": true,
+  "original_native_failure_preserved": true,
+  "observer_startup_failure_preserved": true,
+  "actual_old_init_first_observed_complete_ps": 55600000,
+  "new_init_at_failure_index": 1698,
+  "actual_ack_consumed_pending": true,
+  "actual_request_join_waiting_for_stored_insert": true,
+  "actual_generated_metadata_ap_continue_is_scalar_fault_FIFO_full_n": true,
+  "candidate_only_metadata_fault_transport_changed": true,
+  "original_reset_sweep_identical": true,
+  "actual_CPP_cases": 140,
+  "all140_original_summary_and_oracle_fields_identical": 160,
+  "real_legacy_service_compatibility": true,
+  "real_metadata_event_component": true,
+  "candidate_generated_HLS": false,
+  "candidate_native_runtime": false,
+  "full_board_timing": false,
+  "hardware_verified": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false,
+  "remaining": [
+    "Generate actual event-status HLS; verify sole real RAM/event collector and original ports/geometry/reset.",
+    "Fresh native40, all38 old complete outcomes and fatal61/62, original1200s/30s/4ns gates.",
+    "All original11/fatal63/error CQ/STOP/lifetimes/recovery/timing/physical remain."
+  ]
+}

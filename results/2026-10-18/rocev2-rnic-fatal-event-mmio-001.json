@@ -1,0 +1,73 @@
+{
+  "scope": "Retained fatal-event RTL/register readback/C decoder using real recorded seeds.\n\nThe producer and C MMIO/delivery are MODELS. No live native wiring, Linux verbs\ncallbacks, error WC, QP recovery/STOP/global drain/unpin or hardware proof.\n",
+  "pass_test": false,
+  "directory": "rdma/rnic/build/fatal-event-mmio-2t81bmha",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_fatal_event_mmio.v": "e00d00156e9e2457890abf496c7edc1f3c2dfd72b45d3f115f77a5d8a44ae058",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if.v": "6aac73057466d4c16f79a5575f5fb4136b494d41cd63aaa83fefe90319006a39",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v": "57f196a4e073bfe1b483c19127088006e1d5fdd33f514d4c6672ab08fd7d8359",
+    "external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v": "ec2f3d3d97b694dd4ff046d791fc7a0f95856c41049a107eac1aa3b3daab7412",
+    "rdma/rnic/kernel/fatal_io.c": "04e95416e15a7fcec8c2c9c4caf17dca5dfa34b5d31273a60f83a5f126b80265",
+    "rdma/rnic/kernel/fatal_io.h": "b0cbf69f482cf03b0e2905d8f6de9129c6140eb3ac34bf5350c09642cd3f7fa3",
+    "rdma/rnic/kernel/fatal_regs.h": "40c6941a7820273bc51bb152b0c4aa79bff987cb289c2ee9a8d9516ab7d25e2d",
+    "rdma/rnic/kernel/mr_contract.h": "68858e8a46e24ace2b5d513287ca533ed7adddb70586008b1a7770b5de8aa76c",
+    "rdma/rnic/tests/test_fatal_io.c": "91da8eb15bb44f93b38c66c8674be02d3d8a492a25dbe02dcb23676656ecd893",
+    "rdma/rnic/tests/tb_fatal_event_mmio.v": "5b9d489d3e1f00c8e1dbe2e656fd8e3de96926532902fe13d05020cdea513def",
+    "rdma/rnic/tests/probe_fatal_event_mmio.py": "b6d01ca92a3ca573c7f7cae7a0381f550c94910bd419de333d298dc0f25912e9",
+    "rdma/rnic/build/write-abort-scheduled-mac-native-full-bragjvtr/LARGE_RX_WRITE_FATAL_ACCESS-selected.hex": "898f7829ac5b0bf48d629ed0e3ceb8cb089ddc2bc242dfc07b4a5fbf1987ef18",
+    "rdma/rnic/build/write-abort-scheduled-mac-native-full-bragjvtr/LARGE_RX_WRITE_FATAL_PARTIAL-selected.hex": "7243539f5fa635efc9730deba74c225c6539d6d40670809a45144e2aebc5697c"
+  },
+  "native_record_evidence": {
+    "bindings_verified": 774,
+    "report_sha256": "3c163047f0157f89348cf37f8e7600dc7c641ae4832cb31520849e1a2a7cb7e8",
+    "exact_preimage_resolutions": []
+  },
+  "actual_recorded_native_selected1000": {
+    "LARGE_RX_WRITE_FATAL_ACCESS": "0700000000000000000000000629876549876540000000000000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef912345670000000100110000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "LARGE_RX_WRITE_FATAL_PARTIAL": "0700000000000f60010000000619876559876550000000000000001eb8830367c5d08af3fbb97531c6120b01c6120b020000c4fedcba9889abcdef9123456700000001001100000200000200119123456700000001000000000000000100000008fedcba98765432100000200198765400000000000010009876540001"
+  },
+  "clock_ns": 4,
+  "RTL_compile_limit_seconds": 10,
+  "runtime_limit_seconds": 10,
+  "C_compile_limit_seconds": 30,
+  "cycle_limit": 100000,
+  "four_state": true,
+  "live_native_wiring": false,
+  "kernel_callbacks_or_standard_verbs": false,
+  "error_CQ_QP_STOP_global_drain_unpin": false,
+  "hardware_verified": false,
+  "full_board_timing": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false,
+  "tests": {
+    "0": {
+      "exit": 1,
+      "seconds": 0.016012503008823842
+    }
+  },
+  "RTL_compile_command": [
+    "iverilog",
+    "-g2012",
+    "-s",
+    "tb",
+    "-o",
+    "/dev/shm/as02-fatal-event-mmio-6271xu6k/test",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/tests/tb_fatal_event_mmio.v",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/rdma/rnic/rtl/rocev2_fatal_event_mmio.v",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/external/corundum/fpga/lib/axi/rtl/axil_reg_if.v",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/external/corundum/fpga/lib/axi/rtl/axil_reg_if_rd.v",
+    "/home/user/Alibaba-XCKU3P-FPGA-25G-and-RDMA/external/corundum/fpga/lib/axi/rtl/axil_reg_if_wr.v"
+  ],
+  "RTL_compile_seconds": 0.016355080995708704,
+  "error_type": "ValueError",
+  "error": "fatal-event actual RTL assertions failed mode0",
+  "artifact_sha256": {
+    "rdma/rnic/build/fatal-event-mmio-2t81bmha/seed1.hex": "2b67344cddde8bb971671ff44d250041227cec6880f1321ccbf9ba15ef1cf4d5",
+    "rdma/rnic/build/fatal-event-mmio-2t81bmha/RTL-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/fatal-event-mmio-2t81bmha/0.log": "fbeb01f9bc9074cb4a72716f6dc80ab3440f4411aa100e9dcc4ea6ead22164f1",
+    "rdma/rnic/build/fatal-event-mmio-2t81bmha/seed0.hex": "4673af6c4116488feed1fcbe1313918a5c7f56c751de0c0bc13776d92bd91139"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-fatal-event-mmio-6271xu6k/test": "7ed7615ae1a696dc4ca166a3998027d91e5ff3ece1a0d6f2b89ded236fb0050f"
+  }
+}

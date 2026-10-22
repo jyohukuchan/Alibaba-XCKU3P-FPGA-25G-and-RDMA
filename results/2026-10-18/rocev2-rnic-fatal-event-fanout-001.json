@@ -1,0 +1,37 @@
+{
+  "scope": "Actual1000-bit two-consumer RTL fanout, independent bounded backpressure.\n\nProducer/receivers are models, not a native error certificate or drain proof.\n",
+  "pass_test": true,
+  "directory": "rdma/rnic/build/fatal-event-fanout-n5wk6oc9",
+  "source_sha256": {
+    "rdma/rnic/rtl/rocev2_fatal_event_fanout.v": "618635cfea3ac01ad709e87d717ddfb5a81c4a2343640dcda17154d10c76a18b",
+    "rdma/rnic/tests/probe_fatal_event_fanout.py": "e5c592b9a4f03ddf72cfec3a458ee90de77652c2b88e08a44050a49813214add"
+  },
+  "clock_ns": 4,
+  "runtime_limit_seconds": 10,
+  "compile_limit_seconds": 10,
+  "cycle_limit": 100000,
+  "four_state": true,
+  "native_or_Linux_runtime": false,
+  "hardware_verified": false,
+  "full_board_timing": false,
+  "QP_global_drain_unpin": false,
+  "compile_seconds": 0.016064117022324353,
+  "seconds": 0.015923662984278053,
+  "exit": 0,
+  "summary": {
+    "pass_test": true,
+    "events": 3,
+    "bits": 1000,
+    "independent_stalls": true,
+    "one_accept_per_receiver": true,
+    "upstream_lease_held_until_both": true
+  },
+  "artifact_sha256": {
+    "rdma/rnic/build/fatal-event-fanout-n5wk6oc9/runtime.log": "057b9948e6c93b7465827a5af0a59e17ee9887674d3c5ad6f42e06304fa1a456",
+    "rdma/rnic/build/fatal-event-fanout-n5wk6oc9/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "rdma/rnic/build/fatal-event-fanout-n5wk6oc9/tb.v": "3286551daf650bb243032ec9dd2cd82afcd65958755a99c30b814267a4a11fa0"
+  },
+  "RAM_artifact_sha256": {
+    "/dev/shm/as02-fatal-fanout-dr9ayny6/test": "228e257f1ce6438076b901c589d4b157b6b031c13167829f2820bffeb068777c"
+  }
+}

@@ -1,0 +1,588 @@
+{
+  "scope": "Actual event-status HLS domains/ports/metadata independence, not native.\n\nKeep all original121 port contracts and generation/timing/resource gates.\nRequire one real metadata RAM engine and sticky event collector, with no\nper-invocation scalar fault barrier on the actual metadata ap_continue.\n",
+  "audit_passed": true,
+  "evidence": {
+    "write-abort-event-generated-hls-002": {
+      "bindings_verified": 758,
+      "report_sha256": "4efcb5cd27926965b08c8ce76067f2c3a7c0b5e1013d3bb5d66d6f31ea08b2c3",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-hls-001": {
+      "bindings_verified": 470,
+      "report_sha256": "95528f67ee7ce6a7b6547a55d6a366e9fa03f2af45144d2936b411e84b32a713",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-compat-001": {
+      "bindings_verified": 326,
+      "report_sha256": "75b389dcbb48d08e125f28510bc09e08ed0d22b53bcc60555a146cb0bcca4967",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-event-diagnostics-001": {
+      "bindings_verified": 5,
+      "report_sha256": "ddad37dc6e70bab6468cb14ee30443be93385ebd5bc14795d61a58a318ef47bb",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-generated-hls-001": {
+      "bindings_verified": 759,
+      "report_sha256": "8d46ef368f2d111933227043a37e432e4002a3e06ee4ce5ad1751cf76f0a15e3",
+      "exact_preimage_resolutions": []
+    },
+    "write-abort-generated-diagnostics-001": {
+      "bindings_verified": 5,
+      "report_sha256": "aacf18490f49ed56ec4d4c118f11e27520f982496936abbaa4cf54ac08abdae8",
+      "exact_preimage_resolutions": []
+    }
+  },
+  "verified_bindings": 2323,
+  "HLS_top": "rocev2_native_write_abort_top",
+  "actual_generation_seconds": 860.0827536919969,
+  "actual_all_port_contracts": {
+    "s_axis_rx_data_TDATA": [
+      "input",
+      512
+    ],
+    "s_axis_rx_data_TKEEP": [
+      "input",
+      64
+    ],
+    "s_axis_rx_data_TSTRB": [
+      "input",
+      64
+    ],
+    "s_axis_rx_data_TLAST": [
+      "input",
+      1
+    ],
+    "m_axis_tx_data_TDATA": [
+      "output",
+      512
+    ],
+    "m_axis_tx_data_TKEEP": [
+      "output",
+      64
+    ],
+    "m_axis_tx_data_TSTRB": [
+      "output",
+      64
+    ],
+    "m_axis_tx_data_TLAST": [
+      "output",
+      1
+    ],
+    "s_axis_sq_meta_TDATA": [
+      "input",
+      408
+    ],
+    "m_axis_rx_ack_meta_TDATA": [
+      "output",
+      40
+    ],
+    "m_axis_mem_write_cmd_TDATA": [
+      "output",
+      96
+    ],
+    "m_axis_mem_read_cmd_TDATA": [
+      "output",
+      96
+    ],
+    "m_axis_mem_write_data_TDATA": [
+      "output",
+      512
+    ],
+    "m_axis_mem_write_data_TKEEP": [
+      "output",
+      64
+    ],
+    "m_axis_mem_write_data_TSTRB": [
+      "output",
+      64
+    ],
+    "m_axis_mem_write_data_TLAST": [
+      "output",
+      1
+    ],
+    "s_axis_mem_read_data_TDATA": [
+      "input",
+      512
+    ],
+    "s_axis_mem_read_data_TKEEP": [
+      "input",
+      64
+    ],
+    "s_axis_mem_read_data_TSTRB": [
+      "input",
+      64
+    ],
+    "s_axis_mem_read_data_TLAST": [
+      "input",
+      1
+    ],
+    "s_axis_qp_interface_TDATA": [
+      "input",
+      184
+    ],
+    "s_axis_qp_conn_interface_TDATA": [
+      "input",
+      184
+    ],
+    "m_axis_qp_apply_TDATA": [
+      "output",
+      80
+    ],
+    "s_axis_atomic_owner_TDATA": [
+      "input",
+      144
+    ],
+    "m_axis_atomic_done_TDATA": [
+      "output",
+      224
+    ],
+    "m_axis_atomic_request_TDATA": [
+      "output",
+      512
+    ],
+    "s_axis_atomic_reply_TDATA": [
+      "input",
+      392
+    ],
+    "s_axis_rnr_event_TDATA": [
+      "input",
+      56
+    ],
+    "regRnrFault": [
+      "output",
+      1
+    ],
+    "s_axis_zero_owner_TDATA": [
+      "input",
+      344
+    ],
+    "m_axis_zero_done_TDATA": [
+      "output",
+      400
+    ],
+    "s_axis_recv_owner_TDATA": [
+      "input",
+      680
+    ],
+    "m_axis_recv_done_TDATA": [
+      "output",
+      752
+    ],
+    "m_axis_recv_message_TDATA": [
+      "output",
+      776
+    ],
+    "regRecvFault": [
+      "output",
+      1
+    ],
+    "s_axis_write_owner_TDATA": [
+      "input",
+      424
+    ],
+    "m_axis_write_done_TDATA": [
+      "output",
+      456
+    ],
+    "regWriteFault": [
+      "output",
+      1
+    ],
+    "s_axis_control_owner_TDATA": [
+      "input",
+      480
+    ],
+    "m_axis_control_done_TDATA": [
+      "output",
+      512
+    ],
+    "regControlFault": [
+      "output",
+      1
+    ],
+    "s_axis_write_abort_owner_TDATA": [
+      "input",
+      960
+    ],
+    "m_axis_write_abort_done_TDATA": [
+      "output",
+      992
+    ],
+    "regWriteAbortFault": [
+      "output",
+      1
+    ],
+    "s_axis_request_owner_TDATA": [
+      "input",
+      752
+    ],
+    "m_axis_request_done_TDATA": [
+      "output",
+      816
+    ],
+    "regRequestFault": [
+      "output",
+      1
+    ],
+    "local_ip_address": [
+      "input",
+      128
+    ],
+    "m_axis_dbg_TDATA": [
+      "output",
+      88
+    ],
+    "regCrcDropPkgCount": [
+      "output",
+      32
+    ],
+    "regInvalidPsnDropCount": [
+      "output",
+      32
+    ],
+    "regRetransCount": [
+      "output",
+      32
+    ],
+    "regIbvCountRx": [
+      "output",
+      32
+    ],
+    "regIbvCountTx": [
+      "output",
+      32
+    ],
+    "ap_clk": [
+      "input",
+      1
+    ],
+    "ap_rst_n": [
+      "input",
+      1
+    ],
+    "s_axis_rx_data_TVALID": [
+      "input",
+      1
+    ],
+    "s_axis_rx_data_TREADY": [
+      "output",
+      1
+    ],
+    "m_axis_tx_data_TVALID": [
+      "output",
+      1
+    ],
+    "m_axis_tx_data_TREADY": [
+      "input",
+      1
+    ],
+    "s_axis_mem_read_data_TVALID": [
+      "input",
+      1
+    ],
+    "s_axis_mem_read_data_TREADY": [
+      "output",
+      1
+    ],
+    "m_axis_mem_write_data_TVALID": [
+      "output",
+      1
+    ],
+    "m_axis_mem_write_data_TREADY": [
+      "input",
+      1
+    ],
+    "regCrcDropPkgCount_ap_vld": [
+      "output",
+      1
+    ],
+    "s_axis_qp_interface_TVALID": [
+      "input",
+      1
+    ],
+    "s_axis_qp_interface_TREADY": [
+      "output",
+      1
+    ],
+    "m_axis_qp_apply_TVALID": [
+      "output",
+      1
+    ],
+    "m_axis_qp_apply_TREADY": [
+      "input",
+      1
+    ],
+    "regIbvCountRx_ap_vld": [
+      "output",
+      1
+    ],
+    "m_axis_rx_ack_meta_TVALID": [
+      "output",
+      1
+    ],
+    "m_axis_rx_ack_meta_TREADY": [
+      "input",
+      1
+    ],
+    "m_axis_dbg_TVALID": [
+      "output",
+      1
+    ],
+    "m_axis_dbg_TREADY": [
+      "input",
+      1
+    ],
+    "regInvalidPsnDropCount_ap_vld": [
+      "output",
+      1
+    ],
+    "s_axis_atomic_owner_TVALID": [
+      "input",
+      1
+    ],
+    "s_axis_atomic_owner_TREADY": [
+      "output",
+      1
+    ],
+    "m_axis_atomic_done_TVALID": [
+      "output",
+      1
+    ],
+    "m_axis_atomic_done_TREADY": [
+      "input",
+      1
+    ],
+    "s_axis_zero_owner_TVALID": [
+      "input",
+      1
+    ],
+    "s_axis_zero_owner_TREADY": [
+      "output",
+      1
+    ],
+    "m_axis_zero_done_TVALID": [
+      "output",
+      1
+    ],
+    "m_axis_zero_done_TREADY": [
+      "input",
+      1
+    ],
+    "m_axis_mem_write_cmd_TVALID": [
+      "output",
+      1
+    ],
+    "m_axis_mem_write_cmd_TREADY": [
+      "input",
+      1
+    ],
+    "m_axis_atomic_request_TVALID": [
+      "output",
+      1
+    ],
+    "m_axis_atomic_request_TREADY": [
+      "input",
+      1
+    ],
+    "s_axis_atomic_reply_TVALID": [
+      "input",
+      1
+    ],
+    "s_axis_atomic_reply_TREADY": [
+      "output",
+      1
+    ],
+    "s_axis_recv_owner_TVALID": [
+      "input",
+      1
+    ],
+    "s_axis_recv_owner_TREADY": [
+      "output",
+      1
+    ],
+    "s_axis_write_owner_TVALID": [
+      "input",
+      1
+    ],
+    "s_axis_write_owner_TREADY": [
+      "output",
+      1
+    ],
+    "s_axis_write_abort_owner_TVALID": [
+      "input",
+      1
+    ],
+    "s_axis_write_abort_owner_TREADY": [
+      "output",
+      1
+    ],
+    "m_axis_write_abort_done_TVALID": [
+      "output",
+      1
+    ],
+    "m_axis_write_abort_done_TREADY": [
+      "input",
+      1
+    ],
+    "s_axis_rnr_event_TVALID": [
+      "input",
+      1
+    ],
+    "s_axis_rnr_event_TREADY": [
+      "output",
+      1
+    ],
+    "s_axis_control_owner_TVALID": [
+      "input",
+      1
+    ],
+    "s_axis_control_owner_TREADY": [
+      "output",
+      1
+    ],
+    "s_axis_sq_meta_TVALID": [
+      "input",
+      1
+    ],
+    "s_axis_sq_meta_TREADY": [
+      "output",
+      1
+    ],
+    "regRetransCount_ap_vld": [
+      "output",
+      1
+    ],
+    "s_axis_request_owner_TVALID": [
+      "input",
+      1
+    ],
+    "s_axis_request_owner_TREADY": [
+      "output",
+      1
+    ],
+    "m_axis_control_done_TVALID": [
+      "output",
+      1
+    ],
+    "m_axis_control_done_TREADY": [
+      "input",
+      1
+    ],
+    "regIbvCountTx_ap_vld": [
+      "output",
+      1
+    ],
+    "m_axis_mem_read_cmd_TVALID": [
+      "output",
+      1
+    ],
+    "m_axis_mem_read_cmd_TREADY": [
+      "input",
+      1
+    ],
+    "s_axis_qp_conn_interface_TVALID": [
+      "input",
+      1
+    ],
+    "s_axis_qp_conn_interface_TREADY": [
+      "output",
+      1
+    ],
+    "m_axis_recv_done_TVALID": [
+      "output",
+      1
+    ],
+    "m_axis_recv_done_TREADY": [
+      "input",
+      1
+    ],
+    "m_axis_recv_message_TVALID": [
+      "output",
+      1
+    ],
+    "m_axis_recv_message_TREADY": [
+      "input",
+      1
+    ],
+    "m_axis_write_done_TVALID": [
+      "output",
+      1
+    ],
+    "m_axis_write_done_TREADY": [
+      "input",
+      1
+    ],
+    "m_axis_request_done_TVALID": [
+      "output",
+      1
+    ],
+    "m_axis_request_done_TREADY": [
+      "input",
+      1
+    ]
+  },
+  "all_original_port_contracts_identical": true,
+  "actual_domain_definition_counts": {
+    "as02_native_control_merger_0_s": 1,
+    "rx_exh_fsm_512_0_s": 1,
+    "as02_write_packet_retire_join_0_s": 1,
+    "generate_exh_512_0_s": 1,
+    "msn_table_0_s": 1,
+    "state_table_0_s": 1,
+    "as02_retrans_meta_table_event_0_s": 1,
+    "as02_retrans_meta_fault_collect_0_s": 1
+  },
+  "actual_unique_module_definitions": 64,
+  "actual_generated_RTL_and_data_files": 207,
+  "actual_same_tested_scheduled_parser": true,
+  "actual_metadata_engine_scalar_status_barrier_removed": true,
+  "actual_one_metadata_engine_and_event_collector": true,
+  "actual_CPP_modes": 140,
+  "all140_old_outcome_oracle_fields_identical": 160,
+  "resources": {
+    "LUT": "119269",
+    "FF": "166254",
+    "BRAM_18K": "306",
+    "DSP": "0"
+  },
+  "original_total_RTL_data_bytes": 108193238,
+  "new_total_RTL_data_bytes": 10410306,
+  "original_parser_RTL_bytes": 103598334,
+  "new_parser_RTL_bytes": 5812546,
+  "actual_total_representation_reduced": true,
+  "actual_parser_representation_reduced": true,
+  "target_clock_ns": 4,
+  "default_uncertainty_ns": 1.08,
+  "effective_ns": 2.92,
+  "estimated_ns": 15.571,
+  "original_timing_met": false,
+  "source_sha256": {
+    "rdma/rnic/build/write-abort-event-generated-audit-9t6eu6fs/audit.py": "f84bc89cd8b8e826dc30487175eac7f4838a5220de38dec564ab3a037cf8be1c",
+    "rdma/rnic/tests/audit_write_abort_event_generated.py": "dff568d86700974bf76d94169c6d2bf1d32a096861e8ac638b140f849b1b07d3",
+    "rdma/rnic/hls/segmented_write_abort_event_transport.py": "a5de577f8bd39aa3a58700f16b42e4a01dd85b68ee4baa01f3a387a14c583136",
+    "rdma/rnic/build/native-zero-service-hls-t91my3mz/project/solution1/syn/verilog/rocev2_native_write_abort_top.v": "6d927d12894e8c79f62d859c21454ecca562a14c3ff40f672c66330e00bbc164",
+    "rdma/rnic/build/native-zero-service-hls-b1fnzo59/project/solution1/syn/verilog/rocev2_native_write_abort_top.v": "f410fa035dea8d63bda400455ecf8c309c1502f37a6471fbeff276de523a34d6",
+    "rdma/rnic/build/native-zero-service-hls-t91my3mz/inputs/fns/hls/ib_transport_protocol/ib_transport_protocol.cpp": "883f3b5eb45434a17ab1abfa67d6c62cc67bcbb11a0a88826a5208cd117dc0b3",
+    "rdma/rnic/build/native-write-abort-event-transport-001/source.json": "da022b32509096fd09a2e04defea3323103318e39c5a3aa4009cdbc70180c6a3",
+    "rdma/rnic/build/native-zero-service-hls-t91my3mz/inputs/fns/hls/ib_transport_protocol/retransmitter/retransmitter.hpp": "cc221c4c6bf698cd280a4ebb872e0ea64f5ed7aed03bff54633d2b6222c50e47",
+    "rdma/rnic/build/native-zero-service-hls-t91my3mz/project/solution1/syn/verilog/rocev2_native_write_abort_top_as02_retrans_meta_table_event_0_s.v": "8e7f2b11e12d34fe220be5357333fcadc4dfbf5b67a6163053fce88a8712c286"
+  },
+  "protected_raw_sha256": {
+    "rdma/rnic/rtl/rocev2_protected_responder.v": "d3a2325dd925a9a742d2239295fc4022cdf00078a8d9496d43c72bd879a8287c",
+    "rdma/rtl/rocev2_ipv4_icrc.v": "f8cea29d8980e00835694cd0808f849b4eb8bcb0c9326deb7cf505f03a89def3",
+    "rdma/rnic/rtl/rocev2_responder_ethernet_rx.v": "76cff3a4284393a2d83c87fb2084ffe8a3eae8b837634943efb030b3a63b18f4"
+  },
+  "new_native_runtime": false,
+  "new_native_compile_under1200s_proven": false,
+  "QP_global_drain_or_unpin": false,
+  "live_Linux_or_physical": false,
+  "full_board_timing": false,
+  "overall_goal_complete": false,
+  "hardware_or_default_actions": [],
+  "commit_or_push": false,
+  "remaining": [
+    "Fresh actual complete native graph/new binary under original gates, every old38 outcome plus two genuine fatal scenarios; generation/size audit is not native runtime.",
+    "All original11/fatal63/error CQ/full QP STOP/reference lifetimes/recovery/real-peer/original timing/physical requirements remain."
+  ]
+}
